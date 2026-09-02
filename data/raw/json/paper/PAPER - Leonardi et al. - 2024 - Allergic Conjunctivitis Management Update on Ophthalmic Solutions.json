@@ -1,0 +1,619 @@
+{
+  "study_design": null,
+  "population": {
+    "description": null,
+    "inclusion_criteria": [],
+    "exclusion_criteria": [],
+    "n_patients": null,
+    "mean_age": null,
+    "care_setting": null
+  },
+  "interventions": [],
+  "comparators": [],
+  "outcomes": {
+    "primary": [],
+    "secondary": []
+  },
+  "statistical_methods": null,
+  "follow_up": null,
+  "search_strategy": null,
+  "databases": [],
+  "n_studies_included": null,
+  "quality_assessment_tool": null,
+  "title": "Allergic Conjunctivitis Management: Update on Ophthalmic Solutions",
+  "authors": [
+    "Andrea Leonardi",
+    "Luigi Quintieri",
+    "Ignacio Jáuregui Presa",
+    "Jesús Merayo LLoves",
+    "Jesús Montero",
+    "José Manuel Benítez-del-Castillo",
+    "Francisco Javier Seoane Lestón",
+    "Eloína González-Mancebo",
+    "Riccardo Asero",
+    "Anna Groblewska",
+    "Piotr Kuna"
+  ],
+  "journal": "Current Allergy and Asthma Reports",
+  "year": 2024,
+  "doi": "10.1007/s11882-024-01150-0",
+  "trial_registration": null,
+  "article_type": "narrative_review",
+  "article_subtype": null,
+  "medical_specialty": "allergy and immunology",
+  "keywords": [
+    "Allergic Conjunctivitis",
+    "Topical Treatment",
+    "Antihistamines",
+    "Preservatives",
+    "Benzalkonium Chloride (BAK)",
+    "Hyaluronic acid (HA)"
+  ],
+  "language": "en",
+  "funding": null,
+  "conflicts_of_interest": null,
+  "condition_or_topic": "Ocular allergy, specifically allergic conjunctivitis (seasonal and perennial)",
+  "clinical_background": "Ocular allergy represents a set of often underappreciated immune-mediated inflammatory conditions affecting the anterior eye surface, encompassing various clinical presentations in both children and adults. Allergic conjunctivitis is the most common form and is sub-classified into seasonal allergic conjunctivitis and perennial allergic conjunctivitis depending on whether the triggering aeroallergen is seasonal or present year-round; grass pollen is the most frequent sensitizer in seasonal allergic conjunctivitis, whereas dust mites and animal dander predominate in perennial allergic conjunctivitis. The prevalence of ocular allergy has been rising globally for decades, with seasonal and perennial allergic conjunctivitis affecting between 14% and up to 45% of the general population depending on geographic area. Despite this, allergic conjunctivitis remains underdiagnosed and undertreated—only 10% of affected individuals seek medical attention, with most self-managing using over-the-counter products and non-pharmacological remedies. Ocular allergy frequently coexists with other ocular disorders such as infections and dry eye disease, markedly impairs quality of life, and imposes a substantial economic burden. Management encompasses preventive, non-pharmacological, and pharmacological strategies. First-line pharmacotherapy includes topical antihistamines, mast cell stabilizers, and agents with dual activity, while corticosteroids and immunomodulators are reserved for severe keratoconjunctivitis. Because many patients receive topical treatments for prolonged periods, the short- and long-term safety and ocular surface tolerability of these preparations are critical; certain excipients in ophthalmic solutions can disrupt the epithelial barrier and tear film, potentially leading to dry eye or exacerbation of allergic conjunctivitis. The review aims to collate current evidence on these therapeutic options.",
+  "objectives": [
+    "To present updated information on the management of ocular allergy for healthcare providers, with a particular emphasis on topical treatments for seasonal and perennial allergic conjunctivitis."
+  ],
+  "clinical_question": null,
+  "interpretation": "After reviewing current evidence, the authors interpret that allergic conjunctivitis is frequently underdiagnosed and may benefit from a multidisciplinary approach. Management involves a stepwise strategy: allergen avoidance based on allergy testing, first-line pharmacological treatment with topical antihistamines or dual-action agents, with preference for preservative-free formulations and hyaluronic acid co-formulation to protect the ocular surface and improve compliance.",
+  "comparison_with_prior_evidence": null,
+  "clinical_implications": [
+    "Allergic conjunctivitis is prevalent and often underdiagnosed, and a multidisciplinary approach can aid diagnosis in patients with compatible symptoms and common concomitant conditions.",
+    "Preservatives in ophthalmic solutions induce ocular surface damage, exacerbate seasonal and perennial allergic conjunctivitis, and may lead to dry eye disease.",
+    "Co-formulation with hyaluronic acid has potential benefits including improved ocular surface wound healing, prevention of dryness, and increased ocular bioavailability of active drugs.",
+    "Dosing frequency influences treatment compliance: simpler dosing regimens correlate with higher adherence."
+  ],
+  "practice_implications": [
+    "Perform an allergy study as part of management to guide allergen avoidance measures.",
+    "Use topical ophthalmic antihistamines or dual-action drugs as first-line pharmacological treatment for allergic conjunctivitis.",
+    "Prefer preservative-free ophthalmic solutions to avoid ocular surface damage.",
+    "Consider formulations with hyaluronic acid to protect the ocular surface and potentially enhance drug bioavailability.",
+    "Favor once-daily dosing when possible to improve patient adherence.",
+    "Choose single-dose or preservative-free multi-dose devices for anti-allergic topical treatments.",
+    "A recently developed once-daily, preservative-free, antihistamine formulation with hyaluronic acid is now available as a treatment option."
+  ],
+  "limitations": [],
+  "strengths": [],
+  "open_questions": [],
+  "future_directions": [],
+  "tables": [
+    {
+      "title": "Characteristics of topical multi-dose antihistamines and dual-action agents for the treatment of SAC and PAC",
+      "data": {
+        "columns": [
+          "Active ophthalmic solution",
+          "Dose (mg/ml)",
+          "Inactive ingredients (excipients)",
+          "Co-formulation with HA",
+          "Daily dose",
+          "Preservatives (%)"
+        ],
+        "rows": [
+          [
+            "Bilastine",
+            "0.6",
+            "hydroxypropyl-β-cyclodextrin, methyl cellulose, sodium hyaluronate, anhydrous glycerine, sodium hydroxide 1n, water for injection",
+            "Yes",
+            "Once daily",
+            "Free"
+          ],
+          [
+            "Cetirizine",
+            "2.4",
+            "glycerine, sodium phosphate, dibasic, edetate disodium, polyethylene glycol 400, polysorbate 80, hypromellose, hydrochloric acid/ sodium hydroxide (to adjust pH), water for injection",
+            "No",
+            "Three times daily",
+            "BAK 0.01"
+          ],
+          [
+            "Emedastine",
+            "0.5",
+            "tromethamol, sodium chloride, hypromellose, purified water, hydrochloric acid and/ or sodium hydroxide (to adjust pH)",
+            "No",
+            "Twice daily",
+            "BAK 0.01"
+          ],
+          [
+            "Levocabastine",
+            "0.5",
+            "propylene glycol, disodium phosphate anhydrous, monobasic sodium phosphate monohydrate, hypromellose, polysorbate 80, edetate calcium disodium",
+            "No",
+            "Twice daily",
+            "BAK 0.15"
+          ],
+          [
+            "Alcaftadine",
+            "2.5",
+            "edetate disodium, monobasic sodium phosphate, purified water, sodium chloride, sodium hydroxide, hydrochloric acid (to adjust pH)",
+            "No",
+            "Twice daily",
+            "BAK 0.05"
+          ],
+          [
+            "Azelastine",
+            "0.5",
+            "hypromellose, disodium edetate, liquid sorbitol (crystallising), sodium hydroxide (to adjust pH), water for injection",
+            "No",
+            "Twice daily",
+            "BAK 0.125 (Free available)"
+          ],
+          [
+            "Bepostatine besilate",
+            "15",
+            "sodium phosphate, sodium chloride, sodium hydroxide, water",
+            "No",
+            "Twice daily",
+            "BAK 0.05"
+          ],
+          [
+            "Epinastine",
+            "0.5",
+            "disodium edetate, sodium chloride, sodium dihydrogen phosphate dihydrate, sodium hydroxide/ hydrochloric acid (to adjust pH), purified water",
+            "No",
+            "Twice daily",
+            "BAK 0.1"
+          ],
+          [
+            "Ketotifen",
+            "0.025 / 0.05",
+            "glycerol (e422), sodium hydroxide (e524), water for injections",
+            "No",
+            "Twice daily",
+            "BAK 0.1 (Free available)"
+          ],
+          [
+            "Olopatadine",
+            "1 / 2.22",
+            "sodium chloride, disodium hydrogen phosphate dodecahydrate (e339), hydrochloric acid (e507), sodium hydroxide (e524), purified water",
+            "No",
+            "Twice daily / Once daily",
+            "BAK 0.1 (Free available)"
+          ]
+        ]
+      },
+      "summary": "Table 1 lists topical multi-dose antihistamines and dual-action agents approved for SAC and PAC, detailing their active ingredient concentration, excipients, co-formulation with hyaluronic acid, recommended daily dosing frequency, and preservative content. It includes bilastine 0.6 mg/ml (preservative-free, once daily, with HA), cetirizine 2.4 mg/ml (BAK 0.01%, three times daily), emedastine 0.5 mg/ml (BAK 0.01%, twice daily), levocabastine 0.5 mg/ml (BAK 0.15%, twice daily), and several dual-action agents such as alcaftadine 2.5 mg/ml (BAK 0.05%, twice daily), azelastine 0.5 mg/ml (BAK 0.125%, twice daily, also available preservative-free), bepotastine besilate 15 mg/ml (BAK 0.05%, twice daily), epinastine 0.5 mg/ml (BAK 0.1%, twice daily), ketotifen 0.025–0.05 mg/ml (BAK 0.1%, twice daily, sometimes preservative-free), and olopatadine 1–2.22 mg/ml (BAK 0.1%, twice daily to once daily, preservative-free options exist). Not all formulations are preservative-free; BAK is common, and only bilastine includes HA."
+    }
+  ],
+  "main_conclusion": "The management of seasonal and perennial allergic conjunctivitis should prioritize topical therapies that effectively control signs and symptoms while minimizing iatrogenic damage to the ocular surface, as many commercial formulations contain preservatives like benzalkonium chloride that can disrupt the tear film and exacerbate dry eye disease.",
+  "narrative_summary": "This review updates the topical management of seasonal and perennial allergic conjunctivitis (SAC/PAC), the most common forms of ocular allergy, emphasizing the importance of tear film integrity and the potential harm from ophthalmic solution additives. SAC and PAC are IgE-mediated, often underdiagnosed, and frequently comorbid with allergic rhinitis and dry eye disease. First-line pharmacological therapy includes topical antihistamines, mast cell stabilizers, and dual-action agents, with recent additions like bilastine 0.6 mg/ml (preservative-free, once daily, co-formulated with hyaluronic acid) and cetirizine 2.4 mg/ml. However, many older products contain benzalkonium chloride (BAK), a preservative that disrupts the epithelial barrier and may promote dry eye. The review tabulates approved multi-dose formulations, detailing their excipients, dosing, and preservative content. For instance, levocabastine, emedastine, and several dual-action agents contain BAK at varying concentrations, while preservative-free single-dose options exist for ketotifen, olopatadine, and azelastine. Topical vasoconstrictors and NSAIDs are discouraged due to limited efficacy and adverse effects, and corticosteroids are reserved for severe cases under ophthalmological supervision. Allergen immunotherapy remains an option when avoidance and pharmacotherapy fail. In summary, clinicians should select topical agents not only for their antiallergic efficacy but also for their formulation’s impact on the ocular surface, preferentially using preservative-free or low-toxicity preparations to optimize long-term safety and tolerability.",
+  "main_findings": [
+    {
+      "description": "Emedastine was found to be superior to levocabastine in terms of efficacy.",
+      "metric": null,
+      "value": null,
+      "ci_95": null,
+      "p_value": null,
+      "n_events": null,
+      "context": "Reference [27]"
+    },
+    {
+      "description": "Olopatadine demonstrated superiority over emedastine.",
+      "metric": null,
+      "value": null,
+      "ci_95": null,
+      "p_value": null,
+      "n_events": null,
+      "context": "References [29, 30]"
+    },
+    {
+      "description": "Olopatadine showed similar symptom reduction to some dual-action agents.",
+      "metric": null,
+      "value": null,
+      "ci_95": null,
+      "p_value": null,
+      "n_events": null,
+      "context": "Reference [28]"
+    },
+    {
+      "description": "Cetirizine ophthalmic solution significantly reduced ocular itching and conjunctival redness compared to its vehicle.",
+      "metric": null,
+      "value": null,
+      "ci_95": null,
+      "p_value": null,
+      "n_events": null,
+      "context": "Clinical trial NCT01881113; references [32–34]"
+    },
+    {
+      "description": "Bilastine ophthalmic solution demonstrated a fast onset of action and maintained efficacy for up to 16 hours post-administration, supporting once-daily dosing.",
+      "metric": null,
+      "value": null,
+      "ci_95": null,
+      "p_value": null,
+      "n_events": null,
+      "context": "References [31, 38]"
+    },
+    {
+      "description": "In a phase III trial, bilastine showed similar efficacy to ketotifen 0.025% multi-dose formulation.",
+      "metric": null,
+      "value": null,
+      "ci_95": null,
+      "p_value": null,
+      "n_events": null,
+      "context": "References [35, 39]"
+    },
+    {
+      "description": "Olopatadine, ketotifen, alcaftadine, and bepotastine exhibit a similar efficacy profile, though some studies indicate bepotastine and alcaftadine may be superior to olopatadine.",
+      "metric": null,
+      "value": null,
+      "ci_95": null,
+      "p_value": null,
+      "n_events": null,
+      "context": "References [43–45]"
+    },
+    {
+      "description": "Ketotifen 0.025% was effective in managing seasonal allergic conjunctivitis, but patient-reported outcomes favored olopatadine 0.1% solution for comfort and efficacy.",
+      "metric": null,
+      "value": null,
+      "ci_95": null,
+      "p_value": null,
+      "n_events": null,
+      "context": "Reference [46]"
+    },
+    {
+      "description": "In terms of clinical relief and tolerability, dual-action agents were superior to antihistamines like levocabastine and mast cell stabilizers such as lodoxamide or cromolyn.",
+      "metric": null,
+      "value": null,
+      "ci_95": null,
+      "p_value": null,
+      "n_events": null,
+      "context": "References [7, 28]"
+    },
+    {
+      "description": "Intranasal corticosteroids (fluticasone furoate, mometasone furoate) significantly improved ocular allergic symptoms compared to placebo.",
+      "metric": null,
+      "value": null,
+      "ci_95": null,
+      "p_value": null,
+      "n_events": null,
+      "context": "References [7, 52]"
+    }
+  ],
+  "safety_results": {
+    "overall_adverse_events": null,
+    "grade_3_4_events": null,
+    "discontinuations": null,
+    "related_deaths": null,
+    "notable_adverse_events": [
+      "Bilastine: uncommon adverse reactions; common side effects include increased ocular discomfort, eye burning/stinging upon instillation, dry eye, blurry vision, eye discharge, eye irritation, lacrimation.",
+      "Cetirizine: common side effects include hyperaemia, lid oedema, keratitis, eye pain.",
+      "Emedastine: common adverse events include itchy eyes, eye pain, redness of the eyes, burning sensation, watery eyes.",
+      "Levocabastine: common adverse events include blurred vision, eye irritation, pain, swelling, itching, redness.",
+      "Alcaftadine: taste perversion and bad taste, eye irritation, burning and/or stinging upon instillation.",
+      "Azelastine: common side effects include punctate erosion of corneal epithelium, eye pain.",
+      "Bepotastine besilate: common side effects include abnormal sensation in eyes, burning sensation, eye irritation, punctate keratitis.",
+      "Epinastine: common side effects include eye irritation, dry eye.",
+      "Ketotifen: common side effects include eye irritation, eye pain, eye pruritus, eye redness.",
+      "Olopatadine: common side effects include eye irritation, eye pain, mild transient irritation."
+    ]
+  },
+  "subgroup_analyses": [],
+  "secondary_results": [
+    "Preservative-free formulation of bilastine co-formulated with hyaluronic acid preserved tear film and ocular surface integrity in preclinical studies.",
+    "Patient preference: olopatadine 0.1% was preferred over ketotifen 0.025% in a study measuring comfort and efficacy.",
+    "Bilastine phase III trial showed non-inferiority compared to ketotifen 0.05%.",
+    "Cetirizine ophthalmic solution demonstrated an acceptable safety profile and was well tolerated.",
+    "In a pediatric study, ketotifen was safe and effective in children aged 7–15 years.",
+    "Preservative-free single-dose and multi-dose formulations of ketotifen, olopatadine, and azelastine are available in some European countries."
+  ],
+  "diseases_and_conditions": [
+    {
+      "name": "Ocular allergy (OA)",
+      "context": "Principal topic; a group of inflammatory anterior surface eye diseases encompassing allergic conjunctivitis and other forms."
+    },
+    {
+      "name": "Allergic conjunctivitis (AC)",
+      "context": "Most common OA; IgE-mediated, Th2 inflammation affecting the ocular surface during aeroallergen exposure; includes SAC and PAC."
+    },
+    {
+      "name": "Seasonal allergic conjunctivitis (SAC)",
+      "context": "Most prevalent OA form triggered by seasonal allergens like grass pollen; over half of OA cases."
+    },
+    {
+      "name": "Perennial allergic conjunctivitis (PAC)",
+      "context": "OA form triggered by perennial allergens such as dust mites and animal dander."
+    },
+    {
+      "name": "Vernal keratoconjunctivitis (VKC)",
+      "context": "Chronic, severe OA form requiring topical immunomodulators or corticosteroids."
+    },
+    {
+      "name": "Atopic keratoconjunctivitis (AKC)",
+      "context": "Chronic, severe OA form; may require immunomodulators or biologic therapy."
+    },
+    {
+      "name": "Dry eye disease (DED)",
+      "context": "Frequent comorbid and differential diagnosis for AC; can be exacerbated by topical treatments containing BAK."
+    },
+    {
+      "name": "Allergic rhinitis (AR)",
+      "context": "Commonly overlaps with AC, defined as allergic rhinoconjunctivitis; warrants systemic antihistamines or intranasal corticosteroids."
+    },
+    {
+      "name": "Allergic rhinoconjunctivitis",
+      "context": "Combined presentation of AC and AR; often underdiagnosed in its ocular component."
+    },
+    {
+      "name": "Infections",
+      "context": "Overlapping ocular surface disorders with OA; corticosteroids may increase susceptibility."
+    },
+    {
+      "name": "Corneal melting",
+      "context": "Potential severe adverse effect of topical NSAIDs."
+    },
+    {
+      "name": "Corneal perforation",
+      "context": "Potential severe adverse effect of topical NSAIDs."
+    },
+    {
+      "name": "Rebound hyperaemia",
+      "context": "Adverse effect from prolonged topical vasoconstrictor use."
+    },
+    {
+      "name": "Tachyphylaxis",
+      "context": "Diminished response after prolonged topical vasoconstrictor use."
+    },
+    {
+      "name": "Cataract",
+      "context": "Risk associated with topical corticosteroid therapy."
+    },
+    {
+      "name": "Increased intraocular pressure",
+      "context": "Potential adverse effect of topical corticosteroids."
+    },
+    {
+      "name": "Delayed wound healing",
+      "context": "Corticosteroid-related adverse event."
+    },
+    {
+      "name": "Superinfections",
+      "context": "Risk associated with corticosteroid use."
+    }
+  ],
+  "drugs_and_therapies": [
+    {
+      "name": "Bilastine",
+      "mechanism": "H1 receptor antagonist (antihistamine)",
+      "context": "Newly EMA-approved topical antihistamine for SAC/PAC; preservative-free formulation with hyaluronic acid, once-daily dosing."
+    },
+    {
+      "name": "Cetirizine",
+      "mechanism": "H1 receptor antagonist (antihistamine)",
+      "context": "FDA-approved topical antihistamine; dosed three times daily; contains BAK 0.01%."
+    },
+    {
+      "name": "Emedastine",
+      "mechanism": "H1 receptor antagonist (antihistamine)",
+      "context": "Second-generation topical antihistamine; superior to levocabastine, inferior to olopatadine."
+    },
+    {
+      "name": "Levocabastine",
+      "mechanism": "H1 receptor antagonist (antihistamine)",
+      "context": "Topical antihistamine; used as comparator; preservative-free option available in some countries."
+    },
+    {
+      "name": "Lodoxamide",
+      "mechanism": "Mast cell stabilizer",
+      "context": "Topical mast cell stabilizer; less effective than antihistamines for acute symptoms."
+    },
+    {
+      "name": "Nedocromil",
+      "mechanism": "Mast cell stabilizer",
+      "context": "Topical mast cell stabilizer; often less preferred due to prophylactic need."
+    },
+    {
+      "name": "Sodium cromoglycate",
+      "mechanism": "Mast cell stabilizer",
+      "context": "Topical mast cell stabilizer; comparative agent in clinical trials."
+    },
+    {
+      "name": "Alcaftadine",
+      "mechanism": "Antihistamine and mast cell stabilizer (dual-action)",
+      "context": "Dual-action topical agent; similar efficacy to olopatadine, some studies suggest superiority."
+    },
+    {
+      "name": "Azelastine",
+      "mechanism": "Antihistamine and mast cell stabilizer (dual-action)",
+      "context": "Well-established dual-action agent; preservative-free formulations available in Europe."
+    },
+    {
+      "name": "Bepotastine besilate",
+      "mechanism": "Antihistamine and mast cell stabilizer (dual-action)",
+      "context": "Dual-action agent; similar efficacy to olopatadine, may offer superior symptom control."
+    },
+    {
+      "name": "Epinastine",
+      "mechanism": "Antihistamine and mast cell stabilizer (dual-action)",
+      "context": "Dual-action topical agent with rapid onset."
+    },
+    {
+      "name": "Ketotifen",
+      "mechanism": "Antihistamine and mast cell stabilizer (dual-action)",
+      "context": "Effective dual-action agent; 0.025% formulation available preservative-free in some countries; children 7–15 years included in trials."
+    },
+    {
+      "name": "Olopatadine",
+      "mechanism": "Antihistamine and mast cell stabilizer (dual-action)",
+      "context": "Widely used dual-action agent; 1 mg/ml twice daily or 2.22 mg/ml once daily; preservative-free available."
+    },
+    {
+      "name": "Naphazoline",
+      "mechanism": "α-adrenergic agonist (vasoconstrictor)",
+      "context": "Topical vasoconstrictor for conjunctival redness; does not treat allergy; prolonged use causes rebound hyperaemia."
+    },
+    {
+      "name": "Oxymetazoline",
+      "mechanism": "α-adrenergic agonist (vasoconstrictor)",
+      "context": "Topical vasoconstrictor; short-term use only due to risk of tachyphylaxis."
+    },
+    {
+      "name": "Phenylephrine",
+      "mechanism": "α-adrenergic agonist (vasoconstrictor)",
+      "context": "Topical vasoconstrictor with similar safety concerns."
+    },
+    {
+      "name": "Tetrahydrozoline",
+      "mechanism": "α-adrenergic agonist (vasoconstrictor)",
+      "context": "Topical vasoconstrictor for hyperaemia relief."
+    },
+    {
+      "name": "Fluticasone furoate",
+      "mechanism": "Anti-inflammatory (corticosteroid)",
+      "context": "Intranasal corticosteroid effective for ocular allergic symptoms in AR."
+    },
+    {
+      "name": "Mometasone furoate",
+      "mechanism": "Anti-inflammatory (corticosteroid)",
+      "context": "Intranasal corticosteroid showing positive effects on ocular allergy."
+    },
+    {
+      "name": "Ketorolac",
+      "mechanism": "Cyclooxygenase inhibitor (NSAID)",
+      "context": "First approved topical NSAID for OA; associated with instillation discomfort and corneal risks."
+    },
+    {
+      "name": "Cyclosporine",
+      "mechanism": "Calcineurin inhibitor (immunomodulator)",
+      "context": "Topical immunomodulator for chronic OA forms like VKC/AKC."
+    },
+    {
+      "name": "Tacrolimus",
+      "mechanism": "Calcineurin inhibitor (immunomodulator)",
+      "context": "Topical immunomodulator used in severe keratoconjunctivitis."
+    },
+    {
+      "name": "Fluorometholone acetate",
+      "mechanism": "Anti-inflammatory (corticosteroid)",
+      "context": "Comparator corticosteroid in ketotifen trials."
+    },
+    {
+      "name": "Topical corticosteroids (class)",
+      "mechanism": "Anti-inflammatory",
+      "context": "Potent anti-inflammatory drugs for severe OA exacerbations; monitored due to adverse effects."
+    },
+    {
+      "name": "Second-generation systemic antihistamines",
+      "mechanism": "H1 receptor antagonist (systemic)",
+      "context": "Recommended for OA with concomitant AR; fewer adverse events and sedation than first-generation."
+    },
+    {
+      "name": "Systemic leukotriene receptor antagonists",
+      "mechanism": "Leukotriene receptor blocker",
+      "context": "Useful in AR but limited in OA; less effective than oral antihistamines."
+    },
+    {
+      "name": "Allergen immunotherapy (AIT)",
+      "mechanism": "Induces immune tolerance to allergens",
+      "context": "Etiological treatment for IgE-mediated OA; recommended in guidelines for severe or uncontrolled SAC/PAC."
+    },
+    {
+      "name": "Biologic therapy",
+      "mechanism": null,
+      "context": "Prescribed for severe refractory OA such as VKC/AKC."
+    },
+    {
+      "name": "Systemic immunosuppressive treatment",
+      "mechanism": null,
+      "context": "Option for severe chronic OA under specialist care."
+    },
+    {
+      "name": "Lubricating eye drops",
+      "mechanism": null,
+      "context": "Concomitant supportive therapy to maximize symptom control."
+    },
+    {
+      "name": "Over-the-counter (OTC) medications",
+      "mechanism": null,
+      "context": "Commonly used by patients for self-management of AC symptoms."
+    },
+    {
+      "name": "Complementary, non-pharmacological remedies",
+      "mechanism": null,
+      "context": "Part of stepwise management before pharmacological intervention."
+    }
+  ],
+  "biomarkers_and_genes": [
+    {
+      "name": "IgE",
+      "role": "Mediator in IgE-mediated hypersensitivity; diagnostic marker",
+      "context": "Allergic conjunctivitis is IgE-mediated; allergen-specific IgE testing confirms sensitization."
+    },
+    {
+      "name": "Allergen-specific IgE",
+      "role": "Diagnostic; measured by skin prick test (SPT) or in vitro assay",
+      "context": "Gold standard for identifying allergic triggers; essential when considering allergen immunotherapy."
+    }
+  ],
+  "scales_and_classifications": [],
+  "key_numeric_data": [
+    {
+      "parameter": "Prevalence of SAC and PAC",
+      "value": "14% to 45%",
+      "context": "Percentage of the general population affected, depending on geographical region."
+    },
+    {
+      "parameter": "AC patients seeking medical attention",
+      "value": "10%",
+      "context": "Only a small fraction of individuals with AC symptoms consult a healthcare professional."
+    },
+    {
+      "parameter": "Proportion of OA that is SAC",
+      "value": ">50%",
+      "context": "SAC represents the majority of ocular allergy cases."
+    },
+    {
+      "parameter": "Bilastine 0.6 mg/ml duration of action",
+      "value": "16 hours",
+      "context": "Post-administration efficacy window, enabling once-daily dosing."
+    },
+    {
+      "parameter": "Cetirizine 2.4 mg/ml dosing frequency",
+      "value": "every 8 hours",
+      "context": "One drop per affected eye, three times daily."
+    },
+    {
+      "parameter": "Bilastine 0.6 mg/ml dosing",
+      "value": "once daily",
+      "context": "Preservative-free, co-formulated with hyaluronic acid."
+    },
+    {
+      "parameter": "Olopatadine 2.22 mg/ml dosing",
+      "value": "once daily",
+      "context": "Higher concentration formulation approved for once-daily use."
+    },
+    {
+      "parameter": "Ketotifen 0.025% dosing",
+      "value": "twice daily",
+      "context": "Standard regimen; preservative-free options available."
+    },
+    {
+      "parameter": "Children age range in ketotifen safety study",
+      "value": "7–15 years",
+      "context": "Safety evaluated in pediatric population."
+    },
+    {
+      "parameter": "BAK concentration in cetirizine ophthalmic solution",
+      "value": "0.01%",
+      "context": "Preservative used in the multi-dose formulation."
+    },
+    {
+      "parameter": "Olopatadine 1 mg/ml dosing",
+      "value": "twice daily",
+      "context": "Standard dose; preservative-free formulation also available."
+    },
+    {
+      "parameter": "Olopatadine 2.22 mg/ml dosing",
+      "value": "once daily",
+      "context": "Higher concentration approved for once-daily administration."
+    }
+  ],
+  "_usage": {
+    "model": "deepseek-v4-pro",
+    "input_tokens": 56636,
+    "output_tokens": 7041,
+    "total_tokens": 63677,
+    "cost": null
+  }
+}

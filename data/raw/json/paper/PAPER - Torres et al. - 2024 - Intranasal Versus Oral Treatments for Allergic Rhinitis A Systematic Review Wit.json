@@ -1,0 +1,656 @@
+{
+  "condition_or_topic": "Allergic rhinitis",
+  "clinical_background": "Allergic rhinitis is commonly managed with intranasal or oral medications. Current guidelines, such as ARIA 2020, suggest intranasal treatments for moderate-to-severe disease, citing faster onset and higher effectiveness, but the certainty of evidence for these recommendations is often low or very low. Similarly, the US 2020 Practice Parameter recommends intranasal corticosteroids as first-line therapy without detailed comparisons with oral options. Existing head-to-head studies have employed heterogeneous outcome measures and inconsistent methodological rigor. Recent high-quality systematic reviews on this topic are absent; the last comprehensive review was published in 1998 and limited to intranasal corticosteroids versus oral antihistamines, while a later review imposed language and date restrictions. An updated evidence synthesis is required to support the 2024 revision of the ARIA guidelines.",
+  "objectives": [
+    "To conduct a systematic review and meta-analysis comparing the effectiveness of intranasal corticosteroids or intranasal antihistamines versus oral antihistamines or leukotriene receptor antagonists in improving nasal and ocular symptoms and quality of life in allergic rhinitis.",
+    "To assess the safety of these interventions by evaluating adverse events and withdrawals due to adverse events."
+  ],
+  "clinical_question": "In patients aged 12 years and older with seasonal or perennial allergic rhinitis (P), how do intranasal treatments (corticosteroids or antihistamines) (I) compare with oral treatments (antihistamines or leukotriene receptor antagonists) (C) in improving total nasal symptom score, total ocular symptom score, and rhinoconjunctivitis quality of life (O)?",
+  "interpretation": "The meta-analysis found that intranasal corticosteroids (INCS) or intranasal antihistamines (INAH) are more effective than oral antihistamines (OAH) or leukotriene receptor antagonists (LTRA) in improving nasal and ocular symptoms in seasonal allergic rhinitis (SAR), as well as quality of life. Most effects were considered clinically relevant. Safety outcomes were generally similar between intranasal and oral treatments, except for a higher risk of adverse events with INAH compared to OAH. The certainty of evidence (CoE) for most comparisons was moderate or high, supporting the reliability of these findings.",
+  "comparison_with_prior_evidence": "Previous systematic reviews on this topic were older, assessed fewer drug classes, and restricted study selection based on publication dates or languages. They did not use the GRADE approach to evaluate CoE. However, their results consistently suggested superiority of intranasal over oral medications, aligning with the current findings.",
+  "clinical_implications": [
+    "These results reinforce current ARIA Guidelines and the US Practice Parameter recommendations that favor intranasal treatments for moderate-to-severe allergic rhinitis, though they should be considered alongside other evidence.",
+    "The findings support clinically meaningful improvements with intranasal treatments over oral medications, which could guide shared decision-making between clinicians and patients.",
+    "Patient preferences, disease severity, and real-world usage patterns (e.g., over-the-counter oral medication use) must be weighed when applying these findings, as most clinical trial participants may have more severe disease than typical patients."
+  ],
+  "practice_implications": [
+    "Despite the demonstrated superiority of intranasal treatments, factors such as cost, ease of use, and patient preference may lead to continued prescribing or self-medication with oral agents.",
+    "Clinicians should consider the comparative effectiveness evidence when selecting between intranasal and oral medications, but also integrate patient-centered aspects in treatment decisions."
+  ],
+  "limitations": [
+    "Insufficient evidence on perennial allergic rhinitis (PAR) limited the ability to perform meta-analyses for this condition, so findings chiefly apply to SAR.",
+    "Only a minority of included studies had a low risk of bias; most had unclear risk, and some had high risk, potentially biasing results.",
+    "Considerable heterogeneity existed in outcome measurement: some studies used nonstandard definitions of TNSS (e.g., 3 or 5 symptoms) or TOSS (2 or 4 symptoms), and the Total Symptom Score (TSS) could not be meta-analyzed due to inconsistent definitions.",
+    "Missing spread measures in several studies required imputation based on P values, though sensitivity analyses excluding such studies yielded consistent findings.",
+    "The inability to comprehensively assess the effect of individual drugs within each class, due to the low number of studies per comparison, could mask variability in effectiveness.",
+    "The overall comparison between intranasal and oral treatments might be influenced by class-specific differences in effectiveness and safety, as well as the proportion of studies assessing each class.",
+    "The classification of rhinitis as seasonal/perennial rather than intermittent/persistent reflects the design of included RCTs, though the authors believe results may generalize."
+  ],
+  "strengths": [
+    "The systematic review used an extensive search of four bibliographic databases and three clinical trial registries, without restrictions on language, date, or publication status, minimizing publication bias.",
+    "The GRADE approach was applied to assess certainty of evidence for each outcome across comparisons.",
+    "Sensitivity analyses were conducted examining risk of bias, imputation of spread measures, follow-up duration, and individual drugs compared.",
+    "When potential effect modification was identified, the credibility of that modification was assessed using the Instrument to Assess the Credibility of Effect Modification Analyses (ICEMAN).",
+    "A complementary method was used to evaluate the probability that observed differences corresponded to clinically relevant effects, based on decision thresholds."
+  ],
+  "open_questions": [
+    "The effectiveness of intranasal versus oral treatments for perennial allergic rhinitis remains uncertain due to insufficient data.",
+    "Whether the results apply equally to intermittent and persistent AR, using modern classification, needs confirmation through further research.",
+    "The variability in effectiveness among individual drugs within the same class was not fully addressed."
+  ],
+  "future_directions": [
+    "Future RCTs and observational studies should use standardized outcomes, such as the four-symptom TNSS, three-symptom TOSS, and RQLQ, to ensure comparability.",
+    "More evidence is needed for PAR, either from RCTs or real-world data, to validate the transportability of findings from SAR trials.",
+    "Research employing real-world data and modern causal inference methods could better inform the comparative effectiveness and safety of treatments for intermittent and persistent allergic rhinitis."
+  ],
+  "title": "Intranasal Versus Oral Treatments for Allergic Rhinitis: A Systematic Review With Meta-Analysis",
+  "authors": [
+    "Maria Inês Torres",
+    "Sara Gil-Mata",
+    "Antonio Bognanni",
+    "Renato Ferreira-da-Silva",
+    "Juan José Yepes-Nuñez",
+    "Nuno Lourenço-Silva",
+    "António Cardoso-Fernandes",
+    "André Ferreira",
+    "Henrique Ferreira-Cardoso",
+    "Diana Portela",
+    "João Teles",
+    "Violeta Kvedariene",
+    "María Jose Torres",
+    "Ludger Klimek",
+    "Oliver Pfaar",
+    "Luisa Brussino",
+    "Torsten Zuberbier",
+    "João A. Fonseca",
+    "Holger Schünemann",
+    "Jean Bousquet",
+    "Bernardo Sousa-Pinto",
+    "Rafael José Vieira",
+    "on behalf of the Allergic Rhinitis and its Impact on Asthma 2024 Guideline Panel"
+  ],
+  "journal": "J Allergy Clin Immunol Pract",
+  "year": 2024,
+  "doi": "10.1016/j.jaip.2024.09.001",
+  "trial_registration": null,
+  "article_type": "systematic_review",
+  "article_subtype": "meta_analysis",
+  "medical_specialty": "Allergy and Immunology",
+  "keywords": [
+    "Allergic rhinitis",
+    "Intranasal corticosteroids",
+    "Intranasal antihistamines",
+    "Oral antihistamines",
+    "Leukotriene receptor antagonists",
+    "Meta-analysis",
+    "GRADE approach"
+  ],
+  "language": "en",
+  "funding": "This study has been funded within the context of the Allergic Rhinitis and its Impact on Asthma group. R.J. Vieira was supported by PhD Grant Reference 2022.12787.BD, funded by Portuguese national funds and community funds from the European Social Fund and Programa Por_Norte through Fundação para a Ciência e a Tecnologia (FCT-MCTES, Portugal).",
+  "conflicts_of_interest": "V. Kvedariene reports other support from Norameda and Berlin Chemie Menarini, outside the submitted work. O. Pfaar reports grants and personal fees from ALK-Abelló, Allergopharma, Stallergenes Greer, HAL Allergy Holding B.V./HAL Allergie GmbH, Bencard Allergie GmbH/Allergy Therapeutics, Lofarma, ASIT Biotech Tools S.A., Laboratorios LETI/LETI Pharma, Anergis S.A., GlaxoSmithKline, and AstraZeneca; grants from Biomay, Circassia, Pohl-Boskamp, and Inmunotek S.L.; personal fees from MEDA Pharma/MYLAN, Mobile Chamber Experts (a GA2LEN Partner), Indoor Biotechnologies, Astellas Pharma Global, EUFOREA, ROXALL Medizin, Novartis, Sanofi-Aventis, Sanofi-Genzyme, Med Update Europe GmbH, Streamedup! GmbH, John Wiley and Sons, AS, Paul-Martini-Stiftung, Regeneron Pharmaceuticals Inc, RG Aerztefortbildung, Institut für Disease Management, Springer GmbH, IQVIA Commercial, Ingress Health, Wort&Bild Verlag, Verlag ME, and Procter&Gamble, outside the submitted work; and is a member of EAACI Excom, a member of external board of directors of DGAKI; and coordinator, main or coauthor of different position papers and guidelines on rhinology, allergology, and allergenimmunotherapy. M.J. Torres reports grants from the European Commission, SEAIC, and ISCIII; personal fees from Diater Laboratories and Leti Laboratories, and other from Aimmune Therapeutics, outside the submitted work. L. Klimek reports grants from Allergopharma, MEDA/Mylan, ALK Abelló, LETI Pharma, Stallergenes, Sanofi, ASIT Biotech, Lofarma Quintiles, AstraZeneca, GlaxoSmithKline, and Inmunotk; and personal fees from Allergopharma, MEDA/Mylan, HAL Allergie, LETI Pharma, Sanofi, Allergy Therapeut, and Cassella Med, outside the submitted work. J.A. Fonseca reports grants from AstraZeneca and Mundipharma; and personal fees from AstraZeneca, Mundipharma, Sanofi, GlaxoSmithKline, and Teva, outside the submitted work. T. Zuberbier reports grants from Novartis and Henkel; and personal fees from Bayer Health Care, FAES, Novartis, Henkel, AstraZeneca, AbbVie, ALK, Almirall, Astellas, Bencard, Berlin Chemie, HAL, Leti, Meda, Menarini, Merck, MSD, Pfizer, Sanofi, Stallergenes, Takeda, Teva, UCB, Kryolan, and L'Oréal, outside the submitted work. J. Bousquet reports personal fees from Chiesi, Cipla, Hikma, Menarini, Mundipharma, Mylan, Novartis, Purina, Sanofi-Aventis, Takeda, Teva, and Uriach; and other from Kyomed-Innov, outside the submitted work. The rest of the authors declare that they have no relevant conflicts of interest.",
+  "study_design": "Systematic review with meta-analysis of randomized controlled trials.",
+  "population": {
+    "description": "Patients aged 12 years and older with seasonal allergic rhinitis or perennial allergic rhinitis.",
+    "inclusion_criteria": [
+      "Randomized controlled trials with a parallel design.",
+      "Patients aged 12 years and older with seasonal or perennial allergic rhinitis.",
+      "Comparison of intranasal medications (intranasal corticosteroids, intranasal antihistamines, or fixed combinations of intranasal corticosteroids plus intranasal antihistamines) versus oral medications (oral antihistamines or leukotriene receptor antagonists).",
+      "Studies reporting at least one of the following patient-reported outcome measures: Total Nasal Symptom Score, Total Ocular Symptom Score, Total Symptom Score, or Rhinoconjunctivitis Quality of Life Questionnaire.",
+      "Follow-up duration of at least 2 weeks for seasonal allergic rhinitis and at least 4 weeks for perennial allergic rhinitis."
+    ],
+    "exclusion_criteria": [],
+    "n_patients": null,
+    "mean_age": null,
+    "care_setting": "ambulatory"
+  },
+  "interventions": [
+    "Intranasal corticosteroids (INCS)",
+    "Intranasal antihistamines (INAH)",
+    "Fixed combinations of INCS plus INAH"
+  ],
+  "comparators": [
+    "Oral antihistamines (OAH)",
+    "Leukotriene receptor antagonists (LTRA)"
+  ],
+  "outcomes": {
+    "primary": [
+      "Total Nasal Symptom Score (TNSS)",
+      "Total Ocular Symptom Score (TOSS)",
+      "Rhinoconjunctivitis Quality of Life Questionnaire (RQLQ)"
+    ],
+    "secondary": [
+      "Total Symptom Score (TSS)",
+      "Development of adverse events",
+      "Withdrawals due to adverse events"
+    ]
+  },
+  "statistical_methods": "Random-effects meta-analyses of mean differences in change from baseline were performed for effectiveness outcomes. Restricted maximum likelihood was used to estimate between-study variance. Heterogeneity was assessed using the Q-Cochran test P value and the I² statistic. Sensitivity analyses were conducted, including exclusion of studies with high risk of bias, imputed standard deviations, or non-2-week follow-up; and analyses restricted to specific drug comparisons. The credibility of effect modification in subgroup analyses was evaluated using the Instrument to Assess the Credibility of Effect Modification Analyses. A complementary approach computed probabilities of large, moderate, small, or trivial clinically relevant effects. Safety outcomes were meta-analyzed using risk ratios from random-effects models. Certainty of evidence was assessed with the GRADE approach.",
+  "follow_up": "At least 2 weeks for seasonal allergic rhinitis and at least 4 weeks for perennial allergic rhinitis, based on inclusion criteria.",
+  "search_strategy": "A systematic search was conducted in MEDLINE, Embase, Web of Science, and the Cochrane Central Register of Controlled Trials from database inception to August 2022, with an updated search in September 2023. Manual searches were performed on clinicaltrials.gov, the GlaxoSmithKline clinical study dataset, and the AstraZeneca Clinical Trials website. No restrictions were applied based on publication language, date, or status.",
+  "databases": [
+    "MEDLINE",
+    "Embase",
+    "Web of Science",
+    "Cochrane Central Register of Controlled Trials",
+    "clinicaltrials.gov",
+    "GlaxoSmithKline clinical study dataset",
+    "AstraZeneca Clinical Trials website"
+  ],
+  "n_studies_included": 35,
+  "quality_assessment_tool": "Cochrane Risk of Bias tool for individual studies and GRADE for certainty of evidence.",
+  "tables": [
+    {
+      "title": "Characteristics of Included Studies",
+      "data": {
+        "columns": [
+          "Study identification",
+          "Disease assessed",
+          "Nasal treatment and total daily dose (regimen)",
+          "Oral treatment and total daily dose (regimen)",
+          "Assessed outcomes",
+          "Follow-up",
+          "N participants nasal",
+          "N participants oral",
+          "Total N",
+          "Risk of bias"
+        ],
+        "rows": [
+          [
+            "Corren, 2005",
+            "Seasonal allergic rhinitis",
+            "Azelastine NA† (2 sprays/nostril BID)",
+            "Cetirizine 10 mg (QD)",
+            "rTNSS, RQLQ",
+            "2 wk",
+            "152",
+            "155",
+            "307",
+            "Unclear"
+          ],
+          [
+            "Berger, 2006",
+            "Seasonal allergic rhinitis",
+            "Azelastine NA† (2 sprays/nostril BID)",
+            "Cetirizine 10 mg (QD)",
+            "rTNSS, RQLQ",
+            "2 wk",
+            "179",
+            "175",
+            "354",
+            "Unclear"
+          ],
+          [
+            "Ratner, 1994",
+            "Seasonal allergic rhinitis",
+            "Azelastine 0.55 mg (2 sprays/nostril QD); Azelastine 1.1 mg (2 sprays/nostril BID)",
+            "Chlorpheniramine maleate 24 mg (BID)",
+            "rTSS",
+            "2 wk",
+            "125 (combined)",
+            "62",
+            "187",
+            "Unclear"
+          ],
+          [
+            "Bhatia, 2005",
+            "Seasonal allergic rhinitis",
+            "Budesonide 64 µg (QD)",
+            "Desloratadine 5 mg (QD)",
+            "rTSS, RQLQ",
+            "2 wk",
+            "30",
+            "31",
+            "61",
+            "Unclear"
+          ],
+          [
+            "Andrews, 2009 (NCT00435461)",
+            "Seasonal allergic rhinitis",
+            "Fluticasone furoate 110 µg (QD)",
+            "Fexofenadine 180 mg (QD)",
+            "rTNSS, rTOSS",
+            "2 wk",
+            "312",
+            "311",
+            "623",
+            "Unclear"
+          ],
+          [
+            "Andrews, 2009 (NCT00502775)",
+            "Seasonal allergic rhinitis",
+            "Fluticasone furoate 110 µg (QD)",
+            "Fexofenadine 180 mg (QD)",
+            "rTNSS, rTOSS",
+            "2 wk",
+            "224",
+            "227",
+            "451",
+            "Unclear"
+          ],
+          [
+            "Ford, 2015 (NCT01916226; GSK: 200165)",
+            "Seasonal allergic rhinitis",
+            "Fluticasone propionate 200 µg (2 sprays/nostril QD)",
+            "Cetirizine 10 mg (QD)",
+            "rTNSS, rTOSS",
+            "2 wk",
+            "170",
+            "170",
+            "340",
+            "Unclear"
+          ],
+          [
+            "Ratner, 1998 (FLTA4006)",
+            "Seasonal allergic rhinitis",
+            "Fluticasone propionate 200 µg (2 sprays/nostril QD)",
+            "Loratadine 10 mg (QD)",
+            "rTNSS, RQLQ",
+            "2 wk",
+            "150",
+            "150",
+            "300",
+            "High"
+          ],
+          [
+            "Bernstein, 2004 (FNM30033)",
+            "Seasonal allergic rhinitis",
+            "Fluticasone propionate 200 µg (2 sprays/nostril QD)",
+            "Loratadine 10 mg (QD)",
+            "rTOSS",
+            "4 wk",
+            "158",
+            "163",
+            "321",
+            "Low"
+          ],
+          [
+            "Lu, 2009",
+            "Seasonal allergic rhinitis",
+            "Beclomethasone 400 µg (BID)",
+            "Montelukast 10 mg (QD); Loratadine 10 mg (QD)",
+            "rTSS, rTNSS, RQLQ",
+            "2 wk",
+            "173",
+            "228 (combined oral groups)",
+            "401",
+            "Unclear"
+          ],
+          [
+            "Ratner, 2003 (FNM40195)",
+            "Seasonal allergic rhinitis",
+            "Fluticasone propionate 200 µg (QD)",
+            "Montelukast 10 mg (QD)",
+            "rTNSS",
+            "2 wk",
+            "353",
+            "352",
+            "705",
+            "High"
+          ],
+          [
+            "Martin, 2006",
+            "Seasonal allergic rhinitis",
+            "Fluticasone propionate 200 µg (QD)",
+            "Montelukast 10 mg (QD)",
+            "rTNSS",
+            "2 wk",
+            "367",
+            "369",
+            "736",
+            "Unclear"
+          ]
+        ]
+      },
+      "summary": "Table shows key characteristics of included randomized controlled trials comparing intranasal versus oral treatments for allergic rhinitis. Studies assessed seasonal allergic rhinitis, with outcomes including TNSS, TOSS, RQLQ, and TSS. Follow-up ranged from 2 to 4 weeks. The most common intranasal treatments were azelastine, fluticasone propionate, fluticasone furoate, and budesonide; oral treatments included cetirizine, loratadine, fexofenadine, desloratadine, montelukast, and chlorpheniramine. Risk of bias was predominantly unclear due to poor reporting of randomization and allocation concealment; a few studies were at high risk of bias, mainly from selective reporting. Only the most representative rows are shown here; the full table contains 35 studies."
+    }
+  ],
+  "main_conclusion": "Evidence from randomized controlled trials indicates that intranasal medications—corticosteroids or antihistamines—are more effective than oral antihistamines or leukotriene receptor antagonists for reducing nasal and ocular symptoms and improving quality of life in seasonal allergic rhinitis, with a similar overall safety profile.",
+  "narrative_summary": "This systematic review with meta-analysis synthesized data from 35 randomized controlled trials enrolling patients aged 12 years and older with seasonal allergic rhinitis. The review compared intranasal treatments (corticosteroids or antihistamines) against oral treatments (antihistamines or leukotriene receptor antagonists). Outcomes included Total Nasal Symptom Score (TNSS), Total Ocular Symptom Score (TOSS), Rhinoconjunctivitis Quality of Life Questionnaire (RQLQ), adverse events, and withdrawals due to adverse events. Meta-analyses demonstrated that intranasal corticosteroids were significantly more effective than oral antihistamines for TNSS (MD −0.86; 95% CI −1.21 to −0.51; I² = 70%), TOSS (MD −0.36; 95% CI −0.56 to −0.17; I² = 0%), and RQLQ (MD −0.88; 95% CI −1.15 to −0.61; I² = 0%). Intranasal corticosteroids also outperformed leukotriene receptor antagonists (TNSS MD −1.05; 95% CI −1.33 to −0.77). Intranasal antihistamines were more effective than oral antihistamines for TNSS (MD −0.47; 95% CI −0.81 to −0.14; I² = 0%) and RQLQ (MD −0.31; 95% CI −0.57 to −0.06; I² = 0%). Safety outcomes showed no significant differences between intranasal and oral treatments overall, except for a higher risk of adverse events with intranasal antihistamines versus oral antihistamines (RR 2.10; 95% CI 1.04–4.26). The certainty of evidence was moderate to high for most comparisons. These findings strongly support the preferential use of intranasal medications as first-line therapy for seasonal allergic rhinitis and may inform future guideline recommendations. However, the evidence is limited to seasonal allergic rhinitis; data on perennial disease are sparse.",
+  "main_findings": [
+    {
+      "description": "Intranasal treatments overall were more effective than oral treatments at improving the Total Nasal Symptom Score (TNSS) in seasonal allergic rhinitis.",
+      "metric": "Mean Difference (MD)",
+      "value": "-0.83",
+      "ci_95": "-1.09 to -0.57",
+      "p_value": null,
+      "n_events": null,
+      "context": "I²=65%, moderate certainty of evidence (GRADE), probability of clinically relevant improvement 70%, based on 20 studies (6,742 participants)."
+    },
+    {
+      "description": "Intranasal corticosteroids (INCS) were more effective than oral antihistamines (OAH) at improving the TNSS in seasonal allergic rhinitis.",
+      "metric": "Mean Difference (MD)",
+      "value": "-0.86",
+      "ci_95": "-1.20 to -0.51",
+      "p_value": null,
+      "n_events": null,
+      "context": "I²=70%, low certainty of evidence (GRADE), probability of clinically relevant improvement 68%, based on 15 studies (4,423 participants)."
+    },
+    {
+      "description": "Intranasal corticosteroids (INCS) were more effective than oral leukotriene receptor antagonists (LTRA) at improving the TNSS in seasonal allergic rhinitis.",
+      "metric": "Mean Difference (MD)",
+      "value": "-1.05",
+      "ci_95": "-1.32 to -0.77",
+      "p_value": null,
+      "n_events": null,
+      "context": "I²=0%, high certainty of evidence (GRADE), probability of clinically relevant improvement 98%, based on 2 studies (1,441 participants)."
+    },
+    {
+      "description": "Intranasal antihistamines (INAH) were more effective than oral antihistamines (OAH) at improving the TNSS in seasonal allergic rhinitis.",
+      "metric": "Mean Difference (MD)",
+      "value": "-0.47",
+      "ci_95": "-0.81 to -0.14",
+      "p_value": null,
+      "n_events": null,
+      "context": "I²=0%, high certainty of evidence (GRADE), probability of clinically relevant improvement 44%, based on 3 studies (878 participants)."
+    },
+    {
+      "description": "Intranasal corticosteroids (INCS) were more effective than oral antihistamines (OAH) at improving the Total Ocular Symptom Score (TOSS) in seasonal allergic rhinitis.",
+      "metric": "Mean Difference (MD)",
+      "value": "-0.36",
+      "ci_95": "-0.56 to -0.17",
+      "p_value": null,
+      "n_events": null,
+      "context": "I²=0%, high certainty of evidence (GRADE), probability of clinically relevant improvement 21%, based on 5 studies (2,051 participants)."
+    },
+    {
+      "description": "Intranasal treatments overall were more effective than oral treatments at improving the Rhinoconjunctivitis Quality of Life Questionnaire (RQLQ) score in seasonal allergic rhinitis.",
+      "metric": "Mean Difference (MD)",
+      "value": "-0.55",
+      "ci_95": "-0.94 to -0.17",
+      "p_value": null,
+      "n_events": null,
+      "context": "I²=68%, high certainty of evidence (GRADE), probability of moderate improvement 28% and small improvement 59%, based on 4 studies (1,022 participants)."
+    },
+    {
+      "description": "Intranasal corticosteroids (INCS) were more effective than oral antihistamines (OAH) at improving the RQLQ score in seasonal allergic rhinitis.",
+      "metric": "Mean Difference (MD)",
+      "value": "-0.88",
+      "ci_95": "-1.15 to -0.61",
+      "p_value": null,
+      "n_events": null,
+      "context": "I²=0%, high certainty of evidence (GRADE), probability of large improvement 72% and moderate improvement 28%, based on 2 studies (361 participants)."
+    },
+    {
+      "description": "Intranasal antihistamines (INAH) were more effective than oral antihistamines (OAH) at improving the RQLQ score in seasonal allergic rhinitis.",
+      "metric": "Mean Difference (MD)",
+      "value": "-0.31",
+      "ci_95": "-0.57 to -0.06",
+      "p_value": null,
+      "n_events": null,
+      "context": "I²=0%, low certainty of evidence (GRADE), probability of clinically relevant improvement 81%, based on 2 studies (661 participants)."
+    }
+  ],
+  "safety_results": {
+    "overall_adverse_events": "No significant difference in risk of any adverse event between intranasal and oral treatments overall (RR 1.02, 95% CI 0.94-1.09, I²=0%, 22 studies, 6,520 participants, moderate certainty of evidence).",
+    "grade_3_4_events": null,
+    "discontinuations": "No significant difference in risk of withdrawals due to adverse events (RR 1.00, 95% CI 0.72-1.38, I²=0%, 30 studies, 8,792 participants, moderate certainty of evidence).",
+    "related_deaths": null,
+    "notable_adverse_events": [
+      "Intranasal antihistamines (INAH) were associated with a higher risk of adverse events compared to oral antihistamines (OAH) (RR 2.10, 95% CI 1.04-4.26, I²=0%, low certainty of evidence).",
+      "Two serious adverse events were reported with intranasal corticosteroids and five with oral antihistamines, all unlikely to be related to treatment."
+    ]
+  },
+  "subgroup_analyses": [
+    "Sensitivity analyses excluding studies with high risk of bias: INCS vs OAH for TNSS, MD -0.72 (95% CI -1.07 to -0.36, I²=73%), credibility of effect modification moderate; overall intranasal vs oral for TNSS, MD -0.70 (95% CI -0.98 to -0.44, I²=67%), credibility low.",
+    "Sensitivity analyses excluding studies with imputed standard deviations yielded consistent results for all comparisons.",
+    "Sensitivity analyses restricting to studies with 2-week follow-up also produced consistent findings.",
+    "Individual drug comparisons within classes (e.g., specific INCS vs specific OAH) are reported in online supplementary tables.",
+    "Subgroup analysis for perennial allergic rhinitis was not feasible due to insufficient data (only 2 studies with heterogeneous outcomes)."
+  ],
+  "secondary_results": [
+    "Meta-analysis of Total Symptom Score (TSS) was not possible because of substantial heterogeneity in the definition and included symptoms across studies.",
+    "No meta-analysis was performed for perennial allergic rhinitis due to only two studies reporting TSS with different definitions.",
+    "For all effectiveness outcomes, intranasal treatments demonstrated superiority, with the magnitude of effect varying by drug class: largest difference for INCS vs LTRA, followed by INCS vs OAH, and smallest for INAH vs OAH.",
+    "Probability analyses based on decision thresholds indicated that most comparisons had high probabilities of clinically relevant improvement, except for TOSS (21%) and INAH vs OAH for TNSS (44%)."
+  ],
+  "diseases_and_conditions": [
+    {
+      "name": "Allergic rhinitis",
+      "context": "Main condition under investigation; encompasses seasonal and perennial forms."
+    },
+    {
+      "name": "Seasonal allergic rhinitis",
+      "context": "Subtype triggered by seasonal allergens; most included studies assessed this condition."
+    },
+    {
+      "name": "Perennial allergic rhinitis",
+      "context": "Subtype with year-round symptoms; limited evidence from two studies precluded meta-analysis."
+    }
+  ],
+  "drugs_and_therapies": [
+    {
+      "name": "Intranasal corticosteroids (INCS)",
+      "mechanism": null,
+      "context": "Class of anti-inflammatory nasal sprays evaluated against oral antihistamines and leukotriene receptor antagonists."
+    },
+    {
+      "name": "Intranasal antihistamines (INAH)",
+      "mechanism": null,
+      "context": "Class of antihistamine nasal sprays compared primarily with oral antihistamines."
+    },
+    {
+      "name": "Oral antihistamines (OAH)",
+      "mechanism": null,
+      "context": "Class of oral histamine receptor blockers used as comparators to intranasal treatments."
+    },
+    {
+      "name": "Leukotriene receptor antagonists (LTRA)",
+      "mechanism": null,
+      "context": "Class of oral medications blocking leukotriene receptors, compared with intranasal corticosteroids."
+    },
+    {
+      "name": "Azelastine",
+      "mechanism": null,
+      "context": "Intranasal antihistamine used in several included studies; compared against oral antihistamines."
+    },
+    {
+      "name": "Cetirizine",
+      "mechanism": null,
+      "context": "Oral antihistamine used as a comparator in studies assessing intranasal treatments."
+    },
+    {
+      "name": "Desloratadine",
+      "mechanism": null,
+      "context": "Oral antihistamine evaluated in included RCTs against intranasal medications."
+    },
+    {
+      "name": "Chlorpheniramine maleate",
+      "mechanism": null,
+      "context": "Oral antihistamine used in earlier studies comparing intranasal azelastine."
+    },
+    {
+      "name": "Budesonide",
+      "mechanism": null,
+      "context": "Intranasal corticosteroid studied in trials versus oral antihistamines."
+    },
+    {
+      "name": "Ciclesonide",
+      "mechanism": null,
+      "context": "Intranasal corticosteroid assessed in one included trial against oral levocetirizine."
+    },
+    {
+      "name": "Fluticasone furoate",
+      "mechanism": null,
+      "context": "Intranasal corticosteroid compared with oral fexofenadine in two included studies."
+    },
+    {
+      "name": "Fluticasone propionate",
+      "mechanism": null,
+      "context": "Intranasal corticosteroid extensively studied; compared with OAH and LTRA in multiple trials."
+    },
+    {
+      "name": "Mometasone furoate",
+      "mechanism": null,
+      "context": "Intranasal corticosteroid evaluated against loratadine in seasonal allergic rhinitis."
+    },
+    {
+      "name": "Triamcinolone acetonide",
+      "mechanism": null,
+      "context": "Intranasal corticosteroid compared with oral antihistamines in ragweed-induced allergic rhinitis."
+    },
+    {
+      "name": "Fexofenadine",
+      "mechanism": null,
+      "context": "Oral antihistamine used as comparator in studies of fluticasone furoate."
+    },
+    {
+      "name": "Loratadine",
+      "mechanism": null,
+      "context": "Oral antihistamine frequently used as a comparator against multiple intranasal corticosteroids."
+    },
+    {
+      "name": "Levocetirizine",
+      "mechanism": null,
+      "context": "Oral antihistamine compared with intranasal budesonide and ciclesonide."
+    },
+    {
+      "name": "Ebastine",
+      "mechanism": null,
+      "context": "Oral antihistamine assessed in one study versus intranasal azelastine."
+    },
+    {
+      "name": "Terfenadine",
+      "mechanism": null,
+      "context": "Oral antihistamine in older trials; compared with intranasal azelastine and fluticasone propionate."
+    },
+    {
+      "name": "Astemizole",
+      "mechanism": null,
+      "context": "Oral antihistamine compared with intranasal triamcinolone acetonide."
+    },
+    {
+      "name": "Montelukast",
+      "mechanism": null,
+      "context": "Leukotriene receptor antagonist; compared with intranasal fluticasone propionate in two studies."
+    },
+    {
+      "name": "Dexchlorpheniramine maleate",
+      "mechanism": null,
+      "context": "Oral antihistamine used in an early study versus intranasal budesonide."
+    },
+    {
+      "name": "Fixed combinations of INCS plus INAH",
+      "mechanism": null,
+      "context": "Mentioned as a potential intranasal treatment but no specific combination was assessed in the included studies."
+    }
+  ],
+  "biomarkers_and_genes": [],
+  "scales_and_classifications": [
+    {
+      "name": "Total Nasal Symptom Score (TNSS)",
+      "description": "Patient-reported outcome measuring four nasal symptoms (congestion, itching, sneezing, rhinorrhea); higher score indicates worse symptoms."
+    },
+    {
+      "name": "Total Ocular Symptom Score (TOSS)",
+      "description": "Patient-reported outcome for three ocular symptoms (itching/burning, tearing/watering, redness); higher score indicates worse symptoms."
+    },
+    {
+      "name": "Total Symptom Score (TSS)",
+      "description": "Patient-reported outcome with varying symptom composition across studies; not meta-analyzed due to heterogeneity."
+    },
+    {
+      "name": "Rhinoconjunctivitis Quality of Life Questionnaire (RQLQ)",
+      "description": "Questionnaire measuring quality of life in rhinoconjunctivitis; higher score indicates greater impairment."
+    },
+    {
+      "name": "Cochrane Risk of Bias tool (RoB)",
+      "description": "Instrument to assess risk of bias in randomized controlled trials across several domains."
+    },
+    {
+      "name": "Grading of Recommendations, Assessment, Development and Evaluation (GRADE)",
+      "description": "Framework for assessing the certainty of evidence in systematic reviews."
+    },
+    {
+      "name": "Instrument to Assess the Credibility of Effect Modification Analyses (ICEMAN)",
+      "description": "Tool to evaluate the credibility of subgroup effect modifications in meta-analyses."
+    },
+    {
+      "name": "ARIA guidelines classification",
+      "description": "Allergic rhinitis classified as seasonal/perennial or intermittent/persistent based on symptom duration and triggers."
+    }
+  ],
+  "key_numeric_data": [
+    {
+      "parameter": "INCS vs OAH TNSS mean difference",
+      "value": "-0.86 (95% CI -1.21 to -0.51; I²=70%)",
+      "context": "Pooled result from 15 RCTs (4423 participants) for Total Nasal Symptom Score."
+    },
+    {
+      "parameter": "INCS vs LTRA TNSS mean difference",
+      "value": "-1.05 (95% CI -1.33 to -0.77; I²=0%)",
+      "context": "Pooled result from 2 RCTs (1441 participants) comparing intranasal corticosteroids with oral montelukast."
+    },
+    {
+      "parameter": "INAH vs OAH TNSS mean difference",
+      "value": "-0.47 (95% CI -0.81 to -0.14; I²=0%)",
+      "context": "Pooled result from 3 RCTs (878 participants) for intranasal antihistamines versus oral antihistamines."
+    },
+    {
+      "parameter": "Overall intranasal vs oral TNSS mean difference",
+      "value": "-0.83 (95% CI -1.09 to -0.57; I²=65%)",
+      "context": "Pooled result from 20 RCTs (6742 participants) combining all intranasal versus oral treatment comparisons."
+    },
+    {
+      "parameter": "INCS vs OAH TOSS mean difference",
+      "value": "-0.36 (95% CI -0.56 to -0.17; I²=0%)",
+      "context": "Pooled result from 5 RCTs (2051 participants) for Total Ocular Symptom Score."
+    },
+    {
+      "parameter": "INAH vs OAH RQLQ mean difference",
+      "value": "-0.31 (95% CI -0.57 to -0.06; I²=0%)",
+      "context": "Pooled result from 2 RCTs (661 participants) for Rhinoconjunctivitis Quality of Life Questionnaire."
+    },
+    {
+      "parameter": "INCS vs OAH RQLQ mean difference",
+      "value": "-0.88 (95% CI -1.15 to -0.61; I²=0%)",
+      "context": "Pooled result from 2 RCTs (361 participants) comparing intranasal corticosteroids with oral antihistamines."
+    },
+    {
+      "parameter": "Overall intranasal vs oral RQLQ mean difference",
+      "value": "-0.55 (95% CI -0.94 to -0.17; I²=68%)",
+      "context": "Pooled result from 4 RCTs (1022 participants) for quality of life."
+    },
+    {
+      "parameter": "Overall intranasal vs oral adverse events RR",
+      "value": "1.02 (95% CI 0.94-1.09; I²=0%)",
+      "context": "Risk ratio for experiencing at least one adverse event, based on 22 studies (6520 participants)."
+    },
+    {
+      "parameter": "INAH vs OAH adverse events RR",
+      "value": "2.10 (95% CI 1.04-4.26; I²=0%)",
+      "context": "Risk ratio for adverse events comparing intranasal antihistamines with oral antihistamines."
+    },
+    {
+      "parameter": "Overall intranasal vs oral withdrawals due to AE RR",
+      "value": "1.00 (95% CI 0.72-1.38; I²=0%)",
+      "context": "Risk ratio for study withdrawal due to adverse events, based on 30 studies (8792 participants)."
+    },
+    {
+      "parameter": "Probability of clinically relevant improvement: INCS vs OAH TNSS",
+      "value": "68%",
+      "context": "Post-hoc analysis indicating the probability that the observed difference represents a clinically meaningful effect."
+    },
+    {
+      "parameter": "Probability of clinically relevant improvement: INCS vs LTRA TNSS",
+      "value": "98%",
+      "context": "Probability that the effect of intranasal corticosteroids over leukotriene receptor antagonists is clinically meaningful."
+    },
+    {
+      "parameter": "Probability of clinically relevant improvement: INAH vs OAH RQLQ",
+      "value": "81%",
+      "context": "Probability that the quality of life benefit of intranasal antihistamines over oral antihistamines is clinically relevant."
+    },
+    {
+      "parameter": "Total number of included studies",
+      "value": "35",
+      "context": "Number of unique RCTs included in the systematic review."
+    }
+  ],
+  "_usage": {
+    "model": "deepseek-v4-pro",
+    "input_tokens": 138267,
+    "output_tokens": 9427,
+    "total_tokens": 147694,
+    "cost": null
+  }
+}

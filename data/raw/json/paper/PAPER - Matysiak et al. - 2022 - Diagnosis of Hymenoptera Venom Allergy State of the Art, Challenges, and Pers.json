@@ -1,0 +1,360 @@
+{
+  "interpretation": null,
+  "comparison_with_prior_evidence": null,
+  "clinical_implications": [],
+  "practice_implications": [],
+  "limitations": [],
+  "strengths": [],
+  "open_questions": [],
+  "future_directions": [],
+  "title": "Diagnosis of Hymenoptera Venom Allergy: State of the Art, Challenges, and Perspectives",
+  "authors": [
+    "Joanna Matysiak",
+    "Eliza Matuszewska",
+    "Kacper Packi",
+    "Agnieszka Klupczyńska-Gabryszak"
+  ],
+  "journal": "Biomedicines",
+  "year": 2022,
+  "doi": "10.3390/biomedicines10092170",
+  "trial_registration": null,
+  "article_type": "narrative_review",
+  "article_subtype": null,
+  "medical_specialty": "allergy and immunology",
+  "keywords": [
+    "Hymenoptera venom allergy",
+    "diagnostics",
+    "Hymenoptera venom allergens",
+    "cross-reactive carbohydrate determinants"
+  ],
+  "language": "en",
+  "funding": null,
+  "conflicts_of_interest": null,
+  "main_findings": [],
+  "safety_results": {
+    "overall_adverse_events": null,
+    "grade_3_4_events": null,
+    "discontinuations": null,
+    "related_deaths": null,
+    "notable_adverse_events": []
+  },
+  "subgroup_analyses": [],
+  "secondary_results": [],
+  "study_design": "Narrative review",
+  "population": {
+    "description": null,
+    "inclusion_criteria": [],
+    "exclusion_criteria": [],
+    "n_patients": null,
+    "mean_age": null,
+    "care_setting": null
+  },
+  "interventions": [],
+  "comparators": [],
+  "outcomes": {
+    "primary": [],
+    "secondary": []
+  },
+  "statistical_methods": null,
+  "follow_up": null,
+  "search_strategy": null,
+  "databases": [],
+  "n_studies_included": null,
+  "quality_assessment_tool": null,
+  "tables": [],
+  "main_conclusion": "The diagnosis of Hymenoptera venom allergy, the leading cause of anaphylaxis in adults, remains challenging despite advances in molecular diagnostics. Current methods face limitations such as double positivity of specific IgE to honeybee and wasp venom due to cross-reactive carbohydrate determinants. The review underscores the need for novel diagnostic approaches, including multidimensional molecular analyses, to improve accuracy and enable personalized venom immunotherapy.",
+  "narrative_summary": "Hymenoptera venom allergy is a common cause of anaphylaxis, particularly in adults, and proper diagnosis is essential for guiding venom immunotherapy, which significantly reduces the risk of severe reactions. Diagnosis begins with clinical history and identification of the stinging insect, but patient and physician errors in insect recognition are common. The main diagnostic tools are skin tests and measurement of venom-specific IgE antibodies, though both have limitations. A major challenge is double positivity for honeybee and wasp venom IgE, often due to cross-reactive carbohydrate determinants (CCDs) rather than true dual sensitization. Molecular diagnostics using recombinant allergens can help distinguish genuine sensitivities from cross-reactivity. The basophil activation test, while more specific, is not widely available and may also be affected by CCDs. Recent proteomic and metabolomic studies have identified potential biomarkers for venom allergy, offering hope for improved diagnostics. The review highlights the need for standardized, accessible, and more precise diagnostic tests to overcome current challenges and ensure appropriate patient management. Ultimately, accurate diagnosis is the cornerstone of effective venom immunotherapy and prevention of life-threatening anaphylaxis.",
+  "condition_or_topic": "Hymenoptera venom allergy",
+  "clinical_background": "Hymenoptera venom allergy represents the leading cause of anaphylaxis among adults and the second most common in children. Stings can provoke reactions ranging from normal local responses to large local reactions and systemic manifestations involving the skin, respiratory tract, cardiovascular system, gastrointestinal tract, or nervous system. European epidemiological data indicate that systemic reactions occur in 0.3 to 8.9% of adults and up to 32% of beekeepers. Although fatalities are uncommon, Hymenoptera stings account for 20% of anaphylaxis-related deaths. Thus, this allergy is potentially life-threatening, and all patients with systemic symptoms require thorough diagnostic evaluation. Accurate diagnosis is essential for appropriate management, including venom immunotherapy (VIT), which is the most effective treatment for reducing the risk of future severe reactions and for improving quality of life. Currently, improved diagnostic tools enable individualized diagnostic and therapeutic approaches.",
+  "objectives": [],
+  "clinical_question": null,
+  "diseases_and_conditions": [
+    {
+      "name": "Hymenoptera venom allergy",
+      "context": "most common cause of anaphylaxis in adults; main subject of the review on diagnostic approaches"
+    },
+    {
+      "name": "anaphylaxis",
+      "context": "severe systemic allergic reaction; Hymenoptera venom allergy is the leading cause in adults"
+    },
+    {
+      "name": "large local reaction (LLR)",
+      "context": "exaggerated local response to sting; may warrant diagnostic tests in high-risk individuals (e.g., beekeepers)"
+    },
+    {
+      "name": "systemic reaction",
+      "context": "generalized symptoms after sting; indication for diagnostic workup and venom immunotherapy"
+    },
+    {
+      "name": "mastocytosis",
+      "context": "condition with elevated basal serum tryptase; associated with higher risk of severe sting reactions"
+    },
+    {
+      "name": "cross-reactivity",
+      "context": "IgE antibodies recognizing similar epitopes across different venoms; complicates diagnosis and choice of immunotherapy"
+    },
+    {
+      "name": "double sensitization",
+      "context": "positive IgE to both honeybee and wasp venom; often due to cross-reactive carbohydrate determinants or true dual allergy"
+    }
+  ],
+  "drugs_and_therapies": [
+    {
+      "name": "venom immunotherapy (VIT)",
+      "mechanism": "induces immunological tolerance to the allergen; reduces risk of subsequent severe reactions",
+      "context": "standard treatment for Hymenoptera venom allergy, typically lasting 3–5 years"
+    }
+  ],
+  "biomarkers_and_genes": [
+    {
+      "name": "venom-specific IgE (sIgE)",
+      "role": "diagnostic",
+      "context": "serological marker of sensitization; determined using whole venom extracts"
+    },
+    {
+      "name": "rApi m 1",
+      "role": "diagnostic",
+      "context": "recombinant honeybee venom allergen (phospholipase A2) used in component-resolved diagnosis"
+    },
+    {
+      "name": "rApi m 2",
+      "role": "diagnostic",
+      "context": "recombinant honeybee venom allergen (hyaluronidase) used in component-resolved diagnosis"
+    },
+    {
+      "name": "rApi m 3",
+      "role": "diagnostic",
+      "context": "recombinant honeybee venom allergen (acid phosphatase) used in component-resolved diagnosis"
+    },
+    {
+      "name": "rApi m 5",
+      "role": "diagnostic",
+      "context": "recombinant honeybee venom allergen (dipeptidyl peptidase-IV) used in component-resolved diagnosis"
+    },
+    {
+      "name": "rApi m 10",
+      "role": "diagnostic",
+      "context": "recombinant honeybee venom allergen (icarpin) used in component-resolved diagnosis; underrepresented in some therapeutic extracts, risk factor for VIT failure"
+    },
+    {
+      "name": "rVes v 1",
+      "role": "diagnostic",
+      "context": "recombinant wasp venom allergen (phospholipase A1) used in component-resolved diagnosis"
+    },
+    {
+      "name": "rVes v 5",
+      "role": "diagnostic",
+      "context": "recombinant wasp venom allergen (antigen 5) used in component-resolved diagnosis"
+    },
+    {
+      "name": "rPol d 5",
+      "role": "diagnostic",
+      "context": "recombinant paper wasp venom allergen (antigen 5) used in component-resolved diagnosis"
+    },
+    {
+      "name": "basophil activation test (BAT)",
+      "role": "diagnostic",
+      "context": "flow cytometry-based functional assay measuring basophil activation after venom stimulation; used when standard tests fail"
+    },
+    {
+      "name": "basal serum tryptase (BST)",
+      "role": "prognostic",
+      "context": "elevated levels indicate greater risk of severe reactions to Hymenoptera stings and possible underlying mastocytosis"
+    },
+    {
+      "name": "venom-specific IgG4 (sIgG4)",
+      "role": "predictive/monitoring",
+      "context": "levels increase during VIT; potential marker of protection and immunotherapy efficacy"
+    },
+    {
+      "name": "cross-reactive carbohydrate determinants (CCDs)",
+      "role": "diagnostic confounder",
+      "context": "glycan epitopes on glycoproteins causing cross-reactivity; frequent cause of double positivity in sIgE testing"
+    },
+    {
+      "name": "cleaved haptoglobin",
+      "role": "prognostic",
+      "context": "serum protein identified as specific marker in bee venom allergy; may be prognostic for anaphylaxis"
+    },
+    {
+      "name": "coagulation factor XIII chain A",
+      "role": "diagnostic",
+      "context": "protein altered in serum after venom exposure; identified in proteomic studies as potential biomarker"
+    },
+    {
+      "name": "fibrinogen alpha chain",
+      "role": "diagnostic",
+      "context": "protein altered in serum after venom exposure; identified in proteomic studies as potential biomarker"
+    },
+    {
+      "name": "complement C4-A",
+      "role": "diagnostic",
+      "context": "protein altered in serum after venom exposure; identified in proteomic studies as potential biomarker"
+    },
+    {
+      "name": "inter-alpha-trypsin inhibitor heavy chain H4",
+      "role": "diagnostic",
+      "context": "protein altered in serum after venom exposure; identified in proteomic studies as potential biomarker"
+    },
+    {
+      "name": "soluble CD30/TNFRSF8 (sCD30)",
+      "role": "diagnostic",
+      "context": "inflammatory marker significantly changed after venom exposure; potential biomarker of allergic inflammation"
+    },
+    {
+      "name": "soluble tumor necrosis factor receptor 1 (sTNF-R1)",
+      "role": "diagnostic",
+      "context": "inflammatory marker significantly changed after venom exposure; potential biomarker of allergic inflammation"
+    },
+    {
+      "name": "matrix metalloproteinase-3 (MMP-3)",
+      "role": "diagnostic",
+      "context": "inflammatory marker significantly changed after venom exposure; potential biomarker of allergic inflammation"
+    },
+    {
+      "name": "hornsin",
+      "role": "diagnostic",
+      "context": "potential biomarker for allergic diseases mentioned in literature; regulatory protein"
+    },
+    {
+      "name": "psoriasin",
+      "role": "diagnostic",
+      "context": "potential biomarker for allergic diseases mentioned in literature; regulatory protein"
+    },
+    {
+      "name": "calgranulin-B",
+      "role": "diagnostic",
+      "context": "potential biomarker for allergic diseases mentioned in literature; regulatory protein"
+    },
+    {
+      "name": "apolipoprotein E",
+      "role": "diagnostic",
+      "context": "potential biomarker for allergic diseases mentioned in literature"
+    },
+    {
+      "name": "apolipoprotein H",
+      "role": "diagnostic",
+      "context": "potential biomarker for allergic diseases mentioned in literature"
+    },
+    {
+      "name": "plasma albumin",
+      "role": "diagnostic",
+      "context": "acute phase protein; potential biomarker for inflammation in allergic diseases"
+    },
+    {
+      "name": "transferrin",
+      "role": "diagnostic",
+      "context": "acute phase protein; potential biomarker for inflammation in allergic diseases"
+    },
+    {
+      "name": "lactoferrin",
+      "role": "diagnostic",
+      "context": "acute phase protein; potential biomarker for inflammation in allergic diseases"
+    },
+    {
+      "name": "fibrinogen",
+      "role": "diagnostic",
+      "context": "acute phase protein; potential biomarker for inflammation in allergic diseases"
+    },
+    {
+      "name": "orosomucoid (ORM-1 and ORM-2)",
+      "role": "diagnostic",
+      "context": "acute phase proteins; potential biomarkers for inflammation in allergic diseases"
+    }
+  ],
+  "scales_and_classifications": [],
+  "key_numeric_data": [
+    {
+      "parameter": "Diagnostic yield of SPTs alone for HVA",
+      "value": "49%",
+      "context": "Proportion of HVA patients identified by skin prick tests alone"
+    },
+    {
+      "parameter": "Diagnostic yield of SPTs + intradermal tests for HVA",
+      "value": "94%",
+      "context": "Proportion of HVA patients identified by combining skin prick tests and intradermal tests"
+    },
+    {
+      "parameter": "False negative rate of in vitro sIgE in skin test positive patients",
+      "value": "20%",
+      "context": "Percentage of patients with positive skin tests but negative in vitro venom sIgE"
+    },
+    {
+      "parameter": "Positive in vitro sIgE rate in skin test negative patients",
+      "value": "10%",
+      "context": "Percentage of patients with negative skin tests but positive in vitro venom sIgE"
+    },
+    {
+      "parameter": "Sensitivity of wasp venom sIgE",
+      "value": "83–97%",
+      "context": "Range of sensitivity for whole wasp venom sIgE testing"
+    },
+    {
+      "parameter": "Sensitivity of honeybee venom sIgE",
+      "value": "98–100%",
+      "context": "Range of sensitivity for whole honeybee venom sIgE testing"
+    },
+    {
+      "parameter": "Proportion of double sensitization due to CCDs",
+      "value": "up to 75%",
+      "context": "Percentage of patients with double positivity to honeybee and yellow jacket venom attributable to cross-reactive carbohydrate determinants"
+    },
+    {
+      "parameter": "Sensitivity of CRD for bee venom allergy using all six allergens (Api m 1–5, Api m 10)",
+      "value": "94–95%",
+      "context": "Achievable sensitivity when all six available bee venom components are tested"
+    },
+    {
+      "parameter": "Sensitivity of CRD for bee venom allergy",
+      "value": "94.4%",
+      "context": "Sensitivity of component-resolved diagnosis for bee venom allergy as reported in a referenced study"
+    },
+    {
+      "parameter": "Sensitivity of CRD for wasp venom allergy (rVes v5 + rVes v1)",
+      "value": "up to 98%",
+      "context": "Sensitivity achieved by combining recombinant Ves v 5 and Ves v 1 testing"
+    },
+    {
+      "parameter": "Diagnostic yield of BAT in patients with negative standard tests",
+      "value": "67–81%",
+      "context": "Proportion of patients with negative skin tests and in vitro sIgE confirmed by basophil activation test"
+    },
+    {
+      "parameter": "Prevalence of double positivity to more than one venom in allergic patients",
+      "value": "up to 59%",
+      "context": "Percentage of Hymenoptera-allergic patients showing positive results to multiple venoms"
+    },
+    {
+      "parameter": "Prevalence of CCD-specific IgE in insect-allergic patients",
+      "value": "up to 72%",
+      "context": "Percentage of insect-allergic patients having IgE to cross-reactive carbohydrate determinants"
+    },
+    {
+      "parameter": "True double sensitization rate among double-positive patients",
+      "value": "56.1%",
+      "context": "Proportion of patients with double positivity confirmed as true dual sensitization (not cross-reactivity) in a referenced study"
+    },
+    {
+      "parameter": "CCD-specific IgE prevalence in beekeepers",
+      "value": "7.7%",
+      "context": "Low rate of CCD sensitization in regularly stung beekeepers, indicating tolerance"
+    },
+    {
+      "parameter": "Differentially abundant metabolites in wasp sting patients vs. controls",
+      "value": "almost 300",
+      "context": "Number of serum metabolites significantly different in a metabolomic study of wasp sting patients"
+    },
+    {
+      "parameter": "Proportion of bee-allergic patients sensitized to multiple bee allergens",
+      "value": "74%",
+      "context": "Percentage of patients with honeybee venom allergy having sIgE to more than one bee allergen component"
+    }
+  ],
+  "_usage": {
+    "model": "deepseek-v4-pro",
+    "input_tokens": 73536,
+    "output_tokens": 3840,
+    "total_tokens": 77376,
+    "cost": null
+  }
+}
