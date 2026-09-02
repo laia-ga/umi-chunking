@@ -1,4 +1,8 @@
 {
+    "embedding_model": {
+        "name": "BAAI/bge-m3"
+    },
+    
     "strategies": [
         {
             "name": "fixed_character_chunking",
