@@ -1,0 +1,227 @@
+{
+    "strategies": [
+        {
+            "name": "fixed_character_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "FixedCharacterChunker",
+                "params": {
+                    "chunk_size": 2000,
+                    "overlap": 200
+                }
+            }
+        },
+        {
+            "name": "fixed_token_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "FixedTokenChunker",
+                "params": {
+                    "chunk_size": 500,
+                    "overlap": 75
+                }
+            }
+        },
+        {
+            "name": "sliding_window_token_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "SlidingWindowTokenChunker",
+                "params": {
+                    "window_size": 500,
+                    "step_size": 75
+                }
+            }
+        },
+        {
+            "name": "overlapping_token_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "OverlappingTokenChunker",
+                "params": {
+                    "chunk_size": 500,
+                    "overlap_size": 75
+                }
+            }
+        },
+        {
+            "name": "sentence_based_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "SentenceBasedChunker",
+                "params": {}
+            }
+        },
+        {
+            "name": "sentence_group_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "SentenceGroupChunker",
+                "params": {
+                    "sentences_per_chunk": 10,
+                    "overlap": 2
+                }
+            }
+        },
+        {
+            "name": "paragraph_based_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "ParagraphBasedChunker",
+                "params": {}
+            }
+        },
+        {
+            "name": "paragraph_group_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "ParagraphGroupChunker",
+                "params": {
+                    "paragraphs_per_chunk": 2,
+                    "overlap": 1
+                }
+            }
+        },
+        {
+            "name": "recursive_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "RecursiveChunker",
+                "params": {
+                    "chunk_size": 2000,
+                    "chunk_overlap": 200
+                }
+            }
+        },
+        {
+            "name": "recursive_token_fallback_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "RecursiveTokenChunker",
+                "params": {
+                    "chunk_size": 500,
+                    "chunk_overlap": 75
+                }
+            }
+        },
+        {
+            "name": "parent_child_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "ParentChildChunker",
+                "params": {
+                    "parent_chunk_size": 2000,
+                    "child_chunk_size": 700,
+                    "chunk_overlap": 100
+                }
+            }
+        },
+        {
+            "name": "semantic_embedding_based_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "SemanticEmbeddingChunker",
+                "params": {
+                    "breakpoint_threshold_amount": 80.0
+                }
+            }
+        },
+        {
+            "name": "semantic_similarity_threshold_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "SemanticSimilarityThresholdChunker",
+                "params": {
+                    "threshold": 0.6
+                }
+            }
+        },
+        {
+            "name": "topic_based_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "TopicBasedChunker",
+                "params": {
+                    "distance_threshold": 0.4
+                }
+            }
+        },
+        {
+            "name": "semantic_boundary_detection",
+            "enabled": true,
+            "spec": {
+                "type": "SemanticBoundaryChunker",
+                "params": {
+                    "breakpoint_threshold_amount": 80.0,
+                    "buffer_size": 1
+                }
+            }
+        },
+        {
+            "name": "dynamic_token_size_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "DynamicTokenSizeChunker",
+                "params": {
+                    "min_chunk_size": 150,
+                    "max_chunk_size": 500
+                }
+            }
+        },
+        {
+            "name": "content_density_adaptive_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "ContentDensityAdaptiveChunker",
+                "params": {
+                    "base_chunk_size": 1200
+                }
+            }
+        },
+        {
+            "name": "semantic_variance_adaptive_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "SemanticVarianceAdaptiveChunker",
+                "params": {
+                    "sensitivity": 0.2,
+                    "window_size": 5
+                }
+            }
+        },
+        {
+            "name": "length_aware_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "LengthAwareChunker",
+                "params": {
+                    "target_length": 1800,
+                    "tolerance": 200
+                }
+            }
+        },
+        {
+            "name": "llm_boundary_detection_chunking",
+            "enabled": true,
+            "spec": {
+                "type": "LLMBoundaryDetectionChunker",
+                "params": {
+                    "max_chars": 2000,
+                    "overlap": 200
+                }
+            }
+        },
+        {
+            "name": "llm_segment_then_chunk",
+            "enabled": true,
+            "spec": {
+                "type": "LLMSegmentThenChunker",
+                "params": {
+                    "max_chars": 2000,
+                    "overlap": 200,
+                    "llm_refine_threshold": 1500
+                }
+            }
+        }
+    ]
+}
