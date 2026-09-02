@@ -1,0 +1,32 @@
+{
+  "strategy": "llm_segment_then_chunk",
+  "type": "LLMSegmentThenChunker",
+  "abbreviation": "LSTC",
+  "params": {
+    "max_chars": 2000,
+    "overlap": 200,
+    "llm_refine_threshold": 1500
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "number_of_chunks": 110,
+  "empty_chunks": 0,
+  "characters_min": 23,
+  "characters_p25": 227.25,
+  "characters_median": 425.0,
+  "characters_mean": 685.67,
+  "characters_p75": 936.0,
+  "characters_max": 2192,
+  "characters_std": 608.96,
+  "characters_total": 75424,
+  "small_chunk_threshold": 400,
+  "small_chunks": 53,
+  "small_chunks_percentage": 48.18,
+  "characters_original": 59455,
+  "characters_ratio": 1.269,
+  "execution_time_seconds": 0.021529,
+  "ram_before_mb": 2390.99,
+  "ram_after_mb": 2390.99,
+  "ram_increase_mb": 0.0
+}

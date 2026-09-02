@@ -1,0 +1,31 @@
+{
+  "strategy": "semantic_variance_adaptive_chunking",
+  "type": "SemanticVarianceAdaptiveChunker",
+  "abbreviation": "SVAC",
+  "params": {
+    "sensitivity": 0.2,
+    "window_size": 5
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "number_of_chunks": 85,
+  "empty_chunks": 0,
+  "characters_min": 4,
+  "characters_p25": 127.0,
+  "characters_median": 542.0,
+  "characters_mean": 1062.35,
+  "characters_p75": 1518.0,
+  "characters_max": 7022,
+  "characters_std": 1339.69,
+  "characters_total": 90300,
+  "small_chunk_threshold": 400,
+  "small_chunks": 41,
+  "small_chunks_percentage": 48.24,
+  "characters_original": 90456,
+  "characters_ratio": 0.998,
+  "execution_time_seconds": 9.179298,
+  "ram_before_mb": 2179.3,
+  "ram_after_mb": 2197.43,
+  "ram_increase_mb": 18.12
+}

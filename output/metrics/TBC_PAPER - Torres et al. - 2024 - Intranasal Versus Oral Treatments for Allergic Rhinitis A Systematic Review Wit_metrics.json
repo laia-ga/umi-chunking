@@ -1,0 +1,30 @@
+{
+  "strategy": "topic_based_chunking",
+  "type": "TopicBasedChunker",
+  "abbreviation": "TBC",
+  "params": {
+    "distance_threshold": 0.4
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
+  "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "number_of_chunks": 416,
+  "empty_chunks": 0,
+  "characters_min": 4,
+  "characters_p25": 38.0,
+  "characters_median": 86.0,
+  "characters_mean": 148.94,
+  "characters_p75": 154.0,
+  "characters_max": 8831,
+  "characters_std": 461.97,
+  "characters_total": 61959,
+  "small_chunk_threshold": 400,
+  "small_chunks": 397,
+  "small_chunks_percentage": 95.43,
+  "characters_original": 62436,
+  "characters_ratio": 0.992,
+  "execution_time_seconds": 0.413473,
+  "ram_before_mb": 1912.58,
+  "ram_after_mb": 1912.58,
+  "ram_increase_mb": 0.0
+}

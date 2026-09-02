@@ -1,0 +1,30 @@
+{
+  "strategy": "topic_based_chunking",
+  "type": "TopicBasedChunker",
+  "abbreviation": "TBC",
+  "params": {
+    "distance_threshold": 0.4
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
+  "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "number_of_chunks": 668,
+  "empty_chunks": 0,
+  "characters_min": 4,
+  "characters_p25": 16.0,
+  "characters_median": 35.5,
+  "characters_mean": 97.05,
+  "characters_p75": 130.0,
+  "characters_max": 3042,
+  "characters_std": 197.76,
+  "characters_total": 64831,
+  "small_chunk_threshold": 400,
+  "small_chunks": 649,
+  "small_chunks_percentage": 97.16,
+  "characters_original": 65564,
+  "characters_ratio": 0.989,
+  "execution_time_seconds": 0.453179,
+  "ram_before_mb": 1912.09,
+  "ram_after_mb": 1912.09,
+  "ram_increase_mb": 0.0
+}

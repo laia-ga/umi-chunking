@@ -1,0 +1,31 @@
+{
+  "strategy": "semantic_boundary_detection",
+  "type": "SemanticBoundaryChunker",
+  "abbreviation": "SBDC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0,
+    "buffer_size": 1
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020",
+  "input_file": "GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020.md",
+  "number_of_chunks": 202,
+  "empty_chunks": 0,
+  "characters_min": 5,
+  "characters_p25": 33.0,
+  "characters_median": 148.5,
+  "characters_mean": 416.71,
+  "characters_p75": 185.75,
+  "characters_max": 24272,
+  "characters_std": 2014.06,
+  "characters_total": 84175,
+  "small_chunk_threshold": 400,
+  "small_chunks": 192,
+  "small_chunks_percentage": 95.05,
+  "characters_original": 84448,
+  "characters_ratio": 0.997,
+  "execution_time_seconds": 21.63176,
+  "ram_before_mb": 2146.79,
+  "ram_after_mb": 2064.91,
+  "ram_increase_mb": -81.88
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "semantic_variance_adaptive_chunking",
+  "type": "SemanticVarianceAdaptiveChunker",
+  "abbreviation": "SVAC",
+  "params": {
+    "sensitivity": 0.2,
+    "window_size": 5
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "number_of_chunks": 33,
+  "empty_chunks": 0,
+  "characters_min": 2,
+  "characters_p25": 163.0,
+  "characters_median": 895.0,
+  "characters_mean": 1799.97,
+  "characters_p75": 2350.0,
+  "characters_max": 14297,
+  "characters_std": 2657.46,
+  "characters_total": 59399,
+  "small_chunk_threshold": 400,
+  "small_chunks": 13,
+  "small_chunks_percentage": 39.39,
+  "characters_original": 59455,
+  "characters_ratio": 0.999,
+  "execution_time_seconds": 6.534921,
+  "ram_before_mb": 2184.18,
+  "ram_after_mb": 2161.49,
+  "ram_increase_mb": -22.69
+}

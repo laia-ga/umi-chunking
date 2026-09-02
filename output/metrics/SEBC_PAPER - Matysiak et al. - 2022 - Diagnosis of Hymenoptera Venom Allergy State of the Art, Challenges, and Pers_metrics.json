@@ -1,0 +1,30 @@
+{
+  "strategy": "semantic_embedding_based_chunking",
+  "type": "SemanticEmbeddingChunker",
+  "abbreviation": "SEBC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers",
+  "input_file": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.md",
+  "number_of_chunks": 187,
+  "empty_chunks": 0,
+  "characters_min": 3,
+  "characters_p25": 27.0,
+  "characters_median": 70.0,
+  "characters_mean": 352.58,
+  "characters_p75": 209.5,
+  "characters_max": 39224,
+  "characters_std": 2861.07,
+  "characters_total": 65933,
+  "small_chunk_threshold": 400,
+  "small_chunks": 178,
+  "small_chunks_percentage": 95.19,
+  "characters_original": 66188,
+  "characters_ratio": 0.996,
+  "execution_time_seconds": 22.309609,
+  "ram_before_mb": 1522.29,
+  "ram_after_mb": 1529.49,
+  "ram_increase_mb": 7.21
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "sentence_group_chunking",
+  "type": "SentenceGroupChunker",
+  "abbreviation": "SGC",
+  "params": {
+    "sentences_per_chunk": 10,
+    "overlap": 2
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "number_of_chunks": 70,
+  "empty_chunks": 0,
+  "characters_min": 225,
+  "characters_p25": 423.5,
+  "characters_median": 519.5,
+  "characters_mean": 1033.99,
+  "characters_p75": 1429.0,
+  "characters_max": 7338,
+  "characters_std": 1095.94,
+  "characters_total": 72379,
+  "small_chunk_threshold": 400,
+  "small_chunks": 11,
+  "small_chunks_percentage": 15.71,
+  "characters_original": 59485,
+  "characters_ratio": 1.217,
+  "execution_time_seconds": 0.013702,
+  "ram_before_mb": 1126.2,
+  "ram_after_mb": 1126.2,
+  "ram_increase_mb": 0.0
+}

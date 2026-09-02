@@ -1,0 +1,31 @@
+{
+  "strategy": "dynamic_token_size_chunking",
+  "type": "DynamicTokenSizeChunker",
+  "abbreviation": "DFC",
+  "params": {
+    "min_chunk_size": 150,
+    "max_chunk_size": 500
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
+  "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "number_of_chunks": 36,
+  "empty_chunks": 0,
+  "characters_min": 1035,
+  "characters_p25": 1513.75,
+  "characters_median": 1783.0,
+  "characters_mean": 1820.25,
+  "characters_p75": 2223.5,
+  "characters_max": 2556,
+  "characters_std": 387.82,
+  "characters_total": 65529,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 65564,
+  "characters_ratio": 0.999,
+  "execution_time_seconds": 0.013612,
+  "ram_before_mb": 2121.43,
+  "ram_after_mb": 2121.43,
+  "ram_increase_mb": 0.0
+}

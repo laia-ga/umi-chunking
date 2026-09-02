@@ -1,0 +1,30 @@
+{
+  "strategy": "semantic_similarity_threshold_chunking",
+  "type": "SemanticSimilarityThresholdChunker",
+  "abbreviation": "SSTC",
+  "params": {
+    "threshold": 0.6
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "number_of_chunks": 622,
+  "empty_chunks": 0,
+  "characters_min": 2,
+  "characters_p25": 17.0,
+  "characters_median": 60.5,
+  "characters_mean": 131.86,
+  "characters_p75": 130.0,
+  "characters_max": 7767,
+  "characters_std": 463.52,
+  "characters_total": 82015,
+  "small_chunk_threshold": 400,
+  "small_chunks": 597,
+  "small_chunks_percentage": 95.98,
+  "characters_original": 82701,
+  "characters_ratio": 0.992,
+  "execution_time_seconds": 7.932533,
+  "ram_before_mb": 1555.45,
+  "ram_after_mb": 1574.73,
+  "ram_increase_mb": 19.29
+}

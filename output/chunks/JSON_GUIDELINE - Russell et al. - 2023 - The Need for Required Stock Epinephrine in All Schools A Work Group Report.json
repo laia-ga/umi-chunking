@@ -1,0 +1,449 @@
+{
+  "strategy": "hierarchical_json_chunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "HJC",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192,
+    "token_counter": "BAAI/bge-m3",
+    "document_plan": "guideline",
+    "indivisible_list_paths": [
+      "abbreviations",
+      "metadata.authors",
+      "recommendations",
+      "references",
+      "toc"
+    ]
+  },
+  "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report",
+  "input_file": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.json",
+  "original_character_count": 56104,
+  "number_of_chunks": 23,
+  "chunks": [
+    {
+      "text": "Schema version: 1.0\n\nDocument type: clinical_guideline\n\nTitle: The Need for Required Stock Epinephrine in All Schools: A Work Group Report of the AAAAI Adverse Reactions to Foods Committee\n\nOrganization: American Academy of Allergy, Asthma & Immunology\n\nAuthors:\n  - Name: Anne F. Russell\n    Affiliation: School of Nursing and Health Sciences, Spring Arbor University, Spring Arbor, Mich; Food Allergy and Anaphylaxis Michigan Association, Ann Arbor, Mich\n  - Name: Theresa A. Bingemann\n    Affiliation: Divisions of Allergy, Immunology and Rheumatology and Pediatric Allergy and Immunology, University of Rochester, Rochester, NY\n  - Name: Abigail Tarr Cooke\n    Affiliation: Allergy & Asthma Associates, Durango, Colo; School of Nursing, Colorado State University-Pueblo, Pueblo, Colo\n  - Name: Punita Ponda\n    Affiliation: Division of Allergy and Immunology, Department of Pediatrics, Cohen Children’s Medical Center of New York, New Hyde Park, NY; Northwell Health Division of Allergy and Immunology, Donald Barbara Zucker School of Medicine at Hofstra/Northwell, Great Neck, NY\n  - Name: Michael Pistiner\n    Affiliation: Food Allergy Center, MassGeneral Hospital for Children, Harvard Medical School, Boston, Mass\n  - Name: Tiffany Jean\n    Affiliation: Division of Basic and Clinical Immunology, University of California Irvine, Orange, Calif\n  - Name: Anil Nanda\n    Affiliation: Asthma and Allergy Center, Lewisville, Texas; Asthma and Allergy Center, Flower Mound, Texas; Division of Allergy and Immunology, University of Texas Southwestern Medical Center, Dallas, Texas\n  - Name: Jennifer Jobrack\n    Affiliation: The Food Allergy Pros, LLC, Chicago, Ill\n  - Name: Alice E.W. Hoyt\n    Affiliation: Code Ana of the Teal Schoolhouse, New Orleans, La; Hoyt Institute of Food Allergy, New Orleans, La; Ochsner Health, New Orleans, La; Tulane University School of Medicine, New Orleans, La\n  - Name: Michael C. Young\n    Affiliation: Division of Allergy and Immunology, Children’s Hospital Boston, Boston, Mass; Harvard Medical School, Boston, Mass",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "document_title_organization",
+        "level": 2,
+        "json_paths": [
+          "document.schema_version",
+          "document.document_type",
+          "document.metadata.title",
+          "document.metadata.organization",
+          "document.metadata.authors"
+        ],
+        "token_count": 509,
+        "character_count": 2056,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0000",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Year: 2023\n\nLanguage: English\n\nExtraction date: 2025-03-25",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "source_version",
+        "level": 2,
+        "json_paths": [
+          "document.metadata.year",
+          "document.metadata.language",
+          "document.metadata.extraction_date"
+        ],
+        "token_count": 15,
+        "character_count": 58,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0001",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Audience: clinician\n\nSpecialty: Allergy and Immunology\n\nJurisdiction: United States",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "audience_specialty_jurisdiction",
+        "level": 2,
+        "json_paths": [
+          "document.metadata.audience",
+          "document.metadata.specialty",
+          "document.metadata.jurisdiction"
+        ],
+        "token_count": 21,
+        "character_count": 83,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0002",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Summary: This workgroup report examines the necessity of mandating stock epinephrine in all U.S. schools to ensure prompt treatment of anaphylaxis. It identifies ten barriers to adoption, including liability concerns and lack of training, and proposes strategies such as legal immunity, cost stabilization advocacy, and education. The report emphasizes that voluntary stock epinephrine laws may compromise student safety and advocates for mandated legislation supported by school nurse training and partnerships.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "flags_summary",
+        "level": 2,
+        "json_paths": [
+          "document.metadata.summary"
+        ],
+        "token_count": 121,
+        "character_count": 512,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0003",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Conditions covered:\n  - anaphylaxis\n  - food allergy\n\nCare settings:\n  - schools\n  - community settings\n\nTarget population:\n  - students with food allergy\n  - undiagnosed students at risk of anaphylaxis\n  - school nurses\n  - school personnel\n\nTherapeutic areas:\n  - emergency medication\n  - epinephrine auto-injectors\n  - anaphylaxis management",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "scope",
+        "level": 1,
+        "json_paths": [
+          "document.scope.conditions_covered",
+          "document.scope.care_settings",
+          "document.scope.target_population",
+          "document.scope.therapeutic_areas"
+        ],
+        "token_count": 79,
+        "character_count": 344,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0004",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Toc:\n  - Id: toc_01\n    Heading path:\n    - Abbreviations used\n    Level: 1\n  - Id: toc_02\n    Heading path:\n    - INTRODUCTION\n    Level: 1\n  - Id: toc_03\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    Level: 1\n  - Id: toc_04\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 1: Indemnification concerns\n    Level: 2\n  - Id: toc_05\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 1: Indemnification concerns\n    - Improvement strategies for barrier 1: Provide immunity from liability\n    Level: 3\n  - Id: toc_06\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 2: EDD cost\n    Level: 2\n  - Id: toc_07\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 2: EDD cost\n    - Improvement strategies for barrier 2: Promote better EDD cost structure\n    Level: 3\n  - Id: toc_08\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 3: EDD access obstacles\n    Level: 2\n  - Id: toc_09\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 3: EDD access obstacles\n    - Improvement strategies for barrier 3: Increasing EDD access at school\n    Level: 3\n  - Id: toc_10\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 4: Lack of SNs or inadequate number of SNs\n    Level: 2\n  - Id: toc_11\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 4: Lack of SNs or inadequate number of SNs\n    - Disparities in SN staffing models.\n    Level: 3\n  - Id: toc_12\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 4: Lack of SNs or inadequate number of SNs\n    - Disadvantages of inadequate SN coverage.\n    Level: 3\n  - Id: toc_13\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 4: Lack of SNs or inadequate number of SNs\n    - Barriers to SN full-time employment and funding.\n    Level: 3\n  - Id: toc_14\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 4: Lack of SNs or inadequate number of SNs\n    - Improvement strategies for barrier 4: Increase number of SNs in school districts\n    Level: 3\n  - Id: toc_15\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 4: Lack of SNs or inadequate number of SNs\n    - Improvement strategies for barrier 4: Increase number of SNs in school districts\n    - Increase awareness of SN educational preparedness.\n    Level: 4\n  - Id: toc_16\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 4: Lack of SNs or inadequate number of SNs\n    - Improvement strategies for barrier 4: Increase number of SNs in school districts\n    - Promote understanding of regulatory oversight of SNs.\n    Level: 4\n  - Id: toc_17\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 4: Lack of SNs or inadequate number of SNs\n    - Improvement strategies for barrier 4: Increase number of SNs in school districts\n    - Clarify SN role to dispel employer misconceptions.\n    Level: 4\n  - Id: toc_18\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 4: Lack of SNs or inadequate number of SNs\n    - Improvement strategies for barrier 4: Increase number of SNs in school districts\n    - Increase understanding regarding benefits of SNs in every school.\n    Level: 4\n  - Id: toc_19\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 4: Lack of SNs or inadequate number of SNs\n    - Improvement strategies for barrier 4: Increase number of SNs in school districts\n    - Promote SN staffing models based on school- and student-specific indicators.\n    Level: 4\n  - Id: toc_20\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 4: Lack of SNs or inadequate number of SNs\n    - Improvement strategies for barrier 4: Increase number of SNs in school districts\n    - Increase recruitment, retainment, and available funding for full-time SNs.\n    Level: 4\n  - Id: toc_21\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 5: Difficulties regarding delegation of medication administration to unlicensed assistive personnel\n    Level: 2\n  - Id: toc_22\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 5: Difficulties regarding delegation of medication administration to unlicensed assistive personnel\n    - Utilization of unlicensed assistive school personnel.\n    Level: 3\n  - Id: toc_23\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 5: Difficulties regarding delegation of medication administration to unlicensed assistive personnel\n    - Potential limitations of school medication administration laws and regulations.\n    Level: 3\n  - Id: toc_24\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 5: Difficulties regarding delegation of medication administration to unlicensed assistive personnel\n    - Increased risk, liability, medication errors, and parent dissatisfaction with UAP use.\n    Level: 3\n  - Id: toc_25\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 5: Difficulties regarding delegation of medication administration to unlicensed assistive personnel\n    - Potential for insufficient quantity of UAP for medication administration.\n    Level: 3\n  - Id: toc_26\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 5: Difficulties regarding delegation of medication administration to unlicensed assistive personnel\n    - Improvement strategies for barrier 5: Provide legal ability for SNs to delegate medication administration to UAP\n    Level: 3\n  - Id: toc_27\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 5: Difficulties regarding delegation of medication administration to unlicensed assistive personnel\n    - Improvement strategies for barrier 5: Provide legal ability for SNs to delegate medication administration to UAP\n    - Increase number of UAP trained to administer medications.\n    Level: 4\n  - Id: toc_28\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 5: Difficulties regarding delegation of medication administration to unlicensed assistive personnel\n    - Improvement strategies for barrier 5: Provide legal ability for SNs to delegate medication administration to UAP\n    - National and state guidelines on school medication administration.\n    Level: 4\n  - Id: toc_29\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 5: Difficulties regarding delegation of medication administration to unlicensed assistive personnel\n    - Improvement strategies for barrier 5: Provide legal ability for SNs to delegate medication administration to UAP\n    - AAP Recommendations.\n    Level: 4\n  - Id: toc_30\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 6: Pitfalls associated with UAP anaphylaxis training\n    Level: 2\n  - Id: toc_31\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 6: Pitfalls associated with UAP anaphylaxis training\n    - Quality and delivery of training content.\n    Level: 3\n  - Id: toc_32\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 6: Pitfalls associated with UAP anaphylaxis training\n    - Assessment of learner’s preparedness.\n    Level: 3\n  - Id: toc_33\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 6: Pitfalls associated with UAP anaphylaxis training\n    - Improvement strategies for barrier 6: Expand availability of evidence-based UAP anaphylaxis training\n    Level: 3\n  - Id: toc_34\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 6: Pitfalls associated with UAP anaphylaxis training\n    - Improvement strategies for barrier 6: Expand availability of evidence-based UAP anaphylaxis training\n    - Key content to include in UAP anaphylaxis education.\n    Level: 4\n  - Id: toc_35\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 7: Prescriber-related challenges\n    Level: 2\n  - Id: toc_36\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 7: Prescriber-related challenges\n    - Improvement strategies for barrier 7: Expand number of SE prescribers\n    Level: 3\n  - Id: toc_37\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 8: Obstacles associated with school administrators and school boards\n    Level: 2\n  - Id: toc_38\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 8: Obstacles associated with school administrators and school boards\n    - Opposition to SE.\n    Level: 3\n  - Id: toc_39\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 8: Obstacles associated with school administrators and school boards\n    - Bureaucratic hindrances.\n    Level: 3\n  - Id: toc_40\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 8: Obstacles associated with school administrators and school boards\n    - Gaps in understanding implications of lack of school SE.\n    Level: 3\n  - Id: toc_41\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 8: Obstacles associated with school administrators and school boards\n    - Rural and low-income schools disproportionately lack SE.\n    Level: 3\n  - Id: toc_42\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 8: Obstacles associated with school administrators and school boards\n    - Improvement strategies for barrier 8: Advocacy and education to administrators and school boards\n    Level: 3\n  - Id: toc_43\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 8: Obstacles associated with school administrators and school boards\n    - Improvement strategies for barrier 8: Advocacy and education to administrators and school boards\n    - Promote advocacy and education to schools on SE merits.\n    Level: 4\n  - Id: toc_44\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 8: Obstacles associated with school administrators and school boards\n    - Improvement strategies for barrier 8: Advocacy and education to administrators and school boards\n    - Support SNs.\n    Level: 4\n  - Id: toc_45\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 9: Challenges associated with health care providers\n    Level: 2\n  - Id: toc_46\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 9: Challenges associated with health care providers\n    - Improvement strategies for barrier 9: Ensure presence of SE and provision of school medical forms\n    Level: 3\n  - Id: toc_47\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 10: Family or student difficulties\n    Level: 2\n  - Id: toc_48\n    Heading path:\n    - BARRIERS TO SCHOOL SE AND RELATED IMPROVEMENT STRATEGIES\n    - Barrier 10: Family or student difficulties\n    - Improvement strategies for barrier 10: Address health care disparities and provide comprehensive patient education and referrals\n    Level: 3\n  - Id: toc_49\n    Heading path:\n    - CONCLUSIONS\n    Level: 1\n  - Id: toc_50\n    Heading path:\n    - Acknowledgments\n    Level: 1\n  - Id: toc_51\n    Heading path:\n    - References\n    Level: 1\n  - Id: toc_52\n    Heading path:\n    - ONLINE REPOSITORY\n    Level: 1\n  - Id: toc_53\n    Heading path:\n    - ONLINE REPOSITORY\n    - TABLE E1. Selected resources\n    Level: 2",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "toc",
+        "level": 1,
+        "json_paths": [
+          "document.toc"
+        ],
+        "token_count": 3042,
+        "character_count": 12314,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0005",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Conditions:\n  - Condition id: cond_01\n    Name: Anaphylaxis\n    Epidemiology: Up to 29% of reported anaphylaxis cases in children occur in schools or child care centers.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "conditions",
+        "level": 1,
+        "json_paths": [
+          "document.conditions"
+        ],
+        "token_count": 45,
+        "character_count": 169,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0006",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Treatment pathways:\n  - Pathway id: path_01\n    Condition ref: cond_01\n    Setting: first_line\n    Patient population: Students and staff experiencing suspected anaphylaxis in the school setting, including those with known allergies and those without prior diagnosis\n    Decision rules:\n    - If signs and symptoms of anaphylaxis are present, administer epinephrine immediately and activate emergency medical services.\n    - Use stock epinephrine if the individual does not have their own prescribed autoinjector or it is not available.\n    Recommended regimens:\n    - Name: Epinephrine autoinjector (e.g., EpiPen, Auvi-Q)\n    Summary: Intramuscular injection of epinephrine into the anterolateral thigh is the first-line treatment for anaphylaxis, to be administered promptly upon recognition.\n    Key outcomes: Prompt epinephrine administration is associated with lower rates of mortality and near-fatality.\n    Duration cycles: Single dose; may repeat every 5-15 minutes if symptoms persist\n    Not recommended:\n    - Name: Delayed epinephrine administration or use of antihistamines as initial treatment\n    Reason: Delays in epinephrine administration are linked to poorer outcomes; antihistamines do not effectively treat cardiovascular and respiratory symptoms of anaphylaxis.\n    Response assessment:\n    - Timepoint: After epinephrine administration\n    Method: Monitor for improvement in respiratory distress, hypotension, and skin manifestations; continue emergency care until EMS arrival.\n    Supportive care:\n    - Position patient supine or in a position comfortable for breathing\n    - Administer oxygen if available\n    - Initiate CPR if indicated\n    Special considerations: Stock epinephrine must be stored in unlocked, easily accessible locations; school personnel should receive training in anaphylaxis recognition and autoinjector use; legal immunity from liability for prescribers and staff is crucial for program implementation.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "treatment_pathways",
+        "level": 1,
+        "json_paths": [
+          "document.treatment_pathways"
+        ],
+        "token_count": 430,
+        "character_count": 1951,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0007",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Therapies index:\n  - Name: Epinephrine\n    Type: drug\n    Approved indications:\n    - Anaphylaxis\n    Administration: Intramuscular self-injection via auto-injector devices (e.g., EpiPen, Auvi-Q, Adrenaclick, generic auto-injectors, Symjepi); also available as pre-filled syringe or ampule/syringe (not recommended due to dosing inaccuracies)",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "therapies_index",
+        "level": 1,
+        "json_paths": [
+          "document.therapies_index"
+        ],
+        "token_count": 102,
+        "character_count": 342,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0008",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Recommendations:\n  - Rec id: rec_01\n    Statement: Allergists, allergy nurses, and other health care professionals should collaborate with national and state medical and nursing organizations, public health departments, hospital administrators, local health care professionals, and patient advocacy groups to promote mandated stock epinephrine and evidence-based anaphylaxis management programs in all K-12 schools through support, education, and advocacy at local, state, and national levels.\n    Context: Addressed to allergists, allergy nurses, and other health care professionals.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_02\n    Statement: They should educate primary care physicians about school stock epinephrine barriers and jointly collaborate and advocate at district, local, state, and national levels.\n    Context: Addressed to allergists, allergy nurses, and other health care professionals.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_03\n    Statement: They should partner with medical and nursing organizations, hospital administrators, and patient advocacy groups to advocate to school boards and administrators for state mandates that include dedicated funding to hire more full-time school nurses, aiming for at least one school nurse per school.\n    Context: Addressed to allergists, allergy nurses, and other health care professionals.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_04\n    Statement: They should offer authoritative recommendations and advocacy to advance laws, regulations, and district policies in every state that permit school nurses to train and supervise unlicensed assistive personnel in medication administration.\n    Context: Addressed to allergists, allergy nurses, and other health care professionals.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_05\n    Statement: National and state medical and nursing organizations should pass resolutions and position statements endorsing a legal requirement for stock epinephrine in all K-12 schools nationwide.\n    Context: Addressed to national and state medical and nursing organizations.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_06\n    Statement: They should advocate to school boards and administrators for state mandates that provide targeted funding to employ more full-time school nurses, with the goal of one school nurse in each school.\n    Context: Addressed to national and state medical and nursing organizations.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_07\n    Statement: They should provide authoritative recommendations and advocacy to support laws, regulations, and district policies in all states that enable school nurses to train and oversee unlicensed assistive personnel for medication administration.\n    Context: Addressed to national and state medical and nursing organizations.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_08\n    Statement: They should advocate for amendments to existing state legislation to establish requirements for sustainable school-based anaphylaxis management programs, including standards for training content and trainer qualifications.\n    Context: Addressed to national and state medical and nursing organizations.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_09\n    Statement: Epinephrine auto-injector manufacturers should provide a single-dose packaging option instead of only dual-dose packs.\n    Context: Addressed to epinephrine delivery device manufacturers.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_10\n    Statement: Manufacturers should offer discounted pricing for epinephrine auto-injectors to schools.\n    Context: Addressed to epinephrine delivery device manufacturers.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_11\n    Statement: Every state should enact legislation requiring stock epinephrine in all K-12 schools and include a Good Samaritan indemnification clause.\n    Context: Addressed to states.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_12\n    Statement: States should draft, pass, or modify stock epinephrine legislation to incorporate sustainable, targeted funding for school districts to hire additional school nurses and cover the extra time and workload associated with school anaphylaxis management programs.\n    Context: Addressed to states.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_13\n    Statement: States should mandate standardized reporting of stock epinephrine and epinephrine auto-injector administrations, along with related data, from all schools using the NASN's Report Form for Epinephrine Administration, with collected data made accessible to researchers.\n    Context: Addressed to states.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)\n  - Rec id: rec_14\n    Statement: States should establish comprehensive statewide systems for reporting, collecting, and analyzing data related to school anaphylaxis management, health outcomes, and usage of epinephrine auto-injectors and stock epinephrine.\n    Context: Addressed to states.\n    Source heading: CONCLUSIONS / Workgroup Recommendations (Table V)",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "recommendations",
+        "level": 1,
+        "json_paths": [
+          "document.recommendations"
+        ],
+        "token_count": 1282,
+        "character_count": 5518,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0009",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_01\n  Type: figure\n  Title: Strengthening the safety chain to support school SE\n  Source heading: INTRODUCTION\n  Description: A concept map centered on 'School Stock Epinephrine'. Surrounding it are four primary barrier categories: UNDIAGNOSED STUDENTS & STAFF (first allergic reaction, no prescribed EDD), DIAGNOSED STUDENTS & STAFF (lacks prescribed EDD), FINANCE (EDD cost and access barriers), and LAWS (state legal mandate vs. voluntary coverage). An outer ring shows areas requiring education and advocacy: SCHOOL (board and administrator resistance), SCHOOL NURSES (presence and caseload disparities), CLINICAL TEAM (prescriber concerns, school forms challenges), and SCHOOL STAFF (absent or inconsistent anaphylaxis training, liability concerns). Arrows indicate that education and advocacy strengthen the chain supporting SE.\n  Summary: A concept map summarizing barriers to stock epinephrine in schools and the dual role of education and advocacy to mitigate them.\n  Clinical relevance: Helps identify leverage points for interventions to improve epinephrine access and anaphylaxis safety in schools.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "artifacts",
+        "level": 1,
+        "json_paths": [
+          "document.artifacts[0]"
+        ],
+        "token_count": 295,
+        "character_count": 1139,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0010",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_02\n  Type: table\n  Title: Potential barriers to safe school medication administration\n  Source heading: Barrier 5: Difficulties regarding delegation of medication administration to unlicensed assistive personnel\n  Data:\n    Row 1:\n      Barrier: Inconsistent medication administration delegation laws, regulations, and policies among and within states.\n    Row 2:\n      Barrier: Inadequate quantity of RNs staffing and directing school health programs.\n    Row 3:\n      Barrier: Lack of trained personnel, related policies, and procedures.\n  Summary: Lists three major barriers to safe medication administration in schools: inconsistent laws, insufficient RNs, and absence of trained staff and policies.\n  Clinical relevance: Highlights systemic issues that compromise medication safety for students, especially those requiring emergency epinephrine.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "artifacts",
+        "level": 1,
+        "json_paths": [
+          "document.artifacts[1]"
+        ],
+        "token_count": 185,
+        "character_count": 880,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0011",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_03\n  Type: table\n  Title: Required SE school training program content in New York\n  Source heading: Barrier 6: Pitfalls associated with UAP anaphylaxis training\n  Data:\n    Row 1:\n      Objective: Identify common causes of allergic reactions.\n    Row 2:\n      Objective: Identify the signs and symptoms of a mild and severe allergic reaction (anaphylaxis).\n    Row 3:\n      Objective: Identify how signs and symptoms of anaphylaxis differ from those of other medical conditions.\n    Row 4:\n      Objective: Demonstrate knowing when epinephrine should be administered and when it should not be administered.\n    Row 5:\n      Objective: Demonstrate determining the correct dose of autoinjector, adult or pediatric, to administer.\n    Row 6:\n      Objective: Demonstrate the steps for administering epinephrine by an autoinjector.\n    Row 7:\n      Objective: Describe the methods for safely storing and handling epinephrine and appropriately disposing of the autoinjector after use.\n    Row 8:\n      Objective: Demonstrate the steps for providing for ongoing care of the patient until Emergency Medical Services arrives.\n    Row 9:\n      Objective: Demonstrate knowledge of appropriate documentation and reporting of an event in which an epinephrine autoinjector was administered.\n    Row 10:\n      Objective: Understand the New York state laws that allow an individual to possess and use an epinephrine autoinjector in a life-threatening situation.\n  Summary: New York state requirements for school stock epinephrine training programs, covering anaphylaxis recognition, epinephrine administration, post-care, documentation, and legal aspects.\n  Clinical relevance: Provides a model for evidence-based anaphylaxis training content to ensure staff competency in emergency response.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "artifacts",
+        "level": 1,
+        "json_paths": [
+          "document.artifacts[2]"
+        ],
+        "token_count": 402,
+        "character_count": 1807,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0012",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_04\n  Type: table\n  Title: NASN-recommended key components of a comprehensive anaphylaxis management school policy\n  Source heading: Barrier 8: Obstacles associated with school administrators and school boards\n  Data:\n    Row 1:\n      Component: 1. Individuals covered\n      Description: Including those with first-time anaphylaxis emergencies.\n    Row 2:\n      Component: 2. School programs and environments covered\n    Row 3:\n      Component: 3. Epinephrine\n      Description: School prescription and standing order. Stock locations, usually multiple—with signage. Ensured secured access. Stock supply: dosages; number of doses. Procurement: initial and periodic. Disposal: after use and expiration. Administration and documentation. Reporting.\n    Row 4:\n      Component: 4. Individuals authorized to administer\n    Row 5:\n      Component: 5. Emergency protocol for administration\n    Row 6:\n      Component: 6. Education, training, notification\n      Description: When to administer. Who will be educated: every staff member needs to be trained to know signs and symptoms of anaphylaxis and know how to initiate the emergency protocol. Levels of education to be provided. Parent notification.\n    Row 7:\n      Component: 7. Communication plan\n      Description: For the district, school, parents, health care provider, Emergency Medical Services, and community (part of a school’s all-hazard emergency plan).\n  Summary: Seven components recommended by NASN for a comprehensive school anaphylaxis policy, including coverage, epinephrine management, authorization, training, and communication.\n  Clinical relevance: Guides schools in developing robust anaphylaxis policies that ensure timely access to epinephrine and staff preparedness.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "artifacts",
+        "level": 1,
+        "json_paths": [
+          "document.artifacts[3]"
+        ],
+        "token_count": 374,
+        "character_count": 1768,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0013",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_05\n  Type: table\n  Title: Summarized barriers to school SE and potential improvement strategies\n  Source heading: CONCLUSIONS\n  Data:\n    Row 1:\n      Barriers to school se: Indemnification concerns of prescribers and school staff\n      Improvement strategies: Ensure legal immunity from liability in every state.\n    Row 2:\n      Barriers to school se: EDD cost\n      Improvement strategies: Use free or low-cost school EDD programs from EDD manufacturer and advocate for more similar programs from additional pharmaceutical companies. Advocate for targeted state funding to school districts.\n    Row 3:\n      Barriers to school se: EDD access factors\n      Improvement strategies: Advocate for legislation to increase EDD supply at stabilized cost. Expand EDD generic options. Increase awareness of physicians and nurses regarding all EDD options. Work to address EDD shortages. Advocate for 1 EDD injector pack option.\n    Row 4:\n      Barriers to school se: Lack of SNs or inadequate quantity of SNs per student and school needs\n      Improvement strategies: Increase number of SNs in school districts with aim of at least 1 per school. Clarify accurate SN educational preparedness, scope of practice, and role. Promote understanding of benefits of full-time SNs in every school. Use SN staffing models on the basis of individual school and student indicators. Increase recruitment, retainment, and available funding for full-time SNs.\n    Row 5:\n      Barriers to school se: Absence of or inconsistent quality of comprehensive evidence-based anaphylaxis training of school UAP\n      Improvement strategies: Increase awareness of available free or low-cost peer-reviewed training materials. Promote understanding of SN competency as leaders in providing comprehensive anaphylaxis management education to UAP.\n    Row 6:\n      Barriers to school se: Obstacles to delegating medication administration to school UAP by SNs\n      Improvement strategies: Promote legal ability for SNs to delegate medication administration to school UAP. Advocate for at least 1 full-time SN in every school building. Ensure incentives to increase quantity of willing school UAP to be SN trained and supervised for medication administration.\n    Row 7:\n      Barriers to school se: Licensed prescriber hesitancy or absence of sufficient quantity of willing licensed prescribers for school SE\n      Improvement strategies: Improve quantity of willing licensed prescribers by using school or district physicians when present and/or local physicians, including those from local health departments. Advocate for state legislation as needed to require state department of health designate a default prescribing physician if no willing local physicians are available. Provide accurate information on immunity from liability per state laws and regulations. Ensure availability of toolkits containing current resources and materials to facilitate licensed prescriber ease in ordering school SE.\n    Row 8:\n      Barriers to school se: Legislative challenges\n      Improvement strategies: Improve legislative support for mandated school SE in all states.\n    Row 9:\n      Barriers to school se: School administration and school board factors\n      Improvement strategies: Provide advocacy and education to schools on merits of SE. Promote support of SNs. Counsel that ample time is needed for provision of effective anaphylaxis education to school personnel.\n    Row 10:\n      Barriers to school se: Health care provider factors\n      Improvement strategies: Use collaborative team approach to school anaphylaxis management with family/student, SN, school staff, and student’s clinical physicians and nurses. Provision by clinical teams of current and complete student-specific anaphylaxis action plans and school medication forms to patients/families and schools at start of academic year and as needed. Educate schools on the need for SE for students with no prior diagnosis of anaphylaxis.\n    Row 11:\n      Barriers to school se: Family and student factors\n      Improvement strategies: Provision of comprehensive culturally competent anaphylaxis education to students/families by SNs and student’s clinical team of physicians and nurses. Delivery of all necessary completed medical and medication forms to schools by family/student.\n  Summary: Comprehensive table pairing ten barriers to school stock epinephrine with corresponding improvement strategies, covering indemnification, cost, access, staffing, training, delegation, prescriber issues, legislation, administration, and family factors.\n  Clinical relevance: Serves as a roadmap for stakeholders to address the multifaceted obstacles to making epinephrine available in schools.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "artifacts",
+        "level": 1,
+        "json_paths": [
+          "document.artifacts[4]"
+        ],
+        "token_count": 1037,
+        "character_count": 4744,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0014",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_06\n  Type: table\n  Title: Workgroup recommendations\n  Source heading: CONCLUSIONS\n  Data:\n    Row 1:\n      Stakeholder: Allergists, allergy nurses, and other health care professionals\n      Recommendation: Partner with national and state medical and nursing organizations; public health departments; hospital administrators; local health care professionals; and patient advocacy organizations to support, educate, and advocate at the local, state, and national level for mandated school SE and evidence-based anaphylaxis management programs in all K-12 schools. Educate primary care colleagues on school SE barriers and mutually collaborate and advocate on these issues together on a district, local, state, and national level. Partner with medical and nursing organizations, hospital administrators, and patient advocacy organizations to provide advocacy to school boards and administrators for state mandates that include targeted funding to hire more full-time SNs with the aim of at least 1 SN in every school. Provide authoritative recommendations and advocacy efforts to promote laws, regulations, and district policies in every state addressing need to allow SNs to train and supervise UAPs for medication administration.\n    Row 2:\n      Stakeholder: National and state medical and nursing organizations\n      Recommendation: Pass resolutions and/or position statements supporting a legal mandate for SE in every K-12 school in all states. Provide advocacy to school boards and school administrators for state mandates that include targeted funding to hire more full-time SNs with the aim of 1 SN in every school. Provide authoritative recommendations and advocacy efforts promoting laws, regulations, and district policies in every state addressing need to allow SNs to train and supervise UAPs for medication administration. Advocate for amendments of current state legislation to address requirements for sustainable school-based anaphylaxis management programs, training content standards, and required trainer qualifications.\n    Row 3:\n      Stakeholder: Epinephrine Delivery Device Manufacturers\n      Recommendation: Offer consumers a packaged 1-dose single EDD as an option vs only dual-dose packs. Provide schools with discounted pricing for EDDs.\n    Row 4:\n      Stakeholder: States\n      Recommendation: All states should have legislation mandating SE in all K-12 schools that also includes a Good Samaritan clause for indemnification. Craft, pass, and/or amend state SE legislation to include sustainable targeted funding for districts to hire more SNs and to cover their additional time and workload related to school anaphylaxis management programming. Require standardized reporting of SE and EDD administration and related factors from all schools by using NASN’s Report Form for Epinephrine Administration with subsequent data collected by the state with researcher accessibility. Develop comprehensive state-wide data reporting, collection, and analysis of factors related to school anaphylaxis management, health outcomes, and use of EDD and SE.\n  Summary: Actionable recommendations for four stakeholder groups (healthcare professionals, medical/nursing organizations, EDD manufacturers, states) to advance mandated school stock epinephrine and comprehensive anaphylaxis management.\n  Clinical relevance: Provides a framework for coordinated advocacy and policy change to enhance school safety for children at risk of anaphylaxis.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "artifacts",
+        "level": 1,
+        "json_paths": [
+          "document.artifacts[5]"
+        ],
+        "token_count": 747,
+        "character_count": 3490,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0015",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_07\n  Type: table\n  Title: Future research recommendations\n  Source heading: CONCLUSIONS\n  Data:\n    Row 1:\n      Research recommendation: Study collected data regarding school anaphylaxis management and epinephrine administration between states with SE mandates vs states that voluntarily allow SE.\n    Row 2:\n      Research recommendation: Compare student health outcomes from anaphylaxis between schools in states with mandated SE vs those in states that legally allow SE on a voluntary basis.\n    Row 3:\n      Research recommendation: Explore school reporting and state data collection of school EDD and SE administration and whether these data are publicly available.\n    Row 4:\n      Research recommendation: Investigate implementation of standardized school reporting of EDD and SE administration and related factors through use of NASN’s Report Form for Epinephrine Administration with subsequent data collected by state.\n    Row 5:\n      Research recommendation: Study the role of indemnification in school decision making regarding SE and provision of SN-led anaphylaxis management staff training.\n    Row 6:\n      Research recommendation: Study evaluation data on effectiveness and health outcomes associated with elements of school-based anaphylaxis management training.\n    Row 7:\n      Research recommendation: Ongoing investigation of school SE benefits related to reduction in health care disparities, cost to families, other social determinants of health issues, and environmental impact, while increasing ability to treat unanticipated anaphylaxis in students with no known history of allergy and those lacking prescribed EDDs.\n  Summary: Seven research priorities to evaluate the impact of mandated versus voluntary stock epinephrine, effectiveness of training, reporting systems, and health equity.\n  Clinical relevance: Identifies evidence gaps to inform future policies and best practices for school anaphylaxis management.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "artifacts",
+        "level": 1,
+        "json_paths": [
+          "document.artifacts[6]"
+        ],
+        "token_count": 389,
+        "character_count": 1974,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0016",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_08\n  Type: table\n  Title: Selected resources\n  Source heading: ONLINE REPOSITORY\n  Data:\n    Row 1:\n      Resource: Anaphylaxis emergency action plans – American Academy of Allergy, Asthma & Immunology\n      Website: https://www.aaaai.org/aaaai/media/medialibrary/pdf%20documents/libraries/anaphylaxis-emergency-action-plan.pdf\n    Row 2:\n      Resource: Anaphylaxis emergency action plans – American Academy of Pediatrics\n      Website: https://downloads.aap.org/HC/AAP_Allergy_and_Anaphylaxis_Emergency_Plan.pdf\n    Row 3:\n      Resource: Anaphylaxis emergency action plans – Food Allergy Research & Education\n      Website: https://www.foodallergy.org/living-food-allergies/food-allergy-essentials/food-allergy-anaphylaxis-emergency-care-plan\n    Row 4:\n      Resource: Anaphylaxis emergency action plans – National Association of School Nurses: Sample Protocol for Treatment of Symptoms of Anaphylaxis\n      Website: https://higherlogicdownload.s3.amazonaws.com/NASN/3870c72d-fff94ed7-833f-215de278d256/UploadedImages/PDFs/Get%20Trained/GetTrained_Epi_Protocol_2015.pdf\n    Row 5:\n      Resource: Anaphylaxis school-based education programs – Allergy Home\n      Website: https://www.allergyhome.org/schools\n    Row 6:\n      Resource: Anaphylaxis school-based education programs – American Red Cross\n      Website: https://rdcrss.org/3pSHUnd\n    Row 7:\n      Resource: Anaphylaxis school-based education programs – Code Ana\n      Website: https://codeana.org\n    Row 8:\n      Resource: Anaphylaxis school-based education programs – Food Allergy Research & Education\n      Website: https://www.foodallergy.org/our-initiatives/education-programs-training/fare-training/keeping-students-safe-and-included\n    Row 9:\n      Resource: Anaphylaxis school-based education programs – NASN anaphylaxis toolkit\n      Website: https://www.nasn.org/nasn-resources/practice-topics/allergies-anaphylaxis\n    Row 10:\n      Resource: Anaphylaxis school-based education programs – Safe Schools\n      Website: https://www.safeschools.com\n    Row 11:\n      Resource: Anaphylaxis school-based education programs – State school nurse organizations and state departments of education\n      Website: State of Colorado example: https://www.cde.state.co.us/healthandwellness/snh_healthissues\n    Row 12:\n      Resource: EDDs – Auvi-Q\n      Website: https://www.auvi-q.com\n    Row 13:\n      Resource: EDDs – Adrenaclick\n      Website: https://www.adrenaclick.com/\n    Row 14:\n      Resource: EDDs – Adrenaclick generic: Impax epinephrine injection, USP\n      Website: https://epinephrineautoinject.com/\n    Row 15:\n      Resource: EDDs – EpiPen & generic: Epinephrine injection, USP\n      Website: https://www.epipen.com\n    Row 16:\n      Resource: EDDs – Symjepi\n      Website: https://www.symjepi.com\n    Row 17:\n      Resource: EDDs – Teva generic epinephrine injection, USP\n      Website: https://www.tevaepinephrine.com\n    Row 18:\n      Resource: State laws on school epinephrine – American College of Allergy, Asthma and Immunology\n      Website: https://college.acaai.org/sites/default/files/ACAAI_EpinephrineToolkit2015.pdf\n    Row 19:\n      Resource: State laws on school epinephrine – Food Allergy Research & Education\n      Website: https://www.foodallergy.org/our-initiatives/advocacy/food-allergy-issues/school-access-epinephrine\n  Summary: A non-exhaustive list of resources including anaphylaxis action plans, school education programs, epinephrine delivery device websites, and state law information.\n  Clinical relevance: Provides quick access to tools and references for clinicians, school nurses, and administrators to support stock epinephrine programs and anaphylaxis preparedness.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "artifacts",
+        "level": 1,
+        "json_paths": [
+          "document.artifacts[7]"
+        ],
+        "token_count": 988,
+        "character_count": 3709,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0017",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_09\n  Type: figure\n  Title: Public education governance structure, simplified\n  Source heading: Barrier 8: Obstacles associated with school administrators and school boards\n  Description: A hierarchical diagram showing layers of public education governance from top to bottom: Federal, State, District (School Board), and School (Administrators). It indicates that policy decisions must be reviewed at each level before adoption, which can slow the decision-making process.\n  Summary: Illustrates the hierarchical structure of public education governance that influences adoption of school health policies such as stock epinephrine.\n  Clinical relevance: Explains why legislative mandates alone may not ensure school compliance; education and advocacy must target multiple governance levels.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "artifacts",
+        "level": 1,
+        "json_paths": [
+          "document.artifacts[8]"
+        ],
+        "token_count": 175,
+        "character_count": 820,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0018",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_10\n  Type: figure\n  Title: High-performance professional interaction model for building administrator and SN\n  Source heading: Barrier 8: Obstacles associated with school administrators and school boards\n  Description: A model showing the building administrator and school nurse at the center, connected by two-way communication. Surrounding them are internal and external stakeholders (students, parents, district officials, building staff, peers, community) and areas of responsibility such as democratic leadership, professional respect, acknowledgment of roles, knowledge recognition, state/local guidelines, student health trends, episodic care, immunization status, and staff training. The model emphasizes collaboration to optimize student health, well-being, safety, and achievement.\n  Summary: Depicts a collaborative framework for school administrators and school nurses to enhance student health outcomes, including anaphylaxis management.\n  Clinical relevance: Highlights the critical partnership needed to implement effective school health programs like stock epinephrine, especially when nurses are present.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "artifacts",
+        "level": 1,
+        "json_paths": [
+          "document.artifacts[9]"
+        ],
+        "token_count": 235,
+        "character_count": 1151,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0019",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Abbreviations:\n  - Abbr: AAP\n    Meaning: American Academy of Pediatrics\n  - Abbr: A/I\n    Meaning: allergy/immunology\n  - Abbr: EDD\n    Meaning: epinephrine delivery device\n  - Abbr: FA\n    Meaning: food allergy\n  - Abbr: NASN\n    Meaning: National Association of School Nurses\n  - Abbr: RN\n    Meaning: registered nurse\n  - Abbr: SE\n    Meaning: stock epinephrine\n  - Abbr: SN\n    Meaning: school nurse\n  - Abbr: UAP\n    Meaning: unlicensed assistive personnel",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "abbreviations",
+        "level": 1,
+        "json_paths": [
+          "document.abbreviations"
+        ],
+        "token_count": 137,
+        "character_count": 462,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0020",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Keywords:\n  - From document:\n    - Anaphylaxis\n    - Food allergy\n    - Stock epinephrine\n    - Self-injectable epinephrine\n    - Schools\n    - School nurses\n    - Unlicensed assistive personnel\n    - Medication administration\n    - Anaphylaxis training\n    Enriched:\n    - epinephrine auto-injector\n    - food-induced anaphylaxis\n    - school health\n    - emergency action plan\n    - legislation\n    - liability protection\n    - anaphylaxis management\n    - pediatric allergy\n    - food allergy management\n    - school nurse role\n    - unlicensed personnel training\n    - anaphylaxis first aid\n    - allergen avoidance\n    - allergy emergency\n    - stock medication\n    - school safety\n    - anaphylaxis fatality prevention\n    - prehospital care\n    - public health policy\n    - allergy advocacy",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "keywords",
+        "level": 1,
+        "json_paths": [
+          "document.keywords"
+        ],
+        "token_count": 169,
+        "character_count": 797,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0021",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    },
+    {
+      "text": "Usage:\n  Model: deepseek-v4-pro\n  Input tokens: 177306\n  Output tokens: 12016\n  Total tokens: 189322",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "usage",
+        "level": 1,
+        "json_paths": [
+          "document._usage"
+        ],
+        "token_count": 35,
+        "character_count": 100,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report_chunk_0022",
+      "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report"
+    }
+  ]
+}

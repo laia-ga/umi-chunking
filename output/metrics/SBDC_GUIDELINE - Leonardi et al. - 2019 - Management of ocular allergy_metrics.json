@@ -1,0 +1,31 @@
+{
+  "strategy": "semantic_boundary_detection",
+  "type": "SemanticBoundaryChunker",
+  "abbreviation": "SBDC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0,
+    "buffer_size": 1
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "number_of_chunks": 140,
+  "empty_chunks": 0,
+  "characters_min": 7,
+  "characters_p25": 20.0,
+  "characters_median": 160.0,
+  "characters_mean": 589.26,
+  "characters_p75": 207.5,
+  "characters_max": 27640,
+  "characters_std": 3297.51,
+  "characters_total": 82497,
+  "small_chunk_threshold": 400,
+  "small_chunks": 133,
+  "small_chunks_percentage": 95.0,
+  "characters_original": 82701,
+  "characters_ratio": 0.998,
+  "execution_time_seconds": 18.037044,
+  "ram_before_mb": 2088.16,
+  "ram_after_mb": 2107.24,
+  "ram_increase_mb": 19.08
+}

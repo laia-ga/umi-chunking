@@ -1,0 +1,30 @@
+{
+  "strategy": "semantic_similarity_threshold_chunking",
+  "type": "SemanticSimilarityThresholdChunker",
+  "abbreviation": "SSTC",
+  "params": {
+    "threshold": 0.6
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "number_of_chunks": 522,
+  "empty_chunks": 0,
+  "characters_min": 3,
+  "characters_p25": 18.0,
+  "characters_median": 51.0,
+  "characters_mean": 112.82,
+  "characters_p75": 130.75,
+  "characters_max": 2922,
+  "characters_std": 235.4,
+  "characters_total": 58890,
+  "small_chunk_threshold": 400,
+  "small_chunks": 498,
+  "small_chunks_percentage": 95.4,
+  "characters_original": 59485,
+  "characters_ratio": 0.99,
+  "execution_time_seconds": 8.681663,
+  "ram_before_mb": 1556.88,
+  "ram_after_mb": 1556.88,
+  "ram_increase_mb": 0.0
+}

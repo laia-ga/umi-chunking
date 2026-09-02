@@ -1,0 +1,103 @@
+{
+  "medicine_name": null,
+  "composition": null,
+  "pharmaceutical_form": null,
+  "indications": [],
+
+  "posology": null,
+
+  "contraindications": [],
+
+  "warnings_and_precautions": null,
+
+  "interactions": null,
+
+  "pregnancy_and_lactation": null,
+  
+  "effects_on_driving": null,
+
+  "adverse_reactions": [],
+
+  "overdose": null,
+
+  "pharmacodynamics": null,
+
+  "pharmacokinetics": null,
+
+  "excipients": [],
+  "incompatibilities": null,
+  "shelf_life": null,
+  "storage_conditions": null,
+  "container": null,
+  "handling_instructions": null,
+
+  "marketing_authorisation_holder": null,
+  "marketing_authorisation_number": null,
+
+  "active_ingredient": null,
+  "strength": null,
+  "route_of_administration": null,
+
+  "national_codes": [],
+
+  "_source": {
+    "origin": null,
+    "registration_number": null,
+    "name": null,
+    "atc": [],
+    "national_codes": [],
+    "generic": null,
+    "smpc_date": null,
+    "pdf_url": null,
+    "active_ingredient_salt": null,
+    "section_hashes": {
+      "medicine_name": null,
+      "composition": null,
+      "pharmaceutical_form": null,
+      "indications": null,
+      "posology": null,
+      "contraindications": null,
+      "warnings_and_precautions": null,
+      "interactions": null,
+      "pregnancy_and_lactation": null,
+      "effects_on_driving": null,
+      "adverse_reactions": null,
+      "overdose": null,
+      "pharmacodynamics": null,
+      "pharmacokinetics": null,
+      "excipients": null,
+      "incompatibilities": null,
+      "shelf_life": null,
+      "storage_conditions": null,
+      "container": null,
+      "handling_instructions": null,
+      "marketing_authorisation_holder": null,
+      "marketing_authorisation_number": null
+    }
+  },
+
+  "reimbursement": {
+    "status": null,
+    "source": null,
+    "queried_by": null,
+    "n_presentations": null,
+
+    "presentations": [
+      {
+        "national_code": null,
+        "name": null,
+        "laboratory": null,
+        "marketing_status": null,
+        "reimbursement_by_indication": [],
+        "retrieved_at": null,
+        "source": null,
+        "reimbursement_situation": null,
+        "nomenclator_status": null,
+        "patient_copayment": null,
+        "reimbursement_start_date": null
+      }
+    ],
+
+    "national_codes_queried": []
+  }
+}

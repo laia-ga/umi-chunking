@@ -1,0 +1,31 @@
+{
+  "strategy": "sentence_group_chunking",
+  "type": "SentenceGroupChunker",
+  "abbreviation": "SGC",
+  "params": {
+    "sentences_per_chunk": 10,
+    "overlap": 2
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "number_of_chunks": 83,
+  "empty_chunks": 0,
+  "characters_min": 288,
+  "characters_p25": 421.5,
+  "characters_median": 527.0,
+  "characters_mean": 1219.35,
+  "characters_p75": 1449.0,
+  "characters_max": 11850,
+  "characters_std": 1742.99,
+  "characters_total": 101206,
+  "small_chunk_threshold": 400,
+  "small_chunks": 17,
+  "small_chunks_percentage": 20.48,
+  "characters_original": 82701,
+  "characters_ratio": 1.224,
+  "execution_time_seconds": 0.015942,
+  "ram_before_mb": 1126.18,
+  "ram_after_mb": 1126.18,
+  "ram_increase_mb": 0.0
+}

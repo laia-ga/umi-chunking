@@ -1,0 +1,30 @@
+{
+  "strategy": "content_density_adaptive_chunking",
+  "type": "ContentDensityAdaptiveChunker",
+  "abbreviation": "CDAC",
+  "params": {
+    "base_chunk_size": 1200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "number_of_chunks": 85,
+  "empty_chunks": 0,
+  "characters_min": 191,
+  "characters_p25": 559.0,
+  "characters_median": 599.0,
+  "characters_mean": 698.2,
+  "characters_p75": 745.0,
+  "characters_max": 3545,
+  "characters_std": 400.58,
+  "characters_total": 59347,
+  "small_chunk_threshold": 400,
+  "small_chunks": 4,
+  "small_chunks_percentage": 4.71,
+  "characters_original": 59455,
+  "characters_ratio": 0.998,
+  "execution_time_seconds": 0.065326,
+  "ram_before_mb": 2121.43,
+  "ram_after_mb": 2121.43,
+  "ram_increase_mb": 0.0
+}

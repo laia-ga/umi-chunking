@@ -1,0 +1,31 @@
+{
+  "strategy": "overlapping_token_chunking",
+  "type": "OverlappingTokenChunker",
+  "abbreviation": "OFC",
+  "params": {
+    "chunk_size": 500,
+    "overlap_size": 75
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "number_of_chunks": 32,
+  "empty_chunks": 0,
+  "characters_min": 1274,
+  "characters_p25": 1771.25,
+  "characters_median": 2118.0,
+  "characters_mean": 2177.41,
+  "characters_p75": 2600.25,
+  "characters_max": 2747,
+  "characters_std": 438.92,
+  "characters_total": 69677,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 59455,
+  "characters_ratio": 1.172,
+  "execution_time_seconds": 0.008198,
+  "ram_before_mb": 1121.39,
+  "ram_after_mb": 1121.39,
+  "ram_increase_mb": 0.0
+}

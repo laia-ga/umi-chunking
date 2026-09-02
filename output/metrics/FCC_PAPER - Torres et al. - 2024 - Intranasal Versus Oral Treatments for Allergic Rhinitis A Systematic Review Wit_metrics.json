@@ -1,0 +1,31 @@
+{
+  "strategy": "fixed_character_chunking",
+  "type": "FixedCharacterChunker",
+  "abbreviation": "FCC",
+  "params": {
+    "chunk_size": 2000,
+    "overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
+  "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "number_of_chunks": 35,
+  "empty_chunks": 0,
+  "characters_min": 1236,
+  "characters_p25": 2000.0,
+  "characters_median": 2000.0,
+  "characters_mean": 1977.94,
+  "characters_p75": 2000.0,
+  "characters_max": 2000,
+  "characters_std": 127.24,
+  "characters_total": 69228,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 62436,
+  "characters_ratio": 1.109,
+  "execution_time_seconds": 0.000211,
+  "ram_before_mb": 1081.5,
+  "ram_after_mb": 1081.5,
+  "ram_increase_mb": 0.0
+}

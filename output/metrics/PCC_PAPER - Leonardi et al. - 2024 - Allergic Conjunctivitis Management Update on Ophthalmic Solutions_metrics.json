@@ -1,0 +1,32 @@
+{
+  "strategy": "parent_child_chunking",
+  "type": "ParentChildChunker",
+  "abbreviation": "PCC",
+  "params": {
+    "parent_chunk_size": 2000,
+    "child_chunk_size": 700,
+    "chunk_overlap": 100
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
+  "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "number_of_chunks": 186,
+  "empty_chunks": 0,
+  "characters_min": 18,
+  "characters_p25": 396.25,
+  "characters_median": 556.5,
+  "characters_mean": 714.73,
+  "characters_p75": 686.75,
+  "characters_max": 1998,
+  "characters_std": 553.19,
+  "characters_total": 132940,
+  "small_chunk_threshold": 400,
+  "small_chunks": 47,
+  "small_chunks_percentage": 25.27,
+  "characters_original": 65564,
+  "characters_ratio": 2.028,
+  "execution_time_seconds": 0.002545,
+  "ram_before_mb": 1126.2,
+  "ram_after_mb": 1126.2,
+  "ram_increase_mb": 0.0
+}

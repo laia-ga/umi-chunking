@@ -1,0 +1,31 @@
+{
+  "strategy": "llm_boundary_detection_chunking",
+  "type": "LLMBoundaryDetectionChunker",
+  "abbreviation": "LBDC",
+  "params": {
+    "max_chars": 2000,
+    "overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "number_of_chunks": 33,
+  "empty_chunks": 0,
+  "characters_min": 497,
+  "characters_p25": 2003.0,
+  "characters_median": 2131.0,
+  "characters_mean": 1989.27,
+  "characters_p75": 2160.0,
+  "characters_max": 2193,
+  "characters_std": 357.8,
+  "characters_total": 65646,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 59455,
+  "characters_ratio": 1.104,
+  "execution_time_seconds": 0.015725,
+  "ram_before_mb": 2390.95,
+  "ram_after_mb": 2390.95,
+  "ram_increase_mb": 0.0
+}

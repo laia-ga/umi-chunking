@@ -1,0 +1,30 @@
+{
+  "strategy": "topic_based_chunking",
+  "type": "TopicBasedChunker",
+  "abbreviation": "TBC",
+  "params": {
+    "distance_threshold": 0.4
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "number_of_chunks": 630,
+  "empty_chunks": 0,
+  "characters_min": 2,
+  "characters_p25": 17.0,
+  "characters_median": 63.5,
+  "characters_mean": 130.17,
+  "characters_p75": 135.0,
+  "characters_max": 5204,
+  "characters_std": 358.97,
+  "characters_total": 82007,
+  "small_chunk_threshold": 400,
+  "small_chunks": 603,
+  "small_chunks_percentage": 95.71,
+  "characters_original": 82701,
+  "characters_ratio": 0.992,
+  "execution_time_seconds": 0.430232,
+  "ram_before_mb": 1911.54,
+  "ram_after_mb": 1912.09,
+  "ram_increase_mb": 0.54
+}

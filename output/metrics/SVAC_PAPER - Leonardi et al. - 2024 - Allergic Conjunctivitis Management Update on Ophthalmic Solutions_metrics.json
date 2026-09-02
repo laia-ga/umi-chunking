@@ -1,0 +1,31 @@
+{
+  "strategy": "semantic_variance_adaptive_chunking",
+  "type": "SemanticVarianceAdaptiveChunker",
+  "abbreviation": "SVAC",
+  "params": {
+    "sensitivity": 0.2,
+    "window_size": 5
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
+  "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "number_of_chunks": 61,
+  "empty_chunks": 0,
+  "characters_min": 5,
+  "characters_p25": 124.0,
+  "characters_median": 541.0,
+  "characters_mean": 1072.75,
+  "characters_p75": 1535.0,
+  "characters_max": 10542,
+  "characters_std": 1563.18,
+  "characters_total": 65438,
+  "small_chunk_threshold": 400,
+  "small_chunks": 28,
+  "small_chunks_percentage": 45.9,
+  "characters_original": 65564,
+  "characters_ratio": 0.998,
+  "execution_time_seconds": 9.563377,
+  "ram_before_mb": 2161.49,
+  "ram_after_mb": 2183.3,
+  "ram_increase_mb": 21.81
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "dynamic_token_size_chunking",
+  "type": "DynamicTokenSizeChunker",
+  "abbreviation": "DFC",
+  "params": {
+    "min_chunk_size": 150,
+    "max_chunk_size": 500
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "number_of_chunks": 29,
+  "empty_chunks": 0,
+  "characters_min": 350,
+  "characters_p25": 1734.0,
+  "characters_median": 1908.0,
+  "characters_mean": 2049.14,
+  "characters_p75": 2472.0,
+  "characters_max": 2687,
+  "characters_std": 501.08,
+  "characters_total": 59425,
+  "small_chunk_threshold": 400,
+  "small_chunks": 1,
+  "small_chunks_percentage": 3.45,
+  "characters_original": 59455,
+  "characters_ratio": 0.999,
+  "execution_time_seconds": 0.017279,
+  "ram_before_mb": 2121.43,
+  "ram_after_mb": 2121.43,
+  "ram_increase_mb": 0.0
+}

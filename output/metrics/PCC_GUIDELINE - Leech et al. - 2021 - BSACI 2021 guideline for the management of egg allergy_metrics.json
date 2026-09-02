@@ -1,0 +1,32 @@
+{
+  "strategy": "parent_child_chunking",
+  "type": "ParentChildChunker",
+  "abbreviation": "PCC",
+  "params": {
+    "parent_chunk_size": 2000,
+    "child_chunk_size": 700,
+    "chunk_overlap": 100
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "number_of_chunks": 266,
+  "empty_chunks": 0,
+  "characters_min": 5,
+  "characters_p25": 356.5,
+  "characters_median": 572.5,
+  "characters_mean": 690.15,
+  "characters_p75": 688.0,
+  "characters_max": 1968,
+  "characters_std": 537.3,
+  "characters_total": 183581,
+  "small_chunk_threshold": 400,
+  "small_chunks": 73,
+  "small_chunks_percentage": 27.44,
+  "characters_original": 90456,
+  "characters_ratio": 2.03,
+  "execution_time_seconds": 0.004295,
+  "ram_before_mb": 1126.2,
+  "ram_after_mb": 1126.2,
+  "ram_increase_mb": 0.0
+}

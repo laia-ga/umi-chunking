@@ -1,0 +1,31 @@
+{
+  "strategy": "fixed_character_chunking",
+  "type": "FixedCharacterChunker",
+  "abbreviation": "FCC",
+  "params": {
+    "chunk_size": 2000,
+    "overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "number_of_chunks": 34,
+  "empty_chunks": 0,
+  "characters_min": 85,
+  "characters_p25": 1999.0,
+  "characters_median": 2000.0,
+  "characters_mean": 1939.91,
+  "characters_p75": 2000.0,
+  "characters_max": 2000,
+  "characters_std": 323.48,
+  "characters_total": 65957,
+  "small_chunk_threshold": 400,
+  "small_chunks": 1,
+  "small_chunks_percentage": 2.94,
+  "characters_original": 59485,
+  "characters_ratio": 1.109,
+  "execution_time_seconds": 0.00013,
+  "ram_before_mb": 1081.49,
+  "ram_after_mb": 1081.49,
+  "ram_increase_mb": 0.0
+}

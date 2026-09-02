@@ -1,0 +1,30 @@
+{
+  "strategy": "topic_based_chunking",
+  "type": "TopicBasedChunker",
+  "abbreviation": "TBC",
+  "params": {
+    "distance_threshold": 0.4
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers",
+  "input_file": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.md",
+  "number_of_chunks": 915,
+  "empty_chunks": 0,
+  "characters_min": 2,
+  "characters_p25": 15.0,
+  "characters_median": 30.0,
+  "characters_mean": 71.37,
+  "characters_p75": 113.0,
+  "characters_max": 704,
+  "characters_std": 81.74,
+  "characters_total": 65303,
+  "small_chunk_threshold": 400,
+  "small_chunks": 910,
+  "small_chunks_percentage": 99.45,
+  "characters_original": 66188,
+  "characters_ratio": 0.987,
+  "execution_time_seconds": 0.766105,
+  "ram_before_mb": 1912.09,
+  "ram_after_mb": 1912.58,
+  "ram_increase_mb": 0.48
+}

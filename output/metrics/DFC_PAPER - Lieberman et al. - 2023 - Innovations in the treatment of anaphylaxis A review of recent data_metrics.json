@@ -1,0 +1,31 @@
+{
+  "strategy": "dynamic_token_size_chunking",
+  "type": "DynamicTokenSizeChunker",
+  "abbreviation": "DFC",
+  "params": {
+    "min_chunk_size": 150,
+    "max_chunk_size": 500
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "number_of_chunks": 34,
+  "empty_chunks": 0,
+  "characters_min": 225,
+  "characters_p25": 1566.5,
+  "characters_median": 1725.0,
+  "characters_mean": 1748.79,
+  "characters_p75": 1920.0,
+  "characters_max": 2513,
+  "characters_std": 379.52,
+  "characters_total": 59459,
+  "small_chunk_threshold": 400,
+  "small_chunks": 1,
+  "small_chunks_percentage": 2.94,
+  "characters_original": 59485,
+  "characters_ratio": 1.0,
+  "execution_time_seconds": 0.009894,
+  "ram_before_mb": 2121.43,
+  "ram_after_mb": 2121.43,
+  "ram_increase_mb": 0.0
+}

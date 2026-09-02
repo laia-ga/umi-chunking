@@ -1,0 +1,31 @@
+{
+  "strategy": "length_aware_chunking",
+  "type": "LengthAwareChunker",
+  "abbreviation": "LAC",
+  "params": {
+    "target_length": 1800,
+    "tolerance": 200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "number_of_chunks": 33,
+  "empty_chunks": 0,
+  "characters_min": 208,
+  "characters_p25": 1818.0,
+  "characters_median": 1923.0,
+  "characters_mean": 1799.97,
+  "characters_p75": 1967.0,
+  "characters_max": 3545,
+  "characters_std": 525.83,
+  "characters_total": 59399,
+  "small_chunk_threshold": 400,
+  "small_chunks": 1,
+  "small_chunks_percentage": 3.03,
+  "characters_original": 59455,
+  "characters_ratio": 0.999,
+  "execution_time_seconds": 0.012272,
+  "ram_before_mb": 2183.05,
+  "ram_after_mb": 2183.05,
+  "ram_increase_mb": 0.0
+}

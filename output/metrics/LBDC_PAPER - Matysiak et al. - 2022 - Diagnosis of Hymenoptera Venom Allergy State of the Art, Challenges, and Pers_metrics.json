@@ -1,0 +1,31 @@
+{
+  "strategy": "llm_boundary_detection_chunking",
+  "type": "LLMBoundaryDetectionChunker",
+  "abbreviation": "LBDC",
+  "params": {
+    "max_chars": 2000,
+    "overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers",
+  "input_file": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.md",
+  "number_of_chunks": 35,
+  "empty_chunks": 0,
+  "characters_min": 512,
+  "characters_p25": 2094.5,
+  "characters_median": 2133.0,
+  "characters_mean": 2081.71,
+  "characters_p75": 2174.5,
+  "characters_max": 2197,
+  "characters_std": 275.39,
+  "characters_total": 72860,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 66188,
+  "characters_ratio": 1.101,
+  "execution_time_seconds": 0.031448,
+  "ram_before_mb": 2390.95,
+  "ram_after_mb": 2390.95,
+  "ram_increase_mb": 0.0
+}

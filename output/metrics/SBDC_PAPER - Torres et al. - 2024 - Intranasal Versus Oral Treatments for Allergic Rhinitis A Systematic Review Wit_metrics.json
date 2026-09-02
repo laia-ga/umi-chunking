@@ -1,0 +1,31 @@
+{
+  "strategy": "semantic_boundary_detection",
+  "type": "SemanticBoundaryChunker",
+  "abbreviation": "SBDC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0,
+    "buffer_size": 1
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
+  "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "number_of_chunks": 92,
+  "empty_chunks": 0,
+  "characters_min": 17,
+  "characters_p25": 34.75,
+  "characters_median": 177.5,
+  "characters_mean": 676.98,
+  "characters_p75": 273.25,
+  "characters_max": 10076,
+  "characters_std": 1661.96,
+  "characters_total": 62282,
+  "small_chunk_threshold": 400,
+  "small_chunks": 74,
+  "small_chunks_percentage": 80.43,
+  "characters_original": 62436,
+  "characters_ratio": 0.998,
+  "execution_time_seconds": 14.889612,
+  "ram_before_mb": 2103.06,
+  "ram_after_mb": 2121.43,
+  "ram_increase_mb": 18.36
+}

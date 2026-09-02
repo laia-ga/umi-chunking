@@ -1,0 +1,30 @@
+{
+  "strategy": "content_density_adaptive_chunking",
+  "type": "ContentDensityAdaptiveChunker",
+  "abbreviation": "CDAC",
+  "params": {
+    "base_chunk_size": 1200
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
+  "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "number_of_chunks": 139,
+  "empty_chunks": 0,
+  "characters_min": 55,
+  "characters_p25": 550.0,
+  "characters_median": 593.0,
+  "characters_mean": 635.73,
+  "characters_p75": 693.0,
+  "characters_max": 2078,
+  "characters_std": 209.53,
+  "characters_total": 88366,
+  "small_chunk_threshold": 400,
+  "small_chunks": 9,
+  "small_chunks_percentage": 6.47,
+  "characters_original": 88611,
+  "characters_ratio": 0.997,
+  "execution_time_seconds": 0.104269,
+  "ram_before_mb": 2121.43,
+  "ram_after_mb": 2121.43,
+  "ram_increase_mb": 0.0
+}

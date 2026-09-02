@@ -1,0 +1,1148 @@
+{
+  "strategy": "hierarchical_json_chunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "HJC",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192,
+    "token_counter": "BAAI/bge-m3",
+    "document_plan": "papers",
+    "indivisible_list_paths": [
+      "authors"
+    ]
+  },
+  "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
+  "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.json",
+  "original_character_count": 29540,
+  "number_of_chunks": 62,
+  "chunks": [
+    {
+      "text": "Title: Allergic Conjunctivitis Management: Update on Ophthalmic Solutions\n\nAuthors:\n  - Andrea Leonardi\n  - Luigi Quintieri\n  - Ignacio Jáuregui Presa\n  - Jesús Merayo LLoves\n  - Jesús Montero\n  - José Manuel Benítez-del-Castillo\n  - Francisco Javier Seoane Lestón\n  - Eloína González-Mancebo\n  - Riccardo Asero\n  - Anna Groblewska\n  - Piotr Kuna\n\nJournal: Current Allergy and Asthma Reports\n\nYear: 2024\n\nDoi: 10.1007/s11882-024-01150-0\n\nArticle type: narrative_review\n\nMedical specialty: allergy and immunology\n\nKeywords:\n  - Allergic Conjunctivitis\n  - Topical Treatment\n  - Antihistamines\n  - Preservatives\n  - Benzalkonium Chloride (BAK)\n  - Hyaluronic acid (HA)\n\nLanguage: en",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "metadata",
+        "level": 1,
+        "json_paths": [
+          "document.title",
+          "document.authors",
+          "document.journal",
+          "document.year",
+          "document.doi",
+          "document.article_type",
+          "document.medical_specialty",
+          "document.keywords",
+          "document.language"
+        ],
+        "token_count": 184,
+        "character_count": 680,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0000",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Condition or topic: Ocular allergy, specifically allergic conjunctivitis (seasonal and perennial)\n\nClinical background: Ocular allergy represents a set of often underappreciated immune-mediated inflammatory conditions affecting the anterior eye surface, encompassing various clinical presentations in both children and adults. Allergic conjunctivitis is the most common form and is sub-classified into seasonal allergic conjunctivitis and perennial allergic conjunctivitis depending on whether the triggering aeroallergen is seasonal or present year-round; grass pollen is the most frequent sensitizer in seasonal allergic conjunctivitis, whereas dust mites and animal dander predominate in perennial allergic conjunctivitis. The prevalence of ocular allergy has been rising globally for decades, with seasonal and perennial allergic conjunctivitis affecting between 14% and up to 45% of the general population depending on geographic area. Despite this, allergic conjunctivitis remains underdiagnosed and undertreated—only 10% of affected individuals seek medical attention, with most self-managing using over-the-counter products and non-pharmacological remedies. Ocular allergy frequently coexists with other ocular disorders such as infections and dry eye disease, markedly impairs quality of life, and imposes a substantial economic burden. Management encompasses preventive, non-pharmacological, and pharmacological strategies. First-line pharmacotherapy includes topical antihistamines, mast cell stabilizers, and agents with dual activity, while corticosteroids and immunomodulators are reserved for severe keratoconjunctivitis. Because many patients receive topical treatments for prolonged periods, the short- and long-term safety and ocular surface tolerability of these preparations are critical; certain excipients in ophthalmic solutions can disrupt the epithelial barrier and tear film, potentially leading to dry eye or exacerbation of allergic conjunctivitis. The review aims to collate current evidence on these therapeutic options.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "clinical_background",
+        "level": 2,
+        "json_paths": [
+          "document.condition_or_topic",
+          "document.clinical_background"
+        ],
+        "token_count": 502,
+        "character_count": 2050,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0001",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Objectives:\n  - To present updated information on the management of ocular allergy for healthcare providers, with a particular emphasis on topical treatments for seasonal and perennial allergic conjunctivitis.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "objectives",
+        "level": 2,
+        "json_paths": [
+          "document.objectives"
+        ],
+        "token_count": 49,
+        "character_count": 209,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0002",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Main findings:\n  - Description: Emedastine was found to be superior to levocabastine in terms of efficacy.\n    Context: Reference [27]\n  - Description: Olopatadine demonstrated superiority over emedastine.\n    Context: References [29, 30]\n  - Description: Olopatadine showed similar symptom reduction to some dual-action agents.\n    Context: Reference [28]\n  - Description: Cetirizine ophthalmic solution significantly reduced ocular itching and conjunctival redness compared to its vehicle.\n    Context: Clinical trial NCT01881113; references [32–34]\n  - Description: Bilastine ophthalmic solution demonstrated a fast onset of action and maintained efficacy for up to 16 hours post-administration, supporting once-daily dosing.\n    Context: References [31, 38]\n  - Description: In a phase III trial, bilastine showed similar efficacy to ketotifen 0.025% multi-dose formulation.\n    Context: References [35, 39]\n  - Description: Olopatadine, ketotifen, alcaftadine, and bepotastine exhibit a similar efficacy profile, though some studies indicate bepotastine and alcaftadine may be superior to olopatadine.\n    Context: References [43–45]\n  - Description: Ketotifen 0.025% was effective in managing seasonal allergic conjunctivitis, but patient-reported outcomes favored olopatadine 0.1% solution for comfort and efficacy.\n    Context: Reference [46]\n  - Description: In terms of clinical relief and tolerability, dual-action agents were superior to antihistamines like levocabastine and mast cell stabilizers such as lodoxamide or cromolyn.\n    Context: References [7, 28]\n  - Description: Intranasal corticosteroids (fluticasone furoate, mometasone furoate) significantly improved ocular allergic symptoms compared to placebo.\n    Context: References [7, 52]",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "main_findings",
+        "level": 2,
+        "json_paths": [
+          "document.main_findings"
+        ],
+        "token_count": 450,
+        "character_count": 1760,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0003",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Safety results:\n  Notable adverse events:\n    - Bilastine: uncommon adverse reactions; common side effects include increased ocular discomfort, eye burning/stinging upon instillation, dry eye, blurry vision, eye discharge, eye irritation, lacrimation.\n    - Cetirizine: common side effects include hyperaemia, lid oedema, keratitis, eye pain.\n    - Emedastine: common adverse events include itchy eyes, eye pain, redness of the eyes, burning sensation, watery eyes.\n    - Levocabastine: common adverse events include blurred vision, eye irritation, pain, swelling, itching, redness.\n    - Alcaftadine: taste perversion and bad taste, eye irritation, burning and/or stinging upon instillation.\n    - Azelastine: common side effects include punctate erosion of corneal epithelium, eye pain.\n    - Bepotastine besilate: common side effects include abnormal sensation in eyes, burning sensation, eye irritation, punctate keratitis.\n    - Epinastine: common side effects include eye irritation, dry eye.\n    - Ketotifen: common side effects include eye irritation, eye pain, eye pruritus, eye redness.\n    - Olopatadine: common side effects include eye irritation, eye pain, mild transient irritation.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "safety_results",
+        "level": 2,
+        "json_paths": [
+          "document.safety_results"
+        ],
+        "token_count": 302,
+        "character_count": 1196,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0004",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Secondary results:\n  - Preservative-free formulation of bilastine co-formulated with hyaluronic acid preserved tear film and ocular surface integrity in preclinical studies.\n  - Patient preference: olopatadine 0.1% was preferred over ketotifen 0.025% in a study measuring comfort and efficacy.\n  - Bilastine phase III trial showed non-inferiority compared to ketotifen 0.05%.\n  - Cetirizine ophthalmic solution demonstrated an acceptable safety profile and was well tolerated.\n  - In a pediatric study, ketotifen was safe and effective in children aged 7–15 years.\n  - Preservative-free single-dose and multi-dose formulations of ketotifen, olopatadine, and azelastine are available in some European countries.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "secondary_results",
+        "level": 2,
+        "json_paths": [
+          "document.secondary_results"
+        ],
+        "token_count": 182,
+        "character_count": 710,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0005",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Interpretation: After reviewing current evidence, the authors interpret that allergic conjunctivitis is frequently underdiagnosed and may benefit from a multidisciplinary approach. Management involves a stepwise strategy: allergen avoidance based on allergy testing, first-line pharmacological treatment with topical antihistamines or dual-action agents, with preference for preservative-free formulations and hyaluronic acid co-formulation to protect the ocular surface and improve compliance.\n\nClinical implications:\n  - Allergic conjunctivitis is prevalent and often underdiagnosed, and a multidisciplinary approach can aid diagnosis in patients with compatible symptoms and common concomitant conditions.\n  - Preservatives in ophthalmic solutions induce ocular surface damage, exacerbate seasonal and perennial allergic conjunctivitis, and may lead to dry eye disease.\n  - Co-formulation with hyaluronic acid has potential benefits including improved ocular surface wound healing, prevention of dryness, and increased ocular bioavailability of active drugs.\n  - Dosing frequency influences treatment compliance: simpler dosing regimens correlate with higher adherence.\n\nPractice implications:\n  - Perform an allergy study as part of management to guide allergen avoidance measures.\n  - Use topical ophthalmic antihistamines or dual-action drugs as first-line pharmacological treatment for allergic conjunctivitis.\n  - Prefer preservative-free ophthalmic solutions to avoid ocular surface damage.\n  - Consider formulations with hyaluronic acid to protect the ocular surface and potentially enhance drug bioavailability.\n  - Favor once-daily dosing when possible to improve patient adherence.\n  - Choose single-dose or preservative-free multi-dose devices for anti-allergic topical treatments.\n  - A recently developed once-daily, preservative-free, antihistamine formulation with hyaluronic acid is now available as a treatment option.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "discussion_and_implications",
+        "level": 1,
+        "json_paths": [
+          "document.interpretation",
+          "document.clinical_implications",
+          "document.practice_implications"
+        ],
+        "token_count": 440,
+        "character_count": 1938,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0006",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Ocular allergy (OA)\n  Context: Principal topic; a group of inflammatory anterior surface eye diseases encompassing allergic conjunctivitis and other forms.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[0]"
+        ],
+        "token_count": 49,
+        "character_count": 188,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0007",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Allergic conjunctivitis (AC)\n  Context: Most common OA; IgE-mediated, Th2 inflammation affecting the ocular surface during aeroallergen exposure; includes SAC and PAC.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[1]"
+        ],
+        "token_count": 56,
+        "character_count": 200,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0008",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Seasonal allergic conjunctivitis (SAC)\n  Context: Most prevalent OA form triggered by seasonal allergens like grass pollen; over half of OA cases.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[2]"
+        ],
+        "token_count": 51,
+        "character_count": 179,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0009",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Perennial allergic conjunctivitis (PAC)\n  Context: OA form triggered by perennial allergens such as dust mites and animal dander.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[3]"
+        ],
+        "token_count": 49,
+        "character_count": 162,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0010",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Vernal keratoconjunctivitis (VKC)\n  Context: Chronic, severe OA form requiring topical immunomodulators or corticosteroids.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[4]"
+        ],
+        "token_count": 48,
+        "character_count": 156,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0011",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Atopic keratoconjunctivitis (AKC)\n  Context: Chronic, severe OA form; may require immunomodulators or biologic therapy.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[5]"
+        ],
+        "token_count": 46,
+        "character_count": 152,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0012",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Dry eye disease (DED)\n  Context: Frequent comorbid and differential diagnosis for AC; can be exacerbated by topical treatments containing BAK.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[6]"
+        ],
+        "token_count": 51,
+        "character_count": 175,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0013",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Allergic rhinitis (AR)\n  Context: Commonly overlaps with AC, defined as allergic rhinoconjunctivitis; warrants systemic antihistamines or intranasal corticosteroids.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[7]"
+        ],
+        "token_count": 58,
+        "character_count": 198,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0014",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Allergic rhinoconjunctivitis\n  Context: Combined presentation of AC and AR; often underdiagnosed in its ocular component.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[8]"
+        ],
+        "token_count": 40,
+        "character_count": 154,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0015",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Infections\n  Context: Overlapping ocular surface disorders with OA; corticosteroids may increase susceptibility.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[9]"
+        ],
+        "token_count": 38,
+        "character_count": 145,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0016",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Corneal melting\n  Context: Potential severe adverse effect of topical NSAIDs.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[10]"
+        ],
+        "token_count": 30,
+        "character_count": 110,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0017",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Corneal perforation\n  Context: Potential severe adverse effect of topical NSAIDs.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[11]"
+        ],
+        "token_count": 30,
+        "character_count": 114,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0018",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Rebound hyperaemia\n  Context: Adverse effect from prolonged topical vasoconstrictor use.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[12]"
+        ],
+        "token_count": 31,
+        "character_count": 121,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0019",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Tachyphylaxis\n  Context: Diminished response after prolonged topical vasoconstrictor use.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[13]"
+        ],
+        "token_count": 32,
+        "character_count": 122,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0020",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Cataract\n  Context: Risk associated with topical corticosteroid therapy.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[14]"
+        ],
+        "token_count": 26,
+        "character_count": 105,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0021",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Increased intraocular pressure\n  Context: Potential adverse effect of topical corticosteroids.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[15]"
+        ],
+        "token_count": 31,
+        "character_count": 127,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0022",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Delayed wound healing\n  Context: Corticosteroid-related adverse event.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[16]"
+        ],
+        "token_count": 28,
+        "character_count": 103,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0023",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Diseases and conditions:\n  Name: Superinfections\n  Context: Risk associated with corticosteroid use.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "diseases_and_conditions",
+        "level": 2,
+        "json_paths": [
+          "document.diseases_and_conditions[17]"
+        ],
+        "token_count": 23,
+        "character_count": 100,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0024",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Bilastine\n  Mechanism: H1 receptor antagonist (antihistamine)\n  Context: Newly EMA-approved topical antihistamine for SAC/PAC; preservative-free formulation with hyaluronic acid, once-daily dosing.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[0]"
+        ],
+        "token_count": 70,
+        "character_count": 226,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0025",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Cetirizine\n  Mechanism: H1 receptor antagonist (antihistamine)\n  Context: FDA-approved topical antihistamine; dosed three times daily; contains BAK 0.01%.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[1]"
+        ],
+        "token_count": 58,
+        "character_count": 183,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0026",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Emedastine\n  Mechanism: H1 receptor antagonist (antihistamine)\n  Context: Second-generation topical antihistamine; superior to levocabastine, inferior to olopatadine.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[2]"
+        ],
+        "token_count": 56,
+        "character_count": 195,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0027",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Levocabastine\n  Mechanism: H1 receptor antagonist (antihistamine)\n  Context: Topical antihistamine; used as comparator; preservative-free option available in some countries.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[3]"
+        ],
+        "token_count": 54,
+        "character_count": 202,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0028",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Lodoxamide\n  Mechanism: Mast cell stabilizer\n  Context: Topical mast cell stabilizer; less effective than antihistamines for acute symptoms.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[4]"
+        ],
+        "token_count": 47,
+        "character_count": 169,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0029",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Nedocromil\n  Mechanism: Mast cell stabilizer\n  Context: Topical mast cell stabilizer; often less preferred due to prophylactic need.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[5]"
+        ],
+        "token_count": 46,
+        "character_count": 161,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0030",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Sodium cromoglycate\n  Mechanism: Mast cell stabilizer\n  Context: Topical mast cell stabilizer; comparative agent in clinical trials.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[6]"
+        ],
+        "token_count": 45,
+        "character_count": 161,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0031",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Alcaftadine\n  Mechanism: Antihistamine and mast cell stabilizer (dual-action)\n  Context: Dual-action topical agent; similar efficacy to olopatadine, some studies suggest superiority.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[7]"
+        ],
+        "token_count": 57,
+        "character_count": 211,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0032",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Azelastine\n  Mechanism: Antihistamine and mast cell stabilizer (dual-action)\n  Context: Well-established dual-action agent; preservative-free formulations available in Europe.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[8]"
+        ],
+        "token_count": 55,
+        "character_count": 204,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0033",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Bepotastine besilate\n  Mechanism: Antihistamine and mast cell stabilizer (dual-action)\n  Context: Dual-action agent; similar efficacy to olopatadine, may offer superior symptom control.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[9]"
+        ],
+        "token_count": 58,
+        "character_count": 214,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0034",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Epinastine\n  Mechanism: Antihistamine and mast cell stabilizer (dual-action)\n  Context: Dual-action topical agent with rapid onset.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[10]"
+        ],
+        "token_count": 46,
+        "character_count": 160,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0035",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Ketotifen\n  Mechanism: Antihistamine and mast cell stabilizer (dual-action)\n  Context: Effective dual-action agent; 0.025% formulation available preservative-free in some countries; children 7–15 years included in trials.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[11]"
+        ],
+        "token_count": 65,
+        "character_count": 250,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0036",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Olopatadine\n  Mechanism: Antihistamine and mast cell stabilizer (dual-action)\n  Context: Widely used dual-action agent; 1 mg/ml twice daily or 2.22 mg/ml once daily; preservative-free available.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[12]"
+        ],
+        "token_count": 65,
+        "character_count": 223,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0037",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Naphazoline\n  Mechanism: α-adrenergic agonist (vasoconstrictor)\n  Context: Topical vasoconstrictor for conjunctival redness; does not treat allergy; prolonged use causes rebound hyperaemia.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[13]"
+        ],
+        "token_count": 67,
+        "character_count": 218,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0038",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Oxymetazoline\n  Mechanism: α-adrenergic agonist (vasoconstrictor)\n  Context: Topical vasoconstrictor; short-term use only due to risk of tachyphylaxis.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[14]"
+        ],
+        "token_count": 60,
+        "character_count": 180,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0039",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Phenylephrine\n  Mechanism: α-adrenergic agonist (vasoconstrictor)\n  Context: Topical vasoconstrictor with similar safety concerns.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[15]"
+        ],
+        "token_count": 49,
+        "character_count": 159,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0040",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Tetrahydrozoline\n  Mechanism: α-adrenergic agonist (vasoconstrictor)\n  Context: Topical vasoconstrictor for hyperaemia relief.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[16]"
+        ],
+        "token_count": 50,
+        "character_count": 155,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0041",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Fluticasone furoate\n  Mechanism: Anti-inflammatory (corticosteroid)\n  Context: Intranasal corticosteroid effective for ocular allergic symptoms in AR.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[17]"
+        ],
+        "token_count": 51,
+        "character_count": 179,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0042",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Mometasone furoate\n  Mechanism: Anti-inflammatory (corticosteroid)\n  Context: Intranasal corticosteroid showing positive effects on ocular allergy.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[18]"
+        ],
+        "token_count": 50,
+        "character_count": 176,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0043",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Ketorolac\n  Mechanism: Cyclooxygenase inhibitor (NSAID)\n  Context: First approved topical NSAID for OA; associated with instillation discomfort and corneal risks.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[19]"
+        ],
+        "token_count": 61,
+        "character_count": 191,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0044",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Cyclosporine\n  Mechanism: Calcineurin inhibitor (immunomodulator)\n  Context: Topical immunomodulator for chronic OA forms like VKC/AKC.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[20]"
+        ],
+        "token_count": 56,
+        "character_count": 164,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0045",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Tacrolimus\n  Mechanism: Calcineurin inhibitor (immunomodulator)\n  Context: Topical immunomodulator used in severe keratoconjunctivitis.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[21]"
+        ],
+        "token_count": 51,
+        "character_count": 164,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0046",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Fluorometholone acetate\n  Mechanism: Anti-inflammatory (corticosteroid)\n  Context: Comparator corticosteroid in ketotifen trials.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[22]"
+        ],
+        "token_count": 48,
+        "character_count": 158,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0047",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Topical corticosteroids (class)\n  Mechanism: Anti-inflammatory\n  Context: Potent anti-inflammatory drugs for severe OA exacerbations; monitored due to adverse effects.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[23]"
+        ],
+        "token_count": 59,
+        "character_count": 196,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0048",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Second-generation systemic antihistamines\n  Mechanism: H1 receptor antagonist (systemic)\n  Context: Recommended for OA with concomitant AR; fewer adverse events and sedation than first-generation.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[24]"
+        ],
+        "token_count": 65,
+        "character_count": 225,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0049",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Systemic leukotriene receptor antagonists\n  Mechanism: Leukotriene receptor blocker\n  Context: Useful in AR but limited in OA; less effective than oral antihistamines.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[25]"
+        ],
+        "token_count": 54,
+        "character_count": 196,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0050",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Allergen immunotherapy (AIT)\n  Mechanism: Induces immune tolerance to allergens\n  Context: Etiological treatment for IgE-mediated OA; recommended in guidelines for severe or uncontrolled SAC/PAC.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[26]"
+        ],
+        "token_count": 64,
+        "character_count": 224,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0051",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Biologic therapy\n  Context: Prescribed for severe refractory OA such as VKC/AKC.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[27]"
+        ],
+        "token_count": 37,
+        "character_count": 109,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0052",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Systemic immunosuppressive treatment\n  Context: Option for severe chronic OA under specialist care.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[28]"
+        ],
+        "token_count": 32,
+        "character_count": 128,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0053",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Lubricating eye drops\n  Context: Concomitant supportive therapy to maximize symptom control.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[29]"
+        ],
+        "token_count": 34,
+        "character_count": 121,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0054",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Over-the-counter (OTC) medications\n  Context: Commonly used by patients for self-management of AC symptoms.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[30]"
+        ],
+        "token_count": 39,
+        "character_count": 136,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0055",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Drugs and therapies:\n  Name: Complementary, non-pharmacological remedies\n  Context: Part of stepwise management before pharmacological intervention.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "drugs_and_therapies",
+        "level": 2,
+        "json_paths": [
+          "document.drugs_and_therapies[31]"
+        ],
+        "token_count": 37,
+        "character_count": 148,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0056",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Biomarkers and genes:\n  - Name: IgE\n    Role: Mediator in IgE-mediated hypersensitivity; diagnostic marker\n    Context: Allergic conjunctivitis is IgE-mediated; allergen-specific IgE testing confirms sensitization.\n  - Name: Allergen-specific IgE\n    Role: Diagnostic; measured by skin prick test (SPT) or in vitro assay\n    Context: Gold standard for identifying allergic triggers; essential when considering allergen immunotherapy.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "biomarkers_and_genes",
+        "level": 2,
+        "json_paths": [
+          "document.biomarkers_and_genes"
+        ],
+        "token_count": 116,
+        "character_count": 433,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0057",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Key numeric data:\n  - Parameter: Prevalence of SAC and PAC\n    Value: 14% to 45%\n    Context: Percentage of the general population affected, depending on geographical region.\n  - Parameter: AC patients seeking medical attention\n    Value: 10%\n    Context: Only a small fraction of individuals with AC symptoms consult a healthcare professional.\n  - Parameter: Proportion of OA that is SAC\n    Value: >50%\n    Context: SAC represents the majority of ocular allergy cases.\n  - Parameter: Bilastine 0.6 mg/ml duration of action\n    Value: 16 hours\n    Context: Post-administration efficacy window, enabling once-daily dosing.\n  - Parameter: Cetirizine 2.4 mg/ml dosing frequency\n    Value: every 8 hours\n    Context: One drop per affected eye, three times daily.\n  - Parameter: Bilastine 0.6 mg/ml dosing\n    Value: once daily\n    Context: Preservative-free, co-formulated with hyaluronic acid.\n  - Parameter: Olopatadine 2.22 mg/ml dosing\n    Value: once daily\n    Context: Higher concentration formulation approved for once-daily use.\n  - Parameter: Ketotifen 0.025% dosing\n    Value: twice daily\n    Context: Standard regimen; preservative-free options available.\n  - Parameter: Children age range in ketotifen safety study\n    Value: 7–15 years\n    Context: Safety evaluated in pediatric population.\n  - Parameter: BAK concentration in cetirizine ophthalmic solution\n    Value: 0.01%\n    Context: Preservative used in the multi-dose formulation.\n  - Parameter: Olopatadine 1 mg/ml dosing\n    Value: twice daily\n    Context: Standard dose; preservative-free formulation also available.\n  - Parameter: Olopatadine 2.22 mg/ml dosing\n    Value: once daily\n    Context: Higher concentration approved for once-daily administration.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "key_numeric_data",
+        "level": 2,
+        "json_paths": [
+          "document.key_numeric_data"
+        ],
+        "token_count": 420,
+        "character_count": 1726,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0058",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Tables:\n  Title: Characteristics of topical multi-dose antihistamines and dual-action agents for the treatment of SAC and PAC\n  Data:\n    Row 1:\n      Active ophthalmic solution: Bilastine\n      Dose (mg/ml): 0.6\n      Inactive ingredients (excipients): hydroxypropyl-β-cyclodextrin, methyl cellulose, sodium hyaluronate, anhydrous glycerine, sodium hydroxide 1n, water for injection\n      Co-formulation with ha: Yes\n      Daily dose: Once daily\n      Preservatives (%): Free\n    Row 2:\n      Active ophthalmic solution: Cetirizine\n      Dose (mg/ml): 2.4\n      Inactive ingredients (excipients): glycerine, sodium phosphate, dibasic, edetate disodium, polyethylene glycol 400, polysorbate 80, hypromellose, hydrochloric acid/ sodium hydroxide (to adjust pH), water for injection\n      Co-formulation with ha: No\n      Daily dose: Three times daily\n      Preservatives (%): BAK 0.01\n    Row 3:\n      Active ophthalmic solution: Emedastine\n      Dose (mg/ml): 0.5\n      Inactive ingredients (excipients): tromethamol, sodium chloride, hypromellose, purified water, hydrochloric acid and/ or sodium hydroxide (to adjust pH)\n      Co-formulation with ha: No\n      Daily dose: Twice daily\n      Preservatives (%): BAK 0.01\n    Row 4:\n      Active ophthalmic solution: Levocabastine\n      Dose (mg/ml): 0.5\n      Inactive ingredients (excipients): propylene glycol, disodium phosphate anhydrous, monobasic sodium phosphate monohydrate, hypromellose, polysorbate 80, edetate calcium disodium\n      Co-formulation with ha: No\n      Daily dose: Twice daily\n      Preservatives (%): BAK 0.15\n    Row 5:\n      Active ophthalmic solution: Alcaftadine\n      Dose (mg/ml): 2.5\n      Inactive ingredients (excipients): edetate disodium, monobasic sodium phosphate, purified water, sodium chloride, sodium hydroxide, hydrochloric acid (to adjust pH)\n      Co-formulation with ha: No\n      Daily dose: Twice daily\n      Preservatives (%): BAK 0.05\n    Row 6:\n      Active ophthalmic solution: Azelastine\n      Dose (mg/ml): 0.5\n      Inactive ingredients (excipients): hypromellose, disodium edetate, liquid sorbitol (crystallising), sodium hydroxide (to adjust pH), water for injection\n      Co-formulation with ha: No\n      Daily dose: Twice daily\n      Preservatives (%): BAK 0.125 (Free available)\n    Row 7:\n      Active ophthalmic solution: Bepostatine besilate\n      Dose (mg/ml): 15\n      Inactive ingredients (excipients): sodium phosphate, sodium chloride, sodium hydroxide, water\n      Co-formulation with ha: No\n      Daily dose: Twice daily\n      Preservatives (%): BAK 0.05\n    Row 8:\n      Active ophthalmic solution: Epinastine\n      Dose (mg/ml): 0.5\n      Inactive ingredients (excipients): disodium edetate, sodium chloride, sodium dihydrogen phosphate dihydrate, sodium hydroxide/ hydrochloric acid (to adjust pH), purified water\n      Co-formulation with ha: No\n      Daily dose: Twice daily\n      Preservatives (%): BAK 0.1\n    Row 9:\n      Active ophthalmic solution: Ketotifen\n      Dose (mg/ml): 0.025 / 0.05\n      Inactive ingredients (excipients): glycerol (e422), sodium hydroxide (e524), water for injections\n      Co-formulation with ha: No\n      Daily dose: Twice daily\n      Preservatives (%): BAK 0.1 (Free available)\n    Row 10:\n      Active ophthalmic solution: Olopatadine\n      Dose (mg/ml): 1 / 2.22\n      Inactive ingredients (excipients): sodium chloride, disodium hydrogen phosphate dodecahydrate (e339), hydrochloric acid (e507), sodium hydroxide (e524), purified water\n      Co-formulation with ha: No\n      Daily dose: Twice daily / Once daily\n      Preservatives (%): BAK 0.1 (Free available)\n  Summary: Table 1 lists topical multi-dose antihistamines and dual-action agents approved for SAC and PAC, detailing their active ingredient concentration, excipients, co-formulation with hyaluronic acid, recommended daily dosing frequency, and preservative content. It includes bilastine 0.6 mg/ml (preservative-free, once daily, with HA), cetirizine 2.4 mg/ml (BAK 0.01%, three times daily), emedastine 0.5 mg/ml (BAK 0.01%, twice daily), levocabastine 0.5 mg/ml (BAK 0.15%, twice daily), and several dual-action agents such as alcaftadine 2.5 mg/ml (BAK 0.05%, twice daily), azelastine 0.5 mg/ml (BAK 0.125%, twice daily, also available preservative-free), bepotastine besilate 15 mg/ml (BAK 0.05%, twice daily), epinastine 0.5 mg/ml (BAK 0.1%, twice daily), ketotifen 0.025–0.05 mg/ml (BAK 0.1%, twice daily, sometimes preservative-free), and olopatadine 1–2.22 mg/ml (BAK 0.1%, twice daily to once daily, preservative-free options exist). Not all formulations are preservative-free; BAK is common, and only bilastine includes HA.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "tables",
+        "level": 2,
+        "json_paths": [
+          "document.tables[0]"
+        ],
+        "token_count": 1295,
+        "character_count": 4658,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0059",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Main conclusion: The management of seasonal and perennial allergic conjunctivitis should prioritize topical therapies that effectively control signs and symptoms while minimizing iatrogenic damage to the ocular surface, as many commercial formulations contain preservatives like benzalkonium chloride that can disrupt the tear film and exacerbate dry eye disease.\n\nNarrative summary: This review updates the topical management of seasonal and perennial allergic conjunctivitis (SAC/PAC), the most common forms of ocular allergy, emphasizing the importance of tear film integrity and the potential harm from ophthalmic solution additives. SAC and PAC are IgE-mediated, often underdiagnosed, and frequently comorbid with allergic rhinitis and dry eye disease. First-line pharmacological therapy includes topical antihistamines, mast cell stabilizers, and dual-action agents, with recent additions like bilastine 0.6 mg/ml (preservative-free, once daily, co-formulated with hyaluronic acid) and cetirizine 2.4 mg/ml. However, many older products contain benzalkonium chloride (BAK), a preservative that disrupts the epithelial barrier and may promote dry eye. The review tabulates approved multi-dose formulations, detailing their excipients, dosing, and preservative content. For instance, levocabastine, emedastine, and several dual-action agents contain BAK at varying concentrations, while preservative-free single-dose options exist for ketotifen, olopatadine, and azelastine. Topical vasoconstrictors and NSAIDs are discouraged due to limited efficacy and adverse effects, and corticosteroids are reserved for severe cases under ophthalmological supervision. Allergen immunotherapy remains an option when avoidance and pharmacotherapy fail. In summary, clinicians should select topical agents not only for their antiallergic efficacy but also for their formulation’s impact on the ocular surface, preferentially using preservative-free or low-toxicity preparations to optimize long-term safety and tolerability.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "conclusions",
+        "level": 2,
+        "json_paths": [
+          "document.main_conclusion",
+          "document.narrative_summary"
+        ],
+        "token_count": 499,
+        "character_count": 2014,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0060",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Usage:\n  Model: deepseek-v4-pro\n  Input tokens: 56636\n  Output tokens: 7041\n  Total tokens: 63677",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "_usage",
+        "level": 1,
+        "json_paths": [
+          "document._usage"
+        ],
+        "token_count": 34,
+        "character_count": 97,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0061",
+      "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    }
+  ]
+}

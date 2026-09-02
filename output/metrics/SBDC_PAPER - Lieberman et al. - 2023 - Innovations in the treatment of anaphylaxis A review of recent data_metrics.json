@@ -1,0 +1,31 @@
+{
+  "strategy": "semantic_boundary_detection",
+  "type": "SemanticBoundaryChunker",
+  "abbreviation": "SBDC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0,
+    "buffer_size": 1
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "number_of_chunks": 116,
+  "empty_chunks": 0,
+  "characters_min": 8,
+  "characters_p25": 24.0,
+  "characters_median": 162.5,
+  "characters_mean": 511.17,
+  "characters_p75": 230.0,
+  "characters_max": 17273,
+  "characters_std": 1811.93,
+  "characters_total": 59296,
+  "small_chunk_threshold": 400,
+  "small_chunks": 103,
+  "small_chunks_percentage": 88.79,
+  "characters_original": 59485,
+  "characters_ratio": 0.997,
+  "execution_time_seconds": 17.889059,
+  "ram_before_mb": 2071.98,
+  "ram_after_mb": 2122.42,
+  "ram_increase_mb": 50.44
+}

@@ -1,0 +1,30 @@
+{
+  "strategy": "topic_based_chunking",
+  "type": "TopicBasedChunker",
+  "abbreviation": "TBC",
+  "params": {
+    "distance_threshold": 0.4
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "number_of_chunks": 863,
+  "empty_chunks": 0,
+  "characters_min": 3,
+  "characters_p25": 17.0,
+  "characters_median": 33.0,
+  "characters_mean": 103.73,
+  "characters_p75": 106.0,
+  "characters_max": 3186,
+  "characters_std": 225.33,
+  "characters_total": 89522,
+  "small_chunk_threshold": 400,
+  "small_chunks": 819,
+  "small_chunks_percentage": 94.9,
+  "characters_original": 90456,
+  "characters_ratio": 0.99,
+  "execution_time_seconds": 0.585757,
+  "ram_before_mb": 1910.67,
+  "ram_after_mb": 1911.54,
+  "ram_increase_mb": 0.86
+}

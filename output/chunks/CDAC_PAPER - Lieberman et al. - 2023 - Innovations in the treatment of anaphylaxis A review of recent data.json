@@ -1,0 +1,1171 @@
+{
+  "strategy": "content_density_adaptive_chunking",
+  "type": "ContentDensityAdaptiveChunker",
+  "abbreviation": "CDAC",
+  "params": {
+    "base_chunk_size": 1200
+  },
+  "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "original_character_count": 59485,
+  "number_of_chunks": 89,
+  "chunks": [
+    {
+      "text": "Ann Allergy Asthma Immunol 131 (2023) 185−193\n\nContents lists available at ScienceDirect\n\nReview\n\n# Innovations in the treatment of anaphylaxis: A review of recent data\n\nJay A. Lieberman, MD*; John Oppenheimer, MDy; Vivian P. Hernandez-Trujillo, MDz,x; Michael S. Blaiss, MDk\n\n* Division of Allergy and Immunology, The University of Tennessee Health Science Center, Memphis, Tennessee\n\n- y Division of Allergy, Rutgers New Jersey Medical School, Rutgers, New Jersey\n- z Nicklaus Children’s Hospital, Miami, Florida x Allergy and Immunology Care Center of South Florida, Miami Lakes, Florida k Department of Pediatrics, Medical College of Georgia, Augusta, Georgia\n\n\n|Key Messages<br><br>The epinephrine autoinjector (EAI) is the standard of outpatient emergency treatment for serious allergic reactions (type I), including anaphylaxis; however, there are numerous barriers to patient carriage and use.<br><br>Delays in epinephrine administration and lack of EAI use may have serious implications, including increased morbidity and mortality.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.7095,
+        "mean_density_factor": 0.7905,
+        "sentence_count": 1,
+        "character_count": 1041
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0000",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Patients, caregivers, and healthcare professionals desire more convenient routes of epinephrine administration that will address needle phobia and other reasons for delayed use. Innovative nasal and oral products under investigation have shown comparable and, in some cases, improved pharmacokinetic and pharmacodynamic results to those of EAIs and manual intramuscular injection in healthy subjects. Limitations of current evidence include no clinical or real-world studies of innovative products in anaphylaxis, limited data in pediatric patients, no head-to-head studies, and a lack of peer-reviewed data in the literature.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8681,
+        "mean_density_factor": 0.6319,
+        "sentence_count": 3,
+        "character_count": 626
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0001",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Portable needle-free options may improve confidence in epinephrine administration by alleviating some patient fears that delay administration, potentially helping patients and caregivers address anaphylaxis sooner than do EAIs or manual injection.|\n|---|\n\n\n## A R T I C L E I N F O\n\nA B S T R A C T\n\nArticle history: Received for publication March 27, 2023. Received in revised form May 26, 2023. Accepted for publication May 30, 2023. Purpose of Review: The current standard of first-line emergency treatment of anaphylaxis is intramuscular (IM) epinephrine, mostly administered through epinephrine autoinjector (EAI) in the outpatient setting.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9271,
+        "mean_density_factor": 0.5729,
+        "sentence_count": 4,
+        "character_count": 645
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0002",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "However, undercarriage and underuse of EAIs are common, and delayed epinephrine use is associated with increased morbidity and mortality. Patients, caregivers, and healthcare professionals have expressed a strong desire for small, needle-free devices and products that would offer improved carriage, ease of use, and more convenient, less invasive routes of epinephrine administration. Novel mechanisms of epinephrine administration are under investigation to help address several recognized EAI limitations.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9346,
+        "mean_density_factor": 0.5654,
+        "sentence_count": 3,
+        "character_count": 508
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0003",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "This review explores innovative nasal and oral products under investigation for the outpatient emergency treatment of anaphylaxis. Address correspondence to: Michael S. Blaiss, MD, Department of Pediatrics, Medical College of Georgia at Augusta University, 1090 Windfaire Place, Roswell, GA 30076 E-mail: [CORREO OMITIDO]. Disclosures: Dr Lieberman reports serving as an investigator (money to institution) for Aimmune, DBV Technologies, Novartis, and Regeneron; as an advisor to ALK-Abell o, Novartis, DBV Technologies, Aquestive Therapeutics, and ARS Pharmaceuticals; on the adjudication and data safety monitoring board for AbbVie and Siolta Therapeutics; as chair of various American College of Allergy, Asthma, and Immunology committees and on the executive board for the American Board of Allergy and Immunology; and as associate editor for Annals of Allergy, Asthma & Immunology.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8497,
+        "mean_density_factor": 0.6503,
+        "sentence_count": 3,
+        "character_count": 886
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0004",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Dr Oppenheimer reports serving as a consultant and advisor for Aimmune, Amgen, ARS Pharmaceuticals, Aquestive Therapeutics, and GlaxoSmithKline; on the adjudication and data safety monitoring board for AbbVie,\n\nAstraZeneca, GlaxoSmithKline, and Sanofi; reviewer for UpToDate; and as executive editor for Annals of Allergy, Asthma & Immunology. Dr Hernandez-Trujillo reports serving as a consultant and advisor to Aimmune, ARS Pharmaceuticals, Bryn Pharmaceuticals, CSL, Covis Pharma, DBV Technologies, Kal eo, Pfizer, Sanofi Regeneron, Takeda, and US WorldMeds; spokesperson for Kal eo; consultant for the Allergy and Asthma Network and National Peanut Board; and as scientific council member of the Asthma and Allergy Foundation of America.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.7684,
+        "mean_density_factor": 0.7316,
+        "sentence_count": 2,
+        "character_count": 741
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0005",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Dr Blaiss reports serving as a consultant and advisor for ALK-Abell o, BELLUS Health, Lanier Biotherapeutics, Merck, Prollergy Corp, Regeneron, and Sanofi; and as speaker on behalf of ALK-Abell o, Merck, Regeneron, and Sanofi. Funding: Bryn Pharma, LLC. https://doi.org/10.1016/j.anai.2023.05.033 1081-1206/© 2023 American College of Allergy, Asthma & Immunology. Published by Elsevier Inc. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)\n\nFindings: Human studies of epinephrine administered through nasal epinephrine spray, a nasal powder spray, and a sublingual film have been conducted.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9235,
+        "mean_density_factor": 0.5765,
+        "sentence_count": 5,
+        "character_count": 654
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0006",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Data from these studies indicate promising pharmacokinetic results comparable to those of the standard of outpatient emergency care (0.3-mg EAI) and syringe and needle IM epinephrine administration. Several products have shown maximum plasma concentration values higher than those of the 0.3-mg EAI and manual IM injection, although it remains unclear whether this has clinical relevancy in patient outcomes. Generally, these modalities show comparable time to maximum concentrations. Pharmacodynamic changes observed with these products are comparable to or more robust than those seen with EAI and manual IM injection.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9696,
+        "mean_density_factor": 0.5304,
+        "sentence_count": 4,
+        "character_count": 620
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0007",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Summary: Given comparable or superior pharmacokinetic and pharmacodynamic results and safety of innovative epinephrine therapies to those of current standards of care, US Food and Drug Administration approval of these products may help address numerous barriers that EAIs present. The ease of use and carriage and favorable safety profiles of needle-free treatments may make them an attractive alternative to patients and caregivers, potentially addressing injection fears, needle-based safety risks, and other reasons for lack of or delayed use.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8462,
+        "mean_density_factor": 0.6538,
+        "sentence_count": 2,
+        "character_count": 546
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0008",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "© 2023 American College of Allergy, Asthma & Immunology. Published by Elsevier Inc.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 1.0,
+        "mean_density_factor": 0.5,
+        "sentence_count": 2,
+        "character_count": 83
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0009",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)\n\nIntroduction\n\nAnaphylaxis is a serious, potentially fatal medical emergency involving an acute allergic reaction that may have various triggers, mechanisms, and clinical presentations.1 The clinical presentation and severity of symptoms are unpredictable, can differ among individuals, and may change over time within the same individual.1 They may also change with the presence of cofactors (eg, viral illness, alcohol ingestion, exercise).2\n\nThe lifetime prevalence of anaphylaxis is estimated between 1.6% and 5.1%.1,3 The incidence of anaphylaxis is increasing globally, although there does not seem to be an increase in deaths.4 The leading triggers of anaphylaxis may vary depending on the patient population, differing in various regions of the world and by age.1 In adults, medications and stinging insects are the most frequent triggers, whereas foods and stinging insects are the most common triggers in children and adolescents.1 Patients may also have risk factors for severe anaphylaxis such as older age, asthma, chronic obstructive pulmonary disease, beta-blocker or angiotensin-converting enzyme inhibitor use, or other comorbid conditions.1,5\n\nRapid identification and treatment of anaphylaxis are recognized as the best-practice strategy.1 The most effective treatment for anaphylaxis is epinephrine (adrenaline).1 Antihistamines and glucocorticoids are considered solely second-line therapy and should not be used before, or instead of, epinephrine.1 There is international consensus that epinephrine is the first-choice medication, and early\n\nadministration reduces hospitalization and may reduce death.5−7 Delaying administration of epinephrine may be associated with increased morbidity and mortality.1,8−11\n\nCurrent guidelines recommend that epinephrine be administered intramuscularly (IM) into the anterolateral thigh with a standard approved dose of 0.01 mg/kg of 1:1000 (1 mg/mL) solution up to a single maximum dose of 0.5 mg in adults and 0.3 mg in children.1,2 Dosing should be repeated every 5 to 15 minutes if symptoms remain unresolved.1,2\n\nThe epinephrine autoinjector (EAI) allows the administration of epinephrine by nonmedical individuals in an outpatient setting.12 The use of vial and syringe epinephrine administration is generally not recommended in the outpatient setting because it may contribute to overdosing, underdosing, and/or delay in administration,12,13 with 1 study showing an increased risk of dosing errors as much as 40-fold by parents and 2- to 8-fold by healthcare providers (HCPs).12,14\n\nIssues and Limitations of Currently Available Epinephrine Autoinjectors\n\nKey issues and limitations of currently available EAIs include device size, lack of carriage, needle phobia, needle-related injury, shelf life, storage concerns, and cost12,15−17 (Table 1).",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.6143,
+        "mean_density_factor": 0.8857,
+        "sentence_count": 1,
+        "character_count": 2922
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0010",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Current EAI dosing options cause challenges in achieving the 0.01 mg/kg dosing recommendation.12 A 0.10-mg device18 is Food and Drug Administration (FDA)-approved for patients weighing 7.5 to 15 kg (»16.5-33 lb), along with 0.15-mg devices18−21 for patients\n\n- Table 1 Issues and Limitations of Current EAIs Available in the United States Limitations of Current EAIs\n\n\nLack of availability (eg, patient does not have EAI available when needed; patient was not prescribed an EAI; pharmacy stock of EAIs sometimes limited)17,22,23 Cost can be a barrier to access16,24 Needle length may be too short in patients with obesity or too long in young children and infants with smaller skin-to-bone distance2,13,16 Range of fixed-dose EAIs in the United States; currently, EAIs are available in 0.10-, 0.15-, and 0.30-mg devices; thus, it is not possible to dose patients per weight-based dosing as would be ideal; second dose may be given if not responsive to the first dose12,17 Recommended maximum dose EAI (0.50 mg) unavailable in United States2,12 Significant underdosing could theoretically occur owing to weight-based per kg recommended dosing12,13 Storage concerns: Required to be stored at 20°C to 25°C with excursions permitted from 15°C to 30°C12 Shelf-life concerns: Limited time from dispensing EAI to expiration; many expire before use16 Bulky or large device size15,25,26 Limited studies in infants, adolescents, older subjects,12,27 underrepresented minorities, or in subjects during anaphylaxis28,29\n\nIssues With EAIs Low rates of prescription potentially owing to difficulty in diagnosing anaphylaxis24,30 Hesitation to use26,31 and delayed administration30,31 owing to uncertainty around need for use, difficulty or fear of EAI use, or lack of EAI accessibility when needed Underuse by patients and caregivers potentially owing to lack of training, embarrassment of use, lack of carriage, needle phobia, etc16,32 Lack of carriage15,33 and need to carry 2 EAIs12,24; patients often do not carry because allergen avoidance is their primary strategy, they have never needed to use it or forget, and\n\nthe size and shape of the device make it challenging to carry Needle phobia16,17 and the potential for needle-related injury17,34 Lack of proper training regarding correct technique15,16,32\n\nAbbreviation: EAI, epinephrine autoinjector.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.5879,
+        "mean_density_factor": 0.9121,
+        "sentence_count": 1,
+        "character_count": 2342
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0011",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "weighing 15 to 30 kg (»33-66 lb), and 0.30-mg devices18−21 for those weighing more than 30 kg.12 Global guidelines recommend the 0.50mg dose in older children and adults weighing more than 50 kg (»110 lb); however, there is no 0.50-mg EAI approved in the United States,2 leaving some to question whether patients are being underdosed with available EAIs on the market. Undercarriage and underuse of EAIs by patients is common in anaphylaxis.3,15,23 In a US survey of adults, parents of children, and adolescents prescribed an EAI, respondents younger than 18 years were much less likely to carry an EAI on their person than were adults (34% vs 84%, respectively).23 Only 24% of the full sample reported carrying 2 or more EAIs.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8115,
+        "mean_density_factor": 0.6885,
+        "sentence_count": 2,
+        "character_count": 727
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0012",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "In the Anaphylaxis in America survey, in patients with a confirmed previous anaphylaxis episode, 50% had never received an EAI prescription, and nearly half of those who did were not given an emergency action plan.3 Risks of underdosing or delayed use may include further progression of an evolving allergic or anaphylactic reaction and increased risk of a biphasic reaction, hospitalization, and ultimately death.6,8,13,31,35−37\n\nNeed for Innovative Therapies\n\nGiven the noted issues around EAIs, innovative therapies are needed to improve the carriage and use of epinephrine.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.7529,
+        "mean_density_factor": 0.7471,
+        "sentence_count": 1,
+        "character_count": 577
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0013",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Products with improved shelf life and stability, optimized dosing, ease of use and carriage, and more convenient, less invasive routes of administration are needed and desired by both patients and HCPs.4,16,17,26 In the recently published 2022 Voice of the Patient Report: Food Allergies, patients tended to avoid carrying EAIs owing to psychosocial factors, such as not wanting to be different from their peers and having to carry a bulky device.26 Hesitation in using an EAI may stem from a lack of training and from feeling intimidated by the injection-based administration method.26 In a survey of patients and caregivers (N = 200), 40% of respondents delayed use of an EAI.38 Reasons for their delay in use were related to the uncertainty whether symptoms warranted use, the presence of a needle, the need to go to the emergency department after use of device, potential serious adverse effects, pain, and the size of the device.38 Numerous studies highlight that patients and caregivers are not comfortable or confident using EAIs, do not fully understand how to use them or when they should be used, and often do not carry them.15,17,39 Respondents in a patient and caregiver survey noted that a needle-free option would be used sooner and is perceived as being easier to use than an EAI.40 When asked about the feasibility of using a needle-free device, such as a nasal epinephrine spray, patients and HCPs communicated strong preference for the nasal spray in terms of portability, ease of learning or teaching, ease of use, overall preference, likelihood of recommending to others, safety, size, and comfort using in public.40−43\n\nNovel Mechanisms Under Study for Innovative Administration of Epinephrine in a Prehospital Setting\n\nGiven the limitations and unmet needs in the treatment of anaphylaxis, researchers have been investigating novel mechanisms of epinephrine administration.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.5724,
+        "mean_density_factor": 0.9276,
+        "sentence_count": 1,
+        "character_count": 1895
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0014",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Included in this review are products with human data that have been presented or published in a scientific setting. Most of these data are from presented posters or abstracts and have not been through a rigorous peer-review process. Because of the serious nature of anaphylaxis, double-blind, randomized, controlled trials are not feasible owing to practical and ethical reasons.28 Thus, researchers test the performance of the device or product through animal and human pharmacokinetic (PK) and pharmacodynamic (PD) studies, in addition to studies on epinephrine delivery and muscle delivery depth in animal models.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9084,
+        "mean_density_factor": 0.5916,
+        "sentence_count": 3,
+        "character_count": 616
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0015",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Nasal and sublingual epinephrine are the most common modes of administration under study, although other modes, including inhaled\n\nepinephrine, wet and dry dual-chamber EAI, and a needle-free EAI, are also in development.17 Three companies have published or presented data on nasal epinephrine spray, another on nasal powder, and 1 on sublingual film.44−54 Several companies are investigating their products in pediatric use; however, only results in adult subjects are presented in this report.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.7222,
+        "mean_density_factor": 0.7778,
+        "sentence_count": 1,
+        "character_count": 495
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0016",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Intranasal Epinephrine\n\nARS-1\n\nAn integrated analysis was conducted across 4 randomized, phase 1, open-label, single-dose, crossover studies comparing PK and PD parameters of 1-mg intranasal (IN) (ARS-1), 0.3-mg EAI (EpiPen, Mylan Specialty L.P., Morgantown, West Virginia), 0.3-mg prefilled syringe (Symjepi, Adamis Pharmaceuticals Corp., San Diego, California), and 0.3-mg IM manual syringe-administered epinephrine.44 Two studies included healthy subjects, and 2 included healthy subjects with a history of type 1 allergies (food allergy, allergic rhinitis, or venom allergy), all aged 19 to 55 years.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8415,
+        "mean_density_factor": 0.6585,
+        "sentence_count": 1,
+        "character_count": 604
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0017",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "In the analysis of 175 participants, EpiPen indicated the highest mean plasma concentration after administration, followed by Symjepi, ARS-1, and the 0.3-mg IM manual epinephrine. The highest mean maximum plasma concentration (Cmax) values were seen with EpiPen and Symjepi (Fig 1). More PK parameters across the treatment arms are shown in eFigures 1 and 2. The shortest time to maximum concentration (Tmax) occurred with EpiPen, followed by ARS-1 and Symjepi, then 0.3-mg IM manual epinephrine (eFig 2). ARS-1, Symjepi, and EpiPen resulted in comparable increases in mean systolic blood pressure (SBP).",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9697,
+        "mean_density_factor": 0.5303,
+        "sentence_count": 5,
+        "character_count": 604
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0018",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "The highest mean SBP Emax (ie, the maximum effect) was 16.9, 14.9, and 18.1 mm Hg, respectively, whereas changes with 0.3-mg IM epinephrine were less marked (10.9 mm Hg). ARS-1 was the only product causing an increase in mean diastolic blood pressure (DBP) over time. Peak mean heart rate (HR) over time was highest for EpiPen, followed by ARS-1, 0.3-mg IM epinephrine, and Symjepi. ARS-1 caused comparable or higher PD responses than did current epinephrine delivery modalities despite having a lower Cmax than 2 of 3 comparators.44\n\nAt the time of this writing, the above data are the only data reviewed in this manuscript that were published in full-length, peerreviewed journal manuscript format; all other data were presented as peer-reviewed abstracts or posters at national conferences.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9258,
+        "mean_density_factor": 0.5742,
+        "sentence_count": 4,
+        "character_count": 793
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0019",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "ARS-1 received FDA Fast Track designation in 2019. Its development status and that of the other products discussed in this review are in Table 2. For more context, the phases of clinical research are summarized in eTable 1. BRYN-NDS1C\n\nIn a phase 1, open-label, 2-part randomized bioavailability study comparing PK and PD in healthy adults (aged 19-45 years), participants were randomized to each receive 2 £ 6.6-mg IN epinephrine spray (13.2 mg IN total dose) administered as both sprays in the same nostril (SN) or 1 spray in opposite nostrils (ON), or 2 £ 0.3-mg EpiPen (0.6 mg IM total dose).45 The study design is further detailed in Figure 2.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9254,
+        "mean_density_factor": 0.5746,
+        "sentence_count": 4,
+        "character_count": 648
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0020",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Pharmokinetic results (Cmax) from part 2 are shown in Figure 2. Additional PK parameters across the treatment arms are shown in eFigures 3 to 5. Single IN epinephrine (A, 6.6-mg) resulted in lower epinephrine exposure than did single IM epinephrine (B, 0.3-mg EpiPen and C, 0.5mg) (eFig 4A). Double IN epinephrine (D, 2 £ 6.6-mg ON and E, 2 £ 6.6mg SN) caused greater Cmax (Fig 2) and area under the curve (AUC) from time 0 to the 20-minute postdose time point (eFig 4C) than did single IM epinephrine (B pooled, 0.3-mg EpiPen) (eFig 3, eFig 4A). Double IN epinephrine (E, 2 £ 6.6-mg SN) caused greater exposure than did double IM epinephrine (F, 2 £ 0.3-mg EpiPen) (eFigs 4C and D).",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8869,
+        "mean_density_factor": 0.6131,
+        "sentence_count": 5,
+        "character_count": 683
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0021",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "To ensure that patients were reaching adequate plasma epinephrine levels, the\n\nFigure 1. ARS-1 integrated analysis of PK parameters (Cmax [pg/mL], mean [CV%]) across 4 phase 1 studies.44 An integrated analysis was conducted across 4 randomized, phase 1, open-label, single-dose, crossover studies comparing PK and PD parameters of 1-mg IN (ARS-1), 0.3-mg EAI (EpiPen), 0.3-mg prefilled syringe (Symjepi), and 0.3-mg IM manual syringe-administered epinephrine.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8725,
+        "mean_density_factor": 0.6275,
+        "sentence_count": 2,
+        "character_count": 459
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0022",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Cmax, maximum concentration; CV, coefficient of variation; EAI, epinephrine autoinjector; IM, intramuscular; IN, intranasal; PD, pharmacodynamic; PK, pharmacokinetic. FDA requested 50, 100, and 200 pg/mL threshold levels be evaluated in clinical trials. At most time points in this study, a greater percentage of participants reached epinephrine 100 and 200 pg/mL after epinephrine IN than after IM administration. There were no clinically significant PD differences in HR or blood pressure after IN or IM epinephrine. IN epinephrine was safe and well tolerated.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9525,
+        "mean_density_factor": 0.5475,
+        "sentence_count": 5,
+        "character_count": 562
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0023",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "The most common adverse event (AE) after IN epinephrine was nasal discomfort.45\n\nA 5-period, 5-treatment crossover study was conducted comparing PK of IN and IM epinephrine in 25 healthy adult subjects aged 19 to 45 years, comparing dose-ranging effects.46 Epinephrine administrations included 6.6-mg IN, 4.4-mg IN (2 £ 2.2 mg, ON), 8.8-mg IN (2 £ 4.4 mg, ON), 13.2-mg IN (2 £ 6.6 mg, ON), and 0.3-mg EAI (Mylan-Viatris-authorized generic EpiPen). Pharmacokinetic parameters across the treatment arms are shown in Figure 3 and eFigures 6 to 8. Mean epinephrine exposure (eFigs 7A-E), in addition to mean Cmax values (Fig 3), were greater after epinephrine 6.6-mg IN than after 0.3-mg EAI. The Emax values for HR were 33 beats per minute above baseline with 6.6-mg IN vs 20 beats per minute above baseline with 0.3-mg\n\nEAI.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.834,
+        "mean_density_factor": 0.666,
+        "sentence_count": 4,
+        "character_count": 822
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0024",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Mean HR values were greater through 180 minutes after 6.6-mg IN than with 0.3-mg EAI. The Emax of SBP and DBP did not differ significantly between these groups.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 1.0,
+        "mean_density_factor": 0.5,
+        "sentence_count": 2,
+        "character_count": 160
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0025",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Treatment-emergent adverse events (TEAEs) across all dosages were transient and generally mild.46\n\nFinally, a pivotal 3-period, 2-cohort crossover study was conducted to confirm results from the dose-ranging study by comparing the bioavailability of a single 13.2-mg IN dose (administered as 2 consecutive 6.6-mg sprays SN or ON) with that of 0.3-mg EAI (MylanViatris-authorized generic EpiPen, Mylan Specialty L.P., Morgantown, West Virginia), or 0.5-mg prefilled manual syringe.47 Two cohorts (C1 and C2) were enrolled, comprising 66 and 50 healthy adult subjects, respectively.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9012,
+        "mean_density_factor": 0.5988,
+        "sentence_count": 1,
+        "character_count": 580
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0026",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "All subjects received the same treatment in period 1, 13.2-mg ON (C1) or SN (C2). This was followed by 1 of the 2 IM treatments in period 2, and the other in period 3. In both cohorts, 13.2-mg IN caused higher and more sustained epinephrine plasma concentrations than did the 0.3-mg EAI or 0.5mg manual syringe (0-360 minutes after dose). The rapid rate of absorption for 13.2-mg IN was comparable to that for the 0.3-mg EAI, and IN maintained a higher therapeutic level of epinephrine (>100 pg/mL) for approximately twice as long.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8987,
+        "mean_density_factor": 0.6013,
+        "sentence_count": 4,
+        "character_count": 531
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0027",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "- Table 2 Innovative Epinephrine Product Development Status at Time of Manuscript Submission Product Description Development Status\n\n\nSublingual film using prodrug of epinephrine; 12 mg (AQST-109-DESF)51,55,56 IND submitted February 2022 Fast Track designation March 2022 End-of-phase 2 meeting with FDA completed Q4 of 2022\n\nSingle-dose nasal epinephrine spray; 2 mg (ARS-1)57,58 Fast Track designation February 2019 FDA accepted NDA October 2022\n\nSingle, 2-spray dose nasal epinephrine spray; 13.2 mg (BRYN-NDS1C)59−61 IND submitted 2019 Fast Track designation February 2019 Phase 3 study completed\n\nSingle-dose nasal epinephrine powder; 1.6 mg and 3.2 mg (FMXIN002)62,63 Phase 3 trial expected Q2 of 2023 NDA submission expected Q2 of 2024\n\nSingle-dose, nasal epinephrine spray; 7 mg and 8.5 mg64−66 Fast Track designation August 2018\n\nAbbreviations: FDA, Food and Drug Administration; IND, investigational new drug application; NDA, new drug application.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.5547,
+        "mean_density_factor": 0.9453,
+        "sentence_count": 1,
+        "character_count": 958
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0028",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "- Figure 2. BRYN-NDS1C baseline-corrected plasma epinephrine PK (part 2: Cmax [pg/mL], mean § SD).45 Part 1 of this study was a randomized, 3-treatment, 5-period semireplicate design in which participants received a single administration each of 6.6-mg IN epinephrine spray (A), 0.3-mg EpiPen (B), or 0.5-mg IM epinephrine administered through syringe (C), per period. (Cmax data for part 1 shown in eFig 3). Part 2 included a 3-treatment, 3-period crossover design conducted in parallel with part 1, when subjects received either\n\n- 2 £ 6.6-mg IN epinephrine in ON (D), 2 £ 6.6-mg IN in the SN (E), or 2 £ 0.3-mg EpiPen in opposite thighs (F) (all doses given 5 minutes apart).",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9113,
+        "mean_density_factor": 0.5887,
+        "sentence_count": 4,
+        "character_count": 678
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0029",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Cmax, maximum concentration; IM, intramuscular; IN, intranasal; ON, opposite nostrils; PD, pharmacodynamic; PK, pharmacokinetic; SD, standard deviation; SN, same nostril. - Figure 3. BRYN-NDS1C baseline-corrected plasma epinephrine PK (Cmax [pg/mL], mean [CV%]) after IN epinephrine or EAI.46 A 5-period, 5-treatment crossover study comparing PK of IN and IM epinephrine in 25 healthy adult subjects aged 19 to 45 years comparing dose-ranging effects was conducted. Epinephrine administrations included 6.6-mg IN, 4.4-mg\n\n\nIN (2 £ 2.2 mg, ON), 8.8-mg IN (2 £ 4.4 mg, ON), 13.2-mg IN (2 £ 6.6 mg, ON), and 0.3-mg EAI (Mylan-Viatris-authorized generic EpiPen).",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8858,
+        "mean_density_factor": 0.6142,
+        "sentence_count": 4,
+        "character_count": 658
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0030",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Cmax, maximum concentration; CV, coefficient of variation; EAI, epinephrine autoinjector; IM, intramuscular; IN, intranasal; ON, opposite nostrils; PK, pharmacokinetic. Pharmacokinetic parameters in the ON cohort were higher than those of 0.3-mg EAI except for AUC0-10, which was approximately the same. The SN cohort also experienced higher plasma concentrations than did the 0.3-mg EAI cohort, but lower than those of the ON cohort. The Tmax occurred earlier for the 0.3-mg EAI (14.9 minutes) and 13.2mg IN treatment (20 minutes) and later for the 0.5-mg manual syringe (45 minutes).",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8713,
+        "mean_density_factor": 0.6287,
+        "sentence_count": 4,
+        "character_count": 585
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0031",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Overall, the proportions of subjects reaching epinephrine plasma concentration thresholds of 50, 100, or 200 pg/mL at 10-, 20-, 30-, and 60 minutes after the dose were equal to or greater than those of the 0.3-mg EAI for both ON and SN cohorts. Overall, there were no statistical or clinically meaningful differences in HR or BP across all groups. Most AEs were mild, and\n\nthe most common AE reported was headache in C1 and mild vomiting in C2.47\n\nFMXIN002\n\nA phase 1 and 2, open-label PK and PD study in 12 adults with seasonal allergic rhinitis compared FMXIN002, nasal epinephrine powder spray, either 1.6 mg or 3.2 mg with or without simulated allergic reaction conditions, with 0.3-mg EpiPen.48\n\nPharmacokinetic parameters across the treatment arms are shown in Figure 4 and eFigures 9 and 10.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8571,
+        "mean_density_factor": 0.6429,
+        "sentence_count": 3,
+        "character_count": 798
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0032",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "FMXIN002 3.2 mg showed the highest mean plasma concentration (Fig 4) and earliest Tmax (eFig 10A) after administration in subjects under nasal allergen challenge. Figure 4. FMXIN002 3.2 mg phase 1 and 2 study (Cmax [pg/mL], mean).48 A phase 1 and 2, open-label PK and PD study in 12 adults with seasonal allergic rhinitis compared FMXIN002, nasal epinephrine powder spray, either 1.6 mg or 3.2 mg with or without simulated allergic reaction conditions, with 0.3-mg EpiPen. Cmax, maximum concentration; PD, pharmacodynamic; PK, pharmacokinetic. The PD response was similar to that of 0.3-mg EpiPen.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9451,
+        "mean_density_factor": 0.5549,
+        "sentence_count": 5,
+        "character_count": 597
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0033",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "The IN powder spray was well tolerated, with no serious AEs.48\n\nHikma Epinephrine Intranasal\n\nA phase 1, open-label, single-dose, 5-treatment crossover PK study compared the bioavailability of epinephrine nasal spray (aqueous or hydroalcoholic formulations) with that of 0.3-mg EpiPen in 60 healthy adults with seasonal allergies.49 In the 2-part study, subjects were enrolled 12 per cohort. In part 1, cohorts 1 to 4 received a single dose (3 mg or 6 mg) of IN epinephrine aqueous and hydroalcoholic in sequence. Cohort 5 received a single dose of EpiPen 0.3 mg.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8849,
+        "mean_density_factor": 0.6151,
+        "sentence_count": 3,
+        "character_count": 563
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0034",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "In part 2, the study was repeated under a predosing allergen challenge. Results from the study showed plasma concentrations above 100 pg/mL within 5 minutes, and median Tmax was 5 to 16 minutes for aqueous,\n\n- 3 to 10 minutes for hydroalcoholic, and 5 minutes for 0.3-mg EpiPen. Compared with EpiPen, epinephrine exposure was 73% to 126% after 6-mg hydroalcoholic and 35% to 86% after 6-mg aqueous. Maximum plasma concentration increased 1.72-fold for aqueous and 1.43-fold for hydroalcoholic in the allergen challenge, with minor changes in AUC for both. The most common AE was nasal discomfort; most AEs were mild, and none were serious.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8631,
+        "mean_density_factor": 0.6369,
+        "sentence_count": 5,
+        "character_count": 639
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0035",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Authors concluded that both formulations were safe and well tolerated.49\n\n\nSublingual Epinephrine\n\nAQST-109-DESF\n\nAQST-109-DESF is a sublingual film using a novel prodrug of epinephrine. A phase 1 study was conducted evaluating the PD and PK and safety of single ascending doses in healthy male subjects.50 In the study, 2 formulations of sublingual drops (0.6 mg and 1.2 mg) and 4 sublingual film formulations (F1-F4) ranging from 3 mg to 24 mg were investigated in 7 cohorts. The PK parameters from subjects receiving formulations F1 and F2 12 mg were comparable to those of 0.3-mg EpiPen. The mean Cmax of F1 (n = 6) was 552 pg/mL vs 762 pg/mL for F2 (n = 8) vs 341 pg/mL for 0.3-mg EpiPen (n = 10).",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8358,
+        "mean_density_factor": 0.6642,
+        "sentence_count": 4,
+        "character_count": 702
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0036",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "EpiPen data were from a previous study and were used as a historical comparator. The mean AUC0-t was 634 (hour £ pg/mL) for F1, 603 for F2, and 328 for 0.3-mg EpiPen. The median Tmax was 15 minutes for both F1 and F2 vs 22 minutes for 0.3-mg EpiPen. AQST-109-DESF indicated a similar change from baseline SBP to that of EpiPen, with F2 presenting slightly larger variations over time. Data suggested a similar timing and magnitude of the hemodynamic effect. This study confirmed that therapeutic plasma epinephrine concentrations could be achieved with sublingual administration.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.937,
+        "mean_density_factor": 0.563,
+        "sentence_count": 6,
+        "character_count": 579
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0037",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "The sublingual film was safe and well tolerated across formulations and dose levels.50\n\nA randomized, open-label, 3-part, crossover study (EPIPHAST) in healthy adult subjects comparing the PK and PD of AQST-109-DESF was also conducted.51 In part 1 of EPIPHAST, multiple sublingual film formulations and dosages were evaluated, each in 16 subjects. Epinephrine IM injection 0.3 mg and 0.5 mg were used as comparators. No EAI comparator was included in this study. The optimal formulation of AQST-109-DESF was determined to be F5, 12 mg, which showed a mean Cmax of 267.9 pg/mL vs 350.6 for 0.3-mg IM and 447.9 for 0.5-mg IM.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8904,
+        "mean_density_factor": 0.6096,
+        "sentence_count": 4,
+        "character_count": 623
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0038",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "It led to a faster Tmax of 22.5 minutes vs 50 minutes for both 0.3-mg and 0.5-mg IM. Areas under the curve for AQST-109-DESF were higher than, or bracketed between, 0.3-mg IM and 0.5-mg IM, except for AUC0-t (hour £ pg/mL), in which F5 had a mean value of 312.4 vs 538.6 for 0.3-mg IM and 795.1 for 0.5-mg IM. The formulation revealed an early and transient increase in SBP consistent with that observed with EpiPen.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8875,
+        "mean_density_factor": 0.6125,
+        "sentence_count": 3,
+        "character_count": 416
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0039",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "An increase in HR was also transient, leading researchers to conclude that PD parameters were consistent with the observed PK profile, and there were no notable concerns for safety or tolerability, with minimal TEAEs.51\n\nIn part 2 of EPIPHAST, 24 healthy adult subjects (aged 26-50 years) were randomized to receive AQST-109 12 mg, 0.3-mg IM (manual), AQST-109 12 mg, and 0.3-mg IM (manual).52 No EAI comparator was included in this study. The study design is further detailed in Figure 5. Pharmacokinetic parameters across the treatment arms are shown in Figure 5 and eFigures 11 and 12. AQST-109 12 mg had a faster Tmax (eFig 12) than that of 0.3-mg IM and a lower, but comparable, Cmax (Fig 5).",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9096,
+        "mean_density_factor": 0.5904,
+        "sentence_count": 4,
+        "character_count": 697
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0040",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Areas under the curve were also comparable (eFigs 11A-F). Systolic BP and DBP consistently increased for subjects receiving AQST-109 12 mg and decreased in subjects receiving 0.3mg IM. Treatment-emergent AEs were generally mild, transient, and resolved with minimal intervention.52\n\nEPIPHAST II was a phase 1, multiperiod, crossover study in 24 healthy adults (aged 24-49 years). Subjects were randomized to receive either AQST-109 12 mg or 0.3-mg IM manual in the first 2 periods, and all received 0.3-mg EpiPen in the last period.53\n\n- Figure 5. EPIPHAST part 2 PK parameters (Cmax [pg/mL], geometric mean [CV%]).52 In part 2 of EPIPHAST, 24 healthy adult subjects (aged 26-50 years) were randomized to receive 4 doses of epinephrine in 1 of 2 sequences (S1 and S2) comprising 4 periods. In S1, subjects received AQST-109 12 mg, 0.3-mg IM (manual), AQST-109 12 mg, and 0.3-mg IM (manual) in periods 1-4, respectively.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8691,
+        "mean_density_factor": 0.6309,
+        "sentence_count": 6,
+        "character_count": 919
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0041",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "In S2, these were switched, with subjects receiving 0.3-mg IM in the first and third periods and AQST-109 12 mg in the second and fourth periods. No EAI comparator was included in this study. Cmax, maximum concentration; CV, coefficient of variation; EAI, epinephrine autoinjector; IM, intramuscular; PK, pharmacokinetic. - Figure 6. EPIPHAST II PK parameters (Cmax [pg/mL], geometric mean [CV%]).53 EPIPHAST II was a phase 1, multiperiod, crossover study in 24 healthy adults (aged 24-49 years). Subjects were randomized to receive either AQST-109 12 mg or 0.3-mg IM manual in the first 2 periods, and all received 0.3-mg EpiPen in the last period.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9302,
+        "mean_density_factor": 0.5698,
+        "sentence_count": 6,
+        "character_count": 649
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0042",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Cmax, maximum concentration; CV, coefficient of variation; IM, intramuscular; PK, pharmacokinetic. Pharmacokinetic parameters across the treatment arms are shown in Figure 6 and eFigures 13 and 14. EpiPen 0.3 mg resulted in a higher Cmax than did 0.3-mg IM manual (Fig 6) and AQST-109 12 mg and had a shorter Tmax than did IM manual (eFig 14). AQST-109 12 mg had the fastest median Tmax of 12 minutes. Except for lower AUC0-5 and AUC0-t, AQST-109 12 mg AUCs were bracketed between 0.3-mg EpiPen and 0.3-mg IM manual (eFig 13A-F).",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9036,
+        "mean_density_factor": 0.5964,
+        "sentence_count": 5,
+        "character_count": 529
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0043",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Early increases in SBP, DBP, and pulse were observed with AQST-109 12 mg. Changes were more robust with AQST-109 12 mg despite higher Cmax with 0.3-mg EpiPen. Treatmentemergent AEs were again generally mild, transient, and resolved with minimal interventions.53\n\nEPIPHAST part 3 evaluated the impact of food exposure on the PK of AQST-109 12 mg in 24 healthy adults (aged 18-50 years).54 In 1 period, subjects received AQST-109 12 mg immediately after eating a peanut butter sandwich. Results were compared for\n\nAQST-109 12 mg administered when subjects consumed no food.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9527,
+        "mean_density_factor": 0.5473,
+        "sentence_count": 4,
+        "character_count": 571
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0044",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Maximum plasma concentration, Tmax, and AUCs through 30 minutes after administration were consistent with or without the presence of oral food residue. The presence of oral food residue did not meaningfully affect PD parameters, and there were no significant TEAEs reported. Researchers concluded that the absorption of AQST-109 12 mg would not be impaired by “realworld” situations if used during eating.54\n\nDiscussion\n\nData from the reviewed studies of nasal and sublingual epinephrine have shown PK results comparable to those of the standard of outpatient emergency care.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.963,
+        "mean_density_factor": 0.537,
+        "sentence_count": 3,
+        "character_count": 575
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0045",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "On the basis of reported FDA guidance,\n\napprovals for these treatments will be based on studies indicating comparable PK, safety, and tolerability consistent with the approved dose ranges of IM epinephrine. Because of the inherent risk of performing epinephrine studies in patients during anaphylaxis, 1 of the omnipresent limitations is that plasma epinephrine is used as a surrogate for treatment response.29 Some of the new technologies for epinephrine delivery cause a higher plasma concentration (ie, Cmax) than do EAIs; however, the optimal plasma epinephrine range that should be targeted to treat an episode of anaphylaxis is not known.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8173,
+        "mean_density_factor": 0.6827,
+        "sentence_count": 2,
+        "character_count": 644
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0046",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Several of the reviewed products revealed Cmax values higher than those of the standard 0.3-mg EAI, although it remains unclear whether this has clinical relevancy in patient outcomes. Published data show that it takes at least 5 to 10 minutes to achieve early peak plasma concentrations for most EAIs.29 In this review, median Tmax of the 0.3-mg EAI in these studies was between 9 and 30 minutes (range, 1-154 minutes). Median Tmax for investigational products was 2.5 to 30 minutes (range, 2-410 minutes). These new modalities indicate comparable Tmax to that of the EAI.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9391,
+        "mean_density_factor": 0.5609,
+        "sentence_count": 4,
+        "character_count": 573
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0047",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "The convenience of a smaller, needle-free, more portable device and its ease of use may help address EAI carriage issues and needle phobia. This could potentially lead to faster, more confident use, which may help patients reach therapeutic epinephrine concentrations sooner. Once a patient’s symptoms are brought under control with epinephrine administration, the patient is often monitored afterward to ensure sustainability of the effect; therefore, it is reasonable to conclude that maintaining therapeutic levels longer could be beneficial.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9359,
+        "mean_density_factor": 0.5641,
+        "sentence_count": 3,
+        "character_count": 545
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0048",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "However, only actual treatment results will be able to show whether there is a clinically relevant longevity of effect with a prolonged therapeutic level of epinephrine. This may also be a differentiator because therapeutic plasma levels decrease faster with EAIs than with the innovative products. Pharmacodynamic responses may differ from those of injection product, although the mechanisms underlying these differences are unclear. The FDA will require that PD responses be comparable to or better than those seen with EAIs or manual injection.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9551,
+        "mean_density_factor": 0.5449,
+        "sentence_count": 4,
+        "character_count": 547
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0049",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "It is ethically challenging to conduct studies in patients experiencing anaphylaxis.28 These studies, however, would be necessary to assess how treatment response relates to PK and PD under real-world conditions, given the blood supply to muscles and subcutaneous tissues may react differently during acute reactions.29 Unfortunately, there is not yet broad agreement around which PK or PD parameters are truly important in anaphylaxis. Education and training for patients and caregivers in the recognition and management of anaphylaxis remain important needs, along with policies and training, to improve the management of anaphylaxis in schools and other community settings.16,33\n\nLimitations of the current evidence include no clinical or real-world studies of these innovative products in anaphylaxis, limited data in pediatric patients, no head-to-head studies, and a lack of peer-reviewed data in the literature.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.7521,
+        "mean_density_factor": 0.7479,
+        "sentence_count": 2,
+        "character_count": 918
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0050",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Future research needs to include further data in pediatric patients, real-world studies evaluating efficacy in anaphylaxis, patient and caregiver preference, and ease of use and carriage, and to investigate age differences in response to treatment. Conclusion\n\nThere remains a large unmet need in the treatment of anaphylaxis. Barriers to carriage and epinephrine administration require novel solutions to optimize care. Several promising products are under investigation as alternatives to EAIs for the emergency administration of epinephrine.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9292,
+        "mean_density_factor": 0.5708,
+        "sentence_count": 4,
+        "character_count": 544
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0051",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Patients, caregivers, and HCPs have expressed a strong desire for small, needle-free devices and products that would offer improved carriage, ease of use, and more convenient, less invasive routes of epinephrine administration.26,41 The cost of EAIs also remains a barrier for many patients; thus, new alternatives may ideally provide cost-effective solutions and support optimized carriage and use of epinephrine in appropriate situations. The\n\nconvenience, bioequivalence, and favorable safety profiles of these needle-free treatments may make them an attractive autoinjector alternative for patients and caregivers, potentially addressing fears and reasons for delayed use.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8452,
+        "mean_density_factor": 0.6548,
+        "sentence_count": 2,
+        "character_count": 676
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0052",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Supplementary Data\n\nSupplementary data related to this article can be found at https:// doi.org/10.1016/j.anai.2023.05.033. Acknowledgments\n\nMedical writing and editorial support were provided by Ameenah Saafir, MS and Aaska Patel, PharmD of Red Nucleus. References\n\n- 1. Shaker MS, Wallace DV, Golden DBK, Oppenheimer J, Bernstein JA, Campbell RL, et al. Anaphylaxis-a 2020 practice parameter update, systematic review, and Grading of Recommendations, Assessment, Development and Evaluation (GRADE) analysis. J Allergy Clin Immunol. 2020;145(4):1082–1123. - 2. Cardona V, Ansotegui IJ, Ebisawa M, El-Gamal Y, Fernandez Rivas M, Fineman S, et al.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9643,
+        "mean_density_factor": 0.5357,
+        "sentence_count": 9,
+        "character_count": 646
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0053",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020;13(10): 100472. - 3. Wood RA, Camargo Jr CA, Lieberman P, Sampson HA, Schwartz LB, Zitt M, et al. Anaphylaxis in America: the prevalence and characteristics of anaphylaxis in the United States. J Allergy Clin Immunol. 2014;133(2):461–467. - 4. Dribin TE, Castells M. Anaphylaxis: data gaps and research needs. Immunol Allergy Clin North Am. 2022;42(1):187–200. - 5. Simons FER, Ebisawa M, Sanchez-Borges M, Thong BY, Worm M, Tanno LK, et al.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9713,
+        "mean_density_factor": 0.5287,
+        "sentence_count": 13,
+        "character_count": 523
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0054",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "2015 update of the evidence base: World Allergy Organization anaphylaxis guidelines. World Allergy Organ J. 2015;8(1):32. - 6. Fleming JT, Clark S, Camargo Jr CA, Rudders SA. Early treatment of food-induced anaphylaxis with epinephrine is associated with a lower risk of hospitalization. J Allergy Clin Immunol Pract. 2015;3(1):57–62. - 7. Sundquist BK, Jose J, Pauze D, Pauze D, Wang H, Jarvinen KM. Anaphylaxis risk factors for hospitalization and intensive care: a comparison between adults and children in an upstate New York emergency department. Allergy Asthma Proc. 2019;40(1):41–47. - 8.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9733,
+        "mean_density_factor": 0.5267,
+        "sentence_count": 13,
+        "character_count": 595
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0055",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Xu YS, Kastner M, Harada L, Xu A, Salter J, Waserman S. Anaphylaxis-related deaths in Ontario: a retrospective review of cases from 1986 to 2011. Allergy Asthma Clin Immunol. 2014;10(1):38. - 9. Sampson HA, Mendelson L, Rosen JP. Fatal and near-fatal anaphylactic reactions to food in children and adolescents. N Engl J Med. 1992;327(6):380–384. - 10. Pumphrey RS. Lessons for management of anaphylaxis from a study of fatal reactions. Clin Exp Allergy. 2000;30(8):1144–1150. - 11. Turner PJ, Jerschow E, Umasunthar T, Lin R, Campbell DE, Boyle RJ. Fatal anaphylaxis: mortality rate and risk factors.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9836,
+        "mean_density_factor": 0.5164,
+        "sentence_count": 16,
+        "character_count": 600
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0056",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "J Allergy Clin Immunol Pract. 2017;5(5):1169– 1178. - 12. Brown JC, Simons E, Rudders SA. Epinephrine in the management of anaphylaxis. J Allergy Clin Immunol Pract. 2020;8(4):1186–1195. - 13. Li LDX, Abrams EM, Lavine E, Hildebrand K, Mack DP. CSACI position statement: transition recommendations on existing epinephrine autoinjectors. Allergy Asthma Clin Immunol. 2021;17(1):130. - 14. Simons FE, Chan ES, Gu X, Simons KJ. Epinephrine for the out-of-hospital (first-aid) treatment of anaphylaxis in infants: is the ampule/syringe/needle method practical? J Allergy Clin Immunol.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9755,
+        "mean_density_factor": 0.5245,
+        "sentence_count": 16,
+        "character_count": 580
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0057",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "2001;108(6):1040–1044. - 15. Portnoy J, Wade RL, Kessler C. Patient carrying time, confidence, and training with epinephrine autoinjectors: the RACE Survey. J Allergy Clin Immunol Pract. 2019;7\n\n(7):2252–2261. - 16. Muraro A, Worm M, Alviani C, et al. EAACI guidelines: anaphylaxis (2021 update). Allergy. 2022;77(2):357–377. - 17. Boswell B, Rudders SA, Brown JC. Emerging therapies in anaphylaxis: alternatives to intramuscular administration of epinephrine. Curr Allergy Asthma Rep. 2021;21\n\n(3):18. - 18. US Food and Drug Administration.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9853,
+        "mean_density_factor": 0.5147,
+        "sentence_count": 17,
+        "character_count": 541
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0058",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "AUVI Q (epinephrine injection, USP) highlights of prescribing information. Available at: https://www.accessdata.fda.gov/drugsatf da_docs/label/2017/201739s008s009lbl.pdf. Accessed June 14, 2023. - 19. US Food and Drug Administration. EpiPen (epinephrine injection, USP) highlights of prescribing information. Available at: https://www.accessdata.fda.gov/drugsatf da_docs/label/2016/019430s061lbl.pdf. Accessed June 14, 2023. - 20. US Food and Drug Administration. Epinephrine injection highlights of prescribing information.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 1.0,
+        "mean_density_factor": 0.5,
+        "sentence_count": 11,
+        "character_count": 524
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0059",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Available at: https://fda.report/DailyMed/04F07F15-55E2-411BABB8-07EAB37F5664.pdf. Accessed June 14, 2023. - 21. US Food and Drug Administration. Epinephrine injection highlights of prescribing information. Available at: https://www.accessdata.fda.gov/drugsatfda_docs/label/ 2018/020800s035lbl.pdf. Accessed June 14, 2023. - 22. Cohen MB, Saunders SS, Wise SK, Nassif S, Platt MP. Pitfalls in the use of epinephrine for anaphylaxis: patient and provider opportunities for improvement. Int Forum Allergy Rhinol. 2017;7(3):276–286. - 23. Warren CM, Zaslavsky JM, Kan K, Spergel JM, Gupta RS. Epinephrine auto-injector carriage and use practices among US children, adolescents, and adults.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.983,
+        "mean_density_factor": 0.517,
+        "sentence_count": 15,
+        "character_count": 686
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0060",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Ann Allergy Asthma Immunol. 2018;121(4):479–489.e. - 24. Fromer L. Prevention of anaphylaxis: the role of the epinephrine auto-injector. Am J Med. 2016;129(12):1244–1250. - 25. Macadam C, Barnett J, Roberts G, Stiefel G, King R, Erlewyn-Lajeunesse M, et al. What factors affect the carriage of epinephrine auto-injectors by teenagers? Clin Transl Allergy. 2012;2(1):3. - 26. Food Allergy Collaborative. Voice of the Patient Report: Food Allergies. 2022. Available at: https://foodallergycollaborative.org/wp-content/uploads/2022/10/FARE_ VoTP-FoodAllergies-091222.pdf. Accessed March 12, 2023. - 27.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9859,
+        "mean_density_factor": 0.5141,
+        "sentence_count": 18,
+        "character_count": 599
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0061",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Arroyo AC, Camargo CA. The importance of understanding anaphylaxis among older adults. Ann Allergy Asthma Immunol. 2022;129(1):7–8. - 28. Song TT, Worm M, Lieberman P. Anaphylaxis treatment: current barriers to adrenaline auto-injector use. Allergy. 2014;69(8):983–991. - 29. Turner PJ, Muraro A, Roberts G. Pharmacokinetics of adrenaline autoinjectors. Clin Exp Allergy. 2022;52(1):18–28. - 30. Waserman S, Avilla E, Ben-Shoshan M, Rosenfield L, Adcock AB, Greenhawt M. Epinephrine autoinjectors: new data, new problems. J Allergy Clin Immunol Pract. 2017;5(5):1180–1191. - 31.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.982,
+        "mean_density_factor": 0.518,
+        "sentence_count": 17,
+        "character_count": 578
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0062",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Greenberger PA, Wallace DV, Lieberman PL, Gregory SM. Contemporary issues in anaphylaxis and the evolution of epinephrine autoinjectors: what will the future bring? Ann Allergy Asthma Immunol. 2017;119(4):333–338. - 32. Prince BT, Mikhail I, Stukus DR. Underuse of epinephrine for the treatment of anaphylaxis: missed opportunities. J Asthma Allergy. 2018;11:143–151. - 33. Miles LM, Ratnarajah K, Gabrielli S, Abrams EM, Protudjer JLP, B egin P, et al. Community use of epinephrine for the treatment of anaphylaxis: a review and metaanalysis. J Allergy Clin Immunol Pract. 2021;9(6):2321–2333. - 34.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9853,
+        "mean_density_factor": 0.5147,
+        "sentence_count": 14,
+        "character_count": 600
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0063",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Posner LS, Camargo Jr. CA. Update on the usage and safety of epinephrine autoinjectors, 2017. Drug Healthc Patient Saf. 2017;9:9–18. - 35. Lieberman L. Biphasic anaphylactic reactions. Ann Allergy Asthma Immunol. 2005;95(3):217–226. - 36. Ellis AK, Day JH. Incidence and characteristics of biphasic anaphylaxis: a prospective evaluation of 103 patients. Ann Allergy Asthma Immunol. 2007;98(1):64–69. - 37. Lee S, Peterson A, Lohse C, Hess EP, Campbell RL. Further evaluation of factors that may predict biphasic reactions in emergency department anaphylaxis patients. J Allergy Clin Immunol Pract. 2017;5(5):1295–1301.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9825,
+        "mean_density_factor": 0.5175,
+        "sentence_count": 19,
+        "character_count": 618
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0064",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "- 38. Rooney E, Lowenthal R, Tanimoto S, Kaplan H. Time before use of epinephrine injectable devices and triggers driving use: a patient/caregiver survey. Ann Allergy Asthma Immunol. 2022;129(5):S16–S17. - 39. Glassberg B, Nowak-Wegrzyn A, Wang J. Factors contributing to underuse of epinephrine autoinjectors in pediatric patients with food allergy. Ann Allergy Asthma Immunol. 2021;126(2):175–179.e3. - 40. Kaplan H, Rooney E, Tanimoto S, Lowenthal R. Epinephrine via needle-free device would be administered faster after symptoms: results of a patient/caregiver survey. Ann Allergy Asthma Immunol.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9959,
+        "mean_density_factor": 0.5041,
+        "sentence_count": 11,
+        "character_count": 600
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0065",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "2022;129(5):S17. - 41. Soosaar J, Japp S, Johnstone S, Rybicki S, Pohl E, Fairchild S, et al. Multicenter, Randomized Crossover Healthcare Professional Preference Study of Two-Dose Epinephrine Nasal Spray Versus Epinephrine Autoinjector. Houston, TX. Poster Presented at: Annual Scientific Meeting of the American College of Allergy, Asthma, and Immunology. 2019. Available at: https://www.brynpharma.com/docs/acaai2019-pref-study-2-poster.pdf. Accessed June 14, 2023. - 42. Soosaar J, Japp S, Johnstone S, Rybicki S, Pohl E, Fairchild S, et al.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9489,
+        "mean_density_factor": 0.5511,
+        "sentence_count": 11,
+        "character_count": 545
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0066",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Multicenter, randomized crossover preference study of bidose epinephrine nasal spray vs EpiPen . 2019. Available at: https://www.brynpharma.com/docs/bryn-aap-2019-prefer ence-study-poster.pdf. Accessed June 14, 2023. - 43. Dorsey B, Relovsky D, Kaplan H, Rooney E, Tanimoto S, Lowenthal R, et al. Learning from epinephrine treatment characteristics among patients with severe allergic reactions including anaphylaxis to improve professional and patient education: analyses from a US claims database P022. Philadelphia, PA.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9952,
+        "mean_density_factor": 0.5048,
+        "sentence_count": 8,
+        "character_count": 522
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0067",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Poster Presented at: American Academy of Allergy, Asthma, & Immunology National Conference; March 13-16. 2020. Available at: https://ir.ars-pharma.com/static-files/c9aff035e59a-483d-b9e9-d2eea54ab483. Accessed June 14, 2023. - 44. Tanimoto S, Kaliner M, Lockey RF, Ebisawa M, Koplowitz LP, Koplowitz B, et al. Pharmacokinetic and pharmacodynamic comparison of epinephrine, administered intranasally and intramuscularly: an integrated analysis. Ann Allergy Asthma Immunol. 2023;130(4):508–514.e1. - 45. Dworaczyk D, Hunt A. Pharmacokinetic and pharmacodynamic effects of intranasal epinephrine versus intramuscular epinephrine in adults.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9743,
+        "mean_density_factor": 0.5257,
+        "sentence_count": 11,
+        "character_count": 636
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0068",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "J Allergy Clin Immunol. 2020;145(2):AB345. - 46. Dworaczyk D, Hunt A. 5-period, 5-treatment crossover study to compare the pharmacokinetics of intranasal and intramuscular epinephrine administration in healthy adult participants. J Allergy Clin Immunol. 2021;147(2):AB241. - 47. Dworaczyk D, Hunt A. 13.2mg intranasal epinephrine spray demonstrates comparable PK/PD and safety to 0.3mg epinephrine autoinjector. J Allergy Clin Immunol. 2023;151(2):AB317. - 48. Tal Y, Caraco Y, Ribak Y, Talmon A, Rubin L, Shamriz O, et al.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9843,
+        "mean_density_factor": 0.5157,
+        "sentence_count": 14,
+        "character_count": 523
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0069",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Pharmacokinetic, Pharmacodynamic and Safety Comparative Phase 1/2 Study Between FMXIN002, a Fast Acting, Dry Powder Epinephrine Intra-nasal Formulation, and IM Autoinjector Under Simulated Allergic Reaction Conditions. Poster Presented at: Prague, Czech Republic: European Academy of Allergy and Clinical Immunology. 2022. Available at: https://www.nasuspharma.com/wp-content/uploads/2022/07/EAACI2022-epi nephrine-slide-for-short-talk-Nasus-Pharma-14-6-22.pdf. Accessed June 14, 2023. - 49. Chen J, Chilampalli S, DeCastro G, Narayanan E, Wakaskar RR, Atiee GJ.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9945,
+        "mean_density_factor": 0.5055,
+        "sentence_count": 7,
+        "character_count": 562
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0070",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "A phase 1, single-dose, open-label, 5-treatment, crossover, pharmacokinetic study of comparative bioavailability of epinephrine nasal spray and EpiPen in healthy adults with seasonal allergies. J Allergy Clin Immunol. 2019;143(2 Suppl):AB144. - 50. Oppenheimer J, Wargacki S, Kainthan R, Berg S, Leister C, Lepore M. A phase 1, randomized study evaluating the safety tolerability, pharmacokinetics (PK) and pharmacodynamics (PD) of single ascending doses of epinephrine prodrug 109 sublingual film (AQST-109) in healthy male volunteers. J Allergy Clin Immunol. 2022;149(2):AB324. - 51.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9887,
+        "mean_density_factor": 0.5113,
+        "sentence_count": 8,
+        "character_count": 585
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0071",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Freedman M, Oppenheuimer J, Wargacki S, Slatko G. Pharmacokinetics study of epinephrine sublingual film: results from the formulation and dosage selection. KY: Louisville: Distinguished industry oral abstract presented at: annual Scientific Meeting of the American College of Allergy, Asthma, and Immunology; 2022. Available at: https://www.annallergy.org/article/S1081-1206(22)01214-5/full text#. Accessed June 15, 2023. - 52. Golden D, Oppenheimer J, Carmago Jr CA, Greenhawt M, Fleisher D, Bernstein D, et al. Pharmacokinetics and pharmacodynamics of epinephrine sublingual film versus intra-muscular epinephrine.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9599,
+        "mean_density_factor": 0.5401,
+        "sentence_count": 7,
+        "character_count": 616
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0072",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "J Allergy Clin Immunol. 2023;151(2):AB4. - 53. Greenhawt M, Oppenheimer J, Golden D, Carmago Jr CA, Fleisher D, Bernstein D, et al. Comparison of the pharmacokinetic and pharmacodynamic profiles of epinephrine delivered by a sublingually absorbed film (DESF), versus 0.3 mg administered by a standard IM injection or the EpiPen. J Allergy Clin Immunol. 2023;151\n\n(2):AB321. - 54. Oppenheimer J, Golden D, Carmago CA Jr., et al. Impact of food exposure on the pharmacokinetics of epinephrine sublingual film. San Antonio, TX.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9666,
+        "mean_density_factor": 0.5334,
+        "sentence_count": 11,
+        "character_count": 524
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0073",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Poster presented at: American Academy of Allergy, Asthma, and Immunology National Conference. 2023. (P007). Available at: https://www.jacionline.org/action/showPdf? pii=S0091-6749%2822%2901667-0. Accessed June 15, 2023. - 55. Aquestive Therapeutics Press Release. Aquestive Therapeutics receives FDA fast track designation for AQST-109 for emergency treatment of allergic reactions including anaphylaxis. 2022. Available at: https://aquestive.com/aquestive-thera peutics-receives-fda-fast-track-designation-for-aqst-109-for-emergency-treat ment-of-allergic-reactions-including-anaphylaxis/.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9947,
+        "mean_density_factor": 0.5053,
+        "sentence_count": 11,
+        "character_count": 590
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0074",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Accessed March 12, 2023. - 56. Aquestive Therapeutics Press Release. Aquestive Therapeutics announces completion of FDA end-of-phase 2 meeting for AQST-109 (epinephrine sublingual film). 2022. Available at: https://aquestive.com/aquestive-therapeutics-announces-com pletion-of-fda-end-of-phase-2-meeting-for-aqst-109-epinephrine-sublingualfilm/. Accessed March 12, 2023. - 57. ARS Pharmaceuticals Press Release. ARS Pharmaceuticals announces FDA fast track designation for ARS-1 intranasal epinephrine spray. 2019.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 1.0,
+        "mean_density_factor": 0.5,
+        "sentence_count": 11,
+        "character_count": 514
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0075",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Available at: https://arspharma.com/2019/02/19/ars-pharmaceuticals-announces-fda-fast-track-designa tion-for-ars-1-intranasal-epinephrine-spray/. Accessed March 12, 2023. - 58. ARS Pharmaceuticals Press Release. ARS Pharmaceuticals announces FDA acceptance of NDA for neffy (epinephrine nasal spray) for the treatment of allergic reactions (type I) including anaphylaxis. 2022. Available at: https://ars-pharma. com/2022/10/21/ars-pharmaceuticals-announces-fda-acceptance-of-nda-forneffy-epinephrine-nasal-spray-for-the-treatment-of-allergic-reactions-type-iincluding-anaphylaxis/.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9886,
+        "mean_density_factor": 0.5114,
+        "sentence_count": 8,
+        "character_count": 581
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0076",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Accessed March 12, 2023. - 59. Bryn Pharma Press Release. Bryn Pharma announces completion of its pivotal study comparing UTULYTM epinephrine intranasal spray vs 0.3 mg epinephrine autoinjector for the treatment of anaphylaxis. 2022. Available at: https://www. brynpharma.com/docs/Utuly-Press-Release.pdf. Accessed March 12, 2023. - 60. Bryn Pharma Press Release. Bryn Pharma announces presentation of positive clinical results from multi-dose study of bi-dose epinephrine nasal spray for the treatment of anaphylaxis at AAAAI virtual annual meeting. 2021.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9863,
+        "mean_density_factor": 0.5137,
+        "sentence_count": 12,
+        "character_count": 556
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0077",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Available at: https:// www.brynpharma.com/docs/AAAAI_2021.pdf. Accessed March 12, 2023. - 61. Bryn Pharma. Program development. Available at: https://www.brynpharma.com/ program.html. Accessed March 12, 2023. - 62. Nasus Pharma. Pipeline, timeline and milestones mission. Available at: https:// www.nasuspharma.com/product-pipeline/. Accessed March 12, 2023. - 63. Nasus Pharma Press Release. Nasus Pharma announces positive results from a pilot clinical study of FMXIN002 intranasal powder epinephrine spray. 2021.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 1.0,
+        "mean_density_factor": 0.5,
+        "sentence_count": 16,
+        "character_count": 515
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0078",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Available at: https://www.nasuspharma.com/nasus-pharma-announces-positive-resultsfrom-a-pilot-clinical-study-of-fmxin002-intranasal-powder-epinephrine-sprayin/. Accessed March 12, 2023. - 64. INSYS Therapeutics Press Release. INSYS Therapeutics announces results of dosefinding PK study for epinephrine nasal spray for treatment of anaphylaxis. 2019. Available at: https://www.globenewswire.com/en/news-release/2019/01/09/ 1682625/0/en/INSYS-Therapeutics-Announces-Results-of-Dose-Finding-PKStudy-for-Epinephrine-Nasal-Spray-for-Treatment-of-Anaphylaxis.html. Accessed March 12, 2023. - 65.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9861,
+        "mean_density_factor": 0.5139,
+        "sentence_count": 9,
+        "character_count": 590
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0079",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Hikma Press Release. Hikma acquisition expands nasal spray capabilities and pipeline. 2019. Available at: https://www.hikma.com/newsroom/article-i3710-hikmaacquisition-expands-nasal-spray-capabilities-and-pipeline/. Accessed March 12, 2023. - 66. Fry A. Hikma snaps up Insys sprays as part of US drive towards differentiation. Pharma Intelligence. Available at: https://pharmaintelligence.informa.com/resour ces/product-content/hikma-snaps-up-insys-sprays-as-part-of-us-drive-towardsdifferentiation. Accessed March 12, 2023. - 67. US Food and Drug Administration. Step 3: clinical research.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 1.0,
+        "mean_density_factor": 0.5,
+        "sentence_count": 13,
+        "character_count": 590
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0080",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Available at: https://www.fda.gov/patients/drug-development-process/step-3-clinicalresearch. Accessed May 19, 2023. Supplementary Data\n\n- eFigure 1. ARS-1 integrated analysis of PK parameters (AUC0-t [minutes £ pg/mL], mean [CV%]) across 4 phase 1 studies.44 AUC0-t, area under concentration-time curve from 0 to time t; CV, coefficient of variation; IM, intramuscular; PK, pharmacokinetic. - eFigure 2. ARS-1 integrated analysis of PK parameters (Tmax [median, minutes], [range]) across 4 phase 1 studies.44 IM, intramuscular; PK, pharmacokinetic; Tmax, time to maximum concentration. - eFigure 3.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9713,
+        "mean_density_factor": 0.5287,
+        "sentence_count": 7,
+        "character_count": 598
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0081",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "BRYN-NDS1C baseline-corrected plasma epinephrine PK (part 1: Cmax [pg/mL], [mean § SD]).45 Cmax, maximum concentration; IM, intramuscular; IN, intranasal; PD, pharmacodynamic; PK, pharmacokinetic; SD, standard deviation. - eFigure 4. BRYN-NDS1C baseline-corrected plasma epinephrine PK (AUC § SD [minutes £ pg/mL]) (part 1: A-B and part 2: C-D).45 (A) AUC0-20, (B) AUC0-360, (C) AUC0-20, (D) AUC0-\n\n\n360. AUC, area under the plasma concentration-time curve; IM, intramuscular; IN, intranasal; PK, pharmacokinetics; SD, standard deviation. #### eFigure 5.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9615,
+        "mean_density_factor": 0.5385,
+        "sentence_count": 5,
+        "character_count": 554
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0082",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "BRYN-NDS1C baseline-corrected plasma epinephrine PK (Tmax [median, minutes] [range]) (part 1: A and part 2: B).45 IM, intramuscular; IN, intranasal; PK, pharmacokinetics; Tmax, time to maximum concentration. #### eFigure 6. BRYN-NDS1C baseline-corrected plasma epinephrine PK (Cmax [10 minutes] pg/mL, mean [CV%]) after IN epinephrine or EAI.46 Cmax, maximum concentration; CV, coefficient of variation; EAI, epinephrine autoinjector; IN, intranasal; PK, pharmacokinetics. #### eFigure 7.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9232,
+        "mean_density_factor": 0.5768,
+        "sentence_count": 4,
+        "character_count": 488
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0083",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "BRYN-NDS1C baseline-corrected plasma epinephrine PK (AUC mean § SE [minutes £ pg/mL]) after IN epinephrine or EAI.46 (A) AUC0-10, (B) AUC0-20, (C) AUC0-30, (D) AUC0-60, (E) AUC0-360. AUC, area under the plasma concentration-time curve; EAI, epinephrine autoinjector; IN, intranasal; PK, pharmacokinetics; SE, standard error. - eFigure 8. BRYN-NDS1C baseline-corrected plasma epinephrine PK (Tmax [median, minutes] [range]) after IN epinephrine or EAI.46 EAI, epinephrine autoinjector; IN, intranasal; PK, pharmacokinetics; Tmax, time to maximum concentration. eFigure 9.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9535,
+        "mean_density_factor": 0.5465,
+        "sentence_count": 5,
+        "character_count": 570
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0084",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "FMXIN002 3.2 mg phase 1/2 study PK (AUC0-t [hours £ pg/mL], mean).48 AUC0-t, area under concentration-time curve from 0 to time t; PK, pharmacokinetics. #### eFigure 10. FMXIN002 3.2 mg phase 1/2 study PK.48 (A) Tmax (median, minutes), (B) T100 pg/mL (median, minutes). PK, pharmacokinetics; Tmax, time to maximum concentration; T100 pg/mL, time to 100 pg/mL. #### eFigure 11. EPIPHAST part 2 PK parameters (AUC geometric mean [hours £ pg/mL]).52 (A) AUC0-5, (B) AUC0-10, (C) AUC0-15, (D) AUC0-20, (E) AUC0-30, (F) AUC0-t. AUC, area under the plasma concentration-time curve; IM, intramuscular; PK, pharmacokinetic.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.917,
+        "mean_density_factor": 0.583,
+        "sentence_count": 6,
+        "character_count": 615
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0085",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "#### eFigure 12. EPIPHAST part 2 PK parameters (Tmax [median, minutes]).52 IM, intramuscular; PK, pharmacokinetic; Tmax, time to maximum concentration. #### eFigure 13. EPIPHAST II PK parameters (AUC geometric mean [hours £ pg/mL]).53 (A) AUC0-5, (B) AUC0-10, (C) AUC0-15, (D) AUC0-20, (E) AUC0-30, (F) AUC0-t. AUC, area under the plasma concentration-time curve; IM, intramuscular; PK, pharmacokinetic. eFigure 14. EPIPHAST II PK parameters (Tmax [median, minutes]).53 IM, intramuscular; PK, pharmacokinetic; Tmax, time to maximum concentration.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.9518,
+        "mean_density_factor": 0.5482,
+        "sentence_count": 6,
+        "character_count": 546
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0086",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "eTable 1 Phases of Clinical Research67 Phase Study Participants Length of Study Purpose Additional Detail\n\n- 1 20-100 healthy volunteers or people with the disease or condition\n\nSeveral mo Safety and dosage Phase 1 studies are closely monitored and gather information about how a drug interacts with the human body\n\n- 2 Up to several hundred people with the disease or condition\n\nSeveral mo-2 y Efficacy and adverse effects Researchers use these data to refine research questions, develop research methods, and design new phase 3 research protocols\n\n- 3 300-3000 volunteers who have the disease or condition\n\n1-4 y Efficacy and monitoring of adverse reactions\n\nResearchers design phase 3 studies to show whether a product offers a treatment benefit to a specific population.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.6333,
+        "mean_density_factor": 0.8667,
+        "sentence_count": 1,
+        "character_count": 774
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0087",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Phase 3 studies provide most of the safety data\n\n- 4 Several thousand volunteers who have the disease or condition\n\n\nSafety and efficacy Phase 4 trials are peformed once the drug or device has been approved by FDA during the postmarket safety monitoring\n\nNOTE. This table contains the FDA general summary of clinical research: however, not all studies follow this structure exactly with the number of participants nor the length of the study because there may be product-specific needs.",
+      "metadata": {
+        "chunker": "content_density_adaptive_chunking",
+        "base_chunk_size": 1200,
+        "mean_density": 0.8213,
+        "mean_density_factor": 0.6787,
+        "sentence_count": 2,
+        "character_count": 486
+      },
+      "chunk_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0088",
+      "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "strategy": "llm_segment_then_chunk",
+  "type": "LLMSegmentThenChunker",
+  "abbreviation": "LSTC",
+  "params": {
+    "max_chars": 2000,
+    "overlap": 200,
+    "llm_refine_threshold": 1500
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "number_of_chunks": 234,
+  "empty_chunks": 0,
+  "characters_min": 39,
+  "characters_p25": 219.0,
+  "characters_median": 370.0,
+  "characters_mean": 521.56,
+  "characters_p75": 621.75,
+  "characters_max": 2183,
+  "characters_std": 474.14,
+  "characters_total": 122044,
+  "small_chunk_threshold": 400,
+  "small_chunks": 121,
+  "small_chunks_percentage": 51.71,
+  "characters_original": 90456,
+  "characters_ratio": 1.349,
+  "execution_time_seconds": 0.036465,
+  "ram_before_mb": 2390.99,
+  "ram_after_mb": 2390.99,
+  "ram_increase_mb": 0.0
+}

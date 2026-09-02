@@ -1,0 +1,30 @@
+{
+  "strategy": "content_density_adaptive_chunking",
+  "type": "ContentDensityAdaptiveChunker",
+  "abbreviation": "CDAC",
+  "params": {
+    "base_chunk_size": 1200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "number_of_chunks": 89,
+  "empty_chunks": 0,
+  "characters_min": 83,
+  "characters_p25": 546.0,
+  "characters_median": 595.0,
+  "characters_mean": 666.55,
+  "characters_p75": 649.0,
+  "characters_max": 2922,
+  "characters_std": 355.17,
+  "characters_total": 59323,
+  "small_chunk_threshold": 400,
+  "small_chunks": 2,
+  "small_chunks_percentage": 2.25,
+  "characters_original": 59485,
+  "characters_ratio": 0.997,
+  "execution_time_seconds": 0.06587,
+  "ram_before_mb": 2121.43,
+  "ram_after_mb": 2121.43,
+  "ram_increase_mb": 0.0
+}

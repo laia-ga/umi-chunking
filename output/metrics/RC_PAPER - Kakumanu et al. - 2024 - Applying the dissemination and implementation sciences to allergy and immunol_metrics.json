@@ -1,0 +1,31 @@
+{
+  "strategy": "recursive_chunking",
+  "type": "RecursiveChunker",
+  "abbreviation": "RC",
+  "params": {
+    "chunk_size": 2000,
+    "chunk_overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "number_of_chunks": 40,
+  "empty_chunks": 0,
+  "characters_min": 550,
+  "characters_p25": 1334.0,
+  "characters_median": 1636.0,
+  "characters_mean": 1521.2,
+  "characters_p75": 1870.25,
+  "characters_max": 1992,
+  "characters_std": 408.91,
+  "characters_total": 60848,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 59455,
+  "characters_ratio": 1.023,
+  "execution_time_seconds": 0.000619,
+  "ram_before_mb": 1126.2,
+  "ram_after_mb": 1126.2,
+  "ram_increase_mb": 0.0
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "overlapping_token_chunking",
+  "type": "OverlappingTokenChunker",
+  "abbreviation": "OFC",
+  "params": {
+    "chunk_size": 500,
+    "overlap_size": 75
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "number_of_chunks": 38,
+  "empty_chunks": 0,
+  "characters_min": 1441,
+  "characters_p25": 1612.25,
+  "characters_median": 1719.0,
+  "characters_mean": 1828.76,
+  "characters_p75": 2056.25,
+  "characters_max": 2520,
+  "characters_std": 306.98,
+  "characters_total": 69493,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 59485,
+  "characters_ratio": 1.168,
+  "execution_time_seconds": 0.009119,
+  "ram_before_mb": 1121.39,
+  "ram_after_mb": 1121.39,
+  "ram_increase_mb": 0.0
+}

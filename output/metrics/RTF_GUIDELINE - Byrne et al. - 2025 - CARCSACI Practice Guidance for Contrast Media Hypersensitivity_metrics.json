@@ -1,0 +1,31 @@
+{
+  "strategy": "recursive_token_fallback_chunking",
+  "type": "RecursiveTokenChunker",
+  "abbreviation": "RTF",
+  "params": {
+    "chunk_size": 500,
+    "chunk_overlap": 75
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
+  "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "number_of_chunks": 64,
+  "empty_chunks": 0,
+  "characters_min": 249,
+  "characters_p25": 1110.5,
+  "characters_median": 1483.0,
+  "characters_mean": 1483.8,
+  "characters_p75": 1945.25,
+  "characters_max": 2497,
+  "characters_std": 572.98,
+  "characters_total": 94963,
+  "small_chunk_threshold": 400,
+  "small_chunks": 4,
+  "small_chunks_percentage": 6.25,
+  "characters_original": 88611,
+  "characters_ratio": 1.072,
+  "execution_time_seconds": 0.059822,
+  "ram_before_mb": 1126.2,
+  "ram_after_mb": 1126.2,
+  "ram_increase_mb": 0.0
+}

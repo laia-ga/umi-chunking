@@ -1,0 +1,31 @@
+{
+  "strategy": "llm_boundary_detection_chunking",
+  "type": "LLMBoundaryDetectionChunker",
+  "abbreviation": "LBDC",
+  "params": {
+    "max_chars": 2000,
+    "overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "number_of_chunks": 49,
+  "empty_chunks": 0,
+  "characters_min": 886,
+  "characters_p25": 1954.0,
+  "characters_median": 2102.0,
+  "characters_mean": 2028.37,
+  "characters_p75": 2159.0,
+  "characters_max": 2195,
+  "characters_std": 215.12,
+  "characters_total": 99390,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 90456,
+  "characters_ratio": 1.099,
+  "execution_time_seconds": 0.027018,
+  "ram_before_mb": 2390.95,
+  "ram_after_mb": 2390.95,
+  "ram_increase_mb": 0.0
+}

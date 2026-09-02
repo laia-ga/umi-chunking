@@ -1,0 +1,31 @@
+{
+  "strategy": "llm_boundary_detection_chunking",
+  "type": "LLMBoundaryDetectionChunker",
+  "abbreviation": "LBDC",
+  "params": {
+    "max_chars": 2000,
+    "overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
+  "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "number_of_chunks": 35,
+  "empty_chunks": 0,
+  "characters_min": 633,
+  "characters_p25": 2042.0,
+  "characters_median": 2125.0,
+  "characters_mean": 2055.63,
+  "characters_p75": 2171.5,
+  "characters_max": 2200,
+  "characters_std": 269.81,
+  "characters_total": 71947,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 65564,
+  "characters_ratio": 1.097,
+  "execution_time_seconds": 0.019297,
+  "ram_before_mb": 2390.95,
+  "ram_after_mb": 2390.95,
+  "ram_increase_mb": 0.0
+}

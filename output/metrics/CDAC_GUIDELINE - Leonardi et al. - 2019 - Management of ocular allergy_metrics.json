@@ -1,0 +1,30 @@
+{
+  "strategy": "content_density_adaptive_chunking",
+  "type": "ContentDensityAdaptiveChunker",
+  "abbreviation": "CDAC",
+  "params": {
+    "base_chunk_size": 1200
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "number_of_chunks": 115,
+  "empty_chunks": 0,
+  "characters_min": 23,
+  "characters_p25": 550.0,
+  "characters_median": 597.0,
+  "characters_mean": 717.52,
+  "characters_p75": 680.5,
+  "characters_max": 4174,
+  "characters_std": 468.57,
+  "characters_total": 82515,
+  "small_chunk_threshold": 400,
+  "small_chunks": 5,
+  "small_chunks_percentage": 4.35,
+  "characters_original": 82701,
+  "characters_ratio": 0.998,
+  "execution_time_seconds": 0.087052,
+  "ram_before_mb": 2121.43,
+  "ram_after_mb": 2121.43,
+  "ram_increase_mb": 0.0
+}

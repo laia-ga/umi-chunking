@@ -1,0 +1,30 @@
+{
+  "strategy": "content_density_adaptive_chunking",
+  "type": "ContentDensityAdaptiveChunker",
+  "abbreviation": "CDAC",
+  "params": {
+    "base_chunk_size": 1200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers",
+  "input_file": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.md",
+  "number_of_chunks": 110,
+  "empty_chunks": 0,
+  "characters_min": 58,
+  "characters_p25": 563.25,
+  "characters_median": 598.0,
+  "characters_mean": 601.12,
+  "characters_p75": 637.5,
+  "characters_max": 1069,
+  "characters_std": 105.78,
+  "characters_total": 66123,
+  "small_chunk_threshold": 400,
+  "small_chunks": 2,
+  "small_chunks_percentage": 1.82,
+  "characters_original": 66188,
+  "characters_ratio": 0.999,
+  "execution_time_seconds": 0.097503,
+  "ram_before_mb": 2121.43,
+  "ram_after_mb": 2121.43,
+  "ram_increase_mb": 0.0
+}

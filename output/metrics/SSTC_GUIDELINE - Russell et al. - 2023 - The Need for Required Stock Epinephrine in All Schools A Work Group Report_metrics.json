@@ -1,0 +1,30 @@
+{
+  "strategy": "semantic_similarity_threshold_chunking",
+  "type": "SemanticSimilarityThresholdChunker",
+  "abbreviation": "SSTC",
+  "params": {
+    "threshold": 0.6
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report",
+  "input_file": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
+  "number_of_chunks": 699,
+  "empty_chunks": 0,
+  "characters_min": 2,
+  "characters_p25": 25.5,
+  "characters_median": 58.0,
+  "characters_mean": 123.87,
+  "characters_p75": 131.5,
+  "characters_max": 2803,
+  "characters_std": 232.57,
+  "characters_total": 86585,
+  "small_chunk_threshold": 400,
+  "small_chunks": 657,
+  "small_chunks_percentage": 93.99,
+  "characters_original": 87356,
+  "characters_ratio": 0.991,
+  "execution_time_seconds": 10.255717,
+  "ram_before_mb": 1574.73,
+  "ram_after_mb": 1618.41,
+  "ram_increase_mb": 43.67
+}

@@ -1,0 +1,1211 @@
+{
+  "strategy": "semantic_boundary_detection",
+  "type": "SemanticBoundaryChunker",
+  "abbreviation": "SBDC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0,
+    "buffer_size": 1
+  },
+  "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
+  "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "original_character_count": 62436,
+  "number_of_chunks": 92,
+  "chunks": [
+    {
+      "text": "Original Article\n\n# Intranasal Versus Oral Treatments for Allergic Rhinitis: A Systematic Review With Meta-Analysis\n\nMaria Inês Torres, MDa,b, Sara Gil-Mata, MDa,b, Antonio Bognanni, MDc,d, Renato Ferreira-da-Silva, MDa,b, Juan José Yepes-Nuñez, MD, PhDc,e,f, Nuno Lourenc¸o-Silva, MDa,b, António Cardoso-Fernandes, MDa,b, André Ferreira, MDb,g,h, Henrique Ferreira-Cardoso, MDa,b, Diana Portela, MDa,b, João Teles, MDa,b, Violeta Kvedariene, MD, PhDi,j, María Jose Torres, MD, PhDk, Ludger Klimek, MD, PhDl,m, Oliver Pfaar, MD, PhDn, Luisa Brussino, MDo,p, Torsten Zuberbier, MD, PhDq,r, João A.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 596
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0000",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Fonseca, MD, PhDa,b, Holger Schünemann, MD, PhDc,s, Jean Bousquet, MD, PhDq,r,t, Bernardo Sousa-Pinto, MD, PhDa,b, and Rafael José Vieira, MDa,b, on behalf of the Allergic Rhinitis and its Impact on Asthma 2024 Guideline Panel* Porto, Portugal; Hamilton, Ontario, Canada; Bogotá, Colombia; Vilnius, Lithuania; Malaga, Spain; Mainz, Wiesbaden, Marburg, and Berlin, Germany; Torino and Milan, Italy; and Montpellier, France\n\n||What is already known about this topic? Intranasal and oral medications are part of the mainstay for the treatment of allergic rhinitis. Although intranasal medications are usually recommended, for most of these recommendations, certainty in the evidence was low or very low.<br><br>What does this article add to our knowledge? We assessed intranasal corticosteroids or antihistamines versus oral antihistamines or leukotriene receptor antagonists. We found intranasal treatments to be superior to oral interventions at improving nasal and oral symptoms and quality of life.<br><br>How does this study impact current management guidelines? This systematic review could help future guideline developers issue recommendations for allergic rhinitis, particularly because the evidence certainty for most comparisons was deemed moderate or high.|\n|---|\n|\n|---|\n\n\nBACKGROUND: Treatments for allergic rhinitis include intranasal or oral medications. OBJECTIVE: To perform a systematic review with meta-analysis comparing the effectiveness of intranasal corticosteroids or antihistamines versus oral antihistamines or leukotriene receptor antagonists in improving allergic rhinitis symptoms and quality of life. aMEDCIDS, Department of Community Medicine, Information, and Health Decision Sciences, Faculty of Medicine, University of Porto, Porto, Portugal bCINTESIS@RISE, Health Research Network, MEDCIDS, Faculty of Medicine, University of Porto, Porto, Portugal cDepartment of Health Research Methods, Evidence, and Impact, McMaster University, Hamilton, Ontario, Canada dDepartment of Medicine, Evidence in Allergy Group, McMaster University,\n\nHamilton, Ontario, Canada eSchool of Medicine, Universidad de los Andes, Bogotá, Colombia fFundación Santa Fé de Bogota, Bogotá D.C., Colombia gUnit of Anatomy, Department of Biomedicine, Faculty of Medicine, University of\n\nPorto, Porto, Portugal hDepartment of Ophthalmology, Centro Hospitalar Universitário do Porto, Porto, Portugal iInstitute of Clinical Medicine, Clinic of Chest Diseases and Allergology, Faculty of Medicine, Vilnius University, Vilnius, Lithuania jInstitute of Biomedical Sciences, Department of Pathology, Faculty of Medicine, Vilnius University, Vilnius, Lithuania kAllergy Unit, Málaga Regional University Hospital of Málaga, Malaga University, ARADyAL, Malaga, Spain\n\nMETHODS: We searched four bibliographic databases and three clinical trial datasets for randomized controlled trials (1) assessing patients aged 12 years and older with seasonal or perennial allergic rhinitis, and (2) comparing intranasal corticosteroids or antihistamines versus oral antihistamines or leukotriene receptor antagonists.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 3096
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0001",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "We performed a meta-analysis of the Total Nasal Symptom Score (TNSS), Total Ocular\n\nlDepartment of Otolaryngology, Head and Neck Surgery, Universitätsmedizin\n\nMainz, Mainz, Germany mCenter for Rhinology and Allergology, Wiesbaden, Germany nSection of Rhinology and Allergy, Department of Otorhinolaryngology, Head and\n\nNeck Surgery, University Hospital Marburg, Philipps-Universität Marburg, Marburg, Germany\n\noDepartment of Medical Sciences, University of Torino, Torino, Italy pAllergy and Clinical Immunology Unit, Mauriziano Hospital, Torino, Italy qInstitute of Allergology, CharitéeUniversitätsmedizin Berlin, Corporate Member of Freie Universität Berlin and Humboldt-Universität zu Berlin, Berlin, Germany rDepartment of Allergology and Immunology, Fraunhofer Institute for Translational\n\nMedicine and Pharmacology ITMP, Berlin, Germany sClinical Epidemiology and Research Center, Humanitas University and Humanitas Research Hospital, Milan, Italy tAllergic Rhinitis and Its Impact on Asthma, Montpellier, France\n\n*Members of the Allergic Rhinitis and Its Impact on Asthma 2024 Guideline Panel include Ana Luísa Neves, Ana Margarida Pereira, Anna Bedbrook, Arunas Valiulis, Cristina Jacomelli, Elena Azzolini, Elena Parmelli, Giorgio Walter Canonica, Jaron Zuberbier, Leticia de las Vecillas, Louis Gilles, Lucas Leemann, Ludger Klimek, Maria Teresa Ventura, Marine Savoure, Mark Dykewicz, Martin\n\n3404\n\n|Abbreviations used AE- Adverse event AR- Allergic rhinitis<br><br>ARIA- Allergic Rhinitis and its Impact on Asthma CoE- Certainty of evidence GRADE- Grading of Recommendations, Assessment, Development, and Evaluation<br><br>INAH- Intranasal antihistamines INCS- Intranasal corticosteroids LTRA- Leukotriene receptor antagonists<br><br>MD- Mean difference OAH- Oral antihistamines PAR- Perennial allergic rhinitis<br><br>RQLQ- Rhinoconjunctivitis Quality of Life Questionnaire RCT- Randomized controlled trial RoB- Risk of bias SAR- Seasonal allergic rhinitis<br><br>TNSS- Total Nasal Symptom Score TOSS- Total Ocular Symptom Score<br><br>TSS- Total Symptom Score|\n|---|\n\n\nSymptom Score, Rhinoconjunctivitis Quality of Life Questionnaire (RQLQ), development of adverse events, and withdrawals owing to adverse events. Certainty of evidence was assessed using Grading of Recommendations, Assessment, Development, and Evaluation. RESULTS: We included 35 studies, most of which assessed patients with seasonal allergic rhinitis and displayed an unclear risk of bias. Superiority of intranasal treatments was found for all assessed outcomes. Intranasal corticosteroids were more effective than oral antihistamines at improving the TNSS (mean difference [MD], e0.86; 95% CI, e1.21 to e0.51; I2 [ 70%), Total Ocular Symptom Score (MD, e0.36; 95% CI, e0.56 to e0.17; I2 [ 0%), and RQLQ (MD, e0.88; 95% CI, e1.15 to e0.61; I2 [ 0%), which were mostly associated with clinically meaningful improvements. Superiority of intranasal corticosteroids at improving the TNSS was also found against oral leukotriene receptor antagonists (MD, e1.05; 95% CI,\n\nHofmann-Apitius, Nikolaos Papadopoulos, Olga Lourenço, Sanna K. Salmi, Sian Williams, and Yuliia Palamarchuk. This study has been funded within the context of the Allergic Rhinitis and its Impact on Asthma group. R.J. Vieira was supported by PhD Grant Reference 2022.12787.BD, funded by Portuguese national funds and community funds from the European Social Fund and Programa Por_Norte through Fundação para a Ciência e a Tecnologia (FCT-MCTES, Portugal). Conflicts of interest: V.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 3533
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0002",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Kvedariene reports other support from Norameda and Berlin Chemie Menarini, outside the submitted work. O. Pfaar reports grants and personal fees from ALK-Abelló, Allergopharma, Stallergenes Greer, HAL Allergy Holding B.V./HAL Allergie GmbH, Bencard Allergie GmbH/Allergy Therapeutics, Lofarma, ASIT Biotech Tools S.A., Laboratorios LETI/LETI Pharma, Anergis S.A., GlaxoSmithKline, and AstraZeneca; grants from Biomay, Circassia, Pohl-Boskamp, and Inmunotek S.L.; personal fees from MEDA Pharma/MYLAN, Mobile Chamber Experts (a GA2LEN Partner), Indoor Biotechnologies, Astellas Pharma Global, EUFOREA, ROXALL Medizin, Novartis, Sanofi-Aventis, Sanofi-Genzyme, Med Update Europe GmbH, Streamedup! GmbH, John Wiley and Sons, AS, Paul-Martini-Stiftung, Regeneron Pharmaceuticals Inc, RG Aerztefortbildung, Institut für Disease Management, Springer GmbH, IQVIA Commercial, Ingress Health, Wort&Bild Verlag, Verlag ME, and Procter&Gamble, outside the submitted work; and is a member of EAACI Excom, a member of external board of directors of DGAKI; and coordinator, main or coauthor of different position papers and guidelines on rhinology, allergology, and allergenimmunotherapy.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 1174
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0003",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "M.J. Torres reports grants from the European Commission, SEAIC, and ISCIII; personal fees from Diater Laboratories and Leti Laboratories, and other from Aimmune Therapeutics, outside the submitted work. L. Klimek\n\ne1.33 to e0.77). Intranasal antihistamines were more effective than oral antihistamines at improving the TNSS (MD, e0.47; 95% CI, e0.81 to e0.14; I2 [ 0%) and RQLQ (MD, e0.31; 95% CI, e0.56 to e0.06; I2 [ 0%). CONCLUSIONS: Randomized controlled trials suggest that intranasal treatments are more effective than oral treatments at improving symptoms and quality of life in seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 613
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0004",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "2024 The Authors. Published by Elsevier Inc. on behalf of the American Academy of Allergy, Asthma & Immunology. This is an open access article under the CC BYNC-ND license (http://creativecommons.org/licenses/by-nc-nd/ 4.0/). (J Allergy Clin Immunol Pract 2024;12:3404-18)\n\nKey words: Allergic rhinitis; Intranasal corticosteroids; Intranasal antihistamines; Oral antihistamines; Leukotriene receptor antagonists; Meta-analysis; GRADE approach\n\nINTRODUCTION\n\nIntranasal and oral medications are part of the mainstay for the treatment of allergic rhinitis (AR). In particular, the 2020 Allergic Rhinitis and its Impact on Asthma (ARIA) guidelines favor the use of intranasal medications in patients with moderate to severe disease, because they appear to have a faster onset of action and higher effectiveness compared with oral medications.1 Nonetheless, for most of these recommendations, the certainty of evidence (CoE) was considered low or very low.1,2 Similarly, although the US 2020 Practice Parameter for Allergic Rhinitis favors using intranasal corticosteroids (INCS) as first-line therapeutics, statements (and the respective evidence) on the comparison between them and oral interventions are lacking.3 Whereas there have been studies comparing nasal and oral medications, not all used the same methods for outcome assessment and they exhibited inconsistent methodologic rigor.2 Furthermore, high-quality recent systematic reviews on this topic are missing. A previous systematic review was published in 1998 and compared only INCS with oral antihistamines (OAH),4\n\nreports grants from Allergopharma, MEDA/Mylan, ALK Abelló, LETI Pharma, Stallergenes, Sanofi, ASIT Biotech, Lofarma Quintiles, AstraZeneca, GlaxoSmithKline, and Inmunotk; and personal fees from Allergopharma, MEDA/ Mylan, HAL Allergie, LETI Pharma, Sanofi, Allergy Therapeut, and Cassella Med, outside the submitted work. J.A. Fonseca reports grants from AstraZeneca and Mundipharma; and personal fees from AstraZeneca, Mundipharma, Sanofi, GlaxoSmithKline, and Teva, outside the submitted work. T. Zuberbier reports grants from Novartis and Henkel; and personal fees from Bayer Health Care, FAES, Novartis, Henkel, AstraZeneca, AbbVie, ALK, Almirall, Astellas, Bencard, Berlin Chemie, HAL, Leti, Meda, Menarini, Merck, MSD, Pfizer, Sanofi, Stallergenes, Takeda, Teva, UCB, Kryolan,andL’Oréal,outsidethesubmittedwork.J.Bousquetreportspersonalfeesfrom Chiesi,Cipla,Hikma,Menarini,Mundipharma,Mylan,Novartis,Purina,Sanofi-Aventis, Takeda, Teva, and Uriach; and other from Kyomed-Innov, outside the submitted work.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 2588
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0005",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "The rest of the authors declare that they have no relevant conflicts of interest.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 81
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0006",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Received for publication May 14, 2024; revised August 30, 2024; accepted for\n\npublication September 3, 2024. Available online September 7, 2024. Corresponding author: Jean Bousquet, MD, PhD, Institute of Allergology, CharitéeUniversitätsmedizin Berlin, Corporate Member of Freie Universität Berlin and Humboldt-Universität zu Berlin, Campus Benjamin Franklin, Hindenburgdamm 30, Haus II, 12203 Berlin, Germany.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 410
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0007",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "E-mail: [CORREO OMITIDO].",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 25
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0008",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "2213-2198\n\n2024 The Authors. Published by Elsevier Inc. on behalf of the American Academy of Allergy, Asthma & Immunology. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/). https://doi.org/10.1016/j.jaip.2024.09.001\n\n3406 TORRES ET AL\n\nwhereas another review was limited to studies published after 2003 and excluded studies based on the publication language.5\n\nIn the context of the 2024 revision of the ARIA guidelines (focusing on the pharmacologic treatment and management of AR), we aim, in this systematic review, to assess the comparative effectiveness and safety of intranasal and oral medications for AR. METHODS\n\nThis systematic review follows the Preferred Reporting Items for Systematic Reviews and Meta-analyses guidelines.6 Its protocol is available in PROSPERO (CRD42023495296) and was published elsewhere.7 A full description is provided in the Supplemental Methods (in this article’s Online Repository at www.jaciinpractice.org). Eligibility criteria\n\nWe included randomized controlled trials (RCTs) with a parallel design assessing patients aged 12 years and older with seasonal allergic rhinitis (SAR) or perennial allergic rhinitis (PAR), comparing intranasal medications (INCS, antihistamines [INAH], and fixed combinations of INCS plus INAH) and oral medications (OAH and leukotriene receptor antagonists [LTRA]) on at least one of the following patient-reported outcome measures: Total Nasal Symptom Score (TNSS), Total Ocular Symptom Score (TOSS), Total Symptom Score (TSS), or Rhinoconjunctivitis Quality of Life Questionnaire (RQLQ). For all these outcomes, an increased score is associated with worsening AR. We included RCTs with a follow-up of at least 2 weeks for SAR and at least 4 weeks for PAR. Information sources and search strategy\n\nWe conducted a systematic search (see Table E1 in this article’s Online Repository at www.jaci-inpractice.org) on MEDLINE, Embase, Web of Science, and the Cochrane Central Register of Controlled Trials from database inception to August 2022 (with an updated search in September 2023). We also manually searched the clinicaltrials.gov platform, the GlaxoSmithKline clinical study dataset, and the AstraZeneca Clinical Trials web site. Study selection and data collection\n\nAfter removing duplicates, two authors independently accessed each record for eligibility, first by title and abstract and then by fulltext reading. Data from each included study were independently extracted by two reviewers using a dedicated online form. Disagreements between reviewers were resolved by a third reviewer. Risk of bias and critical appraisal of evidence\n\nThe risk of bias (RoB) in each included study was independently assessed by two reviewers using the Cochrane RoB tool.8 Disagreements were resolved by a third reviewer. We assessed the CoE of the different effectiveness outcomes using the Grading of Recommendations, Assessment, Development and Evaluation (GRADE) approach.9\n\nQuantitative synthesis of results\n\nAll outcomes assessed are presented as means ( SDs) at baseline and as values for change from baseline. Safety outcomes are described using absolute and relative frequencies. For effectiveness outcomes, we performed random-effects metaanalyses of mean differences (MDs) in values for change from baseline. For meta-analytical purposes, we considered only the TNSS to be calculated based on the sum of four symptoms (nasal congestion, itching, sneezing, and rhinorrhea) and the TOSS to be\n\nJ ALLERGY CLIN IMMUNOL PRACT DECEMBER 2024\n\ncalculated based on the sum of three symptoms (eye itching/ burning, tearing/watering, and redness). We conducted an additional analysis for safety outcomes by performing random-effects meta-analyses of risk ratios (RRs). All analyses were performed for SAR. Owing to the insufficient number of included studies, limitations in reporting patient subgroups, and heterogeneity in outcomes, meta-analyses were not performed for PAR. We used the restricted maximum likelihood approach to estimate between-study variance. Heterogeneity was assessed by estimating the Q-Cochran test P value and the I2 statistic. We conducted sensitivity analyses to assess the robustness of findings. These included analyses comparing pooled estimates versus those obtained excluding studies with a high risk of bias, studies with imputed SD, studies for which outcomes were not reported at 2 weeks of followup, and analyses focusing on specific drug comparisons within each class (eg, individual INCS vs individual OAH). For subgroup analyses suggesting the existence of effect modification on effectiveness outcomes, the credibility of such an effect modification was assessed using the Instrument to Assess the Credibility of Effect Modification Analyses in a meta-analysis of RCT tool.10\n\nWe applied a complementary approach to compute the probability that for each pair of interventions, differences would correspond to large, moderate, small, or trivial (no meaningful) effects.11\n\nRESULTS\n\nWe retrieved 4,631 records from database searches and 55 from clinical trials register databases (Figure 1).",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 5152
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0009",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "After deduplication, 2,998 records were screened and 84 were assessed for eligibility. A total of 35 different studies (published in 49 publications/reports) were included in the systematic review. The characteristics and quantitative results of included studies are summarized in Table I; (see Tables E2-E4 in this article’s Online Repository at www.jaci-inpractice.org). We included 25 studies assessing the TNSS, 20 of which reported data on the change from baseline, or baseline and posttreatment, on the foursymptom TNSS and were included in quantitative metaanalysis. Regarding the TOSS, we included a total of seven studies, five of which reported data on the change from baseline, or baseline and posttreatment, on the three-symptom TOSS and were included in quantitative meta-analysis. Twelve studies assessed the TSS, but none were included in quantitative metaanalysis owing to heterogeneity in included symptoms and scale. Finally, we included six studies that assessed the RQLQ, four of which reported data on the change from baseline, or baseline and posttreatment, and were included in the metaanalysis. We found only two studies investigating patients with PAR, but they reported only TSS data. Because of differences in the definition of the TSS, we did not perform a meta-analysis of studies on PAR; all meta-analytical results concerned SAR. Risk of bias\n\nFigure 2 displays the results of the RoB assessment for the included studies. Overall, the domains most frequently classified as being associated with a low RoB were blinding of participants and personnel, blinding of outcome assessment, and completeness of outcome data. The domains most frequently classified as having an unclear risk of bias were random sequence generation and allocation concealment. This was primarily because of inadequate reporting of these aspects in the included studies rather than a clear indication of bias. On the other hand, the\n\nFIGURE 1. Preferred Reporting Items for Systematic Reviews and Meta-analysis flow diagram for study selection. RQLQ, Rhinoconjunctivitis Quality of Life Questionnaire. rTNSS, Reflective Total Nasal Symptom Score; rTOSS, Reflective Total Ocular Symptom Score. domain most frequently classified as associated with a high risk of bias was selective reporting. Effectiveness outcomes\n\nFigure 3 shows the main meta-analytical results. Here, we describe the results for the different comparisons for each outcome. Total Nasal Symptom Score: INAH versus OAH. Three studies (n ¼ 878 participants) comparing INAH and OAH were included in the meta-analysis of TNSS (Figure 4).12-14 All of these RCTs assessed azelastine as the\n\nINAH, whereas the OAH was either cetirizine or desloratadine. All studies had a follow-up of 2 weeks and were classified as having an unclear RoB. Antihistamines were more effective than OAH at improving the TNSS (MD, e0.47; 95% CI, e0.81 to e0.14; I2 ¼ 0%), with a probability of 44% of a clinically meaningful improvement (high CoE) (see Table E5 in this article’s Online Repository at www.jaci-inpractice.org). Results were consistent in sensitivity analyses after the exclusion of studies with imputed SDs (see Table E6 in this article’s Online Repository at www.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 3221
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0010",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "jaci-inpractice.org). TABLE I. Characteristics of included studies\n\nN participants\n\nNasal treatment and total daily dose (regimen)\n\nOral treatment and total daily dose (regimen)\n\nStudy identification\n\nDisease assessed\n\nPlace and period of data collection\n\nAssessed outcomes Follow-up\n\nNasal treatment\n\nOral treatment\n\nTotal\n\nIntranasal antihistamines vs oral antihistamines Corren, 200512 Seasonal allergic\n\nUnited States; 2004 fall allergy season\n\nAzelastine NA† (2 sprays/nostril BID)\n\nCetirizine 10 mg (QD)\n\nrTNSS RQLQ\n\n2 wk 307 152 155 299 (97.4) 190 (35.5) 35 Unclear\n\nrhinitis\n\nBerger, 200613 Seasonal allergic rhinitis\n\nUnited States; 2005 spring allergy season\n\nAzelastine NA† (2 sprays/nostril BID)\n\nCetirizine 10 mg (QD)\n\nrTNSS RQLQ\n\n2 wk 354 179 175 345 (97.5) 205 (57.9) 35 Unclear\n\nRatner, 199414 Seasonal allergic rhinitis\n\nUnited States; mountain cedar pollen season (January to February, before 1994)\n\n- Azelastine 0.55 mg (2 sprays/nostril QD)\n- Azelastine 1.1 mg (2 sprays/nostril BID)\n\n\nChlorpheniramine maleate 24 mg (BID)\n\nrTSS 2 wk 187 125z 62\n\nStorms, 199415 Seasonal allergic rhinitis\n\nUnited States; 1990 (May to August)\n\n- Azelastine 0.55 mg (2 sprays/nostril QD)\n- Azelastine 1.1 mg (2 sprays/nostril BID)\n\n\nChlorpheniramine maleate 24 mg (BID)\n\nrTSS 2 wk 186 124jj 62\n\nLaForce, 199616 Seasonal allergic rhinitis\n\nUnited States; April to July (before 1994)\n\n- Azelastine 0.52 mg (2 sprays/nostril QD)\n- Azelastine 1.04 mg (2 sprays/nostril BID)\n\n\nChlorpheniramine maleate 24 mg (BID)\n\nrTSS 4 wk 197 132{ 65\n\nBerger, 200317 Seasonal allergic rhinitis\n\nUnited States; 2002 fall allergy season\n\nAzelastine NA† (2 sprays/nostril BID)\n\nDesloratadine 5 mg rTNSS 2 wk 219 108 111\n\nAntépara, 199818 Seasonal allergic rhinitis\n\nSpain; 1994 (April to August)\n\nAzelastine 0.56 mg (2 sprays QD)\n\nEbastine 10 mg (QD) rTSS 2 wk 110 56 54 102 (92.7) 40 (36.4) 31 High\n\nGastpar, 199419 Seasonal allergic rhinitis\n\nGermany; 1987 (April to October)\n\nAzelastine 0.56 mg (1 spray/nostril BID)\n\nTerfenadine 120 mg (BID)\n\nrTSS 6 wk 167 81 86 162 (97) 59 (35.3) 29.9 Unclear\n\nGastpar, 199419 Perennial allergic rhinitis\n\nGermany; 1987 to 1997 (May to January)\n\nAzelastine 0.56 mg (1 spray/nostril BID)\n\nTerfenadine 120 mg (BID)\n\nrTSS 6 wk 52 25 27 49 (94.2) 19 (36.5) 30.5 Unclear\n\nIntranasal corticosteroids vs oral antihistamines Bhatia, 200520 Seasonal allergic\n\nBudesonide 64 mg (QD) Desloratadine 5 mg\n\nUnited States; 2003 spring allergy season (March to June)\n\nrTSS RQLQ\n\n2 wk 61 30 31 61 (100) 33 (54.1) 26 Unclear\n\nrhinitis\n\n(QD)\n\nMunch, 198321 Seasonal allergic rhinitis\n\nDenmark; 1982 grass pollen season (June)\n\nBudesonide 400 mg (2\n\nDexchlorpheniramine maleate 12 mg (BID)\n\nrTNSS 3 wk 61 —# —#\n\nsprays/nostril BID)\n\nPerennial allergic rhinitis\n\nThailand; NA* Budesonide 256 mg (2 sprays/nostril QD)\n\nLevocetirizine 5 mg (QD)\n\nrTSS 4 wk 100 50 50 100 (100) 74 (74) 35.7 Unclear\n\nKulapaditharom, 201022\n\nKim, 201523 (NCT01430260)\n\nCiclesonide 200 mg (QD) Levocetirizine 5 mg\n\nrTNSS 2 wk 49 28 21\n\nSeasonal allergic rhinitis\n\nSouth Korea; 2011 to 2012 (January to July)\n\n(QD)\n\nAndrews, 200924 (NCT00435461)\n\nSeasonal allergic rhinitis\n\nUnited States; 2006 to 2007 mountain cedar allergy season\n\nFexofenadine 180 mg (QD)\n\nrTNSS rTOSS\n\n2 wk 623 312 311 585 (93.9) 408 (65.5) 38.7 Unclear\n\nFluticasone furoate 110\n\nmg (QD)\n\nAndrews, 200924 (NCT00502775)\n\nSeasonal allergic rhinitis\n\nGéhanno, 199725 (FNM40071)\n\nSeasonal allergic rhinitis\n\nVervloet, 199726 Seasonal allergic rhinitis\n\nMackowiak, 199427 (FLN-412)\n\nAlvarado-Valdés, 199728 (FLN-411)\n\nSeasonal allergic rhinitis\n\nSeasonal allergic rhinitis\n\nFord, 201529 (NCT01916226; GSK: 200165)\n\nRatner, 199830 (FLTA4006)\n\nSeasonal allergic rhinitis\n\nSeasonal allergic rhinitis\n\nStricker, 199831 (FLTA4024)\n\nSeasonal allergic rhinitis\n\nFNM30034, 200332 Seasonal allergic rhinitis\n\nBernstein, 200433 (FNM30033)\n\nSeasonal allergic rhinitis\n\nFLTA4004, 200534 Seasonal allergic rhinitis\n\nBronsky, 199635 (FLN-402)\n\nvan Bavel, 199436 (FLN-401)\n\nSeasonal allergic rhinitis\n\nSeasonal allergic rhinitis\n\nAnolik, 200837 (NCT03855228)\n\nSeasonal allergic rhinitis\n\nNathan, 200938 Seasonal allergic rhinitis\n\nBernstein, 199639 Seasonal allergic rhinitis\n\nUnited States; 2007 ragweed pollen season\n\nFluticasone furoate 110\n\nmg (QD)\n\nFrance; 1991 (March 15 to August 20)\n\nFluticasone propionate 200 mg (2 sprays/ nostril QD)\n\nFrance; NA* Fluticasone propionate 200 mg (2 sprays/ nostril QD)\n\nUnited States; 1992 (March to July)\n\nFluticasone propionate\n\n200 mg (QD)\n\nUnited States; 1991 (July to October)\n\nFluticasone propionate 200 mg (2 sprays/ nostril QD)\n\nFluticasone propionate 200 mg (2 sprays/ nostril QD)\n\nUnited States; 2013 fall allergy season (August 1 to October 16)\n\nFluticasone propionate 200 mg (2 sprays/ nostril QD)\n\nUnited States; 1995 to 1996 (January to February)\n\nUnited States; 1997 Fluticasone propionate\n\n200 mg (QD)\n\nUnited States; 2001 (March to June)\n\nFluticasone propionate 200 mg (2 sprays/ nostril QD)\n\nUnited States; 2001 (March to July)\n\nFluticasone propionate 200 mg (2 sprays/ nostril QD)\n\nUnited States; NA* Fluticasone propionate 200 mg (2 sprays/ nostril QD)\n\nUnited States; spring allergy season (February to May)\n\nFluticasone propionate 200 mg (2 sprays/ nostril QD)\n\nUnited States; 1990 to 1991 (December to March)\n\nFluticasone propionate 200 mg (2 sprays/ nostril QD)\n\nMometasone furoate 200\n\nUnited States; 1995 spring allergy season (March to August)\n\nmg (QD)\n\nUnited States; NA* Mometasone furoate 200\n\nmg (QD)\n\nUnited States; ragweed pollen season\n\nTriamcinolone acetonide 220 mg (2 sprays/ nostril QD)\n\nFexofenadine 180 mg (QD)\n\nrTNSS rTOSS\n\n2 wk 451 224 227 423 (93.8) 287 (63.6) 34.2 Unclear\n\nLoratadine 10 mg (QD)\n\nCetirizine 10 mg (QD)\n\nrTNSS 4 wk 114 57 57 103 (90.4) 63 (55.3) 39 Unclear\n\nrTSS 3 wk 238 120 118 237 (99.6) 123 (51.7) 29 High\n\nAstemizole 10 mg (QD)\n\nAstemizole 10 mg (QD)zz\n\nCetirizine 10 mg (QD)\n\nLoratadine 10 mg (QD)\n\nLoratadine 10 mg (QD)\n\nLoratadine 10 mg (QD)\n\nrTNSS 4 wk 202 102 100 181 (89.6) 93 (46) 32.1 Unclear\n\nrTNSS 2 wk 207 105 102 189 (91.3) 88 (42.5) 31.9 High\n\nrTSS\n\nrTNSS rTOSS\n\nrTNSS RQLQ\n\n2 wk 340 170 170 338 (99.4) 209 (61.5) 39.7 Unclear\n\n2 wk 300 150 150 284 (94.7) 163 (54.3) 40.4 High\n\nrTNSS rTOSS\n\n2 wk 327 161 166 312 (95.4) 193 (59) 34.3 Unclear\n\nrTOSS 4 wk 321 158 163 296 (92.2) 211 (65.7) 35.2 Unclear\n\nLoratadine 10 mg (QD)\n\nLoratadine 10 mg (QD)\n\nrTOSS 4 wk 316 158 158 286 (90.5) 189 (59.8) 34.2 Low\n\nrTNSS 4 wk 221 109 112 205 (92.8) 96 (43.4) 35.3 Unclear\n\nTerfenadine 120 mg (BID)\n\nrTNSS 4 wk 233 117 116 214 (91.8) 103 (44.2) 30 Unclear\n\nTerfenadine 120 mg (BID)\n\nrTNSS 2 wk 155 78 77 146 (94.2) 81 (52.3) 39.5 Unclear\n\nLoratadine 10 mg (QD)\n\nrTSS rTNSS\n\n2 wk 357 176 181 342 (95.8) 180 (50.4) 25.4 Unclear\n\nLoratadine 10 mg (QD)\n\nAstemizole 10 mg (QD)\n\n2 wk —zz —** —**\n\nrTNSS rTOSS\n\nrTNSS 4 wk 239 120 119 215 (90) 128 (53.6) 35.7 Unclear\n\nTABLE I. (Continued)\n\nNasal treatment and total daily dose (regimen)\n\nStudy identification\n\nDisease assessed\n\nPlace and period of data collection\n\nSchoenwetter, 199640 Seasonal allergic rhinitis\n\nUnited States; ragweed pollen season\n\nTriamcinolone acetonide 220 mg (2 sprays/ nostril QD)\n\nGawchik, 199741 Seasonal allergic rhinitis\n\nUnited States; NA* Triamcinolone acetonide 220 mg (2 sprays/ nostril QD)\n\nCondemi, 200042 Seasonal allergic rhinitis\n\nUnited States; grass pollen allergy season\n\nTriamcinolone acetonide 220 mg (2 sprays/ nostril QD)\n\nIntranasal corticosteroids vs oral leukotriene receptor antagonists Lu, 200943 Seasonal allergic rhinitis\n\nUnited States; 1998 (April to June)\n\nBeclomethasone 400 mg\n\n(BID)\n\nRatner, 200344 (FNM40195)\n\nSeasonal allergic rhinitis\n\nMartin, 200645 Seasonal allergic rhinitis\n\nUnited States; 2001 to 2002 mountain cedar allergy season (December 12 to February 26)\n\nUnited States; 2001 to 2002 mountain cedar allergy season (December 11 to February 15)\n\nFluticasone propionate\n\n200 mg (QD)\n\nFluticasone propionate 200 mcg (QD)\n\nOral treatment and total daily dose (regimen)\n\nLoratadine 10 mg (QD)\n\nLoratadine 10 mg (QD)\n\nLoratadine 10 mg (QD)\n\nMontelukast 10 mg (QD) Loratadine 10 mg (QD)\n\nMontelukast 10 mg (QD)\n\nMontelukast 10 mg (QD)\n\nN participants\n\nAssessed outcomes Follow-up\n\nNasal treatment\n\nOral treatment\n\nTotal\n\nrTNSS 4 wk 298 149 149 268 (89.9) 172 (57.7) 31.3 Unclear\n\nrTNSS 4 wk 305 152 153 276 (90.5) 174 (57) 33.1 Unclear\n\nrTNSS RQLQ\n\n4 wk 351 175 176 317 (90.3) 193 (55) 32 Unclear\n\nrTSS\n\nrTNSS RQLQ\n\n2 wk 401 173 228††\n\nrTNSS 2 wk 705 353 352 673 (95.5) 439 (62.3) 38.2 High\n\nrTNSS 2 wk 736 367 369 698 (94.8) 463 (63) 39.7 Unclear\n\nBID, twice per day; NA, not available; QD, once per day; RQLQ, Rhinoconjunctivitis Quality of Life Questionnaire; rTNSS, Reflective Total Nasal Symptom Score; rTOSS, Reflective Total Ocular Symptom Score; Symptom Score; TDD, total daily dose; TID, three times a day.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 8853
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0011",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- *Period of data collection is not stated. †No information on total daily dose (azelastine ¼ 1.1 mg/d); number of patients who completed the nasal treatment ¼ 20; number of patients who completed the oral treatment ¼ 18. zNumber of patients randomized to azelastine 0.55 mg (2 sprays/nostril QD) ¼ 62; n patients randomized to azelastine 1.1 mg (2 sprays/nostril BID) ¼ 63. xNo information available. jjNumber of patients randomized to azelastine 0.55 mg (2 sprays/nostril QD) ¼ 61. Number of patients randomized to azelastine 1.1 mg (2 sprays/nostril BID) ¼ 63. {Number of patients randomized to azelastine 0.52 mg (2 sprays/nostril QD) ¼ 66. Number of patients randomized to azelastine 1.04 mg (2 sprays/nostril BID) ¼ 66 #Number of participants randomized per treatment group is not stated; n patients who completed the nasal treatment ¼ 31; n patients who completed the oral treatment ¼ 29. - **Astemizole 30 mg (TID on day 1), 20 mg (BID on day 2) and 10 mg (QD on days 3 - 14). ††Number of patients randomized to montelukast 10 mg (QD) ¼ 112; n patients randomized to loratadine 10 mg (QD) ¼ 116. zzNumber of participants randomized is not stated, N patients who completed the nasal treatment ¼ 166, N patients who completed the oral treatment ¼ 174. FIGURE 2. Risk of bias (A) graph and (B) summary for the included studies. RQLQ, Rhinoconjunctivitis Quality of Life Questionnaire. Total Nasal Symptom Score: INCS versus LTRA. Two studies (n ¼ 1,441 participants) reported data for the TNSS regarding the comparison of INCS versus LTRA44,45 (Figure 4). Both studies compared fluticasone propionate versus montelukast and had a follow-up of 2 weeks, in which one study displayed a high risk of bias.44\n\nIntranasal corticosteroids were more effective than LTRA at improving the TNSS (MD, e1.05; 95% CI, e1.32 to e0.77; I2 ¼ 0%), with a 98% probability of a clinically relevant improvement. The CoE for this comparison was considered high (see Table E7 in this article’s Online Repository at www.jaci-\n\ninpractice.org). Similar results were found after we excluded the study with a high RoB (Table E6). Total Nasal Symptom Score: INCS versus OAH. Fifteen studies (n ¼ 4,423 participants) were included in the meta-analysis of TNSS data comparing INCS versus OAH2325,28-30,33,34,36-39,41,42 (Figure 4). All studies except one reported results at 2 weeks of follow-up.34 Three studies displayed a high RoB,23,28,30 and the remaining had an unclear RoB. In the meta-analysis, INCS were significantly more effective than OAH at improving the TNSS (MD, e0.86; 95% CI,\n\nFIGURE 3. Graphical summary of meta-analytical results. INAH, intranasal antihistamines; INCS, intranasal corticosteroids; LTRA, oral leukotriene receptor antagonists; MD, meta-analytical mean difference comparing change from baseline values in intranasal treatment versus oral treatment; OAH, oral antihistamines; RQLQ, Rhinoconjunctivitis Quality of Life Questionnaire; TNSS, Total Nasal Symptom Score; TOSS, Total Ocular Symptom Score.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 3007
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0012",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "e1.20 to e0.51; I2 ¼ 70%). These results corresponded to a 68% probability of a clinically relevant improvement. The CoE for this comparison was deemed low (see Table E8 in this article’s Online Repository at www.jaci-inpractice.org). Heterogeneity remained substantial in all sensitivity analyses (Table E6). Similar results were found in all analyses, except after we excluded studies with a high RoB (MD, e0.72; 95% CI, e1.07 to e0.36; I2 ¼ 73%; credibility of the potential effect modification: moderate) (see Figure E1 in this article’s Online Repository at www.jaci-inpractice.org). Total Nasal Symptom Score: Overall intranasal versus overall oral treatments. We included 20 studies (n ¼ 6,742 participants) in the overall comparison of intranasal versus oral treatments (ie, without discriminating between drug classes) in the meta-analysis of the TNSS data12-14,23-25,2830,33,34,36-39,41,42,44,45 (Figure 5). Of these studies, 16 were classified as having an unclear RoB whereas four were classified as having a high RoB.23,28,30,44 All studies except one reported\n\n- results at 2 weeks of follow-up.34 Intranasal treatments likely appeared to be more effective than\n\n\noral treatment at improving the TNSS (MD, e0.83; 95% CI, e1.09 to e0.57; I2 ¼ 65%), corresponding to a 70% probability of a clinically relevant improvement. The CoE for this comparison was considered moderate (see Table E9 in this article’s Online Repository at www.jaci-inpractice.org). Heterogeneity remained substantial in all sensitivity analyses (Table E6). We found similar results in all analyses, except after we excluded studies with a high RoB (MD, e0.70; 95% CI, e0.98 to e0.44; I2 ¼ 67%; credibility of the potential effect modification: low) (see Figure E2 in this article’s Online Repository at www.jaci-inpractice.org). Additional meta-analytical results comparing individual drugs are available in Table E10 (in this article’s Online Repository at www.jaci-inpractice.org). Total Ocular Symptom Score: INCS versus OAH. Five studies (n ¼ 2,051 participants) were included in the metaanalysis comparing intranasal versus oral treatments on TOSS24,29,32,33 (Figure 6). All studies compared an INCS (either fluticasone propionate or fluticasone furoate) with an OAH. All but one study were classified as having an unclear RoB.33 All studies reported results at 2 weeks of follow-up.24,29,32,33\n\nIntranasal treatments were more effective than oral treatments at improving the TOSS (MD, e0.36; 95% CI, e0.56 to e0.17; I2 ¼ 0%).",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 2515
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0013",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "These results corresponded to a 21% probability of a clinically relevant improvement. The CoE was considered high (Table E9). Additional meta-analytical results comparing individual drugs are available in Table E11 (in this article’s Online Repository at www.jaci-inpractice.org). Rhinoconjunctivitis Quality of Life Questionnaire: INAH versus OAH. Two studies (n ¼ 661 participants) comparing INAH and OAH were included in the meta-analysis of RQLQ12,13 (Figure 7). Both studies compared azelastine versus cetirizine, had a follow-up of 2 weeks, and displayed an unclear RoB.12,13\n\nIntranasal antihistamines were possibly more effective than OAH at improving the RQLQ (MD, e0.31; 95% CI, e0.57 to e0.06; I2 ¼ 0%), with an 81% probability of a clinically relevant improvement. The CoE for this comparison was deemed low (Table E5). We found consistent results after we excluded the study with imputed SDs (see Table E12 in this article’s Online Repository at www.jaci-inpractice.org). Rhinoconjunctivitis Quality of Life Questionnaire: INCS versus OAH. Two studies (n ¼ 361 participants) reported the RQLQ on the comparison between INCS versus OAH20,30 (Figure 7). Both studies had a follow-up of 2 weeks, and one study was classified as having a high RoB.30\n\nFIGURE 4. Forest plots summarizing meta-analytical results of Total Nasal Symptom Score (TNSS) data on comparison between (A) intranasal antihistamines versus oral antihistamines, (B) intranasal corticosteroids versus oral leukotriene receptor antagonists, and (C) intranasal corticosteroids versus oral antihistamines. TE, treatment effect. Intranasal corticosteroids were more effective than OAH at improving the RQLQ (MD, e0.88; 95% CI, e1.15 to e0.61; I2 ¼ 0%), corresponding to a 72% probability of a large\n\nclinically relevant improvement and 28% probability of moderate improvement. The CoE for this comparison was considered to be high (Table E8). FIGURE 5. Forest plots summarizing meta-analytical results of Total Nasal Symptom Score (TNSS) data on comparison between intranasal versus oral treatments. Rhinoconjunctivitis Quality of Life Questionnaire: overall intranasal versus overall oral treatments. We included four studies (n ¼ 1,022 participants) in the overall comparison of intranasal versus oral treatments regarding the RQLQ12,13,20,30 (Figure 7). All studies had a follow-up of 2 weeks, and one study displayed a high RoB.30\n\nIntranasal treatments were more effective than oral treatments at improving the RQLQ (MD, e0.55; 95% CI, e0.94 to e0.17; I2 ¼ 68%), corresponding to a 28% probability of a moderate clinically relevant improvement and a 59% probability of a small improvement. The CoE for this comparison was considered high (Table E9). We found similar results after we excluded studies with imputed SDs, although heterogeneity remained high (MD, e0.58; 95% CI, e1.06 to e0.10; I2 ¼ 76%) (Table E12). Additional meta-analytical results comparing individual drugs are available in Table E13 (in this article’s Online Repository at www.jaci-inpractice.org). Safety outcomes\n\nAdverse events: overall intranasal versus overall oral treatments. We included 22 studies (n ¼ 6,520 participants) comparing overall intranasal and oral treatments on the number of patients developing at least one adverse event (AE)18,19,21,2337,41,44,45 (see Figure E3 in this article’s Online Repository at\n\nwww.jaci-inpractice.org). Six studies displayed a high RoB,18,23,26,28,30,44 whereas one study was classified as having a low RoB.33 Twelve studies had a follow-up of 2 weeks; the others had a follow-up ranging from 3 to 6 weeks. We found no difference in the risk of AE when we compared intranasal versus oral treatments (relative risk [RR] ¼ 1.02; 95%\n\n- CI, 0.94-1.09; I2 ¼ 0%), corresponding to a nonclinically meaningful effect. The CoE for this comparison was considered moderate (Table E9). Similar results were found in sensitivity analyses (see Table E14 in this article’s Online Repository at www.jaci-inpractice.org). We found similar results comparing different classes, except when we compared INAH versus OAH, in which INAH were associated with a higher risk of AE than OAH (RR ¼ 2.10; 95%\n\n- CI, 1.04-4.26; I2 ¼ 0%), corresponding to a probability (1) of 35% of a large clinically relevant increase in the risk of AE, and (2) of a 36% moderate increased risk. The CoE for this comparison was considered low (Table E5). Additional meta-analytical results comparing different classes or individual drugs are described in the Supplemental Results (in this article’s Online Repository at www. jaci-inpractice.org) and in Figures E4-6 and Tables E14 and E15 (in this article’s Online Repository at www.jaci-inpractice.org). Withdrawals due to AE: overall intranasal versus overall oral treatments. We included 30 studies (n ¼ 8,792 participants) in the comparison between overall intranasal\n\nFIGURE 6. Forest plots summarizing meta-analytical results of Total Ocular Symptom Score (TOSS) data on comparison between intranasal versus oral treatments. and oral treatments on the number of patients withdrawing owing to AE12-14,23-25,28-30,33,34,36,37,44,45 (Figure E3). Seventeen studies had a follow-up of 2 weeks; the remainder reported\n\n- results at 3 to 6 weeks. Six studies were classified as having a high RoB18,23,26,28,30,43,44 and one displayed a low RoB.33\n\n\nThere was no difference in the risk of withdrawals when we compared intranasal and oral treatments (RR ¼ 1.00; 95% CI, 0.72-1.38; I2 ¼ 0%), corresponding to a nonclinically meaningful effect. The CoE for this comparison was considered moderate (Table E9). Consistent results were found in all sensitivity analyses (see Table E16 in this article’s Online Repository at www.jaci-inpractice.org). Additional meta-analytical results comparing different classes or individual drugs are described in the Supplemental Results and Figures E7 to 9 and Tables E16 and E17 (in this article’s Online Repository at www.jaci-inpractice.org). Serious adverse events. A total of 26 studies reported on serious AE. Most studies (20) reported no AE with either nasal or oral treatments. In total, two serious AE were reported with INCS and five with OAH (unlikely to be related to the treatments). DISCUSSION\n\nIn this systematic review, we found INCS or INAH to be more effective than OAH or LTRA at improving both nasal and ocular symptoms in SAR, as well as quality of life. In most cases, this effect was deemed clinically relevant. Regarding safety outcomes, we found no differences when we compared intranasal with oral treatments, except for the comparison between INAH versus OAH on the occurrence of AE. Overall, for most comparisons, a moderate or high CoE was associated with these results. In this systematic review, the differences in nasal symptoms were most pronounced between INCS and LTRA. This was followed by the comparison between INCS and OAH, for which the differences, although significant, were less pronounced. Finally, the smallest difference was observed between INAH and OAH. Similar results were found for the RQLQ, except for the comparison between INCS and LTRA, for which no evidence was available. Finally, regarding the TOSS, evidence was available exclusively comparing INCS and OAH, showing a\n\nsignificant effect of INCS in improving ocular symptoms. We found no studies assessing the effect of INAH on the TOSS. Future studies assessing the effect of treatments for AR on ocular symptoms, particularly INAH, are needed. However, our meta-analysis included only studies assessing patients with SAR. For PAR, only two studies were found, both assessing solely the TSS (one assessed intranasal azelastine vs oral terfenadine whereas the other assessed intranasal budesonide vs oral levocetirizine).19,22 Although both studies displayed a nonsignificant trend favoring intranasal treatments,19,22 these studies presented a heterogeneous methodology, unclear risk of bias, and small sample sizes. Because the pathophysiology of SAR and PAR is similar, results from SAR trials may be transportable to patients with PAR,46 but more evidence from RCTs or realworld secondary data would be beneficial. There have been previous systematic reviews comparing intranasal versus oral treatments for rhinitis. However, they were not recent, assessed fewer drug classes, and restricted study selection based on publication dates or languages.4,5 In addition, neither of the previous systematic reviews appraised the CoE using GRADE. Importantly, results from previous systematic reviews consistently suggest a superiority of intranasal over oral medications. This systematic review has some limitations primarily related to the included studies. First, there was insufficient evidence on PAR, hindering the possibility of performing meta-analysis and limiting the generalizability of our findings to this population. Future research should prioritize addressing this gap and investigating the comparative effectiveness of intranasal and oral treatments for PAR. Second, only a minority of studies had been classified as having a low RoB. Although we conducted sensitivity analyses, the potential influence of bias on the results should be considered when interpreting the findings. Third, there is considerable heterogeneity in the measurement and reporting of outcomes. Five studies computed the TNSS based on three or five symptoms; hence they were excluded from quantitative synthesis of TNSS computed based on four symptoms. The same happened with studies reporting data on the TOSS: whereas most studies calculated the TOSS based on three symptoms, two studies computed the TOSS based on two or four symptoms. We opted not to include the latter studies in the meta-analyses because we believed they represented\n\nFIGURE 7. Forest plots summarizing meta-analytical results of Rhinoconjunctivitis Quality of Life Questionnaire (RQLQ) data on comparison between (A) intranasal antihistamines versus oral antihistamines, (B) intranasal corticosteroids versus oral antihistamines, and (C) intranasal versus oral treatments.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 10076
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0014",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "different constructs. Similarly, meta-analysis on the TSS was not conducted because TSS definitions, considered symptoms, and scales varied substantially across the included studies. Fourth, information on spread measures was missing in several studies. In such cases, whenever possible, spread measures were imputed based on reported P values. Importantly, we performed sensitivity analysis excluding studies with imputed SDs and obtained consistent results. In addition, individual drugs within a same class may vary in effectiveness (Sousa-Pinto et al, under review). Although we performed sensitivity analyses comparing individual drugs, we were unable to assess the effect of individual drugs comprehensively because of the low number of studies included in each comparison. Similarly, the overall comparison between intranasal and oral treatments could be affected by class differences in effectiveness and safety of\n\nmedications (and by the number of studies assessing medications of each class). Finally, we used the classification of seasonal and perennial AR despite the existence of a more recent classification according to the duration of symptoms (classifying AR into intermittent or persistent).47 This was because most RCTs in AR use the seasonal versus perennial classification, and the US Food and Drug Administration issued a 2018 guidance on the development of RCTs for SAR and PAR.48 As previously stated for PAR, given the similar pathophysiology for intermittent and persistent AR, we believe these results may apply to all patients with AR. However, there is a need for further research, possibly based on real-world data and using modern methods of causal inference and transportability analyses, to inform the effectiveness and safety of interventions better in intermittent and perennial AR. Nevertheless, this study also has important strengths. First, we performed an extensive bibliographic search including four bibliographic databases and three clinical trial datasets, without applying exclusion criteria based on publication language, date, or status (thus, minimizing the impact of publication bias). Second, we applied the GRADE approach to assess the CoE for each outcome across comparisons and found varying levels of CoE depending on the specific comparison and outcome, in which most comparisons displayed a high CoE. These results may be valuable for informing clinical guidelines, particularly because previous guidelines did not perform a systematic review to assess the comparative effectiveness and safety of intranasal versus oral treatments for AR1,2 (it is important to note, however, that the CoE in the guideline context is performed across outcomes and reflects the outcomes that have been prioritized by the guideline panel). Third, we performed sensitivity analyses according to the risk of bias, the need for imputation of spread measures, the follow-up period, and individual drugs being compared. Fourth, when sensitivity analysis suggested the existence of a significant effect modification on effectiveness outcomes, we also assessed the credibility of such a modification using the Instrument to Assess the Credibility of Effect Modification Analyses. Finally, we also conducted a complementary approach to assess the probability that for each pair of interventions, differences corresponded to clinically relevant effects. This approach was based on decision thresholds and was adopted to contextualize effect size measures, as suggested by the GRADE working group.49\n\nThis systematic review may have important clinical implications. These results support the current recommendations in the ARIA guidelines and the US Practice Parameter on the management of AR,1,3 but they should be considered alongside other sources of evidence to determine the role for nasal and oral medications in the treatment of AR. Importantly, in this systematic review we do not consider patients’ preference regarding oral versus intranasal medications or the severity of disease. Most AR patients may have mild disease and may not be accurately represented by participants enrolled in RCTs.50 As suggested by studies assessing real-world data, oral medications are frequently prescribed by physicians and used over-the-counter by patients with AR.51-53 This may be related to aspects such as the cost, ease of use of oral versus nasal medications, and efficacy of oral medications in many patients. All of these factors should be considered both when developing guideline recommendations and prescribing treatments for individual patients. Intranasal treatments are more effective than oral treatments at improving symptoms and quality of life in patients with SAR, with a similar safety profile. This systematic review could be helpful for future guideline developers in formulating recommendations for AR. Importantly, further RCTs or observational studies based on real-world data directly comparing the effectiveness of nasal and oral treatments should use standardized outcomes such as the four-symptoms TNSS, the three-symptoms TOSS, and the RQLQ to ensure comparability. REFERENCES\n\n1. Bousquet J, Schünemann HJ, Togias A, Bachert C, Erhola M, Hellings PW, et al. Next-generation Allergic Rhinitis and Its Impact on Asthma (ARIA) guidelines for allergic rhinitis based on Grading of Recommendations Assessment, Development and Evaluation (GRADE) and real-world evidence. J Allergy Clin Immunol 2020;145:70-80.e3.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 5459
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0015",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 2. Brozek_ JL, Bousquet J, Agache I, Agarwal A, Bachert C, Bosnic-Anticevich S, et al. Allergic Rhinitis and its Impact on Asthma (ARIA) guidelines-2016 revision. J Allergy Clin Immunol 2017;140:950-8.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 203
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0016",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 3. Dykewicz MS, Wallace DV, Amrol DJ, Baroody FM, Bernstein JA, Craig TJ, et al. Rhinitis 2020: a practice parameter update. J Allergy Clin Immunol 2020; 146:721-67.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 167
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0017",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 4. Weiner JM, Abramson MJ, Puy RM. Intranasal corticosteroids versus oral H1 receptor antagonists in allergic rhinitis: systematic review of randomised controlled trials.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 172
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0018",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "BMJ 1998;317:1624-9.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 20
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0019",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 5. Juel-Berg N, Darling P, Bolvig J, Foss-Skiftesvik MH, Halken S, Winther L, et al. Intranasal corticosteroids compared with oral antihistamines in allergic rhinitis: a systematic review and meta-analysis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 208
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0020",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Am J Rhinol Allergy 2017;31: 19-28.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 35
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0021",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 6. Page MJ, McKenzie JE, Bossuyt PM, Boutron I, Hoffmann TC, Mulrow CD, et al. The PRISMA 2020 statement: an updated guideline for reporting systematic reviews.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 162
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0022",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "BMJ 2021;372:n71.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 17
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0023",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 7. Vieira RJ, Torres MI, Bognanni A, Gil-Mata S, Ferreira-da-Silva R, LourençoSilva N, et al. Protocol for the systematic reviews on the desirable and undesirable effects of pharmacological treatments of allergic rhinitis informing the ARIA 2024 guidelines.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 259
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0024",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Allergol Select 2024;8:270-7.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 29
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0025",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 8. Higgins JP, Altman DG, Gøtzsche PC, Jüni P, Moher D, Oxman AD, et al. The Cochrane Collaboration’s tool for assessing risk of bias in randomised trials.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 157
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0026",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "BMJ 2011;343:d5928.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 19
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0027",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 9. Brozek JL, Akl EA, Alonso-Coello P, Lang D, Jaeschke R, Williams JW, et al. Grading quality of evidence and strength of recommendations in clinical practice guidelines.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 173
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0028",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Part 1 of 3. An overview of the GRADE approach and grading quality of evidence about interventions. Allergy 2009;64:669-77.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 123
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0029",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 10. Schandelmaier S, Briel M, Varadhan R, Schmid CH, Devasenapathy N, Hayward RA, et al. Development of the Instrument to assess the Credibility of Effect Modification Analyses (ICEMAN) in randomized controlled trials and meta-analyses.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 238
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0030",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "CMAJ 2020;192:E901-6.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 21
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0031",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 11. Sousa-Pinto B, Vieira RJ, Marques-Cruz M, Steele J, Schwarzer G. metainc: Assessment of Inconsistency in Meta-Analysis using Decision ThresholdsR package version 0.2-0, 2024.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 180
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0032",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Accessed September 19, 2024.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 28
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0033",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "https://CRAN.Rproject.org/package¼metainc\n- 12. Corren J, Storms W, Bernstein J, Berger W, Nayak A, Sacks H. Effectiveness of azelastine nasal spray compared with oral cetirizine in patients with seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 223
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0034",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Clin Ther 2005;27:543-53.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 25
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0035",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 13. Berger W, Hampel F, Bernstein J, Shah S, Sacks H, Meltzer EO. Impact of azelastine nasal spray on symptoms and quality of life compared with cetirizine oral tablets in patients with seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 215
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0036",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Ann Allergy Asthma Immunol 2006;97:375-81. - 14. Ratner PH, Findlay SR, Hampel F, van Bavel J, Widlitz MD, Freitag JJ. A doubleblind, controlled trial to assess the safety and efficacy of azelastine nasal spray in seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 241
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0037",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "J Allergy Clin Immunol 1994;94:818-25.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 38
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0038",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 15. Storms WW, Pearlman DS, Chervinsky P, Grossman J, Halverson PC, Freitag JJ, et al. Effectiveness of azelastine nasal solution in seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 162
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0039",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Ear Nose J 1994;73:382-6.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 25
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0040",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "90-386. - 16. LaForce C, Dockhorn RJ, Prenner BM, Chu TJ, Kraemer MJ, Widlitz MD, et al. Safety and efficacy of azelastine nasal spray (Astelin NS) for seasonal allergic rhinitis: a 4-week comparative multicenter trial.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 219
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0041",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Ann Allergy Asthma Immunol 1996;76:181-8.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 41
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0042",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 17. Berger WE, White MV. Efficacy of azelastine nasal spray in patients with an unsatisfactory response to loratadine. Ann Allergy Asthma Immunol 2003;91: 205-11.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 164
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0043",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 18. Antépara I, Jaúregui I, Basomba A, Cadahia A, Feo F, García JJ, et al. Investigation of the efficacy and tolerability of azelastine nasal spray versus ebastine tablets in patients with seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 218
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0044",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Allergol Immunopathol (Madr) 1998;26:9-16.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 42
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0045",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 19. Gastpar H, Nolte D, Aurich R, Brendt P, Enzmann H, Giesemann G, et al. Comparative efficacy of azelastine nasal spray and terfenadine in seasonal and perennial rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 175
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0046",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Allergy 1994;49:152-8. - 20. Bhatia S, Baroody FM, deTineo M, Naclerio RM. Increased nasal airflow with budesonide compared with desloratadine during the allergy season.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 169
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0047",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Arch Otolaryngol Head Neck Surg 2005;131:223-8.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 47
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0048",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 21. Munch EP, Søborg M, Nørreslet TT, Mygind N. A comparative study of dexchlorpheniramine maleate sustained release tablets and budesonide nasal spray in seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 184
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0049",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Allergy 1983;38:517-24. - 22. Kulapaditharom B, Pornprasertsuk K, Boonkitticharoen V. Clinical assessment of levocetirizine and budesonide in treatment of persistent allergic rhinitis regarding to symptom severity.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 214
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0050",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "J Med Assoc Thai 2010;93:215-23.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 32
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0051",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 23. Kim C-H, Kim JK, Kim HJ, Cho JH, Kim J-S, Kim Y-D, et al. Comparison of intranasal ciclesonide, oral levocetirizine, and combination treatment for allergic rhinitis. Allergy Asthma Immunol Res 2015;7:158-66.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 213
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0052",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 24. Andrews CP, Martin BG, Jacobs RL, Mohar DE, Diaz JD, Amar NJ, et al. Fluticasone furoate nasal spray is more effective than fexofenadine for nighttime symptoms of seasonal allergy.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 186
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0053",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Allergy Asthma Proc 2009;30:128-38. - 25. Géhanno P, Desfougeres JL. Fluticasone propionate aqueous nasal spray compared with oral loratadine in patients with seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 186
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0054",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Allergy 1997;52:445-50. - 26. Vervloet D, Charpin D, Desfougeres JL. Intranasal fluticasone once daily compared with once-daily cetirizine in the treatment of seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 186
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0055",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Results of a multicentre, double-blind study. Clin Drug Investig 1997;13:291-8. - 27. Mackowiak JI. Fluticasone propionate aqueous nasal spray (FP) improves rhinitis quality of life and reduces lost labor costs.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 211
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0056",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Ann Allergy Asthma Immunol 1994;72:99. - 28. Alvarado-Valdés CA, Blomgren J, Weiler D, Gleich GJ, Reed CE, Field EA, et al. The effect of fluticasone propionate aqueous nasal spray on eosinophils and cytokines in nasal secretions of patients with ragweed allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 273
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0057",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Clin Ther 1997;19:273-81.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 25
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0058",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 29. Ford LB, Matz J, Hankinson T, Prillaman B, Georges G. A comparison of fluticasone propionate nasal spray and cetirizine in ragweed fall seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 169
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0059",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Allergy Asthma Proc 2015;36:313-9. - 30. Ratner PH, van Bavel JH, Martin BG, Hampel FC, Howland WC, Rogenes PR, et al. A comparison of the efficacy of fluticasone propionate aqueous nasal spray and loratadine, alone and in combination, for the treatment of seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 284
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0060",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "J Fam Pract 1998;47:118-25.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 27
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0061",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 31. Stricker WE, Nathan RA, Winder JA, Pepsin PJ, Rogenes PR, Westlund R, et al. Fluticasone propionate aqueous nasal spray FP and loratadine LOR, alone and in combination, in the treatment of fall seasonal allergic rhinitis SAR. Ann Allergy Asthma Immunol 1998;80:115. - 32. A Multi-Center, Randomized, Double-Blind, Placebo-Controlled, ParallelGroup Study to Assess the Efficacy of a Four-Week Course of Fluticasone Propionate Aqueous Nasal Spray (200mcg QD) on Ocular Symptoms Commonly Associated with Allergic Rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 525
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0062",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Accessed March 5, 2024.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 23
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0063",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "https:// www.gsk-studyregister.com/en/trial-details/?id¼FNM30034\n- 33. Bernstein DI, Levy AL, Hampel FC, Baidoo CA, Cook CK, Philpot EE, et al. Treatment with intranasal fluticasone propionate significantly improves ocular symptoms in patients with seasonal allergic rhinitis. Clin Exp Allergy 2004;34: 952-7. - 34. Double-Blind, Double-Dummy, Randomized, Parallel-Group Comparison of the Efficacy and Safety Outcomes of Fluticasone Propionate Aqueous Nasal Spray Versus Encapsulated Loratadine Tablets Versus Placebo for Four Weeks in Subjects with Seasonal Allergic Rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 577
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0064",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Accessed March 5, 2024.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 23
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0065",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "https:// www.gsk-studyregister.com/en/trial-details/?id¼FLTA4004\n- 35. Bronsky EA, Dockhorn RJ, Meltzer EO, Shapiro G, Boltansky H, LaForce C, et al. Fluticasone propionate aqueous nasal spray compared with terfenadine tablets in the treatment of seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 274
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0066",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "J Allergy Clin Immunol 1996;97:915-21.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 38
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0067",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 36. van Bavel J, Findlay SR, Hampel FC, Martin BG, Ratner P, Field E. Intranasal fluticasone propionate is more effective than terfenadine tablets for seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 180
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0068",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Arch Intern Med 1994;154:2699-704.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 34
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0069",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 37. Anolik R. Clinical benefits of combination treatment with mometasone furoate nasal spray and loratadine vs monotherapy with mometasone furoate in the treatment of seasonal allergic rhinitis. Ann Allergy Asthma Immunol 2008;100: 264-71. - 38. Nathan R, Gopalan G, Gates D. Mometasone furoate nasal spray monotherapy compared with loratadine in subjects with seasonal allergic rhinitis provides\n\n\n- superior relief of nasal symptoms and comparable relief of ocular symptoms.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 478
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0070",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Allergy 2009;64:70-1.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 21
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0071",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 39. Bernstein DI, Creticos PS, Busse WW, Cohen R, Graft DF, Howland WC, et al. Comparison of triamcinolone acetonide nasal inhaler with astemizole in the treatment of ragweed-induced allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 203
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0072",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "J Allergy Clin Immunol 1996;97: 749-55.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 39
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0073",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 40. Schoenwetter W, Lim J. Comparison of intranasal triamcinolone acetonide with oral loratadine for the treatment of patients with seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 161
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0074",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Clin Ther 1995;17:479-92.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 25
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0075",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 41. Gawchik SM, Lim J. Comparison of intranasal triamcinolone acetonide with oral loratadine in the treatment of seasonal ragweed-induced allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 158
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0076",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Am J Manag Care 1997;3:1052-8.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 30
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0077",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 42. Condemi J, Schulz R, Lim J. Triamcinolone acetonide aqueous nasal spray versus loratadine in seasonal allergic rhinitis: efficacy and quality of life. Ann Allergy Asthma Immunol 2000;84:533-8. - 43. Lu S, Malice MP, Dass SB, Reiss TF. Clinical studies of combination montelukast and loratadine in patients with seasonal allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 344
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0078",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "J Asthma 2009; 46:878-83. - 44. Ratner PH, Howland WC, Arastu R, Philpot EE, Klein KC, Baidoo CA, et al. Fluticasone propionate aqueous nasal spray provided significantly greater improvement in daytime and nighttime nasal symptoms of seasonal allergic rhinitis compared with montelukast. Ann Allergy Asthma Immunol 2003;90: 536-42.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 331
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0079",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 45. Martin BG, Andrews CP, van Bavel JH, Hampel FC, Klein KC, Prillaman BA, et al. Comparison of fluticasone propionate aqueous nasal spray and oral montelukast for the treatment of seasonal allergic rhinitis symptoms. Ann Allergy Asthma Immunol 2006;96:851-7. - 46. Bousquet J, Anto JM, Bachert C, Baiardini I, Bosnic-Anticevich S, Walter Canonica G, et al. Allergic rhinitis.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 379
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0080",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Nat Rev Dis Primers 2020;6:95.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 30
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0081",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 47. Bousquet J, Van Cauwenberge P, Khaltaev N. Allergic rhinitis and its impact on asthma. J Allergy Clin Immunol 2001;108:S147-334.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 134
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0082",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 48. US Department of Health and Human Services Food and Drug Administration. Allergic rhinitis: developing drug products for treatment guidance for industry;\n\n2018. Accessed March 21, 2024. https://www.fda.gov/files/drugs/published/ Allergic-Rhinitis–Developing-Drug-Products-for-Treatment-Guidance-forIndustry.pdf\n\n- 49. Morgano GP, Mbuagbaw L, Santesso N, Xie F, Brozek JL, Siebert U, et al. Defining decision thresholds for judgments on health benefits and harms using the Grading of Recommendations Assessment, Development and Evaluation (GRADE) Evidence to Decision (EtD) frameworks: a protocol for a randomised methodological study (GRADE-THRESHOLD).",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 658
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0083",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "BMJ Open 2022;12:e053246.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 25
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0084",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 50. Kahan BC, Rehal S, Cro S. Risk of selection bias in randomised trials.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 76
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0085",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Trials 2015;16:405.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 19
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0086",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 51. Bousquet J, Schröder-Bernhardi D, Bachert C, Canonica GW, Cardona V, Costa EM, et al. Heterogeneity of the pharmacologic treatment of allergic rhinitis in Europe based on MIDAS and OTCims platforms.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 204
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0087",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Clin Exp Allergy 2021;51:1033-45.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 33
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0088",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 52. Sousa-Pinto B, Sá-Sousa A, Vieira RJ, Amaral R, Klimek L, Czarlewski W, et al. Behavioural patterns in allergic rhinitis medication in Europe: a study using MASK-air real-world data.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 188
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0089",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "Allergy 2022;77:2699-711.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 25
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0090",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    },
+    {
+      "text": "- 53. Vieira RJ, Sousa-Pinto B, Anto JM, Sheikh A, Klimek L, Zuberbier T, et al. Usage patterns of oral H1-antihistamines in 10 European countries: a study using MASK-air and Google Trends real-world data. World Allergy Organ J 2022;15:100660.",
+      "metadata": {
+        "chunker": "semantic_boundary_detection",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "breakpoint_threshold_type": "gradient",
+        "breakpoint_threshold_amount": 80.0,
+        "buffer_size": 1,
+        "character_count": 243
+      },
+      "chunk_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit_chunk_0091",
+      "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit"
+    }
+  ]
+}

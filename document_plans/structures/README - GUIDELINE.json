@@ -1,0 +1,253 @@
+{
+  "schema_version": "1.0",
+  "document_type": "clinical_guideline",
+  "metadata": {
+    "title": "string",
+    "organization": "string | null",
+    "authors": [{
+      "name": "string",
+      "role": "string | null",
+      "affiliation": "string | null"
+    }],
+    "year": null,
+    "version": "string | null",
+    "language": "string",
+    "audience": "clinician | patient | mixed",
+    "specialty": "string",
+    "jurisdiction": "string | null",
+    "source_pages": null,
+    "extraction_date": "YYYY-MM-DD",
+    "quality_flags": [],
+    "summary": "string"
+  },
+  "scope": {
+    "conditions_covered": [],
+    "care_settings": [],
+    "target_population": [],
+    "therapeutic_areas": []
+  },
+
+  "toc": [
+    {
+      "id": "toc_01",
+      "heading_path": ["Section Title", "Subsection Title"],
+      "level": 1
+    }
+  ],
+
+
+  "conditions": [
+    {
+      "condition_id": "cond_01",
+      "name": "string",
+      "synonyms": [],
+      "description": "string | null",
+      "epidemiology": "string | null",
+      "clinical_presentation": "string | null",
+      "subtypes": [
+        {
+          "name": "string",
+          "distinguishing_features": "string | null"
+        }
+      ],
+      "diagnostic_workup": [
+        {
+          "test": "string",
+          "purpose": "string | null",
+          "when_indicated": "string | null",
+          "interpretation": "string | null"
+        }
+      ],
+      "pathology_markers": [
+        {
+          "marker": "string",
+          "expected_result": "string | null",
+          "clinical_significance": "string | null"
+        }
+      ],
+      "genetic_molecular": [
+        {
+          "marker": "string",
+          "technique": "string | null",
+          "clinical_significance": "string"
+        }
+      ],
+      "staging": {
+        "system": "string | null",
+        "definitions": [
+          {"stage": "string", "description": "string"}
+        ],
+        "additional_rules": "string | null"
+      },
+      "prognostic_tools": [
+        {
+          "name": "string",
+          "components": [],
+          "risk_groups": [
+            {
+              "group": "string",
+              "criteria": "string",
+              "expected_outcome": "string | null"
+            }
+          ],
+          "interpretation": "string | null"
+        }
+      ],
+      "follow_up": {
+        "schedule": "string | null",
+        "recommended_tests": [],
+        "long_term_effects": [],
+        "survivorship_notes": "string | null"
+      }
+    }
+  ],
+
+  "treatment_pathways": [
+    {
+      "pathway_id": "path_01",
+      "condition_ref": "cond_01",
+      "setting": "string",
+      "patient_population": "string | null",
+      "biomarker_condition": "string | null",
+      "decision_rules": [],
+      "recommended_regimens": [
+        {
+          "name": "string",
+          "evidence_level": "string | null",
+          "recommendation_grade": "string | null",
+          "summary": "string",
+          "key_outcomes": "string | null",
+          "duration_cycles": "string | null"
+        }
+      ],
+      "alternative_regimens": [
+        {
+          "name": "string",
+          "evidence_level": "string | null",
+          "summary": "string",
+          "conditions_for_use": "string | null"
+        }
+      ],
+      "not_recommended": [
+        {
+          "name": "string",
+          "reason": "string"
+        }
+      ],
+      "response_assessment": [
+        {
+          "timepoint": "string",
+          "method": "string",
+          "interpretation": "string | null"
+        }
+      ],
+      "supportive_care": [],
+      "special_considerations": "string | null"
+    }
+  ],
+
+  "therapies_index": [
+    {
+      "name": "string",
+      "type": "drug | regimen | procedure | radiation | cell_therapy | transplant | other",
+      "components": [],
+      "mechanism": "string | null",
+      "approved_indications": [],
+      "administration": "string | null",
+      "key_toxicities": [],
+      "monitoring": [],
+      "pathway_refs": []
+    }
+  ],
+
+  "safety": {
+    "toxicities": [
+      {
+        "event": "string",
+        "associated_therapies": [],
+        "incidence": "string | null",
+        "recognition": [],
+        "grading": "string | null",
+        "management": [
+          {
+            "severity": "string",
+            "actions": "string"
+          }
+        ],
+        "prevention": [],
+        "dose_modifications": "string | null"
+      }
+    ],
+    "prophylaxis": [
+      {
+        "type": "string",
+        "recommendation": "string",
+        "target_population": "string | null",
+        "duration": "string | null"
+      }
+    ],
+    "infection_management": [
+      {
+        "pathogen_or_syndrome": "string",
+        "prevention": "string | null",
+        "management": "string | null"
+      }
+    ]
+  },
+
+  "recommendations": [
+    {
+      "rec_id": "rec_01",
+      "statement": "string",
+      "context": "string | null",
+      "strength": "string | null",
+      "evidence_level": "string | null",
+      "grading_system": "string | null",
+      "rationale": "string | null",
+      "condition_ref": "string | null",
+      "source_heading": "string"
+    }
+  ],
+
+  "artifacts": [
+    {
+      "artifact_id": "art_01",
+      "type": "table | algorithm | flowchart | checklist | figure",
+      "title": "string | null",
+      "source_heading": "string",
+      "data": {
+        "columns": [],
+        "rows": [[]]
+      },
+      "description": "string | null",
+      "summary": "string",
+      "clinical_relevance": "string | null"
+    }
+  ],
+
+  "special_populations": [
+    {
+      "population": "string",
+      "considerations": "string",
+      "treatment_modifications": "string | null",
+      "condition_refs": []
+    }
+  ],
+  "glossary": [
+    {"term": "string", "definition": "string"}
+  ],
+  "abbreviations": [
+    {"abbr": "string", "meaning": "string"}
+  ],
+  "references": [
+    {
+      "ref_id": "string",
+      "citation": "string",
+      "cited_in": []
+    }
+  ],
+  "keywords": {
+    "from_document": [],
+    "enriched": []
+  }
+}

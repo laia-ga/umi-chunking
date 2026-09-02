@@ -1,0 +1,132 @@
+{
+  "paper_type": null,
+  "paper_subtype": null,
+  "is_preprint": null,
+  "paper_type_confidence": null,
+  "classification_rationale": null,
+
+  "metadata": {
+    "title": null,
+    "authors": [],
+    "journal": null,
+    "date": null,
+    "year": null,
+    
+    "doi": null,
+    "pmid": null,
+    "registration": null,
+    "keywords": [],
+    "funding_coi": null,
+    "article_identifier": null
+  },
+
+  "snapshot": null,
+
+  "population_setting": {
+    "condition": null,
+    "stage_severity": null,
+    "prior_therapy_lines": null,
+    "inclusion": null,
+    "exclusion": null,
+
+    "n_randomized": null,
+    "n_analyzed": null,
+    "sites": null,
+    "countries": null,
+
+    "care_setting": null,
+    "baseline_factors": []
+  },
+
+  "objectives_design": {
+    "primary_objectives": [],
+    "secondary_objectives": [],
+
+    "design": null,
+    "blinding_allocation": null,
+    "stratification": null,
+    "follow_up_duration": null,
+    "comparators": null,
+
+    "endpoints_defined": []
+  },
+
+  "methods": {
+    "stats_model": null,
+    "alpha_multiplicity": null,
+    "non_inferiority_margin": null,
+    "sample_size_power": null,
+    "subgroup_prespecified": null,
+    "bias_controls": null
+  },
+
+  "results_efficacy": [
+    {
+      "endpoint": null,
+      "metric": null,
+      "value": null,
+      "ci": null,
+      "p_value": null,
+      "time_horizon": null,
+      "absolute": null,
+      "relative": null,
+      "n_events": null,
+      "n_total": null,
+      "scale_definition": null
+    }
+  ],
+
+  "results_safety": {
+    "any_AE": null,
+    "grade_3plus": null,
+    "serious_AE": null,
+    "discontinuations": null,
+    "treatment_related_deaths": null,
+    "notable_AEs": [],
+    "comparative_safety": null
+    },
+
+  "additional_findings": {
+    "adherence_dose_intensity": null,
+    "cross_over_protocol_deviation": null,
+    "concomitant_therapies": null,
+    "diagnostics_assays": null,
+    "economics_qol_pro": null
+  },
+
+  "limitations_bias": {
+    "internal_validity": [],
+    "external_validity": [],
+    "funding_bias": null,
+    "risk_of_bias_overall": null
+  },
+
+  "author_vs_reviewer": {
+    "author_reported_claims": [],
+    "your_analysis_notes": []
+  },
+
+  "clinical_impact": {
+    "practice_changers": [],
+    "who_benefits_harms": [],
+    "preconditions": [],
+    "guideline_alignment": null,
+    "implementation_caveats": [],
+    "open_questions": []
+  },
+
+  "bottom_line": null,
+
+  "key_data_quotes": [
+    {
+      "quote": null,
+      "source_location": null
+    }
+  ],
+
+  "citation": null,
+  "author_abstract": null,
+  "author_abstract_source": null,
+  
+  "ai_narrative_summary": null
+}

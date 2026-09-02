@@ -1,0 +1,1822 @@
+{
+  "schema_version": "1.0",
+  "document_type": "clinical_guideline",
+  "metadata": {
+    "title": "World allergy organization anaphylaxis guidance 2020",
+    "organization": "World Allergy Organization",
+    "authors": [
+      {
+        "name": "Victoria Cardona",
+        "role": null,
+        "affiliation": "Allergy Section, Department of Internal Medicine, Hospital Vall d'Hebron, and ARADyAL research network, Barcelona, Spain"
+      },
+      {
+        "name": "Ignacio J. Ansotegui",
+        "role": null,
+        "affiliation": "Department of Allergy and Immunology, Hospital Quironsalud Bizkaia, Bilbao, Spain"
+      },
+      {
+        "name": "Motohiro Ebisawa",
+        "role": null,
+        "affiliation": "Department of Allergy, Clinical Research Center for Allergy and Rheumatology, Sagamihara National Hospital, Kanagawa, Japan"
+      },
+      {
+        "name": "Yehia El-Gamal",
+        "role": null,
+        "affiliation": "Pediatric Allergy and Immunology Unit, Ain Shams University, Cairo, Egypt"
+      },
+      {
+        "name": "Montserrat Fernandez Rivas",
+        "role": null,
+        "affiliation": "Servicio de Alergia, Hospital Clınico San Carlos, IdISSC, Madrid, Spain"
+      },
+      {
+        "name": "Stanley Fineman",
+        "role": null,
+        "affiliation": "Department of Pediatrics, Emory University School of Medicine, Atlanta, Georgia"
+      },
+      {
+        "name": "Mario Geller",
+        "role": null,
+        "affiliation": "Division of Medicine, Academy of Medicine of Rio de Janeiro, Rio de Janeiro, Brazil"
+      },
+      {
+        "name": "Alexei Gonzalez-Estrada",
+        "role": null,
+        "affiliation": "Division of Pulmonary, Allergy and Sleep Medicine, Department of Medicine, Mayo Clinic, Jacksonville, Florida, USA"
+      },
+      {
+        "name": "Paul A. Greenberger",
+        "role": null,
+        "affiliation": "Division of Allergy-Immunology, Department of Medicine, Northwestern University Feinberg School of Medicine, Chicago, Illinois, USA"
+      },
+      {
+        "name": "Mario Sanchez Borges",
+        "role": null,
+        "affiliation": "Allergy and Clinical Immunology Department, Centro Médico Docente La Trinidad and Clinica El Ávila, Caracas, Venezuela"
+      },
+      {
+        "name": "Gianenrico Senna",
+        "role": null,
+        "affiliation": "Asthma Center and Allergy Unit, Verona University and General Hospital, Verona, Italy"
+      },
+      {
+        "name": "Aziz Sheikh",
+        "role": null,
+        "affiliation": "Allergy and Respiratory Research Group, Usher Institute of Population Health Sciences and Informatics, The University of Edinburgh, Edinburgh, UK"
+      },
+      {
+        "name": "Luciana Kase Tanno",
+        "role": null,
+        "affiliation": "Hospital Sírio Libanês, Brazil and University Hospital of Montpellier, São Paulo, Montpellier, and Sorbonne Université, INSERM Paris, France, and WHO Collaborating Centre on Scientific Classification Support Montpellier, and WHO ICD-11 Medical and Scientific Advisory Committee Geneva, Switzerland"
+      },
+      {
+        "name": "Bernard Y. Thong",
+        "role": null,
+        "affiliation": "Department of Rheumatology, Allergy and Immunology, Tan Tock Seng Hospital, Singapore"
+      },
+      {
+        "name": "Paul J. Turner",
+        "role": null,
+        "affiliation": "National Heart Lung Institute, Imperial College London and Discipline of Paediatrics and Child Health, School of Medicine, University of Sydney, Sydney, Australia"
+      },
+      {
+        "name": "Margitta Worm",
+        "role": null,
+        "affiliation": "Department of Dermatology and Allergology, ChariteUniversitätsmedizin, Berlin, Germany"
+      }
+    ],
+    "year": 2020,
+    "version": null,
+    "language": "en",
+    "audience": "clinician",
+    "specialty": "allergy/immunology",
+    "jurisdiction": "international",
+    "source_pages": null,
+    "extraction_date": "2025-04-07",
+    "quality_flags": [],
+    "summary": "This guidance updates the World Allergy Organization's 2011 anaphylaxis guidelines, incorporating current knowledge on diagnosis and management. It covers anaphylaxis definition, epidemiology, elicitors, cofactors, severity grading, acute and long-term management, and global availability of epinephrine auto-injectors. The document is intended for healthcare professionals globally, especially in regions without national guidelines."
+  },
+  "scope": {
+    "conditions_covered": [
+      "anaphylaxis"
+    ],
+    "care_settings": [
+      "healthcare settings",
+      "community",
+      "emergency",
+      "peri-operative"
+    ],
+    "target_population": [
+      "patients of any age with anaphylaxis or at risk of anaphylaxis"
+    ],
+    "therapeutic_areas": [
+      "epinephrine (adrenaline)",
+      "intramuscular epinephrine",
+      "epinephrine auto-injectors",
+      "antihistamines",
+      "glucocorticoids",
+      "allergen immunotherapy",
+      "management of anaphylaxis"
+    ]
+  },
+  "safety": {
+    "toxicities": [
+      {
+        "event": "Cardiac arrhythmias (potentially fatal)",
+        "associated_therapies": [
+          "epinephrine (intravenous bolus)"
+        ],
+        "incidence": null,
+        "recognition": [],
+        "grading": null,
+        "management": [
+          {
+            "severity": "any",
+            "actions": "Intravenous epinephrine should be avoided for initial anaphylaxis treatment; if administered, it must be given as an intravenous infusion via pump with cardiac monitoring, and only by personnel experienced in diluting and administering the correct doses."
+          }
+        ],
+        "prevention": [
+          "Use intramuscular epinephrine as first-line treatment for anaphylaxis."
+        ],
+        "dose_modifications": null
+      },
+      {
+        "event": "Hypotension",
+        "associated_therapies": [
+          "chlorpheniramine (intravenous)"
+        ],
+        "incidence": null,
+        "recognition": [],
+        "grading": null,
+        "management": [
+          {
+            "severity": "any",
+            "actions": "Avoid rapid intravenous administration of first-generation H1-antihistamines; consider using second-generation antihistamines to minimize adverse effects."
+          }
+        ],
+        "prevention": [
+          "Administer antihistamines cautiously; prefer second-generation agents when available."
+        ],
+        "dose_modifications": null
+      },
+      {
+        "event": "Sedation",
+        "associated_therapies": [
+          "H1-antihistamines (first-generation)"
+        ],
+        "incidence": null,
+        "recognition": [],
+        "grading": null,
+        "management": [
+          {
+            "severity": "any",
+            "actions": "Substitute with second-generation antihistamines to reduce sedative effects."
+          }
+        ],
+        "prevention": [
+          "Use second-generation antihistamines in preference to first-generation agents."
+        ],
+        "dose_modifications": null
+      },
+      {
+        "event": "Biphasic anaphylactic reaction",
+        "associated_therapies": [],
+        "incidence": "Approximately 50% occur within the first 6–12 hours after the initial reaction.",
+        "recognition": [
+          "Return of anaphylaxis symptoms after apparent resolution of the initial episode."
+        ],
+        "grading": null,
+        "management": [
+          {
+            "severity": "all",
+            "actions": "Observe patients in a healthcare setting, especially those with severe initial reactions or those requiring multiple doses of epinephrine; extended observation may be warranted."
+          }
+        ],
+        "prevention": [],
+        "dose_modifications": null
+      }
+    ],
+    "prophylaxis": [],
+    "infection_management": []
+  },
+  "conditions": [
+    {
+      "condition_id": "cond_01",
+      "name": "Anaphylaxis",
+      "synonyms": [
+        "acute systemic allergic reaction",
+        "anaphylactic reaction",
+        "anaphylactic shock"
+      ],
+      "description": "A serious systemic hypersensitivity reaction that is usually rapid in onset and may cause death. Severe anaphylaxis involves life-threatening compromise of the airway, breathing, or circulation, and can occur without typical skin features or circulatory shock.",
+      "epidemiology": "Global incidence is estimated at 50–112 episodes per 100,000 person-years, with a lifetime prevalence of 0.3–5.1%. Pediatric incidence ranges widely, from 1 to 761 per 100,000 person-years. Recurrence rates are 26.5–54% over 1.5–25 years. Mortality remains low: drug-induced anaphylaxis 0.05–0.51 per million people/year, food-induced 0.03–0.32, venom-induced 0.09–0.13.",
+      "clinical_presentation": "Acute onset (minutes to several hours) of skin/mucosal involvement (generalized urticaria, pruritus, flushing, angioedema of lips, tongue, uvula) plus at least one of: respiratory compromise (dyspnea, wheeze, stridor, hypoxemia), cardiovascular compromise (hypotension, syncope, collapse), or severe gastrointestinal symptoms (crampy abdominal pain, repetitive vomiting). Alternatively, acute hypotension, bronchospasm, or laryngeal involvement after allergen exposure, even without skin signs. Skin involvement is absent in 10–20% of episodes.",
+      "subtypes": [
+        {
+          "name": "Food-induced anaphylaxis",
+          "distinguishing_features": "Commonly presents with severe gastrointestinal symptoms; triggered by ingestion of allergenic foods such as peanuts, tree nuts, milk, egg, seafood."
+        },
+        {
+          "name": "Venom-induced anaphylaxis",
+          "distinguishing_features": "Triggered by insect stings (bees, wasps, fire ants); typical systemic reaction with rapid onset."
+        },
+        {
+          "name": "Drug-induced anaphylaxis",
+          "distinguishing_features": "Occurs after administration of medications (antibiotics, NSAIDs, biologics, chemotherapeutics, contrast media); may be IgE-mediated or non-IgE-mediated."
+        },
+        {
+          "name": "Idiopathic anaphylaxis",
+          "distinguishing_features": "No identifiable trigger; accounts for 6.5-35% of cases; requires evaluation for mast cell disorders (mastocytosis, KIT mutation)."
+        },
+        {
+          "name": "Alpha-gal-induced anaphylaxis",
+          "distinguishing_features": "Delayed onset (hours after ingestion of mammalian meat); associated with IgE to galactose-alpha-1,3-galactose."
+        },
+        {
+          "name": "Exercise-induced anaphylaxis",
+          "distinguishing_features": "Triggered by physical activity, often with cofactors like food ingestion; may involve specific foods (omega-5-gliadin)."
+        }
+      ],
+      "diagnostic_workup": [
+        {
+          "test": "Serum tryptase (acute)",
+          "purpose": "Confirm mast cell activation during an acute episode",
+          "when_indicated": "During acute anaphylaxis (within 15 min to 3 h, peak at 1–2 h)",
+          "interpretation": "Elevated levels support anaphylaxis; normal levels do not exclude it. A consensus equation (peak MCT > 1.2 × baseline tryptase + 2 ng/L) may be used."
+        },
+        {
+          "test": "Serum tryptase (baseline)",
+          "purpose": "Establish individual baseline and detect underlying mast cell disorders",
+          "when_indicated": "At least 24 h after resolution of symptoms",
+          "interpretation": "Persistently elevated baseline tryptase suggests mastocytosis or clonal mast cell disease."
+        },
+        {
+          "test": "Clinical history and physical examination",
+          "purpose": "Identify potential triggers, cofactors, and risk factors",
+          "when_indicated": "After acute episode, during specialist assessment",
+          "interpretation": null
+        },
+        {
+          "test": "Allergen-specific IgE testing and/or skin prick tests",
+          "purpose": "Confirm sensitization to suspected allergens",
+          "when_indicated": "During specialist allergy workup",
+          "interpretation": null
+        },
+        {
+          "test": "KIT D816V mutation analysis",
+          "purpose": "Rule out clonal mast cell disorder",
+          "when_indicated": "In idiopathic anaphylaxis or when baseline tryptase is elevated",
+          "interpretation": "Detection indicates a clonal mast cell disorder (e.g., mastocytosis)."
+        }
+      ],
+      "pathology_markers": [
+        {
+          "marker": "Serum tryptase (mature β-tryptase)",
+          "expected_result": "Elevated (>11.4 mg/L) or significant rise over baseline per consensus equation",
+          "clinical_significance": "Indicates mast cell degranulation; supports diagnosis of anaphylaxis."
+        },
+        {
+          "marker": "Baseline serum tryptase",
+          "expected_result": "Normal in most individuals; elevated in mastocytosis",
+          "clinical_significance": "Elevated baseline increases risk of severe anaphylaxis and suggests need for mast cell workup."
+        }
+      ],
+      "genetic_molecular": [
+        {
+          "marker": "KIT D816V mutation",
+          "technique": "PCR from peripheral blood or bone marrow",
+          "clinical_significance": "Identifies clonal mast cell disorder; indicated in idiopathic anaphylaxis or elevated baseline tryptase."
+        }
+      ],
+      "staging": {
+        "system": null,
+        "definitions": [],
+        "additional_rules": null
+      },
+      "prognostic_tools": [],
+      "follow_up": {
+        "schedule": "Observe for at least 6–12 hours after reaction, especially if severe or requiring multiple epinephrine doses. Specialist follow-up for trigger identification and education.",
+        "recommended_tests": [
+          "Allergen-specific IgE testing",
+          "Skin prick testing",
+          "Baseline serum tryptase",
+          "KIT mutation analysis if indicated",
+          "Periodic reassessment of comorbidities"
+        ],
+        "long_term_effects": [
+          "Risk of recurrence",
+          "Potential for biphasic reactions",
+          "Psychological impact",
+          "Need for allergen avoidance or immunotherapy"
+        ],
+        "survivorship_notes": "Patients should carry an epinephrine auto-injector, have a written emergency action plan, wear medical identification, and receive ongoing education on anaphylaxis management."
+      }
+    }
+  ],
+  "recommendations": [
+    {
+      "rec_id": "rec_01",
+      "statement": "Intramuscular epinephrine (adrenaline) is the first-line treatment for anaphylaxis.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ABSTRACT"
+    },
+    {
+      "rec_id": "rec_02",
+      "statement": "All anaphylaxis reactions must be treated with intramuscular adrenaline to reduce the risk of death.",
+      "context": "Emphasized despite most anaphylaxis reactions not being immediately life-threatening.",
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": "Fatal outcomes are rare, but unpredictability of progression necessitates treatment.",
+      "condition_ref": null,
+      "source_heading": "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_03",
+      "statement": "Early suspicion of anaphylaxis, based on symptoms affecting multiple organ systems, should prompt immediate management.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_04",
+      "statement": "Initial management of anaphylaxis includes removing the trigger if possible, assessing airway, breathing, circulation, mental status, and skin, calling emergency services, injecting intramuscular epinephrine, and positioning the patient.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_05",
+      "statement": "Intramuscular epinephrine should be injected into the antero-lateral thigh (vastus lateralis muscle).",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_06",
+      "statement": "The recommended epinephrine dose for healthcare professionals is 0.01 mg/kg body weight, up to a maximum total dose of 0.5 mg, administered intramuscularly.",
+      "context": "Simplified dosing table provided: infants under 10 kg: 0.01 mL/kg of 1 mg/mL; children 1–5 years: 0.15 mg; children 6–12 years: 0.3 mg; teenagers and adults: 0.5 mg.",
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_07",
+      "statement": "Epinephrine dosing may be repeated every 5–15 minutes if symptoms are refractory to initial treatment.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_08",
+      "statement": "Intravenous epinephrine is not recommended for initial treatment of anaphylaxis due to the risk of fatal arrhythmias from bolus administration.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": "Intravenous bolus epinephrine can cause fatal arrhythmias.",
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_09",
+      "statement": "If intravenous epinephrine is used, it should be administered as a continuous infusion via an infusion pump in monitored patients by experienced personnel.",
+      "context": "Low-dose epinephrine infusion protocols exist and have demonstrated safety and efficacy.",
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_10",
+      "statement": "For upper airway obstruction, consider adding nebulized epinephrine.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_11",
+      "statement": "High-flow oxygen (preferably 100% via non-rebreather mask) should be administered to all patients with respiratory distress and those receiving repeated doses of epinephrine.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_12",
+      "statement": "Intravenous access should be established using large-bore cannulae (14 or 16 gauge for adults).",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_13",
+      "statement": "Intravenous crystalloid fluid boluses (20 mL/kg) should be given to patients with cardiovascular instability.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_14",
+      "statement": "Cardiopulmonary resuscitation with continuous chest compressions should be performed when indicated.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_15",
+      "statement": "Inhaled short-acting beta-2 agonists (e.g., salbutamol/albuterol) may be used for bronchoconstriction, but are not a substitute for repeated intramuscular epinephrine if symptoms persist.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": "Bronchodilators do not replace the need for epinephrine.",
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_16",
+      "statement": "Frequent and regular monitoring of blood pressure, heart rate, perfusion, respiratory status, and mental status is recommended.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_17",
+      "statement": "H1-antihistamines have a limited role in anaphylaxis treatment but may help relieve cutaneous symptoms; their administration should not delay epinephrine injection.",
+      "context": "Second-generation antihistamines are preferred if available, but first-generation ones are the only parenteral options. Some guidelines now consider antihistamines a third-line treatment.",
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": "Antihistamine use can delay more urgent epinephrine administration.",
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_18",
+      "statement": "Routine use of glucocorticosteroids in acute anaphylaxis is controversial and may not be beneficial; their administration is not essential.",
+      "context": "They are commonly used to prevent protracted symptoms and biphasic reactions, but evidence of benefit is lacking and they may cause harm.",
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": "Increasing evidence shows no benefit and potential harm.",
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_19",
+      "statement": "Parenteral glucagon may be considered in patients with anaphylaxis refractory to epinephrine, particularly those taking beta-blockers.",
+      "context": "Evidence is very limited.",
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_20",
+      "statement": "Patients with anaphylaxis should be observed, especially those with severe reactions or requiring multiple epinephrine doses.",
+      "context": "About half of biphasic reactions occur within 6–12 hours.",
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": "Biphasic reactions can occur, necessitating observation.",
+      "condition_ref": null,
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_21",
+      "statement": "Baseline serum tryptase should be measured at least 24 hours after resolution of anaphylaxis symptoms, even if the acute level was normal.",
+      "context": "Tryptase levels may remain elevated for up to 3 hours; normal levels do not exclude anaphylaxis.",
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": "Baseline tryptase helps assess for mast cell disorders and interpret acute increases.",
+      "condition_ref": null,
+      "source_heading": "DIAGNOSTIC TESTS IN ACUTE ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_22",
+      "statement": "A consensus equation (peak MCT > 1.2 × baseline tryptase + 2 ng/L) may be used to diagnose acute mast cell activation, though it cannot detect all anaphylactic reactions.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "DIAGNOSTIC TESTS IN ACUTE ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_23",
+      "statement": "Individualized anaphylaxis management plans should be part of long-term care for all patients who have experienced anaphylaxis.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "LONG-TERM MANAGEMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_24",
+      "statement": "At discharge, patients at risk of recurrence should be prescribed self-injectable epinephrine, trained in its use, and provided with a written anaphylaxis emergency action plan and medical identification.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "LONG-TERM MANAGEMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_25",
+      "statement": "Where epinephrine auto-injectors are unavailable or unaffordable, alternative formulations such as prefilled epinephrine syringes (or 1-mL syringe/needle with ampoule) may be recommended, with adequate training and written instructions.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "LONG-TERM MANAGEMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_26",
+      "statement": "Patients with anaphylaxis should be referred to an allergy/immunology specialist for confirmation of triggers, prevention advice, and consideration of allergen immunotherapy.",
+      "context": "Idiopathic anaphylaxis is considered after thorough investigation.",
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "LONG-TERM MANAGEMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_27",
+      "statement": "Vigilant avoidance of culprit allergens is essential to prevent anaphylaxis recurrence.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "LONG-TERM MANAGEMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_28",
+      "statement": "In medication-induced anaphylaxis, avoidance of the offending drug and use of safe substitutes are mandatory; drug desensitization may be considered if no alternative therapy exists.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "LONG-TERM MANAGEMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_29",
+      "statement": "Annual follow-up is recommended to review recurrence prevention, epinephrine auto-injector technique, and optimize control of comorbidities such as asthma.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "LONG-TERM MANAGEMENT OF ANAPHYLAXIS"
+    },
+    {
+      "rec_id": "rec_30",
+      "statement": "Follow-up with a dietitian and psychologist may be important, as indicated.",
+      "context": null,
+      "strength": null,
+      "evidence_level": null,
+      "grading_system": null,
+      "rationale": null,
+      "condition_ref": null,
+      "source_heading": "LONG-TERM MANAGEMENT OF ANAPHYLAXIS"
+    }
+  ],
+  "special_populations": [],
+  "glossary": [],
+  "abbreviations": [
+    {
+      "abbr": "WAO",
+      "meaning": "World Allergy Organization"
+    },
+    {
+      "abbr": "EAACI",
+      "meaning": "European Academy of Allergy Asthma and Clinical Immunology"
+    },
+    {
+      "abbr": "AAAAI/ACAAI",
+      "meaning": "American Academy of Allergy, Asthma and Immunology/American College of Allergy, Asthma, and Immunology"
+    },
+    {
+      "abbr": "ASCIA",
+      "meaning": "Australasian Society of Clinical Immunology and Allergy"
+    },
+    {
+      "abbr": "NIAID",
+      "meaning": "National Institute of Allergy and Infectious Diseases"
+    },
+    {
+      "abbr": "WHO ICD-11",
+      "meaning": "World Health Organization International Classification of Diseases 11th Edition"
+    },
+    {
+      "abbr": "PEF",
+      "meaning": "Peak expiratory flow"
+    },
+    {
+      "abbr": "BP",
+      "meaning": "blood pressure"
+    },
+    {
+      "abbr": "NIAID/FAAN",
+      "meaning": "National Institute of Allergy and Infectious Diseases/Food Allergy and Anaphylaxis Network"
+    },
+    {
+      "abbr": "CoFAR",
+      "meaning": "Consortium of Food Allergy Research"
+    },
+    {
+      "abbr": "FcεRI",
+      "meaning": "high-affinity receptor for IgE"
+    },
+    {
+      "abbr": "MRGPRX2",
+      "meaning": "Mas-related G-protein coupled receptor member X2"
+    },
+    {
+      "abbr": "alpha-Gal",
+      "meaning": "galactose-alpha-1,3-galactose"
+    }
+  ],
+  "references": [],
+  "keywords": [
+    {
+      "from_document": [],
+      "enriched": [
+        "anaphylaxis",
+        "epinephrine",
+        "adrenaline",
+        "allergy",
+        "hypersensitivity",
+        "IgE",
+        "mast cells",
+        "basophils",
+        "food allergy",
+        "drug allergy",
+        "venom allergy",
+        "systemic allergic reaction",
+        "diagnostic criteria",
+        "risk factors",
+        "cofactors",
+        "management",
+        "emergency treatment",
+        "intramuscular adrenaline",
+        "World Allergy Organization",
+        "WAO guidelines"
+      ]
+    }
+  ],
+  "toc": [
+    {
+      "id": "toc_01",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020"
+      ],
+      "level": 1
+    },
+    {
+      "id": "toc_02",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "ABSTRACT"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_03",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "FORMAL REVIEW"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_04",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "INTRODUCTION"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_05",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "EPIDEMIOLOGY"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_06",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_07",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS",
+        "Table 1. Current definitions of anaphylaxis in the literature."
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_08",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS",
+        "Table 2. Amended criteria for the diagnosis of anaphylaxis."
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_09",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS",
+        "Fig. 1 Diagnostic criteria for the diagnosis of anaphylaxis"
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_10",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS",
+        "Table 3. Differential diagnosis of anaphylaxis."
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_11",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS",
+        "Pathogenesis of anaphylaxis"
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_12",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS",
+        "Fig. 2 Types of anaphylaxis"
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_13",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "ELICITORS AND COFACTORS OF ANAPHYLAXIS"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_14",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "ELICITORS AND COFACTORS OF ANAPHYLAXIS",
+        "Fig. 3 Factors and cofactors influencing anaphylaxis"
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_15",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "ELICITORS AND COFACTORS OF ANAPHYLAXIS",
+        "Table 4. Examples of anaphylaxis elicitors worldwide (frequency depends on age, geographical region and lifestyle)"
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_16",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "ACUTE TREATMENT OF ANAPHYLAXIS"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_17",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "ACUTE TREATMENT OF ANAPHYLAXIS",
+        "Fig. 4 Management of anaphylaxis"
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_18",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "ACUTE TREATMENT OF ANAPHYLAXIS",
+        "Table 6. Recommended doses for intramuscular epinephrine (adrenaline)."
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_19",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "ANAPHYLAXIS SEVERITY GRADING"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_20",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "ANAPHYLAXIS SEVERITY GRADING",
+        "Table 7. (Continued) WAO systemic allergic reaction grading system."
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_21",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "DIAGNOSTIC TESTS IN ACUTE ANAPHYLAXIS"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_22",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "LONG-TERM MANAGEMENT OF ANAPHYLAXIS"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_23",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "LONG-TERM MANAGEMENT OF ANAPHYLAXIS",
+        "Fig. 5 Long-term management of anaphylaxis"
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_24",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "LONG-TERM MANAGEMENT OF ANAPHYLAXIS",
+        "Table 8. Key considerations for the longer-term management of anaphylaxis"
+      ],
+      "level": 3
+    },
+    {
+      "id": "toc_25",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "GLOBAL AVAILABILITY OF EPINEPHRINE (ADRENALINE) AUTOINJECTORS (EAI)"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_26",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "Unmet needs"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_27",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "Abbreviations"
+      ],
+      "level": 2
+    },
+    {
+      "id": "toc_28",
+      "heading_path": [
+        "World allergy organization anaphylaxis guidance 2020",
+        "REFERENCES"
+      ],
+      "level": 2
+    }
+  ],
+  "therapies_index": [
+    {
+      "name": "Epinephrine (adrenaline)",
+      "type": "drug",
+      "components": [],
+      "mechanism": null,
+      "approved_indications": [
+        "First-line treatment for anaphylaxis"
+      ],
+      "administration": "Intramuscular injection into the vastus lateralis of the quadriceps (antero-lateral thigh) at a dose of 0.01 mg/kg (maximum 0.5 mg), repeated every 5-15 minutes if symptoms persist. For self-administration, auto-injectors, prefilled syringes, or ampoule with syringe may be used. In healthcare settings, intravenous infusion (low-dose) via pump may be used for refractory reactions. Nebulized epinephrine may be considered for upper airway obstruction.",
+      "key_toxicities": [
+        "Generally well-tolerated when administered intramuscularly",
+        "Intravenous bolus can cause potentially fatal arrhythmias"
+      ],
+      "monitoring": [
+        "Monitor blood pressure, heart rate, perfusion, respiratory status, and mental status"
+      ],
+      "pathway_refs": []
+    },
+    {
+      "name": "Epinephrine auto-injector",
+      "type": "other",
+      "components": [
+        "Epinephrine (adrenaline)"
+      ],
+      "mechanism": null,
+      "approved_indications": [
+        "Self-treatment of anaphylaxis in community settings"
+      ],
+      "administration": "Intramuscular injection into the antero-lateral thigh, holding in place for 3-10 seconds",
+      "key_toxicities": [],
+      "monitoring": [],
+      "pathway_refs": []
+    },
+    {
+      "name": "Chlorpheniramine",
+      "type": "drug",
+      "components": [],
+      "mechanism": null,
+      "approved_indications": [
+        "Relief of cutaneous symptoms in anaphylaxis"
+      ],
+      "administration": "Parenteral (intravenous or intramuscular); caution with rapid intravenous administration due to risk of hypotension",
+      "key_toxicities": [
+        "Hypotension with rapid intravenous administration",
+        "Sedation"
+      ],
+      "monitoring": [],
+      "pathway_refs": []
+    },
+    {
+      "name": "Diphenhydramine",
+      "type": "drug",
+      "components": [],
+      "mechanism": null,
+      "approved_indications": [
+        "Relief of cutaneous symptoms in anaphylaxis"
+      ],
+      "administration": "Parenteral (intravenous or intramuscular)",
+      "key_toxicities": [
+        "Sedation"
+      ],
+      "monitoring": [],
+      "pathway_refs": []
+    },
+    {
+      "name": "Clemastine",
+      "type": "drug",
+      "components": [],
+      "mechanism": null,
+      "approved_indications": [
+        "Relief of cutaneous symptoms in anaphylaxis"
+      ],
+      "administration": "Parenteral (intravenous or intramuscular)",
+      "key_toxicities": [
+        "Sedation"
+      ],
+      "monitoring": [],
+      "pathway_refs": []
+    },
+    {
+      "name": "Hydrocortisone",
+      "type": "drug",
+      "components": [],
+      "mechanism": null,
+      "approved_indications": [
+        "Used in anaphylaxis to prevent protracted symptoms and biphasic reactions, though evidence of benefit is controversial"
+      ],
+      "administration": "Intravenous",
+      "key_toxicities": [],
+      "monitoring": [],
+      "pathway_refs": []
+    },
+    {
+      "name": "Methylprednisolone",
+      "type": "drug",
+      "components": [],
+      "mechanism": null,
+      "approved_indications": [
+        "Used in anaphylaxis to prevent protracted symptoms and biphasic reactions, though evidence of benefit is controversial"
+      ],
+      "administration": "Intravenous",
+      "key_toxicities": [],
+      "monitoring": [],
+      "pathway_refs": []
+    },
+    {
+      "name": "Salbutamol (Albuterol)",
+      "type": "drug",
+      "components": [],
+      "mechanism": "Short-acting beta-2 adrenergic agonist bronchodilator",
+      "approved_indications": [
+        "Bronchospasm in anaphylaxis"
+      ],
+      "administration": "Inhaled or nebulized",
+      "key_toxicities": [],
+      "monitoring": [],
+      "pathway_refs": []
+    },
+    {
+      "name": "Glucagon",
+      "type": "drug",
+      "components": [],
+      "mechanism": null,
+      "approved_indications": [
+        "Refractory anaphylaxis not responding to epinephrine, especially in patients taking beta-blockers"
+      ],
+      "administration": "Parenteral",
+      "key_toxicities": [],
+      "monitoring": [],
+      "pathway_refs": []
+    },
+    {
+      "name": "Oxygen",
+      "type": "drug",
+      "components": [],
+      "mechanism": "Corrects hypoxemia",
+      "approved_indications": [
+        "Respiratory distress in anaphylaxis"
+      ],
+      "administration": "High flow (preferably 100% via non-rebreather facemask)",
+      "key_toxicities": [],
+      "monitoring": [],
+      "pathway_refs": []
+    },
+    {
+      "name": "Crystalloid intravenous fluid bolus",
+      "type": "other",
+      "components": [],
+      "mechanism": "Volume expansion to treat hypotension and shock",
+      "approved_indications": [
+        "Cardiovascular instability in anaphylaxis"
+      ],
+      "administration": "Intravenous bolus of 20 mL/kg using crystalloids",
+      "key_toxicities": [],
+      "monitoring": [],
+      "pathway_refs": []
+    },
+    {
+      "name": "Cardiopulmonary resuscitation",
+      "type": "procedure",
+      "components": [],
+      "mechanism": null,
+      "approved_indications": [
+        "Cardiac arrest during anaphylaxis"
+      ],
+      "administration": "Continuous chest compressions",
+      "key_toxicities": [],
+      "monitoring": [],
+      "pathway_refs": []
+    },
+    {
+      "name": "Allergen immunotherapy",
+      "type": "procedure",
+      "components": [],
+      "mechanism": "Desensitization and induction of tolerance to specific allergens",
+      "approved_indications": [
+        "Prevention of anaphylaxis recurrence, particularly for venom-induced anaphylaxis"
+      ],
+      "administration": "Subcutaneous injections of allergen extracts, typically administered in a healthcare setting",
+      "key_toxicities": [
+        "Systemic allergic reactions, including anaphylaxis"
+      ],
+      "monitoring": [
+        "Observation period after each injection"
+      ],
+      "pathway_refs": []
+    },
+    {
+      "name": "Drug desensitization",
+      "type": "procedure",
+      "components": [],
+      "mechanism": "Temporary induction of tolerance to a drug through graded administration",
+      "approved_indications": [
+        "Patients with immediate hypersensitivity to a necessary medication when no alternative exists"
+      ],
+      "administration": "Graded challenge protocol, typically in an intensive care setting",
+      "key_toxicities": [
+        "Breakthrough allergic reactions including anaphylaxis"
+      ],
+      "monitoring": [
+        "Close monitoring during procedure"
+      ],
+      "pathway_refs": []
+    },
+    {
+      "name": "Epinephrine sublingual tablet (RDST)",
+      "type": "drug",
+      "components": [],
+      "mechanism": null,
+      "approved_indications": [
+        "Potential treatment for anaphylaxis (under development, not yet approved)"
+      ],
+      "administration": "Sublingual",
+      "key_toxicities": [],
+      "monitoring": [],
+      "pathway_refs": []
+    }
+  ],
+  "treatment_pathways": [
+    {
+      "pathway_id": "path_01",
+      "condition_ref": "cond_01",
+      "setting": "first_line",
+      "patient_population": "Patients with suspected anaphylaxis, based on acute onset of symptoms involving skin/mucosal tissue plus respiratory compromise, cardiovascular instability, or severe gastrointestinal symptoms; or acute hypotension/bronchospasm/laryngeal involvement after known allergen exposure.",
+      "biomarker_condition": null,
+      "decision_rules": [
+        "Immediately remove suspected trigger if possible (e.g., discontinue drug infusion).",
+        "Assess airway, breathing, circulation, mental status, and skin.",
+        "Call for emergency medical services simultaneously.",
+        "Inject epinephrine (adrenaline) intramuscularly into the vastus lateralis (antero-lateral thigh).",
+        "Position patient: supine unless respiratory distress (then sitting); if pregnant, left lateral semi-recumbent; if unconscious, recovery position.",
+        "Repeat intramuscular epinephrine every 5-15 minutes if symptoms refractory.",
+        "If respiratory distress, administer high-flow oxygen (100% non-rebreather mask) and consider nebulized epinephrine for upper airway obstruction or inhaled short-acting beta-2 agonists for bronchoconstriction (not as substitute for epinephrine).",
+        "If cardiovascular instability, establish IV access with wide-bore cannula, give IV fluid bolus (20 mL/kg crystalloid), and consider IV epinephrine infusion under expert monitoring if refractory.",
+        "Monitor vital signs, cardiac rhythm, and respiratory status frequently; observe for biphasic reaction (at least 6-12 hours, longer for severe reactions)."
+      ],
+      "recommended_regimens": [
+        {
+          "name": "Intramuscular epinephrine (adrenaline)",
+          "evidence_level": null,
+          "recommendation_grade": null,
+          "summary": "First-line treatment for anaphylaxis. Administer 0.01 mg/kg body weight (maximum 0.5 mg per dose) into the antero-lateral thigh, repeated every 5-15 minutes as needed to control symptoms.",
+          "key_outcomes": null,
+          "duration_cycles": "Until symptoms resolve; may require multiple doses."
+        }
+      ],
+      "alternative_regimens": [
+        {
+          "name": "Intravenous epinephrine (adrenaline) infusion",
+          "evidence_level": null,
+          "summary": "For anaphylaxis refractory to repeated intramuscular epinephrine. Must be administered by experienced personnel with cardiac monitoring, preferably as an infusion via pump. Various low-dose protocols exist (e.g., Brown et al. protocol).",
+          "conditions_for_use": "Refractory anaphylaxis with ongoing cardiovascular or respiratory compromise despite appropriate intramuscular epinephrine."
+        },
+        {
+          "name": "Nebulized epinephrine (adrenaline)",
+          "evidence_level": null,
+          "summary": "Consider for upper airway obstruction (e.g., laryngeal edema) as an adjunct to intramuscular epinephrine.",
+          "conditions_for_use": "Signs of upper airway obstruction (stridor). Not a substitute for intramuscular epinephrine."
+        },
+        {
+          "name": "Inhaled short-acting beta-2 agonists (e.g., salbutamol/albuterol)",
+          "evidence_level": null,
+          "summary": "Adjuvant for bronchoconstriction symptoms after epinephrine administration.",
+          "conditions_for_use": "Persistent bronchospasm despite epinephrine."
+        },
+        {
+          "name": "H1-antihistamines (second-generation oral or first-generation parenteral)",
+          "evidence_level": null,
+          "summary": "May help relieve cutaneous symptoms (e.g., urticaria, pruritus). Limited role; should not delay epinephrine administration. Parenteral first-generation agents (chlorpheniramine, diphenhydramine, clemastine) available; rapid IV administration can cause hypotension. Some guidelines consider them third-line.",
+          "conditions_for_use": "Symptomatic relief of skin manifestations only, after epinephrine."
+        },
+        {
+          "name": "Glucocorticoids (e.g., intravenous hydrocortisone or methylprednisolone)",
+          "evidence_level": null,
+          "summary": "Historically used to prevent protracted symptoms and biphasic reactions, especially in asthmatic patients. Increasing evidence questions benefit; routine use controversial.",
+          "conditions_for_use": "Consider in moderate-severe anaphylaxis, particularly with asthma, after epinephrine. Not for acute rescue."
+        },
+        {
+          "name": "Glucagon",
+          "evidence_level": null,
+          "summary": "Parenteral glucagon may be considered in patients with anaphylaxis not optimally responding to epinephrine, especially those on beta-blockers. Evidence limited.",
+          "conditions_for_use": "Refractory anaphylaxis in patients on beta-blockers."
+        }
+      ],
+      "not_recommended": [
+        {
+          "name": "Intravenous bolus epinephrine",
+          "reason": "Risk of fatal arrhythmias; intravenous route should not be used for initial treatment and only as infusion under expert monitoring."
+        },
+        {
+          "name": "Antihistamines as first-line therapy",
+          "reason": "Do not replace epinephrine; they have a limited role and may delay life-saving epinephrine administration."
+        },
+        {
+          "name": "Glucocorticoids as sole acute treatment",
+          "reason": "No evidence of benefit in acute anaphylaxis management; routine use is controversial and may be harmful."
+        }
+      ],
+      "response_assessment": [
+        {
+          "timepoint": "Throughout acute management",
+          "method": "Frequent monitoring of blood pressure, heart rate, perfusion, respiratory status, and mental status.",
+          "interpretation": "Reassess for resolution of symptoms or signs of biphasic reaction. Biphasic reactions may occur within 6-12 hours after initial reaction."
+        },
+        {
+          "timepoint": "After initial treatment and stabilization",
+          "method": "Observation period of at least 6-12 hours, longer for severe reactions or those requiring multiple epinephrine doses.",
+          "interpretation": "Ensure no recurrence before discharge; educate patient on risk of biphasic reaction and indications to return."
+        }
+      ],
+      "supportive_care": [
+        "High flow oxygen (preferably 100% via non-rebreather mask) for respiratory distress or patients receiving repeated epinephrine.",
+        "Intravenous access with wide-bore cannula (14 or 16 gauge in adults).",
+        "Intravenous crystalloid fluid bolus (20 mL/kg) for cardiovascular instability.",
+        "Cardiopulmonary resuscitation with continuous cardiac compressions if indicated.",
+        "Positioning: supine with legs elevated (unless respiratory distress); left lateral semi-recumbent if pregnant; recovery position if unconscious."
+      ],
+      "special_considerations": "Pregnant patients: position in left lateral semi-recumbent. Patients on beta-blockers: may require glucagon for refractory symptoms. Self-management: patients at risk should carry epinephrine auto-injector and have a written emergency action plan; instruct on when and how to self-administer epinephrine into the antero-lateral thigh."
+    },
+    {
+      "pathway_id": "path_02",
+      "condition_ref": "cond_01",
+      "setting": "maintenance",
+      "patient_population": "Patients who have experienced anaphylaxis, to prevent recurrences.",
+      "biomarker_condition": null,
+      "decision_rules": [
+        "Identify trigger(s) through detailed history and confirmatory tests (in vivo and in vitro).",
+        "Refer to allergist-immunologist for specialized evaluation.",
+        "Provide written personalized anaphylaxis emergency action plan; teach patient/caregiver to recognize symptoms and administer epinephrine promptly.",
+        "Prescribe epinephrine auto-injector (or alternative prefilled syringe if auto-injector unavailable); ensure patient/caregiver demonstrates correct technique.",
+        "Manage risk factors for fatality: optimize asthma control, address cardiovascular diseases, counsel against risk-taking behaviors, educate on seriousness of anaphylaxis.",
+        "Recommend always carrying a mobile phone, especially for exercise-induced anaphylaxis.",
+        "Implement measures to avoid triggers: allergen avoidance, allergen immunotherapy (e.g., venom immunotherapy for venom anaphylaxis), drug desensitization when appropriate.",
+        "Use medical identification (bracelet/wallet card) indicating allergy.",
+        "Document suspected trigger in medical record (electronic/paper).",
+        "Provide anaphylaxis education and training to patient, family, and caregivers.",
+        "Advocate for public health measures (e.g., improved food labelling).",
+        "Schedule follow-up to reassess original cause and management plan."
+      ],
+      "recommended_regimens": [
+        {
+          "name": "Epinephrine auto-injector (or prefilled epinephrine syringe)",
+          "evidence_level": null,
+          "recommendation_grade": null,
+          "summary": "Carry one or more epinephrine auto-injectors for prompt self-administration in case of recurrence. Inject intramuscularly into antero-lateral thigh, hold for 3-10 seconds, then seek emergency medical help.",
+          "key_outcomes": null,
+          "duration_cycles": "As needed for future reactions; replace before expiration."
+        },
+        {
+          "name": "Allergen immunotherapy (e.g., venom immunotherapy)",
+          "evidence_level": null,
+          "recommendation_grade": null,
+          "summary": "For venom-induced anaphylaxis, allergen immunotherapy is indicated to reduce risk of future systemic reactions.",
+          "key_outcomes": null,
+          "duration_cycles": "Typically 3-5 years, as per guidelines."
+        },
+        {
+          "name": "Drug desensitization",
+          "evidence_level": null,
+          "recommendation_grade": null,
+          "summary": "For drug hypersensitivity when the drug is essential and no alternatives exist.",
+          "key_outcomes": null,
+          "duration_cycles": "Temporary desensitization; repeated for each treatment course."
+        }
+      ],
+      "alternative_regimens": [],
+      "not_recommended": [],
+      "response_assessment": [
+        {
+          "timepoint": "At follow-up visits",
+          "method": "Review of any subsequent allergic reactions, adherence to avoidance measures, and proper use of epinephrine auto-injector technique.",
+          "interpretation": "Reassess trigger identification, need for continued immunotherapy, and update action plan."
+        }
+      ],
+      "supportive_care": [
+        "Anaphylaxis education: train patient and caregivers to recognize early signs and promptly use epinephrine.",
+        "Written personalized anaphylaxis emergency action plan.",
+        "Medical identification bracelet/wallet card.",
+        "Advice to carry mobile phone.",
+        "Management of comorbidities (asthma, cardiovascular disease).",
+        "Public health advocacy for allergen labelling."
+      ],
+      "special_considerations": "In regions where epinephrine auto-injectors are unavailable or unaffordable, provide alternative such as prefilled epinephrine syringes or vials, with training on proper injection technique. For patients with exercise-induced anaphylaxis, emphasize carrying mobile phone and avoiding exercise alone."
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "art_01",
+      "type": "table",
+      "title": "Current definitions of anaphylaxis in the literature",
+      "source_heading": "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS",
+      "data": {
+        "columns": [
+          "Organization",
+          "Definition"
+        ],
+        "rows": [
+          [
+            "WAO 2011 (1)",
+            "A serious lifethreatening generalized or systemic hypersensitivity reaction."
+          ],
+          [
+            "EAACI 2013 (2)",
+            "A severe lifethreatening generalized or systemic hypersensitivity reaction."
+          ],
+          [
+            "AAAI/ACAAI 2010 (11)",
+            "An acute, potentially fatal, multi-organ system, allergic reaction."
+          ],
+          [
+            "ASCIA 2016 (16)",
+            "Any acute onset illness with typical skin features (urticarial rash or erythema/flushing, and/or angioedema), PLUS involvement of respiratory and/or cardiovascular and/ or persistent severe gastrointestinal symptoms; or Any acute onset of hypotension or bronchospasm or upper airway obstruction where anaphylaxis is considered possible, even if typical skin features are not present."
+          ],
+          [
+            "NIAID 2006 (13)",
+            "Anaphylaxis is a serious allergic reaction that involves more than one organ system (for example, skin, respiratory tract, and/or gastrointestinal tract). It can begin very rapidly, and symptoms may be severe or lifethreatening."
+          ],
+          [
+            "WHO ICD-11 2019",
+            "Anaphylaxis is a severe, lifethreatening systemic hypersensitivity reaction characterized by being rapid in onset with potentially life-threatening airway, breathing, or circulatory problems and is usually, although not always, associated with skin and mucosal changes."
+          ]
+        ]
+      },
+      "description": null,
+      "summary": "This table compiles definitions of anaphylaxis from various allergy organizations, highlighting the common emphasis on severe, life-threatening systemic hypersensitivity reactions.",
+      "clinical_relevance": "Understanding the different definitions is crucial for consistent diagnosis and management, as some require multi-organ involvement while others focus on specific clinical features."
+    },
+    {
+      "artifact_id": "art_02",
+      "type": "table",
+      "title": "Amended criteria for the diagnosis of anaphylaxis",
+      "source_heading": "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS",
+      "data": {
+        "columns": [
+          "Criterion",
+          "Details"
+        ],
+        "rows": [
+          [
+            "1",
+            "Acute onset of an illness (minutes to several hours) with simultaneous involvement of the skin, mucosal tissue, or both (eg, generalized hives, pruritus or flushing, swollen lips-tongue-uvula) AND AT LEAST ONE OF THE FOLLOWING: a. Respiratory compromise (eg, dyspnea, wheeze-bronchospasm, stridor, reduced PEF, hypoxemia) b. Reduced BP or associated symptoms of end-organ dysfunction (eg, hypotonia [collapse], syncope, incontinence) c. Severe gastrointestinal symptoms (eg, severe crampy abdominal pain, repetitive vomiting), especially after exposure to non-food allergens"
+          ],
+          [
+            "2",
+            "Acute onset of hypotensiona or bronchospasmb or laryngeal involvementc after exposure to a known or highly probable allergend for that patient (minutes to several hours), even in the absence of typical skin involvement."
+          ],
+          [
+            "Footnotes",
+            "a. Hypotension defined as a decrease in systolic BP greater than 30% from that person's baseline, OR i. Infants and children under 10 years: systolic BP less than (70 mmHg þ [2 x age in years]) ii. Adults and children over 10 years: systolic BP less than <90 mmHg. b. Excluding lower respiratory symptoms triggered by common inhalant allergens or food allergens perceived to cause “inhalational” reactions in the absence of ingestion. c. Laryngeal symptoms include: stridor, vocal changes, odynophagia. d. An allergen is a substance (usually a protein) capable of triggering an immune response that can result in an allergic reaction. Most allergens act through an IgEmediated pathway, but some non-allergen triggers can act independent of IgE (for example, via direct activation of mast cells)."
+          ]
+        ]
+      },
+      "description": null,
+      "summary": "This table presents the revised diagnostic criteria developed by the WAO Anaphylaxis Committee, simplifying the previous NIAID/FAAN criteria into two main conditions based on skin involvement and known allergen exposure.",
+      "clinical_relevance": "These criteria aim to increase sensitivity in identifying anaphylaxis, especially in presentations without skin signs or cardiovascular shock, to ensure timely and appropriate treatment."
+    },
+    {
+      "artifact_id": "art_03",
+      "type": "algorithm",
+      "title": "Diagnostic criteria for the diagnosis of anaphylaxis",
+      "source_heading": "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS",
+      "data": null,
+      "description": "The figure illustrates two main diagnostic pathways: 1. If there is acute onset with skin or mucosal involvement (e.g., hives, pruritus, angioedema) PLUS respiratory compromise, reduced blood pressure/end-organ dysfunction, or severe gastrointestinal symptoms, then anaphylaxis is highly likely. 2. If the patient has acute onset of hypotension, bronchospasm, or laryngeal involvement after exposure to a known or probable allergen, even without skin involvement, anaphylaxis should be considered. The criteria emphasize that typical skin features are not always present.",
+      "summary": "This flowchart depicts the amended WAO diagnostic algorithm, simplifying the previous criteria to aid rapid clinical recognition.",
+      "clinical_relevance": "Early recognition using these criteria is critical to initiate prompt treatment with intramuscular epinephrine, reducing the risk of fatal outcomes."
+    },
+    {
+      "artifact_id": "art_04",
+      "type": "table",
+      "title": "Differential diagnosis of anaphylaxis",
+      "source_heading": "DEFINITION AND CLINICAL DIAGNOSTIC CRITERIA FOR ANAPHYLAXIS",
+      "data": {
+        "columns": [
+          "Differential Diagnoses"
+        ],
+        "rows": [
+          [
+            "Flush syndromes"
+          ],
+          [
+            "Acute asthmaa"
+          ],
+          [
+            "Peri-menopause"
+          ],
+          [
+            "Syncope (faint)"
+          ],
+          [
+            "Carcinoid syndrome"
+          ],
+          [
+            "Anxiety/panic attack"
+          ],
+          [
+            "Autonomic epilepsy"
+          ],
+          [
+            "Acute generalized urticariaa"
+          ],
+          [
+            "Medullary carcinoma of the thyroid"
+          ],
+          [
+            "Aspiration of a foreign body"
+          ],
+          [
+            "Nonorganic Disease"
+          ],
+          [
+            "Cardiovascular (myocardial infarction,a pulmonary embolus)"
+          ],
+          [
+            "Vocal cord dysfunction"
+          ],
+          [
+            "Neurologic events (seizure, cerebrovascular event)"
+          ],
+          [
+            "Hyperventilation"
+          ],
+          [
+            "Postprandial syndromes"
+          ],
+          [
+            "Psychosomatic episode"
+          ],
+          [
+            "Scombroidosisb"
+          ],
+          [
+            "Shock"
+          ],
+          [
+            "Pollen-food allergy syndromec"
+          ],
+          [
+            "Hypovolemic"
+          ],
+          [
+            "Monosodium glutamate"
+          ],
+          [
+            "Cardiogenic"
+          ],
+          [
+            "Sulfites"
+          ],
+          [
+            "Distributived"
+          ],
+          [
+            "Food poisoning"
+          ],
+          [
+            "Septic"
+          ],
+          [
+            "Excess endogenous histamine"
+          ],
+          [
+            "Other"
+          ],
+          [
+            "Mastocytosis/clonal mast cell disorderse"
+          ],
+          [
+            "Nonallergic angioedema"
+          ],
+          [
+            "Basophilic leukemia"
+          ],
+          [
+            "Hereditary angioedema types I, II, & III"
+          ],
+          [
+            "ACE inhibitor-associated angioedema"
+          ],
+          [
+            "Systemic capillary leak syndrome"
+          ],
+          [
+            "Red man syndrome (vancomycin)"
+          ],
+          [
+            "Pheochromocytoma (paradoxical response)"
+          ],
+          [
+            "Footnotes: a. Acute asthma symptoms, acute generalized urticaria, or myocardial infarction symptoms can also occur during an anaphylactic episode. b. Histamine poisoning from fish, eg, tuna that has been stored at an elevated temperature; usually, more than one person eating the fish is affected. c. Pollen-food allergy syndrome is elicited by fruits and vegetables containing various plant proteins that cross-react with airborne allergens. Typical symptoms include oral allergy symptoms (itching, tingling and angioedema of the lips, tongue, palate, throat, and ears) after eating raw, but not cooked, fruits and vegetables. d. Distributive shock may be due to anaphylaxis or to spinal cord injury. e. In mastocytosis and clonal mast cell disorders, there is an increased risk of anaphylaxis; also, anaphylaxis may be the first manifestation of the disease."
+          ]
+        ]
+      },
+      "description": null,
+      "summary": "This table lists various conditions that can mimic anaphylaxis, including vasovagal syncope, acute asthma, panic attacks, and other syndromes, emphasizing the need for accurate diagnosis.",
+      "clinical_relevance": "Recognizing these mimics is essential to avoid misdiagnosis and ensure appropriate treatment, as some, like acute asthma or myocardial infarction, may coexist with anaphylaxis."
+    },
+    {
+      "artifact_id": "art_05",
+      "type": "figure",
+      "title": "Types of anaphylaxis",
+      "source_heading": "Pathogenesis of anaphylaxis",
+      "data": null,
+      "description": "The figure illustrates the different underlying mechanisms of anaphylaxis, including IgE-mediated (classic pathway via allergen-IgE-FcεRI on mast cells/basophils), non-IgE-mediated immunologic (complement, contact/coagulation system, IgG-mediated), and non-immunologic (direct mast cell activation via MRGPRX2, opioids, physical factors). It highlights that multiple pathways may coexist.",
+      "summary": "This figure outlines the pathogenic classifications of anaphylaxis, differentiating between IgE-dependent and IgE-independent triggers.",
+      "clinical_relevance": "Understanding the mechanism helps tailor diagnostic testing and management, particularly in identifying idiopathic cases or atypical triggers like alpha-gal."
+    },
+    {
+      "artifact_id": "art_06",
+      "type": "table",
+      "title": "Examples of anaphylaxis elicitors worldwide",
+      "source_heading": "ELICITORS AND COFACTORS OF ANAPHYLAXIS",
+      "data": {
+        "columns": [
+          "FOOD",
+          "INSECT VENOM",
+          "DRUGS"
+        ],
+        "rows": [
+          [
+            "celery",
+            "bee and wasp venom",
+            "analgesics"
+          ],
+          [
+            "cow's milk",
+            "fire ants",
+            "antibiotics"
+          ],
+          [
+            "hen's egg",
+            "horse fly",
+            "biologics"
+          ],
+          [
+            "peach",
+            "chemotherapeutics"
+          ],
+          [
+            "peanut",
+            "contrast media"
+          ],
+          [
+            "seeds eg sesame",
+            "proton pump inhibitors"
+          ],
+          [
+            "shellfish"
+          ],
+          [
+            "tree nuts"
+          ],
+          [
+            "wheat and buckwheat"
+          ]
+        ]
+      },
+      "description": null,
+      "summary": "This table categorizes common elicitors of anaphylaxis into food, insect venom, and drug groups, noting that frequency varies by age, geography, and lifestyle.",
+      "clinical_relevance": "Knowing regional and age-specific triggers guides history-taking and allergy testing to prevent future reactions."
+    },
+    {
+      "artifact_id": "art_07",
+      "type": "table",
+      "title": "Factors, which can increase severity of anaphylaxis",
+      "source_heading": "ELICITORS AND COFACTORS OF ANAPHYLAXIS",
+      "data": {
+        "columns": [
+          "Endogenous",
+          "Exogenous"
+        ],
+        "rows": [
+          [
+            "sex, age",
+            "medication"
+          ],
+          [
+            "cardiovascular disease",
+            "physical activity"
+          ],
+          [
+            "mastocytosis",
+            "psychological burden"
+          ],
+          [
+            "atopic disease",
+            "certain elicitors"
+          ],
+          [
+            "elevated tryptase",
+            "sleep deprivation"
+          ],
+          [
+            "ongoing infection"
+          ]
+        ]
+      },
+      "description": null,
+      "summary": "This table lists endogenous and exogenous factors that can exacerbate the severity of an anaphylactic reaction.",
+      "clinical_relevance": "Identifying cofactors is critical for risk assessment and personalized management, such as avoidance of exercise or alcohol near allergen exposure."
+    },
+    {
+      "artifact_id": "art_08",
+      "type": "table",
+      "title": "Recommended doses for intramuscular epinephrine (adrenaline)",
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS",
+      "data": {
+        "columns": [
+          "Patient Group",
+          "Dose"
+        ],
+        "rows": [
+          [
+            "Infants under 10 kg",
+            "0.01 mg/kg = 0.01 mL/kg of 1 mg/mL (1:1000)"
+          ],
+          [
+            "Children aged 1–5 years",
+            "0.15 mg = 0.15 mL of 1 mg/mL (1:1000)"
+          ],
+          [
+            "Children aged 6–12 years",
+            "0.3 mg = 1 mg/mL (1:1000)"
+          ],
+          [
+            "Teenagers and adults",
+            "0.5 mg = 1 mg/mL (1:1000)"
+          ],
+          [
+            "Footnote: 1 mg/mL (1:1000) is recommended for intramuscular injections as this allows a more appropriate volume to be injected"
+          ]
+        ]
+      },
+      "description": null,
+      "summary": "This table provides age- and weight-based dosing for intramuscular epinephrine, the first-line treatment for anaphylaxis.",
+      "clinical_relevance": "Accurate dosing ensures rapid and effective delivery of epinephrine to reverse severe reactions while minimizing side effects."
+    },
+    {
+      "artifact_id": "art_09",
+      "type": "table",
+      "title": "WAO systemic allergic reaction grading system",
+      "source_heading": "ANAPHYLAXIS SEVERITY GRADING",
+      "data": {
+        "columns": [
+          "Organ System",
+          "Grade 1",
+          "Grade 2",
+          "Grade 3",
+          "Grade 4",
+          "Grade 5"
+        ],
+        "rows": [
+          [
+            "General",
+            "Symptom(s)/sign(s) from 1 organ system present",
+            "Symptom(s)/ sign(s) from 2 organ",
+            "Lower airway",
+            "Lower airway",
+            "Lower or upper airway"
+          ],
+          [
+            "Cutaneous",
+            "Urticaria and/or erythema-warmth and/ or pruritus, other than localized at the injection site",
+            "Mild bronchospasm, eg, cough, wheezing, shortness of breath which responds to treatment",
+            "Severe bronchospasm eg, not responding or worsening in spite of treatment",
+            "Respiratory failure and/or"
+          ],
+          [
+            "And/or",
+            "And/or",
+            "And/or",
+            "Cardiovascular"
+          ],
+          [
+            "Tingling, or itching of the lipsa or Angioedema (not laryngeal)*",
+            "Gastrointestinal",
+            "Upper airway",
+            "Collapse/ hypotension"
+          ],
+          [
+            "Upper respiratory",
+            "Nasal symptoms (eg, sneezing, rhinorrhea, nasal pruritus, and/or nasal congestion)",
+            "Abdominal cramps* and/or vomiting/ diarrhea",
+            "Laryngeal edema with stridor",
+            "And/or"
+          ],
+          [
+            "And/or",
+            "Other",
+            "Any symptom(s)/ sign(s) from grades 1 or 3 would be included",
+            "Loss of consciousness (vasovagal excluded)"
+          ],
+          [
+            "Throat-clearing (itchy throat)a",
+            "Uterine cramps",
+            "Any symptom(s) sign(s) from grades 1, 3, or would be included"
+          ],
+          [
+            "Conjunctival",
+            "Erythema, pruritus, or tearing",
+            "Any symptom(s)/ sign(s) from grade 1 would be included"
+          ],
+          [
+            "Other",
+            "Nausea Metallic taste"
+          ],
+          [
+            "Footnotes",
+            "a. Application-site reactions would be considered local reactions. Oral mucosa symptoms, such as pruritus, after sublingual immunotherapy (SLIT) administration, or warmth and/or pruritus at a subcutaneous immunotherapy injection site would be considered a local reaction. Gastrointestinal tract reactions after SLIT or oral immunotherapy (OIT) would also be considered local reactions, unless they occur with other systemic manifestations. SLIT or OIT reactions associated with gastrointestinal tract and other systemic manifestations would be classified as SARs. SLIT local reactions would be classified according to the WAO grading system for SLIT local reactions. Adapted from Cox LS et al and Passlacqua G et al 110,112"
+          ]
+        ]
+      },
+      "description": null,
+      "summary": "This table presents the modified WAO grading system for systemic allergic reactions, categorizing symptoms from one organ system (Grade 1, not anaphylaxis) to life-threatening respiratory/cardiovascular collapse (Grades 4-5, anaphylaxis).",
+      "clinical_relevance": "The grading system aids in standardizing severity assessment, identifying reactions that meet anaphylaxis criteria (Grades 3-5) and guiding appropriate treatment intensity."
+    },
+    {
+      "artifact_id": "art_10",
+      "type": "figure",
+      "title": "Factors and cofactors influencing anaphylaxis",
+      "source_heading": "ELICITORS AND COFACTORS OF ANAPHYLAXIS",
+      "data": null,
+      "description": "The figure depicts the interplay of endogenous (e.g., age, sex, mastocytosis, cardiovascular disease) and exogenous (e.g., exercise, alcohol, medications like beta-blockers/ACE inhibitors) cofactors that can lower the threshold for or increase the severity of an anaphylactic reaction. It stresses that cofactor presence should be assessed in every patient.",
+      "summary": "This illustration highlights how patient-specific and environmental factors can modulate anaphylaxis severity, complementing the list in Table 5.",
+      "clinical_relevance": "Identifying and mitigating cofactors is key to preventing severe recurrences, as these modifiable factors may be avoidable."
+    },
+    {
+      "artifact_id": "art_11",
+      "type": "flowchart",
+      "title": "Management of anaphylaxis",
+      "source_heading": "ACUTE TREATMENT OF ANAPHYLAXIS",
+      "data": null,
+      "description": "The flowchart outlines the acute management steps: 1. Remove the trigger if possible. 2. Assess airway, breathing, circulation, mental status, and skin. 3. Call for emergency services. 4. Administer intramuscular epinephrine into the anterolateral thigh. 5. Position the patient supine (or semi-recumbent on left if pregnant, recovery position if unconscious). 6. Upon healthcare arrival, provide high-flow oxygen, establish IV access, give IV fluid bolus for cardiovascular instability, and consider cardiopulmonary resuscitation if needed. 7. For bronchoconstriction, inhaled beta-2 agonists may be given, but epinephrine remains primary. 8. Second-line medications (antihistamines, glucocorticoids) may be considered. 9. Monitor and repeat epinephrine every 5-15 minutes if symptoms persist. 10. Observe for at least 6-12 hours due to risk of biphasic reaction.",
+      "summary": "This algorithm presents a stepwise emergency response for anaphylaxis, emphasizing early intramuscular epinephrine as the cornerstone of treatment.",
+      "clinical_relevance": "Following this standardized approach reduces mortality and ensures timely intervention, especially in settings where healthcare professionals may be hesitant to use epinephrine."
+    },
+    {
+      "artifact_id": "art_12",
+      "type": "flowchart",
+      "title": "Long-term management of anaphylaxis",
+      "source_heading": "LONG-TERM MANAGEMENT OF ANAPHYLAXIS",
+      "data": null
+    }
+  ],
+  "_usage": {
+    "model": "deepseek-v4-pro",
+    "input_tokens": 189612,
+    "output_tokens": 17477,
+    "total_tokens": 207089,
+    "cost": null
+  }
+}

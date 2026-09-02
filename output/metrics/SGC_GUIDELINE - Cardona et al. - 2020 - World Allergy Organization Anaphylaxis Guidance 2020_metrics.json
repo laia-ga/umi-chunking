@@ -1,0 +1,31 @@
+{
+  "strategy": "sentence_group_chunking",
+  "type": "SentenceGroupChunker",
+  "abbreviation": "SGC",
+  "params": {
+    "sentences_per_chunk": 10,
+    "overlap": 2
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020",
+  "input_file": "GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020.md",
+  "number_of_chunks": 114,
+  "empty_chunks": 0,
+  "characters_min": 206,
+  "characters_p25": 330.5,
+  "characters_median": 405.5,
+  "characters_mean": 936.39,
+  "characters_p75": 978.5,
+  "characters_max": 5950,
+  "characters_std": 1140.13,
+  "characters_total": 106749,
+  "small_chunk_threshold": 400,
+  "small_chunks": 56,
+  "small_chunks_percentage": 49.12,
+  "characters_original": 84448,
+  "characters_ratio": 1.264,
+  "execution_time_seconds": 0.023283,
+  "ram_before_mb": 1126.17,
+  "ram_after_mb": 1126.17,
+  "ram_increase_mb": 0.0
+}

@@ -1,0 +1,30 @@
+{
+  "strategy": "semantic_embedding_based_chunking",
+  "type": "SemanticEmbeddingChunker",
+  "abbreviation": "SEBC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
+  "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "number_of_chunks": 92,
+  "empty_chunks": 0,
+  "characters_min": 4,
+  "characters_p25": 6.5,
+  "characters_median": 200.5,
+  "characters_mean": 676.98,
+  "characters_p75": 346.25,
+  "characters_max": 10099,
+  "characters_std": 1673.8,
+  "characters_total": 62282,
+  "small_chunk_threshold": 400,
+  "small_chunks": 69,
+  "small_chunks_percentage": 75.0,
+  "characters_original": 62436,
+  "characters_ratio": 0.998,
+  "execution_time_seconds": 15.072552,
+  "ram_before_mb": 1529.49,
+  "ram_after_mb": 1488.65,
+  "ram_increase_mb": -40.84
+}

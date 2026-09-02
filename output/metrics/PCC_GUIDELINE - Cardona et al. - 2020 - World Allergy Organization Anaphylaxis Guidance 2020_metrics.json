@@ -1,0 +1,32 @@
+{
+  "strategy": "parent_child_chunking",
+  "type": "ParentChildChunker",
+  "abbreviation": "PCC",
+  "params": {
+    "parent_chunk_size": 2000,
+    "child_chunk_size": 700,
+    "chunk_overlap": 100
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020",
+  "input_file": "GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020.md",
+  "number_of_chunks": 242,
+  "empty_chunks": 0,
+  "characters_min": 10,
+  "characters_p25": 380.25,
+  "characters_median": 573.0,
+  "characters_mean": 707.13,
+  "characters_p75": 686.0,
+  "characters_max": 1998,
+  "characters_std": 542.0,
+  "characters_total": 171125,
+  "small_chunk_threshold": 400,
+  "small_chunks": 65,
+  "small_chunks_percentage": 26.86,
+  "characters_original": 84448,
+  "characters_ratio": 2.026,
+  "execution_time_seconds": 0.003979,
+  "ram_before_mb": 1126.2,
+  "ram_after_mb": 1126.2,
+  "ram_increase_mb": 0.0
+}

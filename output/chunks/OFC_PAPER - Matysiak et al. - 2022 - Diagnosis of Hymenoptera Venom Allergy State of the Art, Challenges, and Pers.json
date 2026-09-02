@@ -1,0 +1,574 @@
+{
+  "strategy": "overlapping_token_chunking",
+  "type": "OverlappingTokenChunker",
+  "abbreviation": "OFC",
+  "params": {
+    "chunk_size": 500,
+    "overlap_size": 75
+  },
+  "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers",
+  "input_file": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.md",
+  "original_character_count": 66188,
+  "number_of_chunks": 43,
+  "chunks": [
+    {
+      "text": "# biomedicines\n\nReview\n\n## Diagnosis of Hymenoptera Venom Allergy: State of the Art, Challenges, and Perspectives\n\n#### Joanna Matysiak 1,* , Eliza Matuszewska 2 , Kacper Packi 2,3 and Agnieszka Klupczy´nska-Gabryszak 2\n\n- 1 Faculty of Health Sciences, Calisia University-Kalisz, 62-800 Kalisz, Poland\n- 2 Department of Inorganic and Analytical Chemistry, Poznan University of Medical Sciences, 60-806 Poznan, Poland\n- 3 AllerGen, Center of Personalized Medicine, 97-300 Piotrkow Trybunalski, Poland\n\n\n* Correspondence: [CORREO OMITIDO]\n\nCitation: Matysiak, J.; Matuszewska, E.; Packi, K.; Klupczyn´ska-Gabryszak, A. Diagnosis of Hymenoptera Venom Allergy: State of the Art, Challenges, and Perspectives. Biomedicines 2022, 10, 2170. https://doi.org/10.3390/ biomedicines10092170\n\nAcademic Editor: Claudia Landi\n\nReceived: 22 July 2022 Accepted: 31 August 2022 Published: 2 September 2022 Corrected: 8 August 2023\n\nPublisher’s Note: MDPI stays neutral with regard to jurisdictional claims in published maps and institutional affiliations.\n\nCopyright: © 2022 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https:// creativecommons.org/licenses/by/ 4.0/).\n\nAbstract: Hymenoptera venom allergy is the most common cause of anaphylaxis in adults and the second-most frequent in children. The proper diagnosis of this life-threatening allergy remains a challenge. This review focuses on the current knowledge regarding diagnostics of Hymenoptera venom allergy. The paper includes a brief description of the representatives of Hymenoptera order and the composition of their venoms. Then, diagnostic tests for allergy to Hymenoptera venom are described. Common diagnostic problems, especially double positivity in tests for IgE antibodies specific to honeybee and wasp venom",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 0,
+        "end_token": 500,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0000",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " the current knowledge regarding diagnostics of Hymenoptera venom allergy. The paper includes a brief description of the representatives of Hymenoptera order and the composition of their venoms. Then, diagnostic tests for allergy to Hymenoptera venom are described. Common diagnostic problems, especially double positivity in tests for IgE antibodies specific to honeybee and wasp venom, are also discussed. Special attention is paid to the search for new diagnostic capabilities using modern methodologies. Multidimensional molecular analysis offers an opportunity to characterize changes in body fluids associated with Hymenoptera venom allergy and yields a unique insight into the cell status. Despite recent developments in the diagnostics of Hymenoptera venom allergy, new testing methodologies are still needed to answer questions and doubts we have.\n\nKeywords: Hymenoptera venom allergy; diagnostics; Hymenoptera venom allergens; cross-reactive carbohydrate determinants\n\n#### 1. Introduction\n\nHymenoptera venom allergy is the most common cause of anaphylaxis in adults and the second-most frequent in children [1–3]. After an insect sting, normal local reaction (NR), large local reaction (LLR), or a whole spectrum of general symptoms, including anaphylactic shock, may occur. According to European data, the frequency of systemic reactions ranges from 0.3 to 8.9% in adults and even up to 32% in beekeepers [2]. Systemic symptoms may affect the skin (itching, urticaria, angioedema), respiratory (stridor, dyspnea, cough, bronchial obstruction), cardiovascular (hypotension, tachycardia, arrhythmias, cardiac arrest), gastrointestinal (vomiting, stomach pain, diarrhea), or even nervous system (dizziness, fear of death, fainting)—Figure 1 [4]. Fatal reactions are rare [5], but Hymenoptera stings cause 20% of cases of anaphylaxis-related fatalities [6]. Hymenoptera venom allergy is therefore a life-threatening allergy, and all patients who develop systemic symptoms after the sting require a detailed diagnosis. Proper diagnostics allows for the appropriate management and implementation of venom immunotherapy (VIT) [7–9]. VIT is currently the best form of treatment for venom allergies because it reduces the risk of subsequent severe reactions. It is also a therapy that significantly improves the quality of life. It",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 425,
+        "end_token": 925,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0001",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " allergy, and all patients who develop systemic symptoms after the sting require a detailed diagnosis. Proper diagnostics allows for the appropriate management and implementation of venom immunotherapy (VIT) [7–9]. VIT is currently the best form of treatment for venom allergies because it reduces the risk of subsequent severe reactions. It is also a therapy that significantly improves the quality of life. It should be emphasized that the proper qualification for VIT and its effectiveness depends on the correct diagnosis. Today, we know better and have better diagnostic tools, thanks to which diagnostics and therapy can be individualized to the needs of a single patient [10].\n\nBiomedicines 2022, 10, 2170. https://doi.org/10.3390/biomedicines10092170 https://www.mdpi.com/journal/biomedicines\n\nBiomedicinesBiomedicines2022,202210, 2170, 10, x FOR PEER REVIEW 2 of215of 16\n\nFigure 1. Allergic symptoms following a Hymenoptera sting.\n\nFigure 1. Allergic symptoms following a Hymenoptera sting.\n\n1.1. Hymenoptera\n\n1.1. Hymenoptera\n\nThe basic element in the diagnosis of venom allergy is the identification of the insect that has stung the patient—Figure 2. It is not only patients that have problems with distinguishing Hymenoptera insects, but sometimes also doctors [11,12]. Therefore, it is worth knowing the taxonomy of Hymenoptera insects and identifying their appearance and characteristics. Most allergic reactions after stings in Europe are caused by insects of the Apidae and Vespidae families [13], and very rarely they are caused by Formicidaethese are often present in America (red fire ant), Australia (jumper ant), and Asia (Asian needle ant)—Figure 2 [14]. The Vespidae family includes Vespula spp. (Vespula vulgaris, Vespula germanica)—named wasps in and yellow jackets, and hornets (Vespa crabro) and paper wasps, (Polistes dominula) in Europe and the USA, respectively. The most important representative of the Apidae family is the honeybee (Apis mellifera) and the less frequently stinging bumblebee (Bombus terrestris, B. agrar",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 850,
+        "end_token": 1350,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0002",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "ps in and yellow jackets, and hornets (Vespa crabro) and paper wasps, (Polistes dominula) in Europe and the USA, respectively. The most important representative of the Apidae family is the honeybee (Apis mellifera) and the less frequently stinging bumblebee (Bombus terrestris, B. agrarum, B. medics) [15]. The honeybee is the most aggressive towards humans. By contrast, wasps sting most often because they feed on sugars and are attracted to human food and drink, especially outdoors. In terms of allergy, hornets can be treated like large wasps. They are scary due to their size. However, they are relatively non-aggressive insects—they sting only when threatened, e.g., when we breach their nest. Bumblebees cause anaphylaxis mainly in gardeners since their role is to pollinate. Particularly noteworthy is the species Vespa velutina. At the beginning of the first decade of the 21st century, it was imported from China and began to spread through Western Europe. Contrary to media reports, scientific data from Europe show that this insect does not show more aggression towards humans than the other Vespidae, and the effects of its stings are similar to those of native species [16–18].\n\nThe basic element in the diagnosis of venom allergy is the identification of the insect that has stung the patient—Figure 2. It is not only patients that have problems with distinguishing Hymenoptera insects, but sometimes also doctors [11,12]. Therefore, it is worth knowing the taxonomy of Hymenoptera insects and identifying their appearance and characteristics. Most allergic reactions after stings in Europe are caused by insects of the Apidae and Vespidae families [13], and very rarely they are caused by Formicidae—these are often present in America (red fire ant), Australia (jumper ant), and Asia (Asian needle ant)—Figure 2 [14]. The Vespidae family includes Vespula spp. (Vespula vulgaris, Vespula germanica)—named wasps in and yellow jackets, and hornets (Vespa crabro) and paper wasps, (Polistes dominula) in Europe and the USA, respectively. The most important representative of the Apidae family is the honeybee (Apis mellifera) and the",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 1275,
+        "end_token": 1775,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0003",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "ula spp. (Vespula vulgaris, Vespula germanica)—named wasps in and yellow jackets, and hornets (Vespa crabro) and paper wasps, (Polistes dominula) in Europe and the USA, respectively. The most important representative of the Apidae family is the honeybee (Apis mellifera) and the less frequently stinging bumblebee (Bombus terrestris, B. agrarum, B. medics) [15]. The honeybee is the most aggressive towards humans. By contrast, wasps sting most often because they feed on sugars and are attracted to human food and drink, especially outdoors. In terms of allergy, hornets can be treated like large wasps. They are scary due to their size. However, they are relatively non-aggressive insects—they sting only when threatened, e.g., when we breach their nest. Bumblebees cause anaphylaxis mainly in gardeners since their role is to pollinate. Particularly noteworthy is the species Vespa velutina. At the beginning of the first decade of the 21st century, it was imported from China and began to spread through Western Europe. Contrary to media reports, scientific data from Europe show that this insect does not show more aggression towards humans than the other Vespidae, and the effects of its stings are similar to those of native species [16–18].\n\n|Biomedicines 2022, 10, 2170|3 of 15|\n|---|---|\n|Biomedicines 2023, 11, x FOR PEER REVIEW|2 of 2|\n\n\nFigure 2. Taxonomy of Hymenoptera.\n\nFigure 2. Taxonomy of Hymenoptera.\n\n###### Reference\n\n- 1.2. Hymenoptera Venoms\n\n\n1. Matysiak, J.; Matuszewska, E.; Packi, K.; Klupczyńska-Gabryszak, A. Diagnosis of Hymenoptera Venom Allergy: State of the Art, Challenges, and Perspectives. Biomedicines 2022, 10, 2170. https://doi.org/10.3390/biomedicines10092170.\n\nVenoms of Hymenoptera are secreted by glands located in the abdominal cavity of insects. Bees and other species",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 1700,
+        "end_token": 2200,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0004",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "optera Venom Allergy: State of the Art, Challenges, and Perspectives. Biomedicines 2022, 10, 2170. https://doi.org/10.3390/biomedicines10092170.\n\nVenoms of Hymenoptera are secreted by glands located in the abdominal cavity of insects. Bees and other species use venom mainly for defense against predators. Hence, Hymenoptera venoms are complex mixtures of different bioactive molecules that affect the intruder’s body. These odorless, transparent, and acidic liquids consist of biogenic amines, basic peptides and proteins—most of them have enzymatic activity [19]. Moreover, venoms contain sugars, phospholipids, pheromones, volatile compounds, and are also made up of about 80% water [20]. The best examined Hymenoptera venom so far is honeybee venom. Although several hundred proteins and peptides contained in bee venom have already been identified, its full composition is still not characterized [21,22]. So far, at least\n\nDisclaimer/Publisher’s Note: The statements, opinions and data contained in all publications are solely those of the individual author(s) and contributor(s) and not of MDPI and/or the editor(s). MDPI and/or the editor(s) disclaim responsibility for any injury to people or property resulting from any ideas, methods, instructions or products referred to in the content.\n\n- 18 compounds of Apis mellifera venom have been reported to have biological activity [23]. Among these are 12 allergens that are responsible for the allergic reactions that occur after exposure to venom. In venoms of other Hymenoptera species, five allergens have been identified in venoms of Vespula vulgaris and Polistes dominula, four allergens in the venom of Solenopsis invicta, three allergens in the venom of Myrmecia pilosula, and two allergens in venoms of Vespa crabro and Bombus terrestris (according to www.allergen.com (accessed on\n- 19 July 2022))—Figure 3. The major Apidae venom allergens include [24]:\n\n\n- • Api m 1 is the phospholipase A2—the major allergen of honeybee venom. Phospholipase A2 is also contained in Bombus spp. venoms (B",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 2125,
+        "end_token": 2625,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0005",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "ergen.com (accessed on\n- 19 July 2022))—Figure 3. The major Apidae venom allergens include [24]:\n\n\n- • Api m 1 is the phospholipase A2—the major allergen of honeybee venom. Phospholipase A2 is also contained in Bombus spp. venoms (Bom p 1 and Bom t 1), but the protein sequence identities between Apis mellifera and Bombus spp. is approximately 52–53%. Venoms of wasps contain phospholipase A1—Ves v 1 and Pol d 1, which differs in sequence and substrate specificity.\n- • Api m 2—hyaluronidase, the second major allergen of bee venom. Due to the similarity structure of bee hyaluronidase and wasp hyaluronidase, this allergen is the main cause of cross-reactions of IgE antibodies against the venom of these insects. Wasp hyaluronidase exists in 2 isoforms—Ves v 2.0101 and Ves v 2.0201.\n- • Api m 3—acid phosphatase is an enzyme that catalyzes the hydrolysis of monoesters and anhydrides of phosphoric acid. Together with the Api m 1 and Api m 2, it is considered as one of the most potent venom allergens.\n- • Api m 4—melittin is a minor allergen but the main component of bee venom, accounting for about half (45–50%) of its dry weight. Melittin possesses strong hemolytic and\n\n\n- antimicrobial properties. Api m 3 and Api m 4 have been identified only in bee venom so far.\n- • Api m 5—dipeptidyl peptidase-IV and its analogues (Ves v 3 and Pol d 3) are present in wasp venom and the European paper wasp venom. Ves v 3 and Pol d 3 are major allergens that show high cross-reactivity.\n- • Antigen 5—an allergen found in the venom of almost all Vespoidea insects; Ves v 5 is found in the venom of yellow jackets; and Pol d 5 is found in the venom of paper wasps. Its function is still unknown. However, it is known to be highly allerg",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 2550,
+        "end_token": 3050,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0006",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " are major allergens that show high cross-reactivity.\n- • Antigen 5—an allergen found in the venom of almost all Vespoidea insects; Ves v 5 is found in the venom of yellow jackets; and Pol d 5 is found in the venom of paper wasps. Its function is still unknown. However, it is known to be highly allergenic and responsible for cross-reactions. Antigen 5 is a key element in CRD (componentresolved diagnostics) to distinguish between bee and wasp venom allergy [25]. Other Apidae venom allergens are minor allergens:\n- • Api m 6—putative protease inhibitor. It stands for only 1–2% of venom’s dry weight and is considered one of the weakest bee venom allergens.\n- • Api m 7—CUB (Clr/Cls, urchin EGF-like protein and bone morphogenic protein 1) serine protease, which shows high IgE-binding activity.\n- • Api m 8—carboxylesterase-6. Bee venom contains less than 1% of this allergen, and its function is not yet fully elucidated.\n- • Api m 9—venom serine carboxypeptidase that belongs to the peptidase S10 family. There are no reports on the immunogenic properties of Api m 9.\n- • Api m 10—icarpin. This carbohydrate-rich protein is identified as a key allergen due to its importance not only in the diagnosis of bee venom allergy, but also in immunotherapy. VIT may be ineffective in patients allergic to Api m 10 due to being underrepresented in some therapeutic extracts [26].\n- • Api m 11—occurs in two isoforms: major royal jelly protein (MRJP) 8 (Api m 11.0101a), and MRJP9 (Api m 11.0201a). MRJPs are a family of proteins identified only in the Apis spp. These proteins constitute about 90% of all royal jelly (RJ) proteins. Human IgE antibodies recognize MRJP1 present in the sera of patients allergic to RJ, as well as to bee venom.\n- • Api m 12—vitellogenin, 200 kDa peptide belonging to the vitellogenin family and cross-reactive to Ves v 6. Among allergens of the V",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 2975,
+        "end_token": 3475,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0007",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " all royal jelly (RJ) proteins. Human IgE antibodies recognize MRJP1 present in the sera of patients allergic to RJ, as well as to bee venom.\n- • Api m 12—vitellogenin, 200 kDa peptide belonging to the vitellogenin family and cross-reactive to Ves v 6. Among allergens of the Vespinae and Polistinae, we distinguish:\n- • Ves v 1 and Pol d 1—phospholipase A1, a peptide with hemolytic activity.\n- • Ves v 2 and Pol d 2—hyaluronidase (in Vespinae isoforms Ves v 2.0101, Ves v 2.0201 exist) hydrolyzes hyaluronic acid. This may cause a pathogenic reaction in allergic patients.\n- • Ves v 3 and Pol d 3—dipeptidyl peptidase-IV, peptides with high cross-reactivity, resulting from 76.1% sequence identity. Their function is activating or inactivating substrates by cleaving dipeptides.\n- • Ves v 5 and Pol d 5—antigen 5, considered the most important wasp allergen, but its function is still unknown.\n- • Ves v 6—vitellogenin, considered an IgE sensitizer.\n\n\n#### 2. Diagnosis of Hymenoptera Venom Allergy\n\nDiagnostic tests for allergy to Hymenoptera venom should be performed in all patients with a history of systemic reaction following a Hymenoptera sting. Tests should also be performed optionally in patients with a history of LLR if they have a particularly high risk of being re-stung, e.g., beekeepers, farmers etc., and have a significant reduction in quality of life because of this [27–29].\n\nThe diagnosis of Hymenoptera venom allergy in all the abovementioned cases yields qualification for VIT. Immunotherapy is the most effective method of allergy treatment, during which the immune system develops an immunological tolerance to the allergen. However, it is a time-consuming method (3–5 years of therapy) and is associated with a risk of some side effects. That is why making the right diagnosis and starting VIT in a patient is so important.\n\nRoutine diagnostic tests include skin prick tests (SPTs) and venom sIgE level",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 3400,
+        "end_token": 3900,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0008",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " system develops an immunological tolerance to the allergen. However, it is a time-consuming method (3–5 years of therapy) and is associated with a risk of some side effects. That is why making the right diagnosis and starting VIT in a patient is so important.\n\nRoutine diagnostic tests include skin prick tests (SPTs) and venom sIgE level determinationFigure 4. To avoid false negative results, the mentioned tests should be performed at least 2–4 weeks after the sting (the so-called refractory period) [30]. According to European guidelines, SPTs should be performed first. If their results are negative, the next step involves intradermal tests [30,31]. Intradermal tests have a much higher sensitivity than prick tests, which has been shown in clinical studies. SPTs identify 49% of patients with Hymenoptera venom allergy (HVA), whereas the combination of SPTs and intradermal tests made it possible to diagnose 94% of patients [32]. In Europe, standardized venoms of Apis mellifera, Vespula spp., Polistes spp. and Vespa crabro are available and can be used for skin tests. Moreover, skin tests have been shown to be safe, even in patients with mastocytosis [33,34].\n\nBiomedicines 2022, 10, x FOR PEER REVIEW 5 of 16\n\nFigure 3. Allergens of Hymenoptera venoms.\n\nFigure 3. Allergens of Hymenoptera venoms.\n\nThe disadvantage of skin tests is that they are performed with venom extracts that may contain too little or even no allergen components at all. For this reason, they may be negative in patients only allergic to selected allergen proteins, e.g., Api m 10 [35]. Another problem with skin testing is the frequent double sensitizations with whole extracts.\n\n### 2. Diagnosis of Hymenoptera Venom Allergy\n\nDiagnostic tests for allergy to Hymenoptera venom should be performed in all patients with a history of systemic reaction following a Hymenoptera sting. Tests should also be performed optionally in patients with a history of LLR if they have a particularly high risk of being re-stung, e.g., beekeepers, farmers etc., and have a significant reduction in quality of life because of this [27–29].\n\nDetermination of",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 3825,
+        "end_token": 4325,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0009",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " performed in all patients with a history of systemic reaction following a Hymenoptera sting. Tests should also be performed optionally in patients with a history of LLR if they have a particularly high risk of being re-stung, e.g., beekeepers, farmers etc., and have a significant reduction in quality of life because of this [27–29].\n\nDetermination of venom sIgE with whole venom extracts has lower sensitivity than skin tests—even 20% of patients with positive skin tests have negative in vitro tests to whole extracts of venoms. Meanwhile, only 10% of patients with negative skin tests have positive venom sIgE. For this reason, it is currently recommended to perform skin tests and serological tests together [36]. In addition, it was observed that the sensitivity of wasp venom sIgE ranges from 83% up to 97% and is lower than for honeybee venom sIgE—98–100% [37].\n\nThe diagnosis of Hymenoptera venom allergy in all the abovementioned cases yields qualification for VIT. Immunotherapy is the most effective method of allergy treatment, during which the immune system develops an immunological tolerance to the allergen. However, it is a time-consuming method (3–5 years of therapy) and is associated with a risk of some side effects. That is why making the right diagnosis and starting VIT in a patient is so important.\n\nRoutine diagnostic tests include skin prick tests (SPTs) and venom sIgE level determination—Figure 4. To avoid false negative results, the mentioned tests should be performed at least 2–4 weeks after the sting (the so-called refractory period) [30]. According to European guidelines, SPTs should be performed first. If their results are negative, the next step involves intradermal tests [30,31]. Intradermal tests have a much higher sensitivity than prick tests, which has been shown in clinical studies. SPTs identify 49% of patients with Hymenoptera venom allergy (HVA), whereas the combination of SPTs and intradermal tests made it possible to diagnose 94% of patients [32]. In Europe,\n\nBiomedicinesBiomedicines20222022,,1010,,x2170FOR PEER REVIEW 6 6ofof1615\n\nFigure 4. Diagnostic tools in Hymenoptera venom allergy.\n\n",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 4250,
+        "end_token": 4750,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0010",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " whereas the combination of SPTs and intradermal tests made it possible to diagnose 94% of patients [32]. In Europe,\n\nBiomedicinesBiomedicines20222022,,1010,,x2170FOR PEER REVIEW 6 6ofof1615\n\nFigure 4. Diagnostic tools in Hymenoptera venom allergy.\n\nFigure 4. Diagnostic tools in Hymenoptera venom allergy.\n\nThe much higher sensitivity of in vitro tests is obtained by performing a componentresolved diagnosis (CRD) [38–40]. This innovative method is an increasingly better diagnostic tool in allergology today. Thanks to CRD, sIgE against single allergenic proteins can be determined. Using CRD, primary sensitization and cross-reactivity in patients with double positive results to whole extracts can be distinguished [41]. Very often (up to 75%), double sensitization to honeybee and yellow jacket venom is due to cross-reactive carbohydrate determinants—CCDs. Currently, allergens for CRD testing are produced as recombinant allergens without the naturally occurring insect glycosylation (CCDs).\n\nThe disadvantage of skin tests is that they are performed with venom extracts that may contain too little or even no allergen components at all. For this reason, they may be negative in patients only allergic to selected allergen proteins, e.g., Api m 10 [35]. Another problem with skin testing is the frequent double sensitizations with whole extracts.\n\nDetermination of venom sIgE with whole venom extracts has lower sensitivity than skin tests—even 20% of patients with positive skin tests have negative in vitro tests to whole extracts of venoms. Meanwhile, only 10% of patients with negative skin tests have positive venom sIgE. For this reason, it is currently recommended to perform skin tests and serological tests together [36]. In addition, it was observed that the sensitivity of wasp venom sIgE ranges from 83% up to 97% and is lower than for honeybee venom sIgE—98– 100% [37].\n\nCommercially available Hymenoptera allergens for CRD are:\n\n- • rApi m 1, rApi m 2, rApi m 3, rApi m 5, rApi m 10;\n- • rVes v 1, rVes v 5;\n- • rPol d 5",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 4675,
+        "end_token": 5175,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0011",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "100% [37].\n\nCommercially available Hymenoptera allergens for CRD are:\n\n- • rApi m 1, rApi m 2, rApi m 3, rApi m 5, rApi m 10;\n- • rVes v 1, rVes v 5;\n- • rPol d 5.\n\n\nThe much higher sensitivity of in vitro tests is obtained by performing a componentresolved diagnosis (CRD) [38–40]. This innovative method is an increasingly better diagnostic tool in allergology today. Thanks to CRD, sIgE against single allergenic proteins can be determined. Using CRD, primary sensitization and cross-reactivity in patients with double positive results to whole extracts can be distinguished [41]. Very often (up to 75%), double sensitization to honeybee and yellow jacket venom is due to cross-reactive carbohydrate determinants—CCDs. Currently, allergens for CRD testing are produced as recombinant allergens without the naturally occurring insect glycosylation (CCDs).\n\nAll abovementioned recombinant allergens are in CCD-free form. Using the diagnostic capabilities of CRD, the sensitivity of tests for bee venom allergy reaches 94.4% [42]. To achieve the sensitivity of diagnostic tests of 94–95% for allergy to honeybee venom, all six available allergen components—Api m 1–5 and Api 10—should be determined. It was also found that 74% of patients had sIgE to more than one allergen of bee venom. In wasp venom allergy, thanks to the combination of rVes v 5 and rVes v 1 determination, a sensitivity of up to 98% was observed [43].\n\nCRD tools facilitate the differentiation of cross-reactions between bee and wasp venom allergens [44] and are also more sensitive in patients with very low levels of sIgE to whole extracts [45]. In double sensitization, the CRD method is often helpful, but its possibilities are still limited and do not yield a resolve for all ambiguous clinical cases [46].\n\nCommercially available Hymenoptera allergens for CRD are:\n\n- • rApi m 1, rApi m 2, rApi m 3, rApi m 5, rApi m 10;\n- • rVes v 1, rVes v",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 5100,
+        "end_token": 5600,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0012",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " limited and do not yield a resolve for all ambiguous clinical cases [46].\n\nCommercially available Hymenoptera allergens for CRD are:\n\n- • rApi m 1, rApi m 2, rApi m 3, rApi m 5, rApi m 10;\n- • rVes v 1, rVes v 5;\n- • rPol d 5.\n\n\nIn the case of allergy to different wasp species (often between Vespula and Polistes), differential diagnosis is more complicated due to the independence from cross-reactions associated with CCDs [47,48]. This problem certainly requires further research. It may be beneficial to introduce further allergens into routine diagnostics—at least Pol d 1.\n\nAll abovementioned recombinant allergens are in CCD-free form. Using the diagnostic capabilities of CRD, the sensitivity of tests for bee venom allergy reaches 94.4% [42]. To achieve the sensitivity of diagnostic tests of 94–95% for allergy to honeybee venom, all six available allergen components—Api m 1–5 and Api 10—should\n\nThe possibilities offered by CRD contribute to the improvement not only of the diagnosis of venom allergy, but also better therapy—especially the appropriate qualification for\n\nVIT. So far, there was no correlation found between diagnostic test results (including CRD tests) and the severity of the allergic reaction after a sting [49]. However, some correlations between sIgE to bee venom allergens and the effectiveness of VIT was observed. Sensitization to Api m 3, Api m 5, and Api m 10 is a risk factor for the failure of VIT because of insufficient content of these allergens in therapeutic extracts [26,50]. Besides, as mentioned above, CRD tests are helpful in patients with double sensitization and cross-reactions to different venoms.\n\n#### 3. Additional Tests\n\nAmong other additional diagnostic methods used in the diagnosis of Hymenoptera venom allergy, the following tests should be mentioned: basophil activation test (BAT), measurement of basal serum tryptase (BST) level, and sIgG4—Figure 4.\n\nThe BAT is recommended if all other diagnostic tests fail to make a proper diagnosis in patients with a history of systemic reactions to a sting [51]. In the BAT, the whole blood is stimulated with venom allergens, and the activation",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 5525,
+        "end_token": 6025,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0013",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "ophil activation test (BAT), measurement of basal serum tryptase (BST) level, and sIgG4—Figure 4.\n\nThe BAT is recommended if all other diagnostic tests fail to make a proper diagnosis in patients with a history of systemic reactions to a sting [51]. In the BAT, the whole blood is stimulated with venom allergens, and the activation of basophils is measured by flow cytometry. This test can be performed in highly specialized laboratories, which limits its availability. A total of 67–81% of patients with negative skin tests and in vitro tests have a confirmed diagnosis of venom allergy by using the BAT [51,52]. The BAT is also recommended in the case of patients with a double positive result to Hymenoptera venoms and inconclusive results with recombinant allergens.\n\nBST levels should be marked in any case of systemic symptoms after a sting. An elevated BST shows a significantly greater risk of severe reactions to Hymenoptera stings. BST is also higher in patients with mastocytosis [53,54].\n\nVenom sIgG4 arises in contact with an antigen and may play a protective role [55]. Significantly higher levels of bee venom sIgG4 were detected in beekeepers, who are regularly stung by bees and do not experience allergic reactions, despite positive venom sIgE determinations. Increasing levels of sIgG4 are also observed during VIT. Further research is required to find out whether they can be used as a marker in VIT.\n\nThe sting challenge test with a live insect is currently not recommended as a routine diagnostic method because of the high risk of severe reactions after the sting. However, the sting challenge test with a live insect can be used to evaluate the efficacy of venom immunotherapy, especially in patients with a high risk of re-sting [15,56].\n\nTo summarize, it can be stated that modern diagnostics of Hymenoptera venom allergy are highly sensitive, especially with the use of CRD methods. By performing skin tests and in vitro tests together and, in special cases, additional tests, it is possible to diagnose most patients. However, it is still not possible to diagnose all patients who develop general symptoms following a sting. As shown, there are still difficulties in the case of double sensitization to venoms and making a decision about appropriate immunotherapy in this case is not easy. Venom allergy is a potentially life-threatening",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 5950,
+        "end_token": 6450,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0014",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " and, in special cases, additional tests, it is possible to diagnose most patients. However, it is still not possible to diagnose all patients who develop general symptoms following a sting. As shown, there are still difficulties in the case of double sensitization to venoms and making a decision about appropriate immunotherapy in this case is not easy. Venom allergy is a potentially life-threatening allergy; therefore, making such a diagnosis has a significant impact on the patient’s quality of life. There are always questions about the likelihood of another anaphylactic reaction. While we have more and more improved diagnostic tools, it should be emphasized that the results of skin and serological tests do not correlate with the severity of symptoms after the sting. Therefore, it is necessary to search for even better biomarkers of venom allergy, which can improve the diagnosis and effectiveness of immunotherapy.\n\n#### 4. Searching for New Diagnostic Capabilities of Hymenoptera Venom Allergy\n\nStudies conducted to determine the protein–peptide profile in biological material obtained from allergic patients and healthy individuals (control group) have shown a relationship between the presence of a condition and the composition of body fluids/tissues. Molecular differences between pathological and normal profiles can be used as biomarkers of disease processes and serve as a tool for correctly diagnosing and treating allergic conditions [57–61].\n\nProteins whose levels in the examined biological material correlate with the allergic disease have a regulatory function. According to the available literature, potential biomarkers include the hornsin, psoriasin, and calgranulin-B, as well as apolipoproteins, particularly apolipoprotein E9 and apolipoprotein H [57,59,60,62]. Acute phase proteins are the second crucial functional group of structures that are characteristic of allergic diseases. Their concentrations change in response to inflammation. This group includes plasma albumin, transferrin, lactoferrin, fibrinogen (alpha chain), and orosomucoid (ORM-1 and ORM-2) [62–64].\n\nHowever, very few experimental reports focus on diagnosing Hymenoptera allergy using modern analytical platforms, such as liquid chromatography coupled with mass spectrometry. Our research team has previously proposed a sophisticated methodology for searching for Hymenoptera venom allergy markers, based mainly on the mass spectrometry technique. For depicting alterations in protein–peptide patterns caused by bees’ and wasps’ venom, a highly sensitive",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 6375,
+        "end_token": 6875,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0015",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "ymenoptera allergy using modern analytical platforms, such as liquid chromatography coupled with mass spectrometry. Our research team has previously proposed a sophisticated methodology for searching for Hymenoptera venom allergy markers, based mainly on the mass spectrometry technique. For depicting alterations in protein–peptide patterns caused by bees’ and wasps’ venom, a highly sensitive and specific nano-liquid chromatography—matrix-assisted laser desorption/ionization time-of-flight mass spectrometry (nanoLC-MALDI-TOF MS) method was utilized [65]. As a result of the study, changes caused by venom administration have been observed in several compounds present in human serum. The proteins that change in allergic patients exposed to venom were coagulation factor XIII chain A, fibrinogen alpha chain, complement C4-A, and inter-alpha-trypsin inhibitor heavy chain H4. All these proteins participate in inflammation following an insect sting.\n\nAdditionally, in the previous study performed by our team using the MALDI-TOF MS technique, we identified inflammation factors whose expression were altered in human serum under the influence of Hymenoptera venom immunotherapy [66]. The results of the abovementioned research indicate that most of the identified proteins change in serum after occasional stinging by insects and after venom-specific immunotherapy-Figure 5.\n\nBiomedicines 2022, 10, x FOR PEER REVIEW 9 of 16\n\nFigure 5. Proteins changed under Hymenoptera insect sting and VIT (based on MALDI-TOF analyses).\n\nFigure 5. Proteins changed under Hymenoptera insect sting and VIT (based on MALDI-TOF analyses).\n\nMoreover, to discover new markers of Hymenoptera venom allergy in a group of inflammation factors, a Bio-Plex (Bio-Rad, Hercules, CA, USA) multiplex immunoassay was utilized [67]. Bio-Plex analyses indicate that levels of three inflammatory factors significantly change after venom exposition. These factors were: soluble CD30/tumor necrosis factor receptor superfamily, member 8 (sCD30/TNFRSF8), soluble tumor necrosis factor receptor 1 (sTNF-R1), and matrix metalloproteinase-3 (MMP-3).\n\nMoreover, to discover new markers of Hymenoptera venom allergy in a group of inflammation factors, a Bio-Plex (Bio-R",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 6800,
+        "end_token": 7300,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0016",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " factor receptor superfamily, member 8 (sCD30/TNFRSF8), soluble tumor necrosis factor receptor 1 (sTNF-R1), and matrix metalloproteinase-3 (MMP-3).\n\nMoreover, to discover new markers of Hymenoptera venom allergy in a group of inflammation factors, a Bio-Plex (Bio-Rad, Hercules, CA, USA) multiplex immunoassay was utilized [67]. Bio-Plex analyses indicate that levels of three inflammatory factors significantly change after venom exposition. These factors were: soluble CD30/tumor necrosis factor receptor superfamily, member 8 (sCD30/TNFRSF8), soluble tumor necrosis factor receptor 1 (sTNF-R1), and matrix metalloproteinase-3 (MMP-3).\n\nThe results of the proteomics studies indicate that Hymenoptera venom affects the expression of inflammatory features in serum. According to the available literature, the\n\nThe results of the proteomics studies indicate that Hymenoptera venom affects the expression of inflammatory features in serum. According to the available literature, the development of localized and systemic allergic reactions following the Hymenoptera sting is related chiefly to allergen-specific IgE antibodies. Consequently, the mediators of inflammation are released to restore homeostasis and neutralize toxins [68,69]. The abovementioned results prove these well-known reports, as several inflammatory\n\ndevelopment of localized and systemic allergic reactions following the Hymenoptera sting is related chiefly to allergen-specific IgE antibodies. Consequently, the mediators of inflammation are released to restore homeostasis and neutralize toxins [68,69]. The abovementioned results prove these well-known reports, as several inflammatory features were marked as differentiating between allergy and healthy controls. The findings indicate that as a result of venom exposition, the complement pathway is activated, causing the production of kinin and the symptoms of allergic sensitization. This mechanism is based on various reactions and the involvement of other complement components proteins which differentiate the studied groups, such as fibrinogen and coagulation factors. The inflammation is observed both after spontaneous stings and after controlled administration of small amounts of venom as immunotherapy. Additionally, both sTNFR-1 and sCD30 molecules can be essential in regulating or activating allergic inflammation [70–72].\n\nMoreover, for the search of the Hymenoptera venom allergy biomarkers,",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 7225,
+        "end_token": 7725,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0017",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " fibrinogen and coagulation factors. The inflammation is observed both after spontaneous stings and after controlled administration of small amounts of venom as immunotherapy. Additionally, both sTNFR-1 and sCD30 molecules can be essential in regulating or activating allergic inflammation [70–72].\n\nMoreover, for the search of the Hymenoptera venom allergy biomarkers, the methodology based on two-dimensional gel electrophoresis (2-DE) and LC–Orbitrap-MS was applied [73]. This study identified a cleaved form of haptoglobin as a specific protein marker in patients allergic to bee venom. Haptoglobin is a member of the family of acute-phase plasma proteins. It acts as a plasma detoxifier. This protein may be potentially used for the diagnosis of Hymenoptera allergy. Interestingly, the results suggest that cleaved haptoglobin may be a significant prognostic protein for anaphylaxis. It has been reported that a high incidence of hypersensitivity to bee venom may be associated with the haptoglobin genotype.\n\nThe molecular changes in serum caused by Hymenoptera venom also affect the metabolic profile. A study performed with liquid chromatography–tandem mass spectrometry revealed almost 300 metabolites that were significantly different among patients stung by wasp versus healthy controls [74]. The investigation of the metabolic profile indicated that changes occurring after wasp venom exposition were associated with sphingolipid, linoleic acid, and thiamine metabolism, as well as with phenylalanine, tyrosine, and tryptophan biosynthesis. These findings may provide a basis for exploring mechanisms of wasp sting sensitization and potential targets for sensitive therapy.\n\nThe effect of bee venom on the metabolic profile was also confirmed in a study on rats [75]. The research results obtained using nuclear magnetic resonance (NMR) showed that the bioactivities of bee venom are correlated to serum compounds involved in oxidation reduction or inflammatory reactions.\n\nThe development of modern, high-throughput analytical techniques (proteomics and metabolomics platforms) allow for a detailed analysis of alterations accompanying Hymenoptera venom allergy at the molecular level and gives a broader perspective on the subject. Understanding the inflammatory reaction caused by Hymenoptera venom may help to explain the complete mechanism of bee venom allergy. This knowledge may contribute to developing new, sensitive, and specific diagnostic methods for allergy. The improvement of the diagnostics is essential because",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 7650,
+        "end_token": 8150,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0018",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " a detailed analysis of alterations accompanying Hymenoptera venom allergy at the molecular level and gives a broader perspective on the subject. Understanding the inflammatory reaction caused by Hymenoptera venom may help to explain the complete mechanism of bee venom allergy. This knowledge may contribute to developing new, sensitive, and specific diagnostic methods for allergy. The improvement of the diagnostics is essential because, at the present state of knowledge, it is difficult to differentiate between allergies caused by different insect species, e.g., bees and wasps.\n\n#### 5. Diagnostic Challenge—Carbohydrate Determinants as the Cause of Cross-Reactivity in Patients Allergic to Hymenoptera Venom\n\nRegarding allergy to Hymenoptera venom, a common diagnostic problem is the double positivity in tests for IgE antibodies specific to honeybee and wasp venom. In such patients, the true dual sensitization and possible cross-reactivity of venom hyaluronidases and carbohydrate determinants should be taken into account [76]. The distinction between double sensitization and cross-reactivity is critical in selecting an allergen for specific immunotherapy in patients who do not recognize the culprit insect [77,78].\n\nCross-reacting carbohydrate determinants (CCDs) are present on glycoproteins and are widespread in plants and insect venom [79]. Thus, anti-CCD IgE antibodies may reflect sensitization to plant or Hymenoptera venom allergens and are an important cause of a double positive results in vitro.\n\nand carbohydrate determinants should be taken into account [76]. The distinction between double sensitization and cross-reactivity is critical in selecting an allergen for specific immunotherapy in patients who do not recognize the culprit insect [77,78].\n\nCross-reacting carbohydrate determinants (CCDs) are present on glycoproteins and are widespread in plants and insect venom [79]. Thus, anti-CCD IgE antibodies may reflect sensitization to plant or Hymenoptera venom allergens and are an important cause of a double positive results in vitro.\n\nBiomedicines 2022, 10, 2170 10 of 15\n\nMany of the allergens in bee and wasp venom are glycoproteins with an N-glycan structure [80]. Major allergens such as Api m 1, Api m 2, and Ves v 2 are glycosylated. Both protein and CCD structures can act as epitopes for IgE antibodies.",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 8075,
+        "end_token": 8575,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0019",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "2170 10 of 15\n\nMany of the allergens in bee and wasp venom are glycoproteins with an N-glycan structure [80]. Major allergens such as Api m 1, Api m 2, and Ves v 2 are glycosylated. Both protein and CCD structures can act as epitopes for IgE antibodies. Glycosylation (post-translational modification of protein) occurs in the endoplasmic reticulum [80]. Plant glycoproteins are composed of asparagine (N)-linked glycans carrying the core alpha1,3-fucose and betha1,2-xylose and are represented by the two N-glycan structures: MUXF (bromelain) and MMXF (horseradish peroxidase). Insect glycoproteins contain fucose attached to the core and MMF3F6 represents their typical structure - Figure 6 [81]. The main differences between insect and plant CCDs are the presence of xylose or α1,6fucose. IgE antibodies directed against these glycan epitopes provide the basis for in vitro cross-reactivity of allergens from various sources. Horseradish peroxidase, ascorbate oxidase, and bromelain are the glycoproteins routinely used to identify IgE reactivity to CCD determinants [80].\n\nMany of the allergens in bee and wasp venom are glycoproteins with an N-glycan structure [80]. Major allergens such as Api m 1, Api m 2, and Ves v 2 are glycosylated. Both protein and CCD structures can act as epitopes for IgE antibodies. Glycosylation (post-translational modification of protein) occurs in the endoplasmic reticulum [80]. Plant glycoproteins are composed of asparagine (N)-linked glycans carrying the core alpha1,3fucose and betha1,2-xylose and are represented by the two N-glycan structures: MUXF (bromelain) and MMXF (horseradish peroxidase). Insect glycoproteins contain fucose attached to the core and MMF3F6 represents their typical structure—Figure 6 [81]. The main differences between insect and plant CCDs are the presence of xylose or α1,6-fucose",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 8500,
+        "end_token": 9000,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0020",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " structures: MUXF (bromelain) and MMXF (horseradish peroxidase). Insect glycoproteins contain fucose attached to the core and MMF3F6 represents their typical structure—Figure 6 [81]. The main differences between insect and plant CCDs are the presence of xylose or α1,6-fucose. IgE antibodies directed against these glycan epitopes provide the basis for in vitro crossreactivity of allergens from various sources. Horseradish peroxidase, ascorbate oxidase, and bromelain are the glycoproteins routinely used to identify IgE reactivity to CCD determinants [80].\n\nFigure 6. Insect venom N-glycan structure.\n\nResearch shows that up to 59% of the patients allergic to Hymenoptera venom reveal positive results to more than one venom. More than the half of them show specific IgE antibodies to CCDs [37]. According to data obtained by Kochuyt AM et al., IgE to CCD was detected in up to 72% of patients allergic to insects [82]. Renato Erzen et al. revealed true double sensitization in 37 patients (56.1%) and cross-reactivity in 29 of 66 participants with double positivity for wasp and bee venoms [76]. They showed that levels of anti-CCD IgE antibodies (oilseed rape OSR pollen and MUXF3) in participants with cross-reactivity were significantly higher when compared to patients with a true double sensitization to wasp and bee venoms. These results confirm that IgE antibodies against carbohydrate determinants frequently cause double positivity in in vitro tests.\n\nThe clinical relevance of anti-CCD IgE antibodies is controversial; however, it is generally believed that they are clinically insignificant [83]. Van der Veen et al. examined patients with IgE antibodies to peanuts and found that participants without a clinical peanut allergy needed a much higher concentration of peanut extract to cause basophil degranulation than clinically allergic patients [84]. Similarly, Mari et al. determined that 82.7% of patients with IgE antibodies specific to plant glycans showed IgE binding to transgenic lactoferrin. However, compared to the main grass pollen allergen, the levels of lactoferrin needed for IgE biological activity were 5–6 orders of magnitude higher [85]. In beekeepers, CCD-specific",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 8925,
+        "end_token": 9425,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0021",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " et al. determined that 82.7% of patients with IgE antibodies specific to plant glycans showed IgE binding to transgenic lactoferrin. However, compared to the main grass pollen allergen, the levels of lactoferrin needed for IgE biological activity were 5–6 orders of magnitude higher [85]. In beekeepers, CCD-specific IgE antibodies were detected in only 7.7% due to a tolerance to CCD. Mertens et al. revealed the activity of anti-CCD IgE antibodies and suggested that they are clinically irrelevant in the case of insect venoms. A BAT for bee/wasp venom in participants with monosensitized Hymenoptera venom was positive for both venoms in 67% of patients with IgE antibodies to CCD. When using deglycosylated venom, the BAT was positive with only one insect venom [86]. However, other studies emphasized the clinical importance of CCD [87,88]. Researchers observed the degranulation of basophils in patients allergic to zucchini, celery, and tomato after exposure to bromelain, while the deglycosylated tomato allergen Lyc e 2 has lost its ability to degranulate. In addition, some participants had a positive oral challenge test with celery and zucchini; however, in vitro tests showed that these patients were only sensitized to carbohydrate determinants. Recent analysis of the natural (glycosylated) and recombinant Api m 1 bee venom allergen has\n\nshown that glycosylation increases allergenicity by presenting more epitopes. Moreover, the glycosylated allergen had the ability to more strongly induce basophil activation [89]. It should be noted that the clinical irrelevance of anti-CCD antibodies is still under discussion. It cannot be excluded that carbohydrate determinants cause clinical symptoms in some people.\n\nThe distinction between true double sensitivity to bee and wasp venom and crossreactivity remains a challenge and makes it difficult to identify the culprit. Currently, component-resolved diagnostic (CRD) is used to distinguish between double sensitivity and cross-reactivity instead of an inhibition test. The use of advanced tools of CRD for CCD-free venom allergens enables the detailed characterization of sensitization profiles and the identification of the venom causing clinical symptoms [89,90].\n\n#### 6. Concluding Remarks\n\nDespite developments in diagnostics of Hymenoptera venom allergy, new testing methodologies",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 9350,
+        "end_token": 9850,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0022",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " to distinguish between double sensitivity and cross-reactivity instead of an inhibition test. The use of advanced tools of CRD for CCD-free venom allergens enables the detailed characterization of sensitization profiles and the identification of the venom causing clinical symptoms [89,90].\n\n#### 6. Concluding Remarks\n\nDespite developments in diagnostics of Hymenoptera venom allergy, new testing methodologies are still needed to answer questions and doubts we have. Proteomics and metabolomics investigations, enabling analyses of hundreds of molecules in a sample, yield a unique insight into cell status. Therefore, continuation of the performed omics studies can provide more complete information on patients’ health condition and lead to improved diagnostic capabilities. In clinical practice, there are still problems: first of all, is the distinction between asymptomatic sensitization and symptomatic venom allergy. There are many doubts in the case of cross-reactions and their differentiation with true double sensitization. Therefore, we still need the further development of already known diagnostic methods—including the introduction of new molecules using CRD, as well as completely new diagnostic methods, which may help solve the current diagnostic difficulties, and thus improve the patient’s treatment. It should be emphasized that only the correct diagnosis of allergy to Hymenoptera venom allows for the proper therapy of the patient, i.e., venom immunotherapy.\n\nAuthor Contributions: Conceptualization, J.M. and A.K.-G.; methodology, J.M.; software, J.M.; investigation, J.M.; resources, J.M.; data curation, J.M.; writing—original draft preparation, J.M., K.P., E.M. and A.K.-G.; writing—review and editing, J.M. and K.P.; visualization, K.P.; supervision, J.M.; project administration, J.M.; funding acquisition, J.M. All authors have read and agreed to the published version of the manuscript.\n\nFunding: This research received no external funding. Institutional Review Board Statement: Not applicable. Informed Consent Statement: Not applicable. Data Availability Statement: Not applicable. Conflicts of Interest: The authors declare no conflict of interest.\n\n#### References\n\n- 1. Worm, M.; Eckermann, O.; Dölle, S.; Aberer, W.; Beyer, K.; Hawranek, T.; Hompes, S.; Koehli, A.; Mahler, V.; Nemat, K.; et al. Triggers and Treatment of Anaphylaxis: An Analysis of",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 9775,
+        "end_token": 10275,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0023",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "#### References\n\n- 1. Worm, M.; Eckermann, O.; Dölle, S.; Aberer, W.; Beyer, K.; Hawranek, T.; Hompes, S.; Koehli, A.; Mahler, V.; Nemat, K.; et al. Triggers and Treatment of Anaphylaxis: An Analysis of 4,000 Cases from Germany, Austria and Switzerland. Dtsch. Arztebl. Int. 2014, 111, 367–375. [CrossRef] [PubMed]\n- 2. Bilò, M.B. Anaphylaxis Caused by Hymenoptera Stings: From Epidemiology to Treatment. Allergy 2011, 66 (Suppl. S95), 35–37. [CrossRef]\n- 3. Blank, S.; Haemmerle, S.; Jaeger, T.; Russkamp, D.; Ring, J.; Schmidt-Weber, C.B.; Ollert, M. Prevalence of Hymenoptera Venom Allergy and Sensitization in the Population-Representative German KORA Cohort. Allergo J. Int. 2019, 28, 183–191. [CrossRef]\n- 4. Golden, D.B.K. Anaphylaxis to Insect Stings. Immunol. Allergy Clin. N. Am. 2015, 35, 287–302. [CrossRef] [PubMed]\n- 5. Feás, X.; Vidal, C.; Remesar, S. What We Know about Sting-Related Deaths? Human Fatalities Caused by Hornet, Wasp and Bee Stings in Europe (1994–2016). Biology 2022, 11, 282. [CrossRef]\n- 6. Blank, S.; Pehlivanli, S.; Methe, H.; Schmidt-Weber, C.B.; Biedermann, T.; Horny, H.P.; Kristensen, T.; Amar, Y.; Köberle, M.; Brockow, K.; et al. Fatal Anaphylaxis Following a Hornet Sting in a Yellow Jacket Venom-Sensitized Patient with Undetected Monoclonal Mast Cell Activation Syndrome and without Previous History of a Systemic Sting Reaction. J. Allergy Clin. Immunol. Pract. ",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 10200,
+        "end_token": 10700,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0024",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": ", T.; Amar, Y.; Köberle, M.; Brockow, K.; et al. Fatal Anaphylaxis Following a Hornet Sting in a Yellow Jacket Venom-Sensitized Patient with Undetected Monoclonal Mast Cell Activation Syndrome and without Previous History of a Systemic Sting Reaction. J. Allergy Clin. Immunol. Pract. 2020, 8, 401–403.e2. [CrossRef]\n\n\n- 7. Golden, D.B.K.; Demain, J.; Freeman, T.; Graft, D.; Tankersley, M.; Tracy, J.; Blessing-Moore, J.; Bernstein, D.; Dinakar, C.; Greenhawt, M.; et al. Stinging Insect Hypersensitivity: A Practice Parameter Update 2016. Ann. Allergy Asthma Immunol. 2017, 118, 28–54. [CrossRef]\n- 8. Tankersley, M.S.; Ledford, D.K. Stinging Insect Allergy: State of the Art 2015. J. Allergy Clin. Immunol. Pract. 2015, 3, 315–322. [CrossRef]\n- 9. Ludman, S.W.; Boyle, R.J. Stinging Insect Allergy: Current Perspectives on Venom Immunotherapy. J. Asthma Allergy 2015, 8, 75–86. [CrossRef]\n- 10. Sturm, G.J.; Arzt-Gradwohl, L.; Varga, E.M. Medical Algorithms: Diagnosis and Treatment of Hymenoptera Venom Allergy. Allergy 2019, 74, 2016–2018. [CrossRef]\n- 11. Baker, T.W.; Forester, J.P.; Johnson, M.L.; Stolfi, A.; Stahl, M.C. The HIT Study: Hymenoptera Identification Test–How Accurate Are People at Identifying Stinging Insects? Ann. Allergy Asthma Immunol. 2014, 113, 267–270. [CrossRef] [PubMed]\n- 12. Baker, T.W.; Forester, J.P.; Johnson, M.L.; Sikora, J.M.; Stolfi, A.; Stahl, M.C. Stinging Insect Identification: Are the Allergy Specialists",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 10625,
+        "end_token": 11125,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0025",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " Allergy Asthma Immunol. 2014, 113, 267–270. [CrossRef] [PubMed]\n- 12. Baker, T.W.; Forester, J.P.; Johnson, M.L.; Sikora, J.M.; Stolfi, A.; Stahl, M.C. Stinging Insect Identification: Are the Allergy Specialists Any Better than Their Patients? Ann. Allergy Asthma Immunol. 2016, 116, 431–434. [CrossRef] [PubMed]\n- 13. Worm, M.; Moneret-Vautrin, A.; Scherer, K.; Lang, R.; Fernandez-Rivas, M.; Cardona, V.; Kowalski, M.L.; Jutel, M.; PoziomkowskaGesicka, I.; Papadopoulos, N.G.; et al. First European Data from the Network of Severe Allergic Reactions (NORA). Allergy 2014, 69, 1397–1404. [CrossRef] [PubMed]\n- 14. Jeong, K.Y.; Yi, M.H.; Son, M.; Lyu, D.; Lee, J.H.; Yong, T.S.; Park, J.W. IgE Reactivity of Recombinant Pac c 3 from the Asian Needle Ant (Pachycondyla Chinensis). Int. Arch. Allergy Immunol. 2016, 169, 93–100. [CrossRef]\n- 15. Bilò, M.B.; Pravettoni, V.; Bignardi, D.; Bonadonna, P.; Mauro, M.; Novembre, E.; Quercia, O.; Cilia, M.; Cortellini, G.; Costantino, M.T.; et al. Hymenoptera Venom Allergy: Management of Children and Adults in Clinical Practice. J. Investig. Allergol. Clin. Immunol. 2019, 29, 180–205. [CrossRef] [PubMed]\n- 16. Vidal, C. The Asian Wasp Vespa Velutina Nigrithorax: Entomological and Allergological Characteristics. Clin. Exp. Allergy 2022, 52, 489–498. [CrossRef]\n- 17. Feás, X. Human Fatalities Caused by Horn",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 11050,
+        "end_token": 11550,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0026",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "] [PubMed]\n- 16. Vidal, C. The Asian Wasp Vespa Velutina Nigrithorax: Entomological and Allergological Characteristics. Clin. Exp. Allergy 2022, 52, 489–498. [CrossRef]\n- 17. Feás, X. Human Fatalities Caused by Hornet, Wasp and Bee Stings in Spain: Epidemiology at State and Sub-State Level from 1999 to 2018. Biology 2021, 10, 73. [CrossRef]\n- 18. Vidal, C.; Armisén, M.; Monsalve, R.; González-Vidal, T.; Lojo, S.; López-Freire, S.; Méndez, P.; Rodríguez, V.; Romero, L.; Galán, A.; et al. Anaphylaxis to Vespa Velutina Nigrithorax: Pattern of Sensitization for an Emerging Problem in Western Countries. J. Investig. Allergol. Clin. Immunol. 2021, 31, 228–235. [CrossRef]\n- 19. Khalil, A.; Elesawy, B.H.; Ali, T.M.; Ahmed, O.M. Bee Venom: From Venom to Drug. Molecules 2021, 26, 4941. [CrossRef]\n- 20. Pucca, M.B.; Cerni, F.A.; Oliveira, I.S.; Jenkins, T.P.; Argemí, L.; Sørensen, C.V.; Ahmadi, S.; Barbosa, J.E.; Laustsen, A.H. Bee Updated: Current Knowledge on Bee Venom and Bee Envenoming Therapy. Front. Immunol. 2019, 10, 2090. [CrossRef]\n- 21. van Vaerenbergh, M.; Debyser, G.; Devreese, B.; de Graaf, D.C. Exploring the Hidden Honeybee (Apis Mellifera) Venom Proteome by Integrating a Combinatorial Peptide Ligand Library Approach with FTMS. J. Proteomics 2014, 99, 169–178. [CrossRef] [PubMed]\n- 22. Danneels, E.L.; van Vaerenbergh, M.; Debyser, G.; Devre",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 11475,
+        "end_token": 11975,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0027",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "Apis Mellifera) Venom Proteome by Integrating a Combinatorial Peptide Ligand Library Approach with FTMS. J. Proteomics 2014, 99, 169–178. [CrossRef] [PubMed]\n- 22. Danneels, E.L.; van Vaerenbergh, M.; Debyser, G.; Devreese, B.; de Graaf, D.C. Honeybee Venom Proteome Profile of Queens and Winter Bees as Determined by a Mass Spectrometric Approach. Toxins 2015, 7, 4468–4483. [CrossRef] [PubMed]\n- 23. Abd El-Wahed, A.A.; Khalifa, S.A.M.; Sheikh, B.Y.; Farag, M.A.; Saeed, A.; Larik, F.A.; Koca-Caliskan, U.; AlAjmi, M.F.; Hassan, M.; Wahabi, H.A.; et al. Bee Venom Composition: From Chemistry to Biological Activity. Stud. Nat. Prod. Chem. 2019, 60, 459–484. [CrossRef]\n- 24. Burzyn´ska, M.; Piasecka-kwiatkowska, D. A Review of Honeybee Venom Allergens and Allergenicity. Int. J. Mol. Sci. 2021, 22, 8371. [CrossRef] [PubMed]\n- 25. Blank, S.; Bazon, M.L.; Grosch, J.; Schmidt-Weber, C.B.; Brochetto-Braga, M.R.; Bilò, M.B.; Jakob, T. Antigen 5 Allergens of Hymenoptera Venoms and Their Role in Diagnosis and Therapy of Venom Allergy. Curr. Allergy Asthma Rep. 2020, 20, 58. [CrossRef]\n- 26. Frick, M.; Fischer, J.; Helbling, A.; Ruëff, F.; Wieczorek, D.; Ollert, M.; Pfützner, W.; Müller, S.; Huss-Marp, J.; Dorn, B.; et al. Predominant Api m 10 Sensitization as Risk Factor for Treatment Failure in Honey Bee Venom Immunotherapy. J. Allergy Clin. Immunol. 2016, ",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 11900,
+        "end_token": 12400,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0028",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " Wieczorek, D.; Ollert, M.; Pfützner, W.; Müller, S.; Huss-Marp, J.; Dorn, B.; et al. Predominant Api m 10 Sensitization as Risk Factor for Treatment Failure in Honey Bee Venom Immunotherapy. J. Allergy Clin. Immunol. 2016, 138, 1663–1671.e9. [CrossRef]\n- 27. Sturm, G.J.; Kranzelbinder, B.; Schuster, C.; Sturm, E.M.; Bokanovic, D.; Vollmann, J.; Crailsheim, K.; Hemmer, W.; Aberer, W. Sensitization to Hymenoptera Venoms Is Common, but Systemic Sting Reactions Are Rare. J. Allergy Clin. Immunol. 2014, 133, 1635–1643.e1. [CrossRef]\n- 28. Mosbech, H.; Tang, L.; Linneberg, A. Insect Sting Reactions and Specific IgE to Venom and Major Allergens in a General Population. Int. Arch. Allergy Immunol. 2016, 170, 194–200. [CrossRef]\n- 29. Vachová, M.; Panzner, P.; Malkusová, I.; Hanzlíková, J.; Vlas, T. Utility of Laboratory Testing for the Diagnosis of Hymenoptera Venom Allergy. Allergy Asthma Proc. 2016, 37, 248–255. [CrossRef]\n- 30. Pfaar, O.; Bachert, C.; Bufe, A.; Buhl, R.; Ebner, C.; Eng, P.; Friedrichs, F.; Fuchs, T.; Hamelmann, E.; Hartwig-Bade, D.; et al. Guideline on Allergen-Specific Immunotherapy in IgE-Mediated Allergic Diseases: S2k Guideline of the German Society for Allergology and Clinical Immunology (DGAKI), the Society for Pediatric Allergy and Environmental Medicine (GPA), the Medical Association of German Allergologists (AeDA), the Austrian Society for Allergy and Immunology (ÖGAI), the Swiss Society for Allergy and Immunology (SGAI), the German Society",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 12325,
+        "end_token": 12825,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0029",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " Guideline of the German Society for Allergology and Clinical Immunology (DGAKI), the Society for Pediatric Allergy and Environmental Medicine (GPA), the Medical Association of German Allergologists (AeDA), the Austrian Society for Allergy and Immunology (ÖGAI), the Swiss Society for Allergy and Immunology (SGAI), the German Society of Dermatology (DDG), the German Society of Oto-Rhino-Laryngology, Head and Neck. Allergo J. Int. 2014, 23, 28–67. [CrossRef]\n- 31. Bilò, B.M.; Bonifazi, F. Hymenoptera Venom Immunotherapy. Immunotherapy 2011, 3, 229–246. [CrossRef] [PubMed]\n\n\n- 32. Vos, B.; Köhler, J.; Müller, S.; Stretz, E.; Ruëff, F.; Jakob, T. Spiking Venom with RVes v 5 Improves Sensitivity of IgE Detection in Patients with Allergy to Vespula Venom. J. Allergy Clin. Immunol. 2013, 131, 1225–1227.e1. [CrossRef] [PubMed]\n- 33. Möbs, C.; Ipsen, H.; Mayer, L.; Slotosch, C.; Petersen, A.; Würtzen, P.A.; Hertl, M.; Pfützner, W. Birch Pollen Immunotherapy Results in Long-Term Loss of Bet v 1-Specific TH2 Responses, Transient TR1 Activation, and Synthesis of IgE-Blocking Antibodies. J. Allergy Clin. Immunol. 2012, 130, 1108–1116.e6. [CrossRef]\n- 34. van de Veen, W.; Stanic, B.; Wirz, O.F.; Jansen, K.; Globinska, A.; Akdis, M. Role of Regulatory B Cells in Immune Tolerance to Allergens and Beyond. J. Allergy Clin. Immunol. 2016, 138, 654–665. [CrossRef]\n- 35. Blank, S.; Seismann, H.; Michel, Y.; McIntyre, M.; Cifuentes, L.; Braren, I.; Grunwald",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 12750,
+        "end_token": 13250,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0030",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " Cells in Immune Tolerance to Allergens and Beyond. J. Allergy Clin. Immunol. 2016, 138, 654–665. [CrossRef]\n- 35. Blank, S.; Seismann, H.; Michel, Y.; McIntyre, M.; Cifuentes, L.; Braren, I.; Grunwald, T.; Darsow, U.; Ring, J.; Bredehorst, R.; et al. Api m 10, a Genuine A. Mellifera Venom Allergen, Is Clinically Relevant but Underrepresented in Therapeutic Extracts. Allergy 2011, 66, 1322–1329. [CrossRef]\n- 36. Alfaya Arias, T.; Soriano Gómis, V.; Soto Mera, T.; Vega Castro, A.; Vega Gutiérrez, J.M.; Alonso Llamazares, A.; Antolín Amérigo, D.; Carballada Gonzalez, F.J.; Dominguez Noche, C.; Gutierrez Fernandez, D.; et al. Key Issues in Hymenoptera Venom Allergy: An Update. J. Investig. Allergol. Clin. Immunol. 2017, 27, 19–31. [CrossRef] [PubMed]\n- 37. Müller, U.R.; Johansen, N.; Petersen, A.B.; Fromberg-Nielsen, J.; Haeberli, G. Hymenoptera Venom Allergy: Analysis of Double Positivity to Honey Bee and Vespula Venom by Estimation of IgE Antibodies to Species-Specific Major Allergens Api M1 and Ves V5. Allergy Eur. J. Allergy Clin. Immunol. 2009, 64, 543–548. [CrossRef]\n- 38. Blank, S.; Bilò, M.B.; Ollert, M. Component-Resolved Diagnostics to Direct in Venom Immunotherapy: Important Steps towards Precision Medicine. Clin. Exp. Allergy 2018, 48, 354–364. [CrossRef]\n- 39. Bilò, M.B.; Ollert, M.; Blank, S. The Role of Component-Resolved Diagnosis in Hymenoptera Venom Allergy. Curr. Opin. Allergy Clin. Immunol. 2019,",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 13175,
+        "end_token": 13675,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0031",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": ". Exp. Allergy 2018, 48, 354–364. [CrossRef]\n- 39. Bilò, M.B.; Ollert, M.; Blank, S. The Role of Component-Resolved Diagnosis in Hymenoptera Venom Allergy. Curr. Opin. Allergy Clin. Immunol. 2019, 19, 614–622. [CrossRef]\n- 40. Ollert, M.; Blank, S. Anaphylaxis to Insect Venom Allergens: Role of Molecular Diagnostics. Curr. Allergy Asthma Rep. 2015, 15, 26. [CrossRef]\n- 41. Jakob, T.; Müller, U.; Helbling, A.; Spillner, E. Component Resolved Diagnostics for Hymenoptera Venom Allergy. Curr. Opin. Allergy Clin. Immunol. 2017, 17, 363–372. [CrossRef] [PubMed]\n- 42. Köhler, J.; Blank, S.; Müller, S.; Bantleon, F.; Frick, M.; Huss-Marp, J.; Lidholm, J.; Spillner, E.; Jakob, T. Component Resolution Reveals Additional Major Allergens in Patients with Honeybee Venom Allergy. J. Allergy Clin. Immunol. 2014, 133, 1383–1389. [CrossRef] [PubMed]\n- 43. Hofmann, S.C.; Pfender, N.; Weckesser, S.; Huss-Marp, J.; Jakob, T. Added Value of IgE Detection to RApi m 1 and RVes v 5 in Patients with Hymenoptera Venom Allergy. J. Allergy Clin. Immunol. 2011, 127, 265–267. [CrossRef]\n- 44. Müller, U.; Schmid-Grendelmeier, P.; Hausmann, O.; Helbling, A. IgE to Recombinant Allergens Api m 1, Ves v 1, and Ves v 5 Distinguish Double Sensitization from Crossreaction in Venom Allergy. Allergy 2012, 67, 1069–1073. [CrossRef] [PubMed]\n- 45. Korošec, P.; Val",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 13600,
+        "end_token": 14100,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0032",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " A. IgE to Recombinant Allergens Api m 1, Ves v 1, and Ves v 5 Distinguish Double Sensitization from Crossreaction in Venom Allergy. Allergy 2012, 67, 1069–1073. [CrossRef] [PubMed]\n- 45. Korošec, P.; Valenta, R.; Mittermann, I.; Celesnik,ˇ N.; Šilar, M.; Zidarn, M.; Košnik, M. High Sensitivity of CAP-FEIA RVes v 5 and RVes v 1 for Diagnosis of Vespula Venom Allergy. J. Allergy Clin. Immunol. 2012, 129, 1406–1408. [CrossRef]\n- 46. Šelb, J.; Bidovec Stojkovi´c, U.; Bajrovi´c, N.; Kopaˇc, P.; Eržen, R.; Zidarn, M.; Košnik, M.; Korošec, P. Limited Ability of Recombinant Hymenoptera Venom Allergens to Resolve IgE Double Sensitization. J. Allergy Clin. Immunol. Pract. 2018, 6, 2118–2120. [CrossRef] [PubMed]\n- 47. Monsalve, R.I.; Vega, A.; Marqués, L.; Miranda, A.; Fernández, J.; Soriano, V.; Cruz, S.; Domínguez-Noche, C.; Sánchez-Morillas, L.; Armisen-Gil, M.; et al. Component-Resolved Diagnosis of Vespid Venom-Allergic Individuals: Phospholipases and Antigen 5s Are Necessary to Identify Vespula or Polistes Sensitization. Allergy 2012, 67, 528–536. [CrossRef]\n- 48. Quercia, O.; Cova, V.; Martini, M.; Cortellini, G.; Murzilli, F.; Bignardi, D.; Cilia, M.; Scarpa, A.; Bilò, M.B. CAP-Inhibition, Molecular Diagnostics, and Total IgE in the Evaluation of Polistes and Vespula Double Sensitization. Int. Arch. Allergy Immunol.",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 14025,
+        "end_token": 14525,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0033",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " Martini, M.; Cortellini, G.; Murzilli, F.; Bignardi, D.; Cilia, M.; Scarpa, A.; Bilò, M.B. CAP-Inhibition, Molecular Diagnostics, and Total IgE in the Evaluation of Polistes and Vespula Double Sensitization. Int. Arch. Allergy Immunol. 2018, 177, 365–369. [CrossRef]\n- 49. Gattinger, P.; Lupinek, C.; Kalogiros, L.; Silar, M.; Zidarn, M.; Korosec, P.; Koessler, C.; Novak, N.; Valenta, R.; Mittermann, I. The Culprit Insect but Not Severity of Allergic Reactions to Bee and Wasp Venom Can Be Determined by Molecular Diagnosis. PLoS ONE 2018, 13, e0199250. [CrossRef]\n- 50. Blank, S.; Etzold, S.; Darsow, U.; Schiener, M.; Eberlein, B.; Russkamp, D.; Wolf, S.; Graessel, A.; Biedermann, T.; Ollert, M.; et al. Component-Resolved Evaluation of the Content of Major Allergens in Therapeutic Extracts for Specific Immunotherapy of Honeybee Venom Allergy. Hum. Vaccines Immunother. 2017, 13, 2482–2489. [CrossRef]\n- 51. Korošec, P.; Šilar, M.; Eržen, R.; Celesnik,ˇ N.; Bajrovic´, N.; Zidarn, M.; Košnik, M. Clinical Routine Utility of Basophil Activation Testing for Diagnosis of Hymenoptera-Allergic Patients with Emphasis on Individuals with Negative Venom-Specific IgE Antibodies. Int. Arch. Allergy Immunol. 2013, 161, 363–368. [CrossRef] [PubMed]\n- 52. Balzer, L.; Pennino, D.; Blank, S.; Seismann, H.; Darsow, U.; Schnedler, M.; McIntyre, M.; Ollert, M.W.; Durham, S.R.; Spillner, E.; et al. Basophil Activation Test Using Recombinant Allergens",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 14450,
+        "end_token": 14950,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0034",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "PubMed]\n- 52. Balzer, L.; Pennino, D.; Blank, S.; Seismann, H.; Darsow, U.; Schnedler, M.; McIntyre, M.; Ollert, M.W.; Durham, S.R.; Spillner, E.; et al. Basophil Activation Test Using Recombinant Allergens: Highly Specific Diagnostic Method Complementing Routine Tests in Wasp Venom Allergy. PLoS ONE 2014, 9, e108619. [CrossRef] [PubMed]\n- 53. Michel, J.; Brockow, K.; Darsow, U.; Ring, J.; Schmidt-Weber, C.B.; Grunwald, T.; Blank, S.; Ollert, M. Added Sensitivity of Component-Resolved Diagnosis in Hymenoptera Venom-Allergic Patients with Elevated Serum Tryptase and/or Mastocytosis. Allergy 2016, 71, 651–660. [CrossRef] [PubMed]\n- 54. Bonadonna, P.; Bonifacio, M.; Lombardo, C.; Zanotti, R. Hymenoptera Allergy and Mast Cell Activation Syndromes. Curr. Allergy Asthma Rep. 2016, 16, 5. [CrossRef] [PubMed]\n\n\n- 55. van de Veen, W.; Stanic, B.; Yaman, G.; Wawrzyniak, M.; Söllner, S.; Akdis, D.G.; Rückert, B.; Akdis, C.A.; Akdis, M. IgG4 Production Is Confined to Human IL-10-Producing Regulatory B Cells That Suppress Antigen-Specific Immune Responses. J. Allergy Clin. Immunol. 2013, 131, 1204–1212. [CrossRef]\n- 56. Bilo, B.M.; Rueff, F.; Mosbech, H.; Bonifazi, F.; Oude-Elberink, J.N.G. Diagnosis of Hymenoptera Venom Allergy. Allergy 2005, 60, 1339–1349. [CrossRef]\n- 57. Bloemen, K.; van den Heuvel, R.; Govarts, E.; Hooyberghs, J.; Nelen, V.;",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 14875,
+        "end_token": 15375,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0035",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "-Elberink, J.N.G. Diagnosis of Hymenoptera Venom Allergy. Allergy 2005, 60, 1339–1349. [CrossRef]\n- 57. Bloemen, K.; van den Heuvel, R.; Govarts, E.; Hooyberghs, J.; Nelen, V.; Witters, E.; Desager, K.; Schoeters, G. A New Approach to Study Exhaled Proteins as Potential Biomarkers for Asthma. Clin. Exp. Allergy 2011, 41, 346–356. [CrossRef]\n- 58. Holm, T.; Rutishauser, D.; Kai-Larsen, Y.; Lyutvinskiy, Y.; Stenius, F.; Zubarev, R.A.; Agerberth, B.; Alm, J.; Scheynius, A. Protein Biomarkers in Vernix with Potential to Predict the Development of Atopic Eczema in Early Childhood. Allergy 2014, 69, 104–112. [CrossRef]\n- 59. Won, K.K.; Hwang, H.R.; Do, H.K.; Phil, Y.L.; Yu, J.I.; Ryu, H.Y.; Sung, G.P.; Bae, K.H.; Sang, C.L. Glycoproteomic Analysis of Plasma from Patients with Atopic Dermatitis: CD5L and ApoE as Potential Biomarkers. Exp. Mol. 2008, 40, 677–685. [CrossRef]\n- 60. Molin, S.; Merl, J.; Dietrich, K.A.; Regauer, M.; Flaig, M.; Letulé, V.; Saucke, T.; Herzinger, T.; Ruzicka, T.; Hauck, S.M. The Hand Eczema Proteome: Imbalance of Epidermal Barrier Proteins. Br. J. Dermatol. 2015, 172, 994–1001. [CrossRef]\n- 61. Chiappori, A.; de Ferrari, L.; Folli, C.; Mauri, P.; Riccio, A.M.; Canonica, G.W. Biomarkers and Severe Asthma: A Critical Appraisal. Clin. Mol. Allergy 2015, 13, 20. [Cross",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 15300,
+        "end_token": 15800,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0036",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "1001. [CrossRef]\n- 61. Chiappori, A.; de Ferrari, L.; Folli, C.; Mauri, P.; Riccio, A.M.; Canonica, G.W. Biomarkers and Severe Asthma: A Critical Appraisal. Clin. Mol. Allergy 2015, 13, 20. [CrossRef] [PubMed]\n- 62. Wang, H.; Gottfries, J.; Barrenäs, F.; Benson, M. Identification of Novel Biomarkers in Seasonal Allergic Rhinitis by Combining Proteomic, Multivariate and Pathway Analysis. PLoS ONE 2011, 6, e23563. [CrossRef] [PubMed]\n- 63. Choi, G.S.; Shin, S.Y.; Kim, J.H.; Lee, H.Y.; Palikhe, N.S.; Ye, Y.M.; Kim, S.H.; Park, H.S. Serum Lactoferrin Level as a Serologic Biomarker for Allergic Rhinitis. Clin. Exp. Allergy 2010, 40, 403–410. [CrossRef] [PubMed]\n- 64. Leonardi, A.; Palmigiano, A.; Mazzola, E.A.; Messina, A.; Milazzo, E.M.S.; Bortolotti, M.; Garozzo, D. Identification of Human Tear Fluid Biomarkers in Vernal Keratoconjunctivitis Using ITRAQ Quantitative Proteomics. Allergy 2014, 69, 254–260. [CrossRef] [PubMed]\n- 65. Matuszewska, E.; Matysiak, J.; Br¸eborowicz, A.; Olejniczak, K.; Kycler, Z.; Kokot, Z.J.; Matysiak, J. Proteomic Features Characterization of Hymenoptera Venom Allergy. Allergy Asthma Clin. Immunol. 2019, 15, 77. [CrossRef]\n- 66. Matysiak, J.; Matuszewska, E.; Kowalski, M.L.; Kosin´ski, S.W.; Smorawska-Sabanty, E.; Matysiak, J. Association between Venom Immunotherapy and Changes in Serum Protein—Peptide Patterns. Vaccines 2021, 9",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 15725,
+        "end_token": 16225,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0037",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "Ref]\n- 66. Matysiak, J.; Matuszewska, E.; Kowalski, M.L.; Kosin´ski, S.W.; Smorawska-Sabanty, E.; Matysiak, J. Association between Venom Immunotherapy and Changes in Serum Protein—Peptide Patterns. Vaccines 2021, 9, 249. [CrossRef]\n- 67. Packi, K.; Matysiak, J.; Matuszewska, E.; Br˛eborowicz, A.; Kycler, Z.; Matysiak, J. New Biomarkers of Hymenoptera Venom Allergy in a Group of Inflammation Factors. Int. J. Environ. Res. Public Health 2021, 18, 4011. [CrossRef]\n- 68. Araki, S.; Yamamoto, Y.; Saito, R.; Kawakita, A.; Eguchi, M.; Goto, M.; Kubo, K.; Kawagoe, R.; Kawada, Y.; Kusuhara, K. Plasma but Not Serum Brain-Derived Neurotrophic Factor Concentration Is Decreased by Oral Glucose Tolerance Test-Induced Hyperglycemia in Children. J. Pediatric Endocrinol. Metab. 2017, 30, 525–530. [CrossRef]\n- 69. Galli, S.J.; Tsai, M. IgE and Mast Cells in Allergic Disease. Nat. Med. 2012, 18, 693–704. [CrossRef]\n- 70. Ahmad, S.; Azid, N.A.; Boer, J.C.; Lim, J.; Chen, X.; Plebanski, M.; Mohamud, R. The Key Role of TNF-TNFR2 Interactions in the Modulation of Allergic Inflammation: A Review. Front. Immunol. 2018, 9, 2572. [CrossRef] [PubMed]\n- 71. Polte, T.; Behrendt, A.K.; Hansen, G. Direct Evidence for a Critical Role of CD30 in the Development of Allergic Asthma. J. Allergy Clin. Immunol. 2006, 118, 942–948. [CrossRef]\n- 72. Croft, M.",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 16150,
+        "end_token": 16650,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0038",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " [PubMed]\n- 71. Polte, T.; Behrendt, A.K.; Hansen, G. Direct Evidence for a Critical Role of CD30 in the Development of Allergic Asthma. J. Allergy Clin. Immunol. 2006, 118, 942–948. [CrossRef]\n- 72. Croft, M. The TNF Family in T Cell Differentiation and Function—Unanswered Questions and Future Directions. Semin. Immunol. 2014, 26, 183–190. [CrossRef] [PubMed]\n- 73. Ryu, J.M.; Na, H.H.; Park, J.S.; Ahn, B.S.; Kim, K.C. Identification of Cleaved Haptoglobin in the Serum of Bee VenomHypersensitive Patients. J. Acupunct. Meridian Stud. 2021, 14, 102–109. [CrossRef] [PubMed]\n- 74. Yang, X.; Chai, L.; Liu, C.; Liu, M.; Han, L.; Li, C.; Guo, H.; Sun, Y.; Rao, X.; Xiao, M.; et al. Serum Metabolomics Analysis in Wasp Sting Patients. Biomed. Res. Int. 2018, 2018, 5631372. [CrossRef] [PubMed]\n- 75. Zhao, Y.; Zhang, J.; Chen, Y.; Li, Z.; Nie, H.; Peng, W.; Su, S. Altered Serum Metabolite Profiling and Relevant Pathway Analysis in Rats Stimulated by Honeybee Venom: New Insight into Allergy to Honeybee Venom. J. Agric. Food Chem. 2018, 66, 871–880. [CrossRef]\n- 76. Eržen, R.; Korošec, P.; Šilar, M.; Mušicˇ, E.; Košnik, M. Carbohydrate Epitopes as a Cause of Cross-Reactivity in Patients Allergic to Hymenoptera Venom. Wien. Klin. Wochenschr. 2009, 121, 349–352. [CrossRef]\n- 77. Bousquet, J.; Müller, U.R.; Dreborg, S.; Jarisch, R.; Malling, H.-J.; Mosbech, H.; Urban",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 16575,
+        "end_token": 17075,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0039",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": " Allergic to Hymenoptera Venom. Wien. Klin. Wochenschr. 2009, 121, 349–352. [CrossRef]\n- 77. Bousquet, J.; Müller, U.R.; Dreborg, S.; Jarisch, R.; Malling, H.-J.; Mosbech, H.; Urbanek, R.; Youlten, L. Immunotherapy with Hymenoptera Venoms. Position Paper of the Working Group on Immunotherapy of the European Academy of Allergy and Clinical Immunology. Allergy 1987, 42, 401–413. [CrossRef]\n- 78. Straumann, F.; Bucher, C.; Wüthrich, B. Double Sensitization to Honeybee and Wasp Venom: Immunotherapy with One or with Both Venoms? Value of FEIA Inhibition for the Identification of the Cross-Reacting Ige Antibodies in Double-Sensitized Patients to Honeybee and Wasp Venom. Int. Arch. Allergy Immunol. 2000, 123, 268–274. [CrossRef]\n- 79. Aalberse, R.C.; Koshte, V.; Clemens, J.G.J. Immunoglobulin E Antibodies That Crossreact with Vegetable Foods, Pollen, and Hymenoptera Venom. J. Allergy Clin. Immunol. 1981, 68, 356–364. [CrossRef]\n- 80. Brehler, R.; Grundmann, S.; Stöcker, B. Cross-Reacting Carbohydrate Determinants and Hymenoptera Venom Allergy. Curr. Opin. Allergy Clin. Immunol. 2013, 13, 360–364. [CrossRef]\n- 81. Altmann, F. The Role of Protein Glycosylation in Allergy. Int. Arch. Allergy Immunol. 2007, 142, 99–115. [CrossRef] [PubMed]\n\n\n- 82. Kochuyt, A.M.; van Hoeyveld, E.M.; Stevens, E.A.M. Prevalence and Clinical Relevance of Specific Immunoglobulin E to Pollen Caused by Sting-Induced Specific Immunoglobulin E to Cross-Reacting Carbohydrate Determinants in Hymenoptera Venoms.",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 17000,
+        "end_token": 17500,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0040",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "PubMed]\n\n\n- 82. Kochuyt, A.M.; van Hoeyveld, E.M.; Stevens, E.A.M. Prevalence and Clinical Relevance of Specific Immunoglobulin E to Pollen Caused by Sting-Induced Specific Immunoglobulin E to Cross-Reacting Carbohydrate Determinants in Hymenoptera Venoms. Clin. Exp. Allergy 2005, 35, 441–447. [CrossRef] [PubMed]\n- 83. van Ree, R. Carbohydrate Epitopes and Their Relevance for the Diagnosis and Treatment of Allergic Diseases. Int. Arch. Allergy Immunol. 2002, 129, 189–197. [CrossRef] [PubMed]\n- 84. van der Veen, M.J.; van Ree, R.; Aalberse, R.C.; Akkerdaas, J.; Koppelman, S.J.; Jansen, H.M.; van der Zee, J.S. Poor Biologic Activity of Cross-Reactive IgE Directed to Carbohydrate Determinants of Glycoproteins. J. Allergy Clin. Immunol. 1997, 100, 327–334. [CrossRef]\n- 85. Mari, A.; Ooievaar-De Heer, P.; Scala, E.; Giani, M.; Pirrotta, L.; Zuidmeer, L.; Bethell, D.; van Ree, R. Evaluation by Double-Blind Placebo-Controlled Oral Challenge of the Clinical Relevance of IgE Antibodies against Plant Glycans. Allergy 2008, 63, 891–896. [CrossRef]\n- 86. Mertens, M.; Amler, S.; Moerschbacher, B.M.; Brehler, R. Cross-Reactive Carbohydrate Determinants Strongly Affect the Results of the Basophil Activation Test in Hymenoptera-Venom Allergy. Clin. Exp. Allergy 2010, 40, 1333–1345. [CrossRef]\n- 87. Fötisch, K.; Altmann, F.; Haustein, D.; Vieths, S. Involvement of Carbohydrate Epitopes in the IgE Response of Celery-Allergic Patients. Int. Arch. Allergy Immun",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 17425,
+        "end_token": 17925,
+        "token_count": 500
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0041",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "2010, 40, 1333–1345. [CrossRef]\n- 87. Fötisch, K.; Altmann, F.; Haustein, D.; Vieths, S. Involvement of Carbohydrate Epitopes in the IgE Response of Celery-Allergic Patients. Int. Arch. Allergy Immunol. 1999, 120, 30–42. [CrossRef] [PubMed]\n- 88. Vieths, S.; Lüttkopf, D.; Reindl, J.; Anliker, M.D.; Wüthrich, B.; Ballmer-Weber, B.K. Allergens in Celery and Zucchini. Allergy 2002, 57 (Suppl. S72), 100–105. [CrossRef]\n- 89. Matricardi, P.M.; Kleine-Tebbe, J.; Hoffmann, H.J.; Valenta, R.; Hilger, C.; Hofmaier, S.; Aalberse, R.C.; Agache, I.; Asero, R.; Ballmer-Weber, B.; et al. EAACI Molecular Allergology User’s Guide. Pediatr Allergy Immunol 2016, 27 (Suppl. S23), 1–250. [CrossRef]\n- 90. Mari, A. IgE to Cross-Reactive Carbohydrate Determinants: Analysis of the Distribution and Appraisal of the in Vivo and in Vitro Reactivity. Int. Arch. Allergy Immunol. 2002, 129, 286–295. [CrossRef]",
+      "metadata": {
+        "chunker": "overlapping_token_chunking",
+        "chunk_size": 500,
+        "overlap_size": 75,
+        "start_token": 17850,
+        "end_token": 18201,
+        "token_count": 351
+      },
+      "chunk_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0042",
+      "doc_id": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "sliding_window_token_chunking",
+  "type": "SlidingWindowTokenChunker",
+  "abbreviation": "SWC",
+  "params": {
+    "window_size": 500,
+    "step_size": 75
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "number_of_chunks": 214,
+  "empty_chunks": 0,
+  "characters_min": 401,
+  "characters_p25": 1620.75,
+  "characters_median": 1740.5,
+  "characters_mean": 1822.25,
+  "characters_p75": 2055.25,
+  "characters_max": 2710,
+  "characters_std": 327.23,
+  "characters_total": 389962,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 59485,
+  "characters_ratio": 6.556,
+  "execution_time_seconds": 0.014321,
+  "ram_before_mb": 1121.39,
+  "ram_after_mb": 1121.39,
+  "ram_increase_mb": 0.0
+}

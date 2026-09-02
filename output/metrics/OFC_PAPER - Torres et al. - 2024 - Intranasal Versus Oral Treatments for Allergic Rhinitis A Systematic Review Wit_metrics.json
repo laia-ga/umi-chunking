@@ -1,0 +1,31 @@
+{
+  "strategy": "overlapping_token_chunking",
+  "type": "OverlappingTokenChunker",
+  "abbreviation": "OFC",
+  "params": {
+    "chunk_size": 500,
+    "overlap_size": 75
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
+  "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "number_of_chunks": 40,
+  "empty_chunks": 0,
+  "characters_min": 917,
+  "characters_p25": 1601.5,
+  "characters_median": 1799.0,
+  "characters_mean": 1833.92,
+  "characters_p75": 1982.25,
+  "characters_max": 2790,
+  "characters_std": 433.67,
+  "characters_total": 73357,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 62436,
+  "characters_ratio": 1.175,
+  "execution_time_seconds": 0.009562,
+  "ram_before_mb": 1121.39,
+  "ram_after_mb": 1121.39,
+  "ram_increase_mb": 0.0
+}

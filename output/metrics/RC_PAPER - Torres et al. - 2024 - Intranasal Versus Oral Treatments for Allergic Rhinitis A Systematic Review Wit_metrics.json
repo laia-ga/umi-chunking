@@ -1,0 +1,31 @@
+{
+  "strategy": "recursive_chunking",
+  "type": "RecursiveChunker",
+  "abbreviation": "RC",
+  "params": {
+    "chunk_size": 2000,
+    "chunk_overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
+  "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "number_of_chunks": 37,
+  "empty_chunks": 0,
+  "characters_min": 294,
+  "characters_p25": 1596.0,
+  "characters_median": 1818.0,
+  "characters_mean": 1733.27,
+  "characters_p75": 1946.0,
+  "characters_max": 1997,
+  "characters_std": 311.07,
+  "characters_total": 64131,
+  "small_chunk_threshold": 400,
+  "small_chunks": 1,
+  "small_chunks_percentage": 2.7,
+  "characters_original": 62436,
+  "characters_ratio": 1.027,
+  "execution_time_seconds": 0.000824,
+  "ram_before_mb": 1126.2,
+  "ram_after_mb": 1126.2,
+  "ram_increase_mb": 0.0
+}

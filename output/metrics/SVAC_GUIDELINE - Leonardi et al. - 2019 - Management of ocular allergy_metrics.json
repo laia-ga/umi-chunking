@@ -1,0 +1,31 @@
+{
+  "strategy": "semantic_variance_adaptive_chunking",
+  "type": "SemanticVarianceAdaptiveChunker",
+  "abbreviation": "SVAC",
+  "params": {
+    "sensitivity": 0.2,
+    "window_size": 5
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "number_of_chunks": 80,
+  "empty_chunks": 0,
+  "characters_min": 2,
+  "characters_p25": 182.75,
+  "characters_median": 490.0,
+  "characters_mean": 1031.96,
+  "characters_p75": 1041.0,
+  "characters_max": 18058,
+  "characters_std": 2212.24,
+  "characters_total": 82557,
+  "small_chunk_threshold": 400,
+  "small_chunks": 35,
+  "small_chunks_percentage": 43.75,
+  "characters_original": 82701,
+  "characters_ratio": 0.998,
+  "execution_time_seconds": 8.827446,
+  "ram_before_mb": 2197.43,
+  "ram_after_mb": 2179.68,
+  "ram_increase_mb": -17.75
+}

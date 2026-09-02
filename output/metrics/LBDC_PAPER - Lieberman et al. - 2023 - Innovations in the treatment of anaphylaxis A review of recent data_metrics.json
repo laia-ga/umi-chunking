@@ -1,0 +1,31 @@
+{
+  "strategy": "llm_boundary_detection_chunking",
+  "type": "LLMBoundaryDetectionChunker",
+  "abbreviation": "LBDC",
+  "params": {
+    "max_chars": 2000,
+    "overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "number_of_chunks": 32,
+  "empty_chunks": 0,
+  "characters_min": 562,
+  "characters_p25": 2051.5,
+  "characters_median": 2100.0,
+  "characters_mean": 2043.91,
+  "characters_p75": 2172.25,
+  "characters_max": 2195,
+  "characters_std": 284.75,
+  "characters_total": 65405,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 59485,
+  "characters_ratio": 1.1,
+  "execution_time_seconds": 0.014562,
+  "ram_before_mb": 2390.95,
+  "ram_after_mb": 2390.95,
+  "ram_increase_mb": 0.0
+}

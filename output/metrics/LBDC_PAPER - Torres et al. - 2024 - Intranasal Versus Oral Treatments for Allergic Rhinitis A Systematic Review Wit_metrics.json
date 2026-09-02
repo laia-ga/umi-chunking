@@ -1,0 +1,31 @@
+{
+  "strategy": "llm_boundary_detection_chunking",
+  "type": "LLMBoundaryDetectionChunker",
+  "abbreviation": "LBDC",
+  "params": {
+    "max_chars": 2000,
+    "overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
+  "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "number_of_chunks": 33,
+  "empty_chunks": 0,
+  "characters_min": 1244,
+  "characters_p25": 2077.0,
+  "characters_median": 2117.0,
+  "characters_mean": 2069.73,
+  "characters_p75": 2165.0,
+  "characters_max": 2197,
+  "characters_std": 182.25,
+  "characters_total": 68301,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 62436,
+  "characters_ratio": 1.094,
+  "execution_time_seconds": 0.011807,
+  "ram_before_mb": 2390.95,
+  "ram_after_mb": 2390.95,
+  "ram_increase_mb": 0.0
+}

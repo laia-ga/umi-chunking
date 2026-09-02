@@ -1,0 +1,31 @@
+{
+  "strategy": "recursive_token_fallback_chunking",
+  "type": "RecursiveTokenChunker",
+  "abbreviation": "RTF",
+  "params": {
+    "chunk_size": 500,
+    "chunk_overlap": 75
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "number_of_chunks": 37,
+  "empty_chunks": 0,
+  "characters_min": 233,
+  "characters_p25": 1592.0,
+  "characters_median": 1678.0,
+  "characters_mean": 1704.73,
+  "characters_p75": 2166.0,
+  "characters_max": 2721,
+  "characters_std": 577.07,
+  "characters_total": 63075,
+  "small_chunk_threshold": 400,
+  "small_chunks": 2,
+  "small_chunks_percentage": 5.41,
+  "characters_original": 59455,
+  "characters_ratio": 1.061,
+  "execution_time_seconds": 0.035186,
+  "ram_before_mb": 1126.2,
+  "ram_after_mb": 1126.2,
+  "ram_increase_mb": 0.0
+}

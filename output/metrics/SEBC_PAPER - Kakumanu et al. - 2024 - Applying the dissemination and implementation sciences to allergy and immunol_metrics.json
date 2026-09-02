@@ -1,0 +1,30 @@
+{
+  "strategy": "semantic_embedding_based_chunking",
+  "type": "SemanticEmbeddingChunker",
+  "abbreviation": "SEBC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "number_of_chunks": 118,
+  "empty_chunks": 0,
+  "characters_min": 3,
+  "characters_p25": 6.5,
+  "characters_median": 179.0,
+  "characters_mean": 502.61,
+  "characters_p75": 234.75,
+  "characters_max": 18994,
+  "characters_std": 2068.76,
+  "characters_total": 59308,
+  "small_chunk_threshold": 400,
+  "small_chunks": 104,
+  "small_chunks_percentage": 88.14,
+  "characters_original": 59455,
+  "characters_ratio": 0.998,
+  "execution_time_seconds": 13.721343,
+  "ram_before_mb": 1439.59,
+  "ram_after_mb": 1460.7,
+  "ram_increase_mb": 21.11
+}

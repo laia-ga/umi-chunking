@@ -1,0 +1,31 @@
+{
+  "strategy": "paragraph_group_chunking",
+  "type": "ParagraphGroupChunker",
+  "abbreviation": "PGC",
+  "params": {
+    "paragraphs_per_chunk": 2,
+    "overlap": 1
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
+  "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "number_of_chunks": 300,
+  "empty_chunks": 0,
+  "characters_min": 29,
+  "characters_p25": 125.0,
+  "characters_median": 300.0,
+  "characters_mean": 588.26,
+  "characters_p75": 834.75,
+  "characters_max": 6684,
+  "characters_std": 731.24,
+  "characters_total": 176477,
+  "small_chunk_threshold": 400,
+  "small_chunks": 172,
+  "small_chunks_percentage": 57.33,
+  "characters_original": 88611,
+  "characters_ratio": 1.992,
+  "execution_time_seconds": 0.001427,
+  "ram_before_mb": 1126.2,
+  "ram_after_mb": 1126.2,
+  "ram_increase_mb": 0.0
+}

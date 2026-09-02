@@ -1,0 +1,30 @@
+{
+  "strategy": "semantic_similarity_threshold_chunking",
+  "type": "SemanticSimilarityThresholdChunker",
+  "abbreviation": "SSTC",
+  "params": {
+    "threshold": 0.6
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
+  "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "number_of_chunks": 685,
+  "empty_chunks": 0,
+  "characters_min": 2,
+  "characters_p25": 32.0,
+  "characters_median": 61.0,
+  "characters_mean": 128.2,
+  "characters_p75": 129.0,
+  "characters_max": 2712,
+  "characters_std": 227.73,
+  "characters_total": 87820,
+  "small_chunk_threshold": 400,
+  "small_chunks": 644,
+  "small_chunks_percentage": 94.01,
+  "characters_original": 88611,
+  "characters_ratio": 0.991,
+  "execution_time_seconds": 10.860076,
+  "ram_before_mb": 1491.37,
+  "ram_after_mb": 1568.05,
+  "ram_increase_mb": 76.69
+}

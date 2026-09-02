@@ -1,0 +1,32 @@
+{
+  "strategy": "llm_segment_then_chunk",
+  "type": "LLMSegmentThenChunker",
+  "abbreviation": "LSTC",
+  "params": {
+    "max_chars": 2000,
+    "overlap": 200,
+    "llm_refine_threshold": 1500
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "number_of_chunks": 216,
+  "empty_chunks": 0,
+  "characters_min": 13,
+  "characters_p25": 87.0,
+  "characters_median": 217.0,
+  "characters_mean": 485.81,
+  "characters_p75": 667.0,
+  "characters_max": 2140,
+  "characters_std": 551.8,
+  "characters_total": 104935,
+  "small_chunk_threshold": 400,
+  "small_chunks": 141,
+  "small_chunks_percentage": 65.28,
+  "characters_original": 82701,
+  "characters_ratio": 1.269,
+  "execution_time_seconds": 0.02699,
+  "ram_before_mb": 2390.99,
+  "ram_after_mb": 2390.99,
+  "ram_increase_mb": 0.0
+}

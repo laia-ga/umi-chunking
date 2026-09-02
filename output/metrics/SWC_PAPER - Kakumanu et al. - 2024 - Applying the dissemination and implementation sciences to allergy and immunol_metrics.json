@@ -1,0 +1,31 @@
+{
+  "strategy": "sliding_window_token_chunking",
+  "type": "SlidingWindowTokenChunker",
+  "abbreviation": "SWC",
+  "params": {
+    "window_size": 500,
+    "step_size": 75
+  },
+  "status": "completed",
+  "doc_id": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "number_of_chunks": 181,
+  "empty_chunks": 0,
+  "characters_min": 106,
+  "characters_p25": 1772.0,
+  "characters_median": 2098.0,
+  "characters_mean": 2153.36,
+  "characters_p75": 2637.0,
+  "characters_max": 2831,
+  "characters_std": 490.58,
+  "characters_total": 389759,
+  "small_chunk_threshold": 400,
+  "small_chunks": 2,
+  "small_chunks_percentage": 1.1,
+  "characters_original": 59455,
+  "characters_ratio": 6.556,
+  "execution_time_seconds": 0.013678,
+  "ram_before_mb": 1121.39,
+  "ram_after_mb": 1121.39,
+  "ram_increase_mb": 0.0
+}

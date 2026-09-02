@@ -1,0 +1,30 @@
+{
+  "strategy": "semantic_embedding_based_chunking",
+  "type": "SemanticEmbeddingChunker",
+  "abbreviation": "SEBC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "number_of_chunks": 192,
+  "empty_chunks": 0,
+  "characters_min": 3,
+  "characters_p25": 6.0,
+  "characters_median": 156.0,
+  "characters_mean": 469.76,
+  "characters_p75": 204.25,
+  "characters_max": 54160,
+  "characters_std": 3935.31,
+  "characters_total": 90193,
+  "small_chunk_threshold": 400,
+  "small_chunks": 181,
+  "small_chunks_percentage": 94.27,
+  "characters_original": 90456,
+  "characters_ratio": 0.997,
+  "execution_time_seconds": 24.309011,
+  "ram_before_mb": 1381.0,
+  "ram_after_mb": 1428.2,
+  "ram_increase_mb": 47.2
+}

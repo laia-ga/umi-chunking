@@ -1,0 +1,31 @@
+{
+  "strategy": "fixed_character_chunking",
+  "type": "FixedCharacterChunker",
+  "abbreviation": "FCC",
+  "params": {
+    "chunk_size": 2000,
+    "overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "number_of_chunks": 46,
+  "empty_chunks": 0,
+  "characters_min": 1701,
+  "characters_p25": 1999.25,
+  "characters_median": 2000.0,
+  "characters_mean": 1993.22,
+  "characters_p75": 2000.0,
+  "characters_max": 2000,
+  "characters_std": 43.56,
+  "characters_total": 91688,
+  "small_chunk_threshold": 400,
+  "small_chunks": 0,
+  "small_chunks_percentage": 0.0,
+  "characters_original": 82701,
+  "characters_ratio": 1.109,
+  "execution_time_seconds": 0.000233,
+  "ram_before_mb": 1081.48,
+  "ram_after_mb": 1081.48,
+  "ram_increase_mb": 0.0
+}

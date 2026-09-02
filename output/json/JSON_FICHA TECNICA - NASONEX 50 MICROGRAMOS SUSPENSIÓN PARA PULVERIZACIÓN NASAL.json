@@ -1,0 +1,339 @@
+{
+  "strategy": "hierarchical_json_chunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "HJC",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192,
+    "token_counter": "BAAI/bge-m3",
+    "document_plan": "ficha_tecnica",
+    "indivisible_list_paths": [
+      "excipients",
+      "national_codes",
+      "national_codes_queried"
+    ]
+  },
+  "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL",
+  "input_file": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL.json",
+  "original_character_count": 30570,
+  "number_of_chunks": 17,
+  "chunks": [
+    {
+      "text": "Medicine name: NASONEX 50 microgramos suspensión para pulverización nasal\n\nPharmaceutical form: Suspensión para pulverización nasal. Suspensión opaca de blanca a blanquecina.\n\nComposition: Furoato de mometasona (como monohidrato) 50 microgramos/pulverización. Excipiente(s) con efecto conocido Este medicamento contiene 0,02 mg de cloruro de benzalconio en cada pulverización. Para consultar la lista completa de excipientes, ver sección 6.1.\n\nIndications:\n  - NASONEX está indicado en adultos y en niños de 3 años de edad y mayores para el tratamiento sintomático de la rinitis alérgica estacional o perenne. NASONEX está indicado para el tratamiento de los pólipos nasales en adultos de 18 años de edad y mayores.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "identification",
+        "level": 1,
+        "json_paths": [
+          "document.medicine_name",
+          "document.pharmaceutical_form",
+          "document.composition",
+          "document.indications"
+        ],
+        "token_count": 180,
+        "character_count": 715,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0000",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Posology: Posología y forma de administración\n\nTras el cebado inicial de la bomba de NASONEX, cada pulverización proporciona aproximadamente 100 mg de suspensión de furoato de mometasona, que contiene furoato de mometasona monohidrato equivalente a 50 microgramos de furoato de mometasona.\n\nPosología\n\nRinitis alérgica estacional o perenne Adultos (incluidos pacientes de edad avanzada) y niños de 12 años de edad y mayores: La dosis habitual recomendada es dos pulverizaciones (50 microgramos/pulverización) en cada orificio nasal una vez al día (dosis total 200 microgramos). Una vez que se ha conseguido el control de los síntomas, se puede reducir la dosis a una pulverización en cada orificio nasal (dosis total 100 microgramos) como tratamiento de mantenimiento. Si el control de los síntomas no se considera adecuado, se puede aumentar la dosis hasta una dosis diaria máxima de cuatro pulverizaciones en cada orificio nasal una vez al día (dosis total 400 microgramos). Una vez conseguido el control de los síntomas, se recomienda reducir la dosis. Niños de edades comprendidas entre 3 y 11 años: La dosis habitual recomendada es de una pulverización (50 microgramos/pulverización) en cada orificio nasal una vez al día (dosis total 100 microgramos). En algunos pacientes con rinitis alérgica estacional, el inicio de la acción de NASONEX pudo observarse ya en las 12 horas siguientes a la primera dosis. Sin embargo, no es probable que el efecto óptimo se alcance antes de las primeras 48 horas, por lo que se debe recomendar a los pacientes que mantengan un uso regular para alcanzar el efecto terapéutico óptimo. En pacientes con antecedentes de síntomas de rinitis alérgica estacional moderada a grave puede ser necesario comenzar el tratamiento con NASONEX unos días antes del comienzo previsto de la estación polínica. Poliposis nasal La dosis habitual inicial recomendada para la poliposis es de dos pulverizaciones (50 microgramos/pulverización) en cada orificio nasal una vez al día (dosis diaria total de 200 microgramos). Si después de 5 a 6 semanas los síntomas no se controlan adecuadamente, se puede aumentar la dosis a una dosis diaria de dos pulverizaciones en cada orificio nasal dos veces al día (dosis diaria total de 400 microgramos). Se debe establecer la dosis más baja con la que se consiga el control de los síntomas. Si no se observa mejoría de los síntomas después de 5 a 6 semanas de administración dos veces al día, se debe examinar de nuevo al paciente y reevaluar la estrategia terapéutica. Los estudios de seguridad y eficacia de NASONEX para el tratamiento de la poliposis nasal tuvieron una duración de cuatro meses. Población pediátrica Rinitis alérgica estacional o perenne No se ha establecido la seguridad y eficacia de NASONEX en niños menores de 3 años de edad. Poliposis nasal No se ha establecido la seguridad y eficacia de NASONEX en niños y adolescentes menores de 18 años de edad.\n\nForma de administración\n\nAntes de la administración de la primera dosis, se debe agitar bien el envase y presionar la bomba 10 veces (hasta obtener un pulverizado uniforme). Si la bomba no se utiliza durante 14 días o más, se debe volver a cebar la bomba con 2 pulverizaciones hasta que se observe un pulverizado uniforme, antes del siguiente uso. Se debe agitar bien el envase antes de cada uso. El frasco se debe desechar después del número de pulverizaciones indicadas en la etiqueta o a los 2 meses desde la primera utilización.\n\nRinitis alérgica estacional o perenne Adultos (incluidos pacientes de edad avanzada) y niños de 12 años de edad y mayores: La dosis habitual recomendada es dos pulverizaciones (50 microgramos/pulverización) en cada orificio nasal una vez al día (dosis total 200 microgramos). Una vez que se ha conseguido el control de los síntomas, se puede reducir la dosis a una pulverización en cada orificio nasal (dosis total 100 microgramos) como tratamiento de mantenimiento. Si el control de los síntomas no se considera adecuado, se puede aumentar la dosis hasta una dosis diaria máxima de cuatro pulverizaciones en cada orificio nasal una vez al día (dosis total 400 microgramos). Una vez conseguido el control de los síntomas, se recomienda reducir la dosis. Niños de edades comprendidas entre 3 y 11 años: La dosis habitual recomendada es de una pulverización (50 microgramos/pulverización) en cada orificio nasal una vez al día (dosis total 100 microgramos). En algunos pacientes con rinitis alérgica estacional, el inicio de la acción de NASONEX pudo observarse ya en las 12 horas siguientes a la primera dosis. Sin embargo, no es probable que el efecto óptimo se alcance antes de las primeras 48 horas, por lo que se debe recomendar a los pacientes que mantengan un uso regular para alcanzar el efecto terapéutico óptimo. En pacientes con antecedentes de síntomas de rinitis alérgica estacional moderada a grave puede ser necesario comenzar el tratamiento con NASONEX unos días antes del comienzo previsto de la estación polínica. Poliposis nasal La dosis habitual inicial recomendada para la poliposis es de dos pulverizaciones (50 microgramos/pulverización) en cada orificio nasal una vez al día (dosis diaria total de 200 microgramos). Si después de 5 a 6 semanas los síntomas no se controlan adecuadamente, se puede aumentar la dosis a una dosis diaria de dos pulverizaciones en cada orificio nasal dos veces al día (dosis diaria total de 400 microgramos). Se debe establecer la dosis más baja con la que se consiga el control de los síntomas. Si no se observa mejoría de los síntomas después de 5 a 6 semanas de administración dos veces al día, se debe examinar de nuevo al paciente y reevaluar la estrategia terapéutica. Los estudios de seguridad y eficacia de NASONEX para el tratamiento de la poliposis nasal tuvieron una duración de cuatro meses. Población pediátrica Rinitis alérgica estacional o perenne No se ha establecido la seguridad y eficacia de NASONEX en niños menores de 3 años de edad. Poliposis nasal No se ha establecido la seguridad y eficacia de NASONEX en niños y adolescentes menores de 18 años de edad.\n\nAntes de la administración de la primera dosis, se debe agitar bien el envase y presionar la bomba 10 veces (hasta obtener un pulverizado uniforme). Si la bomba no se utiliza durante 14 días o más, se debe volver a cebar la bomba con 2 pulverizaciones hasta que se observe un pulverizado uniforme, antes del siguiente uso. Se debe agitar bien el envase antes de cada uso. El frasco se debe desechar después del número de pulverizaciones indicadas en la etiqueta o a los 2 meses desde la primera utilización.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "posology",
+        "level": 1,
+        "json_paths": [
+          "document.posology"
+        ],
+        "token_count": 1519,
+        "character_count": 6605,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0001",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Contraindications:\n  - Hipersensibilidad al principio activo, furoato de mometasona o a alguno de los excipientes incluidos en la sección 6.1. NASONEX no se debe usar en caso de infección localizada no tratada que afecte a la mucosa nasal, tales como herpes simplex. Dado el efecto inhibitorio que los corticosteroides ejercen sobre la cicatrización de las heridas, los pacientes que hayan sido sometidos recientemente a cirugía nasal o que hayan sufrido un traumatismo nasal no deben utilizar corticosteroides por vía intranasal hasta que no se haya producido la cicatrización.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "contraindications",
+        "level": 1,
+        "json_paths": [
+          "document.contraindications"
+        ],
+        "token_count": 138,
+        "character_count": 578,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0002",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Warnings and precautions: Inmunosupresión NASONEX se debe usar con precaución, o evitar, en pacientes con infecciones tuberculosas activas o quiescentes del tracto respiratorio, o con infecciones fúngicas, bacterianas o víricas sistémicas no tratadas. Se debe advertir a los pacientes en tratamiento con corticosteroides que se encuentren potencialmente inmunodeprimidos acerca del riesgo de exposición a determinadas infecciones (por ejemplo, varicela, sarampión) así como de la importancia de consultar con el médico si se produjera dicha exposición. Efectos nasales locales En un ensayo clínico con pacientes diagnosticados de rinitis perenne, tras 12 meses de tratamiento con NASONEX no se observó evidencia de atrofia de la mucosa nasal; asimismo, el furoato de mometasona tendió a hacer que la mucosa nasal volviera a un estado más cercano al fenotipo histológico normal. No obstante, los pacientes que utilicen NASONEX durante varios meses o por periodos superiores deben ser examinados periódicamente en cuanto a posibles alteraciones de la mucosa nasal. Si se produjera una infección fúngica localizada de nariz o faringe, puede ser necesaria la interrupción del tratamiento con NASONEX o la institución de un tratamiento apropiado. La persistencia de irritación nasofaríngea puede ser indicativa de la necesidad de interrupción de NASONEX. No se recomienda NASONEX en caso de perforación del tabique nasal (ver sección 4.8). En los ensayos clínicos, la incidencia de epistaxis fue mayor en comparación con placebo. La epistaxis fue por lo general de carácter autolimitado y leve en cuanto a gravedad (ver sección 4.8). NASONEX contiene cloruro de benzalconio. El cloruro de benzalconio puede causar irritación o inflamación dentro de la nariz, especialmente cuando se usa durante periodos largos de tratamiento. Efectos sistémicos de los corticosteroides Se pueden producir los efectos sistémicos de los corticosteroides administrados por vía intranasal, particularmente cuando se utilizan a dosis altas y en tratamientos prolongados. Es mucho menos probable que se produzcan estos efectos que con los corticosteroides administrados por vía oral y pueden variar en los pacientes individuales y entre diferentes preparaciones de corticosteroides. Los efectos sistémicos potenciales pueden ser síndrome de Cushing, rasgos Cushingoides, supresión suprarrenal, retraso en el crecimiento en niños y adolescentes, cataratas, glaucoma y más raramente, una variedad de efectos psicológicos o de comportamiento tal como hiperactividad psicomotora, trastornos del sueño, ansiedad, depresión o agresividad (particularmente en niños). Con el uso de corticosteroides por vía intranasal se han notificado casos de presión intraocular aumentada (ver sección 4.8). Se pueden producir alteraciones visuales con el uso sistémico y tópico de corticosteroides (incluyendo vía intranasal, inhalada e intraocular). Si un paciente presenta síntomas como visión borrosa u otras alteraciones visuales, se debe consultar con un oftalmólogo para que evalúe las posibles causas de las alteraciones visuales, que pueden ser cataratas, glaucoma o enfermedades raras como coriorretinopatía serosa central (CRSC), que se ha notificado tras el uso de corticosteroides sistémicos y tópicos. Precisan especial atención aquellos pacientes que pasen a recibir tratamiento con NASONEX tras la administración prolongada de corticosteroides activos por vía sistémica. En estos pacientes, la suspensión de los corticosteroides sistémicos podría resultar en una insuficiencia suprarrenal pudiendo transcurrir varios meses hasta la recuperación de la función del eje hipotalámico-hipofisario-suprarrenal. Si estos pacientes mostraran signos y síntomas de insuficiencia suprarrenal o síntomas relacionados con la suspensión del tratamiento (por ejemplo: dolor articular y/o muscular, lasitud y depresión al principio) independientemente del alivio de los síntomas nasales, se debe volver a instaurar la administración de corticosteroides sistémicos e instituir otros tipos de tratamiento y medidas apropiadas. Dicho cambio de tratamiento puede también desenmascarar procesos alérgicos pre-existentes, tales como conjuntivitis y eczema alérgicos, previamente controlados por el tratamiento con corticosteroides sistémicos. El tratamiento con dosis superiores a las recomendadas puede ocasionar una supresión adrenal clínicamente significativa. Si existiese evidencia de uso a dosis superiores a las recomendadas, se debe considerar la necesidad de una protección adicional con corticosteroides sistémicos durante los periodos de estrés o en intervenciones quirúrgicas programadas. Pólipos nasales La seguridad y eficacia de NASONEX no ha sido estudiada para el uso en el tratamiento de pólipos unilaterales, pólipos asociados con fibrosis quística, o pólipos que obstruyen completamente las fosas nasales. Los pólipos unilaterales que son poco corrientes o de aspecto irregular, especialmente si están ulcerados o sangrantes, deben ser evaluados más a fondo. Efecto en el crecimiento en la población pediátrica Se recomienda vigilar regularmente la altura de los niños sometidos a un tratamiento prolongado con corticosteroides por vía intranasal. Si se detecta un retraso del crecimiento, se debe revisar el tratamiento con objeto de, si es posible, reducir la dosis administrada a la mínima con la que se consiga un control efectivo de los síntomas. Debe además considerarse la revisión del paciente por parte de un pediatra. Síntomas no nasales Aunque NASONEX es capaz de controlar los síntomas nasales en la mayoría de los pacientes, el uso concomitante de una terapia adicional apropiada puede aportar un alivio adicional de otros síntomas, en especial de los oculares.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "warnings_and_precautions",
+        "level": 1,
+        "json_paths": [
+          "document.warnings_and_precautions"
+        ],
+        "token_count": 1313,
+        "character_count": 5739,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0003",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Interactions: (Ver 4.4, Advertencias y precauciones especiales de empleo en cuanto al uso con corticosteroides sistémicos). En un estudio clínico de interacción realizado con loratadina no se observaron interacciones. Se espera que el tratamiento concomitante con inhibidores de CYP3A, incluyendo medicamentos que contienen cobicistat, aumente el riesgo de reacciones adversas sistémicas. Se debe evitar esa combinación, a menos que el beneficio supere al riesgo aumentado de reacciones adversas sistémicas relacionadas con los corticosteroides, en cuyo caso los pacientes han de estar sometidos a seguimiento para comprobar las reacciones sistémicas de los corticosteroides.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "interactions",
+        "level": 1,
+        "json_paths": [
+          "document.interactions"
+        ],
+        "token_count": 152,
+        "character_count": 675,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0004",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Pregnancy and lactation: Fertilidad, embarazo y lactancia\n\nEmbarazo\n\nNo hay datos o éstos son limitados relativos al uso de furoato de mometasona en mujeres embarazadas. Los estudios realizados en animales han mostrado toxicidad para la reproducción (ver sección 5.3). Al igual que con otros corticosteroides nasales, NASONEX no se debe utilizar durante el embarazo a menos que el beneficio potencial para la madre justifique cualquier riesgo potencial para la madre, feto o niño. Los recién nacidos de madres que hayan recibido corticosteroides durante el embarazo se deben observar cuidadosamente en cuanto a signos de insuficiencia suprarrenal.\n\nLactancia\n\nSe desconoce si furoato de mometasona se excreta en la leche materna. Al igual que con otros corticosteroides nasales, se debe decidir si es necesario interrumpir la lactancia o interrumpir el tratamiento tras considerar el beneficio de la lactancia para el niño y el beneficio del tratamiento para la madre.\n\nFertilidad\n\nNo hay datos relativos al efecto de furoato de mometasona sobre la fertilidad. Los estudios realizados en animales han mostrado toxicidad para la reproducción, pero ningún efecto sobre la fertilidad (ver sección 5.3).\n\nNo hay datos o éstos son limitados relativos al uso de furoato de mometasona en mujeres embarazadas. Los estudios realizados en animales han mostrado toxicidad para la reproducción (ver sección 5.3). Al igual que con otros corticosteroides nasales, NASONEX no se debe utilizar durante el embarazo a menos que el beneficio potencial para la madre justifique cualquier riesgo potencial para la madre, feto o niño. Los recién nacidos de madres que hayan recibido corticosteroides durante el embarazo se deben observar cuidadosamente en cuanto a signos de insuficiencia suprarrenal.\n\nSe desconoce si furoato de mometasona se excreta en la leche materna. Al igual que con otros corticosteroides nasales, se debe decidir si es necesario interrumpir la lactancia o interrumpir el tratamiento tras considerar el beneficio de la lactancia para el niño y el beneficio del tratamiento para la madre.\n\nNo hay datos relativos al efecto de furoato de mometasona sobre la fertilidad. Los estudios realizados en animales han mostrado toxicidad para la reproducción, pero ningún efecto sobre la fertilidad (ver sección 5.3).",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "pregnancy_and_lactation",
+        "level": 1,
+        "json_paths": [
+          "document.pregnancy_and_lactation"
+        ],
+        "token_count": 519,
+        "character_count": 2308,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0005",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Effects on driving: No se conocen.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "effects_on_driving",
+        "level": 1,
+        "json_paths": [
+          "document.effects_on_driving"
+        ],
+        "token_count": 12,
+        "character_count": 34,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0006",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Adverse reactions: Resumen del perfil de seguridad La epistaxis fue por lo general de carácter autolimitado y de grado leve y, aunque se produjo con una incidencia mayor que con el placebo (5%), su incidencia fue comparable o menor que la producida por los otros corticosteroides nasales estudiados que servían de control activo (hasta el 15%), tal y como se notifica en los ensayos clínicos en rinitis alérgica. La incidencia de todos los demás acontecimientos adversos fue comparable a la observada con placebo. La incidencia total de los acontecimientos adversos en pacientes en tratamiento por poliposis nasal fue similar a la observada en pacientes con rinitis alérgica. Los corticosteroides administrados por vía intranasal pueden dar lugar a efectos sistémicos, particularmente cuando se prescriben a dosis altas durante periodos prolongados. Tabla de reacciones adversas En la tabla 1 se presentan las reacciones adversas relacionadas con el tratamiento (≥1%) notificadas en los ensayos clínicos en pacientes con rinitis alérgica o poliposis nasal y post-comercialización independientemente de la indicación. Las reacciones adversas se enumeran según la categoría de órgano-sistema primario MedDRA. En cada categoría de órgano-sistema, las reacciones adversas se ordenan por frecuencia. Las frecuencias se definen como se indica a continuación: Muy frecuentes (≥1/10); frecuentes (≥1/100 a <1/10); poco frecuentes (≥1/1.000 a <1/100). La frecuencia de los acontecimientos adversos post-comercialización se consideran como “frecuencia no conocida (no puede estimarse a partir de los datos disponibles)”. Tabla 1: Reacciones adversas relacionadas con el tratamiento notificadas por categoría de órgano-sistema y frecuencia Muy frecuentes Frecuentes Frecuencia no conocida Infecciones e infestaciones Faringitis Infección del tracto respiratorio superior† Trastornos del sistema inmunológico Hipersensibilidad incluyendo reacciones anafilácticas, angioedema, broncoespasmo y disnea. Trastornos del sistema nervioso Cefalea Trastornos oculares Glaucoma Presión intraocular aumentada Cataratas Visión borrosa (ver también sección 4.4) Trastornos respiratorios, torácicos y mediastínicos Epistaxis* Epistaxis Ardor nasal Irritación nasal Ulceración nasal Perforación del tabique nasal Trastornos gastrointestinales Irritación de garganta* Alteraciones del olor y del gusto *notificado en la dosis de dos veces al día en poliposis nasal †notificado como poco frecuente en la dosis de dos veces al día en poliposis nasal Población pediátrica En la población pediátrica, la incidencia de acontecimientos adversos registrados en los ensayos clínicos, p.ej.: epistaxis (6%), cefalea (3%), irritación nasal (2%) y estornudos (2%), fue comparable a placebo. Notificación de sospechas de reacciones adversas: Es importante notificar sospechas de reacciones adversas al medicamento tras su autorización. Ello permite una supervisión continuada de la relación beneficio/riesgo del medicamento. Se invita a los profesionales sanitarios a notificar las sospechas de reacciones adversas a través del Sistema Español de Farmacovigilancia de medicamentos de Uso Humano: https://www.notificaram.es.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "adverse_reactions",
+        "level": 1,
+        "json_paths": [
+          "document.adverse_reactions[0]"
+        ],
+        "token_count": 758,
+        "character_count": 3184,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0007",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Overdose: Síntomas La inhalación o la administración oral de dosis excesivas de corticosteroides pueden resultar en la supresión de la función del eje hipotalámico-hipofisario-suprarrenal. Tratamiento Puesto que la biodisponibilidad sistémica de NASONEX es <1%, en caso de sobredosis es improbable que se precise más tratamiento que la observación, que se seguirá del comienzo de la dosis prescrita apropiada.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "overdose",
+        "level": 1,
+        "json_paths": [
+          "document.overdose"
+        ],
+        "token_count": 107,
+        "character_count": 409,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0008",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Pharmacodynamics: Propiedades farmacodinámicas\n\nGrupo farmacoterapéutico: Descongestionantes y Otras Preparaciones Nasales para Corticosteroides de Uso Tópico, código ATC: R01A D09.\n\nMecanismo de acción\n\nEl furoato de mometasona es un glucocorticoide tópico con propiedades antiinflamatorias locales a dosis que no son activas sistémicamente. Es probable que gran parte del mecanismo de los efectos antialérgicos y antiinflamatorios del furoato de mometasona radique en su capacidad de inhibir la liberación de los mediadores de las reacciones alérgicas. El furoato de mometasona inhibe significativamente la liberación de leucotrienos por los leucocitos de los pacientes alérgicos. En cultivos celulares, el furoato de mometasona demuestra una elevada potencia de inhibición de la síntesis y liberación de IL-1, IL-5, IL-6 y TNF?; también es un potente inhibidor de la producción de leucotrienos. Además, es un inhibidor extremadamente potente de la producción de citoquinas Th2, IL-4 e IL-5, por los linfocitos T CD4 + humanos.\n\nEfectos farmacodinámicos\n\nEn estudios con provocación nasal antigénica, NASONEX ha mostrado que posee actividad antiinflamatoria tanto frente a las respuestas alérgicas de fase precoz como tardía. Ello se ha evidenciado por disminuciones (frente al placebo) de la actividad de la histamina y de los eosinófilos y por reducciones (frente al valor basal) en las proteínas de adhesión a eosinófilos, neutrófilos y células epiteliales. En el 28% de los pacientes afectos de rinitis alérgica estacional, NASONEX ha demostrado un comienzo de acción clínicamente importante dentro de las 12 horas siguientes a la primera dosis. La mediana (50%) del tiempo transcurrido hasta el inicio de la mejoría fue 35,9 horas.\n\nPoblación pediátrica\n\nEn un ensayo clínico controlado con placebo en el que se administraron 100 microgramos al día de NASONEX durante un año a pacientes pediátricos (n=49/grupo), no se observó reducción en la velocidad de crecimiento. Los datos disponibles sobre la seguridad y eficacia de NASONEX en la población pediátrica de edades comprendidas entre 3 y 5 años son limitados, y no se puede establecer un intervalo adecuado de dosificación. En un estudio que incluyó 48 niños de edades comprendidas entre 3 y 5 años tratados con furoato de mometasona intranasal 50, 100 ó 200 µg/día durante 14 días, no hubo diferencias significativas con respecto a placebo en la variación media del nivel de cortisol plasmático en respuesta al ensayo de estimulación con tetracosactrina. La Agencia Europea de Medicamentos ha eximido de la obligación de presentar los resultados de los ensayos realizados con NASONEX y marcas asociadas en todos los grupos de la población pediátrica en rinitis alérgica estacional y perenne (ver sección 4.2 para consultar la información sobre el uso en la población pediátrica).\n\nEl furoato de mometasona es un glucocorticoide tópico con propiedades antiinflamatorias locales a dosis que no son activas sistémicamente. Es probable que gran parte del mecanismo de los efectos antialérgicos y antiinflamatorios del furoato de mometasona radique en su capacidad de inhibir la liberación de los mediadores de las reacciones alérgicas. El furoato de mometasona inhibe significativamente la liberación de leucotrienos por los leucocitos de los pacientes alérgicos. En cultivos celulares, el furoato de mometasona demuestra una elevada potencia de inhibición de la síntesis y liberación de IL-1, IL-5, IL-6 y TNF?; también es un potente inhibidor de la producción de leucotrienos. Además, es un inhibidor extremadamente potente de la producción de citoquinas Th2, IL-4 e IL-5, por los linfocitos T CD4 + humanos.\n\nEn estudios con provocación nasal antigénica, NASONEX ha mostrado que posee actividad antiinflamatoria tanto frente a las respuestas alérgicas de fase precoz como tardía. Ello se ha evidenciado por disminuciones (frente al placebo) de la actividad de la histamina y de los eosinófilos y por reducciones (frente al valor basal) en las proteínas de adhesión a eosinófilos, neutrófilos y células epiteliales. En el 28% de los pacientes afectos de rinitis alérgica estacional, NASONEX ha demostrado un comienzo de acción clínicamente importante dentro de las 12 horas siguientes a la primera dosis. La mediana (50%) del tiempo transcurrido hasta el inicio de la mejoría fue 35,9 horas.\n\nEn un ensayo clínico controlado con placebo en el que se administraron 100 microgramos al día de NASONEX durante un año a pacientes pediátricos (n=49/grupo), no se observó reducción en la velocidad de crecimiento. Los datos disponibles sobre la seguridad y eficacia de NASONEX en la población pediátrica de edades comprendidas entre 3 y 5 años son limitados, y no se puede establecer un intervalo adecuado de dosificación. En un estudio que incluyó 48 niños de edades comprendidas entre 3 y 5 años tratados con furoato de mometasona intranasal 50, 100 ó 200 µg/día durante 14 días, no hubo diferencias significativas con respecto a placebo en la variación media del nivel de cortisol plasmático en respuesta al ensayo de estimulación con tetracosactrina. La Agencia Europea de Medicamentos ha eximido de la obligación de presentar los resultados de los ensayos realizados con NASONEX y marcas asociadas en todos los grupos de la población pediátrica en rinitis alérgica estacional y perenne (ver sección 4.2 para consultar la información sobre el uso en la población pediátrica).",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "pharmacodynamics",
+        "level": 1,
+        "json_paths": [
+          "document.pharmacodynamics"
+        ],
+        "token_count": 1369,
+        "character_count": 5432,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0009",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Pharmacokinetics: Propiedades farmacocinéticas\n\nAbsorción\n\nEl furoato de mometasona, administrado como pulverización nasal acuosa, posee una biodisponibilidad sistémica en plasma <1%, utilizando un ensayo sensible con un límite inferior de cuantificación de 0,25 pg/ml.\n\nDistribución\n\nNo procede dado que la absorción de mometasona por vía nasal es muy pobre.\n\nMetabolismo o Biotransformación\n\nLa pequeña cantidad que pueda ser deglutida y absorbida experimenta un amplio metabolismo hepático de primer paso.\n\nEliminación\n\nEl furoato de mometasona absorbido se metaboliza masivamente y los metabolitos se excretan por orina y bilis.\n\nEl furoato de mometasona, administrado como pulverización nasal acuosa, posee una biodisponibilidad sistémica en plasma <1%, utilizando un ensayo sensible con un límite inferior de cuantificación de 0,25 pg/ml.\n\nNo procede dado que la absorción de mometasona por vía nasal es muy pobre.\n\nLa pequeña cantidad que pueda ser deglutida y absorbida experimenta un amplio metabolismo hepático de primer paso.\n\nEl furoato de mometasona absorbido se metaboliza masivamente y los metabolitos se excretan por orina y bilis.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "pharmacokinetics",
+        "level": 1,
+        "json_paths": [
+          "document.pharmacokinetics"
+        ],
+        "token_count": 284,
+        "character_count": 1147,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0010",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Excipients:\n  - Celulosa dispersable (celulosa microcristalina y carmelosa sódica) Glicerol Citrato sódico Ácido cítrico monohidrato Polisorbato 80 Cloruro de benzalconio Agua purificada\n\nIncompatibilities: No procede.\n\nShelf life: 3 años Utilizar dentro de los 2 meses desde la primera administración.\n\nStorage conditions: No conservar a temperatura superior a 25ºC. No congelar.\n\nContainer: Nasonex se presenta en un frasco blanco de polietileno de alta densidad, que contiene 10 g (60 pulverizaciones) ó 18 g (140 pulverizaciones) de la formulación del producto, con una bomba de pulverización manual de polipropileno, de dosis calibrada. Tamaños de envase: 10 g, 1 frasco 18 g, 1, 2 ó 3 frascos Puede que solamente estén comercializados algunos tamaños de envases.\n\nHandling instructions: La eliminación del medicamento no utilizado y de todos los materiales que hayan estado en contacto con él, se realizará de acuerdo con la normativa local.",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "pharmaceutical",
+        "level": 1,
+        "json_paths": [
+          "document.excipients",
+          "document.incompatibilities",
+          "document.shelf_life",
+          "document.storage_conditions",
+          "document.container",
+          "document.handling_instructions"
+        ],
+        "token_count": 242,
+        "character_count": 947,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0011",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Marketing authorisation holder: Organon Salud, S.L. Paseo de la Castellana, 77 28046 Madrid España Tel.: 915911279\n\nMarketing authorisation number: 61.905",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "marketing",
+        "level": 1,
+        "json_paths": [
+          "document.marketing_authorisation_holder",
+          "document.marketing_authorisation_number"
+        ],
+        "token_count": 42,
+        "character_count": 154,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0012",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Active ingredient: MOMETASONA\n\nStrength: 0,5 mg\n\nRoute of administration: VÍA NASAL",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "administration",
+        "level": 1,
+        "json_paths": [
+          "document.active_ingredient",
+          "document.strength",
+          "document.route_of_administration"
+        ],
+        "token_count": 23,
+        "character_count": 83,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0013",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "National codes:\n  - 663526",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "national_codes",
+        "level": 1,
+        "json_paths": [
+          "document.national_codes"
+        ],
+        "token_count": 10,
+        "character_count": 26,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0014",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Source:\n  Origin: CIMA/AEMPS docSegmentado\n  Registration number: 61905\n  Name: NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL\n  Atc:\n    - R01AD09\n  National codes:\n    - 663526\n  Generic: No\n  Smpc date: 1616719152000\n  Pdf url: https://cima.aemps.es/cima/pdfs/ft/61905/FT_61905.pdf\n  Active ingredient salt: MOMETASONA FUROATO\n  Section hashes:\n    Medicine name: 248b9b34183d2453\n    Composition: f1c652a18598c116\n    Pharmaceutical form: ca7a6c4aaf5ecf46\n    Indications: 8f43b619d2bc365a\n    Posology: cd058c84110d83cd\n    Contraindications: 680461dd34c0d0ea\n    Warnings and precautions: 97c34e19fb31c814\n    Interactions: 78f84e7af5ff941d\n    Pregnancy and lactation: 772ec8f7f9740145\n    Effects on driving: cf3444b8a9909ec8\n    Adverse reactions: d0f10f3e14b5660d\n    Overdose: e00a7783d21ef326\n    Pharmacodynamics: 518b2bcebcb5f313\n    Pharmacokinetics: 6383c57c0cb0f89e\n    Excipients: cad62be0ae045c51\n    Incompatibilities: b379e79f5666e4c9\n    Shelf life: 3acbcf43126f5455\n    Storage conditions: 2ff976d4262ece1b\n    Container: c61a6d8363f9e7c6\n    Handling instructions: 2a090011b89b0619\n    Marketing authorisation holder: 81b40dcd219a8c64\n    Marketing authorisation number: f592cb82cb2b55bd",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "_source",
+        "level": 1,
+        "json_paths": [
+          "document._source"
+        ],
+        "token_count": 452,
+        "character_count": 1223,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0015",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    },
+    {
+      "text": "Reimbursement:\n  Status: queried\n  Source: BIFIMED\n  Queried by: national_code\n  N presentations: 1\n  Presentations:\n    - National code: 663526\n      Name: NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL , 1 envase pulverizador de 140 dosis\n      Laboratory: ORGANON SALUD S.L.\n      Retrieved at: 2026-08-06T01:16:18.534417\n      Source: BIFIMED\n      Reimbursement situation: Si\n      Nomenclator status: ALTA\n      Patient copayment: NORMAL\n      Reimbursement start date: 01/06/1998\n  National codes queried:\n    - 663526",
+      "metadata": {
+        "chunker": "hierarchical_json_chunking",
+        "group_name": "reimbursement",
+        "level": 1,
+        "json_paths": [
+          "document.reimbursement"
+        ],
+        "token_count": 150,
+        "character_count": 537,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false,
+        "block": "document"
+      },
+      "chunk_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL_chunk_0016",
+      "doc_id": "FICHA TECNICA - NASONEX 50 MICROGRAMOS SUSPENSIÓN PARA PULVERIZACIÓN NASAL"
+    }
+  ]
+}

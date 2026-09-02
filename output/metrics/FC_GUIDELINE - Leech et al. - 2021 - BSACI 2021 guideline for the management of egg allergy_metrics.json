@@ -1,0 +1,31 @@
+{
+  "strategy": "fixed_token_chunking",
+  "type": "FixedTokenChunker",
+  "abbreviation": "FC",
+  "params": {
+    "chunk_size": 500,
+    "overlap": 75
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "number_of_chunks": 54,
+  "empty_chunks": 0,
+  "characters_min": 37,
+  "characters_p25": 1643.75,
+  "characters_median": 2108.0,
+  "characters_mean": 1959.44,
+  "characters_p75": 2278.5,
+  "characters_max": 2610,
+  "characters_std": 435.09,
+  "characters_total": 105810,
+  "small_chunk_threshold": 400,
+  "small_chunks": 1,
+  "small_chunks_percentage": 1.85,
+  "characters_original": 90456,
+  "characters_ratio": 1.17,
+  "execution_time_seconds": 0.017686,
+  "ram_before_mb": 1120.27,
+  "ram_after_mb": 1120.28,
+  "ram_increase_mb": 0.01
+}

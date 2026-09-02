@@ -1,0 +1,31 @@
+{
+  "strategy": "recursive_token_fallback_chunking",
+  "type": "RecursiveTokenChunker",
+  "abbreviation": "RTF",
+  "params": {
+    "chunk_size": 500,
+    "chunk_overlap": 75
+  },
+  "status": "completed",
+  "doc_id": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report",
+  "input_file": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
+  "number_of_chunks": 51,
+  "empty_chunks": 0,
+  "characters_min": 81,
+  "characters_p25": 1479.0,
+  "characters_median": 2006.0,
+  "characters_mean": 1830.65,
+  "characters_p75": 2362.0,
+  "characters_max": 2865,
+  "characters_std": 673.03,
+  "characters_total": 93363,
+  "small_chunk_threshold": 400,
+  "small_chunks": 2,
+  "small_chunks_percentage": 3.92,
+  "characters_original": 87356,
+  "characters_ratio": 1.069,
+  "execution_time_seconds": 0.049404,
+  "ram_before_mb": 1126.2,
+  "ram_after_mb": 1126.2,
+  "ram_increase_mb": 0.0
+}
