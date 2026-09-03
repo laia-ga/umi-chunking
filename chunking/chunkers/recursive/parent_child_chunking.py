@@ -18,6 +18,7 @@ class ParentChildChunker(BaseChunker):
         self,
         parent_chunk_size: int,
         child_chunk_size: int,
+        token_counter: Callable[[str], int],
         chunk_overlap: int = 0,
     ):
         if parent_chunk_size <= 0:
@@ -50,6 +51,7 @@ class ParentChildChunker(BaseChunker):
         self.parent_chunk_size = parent_chunk_size
         self.child_chunk_size = child_chunk_size
         self.chunk_overlap = chunk_overlap
+        self.token_counter = token_counter
 
         separators = [
             "\n\n",  # Párrafos
@@ -62,7 +64,7 @@ class ParentChildChunker(BaseChunker):
         self.parent_splitter = RecursiveCharacterTextSplitter(
             chunk_size=parent_chunk_size,
             chunk_overlap=chunk_overlap,
-            length_function=len,
+            length_function=self.token_counter,
             separators=separators,
             is_separator_regex=False,
         )
@@ -70,7 +72,7 @@ class ParentChildChunker(BaseChunker):
         self.child_splitter = RecursiveCharacterTextSplitter(
             chunk_size=child_chunk_size,
             chunk_overlap=chunk_overlap,
-            length_function=len,
+            length_function=self.token_counter,
             separators=separators,
             is_separator_regex=False,
         )
@@ -111,6 +113,7 @@ class ParentChildChunker(BaseChunker):
                             self.child_chunk_size
                         ),
                         "chunk_overlap": self.chunk_overlap,
+                        "token_count": self.token_counter(parent_text),
                         "character_count": len(parent_text),
                     },
                     chunk_id=parent_chunk_id,
@@ -150,6 +153,7 @@ class ParentChildChunker(BaseChunker):
                                 self.child_chunk_size
                             ),
                             "chunk_overlap": self.chunk_overlap,
+                            "token_count": self.token_counter(child_text),
                             "character_count": len(child_text),
                         },
                         chunk_id=child_chunk_id,

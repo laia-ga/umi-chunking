@@ -1,4 +1,4 @@
-from typing import Dict, List, Optional
+from typing import Callable, Dict, List, Optional
 
 import nltk
 
@@ -20,28 +20,29 @@ class LLMSegmentThenChunker(BaseChunker):
 
     def __init__(
         self,
+        token_counter: Callable[[str], int],
         llm: Optional[LLMClient] = None,
-        max_chars: int = 1500,
-        overlap: int = 80,
-        llm_refine_threshold: int = 1200, ## a partir de qué valor se manda al LLM para que lo divida
+        max_chars: int = 500,
+        overlap_tokens: int = 75,
+        llm_refine_threshold: int = 500, ## a partir de qué valor se manda al LLM para que lo divida
         enable_llm_refinement: bool = True,
         llm_timeout_sec: float = 8.0,
         llm_max_tokens: int = 256,
         llm_temperature: float = 0.0,
     ):
-        if max_chars <= 0:
+        if max_tokens <= 0:
             raise ValueError(
                 "max_chars debe ser mayor que 0."
             )
 
-        if overlap < 0:
+        if overlap_tokens < 0:
             raise ValueError(
                 "overlap no puede ser negativo."
             )
 
-        if overlap >= max_chars:
+        if overlap_tokens >= max_tokens:
             raise ValueError(
-                "overlap debe ser menor que max_chars."
+                "overlap debe ser menor que max_tokens."
             )
 
         if llm_refine_threshold <= 0:
@@ -49,10 +50,16 @@ class LLMSegmentThenChunker(BaseChunker):
                 "llm_refine_threshold debe ser mayor que 0."
             )
 
+        if not callable(token_counter):
+            raise ValueError(
+                "token_counter debe ser una función."
+            )
+
+        self.token_counter = token_counter
         self.llm = llm or LLMClient()
 
-        self.max_chars = max_chars
-        self.overlap = overlap
+        self.max_tokens = max_tokens
+        self.overlap_tokens = overlap_tokens
         self.llm_refine_threshold = llm_refine_threshold
         self.enable_llm_refinement = enable_llm_refinement
 
@@ -129,8 +136,8 @@ class LLMSegmentThenChunker(BaseChunker):
                         "chunker": (
                             "llm_segment_then_chunking"
                         ),
-                        "max_chars": self.max_chars,
-                        "overlap": self.overlap,
+                        "max_tokens": self.max_tokens,
+                        "overlap_tokens": self.overlap_tokens,
                         "llm_refine_threshold": (
                             self.llm_refine_threshold
                         ),
@@ -145,6 +152,7 @@ class LLMSegmentThenChunker(BaseChunker):
                             "used_llm_refinement"
                         ],
                         "chunk_index": index,
+                        "token_count": self.token_counter(chunk_text),
                         "character_count": len(chunk_text),
                     },
                     chunk_id=(
@@ -197,9 +205,6 @@ class LLMSegmentThenChunker(BaseChunker):
     ) -> List[Dict]:
         """
         Segmenta por párrafos.
-
-        En document_text, cada párrafo suele corresponder
-        a una clave principal del JSON original.
         """
 
         paragraphs = [
@@ -253,9 +258,7 @@ class LLMSegmentThenChunker(BaseChunker):
         ):
             return "list"
 
-        # document_text genera habitualmente:
-        # Clave: valor.
-        # Clave. Subclave: valor.
+
         if ":" in stripped:
             return "structured_paragraph"
 
@@ -300,7 +303,7 @@ class LLMSegmentThenChunker(BaseChunker):
 
             should_refine = (
                 self.enable_llm_refinement
-                and len(text)
+                and self.token_counter(text)
                 > self.llm_refine_threshold
             )
 
@@ -367,7 +370,7 @@ Reglas:
 - Separa cuando cambie claramente la temática o la sección.
 - Evita unidades excesivamente pequeñas.
 - Intenta que cada unidad no supere aproximadamente
-  {self.max_chars} caracteres.
+  {self.max_tokens} tokens.
 - No incluyas el índice de la última frase como límite.
 - Devuelve únicamente JSON válido.
 
@@ -540,10 +543,9 @@ Formato exacto:
         text: str,
     ) -> List[str]:
         """
-        Divide un segmento cuando supera max_chars.
+        Divide un segmento cuando supera max_tokens.
 
         Prioridad de corte:
-        1. párrafo;
         2. frase;
         3. palabra.
         """
@@ -553,7 +555,8 @@ Formato exacto:
         if not text:
             return []
 
-        if len(text) <= self.max_chars:
+
+        if self.token_counter(text) <= self.max_tokens:
             return [text]
 
         sentences = self._sentence_tokenize(text)
@@ -563,11 +566,11 @@ Formato exacto:
 
         parts = []
         current_sentences = []
-        current_length = 0
 
         for sentence in sentences:
+            sentence_token_count = self.token_counter(sentence)
             # Una sola frase es demasiado larga
-            if len(sentence) > self.max_chars:
+            if sentence_token_count > self.max_tokens:
                 if current_sentences:
                     parts.append(
                         " ".join(
@@ -576,27 +579,19 @@ Formato exacto:
                     )
 
                     current_sentences = []
-                    current_length = 0
 
                 parts.extend(
                     self._split_by_words(sentence)
                 )
                 continue
 
-            separator_length = (
-                1 if current_sentences else 0
+            candidate_text = " ".join(
+                current_sentences + [sentence]
             )
 
-            candidate_length = (
-                current_length
-                + separator_length
-                + len(sentence)
-            )
+            candidate_token_count = self.token_counter(candidate_text)
 
-            if (
-                current_sentences
-                and candidate_length > self.max_chars
-            ):
+            if current_sentences and candidate_token_count > self.max_tokens:
                 parts.append(
                     " ".join(
                         current_sentences
@@ -604,11 +599,6 @@ Formato exacto:
                 )
 
                 current_sentences = [sentence]
-                current_length = len(sentence)
-
-            else:
-                current_sentences.append(sentence)
-                current_length = candidate_length
 
         if current_sentences:
             parts.append(
@@ -618,10 +608,11 @@ Formato exacto:
             )
 
         return [
-            part
+            part 
             for part in parts
             if part
         ]
+
 
     def _split_by_words(
         self,
@@ -635,33 +626,27 @@ Formato exacto:
 
         parts = []
         current_words = []
-        current_length = 0
 
         for word in words:
-            separator_length = (
-                1 if current_words else 0
+            candidate_text = " ".join(
+                current_words + [word]
             )
 
-            candidate_length = (
-                current_length
-                + separator_length
-                + len(word)
-            )
+            candidate_token_count = self.token_counter(candidate_text)
+           
 
             if (
                 current_words
-                and candidate_length > self.max_chars
+                and candidate_token_count > self.max_tokens
             ):
                 parts.append(
                     " ".join(current_words)
                 )
 
                 current_words = [word]
-                current_length = len(word)
 
             else:
                 current_words.append(word)
-                current_length = candidate_length
 
         if current_words:
             parts.append(
@@ -695,28 +680,24 @@ Formato exacto:
                 output.append(new_part)
                 continue
 
-            previous_text = parts[index - 1]["text"]
+            previous_words = parts[index - 1]["text"].split()
 
-            overlap_start = max(
-                0,
-                len(previous_text) - self.overlap,
-            )
+            overlap_words = []
 
-            overlap_text = previous_text[
-                overlap_start:
-            ]
+            for word in reversed(previous_words):
+                candidate_words = [
+                    word,
+                    *overlap_words
+                ]
 
-            # Evitar comenzar en mitad de palabra
-            if (
-                overlap_start > 0
-                and " " in overlap_text
-            ):
-                overlap_text = overlap_text.split(
-                    " ",
-                    1,
-                )[1]
+                candidate_text = " ".join(candidate_words)
 
-            overlap_text = overlap_text.strip()
+                if self.token_counter(candidate_text) > self.overlap_tokens:
+                    break
+
+                overlap_words = candidate_words
+
+            overlap_text = " ".join(overlap_words).strip()
 
             if overlap_text:
                 new_part["text"] = (

@@ -1,6 +1,5 @@
-from typing import List
+from typing import Callable, List
 
-import tiktoken
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from ..base import BaseChunker, Chunk
@@ -19,8 +18,8 @@ class RecursiveTokenChunker(BaseChunker):
     def __init__(
         self,
         chunk_size: int,
+        token_counter: Callable[[str], int],
         chunk_overlap: int = 0,
-        encoding_name: str = "cl100k_base",
     ):
         if chunk_size <= 0:
             raise ValueError(
@@ -37,16 +36,20 @@ class RecursiveTokenChunker(BaseChunker):
                 "chunk_overlap debe ser menor que chunk_size."
             )
 
+        if not callable(token_counter):
+            raise ValueError(
+                "token_counter debe ser una función"
+            )
+
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
-        self.encoding_name = encoding_name
-        self.encoding = tiktoken.get_encoding(encoding_name)
+        self.token_counter = token_counter
 
         self.splitter = (
-            RecursiveCharacterTextSplitter.from_tiktoken_encoder(
-                encoding_name=encoding_name,
+            RecursiveCharacterTextSplitter(
                 chunk_size=chunk_size,
                 chunk_overlap=chunk_overlap,
+                length_function=self.token_counter,
                 separators=[
                     "\n\n",  # Párrafos
                     "\n",    # Saltos de línea
@@ -75,9 +78,7 @@ class RecursiveTokenChunker(BaseChunker):
             if not chunk_text:
                 continue
 
-            token_count = len(
-                self.encoding.encode(chunk_text)
-            )
+            token_count = self.token_counter(chunk_text)
 
             chunks.append(
                 Chunk(
@@ -86,9 +87,8 @@ class RecursiveTokenChunker(BaseChunker):
                         "chunker": (
                             "recursive_token_fallback_chunking"
                         ),
-                        "chunk_size": self.chunk_size,
-                        "chunk_overlap": self.chunk_overlap,
-                        "encoding_name": self.encoding_name,
+                        "chunk_size_tokens": self.chunk_size,
+                        "chunk_overlap_tokens": self.chunk_overlap,
                         "token_count": token_count,
                         "character_count": len(chunk_text),
                     },

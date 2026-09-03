@@ -1,14 +1,19 @@
-from typing import List
+from typing import Callable, List
 import nltk
 from ..base import BaseChunker, Chunk
 
 class LengthAwareChunker(BaseChunker):
     """
     Agrupa frases completas intentando mantener cada chunk
-    dentro de un rango de longitud en caracteres.
+    dentro de un rango de longitud en tokens
     """
 
-    def __init__(self, target_length: int, tolerance: int):
+    def __init__(
+        self, 
+        target_length: int, 
+        tolerance: int,
+        token_counter: Callable[[str], int],
+    ):
         if target_length <= 0:
             raise ValueError("target_length debe ser mayor que 0.")
 
@@ -20,8 +25,14 @@ class LengthAwareChunker(BaseChunker):
                 "tolerance debe ser menor que target_length."
             )
 
+        if not callable(token_counter):
+            raise ValueError(
+                "token_counter debe ser una función"
+            )
+
         self.target_length = target_length
         self.tolerance = tolerance
+        self.token_counter = token_counter
 
     def chunk(self, text: str, doc_id: str) -> List[Chunk]:
         if not text or not text.strip():
@@ -42,7 +53,6 @@ class LengthAwareChunker(BaseChunker):
 
         chunks = []
         current_sentences = []
-        current_length = 0
 
         min_length = self.target_length - self.tolerance
         max_length = self.target_length + self.tolerance
@@ -53,19 +63,19 @@ class LengthAwareChunker(BaseChunker):
             if not sentence:
                 continue
 
-            # Se añade 1 carácter por el espacio entre frases
-            separator_length = 1 if current_sentences else 0
-
-            candidate_length = (
-                current_length
-                + separator_length
-                + len(sentence)
+            # Construir temporalmente el chunk que resultaría de añadir la frase actual
+            candidate_text = " ".join(
+                current_sentences + [sentence]
             )
 
-            # Si añadir la frase supera el máximo,
+            candidate_length = self.token_counter(candidate_text)
+
+            # Si añadir la frase supera el máximo de tokens,
             # se cierra el chunk actual
             if current_sentences and candidate_length > max_length:
                 chunk_text = " ".join(current_sentences)
+
+                token_count = self.token_counter(chunk_text)
 
                 chunks.append(
                     Chunk(
@@ -76,7 +86,8 @@ class LengthAwareChunker(BaseChunker):
                             "tolerance": self.tolerance,
                             "min_length": min_length,
                             "max_length": max_length,
-                            "length": len(chunk_text),
+                            "token_count": token_count,
+                            "character_count": len(chunk_text),
                             "sentence_count": len(current_sentences),
                         },
                         chunk_id=f"{doc_id}_chunk_{len(chunks):04d}",
@@ -85,27 +96,26 @@ class LengthAwareChunker(BaseChunker):
                 )
 
                 current_sentences = []
-                current_length = 0
-
-            separator_length = 1 if current_sentences else 0
 
             current_sentences.append(sentence)
-            current_length += separator_length + len(sentence)
 
         # Guardar el último chunk
         if current_sentences:
             chunk_text = " ".join(current_sentences)
+
+            token_count = self.token_counter(chunk_text)
 
             chunks.append(
                 Chunk(
                     text=chunk_text,
                     metadata={
                         "chunker": "length_aware_chunking",
-                        "target_length": self.target_length,
-                        "tolerance": self.tolerance,
-                        "min_length": min_length,
-                        "max_length": max_length,
-                        "length": len(chunk_text),
+                        "target_length_tokens": self.target_length,
+                        "tolerance_tokens": self.tolerance,
+                        "min_length_tokens": min_length,
+                        "max_length_tokens": max_length,
+                        "token_count": token_count,
+                        "character_count": len(chunk_text),
                         "sentence_count": len(current_sentences),
                     },
                     chunk_id=f"{doc_id}_chunk_{len(chunks):04d}",

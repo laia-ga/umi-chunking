@@ -1,6 +1,6 @@
 from typing import List
 
-import tiktoken
+from transformers import PreTrainedTokenizerBase
 
 from ..base import BaseChunker, Chunk
 
@@ -21,7 +21,7 @@ class DynamicTokenSizeChunker(BaseChunker):
         self,
         min_chunk_size: int,
         max_chunk_size: int,
-        encoding_name: str = "cl100k_base",
+        tokenizer: str = PreTrainedTokenizerBase,
     ):
         if min_chunk_size <= 0:
             raise ValueError(
@@ -40,8 +40,7 @@ class DynamicTokenSizeChunker(BaseChunker):
 
         self.min_chunk_size = min_chunk_size
         self.max_chunk_size = max_chunk_size
-        self.encoding_name = encoding_name
-        self.encoding = tiktoken.get_encoding(encoding_name)
+        self.tokenizer = tokenizer
 
     def chunk(
         self,
@@ -51,7 +50,12 @@ class DynamicTokenSizeChunker(BaseChunker):
         if not text or not text.strip():
             return []
 
-        tokens = self.encoding.encode(text)
+        # Se utiliza el tokenizador del modelo configurado en global
+        tokens = self.encoding.encode(
+            text,
+            add_special_tokens=False
+        )
+
         total_tokens = len(tokens)
 
         chunks = []
@@ -85,8 +89,9 @@ class DynamicTokenSizeChunker(BaseChunker):
                     min_end,
                     -1,
                 ):
-                    token_text = self.encoding.decode(
-                        [tokens[token_index - 1]]
+                    token_text = self.tokenizer.decode(
+                        [tokens[token_index - 1]],
+                        skip_special_tokens=True,
                     )
 
                     if "\n" in token_text:
@@ -103,8 +108,10 @@ class DynamicTokenSizeChunker(BaseChunker):
                         break
 
             chunk_tokens = tokens[start:best_end]
-            chunk_text = self.encoding.decode(
-                chunk_tokens
+
+            chunk_text = self.tokenizer.decode(
+                chunk_tokens,
+                skip_special_tokens=True
             ).strip()
 
             if chunk_text:
@@ -121,7 +128,11 @@ class DynamicTokenSizeChunker(BaseChunker):
                             "max_chunk_size": (
                                 self.max_chunk_size
                             ),
-                            "encoding_name": self.encoding_name,
+                            "tokenizer": getattr(
+                                self.tokenizer, 
+                                "name_or_path",
+                                "unknown"
+                            ),
                             "start_token": start,
                             "end_token": best_end,
                             "token_count": len(chunk_tokens),

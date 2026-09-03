@@ -1,4 +1,4 @@
-from typing import List
+from typing import Callable, List
 import nltk
 from ..base import BaseChunker, Chunk
 
@@ -15,13 +15,36 @@ class ContentDensityAdaptiveChunker(BaseChunker):
     chunks más grandes.
     """
 
-    def __init__(self, base_chunk_size: int):
+    def __init__(
+            self, 
+            base_chunk_size: int,
+            token_counter: Callable[[str], int],
+        ) -> None:
+        """
+        Parameters
+        ----------
+        base_chunk_size:
+            Tamaño base del chunk expresado en tokens.
+
+            El límite real se adapta según la densidad léxica.
+
+        token_counter:
+            Función que recibe un texto y devuelve su número de
+            tokens utilizando el tokenizador configurado para
+            todo el proyecto.
+        """
         if base_chunk_size <= 0:
             raise ValueError(
                 "base_chunk_size debe ser mayor que 0."
             )
+        
+        if not callable(token_counter):
+            raise TypeError(
+                "token_counter debe ser una función."
+            )
 
         self.base_chunk_size = base_chunk_size
+        self.token_counter = token_counter
 
     def chunk(
         self,
@@ -40,7 +63,7 @@ class ContentDensityAdaptiveChunker(BaseChunker):
         except LookupError:
             nltk.download("punkt_tab")
 
-            sentences = nltk.sent_tokenize(
+            sentences = nltk.sent_tokenize( # tokenizador utilizado para separar palabras
                 text,
                 language="spanish",
             )
@@ -57,7 +80,6 @@ class ContentDensityAdaptiveChunker(BaseChunker):
         chunks = []
         current_sentences = []
         current_densities = []
-        current_length = 0
 
         for sentence in sentences:
             try:
@@ -97,13 +119,13 @@ class ContentDensityAdaptiveChunker(BaseChunker):
                 self.base_chunk_size * factor
             )
 
-            separator_length = 1 if current_sentences else 0
-
-            candidate_length = (
-                current_length
-                + separator_length
-                + len(sentence)
+            # Crear temporalmente el texto que tendría el chunk si se añadiera la frase actual
+            candidate_text = " ".join(
+                current_sentences + [sentence]
             )
+
+            # El tamaño se calcula con el tokenizador configurado para todo el proyecto
+            candidate_length = self.token_counter(candidate_text) 
 
             if (
                 current_sentences
@@ -135,8 +157,9 @@ class ContentDensityAdaptiveChunker(BaseChunker):
                             "sentence_count": len(
                                 current_sentences
                             ),
-                            "character_count": len(chunk_text),
+                            "token_count": self.token_counter(chunk_text),
                         },
+
                         chunk_id=(
                             f"{doc_id}_chunk_{len(chunks):04d}"
                         ),
@@ -146,13 +169,9 @@ class ContentDensityAdaptiveChunker(BaseChunker):
 
                 current_sentences = []
                 current_densities = []
-                current_length = 0
-
-            separator_length = 1 if current_sentences else 0
 
             current_sentences.append(sentence)
             current_densities.append(density)
-            current_length += separator_length + len(sentence)
 
         # Guardar el último chunk
         if current_sentences:
@@ -182,7 +201,7 @@ class ContentDensityAdaptiveChunker(BaseChunker):
                         "sentence_count": len(
                             current_sentences
                         ),
-                        "character_count": len(chunk_text),
+                        "token_count": self.token_counter(chunk_text),
                     },
                     chunk_id=(
                         f"{doc_id}_chunk_{len(chunks):04d}"

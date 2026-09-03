@@ -1,5 +1,4 @@
-from typing import List, Optional
-import re
+from typing import Callable, List, Optional
 import statistics
 
 import nltk
@@ -25,33 +24,40 @@ class LLMBoundaryDetectionChunker(BaseChunker):
 
     def __init__(
         self,
+        token_counter: Callable[[str], int], # función que devuelve el número de tokens de un texto
         llm: Optional[LLMClient] = None,
-        max_chars: int = 1500,
-        overlap: int = 80,
+        max_tokens: int = 500,
+        overlap_tokens: int = 75,
         enable_llm_refinement: bool = True,
         llm_timeout_sec: float = 8.0,
         llm_max_tokens: int = 128,
         llm_temperature: float = 0.0,
     ):
-        if max_chars <= 0:
+        if max_tokens <= 0:
             raise ValueError(
-                "max_chars debe ser mayor que 0."
+                "max_tokens debe ser mayor que 0."
             )
 
-        if overlap < 0:
+        if overlap_tokens < 0:
             raise ValueError(
-                "overlap no puede ser negativo."
+                "overlap_tokens no puede ser negativo."
             )
 
-        if overlap >= max_chars:
+        if overlap_tokens >= max_tokens:
             raise ValueError(
-                "overlap debe ser menor que max_chars."
+                "overlap_tokens debe ser menor que max_tokens."
             )
 
+        if not callable(token_counter):
+            raise ValueError(
+                "token_counter debe ser una función callable."
+            )
+
+        self.token_counter = token_counter
         self.llm = llm or LLMClient()
 
-        self.max_chars = max_chars
-        self.overlap = overlap
+        self.max_tokens = max_tokens
+        self.overlap_tokens = overlap_tokens
         self.enable_llm_refinement = enable_llm_refinement
 
         self.llm_timeout_sec = llm_timeout_sec
@@ -107,8 +113,9 @@ class LLMBoundaryDetectionChunker(BaseChunker):
                         "chunker": (
                             "llm_boundary_detection_chunking"
                         ),
-                        "max_chars": self.max_chars,
-                        "overlap": self.overlap,
+                        "max_tokens": self.max_tokens,
+                        "overlap_tokens": self.overlap_tokens,
+                        "token_count": self.token_counter(chunk_text),
                         "character_count": len(chunk_text),
                         "used_llm_refinement": used_llm,
                         "chunk_index": index,
@@ -196,46 +203,40 @@ class LLMBoundaryDetectionChunker(BaseChunker):
 
         chunks = []
         current_units = []
-        current_length = 0
 
         for unit in units:
 
+            unit_token_count = self.token_counter(unit)
+
             # Una sola frase supera la longitud máxima
-            if len(unit) > self.max_chars:
+            if unit_token_count > self.max_tokens:
                 if current_units:
                     chunks.append(
                         " ".join(current_units).strip()
                     )
                     current_units = []
-                    current_length = 0
 
                 chunks.extend(
                     self._split_long_unit(unit)
                 )
                 continue
 
-            separator_length = 1 if current_units else 0
+            candidate_text = " ".join(current_units + [unit])
 
-            candidate_length = (
-                current_length
-                + separator_length
-                + len(unit)
-            )
+            candidate_token_count = self.token_counter(candidate_text)
 
             if (
                 current_units
-                and candidate_length > self.max_chars
+                and candidate_token_count > self.max_tokens
             ):
                 chunks.append(
                     " ".join(current_units).strip()
                 )
 
                 current_units = [unit]
-                current_length = len(unit)
 
             else:
                 current_units.append(unit)
-                current_length = candidate_length
 
         if current_units:
             chunks.append(
@@ -256,31 +257,24 @@ class LLMBoundaryDetectionChunker(BaseChunker):
 
         fragments = []
         current_words = []
-        current_length = 0
 
         for word in words:
-            separator_length = 1 if current_words else 0
+            candidate_text = " ".join(current_words + [word])
 
-            candidate_length = (
-                current_length
-                + separator_length
-                + len(word)
-            )
+            candidate_token_count = self.token_counter(candidate_text)
 
             if (
                 current_words
-                and candidate_length > self.max_chars
+                and candidate_token_count > self.max_tokens
             ):
                 fragments.append(
                     " ".join(current_words)
                 )
-
+                
                 current_words = [word]
-                current_length = len(word)
 
             else:
                 current_words.append(word)
-                current_length = candidate_length
 
         if current_words:
             fragments.append(
@@ -307,8 +301,9 @@ class LLMBoundaryDetectionChunker(BaseChunker):
         if len(chunks) < 3:
             return False
 
+        # Los tamaños se calculan con el tokenizador general
         sizes = [
-            len(chunk)
+            self.token_counter(chunk)
             for chunk in chunks
         ]
 
@@ -378,7 +373,7 @@ Reglas:
 - Conserva el orden original.
 - No modifiques el texto.
 - Cada límite debe colocarse después de una frase completa.
-- Intenta que cada chunk tenga como máximo {self.max_chars} caracteres.
+- Intenta que cada chunk tenga como máximo {self.max_tokens} caracteres.
 - Evita chunks demasiado pequeños.
 - Separa cuando cambie claramente el tema.
 - Devuelve únicamente JSON válido.
@@ -454,7 +449,7 @@ Formato exacto:
         # No aceptar la propuesta si genera chunks
         # excesivamente grandes
         if any(
-            len(chunk) > self.max_chars * 1.20
+            self.token_counter(chunk) > self.max_tokens * 1.20
             for chunk in refined_chunks
         ):
             return None
@@ -482,23 +477,30 @@ Formato exacto:
         output = [chunks[0]]
 
         for index in range(1, len(chunks)):
-            previous_text = chunks[index - 1]
+            previous_words = chunks[index - 1].split()
 
-            overlap_start = max(
-                0,
-                len(previous_text) - self.overlap,
-            )
+            overlap_words = []
 
-            overlap_text = previous_text[overlap_start:]
+            # Se recorren las palabras anteriores desde el final
+            # hasta alcanzar el límite de overlap
+            for word in reversed(previous_words):
+                candidate_words = [
+                    word,
+                    *overlap_words
+                ]
 
-            # Evitar comenzar en mitad de palabra
-            if overlap_start > 0 and " " in overlap_text:
-                overlap_text = overlap_text.split(
-                    " ",
-                    1,
-                )[1]
+                candidate_text = " ".join(
+                    candidate_words
+                )
 
-            overlap_text = overlap_text.strip()
+                if self.token_counter(candidate_text) >= self.overlap_tokens:
+                    break
+
+                overlap_words = candidate_words
+
+            overlap_text = " ".join(
+                overlap_words
+            ).strip()
 
             if overlap_text:
                 combined_text = (

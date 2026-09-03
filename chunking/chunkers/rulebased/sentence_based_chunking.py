@@ -1,4 +1,4 @@
-from typing import List
+from typing import Callable, List
 import nltk
 from ..base import BaseChunker, Chunk
 
@@ -8,8 +8,16 @@ class SentenceBasedChunker(BaseChunker):
     Cada frase se convierte en un chunk.
     """
 
-    def __init__(self):
-        pass
+    def __init__(
+        self,
+        token_counter: Callable[[str], int],
+    ):
+        if not callable(token_counter):
+            raise ValueError(
+                "token_counter debe ser una función"
+            )
+
+        self.token_counter = token_counter
 
     def chunk(self, text: str, doc_id: str) -> List[Chunk]:
         if not text or not text.strip():
@@ -30,7 +38,7 @@ class SentenceBasedChunker(BaseChunker):
 
         chunks = []
 
-        for i, sentence in enumerate(sentences):
+        for index, sentence in enumerate(sentences):
             sentence = sentence.strip()
 
             if not sentence:
@@ -41,7 +49,8 @@ class SentenceBasedChunker(BaseChunker):
                     text=sentence,
                     metadata={
                         "chunker": "sentence_based_chunking",
-                        "sentence_index": i,
+                        "sentence_index": index,
+                        "token_count": self.token_counter(sentence),
                         "character_count": len(sentence),
                     },
                     chunk_id=f"{doc_id}_chunk_{len(chunks):04d}",

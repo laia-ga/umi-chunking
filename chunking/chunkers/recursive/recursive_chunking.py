@@ -14,6 +14,7 @@ class RecursiveChunker(BaseChunker):
     def __init__(
         self,
         chunk_size: int,
+        token_counter: Callable[[str], int],
         chunk_overlap: int = 0,
     ):
         if chunk_size <= 0:
@@ -29,8 +30,14 @@ class RecursiveChunker(BaseChunker):
                 "chunk_overlap debe ser menor que chunk_size."
             )
 
+        if not callable(token_counter):
+            raise ValueError(
+                "token_counter debe ser una función"
+            )
+
         self.chunk_size = chunk_size
         self.chunk_overlap = chunk_overlap
+        self.token_counter = token_counter
 
         self.splitter = RecursiveCharacterTextSplitter(
             chunk_size=chunk_size,
@@ -58,7 +65,7 @@ class RecursiveChunker(BaseChunker):
 
         chunks = []
 
-        for i, chunk_text in enumerate(chunk_texts):
+        for chunk_text in chunk_texts:
             chunk_text = chunk_text.strip()
 
             if not chunk_text:
@@ -69,9 +76,10 @@ class RecursiveChunker(BaseChunker):
                     text=chunk_text,
                     metadata={
                         "chunker": "recursive_chunking",
-                        "chunk_size": self.chunk_size,
-                        "chunk_overlap": self.chunk_overlap,
+                        "chunk_size_characters": self.chunk_size,
+                        "chunk_overlap_characters": self.chunk_overlap,
                         "character_count": len(chunk_text),
+                        "token_count": self.token_counter(chunk_text),
                     },
                     chunk_id=f"{doc_id}_chunk_{len(chunks):04d}",
                     doc_id=doc_id,

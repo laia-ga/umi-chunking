@@ -1,4 +1,4 @@
-from typing import List
+from typing import Callable, List
 from ..base import BaseChunker, Chunk
 
 class ParagraphGroupChunker(BaseChunker):
@@ -10,7 +10,8 @@ class ParagraphGroupChunker(BaseChunker):
     def __init__(
         self,
         paragraphs_per_chunk: int,
-        overlap: int = 0
+        token_counter: Callable[[str], int],
+        overlap: int = 0,
     ):
         if paragraphs_per_chunk <= 0:
             raise ValueError(
@@ -27,10 +28,21 @@ class ParagraphGroupChunker(BaseChunker):
                 "overlap debe ser menor que paragraphs_per_chunk."
             )
 
+        if not callable(token_counter):
+            raise ValueError(
+                "token_counter debe ser una función"
+            )  
+
         self.paragraphs_per_chunk = paragraphs_per_chunk
         self.overlap = overlap
+        self.token_counter = token_counter
 
-    def chunk(self, text: str, doc_id: str) -> List[Chunk]:
+    def chunk(
+        self, 
+        text: str, 
+        doc_id: str
+    ) -> List[Chunk]:
+        
         if not text or not text.strip():
             return []
 
@@ -60,10 +72,10 @@ class ParagraphGroupChunker(BaseChunker):
                     metadata={
                         "chunker": "paragraph_group_chunking",
                         "paragraphs_per_chunk": self.paragraphs_per_chunk,
-                        "overlap": self.overlap,
+                        "overlap_paragraphs": self.overlap,
                         "start_paragraph_index": start,
                         "end_paragraph_index": end,
-                        "paragraph_count": len(chunk_paragraphs),
+                        "paragraph_count": self.token_counter(chunk_text),
                         "character_count": len(chunk_text),
                     },
                     chunk_id=f"{doc_id}_chunk_{chunk_counter:04d}",
@@ -72,6 +84,10 @@ class ParagraphGroupChunker(BaseChunker):
             )
 
             chunk_counter += 1
+
+            if end == len(paragraphs):
+                break
+            
             start += step
 
         return chunks

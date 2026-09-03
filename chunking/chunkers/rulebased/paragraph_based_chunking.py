@@ -1,4 +1,4 @@
-from typing import List
+from typing import Callable, List
 from ..base import BaseChunker, Chunk
 
 class ParagraphBasedChunker(BaseChunker):
@@ -7,10 +7,19 @@ class ParagraphBasedChunker(BaseChunker):
 
     Se considera que los párrafos están separados
     por dos saltos de línea: "\\n\\n".
+
+    No aplica ningún límite de tamaño
     """
 
-    def __init__(self):
-        pass
+    def __init__(
+        self,
+        token_counter: Callable[[str], int],
+    ):
+        if not callable(token_counter):
+            raise ValueError(
+                "token_counter debe ser una función"
+            )
+        self.token_counter = token_counter
 
     def chunk(self, text: str, doc_id: str) -> List[Chunk]:
         if not text or not text.strip():
@@ -24,16 +33,17 @@ class ParagraphBasedChunker(BaseChunker):
 
         chunks = []
 
-        for i, paragraph in enumerate(paragraphs):
+        for index, paragraph in enumerate(paragraphs):
             chunks.append(
                 Chunk(
                     text=paragraph,
                     metadata={
                         "chunker": "paragraph_based_chunking",
-                        "paragraph_index": i,
+                        "paragraph_index": index,
+                        "token_count": self.token_counter(paragraph),
                         "character_count": len(paragraph),
                     },
-                    chunk_id=f"{doc_id}_chunk_{i:04d}",
+                    chunk_id=f"{doc_id}_chunk_{index:04d}",
                     doc_id=doc_id,
                 )
             )

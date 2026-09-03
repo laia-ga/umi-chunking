@@ -1,4 +1,4 @@
-from typing import List
+from typing import Callable, List
 import nltk
 import numpy as np
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -15,11 +15,30 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
     def __init__(
         self,
         sensitivity: float, # cuánto debe caer la similitud respecto a la media para crear un corte
+        token_counter: Callable[[str], int], # función que devuelve el número de tokens de un texto
         embedding_model: str = (
             "sentence-transformers/all-MiniLM-L6-v2"
         ),
         window_size: int = 3, # número de frases anteriores para calcular la media
     ):
+        """
+        Parameters
+        ----------
+        sensitivity:
+            Cuánto debe caer la similitud respecto a la media
+            reciente para crear un corte.
+
+        token_counter:
+            Función general utilizada para contar los tokens.
+
+        embedding_model:
+            Modelo utilizado para calcular los embeddings de
+            las frases.
+
+        window_size:
+            Número de similitudes anteriores utilizadas para
+            calcular la media reciente.
+        """
         if sensitivity < 0:
             raise ValueError(
                 "sensitivity no puede ser negativa."
@@ -31,9 +50,11 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
             )
 
         self.sensitivity = sensitivity
+        self.token_counter = token_counter
         self.embedding_model = embedding_model
         self.window_size = window_size
 
+        # Modelo para calcular la similitud semántica entre frases consecutivas
         self.embeddings = HuggingFaceEmbeddings(
             model_name=embedding_model,
             model_kwargs={
@@ -193,6 +214,7 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
                                 current_sentences
                             ),
                             "character_count": len(chunk_text),
+                            "token_count": self.token_counter(chunk_text),
                         },
                         chunk_id=(
                             f"{doc_id}_chunk_{len(chunks):04d}"
@@ -252,6 +274,7 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
                             current_sentences
                         ),
                         "character_count": len(chunk_text),
+                        "token_count": self.token_counter(chunk_text),
                     },
                     chunk_id=(
                         f"{doc_id}_chunk_{len(chunks):04d}"
