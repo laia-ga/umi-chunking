@@ -129,10 +129,20 @@ def save_json(
 
 def create_token_counter(
     model_name: str,
+    add_special_tokens: bool = True,
 ) -> Callable[[str], int]:
     """
     Crea un contador utilizando el tokenizer del modelo
     de embeddings.
+
+    Parameters
+    ----------
+    model_name:
+        Nombre del modelo de Hugging Face que se utilizará.
+
+    add_special_tokens:
+        Indica si se deben añadir tokens especiales al contar.
+        Por defecto se conserva el comportamiento anterior.
     """
 
     tokenizer = AutoTokenizer.from_pretrained(
@@ -146,7 +156,7 @@ def create_token_counter(
         return len(
             tokenizer.encode(
                 text,
-                add_special_tokens=True,
+                add_special_tokens=add_special_tokens,
                 truncation=False,
             )
         )

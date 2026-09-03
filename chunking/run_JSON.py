@@ -5,6 +5,7 @@
 import json
 import os
 import time
+from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Dict
 
@@ -43,10 +44,6 @@ CHUNKING_DIR = Path(__file__).resolve().parent
 # Carpeta raíz del proyecto:
 # main
 BASE_DIR = CHUNKING_DIR.parent
-
-# Archivo JSON con la configuración de los chunkers:
-# main/configs
-CONFIG_FILE = BASE_DIR / "configs" / "chunker_config.json"
 
 # Archivo JSON con la configuración del tokenizador utilizado para el conteo:
 # main/configs
@@ -132,10 +129,17 @@ def main() -> None:
     # 2. Config + token counter
     tokenizer_cfg = load_config(TOKENIZER_CONFIG_FILE)
     model_name = tokenizer_cfg["tokenizer"]["model_name"]
+    add_special_tokens = tokenizer_cfg["tokenizer"].get(
+        "add_special_tokens",
+        True,
+    )
     target_tokens = tokenizer_cfg["tokenizer"]["target_tokens"]
     max_tokens = tokenizer_cfg["tokenizer"]["max_tokens"]
 
-    token_counter = create_token_counter(model_name)
+    token_counter = create_token_counter(
+        model_name,
+        add_special_tokens=add_special_tokens,
+    )
 
     for doc in documents:
         doc["token_count"] = token_counter(doc["full_text"])
@@ -171,20 +175,8 @@ def main() -> None:
         exec_time = time.perf_counter() - start
         ram_after = process.memory_info().rss / (1024**2)
 
-        # Serializar
-        serialized = []
-        for c in chunks:
-            if hasattr(c, "model_dump"):
-                serialized.append(c.model_dump())
-            elif hasattr(c, "dict"):
-                serialized.append(c.dict())
-            else:
-                serialized.append({
-                    "text": c.text,
-                    "metadata": c.metadata,
-                    "chunk_id": c.chunk_id,
-                    "doc_id": c.doc_id,
-                })
+        # Serializar los dataclasses Chunk generados por el chunker JSON
+        serialized = [asdict(chunk) for chunk in chunks]
 
         # Guardar chunks
         result = {
