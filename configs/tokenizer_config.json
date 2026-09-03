@@ -1,0 +1,8 @@
+{
+    "tokenizer": {
+        "model_name": "BAAI/bge-m3",
+        "add_special_tokens": true,
+        "max_tokens": 8192,
+        "target_tokens": 512
+    }
+}

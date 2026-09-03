@@ -80,6 +80,10 @@ BASE_DIR = CHUNKING_DIR.parent
 # main/configs
 CONFIG_FILE = BASE_DIR / "configs" / "chunker_config.json"
 
+# Archivo JSON con la configuración del tokenizador utilizado para el conteo:
+# main/configs
+TOKENIZER_CONFIG_FILE = BASE_DIR / "configs" / "tokenizer_config.json"
+
 # Carpeta que contiene los scripts de análisis:
 # main/scripts
 SCRIPTS_DIR = BASE_DIR / "scripts"
