@@ -189,3 +189,6 @@ Thumbs.db
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Copias automáticas de Jupyter
+.ipynb_checkpoints/
