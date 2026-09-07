@@ -1,0 +1,31 @@
+{
+  "strategy": "recursive_chunking",
+  "type": "RecursiveChunker",
+  "abbreviation": "RC",
+  "params": {
+    "chunk_size": 2000,
+    "chunk_overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "source_path": "guideline\\GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 56,
+  "empty_chunks": 0,
+  "tokens_min": 188,
+  "tokens_p25": 361.75,
+  "tokens_median": 442.0,
+  "tokens_mean": 440.14,
+  "tokens_p75": 512.0,
+  "tokens_max": 671,
+  "tokens_std": 115.71,
+  "tokens_total": 24648,
+  "tokens_original": 23749,
+  "tokens_ratio": 1.038,
+  "execution_time_seconds": 0.049072,
+  "ram_before_mb": 807.7,
+  "ram_after_mb": 802.62,
+  "ram_increase_mb": -5.08
+}

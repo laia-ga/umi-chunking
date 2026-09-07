@@ -1,0 +1,31 @@
+{
+  "strategy": "recursive_chunking",
+  "type": "RecursiveChunker",
+  "abbreviation": "RC",
+  "params": {
+    "chunk_size": 2000,
+    "chunk_overlap": 200
+  },
+  "status": "completed",
+  "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
+  "document_type": "paper",
+  "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "source_path": "paper\\PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 41,
+  "empty_chunks": 0,
+  "tokens_min": 91,
+  "tokens_p25": 418.0,
+  "tokens_median": 498.0,
+  "tokens_mean": 466.9,
+  "tokens_p75": 567.0,
+  "tokens_max": 708,
+  "tokens_std": 144.8,
+  "tokens_total": 19143,
+  "tokens_original": 18579,
+  "tokens_ratio": 1.03,
+  "execution_time_seconds": 0.050517,
+  "ram_before_mb": 804.82,
+  "ram_after_mb": 805.08,
+  "ram_increase_mb": 0.25
+}

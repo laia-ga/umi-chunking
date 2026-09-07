@@ -1,0 +1,31 @@
+{
+  "strategy": "length_aware_chunking",
+  "type": "LengthAwareChunker",
+  "abbreviation": "LAC",
+  "params": {
+    "target_length": 512,
+    "tolerance": 50
+  },
+  "status": "completed",
+  "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "document_type": "paper",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "source_path": "paper\\PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 29,
+  "empty_chunks": 0,
+  "tokens_min": 321,
+  "tokens_p25": 486.0,
+  "tokens_median": 532.0,
+  "tokens_mean": 514.9,
+  "tokens_p75": 548.0,
+  "tokens_max": 797,
+  "tokens_std": 82.54,
+  "tokens_total": 14932,
+  "tokens_original": 14869,
+  "tokens_ratio": 1.004,
+  "execution_time_seconds": 0.47153,
+  "ram_before_mb": 1287.54,
+  "ram_after_mb": 1286.41,
+  "ram_increase_mb": -1.14
+}

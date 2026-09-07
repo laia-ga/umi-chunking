@@ -1,0 +1,32 @@
+{
+  "strategy": "semantic_variance_adaptive_chunking",
+  "type": "SemanticVarianceAdaptiveChunker",
+  "abbreviation": "SVAC",
+  "params": {
+    "sensitivity": 0.2,
+    "window_size": 5,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "source_path": "guideline\\GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 88,
+  "empty_chunks": 0,
+  "tokens_min": 4,
+  "tokens_p25": 37.75,
+  "tokens_median": 144.5,
+  "tokens_mean": 271.9,
+  "tokens_p75": 370.0,
+  "tokens_max": 1522,
+  "tokens_std": 320.56,
+  "tokens_total": 23927,
+  "tokens_original": 23749,
+  "tokens_ratio": 1.007,
+  "execution_time_seconds": 3.856131,
+  "ram_before_mb": 1219.75,
+  "ram_after_mb": 1306.85,
+  "ram_increase_mb": 87.1
+}

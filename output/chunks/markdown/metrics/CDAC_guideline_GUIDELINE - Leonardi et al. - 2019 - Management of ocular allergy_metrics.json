@@ -1,0 +1,30 @@
+{
+  "strategy": "content_density_adaptive_chunking",
+  "type": "ContentDensityAdaptiveChunker",
+  "abbreviation": "CDAC",
+  "params": {
+    "base_chunk_size": 300
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "source_path": "guideline\\GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 129,
+  "empty_chunks": 0,
+  "tokens_min": 10,
+  "tokens_p25": 132.0,
+  "tokens_median": 149.0,
+  "tokens_mean": 186.55,
+  "tokens_p75": 169.0,
+  "tokens_max": 1390,
+  "tokens_std": 157.55,
+  "tokens_total": 24065,
+  "tokens_original": 23815,
+  "tokens_ratio": 1.01,
+  "execution_time_seconds": 0.315914,
+  "ram_before_mb": 1222.79,
+  "ram_after_mb": 1226.76,
+  "ram_increase_mb": 3.96
+}

@@ -1,0 +1,32 @@
+{
+  "strategy": "semantic_boundary_detection",
+  "type": "SemanticBoundaryChunker",
+  "abbreviation": "SBDC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0,
+    "buffer_size": 1,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "source_path": "guideline\\GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 181,
+  "empty_chunks": 0,
+  "tokens_min": 5,
+  "tokens_p25": 11.0,
+  "tokens_median": 62.0,
+  "tokens_mean": 133.2,
+  "tokens_p75": 80.0,
+  "tokens_max": 7337,
+  "tokens_std": 590.52,
+  "tokens_total": 24109,
+  "tokens_original": 23749,
+  "tokens_ratio": 1.015,
+  "execution_time_seconds": 7.521597,
+  "ram_before_mb": 1139.99,
+  "ram_after_mb": 1214.97,
+  "ram_increase_mb": 74.98
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "llm_boundary_detection_chunking",
+  "type": "LLMBoundaryDetectionChunker",
+  "abbreviation": "LBDC",
+  "params": {
+    "max_tokens": 512,
+    "overlap_tokens": 75
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020.md",
+  "source_path": "guideline\\GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 48,
+  "empty_chunks": 0,
+  "tokens_min": 144,
+  "tokens_p25": 550.25,
+  "tokens_median": 567.5,
+  "tokens_mean": 546.19,
+  "tokens_p75": 577.0,
+  "tokens_max": 584,
+  "tokens_std": 74.35,
+  "tokens_total": 26217,
+  "tokens_original": 22787,
+  "tokens_ratio": 1.151,
+  "execution_time_seconds": 0.790562,
+  "ram_before_mb": 1265.46,
+  "ram_after_mb": 1265.66,
+  "ram_increase_mb": 0.2
+}

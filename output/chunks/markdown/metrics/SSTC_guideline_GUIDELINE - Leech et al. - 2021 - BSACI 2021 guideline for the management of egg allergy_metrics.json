@@ -1,0 +1,31 @@
+{
+  "strategy": "semantic_similarity_threshold_chunking",
+  "type": "SemanticSimilarityThresholdChunker",
+  "abbreviation": "SSTC",
+  "params": {
+    "threshold": 0.5,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "source_path": "guideline\\GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 776,
+  "empty_chunks": 0,
+  "tokens_min": 3,
+  "tokens_p25": 8.0,
+  "tokens_median": 12.0,
+  "tokens_mean": 33.85,
+  "tokens_p75": 26.0,
+  "tokens_max": 978,
+  "tokens_std": 79.59,
+  "tokens_total": 26268,
+  "tokens_original": 24718,
+  "tokens_ratio": 1.063,
+  "execution_time_seconds": 3.150927,
+  "ram_before_mb": 1023.39,
+  "ram_after_mb": 1061.35,
+  "ram_increase_mb": 37.96
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "recursive_token_fallback_chunking",
+  "type": "RecursiveTokenChunker",
+  "abbreviation": "RTF",
+  "params": {
+    "chunk_size": 512,
+    "chunk_overlap": 75
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "source_path": "guideline\\GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 77,
+  "empty_chunks": 0,
+  "tokens_min": 5,
+  "tokens_p25": 224.0,
+  "tokens_median": 381.0,
+  "tokens_mean": 324.6,
+  "tokens_p75": 462.0,
+  "tokens_max": 506,
+  "tokens_std": 154.77,
+  "tokens_total": 24994,
+  "tokens_original": 23815,
+  "tokens_ratio": 1.05,
+  "execution_time_seconds": 0.244595,
+  "ram_before_mb": 806.09,
+  "ram_after_mb": 806.09,
+  "ram_increase_mb": 0.0
+}

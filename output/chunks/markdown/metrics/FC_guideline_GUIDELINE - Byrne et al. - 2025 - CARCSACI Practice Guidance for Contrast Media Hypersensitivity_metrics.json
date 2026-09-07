@@ -1,0 +1,31 @@
+{
+  "strategy": "fixed_token_chunking",
+  "type": "FixedTokenChunker",
+  "abbreviation": "FC",
+  "params": {
+    "chunk_size": 512,
+    "overlap": 75
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "source_path": "guideline\\GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 55,
+  "empty_chunks": 0,
+  "tokens_min": 151,
+  "tokens_p25": 514.0,
+  "tokens_median": 514.0,
+  "tokens_mean": 507.56,
+  "tokens_p75": 514.0,
+  "tokens_max": 515,
+  "tokens_std": 48.52,
+  "tokens_total": 27916,
+  "tokens_original": 23749,
+  "tokens_ratio": 1.175,
+  "execution_time_seconds": 0.051853,
+  "ram_before_mb": 802.04,
+  "ram_after_mb": 810.3,
+  "ram_increase_mb": 8.26
+}

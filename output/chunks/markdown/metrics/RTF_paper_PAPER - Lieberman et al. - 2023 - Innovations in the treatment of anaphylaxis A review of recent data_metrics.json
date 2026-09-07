@@ -1,0 +1,31 @@
+{
+  "strategy": "recursive_token_fallback_chunking",
+  "type": "RecursiveTokenChunker",
+  "abbreviation": "RTF",
+  "params": {
+    "chunk_size": 512,
+    "chunk_overlap": 75
+  },
+  "status": "completed",
+  "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "document_type": "paper",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "source_path": "paper\\PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 45,
+  "empty_chunks": 0,
+  "tokens_min": 46,
+  "tokens_p25": 363.0,
+  "tokens_median": 443.0,
+  "tokens_mean": 391.69,
+  "tokens_p75": 467.0,
+  "tokens_max": 499,
+  "tokens_std": 127.52,
+  "tokens_total": 17626,
+  "tokens_original": 16759,
+  "tokens_ratio": 1.052,
+  "execution_time_seconds": 0.192839,
+  "ram_before_mb": 806.46,
+  "ram_after_mb": 806.5,
+  "ram_increase_mb": 0.04
+}

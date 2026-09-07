@@ -1,0 +1,1683 @@
+{
+  "strategy": "sentence_group_chunking",
+  "type": "SentenceGroupChunker",
+  "abbreviation": "SGC",
+  "params": {
+    "sentences_per_chunk": 10,
+    "overlap": 2
+  },
+  "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "source_path": "guideline\\GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "tokenizer model": "BAAI/bge-m3",
+  "original_token_count": 24718,
+  "number_of_chunks": 111,
+  "chunks": [
+    {
+      "text": "Received:13November2020 | Revised:9August2021 | Accepted:15August2021\n\nDOI: 10.1111/cea.14009\n\nG U I D E L I N E S\n\n# BSACI 2021 guideline for the management of egg allergy\n\n### Susan C. Leech1 | Pamela W. Ewan2 | Isabel J. Skypala3 | Nicola Brathwaite1,4 | Mich Erlewyn- Lajeunesse5 | Sarah Heath1 | Heidi Ball6 | Polly James7 | Karen Murphy7 | Andrew T. Clark2\n\n- 1Department of Child Health, Kings College Hospital, London, UK\n- 2Allergy Clinic, NHS Foundation Trust, Cambridge University, Cambridge, UK 3Royal Brompton & Harefield NHS Trust,\n\n\nLondon, UK 4Department of Child Health, Kings College Hospital, London, UK\n\n- 5University Hospital Southampton NHS Foundation Trust, Southampton, UK\n- 6University Hospitals Leicester, Leicester, UK\n\n\n7Evelina Children's Hospital, Guys and St Thomas' NHS Foundation Trust, London, UK\n\nCorrespondence Andrew T. Clark, Allergy Clinic, Cambridge University Hospitals NHS Foundation Trust, Cambridge CB2 0QQ, UK. Email: [CORREO OMITIDO]\n\n#### Abstract\n\nThis guideline advises on the management of patients with egg allergy. Most commonly egg allergy presents in infancy, with a prevalence of approximately 2% in children and 0.1% in adults. A clear clinical history will confirm the diagnosis in most cases. Investigation by measuring egg-specific IgE (by skin prick testing or specific IgE assay) is useful in moderate-severe cases or where there is diagnostic uncertainty. Following an acute allergic reaction, egg avoidance advice should be provided. Egg allergy usually resolves, and reintroduction can be achieved at home if reactions have been mild and there is no asthma. Patients with a history of severe reactions or asthma should have reintroduction guided by a specialist. All children with egg allergy should receive the MMR vaccine. Most adults and children with egg allergy can receive the influenza vaccine in primary care, unless they have had anaphylaxis to egg requiring intensive care support.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 0,
+        "end_sentence_index": 10,
+        "sentence_count": 10,
+        "token_count": 510,
+        "character_count": 1955
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0000",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "All children with egg allergy should receive the MMR vaccine. Most adults and children with egg allergy can receive the influenza vaccine in primary care, unless they have had anaphylaxis to egg requiring intensive care support. Yellow Fever vaccines should only be considered in egg-allergic patients under the guidance of an allergy specialist. This guideline was prepared by the Standards of Care Committee (SOCC) of the British Society for Allergy and Clinical Immunology (BSACI) and is intended for allergists and others with a special interest in allergy. The recommendations are evidence based. Where evidence was lacking, consensus was reached by the panel of specialists on the committee. The document encompasses epidemiology, risk factors, diagnosis, treatment, prognosis and co-morbid associations. ###### K E Y W O R D S\n\nadrenaline, aetiology, allergy, anaphylaxis, BSACI, diagnosis, egg, epinephrine, food, management, SOCC\n\n#### 1 | INTRODUCTION\n\nOne in 50 children present with egg allergy. This is an update of the BSACI guideline for the management of egg allergy.1 It was prepared by an expert group of the Standards of Care Committee (SOCC) of the British Society for Allergy and Clinical Immunology (BSACI) and addresses the diagnosis and treatment of patients with egg allergy, for healthcare professionals working in secondary care. It includes guidance for families with egg-allergic children and adult egg-allergic\n\npatients.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 8,
+        "end_sentence_index": 18,
+        "sentence_count": 10,
+        "token_count": 341,
+        "character_count": 1451
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0001",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "This is an update of the BSACI guideline for the management of egg allergy.1 It was prepared by an expert group of the Standards of Care Committee (SOCC) of the British Society for Allergy and Clinical Immunology (BSACI) and addresses the diagnosis and treatment of patients with egg allergy, for healthcare professionals working in secondary care. It includes guidance for families with egg-allergic children and adult egg-allergic\n\npatients. The guideline working group included paediatric and adult allergists, paediatric and adult allergy specialist dieticians and clinical psychologists working with egg-allergic patients. During development of this guideline, representatives from patient organizations (Allergy UK and Anaphylaxis Campaign) were part of the guideline writing group and involved in selection of topics, evidence, recommendations and draft reviews. Declarations of interest of the guideline lead and the writing group members are held at BSACI office and are available on request. None jeopardized unbiased guideline\n\n1262 | ©2021JohnWiley&SonsLtd wileyonlinelibrary.com/journal/cea ClinExpAllergy.2021;51:1262–1278. |Key Message<br><br>Grades of recommendation, A-E are based on evidence graded using SIGN criteria (appendix VI)<br><br>• Egg allergy is an adverse immunological reaction induced by egg protein. This guideline focuses on type-1 IgE-mediated allergy to egg.<br>• The prevalence of egg allergy is estimated at approximately 2% in children and 0.1% in adults in the United Kingdom (Grade of recommendation = B).<br>• Allergic sensitization to egg, without a history of reacting, is common in infancy and should not prevent the introduction of egg into the diet, because this carries a risk of unnecessary dietary exclusion (Grade of recommendation =D).<br>• Egg allergy presents most commonly in infancy, usually after the first apparent ingestion, with rapid onset of erythema, urticaria, angio-oedema and/or vomiting (Grade of recommendation = B).<br>• Severe reactions involving respiratory or cardiovascular symptoms, presenting with cough, wheeze, breathing difficulty or pallor and floppiness are uncommon (Grade of recommendation = B).<br>• The clinical diagnosis is made by the rapid onset of typical symptoms (usually within minutes) after ingestion of egg (Grade of recommendation = B).<br>• Reaction severity is related to the amount of egg ingested and the degree of cooking, with raw egg white being the most allergenic (Grade of recommendation =D).<br>• The presence of egg-specific immunoglobulin E (IgE) or positive egg skin prick test (SPT) is useful in the management of moderatesevere cases or where there is diagnostic uncertainty (Grade of recommendation = B).<br>• The reported level of egg-specific IgE required to support a diagnosis varies between studies. It is not possible to identify a single cut-off value for egg-specific IgE which is ‘diagnostic’ for egg allergy at all ages (Grade of recommendation = B).<br>• An egg SPT weal of 3 mm or more in combination with a clinical history is considered adequate to confirm a diagnosis of egg allergy in most cases (Grade of recommendation = B).<br>• Clinical severity cannot be judged on basis of SPT weal size or serum-specific IgE alone (Grade of recommendation = C).<br>• In the absence of having a suspected reaction to egg, patients should not routinely be tested for egg allergy (Grade of recommendation = D).<br>• A food challenge may be necessary to confirm or refute conflicting history and test results but is rarely required in practice to confirm the diagnosis of egg allergy (Grade of recommendation = D).<br>• Following an acute allergic reaction to egg, egg avoidance advice is the cornerstone of management (Grade of recommendation = D).<br>• Most infants with egg allergy should continue to breastfeed, with their mother on an unrestricted diet (Grade of recommendation<br><br>= D).<br><br>• Mothers breastfeeding egg-allergic infants may wish to try egg exclusion if their infants have persistent eczema and egg is a trigger, or if the infant is suspected of reacting to maternal egg ingestion (Grade of recommendation = C).<br>• Referral to a dietician is required if there are multiple food allergies, nutritional concerns or help needed following the reintroduction ladder (Grade of recommendation = D).<br>• Referral to a dietician is needed for children with severe egg allergy for advice about strict egg avoidance (Grade of recommendation = D).<br>• Mild egg allergy usually resolves. Attempts to introduce baked egg as an ingredient (e.g.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 16,
+        "end_sentence_index": 26,
+        "sentence_count": 10,
+        "token_count": 1181,
+        "character_count": 4574
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0002",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "It is not possible to identify a single cut-off value for egg-specific IgE which is ‘diagnostic’ for egg allergy at all ages (Grade of recommendation = B).<br>• An egg SPT weal of 3 mm or more in combination with a clinical history is considered adequate to confirm a diagnosis of egg allergy in most cases (Grade of recommendation = B).<br>• Clinical severity cannot be judged on basis of SPT weal size or serum-specific IgE alone (Grade of recommendation = C).<br>• In the absence of having a suspected reaction to egg, patients should not routinely be tested for egg allergy (Grade of recommendation = D).<br>• A food challenge may be necessary to confirm or refute conflicting history and test results but is rarely required in practice to confirm the diagnosis of egg allergy (Grade of recommendation = D).<br>• Following an acute allergic reaction to egg, egg avoidance advice is the cornerstone of management (Grade of recommendation = D).<br>• Most infants with egg allergy should continue to breastfeed, with their mother on an unrestricted diet (Grade of recommendation<br><br>= D).<br><br>• Mothers breastfeeding egg-allergic infants may wish to try egg exclusion if their infants have persistent eczema and egg is a trigger, or if the infant is suspected of reacting to maternal egg ingestion (Grade of recommendation = C).<br>• Referral to a dietician is required if there are multiple food allergies, nutritional concerns or help needed following the reintroduction ladder (Grade of recommendation = D).<br>• Referral to a dietician is needed for children with severe egg allergy for advice about strict egg avoidance (Grade of recommendation = D).<br>• Mild egg allergy usually resolves. Attempts to introduce baked egg as an ingredient (e.g. in cake) may be made from the age of 12 months, or 6 months from the last reaction (Grade of recommendation = B).<br>• Regular ingestion of baked egg may promote tolerance (Grade of recommendation = C).<br>• Once loosely cooked egg is tolerated, egg allergy is outgrown and egg should be eaten as part of the normal diet (Grade of recommendation = D).<br>• Resolution occurs gradually over time. Assessment for reintroduction of baked egg in all infants/young children presenting with egg allergy is advised as prolonged total exclusion may lead to more persistent allergy and increases dietary and social exclusion (Grade of recommendation = B).<br>• Children with mild-moderate symptoms can reintroduce egg at home, starting with baked egg in small amounts (Grade of recommendation = D).<br>• Children with a history of a severe egg reaction or severe eczema and faltering growth are more likely to have persistent disease and avoidance and reintroduction should be guided by a specialist allergy service (Grade of recommendation = D).<br>|\n|---|\n\n\n###### 13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\n|• Early introduction of well-cooked or baked egg into the diet of infants with eczema reduces the incidence of egg allergy (Grade of recommendation = A).<br>• Egg allergy in infancy is associated with an increased risk of developing peanut allergy. This may be prevented by the early introduction of peanut into the diet (Grade of recommendation = B).<br>• New onset egg allergy in adults is rare; it is usually more severe and persists (Grade of recommendation = D).<br>• All children with egg allergy should receive the MMR immunization in primary care (Grade of recommendation = B).<br>• Children with egg allergy can receive the nasal live attenuated influenza vaccine (LAIV) and most children and adults can receive the intramuscular influenza vaccine in primary care, unless they have had anaphylaxis to egg requiring admission to intensive care (Grade of recommendation = B).<br>• Yellow Fever vaccines contain detectable, but not quantified amounts of egg protein. If these vaccines are required, the eggallergic patient should be referred to an allergy specialist with access to a designated yellow fever vaccination centre for assessment and immunization (Grade of recommendation = B).<br>|\n|---|\n\n\n|BOX 1 Which patients with egg allergy should be referred to an allergy clinic<br><br>• History of moderate to severe reaction (See Box 4)<br>• Where there is diagnostic uncertainty<br>• Egg allergy in association with other IgE mediated food allergies<br>• Severe eczema in children on an egg-containing diet<br>• Allergy to baked egg which persists beyond the common age of resolution (6-7 years).<br>• Adult-onset egg allergy<br>• Egg allergy with requirement for yellow fever immunisation<br>• Any child wishing to reintroduce egg but unable due to high anxiety.<br>• Egg allergic patients on biologics and immunosuppressants<br>|\n|---|\n\n\ndevelopment. Evidence for the recommendations was obtained from electronic literature searches of Medline/PubMed, NICE and the Cochrane library to 07/12/19 using the following strategy and keywords—(allergy OR skin prick test OR anaphylaxis OR contraindications OR immediate adverse reactions) AND (egg OR lecithin OR ovalbumin). The strategy and search results are outlined in Appendix S5. The expert knowledge of the specialist literature and hand searches were used in addition. Evidence was assessed using SIGN criteria (Appendix S6).",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 24,
+        "end_sentence_index": 34,
+        "sentence_count": 10,
+        "token_count": 1470,
+        "character_count": 5552
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0003",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "The expert knowledge of the specialist literature and hand searches were used in addition. Evidence was assessed using SIGN criteria (Appendix S6). Where evidence was lacking, consensus was reached amongst the experts on the committee. All BSACI members were consulted on the guideline, using a webbased system, prior to submission for publication, and their comments and suggestions were carefully considered by the Standards of Care Committee and responses are available on request. #### 2 | DEFINITION AND MECHANISM\n\nEgg allergy is an adverse immunological reaction, most often induced by the proteins in egg white, usually ovalbumin (Gal d 2) and/ or ovomucoid (Gal d 1) mediated by egg-specific IgE. Ovomucoid is heat stable and immunodominant.2,3 Late-phase and delayed hypersensitivity reactions also occur, typically in eczema. The production of egg-specific IgE is a pre-requisite for developing type-1 hypersensitivity to egg. The route, timing and dose of\n\negg protein exposure, resulting in sensitization and clinical allergy, are unknown. #### 3 | PREVALENCE\n\nThe EuroPrevall birth cohort reports that challenge confirmed hen's egg allergy, in children at 2 years of age, is about 1% across Europe and 2% in the UK.4,5 Egg allergy is much less common in adults. The prevalence of egg allergy in the adult population has been estimated at 0.1%.6 Newly diagnosed egg allergy in adults is rare.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 32,
+        "end_sentence_index": 42,
+        "sentence_count": 10,
+        "token_count": 348,
+        "character_count": 1404
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0004",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "#### 3 | PREVALENCE\n\nThe EuroPrevall birth cohort reports that challenge confirmed hen's egg allergy, in children at 2 years of age, is about 1% across Europe and 2% in the UK.4,5 Egg allergy is much less common in adults. The prevalence of egg allergy in the adult population has been estimated at 0.1%.6 Newly diagnosed egg allergy in adults is rare. #### 4 | RISK FACTORS\n\nEgg allergy in children is associated with eczema and rhinitis.7 Eczema is a significant risk factor for egg allergy.8 The onset of eczema predates egg allergy by an average of 3.5 months and the likelihood of egg allergy increases with the severity of eczema.7 Boys with early-life eczema have the highest prevalence of egg sensitization.9 Egg allergy is not associated with age of introduction of egg into the diet.7 Children who received antibiotics in the first week of life are more likely to develop egg allergy.7 Egg allergy may occur in association with other food allergies, such as cow's milk protein or peanut. 13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\n|BOX 2 Making a diagnosis of egg allergy<br><br>• Most children should receive a clinical diagnosis without resorting to food challenge.<br>• If the history is unclear, a negative skin prick test can exclude egg allergy.<br>• Skin prick test weal size or level of specific IgE does not predict the severity of allergic reactions to egg29.<br>• The severity of a reaction depends on the amount of allergen ingested, the matrix, how well it is cooked and concomitant asthma, exercise or illness.<br>|\n|---|\n\n\n#### 5 | CLINICAL PRESENTATION AND SEVERITY\n\nThe onset of egg allergy is usually observed early in life, in children with eczema and atopy. Egg allergy most commonly presents after the first apparent ingestion.8,10,11 Most reactions occur to lightly cooked egg, with reactions to baked egg and raw egg being less common.10 Clinical reactions include urticaria and/or angio-oedema in 80–90% (within minutes) and gastrointestinal symptoms in 10–44% (within 2 h).10,12–14\n\nMost reactions occurring in the community are mild, with facial erythema and/or urticaria. In children, a mild reaction is characterized by cutaneous symptoms on significant exposure (e.g. a mouthful of cooked egg) sometimes associated with a single vomit. A hoarse cry, change in voice pitch, cough, stridor or wheeze indicates involvement of the respiratory tract and a more severe reaction. Occasionally young children develop pallor and floppiness. Moderate to severe reactions with respiratory symptoms are less common; 5–10% in challenge studies, but less in the community, where the initial triggering dose is usually lower.10,12,13 Prior to presentation to allergy services, anaphylaxis occurs in 7%.10\n\nThe severity of allergic reactions correlates with the amount of egg protein exposure15; as determined by the amount of egg protein ingested and the degree of processing (baked in wheat, cooked or raw, cooking duration and temperature).",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 40,
+        "end_sentence_index": 50,
+        "sentence_count": 10,
+        "token_count": 876,
+        "character_count": 3268
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0005",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Occasionally young children develop pallor and floppiness. Moderate to severe reactions with respiratory symptoms are less common; 5–10% in challenge studies, but less in the community, where the initial triggering dose is usually lower.10,12,13 Prior to presentation to allergy services, anaphylaxis occurs in 7%.10\n\nThe severity of allergic reactions correlates with the amount of egg protein exposure15; as determined by the amount of egg protein ingested and the degree of processing (baked in wheat, cooked or raw, cooking duration and temperature). Baked egg as an ingredient in sponge cake would mostly cause a mild cutaneous reaction. Skin contact to raw egg may induce local cutaneous reactions. Systemic reactions have been reported when egg white has been applied to skin for the treatment of nappy rash.16 Ingestion of raw or undercooked egg triggers more severe clinical reactions than well-cooked egg. One death due to egg allergy has been reported in an adult patient in the UK since 1992.17,18 In children with eczema who are allergic to egg protein, dietary exclusion of egg results in improvement of their eczema.19 Clinical case examples of egg allergy presenting with varying degrees of severity are described in Appendix S1. Egg allergic patients requiring referral to an allergy clinic are defined in Box 1. Note: Early referral is beneficial as a delay in baked egg introduction may limit the development of tolerance. #### 6 | DIAGNOSIS\n\nAcute clinical signs have usually resolved by the time the patient reaches medical attention. The clinical diagnosis is, therefore, made\n\nby a typical history of erythema, urticaria, angio-oedema and/or vomiting with rapid onset (usually within minutes) after ingestion of egg.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 48,
+        "end_sentence_index": 58,
+        "sentence_count": 10,
+        "token_count": 424,
+        "character_count": 1739
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0006",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "#### 6 | DIAGNOSIS\n\nAcute clinical signs have usually resolved by the time the patient reaches medical attention. The clinical diagnosis is, therefore, made\n\nby a typical history of erythema, urticaria, angio-oedema and/or vomiting with rapid onset (usually within minutes) after ingestion of egg. Children with a clear history of a mild reaction to egg can be diagnosed and managed in a primary care setting without further testing. Only children with moderate-severe reactions, or where the history remains unclear, require further investigation to confirm and manage egg allergy. 7 | INVESTIGATIONS\n\n- 7.1 | Skin prick test\n\nSkin prick testing (SPT) has a poor positive predictive value as a screening tool in the absence of a suspected allergic reaction to egg. SPT using commercially available standardized whole egg reagent should only be carried out if there is clinical suspicion of egg allergy. SPT weal size does not correlate with clinical severity. Traditionally, cut-off levels for egg white SPT weal size of ≥3 mm8,20 have been used to support a clinical diagnosis of egg allergy. Higher cut-off levels are associated with higher specificity and positive predictive values, e.g., a SPT weal size of 5 mm to egg white is 100% diagnostic in a child under 2 years of age.21 Cut-off values for prick to prick testing with raw egg are reported as ≥13 mm.22 Skin testing with raw egg does not predict tolerance to baked egg in egg-allergic children23. It is not standardized and there is a risk of severe reactions, so is not routinely recommended outside research settings.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 56,
+        "end_sentence_index": 66,
+        "sentence_count": 10,
+        "token_count": 390,
+        "character_count": 1582
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0007",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Higher cut-off levels are associated with higher specificity and positive predictive values, e.g., a SPT weal size of 5 mm to egg white is 100% diagnostic in a child under 2 years of age.21 Cut-off values for prick to prick testing with raw egg are reported as ≥13 mm.22 Skin testing with raw egg does not predict tolerance to baked egg in egg-allergic children23. It is not standardized and there is a risk of severe reactions, so is not routinely recommended outside research settings. Skin prick testing using a slurry of baked egg had a high negative predictive value for a negative baked egg challenge in one study.24 It is not routinely used in clinical practice. - 7.2 | Egg-specific IgE\n\n\nWhen skin prick testing is not available, measurement of eggspecific IgE may be carried out in patients with a history of moderate/severe reactions to egg containing food, to confirm a clinical suspicion of egg allergy. It is not possible to identify a cut-off for serum-specific IgE because of a lack of consistency between studies. Although there is a demonstrable relationship between serum IgE levels and challenge outcome within studies, there is poor agreement between centres. This is because of differences in\n\n13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\nFIGURE 1 BSACI Egg Ladder—a practical guide to reintroduction. To be used in conjunction with BSACI egg-allergic patient information leaflet (Appendix S3) and Food classification stages (Figure 2)\n\ninclusion criteria, significance levels, challenge method, outcome criteria, patient age and eczema prevalence between studies. With so many interfering variables, these cut- off levels are not applicable to a general population. Low levels of egg-specific IgE may be found in children without clinical egg allergy.13 The measurement of egg-specific IgE in the absence of a history of egg ingestion is discouraged as, in this circumstance, the test has poor specificity and low negative predictive value; cautious home introduction or oral challenge will subsequently be required if the egg-specific IgE level is positive but low.8 Measurement of peanut-specific IgE should be included in infants with moderate/severe egg allergy to guide peanut allergy prevention advice.25\n\n#### 7.3 | Egg component testing\n\nThe egg white components are ovomucoid (Gal d 1), ovalbumin (Gal d 2), ovotransferrin (Gal d 3), lysozyme (Gal d 4) and livetin (Gal d 5).",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 64,
+        "end_sentence_index": 74,
+        "sentence_count": 10,
+        "token_count": 693,
+        "character_count": 2707
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0008",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "With so many interfering variables, these cut- off levels are not applicable to a general population. Low levels of egg-specific IgE may be found in children without clinical egg allergy.13 The measurement of egg-specific IgE in the absence of a history of egg ingestion is discouraged as, in this circumstance, the test has poor specificity and low negative predictive value; cautious home introduction or oral challenge will subsequently be required if the egg-specific IgE level is positive but low.8 Measurement of peanut-specific IgE should be included in infants with moderate/severe egg allergy to guide peanut allergy prevention advice.25\n\n#### 7.3 | Egg component testing\n\nThe egg white components are ovomucoid (Gal d 1), ovalbumin (Gal d 2), ovotransferrin (Gal d 3), lysozyme (Gal d 4) and livetin (Gal d 5). Ovomucoid (Gal d 1) is heat stable and immunodominant.2,3 The role of component allergens in predicting tolerance to baked egg white, or resolution of egg allergy in routine clinical practice has yet to be established.24 Persisting egg allergy is associated with a positive Gal d 1, and a level ≥11 kU/L indicates a high risk of reacting to cooked and raw egg.3 Gal d 1 is also a good indicator of whether the child is allergic only to raw egg, or to both cooked and raw egg.26 The acquisition of tolerance to egg is associated with a decrease in IgE to egg white and Gal d 1.27 When using test results to identify children at a high risk of anaphylaxis, although egg white sIgE levels are more sensitive, Gal d 1 has better positive predictive value and specificity.28 The current evidence suggests that egg components are rarely needed for the routine diagnosis and management of egg allergy in children but can be a useful adjunct for the assessment of egg allergy resolution in adults (Box 2). 8 | MANAGEMENT\n\n- 8.1 | Avoidance diets\n\nEggs served in a recognizable form are relatively easy to avoid. They are used as an ingredient of many manufactured foods; therefore, food labels must be consistently checked. Uncommon sources of egg include quorn, confectionary and egg hidden in a food, usually ‘egg free’, e.g., pizza dough. Extra care needs to be taken with foods sold loose (non-pre-packed) as there may be risk of cross-contamination. Individuals with severe egg allergy will need to completely avoid food sold loose/on buffets. All species of egg (e.g. quail/duck) are given the generic name ‘egg’ on a label.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 72,
+        "end_sentence_index": 82,
+        "sentence_count": 10,
+        "token_count": 623,
+        "character_count": 2443
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0009",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "All species of egg (e.g. quail/duck) are given the generic name ‘egg’ on a label. Verbal and written advice on avoidance of egg products should be provided (see Appendices S2 and S3). - 8.2 | Allergen labelling\n\nEgg is one of the 14 allergens required by EU legislation30 to be declared on the labels of all packaged foods manufactured and sold within the EU, however, small the amount. Egg must be emphasized in bold in the ingredient list. Other terms for egg include albumin, ovalbumin, globulin, ovoglobulin, livetin, ovomucin, vitellin, ovovitellin, lysozyme and alpha-livetin. These are not allowed to be substituted for the term ‘egg’. Knowledge of these terms may be useful for detecting egg protein in non-EU products. - 8.3 | Breastfeeding and egg allergy\n\n\nMost breastfeeding mothers with egg-allergic children should continue to breastfeed on an unrestricted diet. Egg protein from the maternal diet is detectable in breast milk and may cause reactions in\n\n13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\na very small number of infants.31,32 A trial of maternal egg-free diet may be helpful in the following circumstances:\n\n- 1.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 80,
+        "end_sentence_index": 90,
+        "sentence_count": 10,
+        "token_count": 406,
+        "character_count": 1437
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0010",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 8.3 | Breastfeeding and egg allergy\n\n\nMost breastfeeding mothers with egg-allergic children should continue to breastfeed on an unrestricted diet. Egg protein from the maternal diet is detectable in breast milk and may cause reactions in\n\n13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\na very small number of infants.31,32 A trial of maternal egg-free diet may be helpful in the following circumstances:\n\n- 1. Infants with persistent eczema poorly responsive to treatment, where egg is a known or suspected trigger. - 2. Infants suspected to be reacting to maternal ingestion of egg. Strict maternal egg exclusion should be recommended for 4–6 weeks, followed by reintroduction to ensure unnecessary egg exclusion does not continue. #### 8.4 | Cross-reactivity between eggs from hens and other bird species\n\nSkin test reactivity to other avian eggs (especially quail and duck) is common in children with hen's egg allergy.33 It is generally accepted that those avoiding hen's egg should also avoid eggs from other avian species, such as duck, goose and quail. There are case reports of reactions to quail, duck and goose egg in those who are not allergic to hen's eggs.34,35\n\nantihistamine, to treat allergic reactions due to accidental ingestion. In practice, adrenaline autoinjectors are rarely required for children with egg allergy.10 The minority of children, who have had severe reactions with evidence of airway narrowing (e.g. wheeze, voice change, choking) or hypotension, should be provided with injectable adrenaline 39–41 and their families reviewed annually by an allergy specialist.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 88,
+        "end_sentence_index": 98,
+        "sentence_count": 10,
+        "token_count": 511,
+        "character_count": 1896
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0011",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "In practice, adrenaline autoinjectors are rarely required for children with egg allergy.10 The minority of children, who have had severe reactions with evidence of airway narrowing (e.g. wheeze, voice change, choking) or hypotension, should be provided with injectable adrenaline 39–41 and their families reviewed annually by an allergy specialist. Children with egg allergy and asthma, requiring regular preventative treatment with inhaled corticosteroids, should also be considered for an adrenaline autoinjector. Families should receive training in how to use their emergency medication, including demonstration with a trainer device and provision of a management plan.41\n\nAdults and young people with persisting egg allergy should be re-assessed, especially prior to a move away from home, for example, to attend university, join the armed forces or travel overseas. They should be provided with updated information about dietary management and the need for an adrenaline autoinjector reviewed. 9 | RESOLUTION OF EGG ALLERGY\n\n#### 8.5 | When to refer to a dietician\n\nEggs are a good source of energy, protein, B vitamins and vitamin D, which is important in calcium homeostasis and bone health. Those who are not regularly exposed to sunlight benefit from having rich sources of vitamin D in the diet.36 Although it may appear easy to take supplements or substitute other foods, many composite foods may contain eggs; adherence may be difficult without adversely affecting nutritional intake or quality of life. Therefore, whilst the exclusion of eggs does not necessarily lead to nutritional deficiency, a registered dietician should be involved if the diet is also compromised by the exclusion of other foods due to multiple food allergies, lifestyle or religious reasons.37\n\nPatients/families often wish to discuss avoidance in more detail, for example, with regard to specialist replacement products, recipes, eating out or management of children's parties. Egg- allergic children have a two-fold increased risk of accidental reactions to egg, where there is no dietetic involvement in counselling the family.38 Dieticians provide valuable advice following hospital-based food challenges. They play an important role in reintroduction plans, especially in advising on home-baked egg ladder progression (Figure 1) and alternative ideas when common baked egg food (such as cake) is disliked (Classification of egg containing foods, Figure 2).",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 96,
+        "end_sentence_index": 106,
+        "sentence_count": 10,
+        "token_count": 561,
+        "character_count": 2448
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0012",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Egg- allergic children have a two-fold increased risk of accidental reactions to egg, where there is no dietetic involvement in counselling the family.38 Dieticians provide valuable advice following hospital-based food challenges. They play an important role in reintroduction plans, especially in advising on home-baked egg ladder progression (Figure 1) and alternative ideas when common baked egg food (such as cake) is disliked (Classification of egg containing foods, Figure 2). Contact with a dietician, 6 months after starting home introduction using the egg ladder, to assess progress is beneficial. #### 8.6 | Provision of emergency medication and treatment plans\n\nAll families with egg-allergic children should have an appropriate oral antihistamine available, preferably a second generation, non-drowsy\n\n- 9.1 | Prediction of resolution\n\nAt 1 year of age, complete resolution of egg allergy is more likely in children who can tolerate baked egg than those who continue to react.42 The phenotyping of egg allergy (baked egg tolerant vs. allergic) has prognostic implications and eases dietary restrictions.42 Children with mild/moderate egg allergy or with cutaneous reactions only are more likely to resolve.43\n\nPersistence of egg allergy is associated with respiratory or multisystem symptoms, high egg specific IgE, presence of other food allergies or atopic co-morbidities.43–46 Sensitization to multiple egg allergen components, Gal d 1, Gal d 2, Gal d 3 or Gal d 5, may identify children at risk of persistent egg allergy.47\n\n- 9.2 | Natural history of resolution\n\n\nEgg allergy resolves spontaneously in many affected children over several years, whereas in adults it tends to persist. Allergy to wellcooked egg resolves in about one third of children by 3 years of age, and two-thirds by 6 years (Figure 3).10 The rate of resolution varies between studies42,43,48,49 and egg allergy may continue until the teens.10 Systematic reviews suggest that the median age of resolution is 6–9 years, with 68% of egg-allergic individuals experiencing resolution by the age of 16 years.50\n\nTolerance to well-processed (baked or lightly cooked) egg occurs long before tolerance to uncooked egg (Figure 3). Children who can tolerate baked egg may continue to react to lightly cooked egg. Children outgrow allergy to well-cooked egg approximately twice as quickly as they outgrow allergy to uncooked egg. Establishing the former is important to allow relaxation of dietary restrictions and may help establish tolerance. 13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\nStage 3.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 104,
+        "end_sentence_index": 114,
+        "sentence_count": 10,
+        "token_count": 733,
+        "character_count": 2874
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0013",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Establishing the former is important to allow relaxation of dietary restrictions and may help establish tolerance. 13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\nStage 3. Raw egg products\n\nMayonnaise and mayonnaise basedsauces, e.g., Horseradish sauce, tartar sauce, ranch dressing Salad cream, coleslaw Dippy/uncooked boiled/fried/poached egg. Stage 2. Well cooked egg dishes and loosely cooked egg\n\nStage 1. Baked/well cooked egg, (low egg / with matrix)\n\nEarly-stage introduc on:\n\n- *Home-made Pancakes, crepes, and waffles Ba er,\n- *Homemade Yorkshire pudding Eggnoodles\n\nScrambled egg(firm) Hard Boiled /fried/poached egg. Scotch egg Omele e/ fri ataEggfried rice. Quiche and flans\n\n- *Duchess potato\n\nHeated sauces e.g., Hollandaise sauce Eggcustard, Crème caramel Crème Brulée\n\nNougat and Nougat confec onary e.g., mars\n\n- *Hard Meringue/pavlova Later stage introduc on:\n- *Loosely cooked scrambledegg or omele e\n- *Carbonara Sauce\n- *French toast\n- *Welsh rarebit\n\n\nEarly-stage introduc on: Cake (1egg/8 cake recipe) Hard Biscuits TUC crackers\n\nSorbet, Cold / hot Souffle Luxury and fresh ice cream e.g., BenJerry, Haagan Daaz So  meringue (lemon meringue,pavlova) Fresh Mousse and other uncookeddesserts\n\nMini Frozen Yorkshire pudding Pastry containing egg (sausage roll, pie, Choux) Trifle sponge/Jaffa cake\n\nBreadcrumb coa ng e.g. fishfinger, nugget\n\nSushi Tartare steakConfit Egg, Floren ne pizza, eggsbenedict\n\nWheat free bread/bread s cks\n\nLater stage introduc on: Bread containing egg e.g., Brioche, Croissants, Buns, Pane one, Naan, Focaccia,\n\n- *Cake (standard recipe),\n- *Muffins, madeleines Scotch pancakes, *blinis, Welsh cakes\n\n\nSo  Mallow e.g., snowball, teacake Royal and fondant icing /decora onsRaw cake mixture Homemade marzipan Fondant confec onary e.g., crèmeegg Uncooked egg white powder\n\nSo  cookies Toas ng waffles, waffle conesEgg pasta and dishes with pasta, Cooked eggglaze,Prawn crackers,\n\nCocktails / drinks e.g., Advocaat\n\nFIGURE 2 Classification of eggcontaining foods. Each stage to be tried in small amounts first.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 112,
+        "end_sentence_index": 122,
+        "sentence_count": 10,
+        "token_count": 760,
+        "character_count": 2352
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0014",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "fishfinger, nugget\n\nSushi Tartare steakConfit Egg, Floren ne pizza, eggsbenedict\n\nWheat free bread/bread s cks\n\nLater stage introduc on: Bread containing egg e.g., Brioche, Croissants, Buns, Pane one, Naan, Focaccia,\n\n- *Cake (standard recipe),\n- *Muffins, madeleines Scotch pancakes, *blinis, Welsh cakes\n\n\nSo  Mallow e.g., snowball, teacake Royal and fondant icing /decora onsRaw cake mixture Homemade marzipan Fondant confec onary e.g., crèmeegg Uncooked egg white powder\n\nSo  cookies Toas ng waffles, waffle conesEgg pasta and dishes with pasta, Cooked eggglaze,Prawn crackers,\n\nCocktails / drinks e.g., Advocaat\n\nFIGURE 2 Classification of eggcontaining foods. Each stage to be tried in small amounts first. Reduce to lower stage/smaller amount if symptoms. * these foods may cause allergic reaction depending on degree of cooking (fully cooked = less allergen)\n\nPasteurised egg\n\n*Egg as binder e.g., burger, meatball -well cooked Quorn\n\nEach stage to be tried in small amounts first. Reduce to lower stage/smaller amount if symptoms. * these foods may cause allergic reac on depending on degree of cooking (fully cooked = less allergen)\n\n#### 9.3 | Reintroduction of egg into the diet\n\nMost children with mild egg allergy tolerate gradual staged home introduction according to an egg ladder (Figure 1). Baked egg introduction improves quality of life for egg-allergic children, enhances the natural development of tolerance and de-restricts the diet. The speed with which egg allergy resolves varies between individuals, and therefore the timing and appropriateness of egg reintroduction\n\nshould be individually assessed.46 Egg-allergic children who can tolerate baked egg at diagnosis and continue to consume baked egg achieve tolerance earlier than those who continue to avoid all forms of egg.51 In children with previous mild reactions and no asthma, the introduction of baked egg into the diet at home from 12 months of age is safe and may support the development of tolerance.52–55 Reintroduction should not be attempted within 6 months of a significant reaction to egg. 13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\nFIGURE 3 Cumulative persistence (survival) of allergy to well-cooked and uncooked egg expressed using KaplanMeier survival curves. Log-rank test for difference between curves: p < 0.0001.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 120,
+        "end_sentence_index": 130,
+        "sentence_count": 10,
+        "token_count": 731,
+        "character_count": 2615
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0015",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\nFIGURE 3 Cumulative persistence (survival) of allergy to well-cooked and uncooked egg expressed using KaplanMeier survival curves. Log-rank test for difference between curves: p < 0.0001. Median age at acquisition of tolerance is 67 months (5.6 years) for well-cooked and 127 months (10.3 years) for uncooked egg\n\n|BOX 3 Potential benefits of home introduction of egg in egg-allergic children<br><br>• Promotion of natural resolution of egg allergy52<br>• Reduction of food-related anxiety<br>• Expansion and normalization of the diet<br>• Improved nutritional outcomes.<br>• Avoidance of hospital-related anxiety (e.g. in children with communication disorders)<br>|\n|---|\n\n\n|BOX 4 Hospital based egg challenge should be considered in the following groups of patients after an interval of >1 year from the last reaction<br><br>• Patients with severe symptoms following egg ingestion, affecting breathing (cough, wheeze or swelling of the throat, choking), circulation (floppiness or shock) or gastrointestinal tract (severe vomiting or diarrhoea)<br>• Patients with egg allergy and severe/poorly controlled asthma<br>• Patients with severe multisystem allergic disease Relative indications for hospital-based egg challenge:<br>• Patients with mild-moderate reactions following trace exposure of egg.<br>• Patients with egg allergy and asthma controlled by a regular asthma preventer.<br>• Patients with co-existing multiple/complex food allergies<br>• Patients and families unable to comprehend or adhere to a protocol.<br>• Patients and families with anxiety precluding home introduction.<br>• Patients on immune suppressants or biologics<br>• Older patients with persistent egg allergy<br>|\n|---|\n\n\n#### 9.4 | Home introduction of egg\n\nHome introduction is not the same as a food challenge. It aims to gradually introduce a food, to which a child previously reacted, back into the patient's diet. Egg is gradually introduced using a ladder (Figure 1), in a form less likely to cause an allergic reaction, at low amounts. The quantity and allergenicity are gradually increased as the child is able to tolerate it. This approach helps ensure safety with a view to promoting tolerance to more allergenic forms of the food. Children without asthma, or with well-controlled mild asthma, and who have had only mild cutaneous symptoms on significant exposure (e.g. a mouthful of lightly cooked egg) may try a small amount of baked egg (e.g.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 128,
+        "end_sentence_index": 138,
+        "sentence_count": 10,
+        "token_count": 770,
+        "character_count": 2780
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0016",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Children without asthma, or with well-controlled mild asthma, and who have had only mild cutaneous symptoms on significant exposure (e.g. a mouthful of lightly cooked egg) may try a small amount of baked egg (e.g. pea-sized piece of sponge cake) from the age of about 12 months at home (Appendix S3). If this is tolerated regularly, in good amounts, then gradual staged reintroduction of lightly cooked egg according to the egg ladder (Figure 1 and patient information leaflet Appendix S3) may be considered. Once baked egg is fully tolerated, it should be included 2–3 times per week. Once\n\n13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\nloosely cooked egg is tolerated, patients should be reassured that egg allergy is outgrown and egg can be included as part of the normal diet. If there is a reaction, then the previously tolerated diet should be followed, and further reintroduction considered after 3–6 months (Box 3). Reintroduction at home should not be attempted when there have been severe gastrointestinal, respiratory or cardiovascular symptoms during previous reactions, when only a trace amount has ever been ingested, in the presence of severe eczema (covering >40% of the body), severe multisystem allergic disease or there is ongoing asthma (Box 4). In these patients, hospital egg challenge should be considered. A more cautious approach should be taken with older children who have been on an exclusion diet for a long time.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 136,
+        "end_sentence_index": 146,
+        "sentence_count": 10,
+        "token_count": 463,
+        "character_count": 1741
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0017",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "In these patients, hospital egg challenge should be considered. A more cautious approach should be taken with older children who have been on an exclusion diet for a long time. Children who tolerate cooked egg may still react to raw or undercooked egg. There are case reports of children who, following a negative cooked egg challenge, later have severe reactions to raw egg.56 Egg introduction or challenge should not be deferred for concern of increasing sensitization.43\n\nChildren undergoing hospital-based baked egg challenges rarely experience anaphylaxis requiring treatment with adrenaline; 2% in one study of 236 children.57 Adrenaline was not required in 181 hospital-based egg challenges.10\n\nA recent study of 678 children undergoing hospital-based egg challenges identified two patients who satisfied BSACI criteria for home reintroduction, and experienced airway symptoms (personal communication – Aljneibi Shaikha). These hospital challenges employed higher starting doses of egg protein (estimated 200-mg egg protein) and rapid dose escalation compared to gradual low-dose home introduction (estimated starting dose 20-mg egg protein). Patients selected for hospital-based food challenges differ from those selected for home introduction (where those with asthma or a history of severe reactions are excluded). The dose escalation occurs over a shorter period (a dose every few minutes compared to once- a-day increments) and the starting dose of egg for hospitalbased challenges is considerably higher than that proposed for home introduction. The risk of anaphylaxis in young children being given clear guidance on low-dose baked egg being gradually built up according to a ladder is minimal. In 211 children undergoing home-baked egg introduction, there were no reports of anaphylaxis (H. Ball – personal communication). We emphasize that home introduction regimes should employ a gradual, staged, low dose approach, according to the egg ladder, rather than rapid escalation as used in hospital-based challenges.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 144,
+        "end_sentence_index": 154,
+        "sentence_count": 10,
+        "token_count": 441,
+        "character_count": 2029
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0018",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "In 211 children undergoing home-baked egg introduction, there were no reports of anaphylaxis (H. Ball – personal communication). We emphasize that home introduction regimes should employ a gradual, staged, low dose approach, according to the egg ladder, rather than rapid escalation as used in hospital-based challenges. As the starting dose for home introduction (estimated 20-mg egg protein) is extremely low, if a reaction were to occur, the symptoms would be mild. We do not advocate testing for egg allergy in children who have no documented reactions to egg; however, children who are allergically sensitized to egg, in the absence of having a documented reaction to egg, should introduce baked egg into their diet at home. If they react, they should be managed as egg allergic. #### 9.5 | Children with severe egg allergy\n\nChildren with severe egg allergy, severe multisystem allergic disease, faltering growth (Box 4) or egg allergy persisting beyond the time of usual resolution (6–7 years) should be followed up periodically to assess the likelihood of resolution and to refresh avoidance advice and emergency medication training. A history of any accidental exposure should be sought and SPTs or specific IgE repeated. There are no prospective studies based on specific IgE levels, to advise when to challenge these children. It is reasonable to attempt reintroduction if there has been no significant recent clinical reaction, accompanied by a reduction in SPT wheal size or serum-specific IgE over time.58\n\nThese children should have a supervised challenge in hospital and not at home. Supervised baked egg challenge should be using a one egg per eight fairy cake recipes in the first instance.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 152,
+        "end_sentence_index": 162,
+        "sentence_count": 10,
+        "token_count": 384,
+        "character_count": 1707
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0019",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "It is reasonable to attempt reintroduction if there has been no significant recent clinical reaction, accompanied by a reduction in SPT wheal size or serum-specific IgE over time.58\n\nThese children should have a supervised challenge in hospital and not at home. Supervised baked egg challenge should be using a one egg per eight fairy cake recipes in the first instance. There may be exceptions, for example, if a child has had a subsequent mild reaction after significant accidental exposure. Children on biologics for asthma should be considered for food challenge once their asthma control has improved. #### 9.6 | Oral immunotherapy\n\nEgg immunotherapy is a deliberate attempt, using regular ingestion of egg, usually with increasing amounts, to generate tolerance to egg in a patient with established egg allergy (usually over 5 years of age). Several studies have demonstrated the safety and efficacy of egg oral immunotherapy (OIT).22,59–62 It is time consuming for clinicians and requires significant commitment for families. Desensitization occurs, although tolerance may not be maintained after withdrawal of treatment. A Cochrane review in 2018 commented that studies were small, and the quality of evidence is low.63,64 There are no standardized protocols and a high incidence of adverse events.63,65 In one study, adrenaline was required in 26% of children.65 Early discontinuation is associated with underlying asthma, higher specific IgE and lower threshold during double-blind, placebo-controlled food challenge.65 Ovomucoid IgE >8.85 kU/L indicated a 95% probability of early discontinuation or ongoing reactions over time.65\n\nMore recent protocols achieve tolerance in 50% of patients.60,66 The benefits are sustained for up to 5 years after treatment.66 Daily dosing is more effective than weekly dosing.67 Low pre-treatment levels of egg white and ovomucoid IgE predict sustained unresponsiveness following egg immunotherapy.68 Decrease in size of SPT and increase in egg-specific IgG4 over time predicts tolerance in children being treated with egg OIT.61 Ovalbumin IgG4 and Ovalbumin IgE/ IgG4 ratio may be useful to predict the development of tolerance to egg in oral immunotherapy.65\n\nEAACI does not currently recommend egg OIT as a treatment to achieve long-term tolerance in children with persistent egg allergy.69 Egg oral immunotherapy should only be undertaken in highly specialized allergy centres.69\n\n13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\n- 10 | EGG ALLERGY IN ADULTS\n\nIn contrast to egg allergy in children, egg allergy in adults is likely to be severe and long lasting. It is due to either persistent childhood egg allergy or to true adult-onset egg allergy, which is rare. Adults with persistence of childhood egg allergy have more sequential than conformational IgE epitopes of ovomucoid.70\n\nAdult-onset egg allergy may be:\n\n- 1.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 160,
+        "end_sentence_index": 170,
+        "sentence_count": 10,
+        "token_count": 805,
+        "character_count": 3170
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0020",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "It is due to either persistent childhood egg allergy or to true adult-onset egg allergy, which is rare. Adults with persistence of childhood egg allergy have more sequential than conformational IgE epitopes of ovomucoid.70\n\nAdult-onset egg allergy may be:\n\n- 1. New onset adult egg allergy after eggs have been tolerated for years.71\n- 2. Part of the bird-egg syndrome (a combination of bird-feather sensitization and egg allergy) with an allergy to egg yolk. ‘Bird egg syndrome’ was originally described in subjects, mainly women, who were sensitized to egg yolk and bird (budgerigar and hen) feathers.72 This syndrome is seen in subjects who are exposed to caged birds or pigeons.73 The allergen responsible is alpha livetin (chicken serum albumin, Gal d 5), found in large amounts in egg yolk.74 Typically, patients develop upper and lower respiratory symptoms on exposure to birds and gastrointestinal symptoms with chicken meat or lightly cooked eggs. Patients should receive egg avoidance advice, emergency medication and be trained in its use. - 3. Occupational, for example, in workers from the baking industry, who develop sensitization by inhalation.75\n\n\nThere is little information on the prognosis of adult egg allergy and patients should be seen periodically to repeat specific IgE and to update training in the use of emergency medication. Older children or adults with a pre-existing egg allergy, presenting to the adult clinic for the first time, should be assessed for the likely resolution of egg allergy. Component testing can be useful in determining whether an OFC is feasible, with a negative test to Gal d 1 (ovomucoid), suggesting that a baked egg challenge might be tolerated.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 168,
+        "end_sentence_index": 178,
+        "sentence_count": 10,
+        "token_count": 427,
+        "character_count": 1701
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0021",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Older children or adults with a pre-existing egg allergy, presenting to the adult clinic for the first time, should be assessed for the likely resolution of egg allergy. Component testing can be useful in determining whether an OFC is feasible, with a negative test to Gal d 1 (ovomucoid), suggesting that a baked egg challenge might be tolerated. Although systematic review data suggest that 30% of egg-allergic children will continue to have persisting egg allergy after the age of 16 years, there are no data on continued resolution in young adults. Clinical experience shows that although it persists in some and may be lifelong, many others may have partly or wholly resolving egg allergy, even in their late 20' s. It is extremely important to establish the likelihood of tolerance with oral food challenges, as reactions can be severe and fatal anaphylaxis to egg has been reported in an adult patient.76\n\n- 11 | OTHER EGG-RELATED CONDITIONS\n\n\n- 11.1 | Egg allergy and asthma\n\n\nChildren with egg allergy are at increased risk of other allergic diseases especially asthma (odds ratio 5.0).77 A careful history should, therefore, be taken to enquire about respiratory symptoms. The presence of asthma may increase the potential severity\n\nof accidental egg reactions and excellent asthma control should be a priority. #### 11.2 | Egg allergy as a risk factor for peanut allergy\n\nInfants with egg allergy are at risk of developing peanut allergy. The introduction of regular high-dose peanut into the diet of egg-allergic children under 11 months of age reduces the incidence of peanut allergy at 5 years of age.25 Introduction of peanut in children with egg allergy is discussed in the BSACI Early weaning guidance.78 Infants undergoing SPT or measurement of specific IgE to egg proteins should also be tested for peanut sensitization, and peanut containing food introduced alongside other solid foods from around 6 months of age. #### 11.3 | Egg allergy and Eosinophilic oesophagitis\n\nChildren and adults with eosinophilic oesophagitis (EoE) respond to elimination of common food allergens, including egg.79 Cow's milk and wheat are the most likely triggers of EoE, but a large multicentre study of both children and adults reported that 15% of the subjects had reactions to egg.79 Egg may be a relevant trigger in 35% of children and 26–36% of adults.80–82 Egg avoidance is usually included as part of an empiric four or six food elimination diet.79 Egg SPT is a poor predictor of egg as a trigger for EoE.83\n\nEoE has been reported as a complication of egg immunotherapy. This is usually reversible after early diagnosis and stopping the immunotherapy product.84 There is no evidence that home introduction of egg will cause EoE. #### 11.4 | Use of Propofol in egg-allergic patients\n\nA commonly used formulation of Propofol contains egg lecithin, derived from egg yolk.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 176,
+        "end_sentence_index": 186,
+        "sentence_count": 10,
+        "token_count": 710,
+        "character_count": 2875
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0022",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "This is usually reversible after early diagnosis and stopping the immunotherapy product.84 There is no evidence that home introduction of egg will cause EoE. #### 11.4 | Use of Propofol in egg-allergic patients\n\nA commonly used formulation of Propofol contains egg lecithin, derived from egg yolk. Propofol administration is safe in adult patients with egg allergy, or who are sensitized to egg.80,85 In a study of propofol administration in egg-allergic children, one child with anaphylaxis to egg developed urticaria and erythema on two occasions after the administration of propofol.86 Propofol is safe to use in children with egg allergy,.87,88\n\n#### 11.5 | FPIES to egg\n\nFood Protein-Induced Enterocolitis syndrome (FPIES) is a rare form of severe delayed type food allergy, thought to be non-IgE mediated, that leads to recurrent vomiting, fluid loss, dehydration, and shock, normally within 4 h of ingestion.89 Egg is a common food trigger for FPIES both in the UK and elsewhere,90 30% of infants with milk or soya FPIES also react to egg protein.91 The diagnosis is made on clinical history. Tests for specific IgE are usually negative but become\n\n13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\npositive in up to a fifth of cases during follow-up.89 The natural history is to resolve during childhood, slightly later than milk/soy FPIES, at around 42 months.89 Resolution is confirmed by food challenge. This should be in a centre with experience in food challenges, facilities for rapid intravenous fluid resuscitation and prolonged observation.89 Tolerance to baked egg seems to occur before raw egg, with one case series showing cake tolerance at 30 months compared to 43 months for raw egg.92 FPIES normally occurs in infancy during the introduction of solids but has been reported following reintroduction of egg after resolution of IgE-mediated egg allergy.93\n\nof LAIV104 is very low (<0.12 mcg/ml). It is safe to use and is recommended to be given to children with egg allergy in any setting, including primary care and schools76 (Department of health, 2017). There are no safety data on children who have experienced anaphylaxis to egg, requiring intensive care admission and therefore, these children should be referred to a specialist for supervised immunization or, where available, consider an egg-free influenza vaccine in primary care for children over 9 (Lamb Drugs 2019). #### 12.2 | Yellow fever vaccine\n\n#### 12 | IMMUNIZATION OF EGG-ALLERGIC CHILDREN AND ADULTS\n\nHen's egg proteins are found in low amounts in most Influenza vaccines and the Yellow Fever vaccine. The measles, mumps and rubella (MMR) vaccine is cultured in chick embryo fibroblast cell culture and not from hen eggs themselves.94 It does not contain hen egg allergens in clinically relevant quantities.95,96 Chapter 6 of the UK Department of Health Green Book, Immunization Against Infectious Disease97 gives advice on immunizing egg-allergic patients. Most adults and children with egg allergy can be safely immunized in primary care.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 184,
+        "end_sentence_index": 194,
+        "sentence_count": 10,
+        "token_count": 868,
+        "character_count": 3327
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0023",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "The measles, mumps and rubella (MMR) vaccine is cultured in chick embryo fibroblast cell culture and not from hen eggs themselves.94 It does not contain hen egg allergens in clinically relevant quantities.95,96 Chapter 6 of the UK Department of Health Green Book, Immunization Against Infectious Disease97 gives advice on immunizing egg-allergic patients. Most adults and children with egg allergy can be safely immunized in primary care. The exceptions that require referral for specialist supervision are those who require:\n\n- 1. Influenza vaccine in patients who have experienced lifethreatening anaphylaxis to egg (requiring admission to intensive care). - 2. Yellow Fever Vaccine for travel. #### 12.1 | Influenza vaccine\n\nMost Influenza vaccines are derived from the extra-embryonic fluid of chicken embryos inoculated with specific types of influenza virus. The vaccines contain measurable quantities of ovalbumin (egg white protein) which vary between batches and manufacturers.98,99 As vaccine manufacture has improved, reports of egg-related allergic reactions to influenza vaccines are now largely historical.88\n\nMost current influenza vaccines contain very low amounts of ovalbumin (<0.12 mcg/ml or <0.06 mcg in a 0.5 ml dose) and can be administered safely in primary care by the intramuscular route, even in those with a previous history of anaphylaxis to egg.100,101 Egg ovalbumin content of current influenza vaccine can be found in the Summary of Product Characteristic (SPC) for the vaccine, or from the May issue of the current year of Vaccine102 preceding the immunization season. The ovalbumin content of influenza vaccines for the forthcoming influenza season is published annually by Public Health England.103\n\nThe intranasal live attenuated influenza vaccine (LAIV) is also grown in hen's egg, and therefore, contains egg protein. It is safe to administer in children with egg allergy.76 The ovalbumin content\n\nYellow Fever is a mosquito-borne viral haemorrhagic fever endemic to central Africa and South and Central America.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 192,
+        "end_sentence_index": 202,
+        "sentence_count": 10,
+        "token_count": 514,
+        "character_count": 2049
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0024",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "The ovalbumin content of influenza vaccines for the forthcoming influenza season is published annually by Public Health England.103\n\nThe intranasal live attenuated influenza vaccine (LAIV) is also grown in hen's egg, and therefore, contains egg protein. It is safe to administer in children with egg allergy.76 The ovalbumin content\n\nYellow Fever is a mosquito-borne viral haemorrhagic fever endemic to central Africa and South and Central America. Infection of nonimmune travellers can lead to severe symptoms in up to half of infected persons (Department of Health, 2018). There is no specific cure. Yellow Fever vaccine is administered through a network of Yellow Fever Vaccination Centres105 who issue certificates of immunization ahead of travel. The Yellow Fever Vaccine (YFV) is a live vaccine cultured in hen's eggs and contains residual egg proteins.106 Immunization is relatively contraindicated in egg allergy as most allergic reactions to the vaccine are thought to be related to egg allergy, although other allergens such as gelatine are theoretically possible.107 The rate of anaphylaxis is 1 in 238 000 doses of YFV alone and 1 in 131 000 when YFV is co-administered with other vaccines. The potential fatal sequelae from yellow fever means that vaccination should at least be considered. Adults and children with egg allergy who require YFV should be assessed in a specialist allergy centre, ideally at least 2 months prior to travel. Specialist allergy centres should work in collaboration with their local Yellow Fever Vaccination Centre to source the vaccine and provide certification for their patients. Allergy centres with high throughput may wish to train and register as a Yellow Fever Vaccination Centre, in collaboration with other stakeholders within the hospital, such as infectious diseases and occupational health specialists.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 200,
+        "end_sentence_index": 210,
+        "sentence_count": 10,
+        "token_count": 441,
+        "character_count": 1856
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0025",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Specialist allergy centres should work in collaboration with their local Yellow Fever Vaccination Centre to source the vaccine and provide certification for their patients. Allergy centres with high throughput may wish to train and register as a Yellow Fever Vaccination Centre, in collaboration with other stakeholders within the hospital, such as infectious diseases and occupational health specialists. Further details on registration as an YFVC can be obtained from the National Travel Health Network and Centre (NATHNAC).108\n\nThere are several approaches to YFV immunization of an eggallergic individual, directed by local practice and risk assessment. A proposed travel history should be taken with confirmation of requirement for YFV immunization by the YFVC, who will also be responsible for issuing a certificate of immunization. Initial investigations may include skin prick testing to egg reagent and undiluted YFV, progressing to intradermal testing should initial skin tests be negative.88,109,110 Negative intradermal tests (at 1:10 or 1:100 dilution) predict tolerance of the vaccine.109,110 A two dose schedule can be used depending upon risk assessment.110\n\nPositive skin or intradermal testing to the vaccine suggests allergic reactivity and requires a more cautious approach. If no further immunization is preferred, a certificate of exemption can be issued by the YFVC. However, in the face of a positive IDT to YFV, the individual may still seroconvert without further immunization, and the\n\n13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\nexemption certificate should be withheld until serological confirmation 2–4 weeks after testing.111,112 If intradermal testing is not performed, due to strongly positive SPT, or where there is no evidence of seroconversion at 4 weeks, or if the individual is unable to wait to travel and would prefer the protection of YFV, then a seven-step desensitization regime has been shown to be safe and effective in a small number of egg-allergic people.110\n\nsuch as birthday cake. Where children have a severe egg allergy it may be necessary for a whole class to avoid craft projects with egg boxes or shells (such as cress growing) and lessons/activities using raw egg (e.g. baking). Food technology teachers should be aware of egg-allergic students to allow them to use egg-free recipes and thus avoid reactions.119\n\n#### 12.3 | MMR vaccine\n\n#### 14 | PSYCHOLOGICAL AND SOCIAL IMPLICATIONS OF EGG ALLERGY\n\nAll children with egg allergy should receive their normal childhood immunizations, including the MMR, as a routine procedure in primary care.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 208,
+        "end_sentence_index": 218,
+        "sentence_count": 10,
+        "token_count": 711,
+        "character_count": 2900
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0026",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "baking). Food technology teachers should be aware of egg-allergic students to allow them to use egg-free recipes and thus avoid reactions.119\n\n#### 12.3 | MMR vaccine\n\n#### 14 | PSYCHOLOGICAL AND SOCIAL IMPLICATIONS OF EGG ALLERGY\n\nAll children with egg allergy should receive their normal childhood immunizations, including the MMR, as a routine procedure in primary care. No extra precautions are required. Case series of large numbers of egg-allergic children show that there is no increased risk of severe allergic reactions to the MMR vaccine.96,113,114\n\n#### 12.4 | Rabies vaccine\n\nRabies is a serious viral infection with a high case fatality rate. Rabies vaccines are used as protection before travel to rabies endemic areas, and for post-exposure prophylaxis following the bite of an infected animal. There are two vaccines available, a human diploid cell vaccine that does not contain egg and Purified Chick Embryo Cell (PCEC) vaccine that contains traces of egg protein, including ovalbumin.115 There have been reports of allergic reaction and anaphylaxis to PCEC, some of which may have been related to egg allergy.116 PCEC (Rabipur, GlaxoSmithKline) is relatively contraindicated in individuals with a history of previous egg anaphylaxis. The contra-indication is relative, as rabies is almost universally fatal and immunization for post-exposure prophylaxis outweighs the risk of allergic reaction to the vaccine (Chapter 27, Green Book 2019). Human Rabies Immunoglobulin (HRIG), a passive immunization used for treatment, does not contain egg protein. #### 13 | MANAGEMENT OF EGG ALLERGY IN NURSERIES AND SCHOOLS\n\nNurseries and schools should have a local policy that covers the management of any food allergy, including egg allergy,117,118 This includes training in allergen avoidance, food labelling regulations30 and knowledge of which foods might contain egg allergens. Training should also include early recognition of symptoms, knowledge of what medication is needed, where it is stored and how it is administered.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 216,
+        "end_sentence_index": 226,
+        "sentence_count": 10,
+        "token_count": 499,
+        "character_count": 2035
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0027",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "#### 13 | MANAGEMENT OF EGG ALLERGY IN NURSERIES AND SCHOOLS\n\nNurseries and schools should have a local policy that covers the management of any food allergy, including egg allergy,117,118 This includes training in allergen avoidance, food labelling regulations30 and knowledge of which foods might contain egg allergens. Training should also include early recognition of symptoms, knowledge of what medication is needed, where it is stored and how it is administered. Children with an egg allergy should have a tailored care plan in place, with adaptions made to the school/nursery meals to enable the child to eat a similar meal or packed lunch sitting alongside their peers.119 School trips may require a separate risk assessment. Additional consideration should be given to factors, such as food sharing, food contamination and the provision of ‘treat’ foods,\n\nAny food allergy may adversely affect quality of life, resulting in anxiety and depression.120–122 The constant vigilance needed to avoid egg impacts all aspects of the child's life and that of their family.123,124 The patient may experience anxiety in relation to eating a restricted diet, food avoidance and having allergic reactions.125,126 Children with disabilities, communication disorders and hospitalrelated anxiety may find home introduction, with dietetic guidance and support, less stressful. Children can experience post-traumatic stress following severe allergic reactions. This may become a particular problem where egg allergy persists into adolescence.127 Parental coping is critical in the child's risk perception of allergy, anxiety and coping over time.128,129\n\nPsychological help and intervention is effective130–132 in addressing anxiety, phobias and promoting adaptive coping strategies. This can be accessed via paediatric psychology services or CAMHS for children and Improving Access to Psychological Therapies (IAPT) for adults. Patients with mild-moderate egg allergy do not usually require additional psychological support. #### 15 | PRIMARY PREVENTION; INTRODUCTION OF EGG INTO THE DIET OF INFANTS FROM ATOPIC FAMILIES\n\nDelayed introduction of allergenic foods to the weaning diet increases the risk of food allergy. Conversely, an earlier and focused allergen introduction schedule can be protective.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 224,
+        "end_sentence_index": 234,
+        "sentence_count": 10,
+        "token_count": 529,
+        "character_count": 2295
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0028",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "#### 15 | PRIMARY PREVENTION; INTRODUCTION OF EGG INTO THE DIET OF INFANTS FROM ATOPIC FAMILIES\n\nDelayed introduction of allergenic foods to the weaning diet increases the risk of food allergy. Conversely, an earlier and focused allergen introduction schedule can be protective. There is some indication that the early introduction of egg into the infant diet reduces the incidence of egg allergy. Intervention studies show mixed results.133–136 In a meta-analysis,137 the introduction of egg between 4 and 6 months of age reduced the risk of developing egg allergy. Current UK guidance on the introduction of complementary foods is underpinned by WHO advice and recommends exclusive breastfeeding until around 6 months of age with solids started around this age.6 The current UK weaning guidance states that withholding allergenic foods may increase the risk of allergy and that complementary feeding, including egg and peanut, should be introduced, in an age-appropriate form, from around 6 months of age. The BSACI recommends earlier introduction of egg into the diet of children with eczema, to reduce the risk of developing allergy.78 Infants with eczema are at higher risk of developing egg allergy and\n\n13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\nshould be encouraged to start weaning between 4 and 6 months once they show signs of readiness. Egg should be introduced as an early weaning food, after initially establishing an intake of more traditional early weaning foods.8,78 Well-cooked egg starting with a small amount (1 teaspoon) initially, moving upwards towards a full dose. Families should be encouraged not to delay egg introduction in the hope of preventing an allergy.138\n\nStudies on early egg introduction have noted that a high proportion of infants are already sensitized to egg protein (positive skin prick test or specific IgE) before weaning and some have clinical egg allergy.133,134,139 Infants with moderate-severe or early onset eczema or existing food allergy are at highest risk of reacting on initial egg introduction, so the first couple of ingestions of baked egg in these groups should be in tiny (pea-sized) amounts. The risk of severe reactions in these higher risk babies is low but present.78 Egg-specific IgE has a poor predictive value for the development of egg allergy in high-risk infants in the absence of a history of egg ingestion and should not be used in this context.140\n\n#### 16 | FUTURE RESEARCH\n\n- • Prevalence of egg allergy in adults\n- • Prevalence of allergy to eggs other than hen's egg. - • Allergy to egg yolk\n- • The use of antibiotics in the first week of life as a risk factor for developing egg allergy.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 232,
+        "end_sentence_index": 242,
+        "sentence_count": 10,
+        "token_count": 771,
+        "character_count": 2967
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0029",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "The risk of severe reactions in these higher risk babies is low but present.78 Egg-specific IgE has a poor predictive value for the development of egg allergy in high-risk infants in the absence of a history of egg ingestion and should not be used in this context.140\n\n#### 16 | FUTURE RESEARCH\n\n- • Prevalence of egg allergy in adults\n- • Prevalence of allergy to eggs other than hen's egg. - • Allergy to egg yolk\n- • The use of antibiotics in the first week of life as a risk factor for developing egg allergy. - • Development of more robust diagnostic cut-offs relevant to unselected clinic patients especially for serum-specific IgE and component egg allergens. - • Investigate predictive clinical and laboratory markers for the resolution or persistence of egg allergy. - • The utility of home egg introduction. - • Further investigation of oral immunotherapy for the treatment of egg allergy. ###### AUTHOR CONTRIBUTIONS\n\nSusan Leech, Pamela Ewan and Andrew Clark wrote the initial draft. Isabel Skypala wrote sections on component testing, egg allergy in adults, and egg allergy case examples (appendix S1), Nicola Brathwaite wrote sections on skin prick testing and use of specific IgE, Mich Erlewyn-LaJeunesse wrote sections on FPIES and immunisations, Sarah Heath wrote sections on avoidance diet, allergen labelling, breastfeeding, management of egg allergy in nurseries and schools, primary prevention, when to refer to a dietician and patient information leaflets (appendices S2, S3 and S4), Heidi Ball Created Figures 1 and 2, wrote the case examples (appendix S1) and patient information leaflets (appendices S2, S3 and S4). Polly James and Karen Murphy wrote the section on psychological implications of egg allergy. All authors commented on subsequent drafts and Susan Leech edited the final draft.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 240,
+        "end_sentence_index": 250,
+        "sentence_count": 10,
+        "token_count": 459,
+        "character_count": 1816
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0030",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Polly James and Karen Murphy wrote the section on psychological implications of egg allergy. All authors commented on subsequent drafts and Susan Leech edited the final draft. ###### ACKNOWLEDGEMENTS\n\nThe preparation of this document has benefited from extensive discussions within the Standards of Care Committee of the BSACI and we would like to acknowledge the members of this committee for their valuable contribution, namely, Richard Powell, Steve Till, Rita Mirakian, Deb Marriage, Lavanya Diwakar, Deepa Choudhury, Helen Brough, Liz Angier, and David Luyt. These guidelines inform the management of egg allergy. Adherence to these guidelines does not constitute an automatic defence for negligence and conversely, non-adherence is not indicative of negligence. It is anticipated that these guidelines will be reviewed every 5–7 years. ORCID Isabel J. Skypala https://orcid.org/0000-0003-3629-4293 Mich Erlewyn- Lajeunesse https://orcid. org/0000-0003-1982-1397\n\n###### REFERENCES\n\n- 1. Clark AT, Skypala I, Leech SC, et al. British Society for Allergy and Clinical Immunology guidelines for the management of egg allergy.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 248,
+        "end_sentence_index": 258,
+        "sentence_count": 10,
+        "token_count": 285,
+        "character_count": 1128
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0031",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Clark AT, Skypala I, Leech SC, et al. British Society for Allergy and Clinical Immunology guidelines for the management of egg allergy. Clin Exp Allergy. 2010;40(8):1116-1129. - 2. D'Urbano LE, Pellegrino K, Artesani MC, et al. Performance of a component-based allergen-microarray in the diagnosis of cow's milk and hen's egg allergy. Clin Exp Allergy. 2010;40(10):1561-1570. - 3.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 256,
+        "end_sentence_index": 266,
+        "sentence_count": 10,
+        "token_count": 121,
+        "character_count": 380
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0032",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2010;40(10):1561-1570. - 3. Ando H, Moverare R, Kondo Y, et al. Utility of ovomucoid-specific IgE concentrations in predicting symptomatic egg allergy. J Allergy Clin Immunol. 2008;122(3):583-588. - 4. Keil T, McBride D, Grimshaw K, et al. The multinational birth cohort of EuroPrevall: background, aims and methods. Allergy.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 264,
+        "end_sentence_index": 274,
+        "sentence_count": 10,
+        "token_count": 108,
+        "character_count": 325
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0033",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "The multinational birth cohort of EuroPrevall: background, aims and methods. Allergy. 2010;65(4):482-490. - 5. Xepapadaki P, Fiocchi A, Grabenhenrich L, et al. Incidence and natural history of hen's egg allergy in the first 2 years of life-the EuroPrevall birth cohort study. Allergy. 2016;71(3):350-357. - 6. Osterballe M, Hansen TK, Mortz CG, Host A, Bindslev-Jensen C. The prevalence of food hypersensitivity in an unselected population of children and adults.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 272,
+        "end_sentence_index": 282,
+        "sentence_count": 10,
+        "token_count": 142,
+        "character_count": 463
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0034",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 6. Osterballe M, Hansen TK, Mortz CG, Host A, Bindslev-Jensen C. The prevalence of food hypersensitivity in an unselected population of children and adults. Pediatr Allergy Immunol. 2005;16(7):567-573. - 7. Grimshaw KEC, Roberts G, Selby A, et al. Risk factors for hen's egg allergy in Europe: EuroPrevall birth cohort. J Allergy Clin Immunol Pract. 2020;8(4):1341-1348 e1345. - 8.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 280,
+        "end_sentence_index": 290,
+        "sentence_count": 10,
+        "token_count": 129,
+        "character_count": 383
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0035",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2020;8(4):1341-1348 e1345. - 8. Monti G, Muratore MC, Peltran A, et al. High incidence of adverse reactions to egg challenge on first known exposure in young atopic dermatitis children: predictive value of skin prick test and radioallergosorbent test to egg proteins. Clin Exp Allergy. 2002;32(10):1515-1519. - 9. Alduraywish SA, Lodge CJ, Vicendese D, et al. Sensitization to milk, egg and peanut from birth to 18 years: a longitudinal study of a cohort at risk of allergic disease. Pediatr Allergy Immunol.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 288,
+        "end_sentence_index": 298,
+        "sentence_count": 10,
+        "token_count": 151,
+        "character_count": 508
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0036",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Sensitization to milk, egg and peanut from birth to 18 years: a longitudinal study of a cohort at risk of allergic disease. Pediatr Allergy Immunol. 2016;27(1):83-91. - 10. Clark A, Islam S, King Y, et al. A longitudinal study of resolution of allergy to well- cooked and uncooked egg. Clin Exp Allergy. 2011;41(5):706-712. - 11. de Boissieu D, Dupont C. Natural course of sensitization to hen's egg in children not previously exposed to egg ingestion. Eur Ann Allergy Clin Immunol.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 296,
+        "end_sentence_index": 306,
+        "sentence_count": 10,
+        "token_count": 147,
+        "character_count": 482
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0037",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 11. de Boissieu D, Dupont C. Natural course of sensitization to hen's egg in children not previously exposed to egg ingestion. Eur Ann Allergy Clin Immunol. 2006;38(4):113-117. - 12. Sporik R, Hill DJ, Hosking CS. Specificity of allergen skin testing in predicting positive open food challenges to milk, egg and peanut in children. Clin Exp Allergy. 2000;30(11):1540-1546. - 13. Boyano Martínez T, García-Ara C, DÍaz-Pena JM, Muñoz FM, García Sánchez G, Esteban MM.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 304,
+        "end_sentence_index": 314,
+        "sentence_count": 10,
+        "token_count": 142,
+        "character_count": 467
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0038",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 13. Boyano Martínez T, García-Ara C, DÍaz-Pena JM, Muñoz FM, García Sánchez G, Esteban MM. Validity of specific IgE antibodies in children with egg allergy. Clin Exp Allergy. 2001;31(9):1464-1469. 13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\n- 14. Eggesbo M, Botten G, Halvorsen R, Magnus P. The prevalence of allergy to egg: a population-based study in young children. Allergy. 2001;56(5):403-411. - 15.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 312,
+        "end_sentence_index": 322,
+        "sentence_count": 10,
+        "token_count": 238,
+        "character_count": 706
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0039",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2001;56(5):403-411. - 15. Smith PK, Hourihane JO, Lieberman P. Risk multipliers for severe food anaphylaxis. World Allergy Organ J. 2015;8(1):30. - 16. Court J, Ng LM. Danger of egg white treatment for nappy rash. Arch Dis Child. 1984;59(9):908. - 17.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 320,
+        "end_sentence_index": 330,
+        "sentence_count": 10,
+        "token_count": 82,
+        "character_count": 251
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0040",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "1984;59(9):908. - 17. Pumphrey RS, Gowland MH. Further fatal allergic reactions to food in the United Kingdom, 1999–2006. J Allergy Clin Immunol. 2007;119(4):1018-1019. - 18. Turner PJ, Allen KJ, Mehr S, Campbell DE. Knowledge, practice, and views on precautionary allergen labeling for the management of patients with IgE-mediated food allergy–a survey of Australasian and UK health care professionals. J Allergy Clin Immunol Pract.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 328,
+        "end_sentence_index": 338,
+        "sentence_count": 10,
+        "token_count": 125,
+        "character_count": 433
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0041",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Knowledge, practice, and views on precautionary allergen labeling for the management of patients with IgE-mediated food allergy–a survey of Australasian and UK health care professionals. J Allergy Clin Immunol Pract. 2016;4(1):165-167 e114. - 19. Lever R, MacDonald C, Waugh P, Aitchison T. Randomised controlled trial of advice on an egg exclusion diet in young children with atopic eczema and sensitivity to eggs. Pediatr Allergy Immunol. 1998;9(1):13-19. - 20. Monticelli S, Vercelli D. Molecular regulation of class switch recombination to IgE through epsilon germline transcription. Allergy.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 336,
+        "end_sentence_index": 346,
+        "sentence_count": 10,
+        "token_count": 166,
+        "character_count": 596
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0042",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Monticelli S, Vercelli D. Molecular regulation of class switch recombination to IgE through epsilon germline transcription. Allergy. 2001;56(4):270-278. - 21. Hill DJ, Heine RG, Hosking CS. The diagnostic value of skin prick testing in children with food allergy. Pediatr Allergy Immunol. 2004;15(5):435-441. - 22. Dello Iacono I, Tripodi S, Calvani M, Panetta V, Verga MC, Miceli SS. Specific oral tolerance induction with raw hen's egg in children with very severe egg allergy: a randomized controlled trial.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 344,
+        "end_sentence_index": 354,
+        "sentence_count": 10,
+        "token_count": 148,
+        "character_count": 510
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0043",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 22. Dello Iacono I, Tripodi S, Calvani M, Panetta V, Verga MC, Miceli SS. Specific oral tolerance induction with raw hen's egg in children with very severe egg allergy: a randomized controlled trial. Pediatr\n\n- Allergy Immunol. 2013;24(1):66-74. 23. Turner PJ, Kumar K, Fox AT. Skin testing with raw egg does not predict tolerance to baked egg in egg-allergic children. Pediatr\n\n- Allergy Immunol. 2014;25(7):657-661. - 24. Tan JW, Campbell DE, Turner PJ, et al.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 352,
+        "end_sentence_index": 362,
+        "sentence_count": 10,
+        "token_count": 145,
+        "character_count": 464
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0044",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 24. Tan JW, Campbell DE, Turner PJ, et al. Baked egg food challenges\n\n- clinical utility of skin test to baked egg and ovomucoid in children with egg allergy. Clin Exp Allergy. 2013;43(10):1189-1195. - 25. Du Toit G, Roberts G, Sayre PH, et al. Randomized trial of peanut consumption in infants at risk for peanut allergy. N Engl J Med. 2015;372(9):803-813.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 360,
+        "end_sentence_index": 370,
+        "sentence_count": 10,
+        "token_count": 114,
+        "character_count": 359
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0045",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "N Engl J Med. 2015;372(9):803-813. - 26. Benhamou Senouf AH, Borres MP, Eigenmann PA. Native and denatured egg white protein IgE tests discriminate hen's egg allergic from egg-tolerant children. Pediatr Allergy Immunol. 2015;26(1):12-17. - 27. Gradman J, Mortz CG, Eller E, Bindslev-Jensen C. Relationship between specific IgE to egg components and natural history of egg allergy in Danish children. Pediatr Allergy Immunol.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 368,
+        "end_sentence_index": 378,
+        "sentence_count": 10,
+        "token_count": 129,
+        "character_count": 424
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0046",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Gradman J, Mortz CG, Eller E, Bindslev-Jensen C. Relationship between specific IgE to egg components and natural history of egg allergy in Danish children. Pediatr Allergy Immunol. 2016;27(8):825-830. - 28. Petrosino MI, Scaparrotta A, Marcovecchio ML, et al. Usefulness of molecular diagnosis in egg allergic children. Arch Med Sci. 2018;14(1):132-137. - 29. Benhamou AH, Zamora SA, Eigenmann PA.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 376,
+        "end_sentence_index": 386,
+        "sentence_count": 10,
+        "token_count": 125,
+        "character_count": 397
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0047",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 29. Benhamou AH, Zamora SA, Eigenmann PA. Correlation between specific immunoglobulin E levels and the severity of reactions in egg allergic patients. Pediatr Allergy Immunol. 2008;19(2):173-179. - 30. EU Legislation. 2011. https://eur-lex.europa.eu/eli/ reg/2011/1169/oj Date of access: 17/8/18\n- 31. Palmer DJ, Gold MS, Makrides M. Effect of maternal egg consumption on breast milk ovalbumin concentration. Clin Exp Allergy.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 384,
+        "end_sentence_index": 394,
+        "sentence_count": 10,
+        "token_count": 126,
+        "character_count": 428
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0048",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Palmer DJ, Gold MS, Makrides M. Effect of maternal egg consumption on breast milk ovalbumin concentration. Clin Exp Allergy. 2008;38(7):1186-1191. - 32. Fukushima Y, Kawata Y, Onda T, Kitagawa M. Consumption of cow milk and egg by lactating women and the presence of beta-lactoglobulin and ovalbumin in breast milk. Am J Clin Nutr. 1997;65(1):30-35. - 33. Moghtaderi M, Nabavizadeh SH, Hosseini TS. The frequency of cross- reactivity with various avian eggs among children with hen's egg allergy using skin prick test results: fewer sensitizations with pigeon and goose egg.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 392,
+        "end_sentence_index": 402,
+        "sentence_count": 10,
+        "token_count": 179,
+        "character_count": 574
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0049",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Moghtaderi M, Nabavizadeh SH, Hosseini TS. The frequency of cross- reactivity with various avian eggs among children with hen's egg allergy using skin prick test results: fewer sensitizations with pigeon and goose egg. Allergol Immunopathol (Madr). 2020;48(3):265-269. - 34. Caro Contreras FJ, Giner Muñoz MT, Martin Mateos MA, Plaza Martin AM, Sierra Martinez JI, Lombardero M. Allergy to quail's egg without allergy to chicken's egg. case report. Allergol Immunopathol (Madr). 2008;36(4):234-237. - 35.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 400,
+        "end_sentence_index": 410,
+        "sentence_count": 10,
+        "token_count": 161,
+        "character_count": 504
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0050",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2008;36(4):234-237. - 35. Añíbarro B, Seoane FJ, Vila C, Lombardero M. Allergy to eggs from duck and goose without sensitization to hen egg proteins. J Allergy Clin Immunol. 2000;105(4):834-836. - 36. Skypala IJ, McKenzie R. Nutritional Issues in Food Allergy. Clin Rev Allergy Immunol. 2019;57(2):166-178. - 37.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 408,
+        "end_sentence_index": 418,
+        "sentence_count": 10,
+        "token_count": 112,
+        "character_count": 312
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0051",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2019;57(2):166-178. - 37. Cheetham T, Plumb E, Callaghan J, Jackson M, Michaelis L. Dietary restriction causing iodine-deficient goitre. Arch Dis Child. 2015;100(8):784-786. - 38. Begin P, Filion C, Graham F, et al. Consultation with registered dietitian to prevent accidental reactions to food: insight from an egg allergy influenza vaccination cohort. Eur J Clin Nutr. 2017;71(2):287-289.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 416,
+        "end_sentence_index": 426,
+        "sentence_count": 10,
+        "token_count": 121,
+        "character_count": 390
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0052",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Eur J Clin Nutr. 2017;71(2):287-289. - 39. Hourihane JO, Aiken R, Briggs R, et al. The impact of government advice to pregnant mothers regarding peanut avoidance on the prevalence of peanut allergy in United Kingdom children at school entry. J Allergy Clin Immunol. 2007;119(5):1197-1202. - 40. Muraro A, Roberts G, Clark A, et al. The management of anaphylaxis in childhood: position paper of the European academy of allergology and clinical immunology.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 424,
+        "end_sentence_index": 434,
+        "sentence_count": 10,
+        "token_count": 128,
+        "character_count": 454
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0053",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Muraro A, Roberts G, Clark A, et al. The management of anaphylaxis in childhood: position paper of the European academy of allergology and clinical immunology. Allergy. 2007;62(8):857-871. - 41. Ewan P. BSACI guideline: prescribing and adrenaline auto-injector. Clin Exp Allergy. 2016;46(10):1258-1280. - 42. Peters RL, Dharmage SC, Gurrin LC, et al.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 432,
+        "end_sentence_index": 442,
+        "sentence_count": 10,
+        "token_count": 117,
+        "character_count": 350
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0054",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 42. Peters RL, Dharmage SC, Gurrin LC, et al. The natural history and clinical predictors of egg allergy in the first 2 years of life: a prospective, population-based cohort study. J Allergy Clin Immunol. 2014;133(2):485-491. - 43. Sampson HA, Berin MC, Plaut M, et al. The consortium for food allergy research (CoFAR): the first generation. J Allergy Clin Immunol. 2019;143(2):486-493.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 440,
+        "end_sentence_index": 450,
+        "sentence_count": 10,
+        "token_count": 123,
+        "character_count": 388
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0055",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "J Allergy Clin Immunol. 2019;143(2):486-493. - 44. Boyano-Martínez T, García-Ara C, Díaz-Pena JM, Martín-Esteban M. Prediction of tolerance on the basis of quantification of egg white-specific IgE antibodies in children with egg allergy. J Allergy Clin Immunol. 2002;110(2):304-309. - 45. Ford RP, Taylor B. Natural history of egg hypersensitivity. Arch Dis Child.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 448,
+        "end_sentence_index": 458,
+        "sentence_count": 10,
+        "token_count": 114,
+        "character_count": 364
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0056",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Natural history of egg hypersensitivity. Arch Dis Child. 1982;57(9):649-652. - 46. Savage JH, Matsui EC, Skripak JM, Wood RA. The natural history of egg allergy. J Allergy Clin Immunol. 2007;120(6):1413-1417. - 47. Dang TD, Peters RL, Koplin JJ, et al.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 456,
+        "end_sentence_index": 466,
+        "sentence_count": 10,
+        "token_count": 88,
+        "character_count": 252
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0057",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 47. Dang TD, Peters RL, Koplin JJ, et al. Egg allergen specific IgE diversity predicts resolution of egg allergy in the population cohort HealthNuts. Allergy. 2019;74(2):318-326. - 48. Dogruel D, Bingol G, Yilmaz M, Altintas DU. The ADAPAR birth cohort study: food allergy results at five years and new insights. Int Arch Allergy Immunol. 2016;169(1):57-61.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 464,
+        "end_sentence_index": 474,
+        "sentence_count": 10,
+        "token_count": 117,
+        "character_count": 359
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0058",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Int Arch Allergy Immunol. 2016;169(1):57-61. - 49. Sicherer SH, Wood RA, Vickery BP, et al. The natural history of egg allergy in an observational cohort. J Allergy Clin Immunol. 2014;133(2):492-499. - 50. Savage J, Sicherer S, Wood R. The natural history of food allergy. J Allergy Clin Immunol Pract.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 472,
+        "end_sentence_index": 482,
+        "sentence_count": 10,
+        "token_count": 100,
+        "character_count": 302
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0059",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Savage J, Sicherer S, Wood R. The natural history of food allergy. J Allergy Clin Immunol Pract. 2016;4(2):196-203. quiz 204. - 51. Perez-Quintero O, Martinez-Azcona O, Balboa V, Vila L. Daily baked egg intake may accelerate the development of tolerance to raw egg in egg-allergic children. Eur J Pediatr. 2020;179(4):679-682. - 52. Leonard SA, Sampson HA, Sicherer SH, et al. Dietary baked egg accelerates resolution of egg allergy in children.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 480,
+        "end_sentence_index": 490,
+        "sentence_count": 10,
+        "token_count": 140,
+        "character_count": 445
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0060",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Leonard SA, Sampson HA, Sicherer SH, et al. Dietary baked egg accelerates resolution of egg allergy in children. J Allergy Clin Immunol. 2012;130(2):473-480 e471. - 53. Leonard SA. Debates in allergy medicine: baked milk and egg ingestion accelerates resolution of milk and egg allergy. World\n\n- Allergy Organ J. 2016;9:1. 54. Dang TD, Peters RL, Allen KJ.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 488,
+        "end_sentence_index": 498,
+        "sentence_count": 10,
+        "token_count": 107,
+        "character_count": 356
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0061",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "54. Dang TD, Peters RL, Allen KJ. Debates in allergy medicine: baked egg and milk do not accelerate tolerance to egg and milk. World\n\n- Allergy Organ J. 2016;9:2. - 55. Netting M, Gold M, Quinn P, El-Merhibi A, Penttila I, Makrides M. Randomised controlled trial of a baked egg intervention in young\n\n\n13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\nchildren allergic to raw egg but not baked egg. World Allergy Organ J. 2017;10(1):22. - 56. Eigenmann PA. Anaphylactic reactions to raw eggs after negative challenges with cooked eggs.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 496,
+        "end_sentence_index": 506,
+        "sentence_count": 10,
+        "token_count": 266,
+        "character_count": 831
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0062",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Eigenmann PA. Anaphylactic reactions to raw eggs after negative challenges with cooked eggs. J Allergy Clin Immunol. 2000;105(3):587-588. - 57. Turner PJ, Mehr S, Joshi P, et al. Safety of food challenges to extensively heated egg in egg-allergic children: a prospective cohort study. Pediatr Allergy Immunol. 2013;24(5):450-455. - 58.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 504,
+        "end_sentence_index": 514,
+        "sentence_count": 10,
+        "token_count": 106,
+        "character_count": 335
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0063",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2013;24(5):450-455. - 58. Shek LP, Soderstrom L, Ahlstedt S, Beyer K, Sampson HA. Determination of food specific IgE levels over time can predict the development of tolerance in cow's milk and hen's egg allergy. J Allergy Clin Immunol. 2004;114(2):387-391. - 59. Yanagida N, Sato S, Asaumi T, Ogura K, Ebisawa M. Risk factors for severe reactions during double-blind placebo-controlled food challenges. Int Arch Allergy Immunol. 2017;172(3):173-182.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 512,
+        "end_sentence_index": 522,
+        "sentence_count": 10,
+        "token_count": 142,
+        "character_count": 449
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0064",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Int Arch Allergy Immunol. 2017;172(3):173-182. - 60. Bravin K, Luyt D. Home-based oral immunotherapy with a baked egg protocol. J Investig Allergol Clin Immunol. 2016;26(1):61-63. - 61. Jones SM, Burks AW, Keet C, et al. Long-term treatment with egg oral immunotherapy enhances sustained unresponsiveness that persists after cessation of therapy. J Allergy Clin Immunol.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 520,
+        "end_sentence_index": 530,
+        "sentence_count": 10,
+        "token_count": 116,
+        "character_count": 370
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0065",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Long-term treatment with egg oral immunotherapy enhances sustained unresponsiveness that persists after cessation of therapy. J Allergy Clin Immunol. 2016;137(4):1117-1127.e1110. - 62. Caminiti L, Pajno GB, Crisafulli G, et al. Oral immunotherapy for egg allergy: a double-blind placebo-controlled study, with postdesensitization follow-up. J Allergy Clin Immunol Pract. 2015;3(4):532-539. - 63. Romantsik O, Bruschettini M, Tosca MA, Zappettini S, Della Casa Alberighi O, Calevo MG.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 528,
+        "end_sentence_index": 538,
+        "sentence_count": 10,
+        "token_count": 155,
+        "character_count": 483
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0066",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 63. Romantsik O, Bruschettini M, Tosca MA, Zappettini S, Della Casa Alberighi O, Calevo MG. Oral and sublingual immunotherapy for egg allergy. Cochrane Database Syst Rev. 2014;11:CD010638. - 64. Romantsik O, Tosca MA, Zappettini S, Calevo MG. Oral and sublingual immunotherapy for egg allergy. Cochrane Database Syst Rev. 2018;4:CD010638.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 536,
+        "end_sentence_index": 546,
+        "sentence_count": 10,
+        "token_count": 116,
+        "character_count": 340
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0067",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Cochrane Database Syst Rev. 2018;4:CD010638. - 65. Vazquez-Ortiz M, Alvaro M, Piquer M, et al. Life-threatening anaphylaxis to egg and milk oral immunotherapy in asthmatic teenagers. Ann Allergy Asthma Immunol. 2014;113(4):482-484. - 66. Kulis M, Yue X, Guo R, et al. High- and low-dose oral immunotherapy similarly suppress pro-allergic cytokines and basophil activation in young children.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 544,
+        "end_sentence_index": 554,
+        "sentence_count": 10,
+        "token_count": 132,
+        "character_count": 390
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0068",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Kulis M, Yue X, Guo R, et al. High- and low-dose oral immunotherapy similarly suppress pro-allergic cytokines and basophil activation in young children. Clin Exp Allergy. 2019;49(2):180-189. - 67. Martin-Munoz MF, Belver MT, Alonso Lebrero E, et al. Egg oral immunotherapy in children (SEICAP I): daily or weekly desensitization pattern. Pediatr Allergy Immunol. 2019;30(1):81-92. - 68.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 552,
+        "end_sentence_index": 562,
+        "sentence_count": 10,
+        "token_count": 128,
+        "character_count": 386
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0069",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2019;30(1):81-92. - 68. Wright BL, Kulis M, Orgel KA, et al. Component-resolved analysis of IgA, IgE, and IgG4 during egg OIT identifies markers associated with sustained unresponsiveness. Allergy. 2016;71(11):1552-1560. - 69. Pajno GB, Fernandez-Rivas M, Arasi S, et al. EAACI Guidelines on allergen immunotherapy: IgE-mediated food allergy. Allergy.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 560,
+        "end_sentence_index": 570,
+        "sentence_count": 10,
+        "token_count": 120,
+        "character_count": 351
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0070",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "EAACI Guidelines on allergen immunotherapy: IgE-mediated food allergy. Allergy. 2018;73(4):799-815. - 70. Roth-Walter F, Starkl P, Zuberbier T, et al. Glutathione exposes sequential IgE- epitopes in ovomucoid relevant in persistent egg allergy. Mol Nutr Food Res. 2013;57(3):536-544. - 71. Unsel M, Sin AZ, Ardeniz O, et al. New onset egg allergy in an adult.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 568,
+        "end_sentence_index": 578,
+        "sentence_count": 10,
+        "token_count": 125,
+        "character_count": 359
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0071",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Unsel M, Sin AZ, Ardeniz O, et al. New onset egg allergy in an adult. J Investig Allergol Clin Immunol. 2007;17(1):55-58. - 72. Szépfalusi Z, Ebner C, Pandjaitan R, et al. Egg yolk alpha-livetin (chicken serum albumin) is a cross-reactive allergen in the bird-egg syndrome. J Allergy Clin Immunol. 1994;93(5):932-942. - 73.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 576,
+        "end_sentence_index": 586,
+        "sentence_count": 10,
+        "token_count": 118,
+        "character_count": 323
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0072",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "1994;93(5):932-942. - 73. Hemmer W, Klug C, Swoboda I. Update on the bird-egg syndrome and genuine poultry meat allergy. Allergo J Int. 2016;25:68-75. - 74. Quirce S, Maranon F, Umpierrez A, de Las HM, Fernandez-Caldas E, Sastre J. Chicken serum albumin (Gal d 5*) is a partially heatlabile inhalant and food allergen implicated in the bird-egg syndrome. Allergy. 2001;56(8):754-762. - 75.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 584,
+        "end_sentence_index": 594,
+        "sentence_count": 10,
+        "token_count": 144,
+        "character_count": 389
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0073",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2001;56(8):754-762. - 75. Escudero C, Quirce S, Fernandez-Nieto M, Miguel J, Cuesta J, Sastre J. Egg white proteins as inhalant allergens associated with baker's asthma. Allergy. 2003;58(7):616-620. - 76. Turner PJ, Gowland MH, Sharma V, et al. Increase in anaphylaxisrelated hospitalizations but no increase in fatalities: an analysis of\n\n\n- United Kingdom national anaphylaxis data, 1992-2012. J Allergy Clin Immunol. 2015;135(4):956-963 e951.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 592,
+        "end_sentence_index": 602,
+        "sentence_count": 10,
+        "token_count": 150,
+        "character_count": 445
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0074",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "J Allergy Clin Immunol. 2015;135(4):956-963 e951. - 77. Tariq SM, Matthews SM, Hakim EA, Arshad SH. Egg allergy in infancy predicts respiratory allergic disease by 4 years of age. Pediatr Allergy Immunol. 2000;11(3):162-167. - 78. Turner PJ, Feeney M, Meyer R, Perkin MR, Fox AT. Implementing primary prevention of food allergy in infants: new BSACI guidance published. Clin Exp Allergy.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 600,
+        "end_sentence_index": 610,
+        "sentence_count": 10,
+        "token_count": 122,
+        "character_count": 387
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0075",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Turner PJ, Feeney M, Meyer R, Perkin MR, Fox AT. Implementing primary prevention of food allergy in infants: new BSACI guidance published. Clin Exp Allergy. 2018;48(8):912-915. - 79. Molina-Infante J, Lucendo AJ. Dietary therapy for eosinophilic esophagitis. J Allergy Clin Immunol. 2018;142(1):41-47. - 80. Molina-Infante J, Arias A, Barrio J, Rodríguez-Sánchez J, SanchezCazalilla M, Lucendo AJ.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 608,
+        "end_sentence_index": 618,
+        "sentence_count": 10,
+        "token_count": 138,
+        "character_count": 397
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0076",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 80. Molina-Infante J, Arias A, Barrio J, Rodríguez-Sánchez J, SanchezCazalilla M, Lucendo AJ. Four-food group elimination diet for adult eosinophilic esophagitis: a prospective multicenter study. J Allergy Clin Immunol. 2014;134(5):1093-1099.e1091. - 81. Lucendo AJ, Arias Á, González-Cervera J, et al. Empiric 6-food elimination diet induced and maintained prolonged remission in patients with adult eosinophilic esophagitis: a prospective study on the food cause of the disease. J Allergy Clin Immunol. 2013;131(3):797-804.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 616,
+        "end_sentence_index": 626,
+        "sentence_count": 10,
+        "token_count": 166,
+        "character_count": 527
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0077",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "J Allergy Clin Immunol. 2013;131(3):797-804. - 82. Kagalwalla AF, Wechsler JB, Amsden K, et al. Efficacy of a 4-food elimination diet for children with eosinophilic esophagitis. Clin Gastroenterol Hepatol. 2017;15(11):1698-1707.e1697. - 83. Philpott H, Nandurkar S, Royce SG, Thien F, Gibson PR. Allergy tests do not predict food triggers in adult patients with eosinophilic oesophagitis.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 624,
+        "end_sentence_index": 634,
+        "sentence_count": 10,
+        "token_count": 133,
+        "character_count": 388
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0078",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Philpott H, Nandurkar S, Royce SG, Thien F, Gibson PR. Allergy tests do not predict food triggers in adult patients with eosinophilic oesophagitis. A comprehensive prospective study using five modalities. Aliment Pharmacol Ther. 2016;44(3):223-233. - 84. Babaie D, Mesdaghi M, Nishino M, Mansouri M, Ebisawa M. Oral and sublingual immunotherapy: potential causes for eosinophilic gastrointestinal disorders? Int Arch Allergy Immunol. 2017;172(2):89-98. - 85.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 632,
+        "end_sentence_index": 642,
+        "sentence_count": 10,
+        "token_count": 141,
+        "character_count": 458
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0079",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2017;172(2):89-98. - 85. Asserhoj LL, Mosbech H, Kroigaard M, Garvey LH. No evidence for contraindications to the use of propofol in adults allergic to egg, soy or peanutdagger. Br J Anaesth. 2016;116(1):77-82. - 86. Murphy A, Campbell DE, Baines D, Mehr S. Allergic reactions to propofol in egg- allergic children. Anesth Analg. 2011;113(1):140-144.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 640,
+        "end_sentence_index": 650,
+        "sentence_count": 10,
+        "token_count": 120,
+        "character_count": 350
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0080",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Anesth Analg. 2011;113(1):140-144. - 87. Harper NJ. Propofol and food allergy. Br J Anaesth. 2016;116(1):11-13. - 88. Kelso JM. Influenza vaccine and egg allergy: nearing the end of an evidence-based journey.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 648,
+        "end_sentence_index": 658,
+        "sentence_count": 10,
+        "token_count": 74,
+        "character_count": 208
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0081",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Kelso JM. Influenza vaccine and egg allergy: nearing the end of an evidence-based journey. J Allergy Clin Immunol Pract. 2015;3(1):140-141. - 89. Nowak-Wegrzyn A, Chehade M, Groetch ME, et al. International consensus guidelines for the diagnosis and management of food protein-induced enterocolitis syndrome: executive summaryWorkgroup Report of the Adverse Reactions to Foods Committee, American Academy of Allergy, Asthma & Immunology. J Allergy Clin Immunol. 2017;139(4):1111-1126 e1114. - 90.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 656,
+        "end_sentence_index": 666,
+        "sentence_count": 10,
+        "token_count": 147,
+        "character_count": 496
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0082",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2017;139(4):1111-1126 e1114. - 90. Ludman S, Harmon M, Whiting D, du Toit G. Clinical presentation and referral characteristics of food protein-induced enterocolitis syndrome in the United Kingdom. Ann Allergy Asthma Immunol. 2014;113(3):290-294. - 91. Caubet JC, Wang J. Current understanding of egg allergy. Pediatr Clin North Am. 2011;58(2):427-443, xi. - 92.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 664,
+        "end_sentence_index": 674,
+        "sentence_count": 10,
+        "token_count": 116,
+        "character_count": 362
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0083",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2011;58(2):427-443, xi. - 92. Miceli Sopo S, Bersani G, Fantacci C, Romano A, Monaco S. Diagnostic criteria for acute food protein-induced enterocolitis syndrome. Is the work in progress? Allergol Immunopathol (Madr). 2018;46(6):607-611. - 93. Duffey H, Egan M. Development of food protein-induced enterocolitis syndrome (FPIES) to egg after immunoglobulin E-mediated egg allergy. Ann Allergy Asthma Immunol. 2018;121(3):379-380.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 672,
+        "end_sentence_index": 682,
+        "sentence_count": 10,
+        "token_count": 141,
+        "character_count": 429
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0084",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Ann Allergy Asthma Immunol. 2018;121(3):379-380. - 94. Ashford JW, Gold JE, Huenergardt MA, et al. MMR vaccination: a potential strategy to reduce severity and mortality of COVID-19 illness. Am J Med. 2021;134(2):153-155. - 95. Khakoo GA, Lack G. Recommendations for using MMR vaccine in children allergic to eggs. BMJ.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 680,
+        "end_sentence_index": 690,
+        "sentence_count": 10,
+        "token_count": 105,
+        "character_count": 319
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0085",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Khakoo GA, Lack G. Recommendations for using MMR vaccine in children allergic to eggs. BMJ. 2000;320(7239):929-932. 13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\n- 96. Fasano MB, Wood RA, Cooke SK, Sampson HA. Egg hypersensitivity and adverse reactions to measles, mumps, and rubella vaccine. J Pediatr. 1992;120(6):878-881. - 97. Green book c Department of health green book.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 688,
+        "end_sentence_index": 698,
+        "sentence_count": 10,
+        "token_count": 231,
+        "character_count": 675
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0086",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 97. Green book c Department of health green book. https://www.gov. uk/government/publications/contraindications-and-special-consi derations-the-green-book-chapter-6 date of access 17/8/18\n- 98. Chaloupka I, Schuler A, Marschall M, Meier-Ewert H. Comparative analysis of six European influenza vaccines. Eur J Clin Microbiol Infect Dis. 1996;15(2):121-127. - 99. Greenhawt MJ, Chernin AS, Howe L, Li JT, Sanders G. The safety of the H1N1 influenza A vaccine in egg allergic individuals. Ann Allergy Asthma Immunol.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 696,
+        "end_sentence_index": 706,
+        "sentence_count": 10,
+        "token_count": 160,
+        "character_count": 515
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0087",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Greenhawt MJ, Chernin AS, Howe L, Li JT, Sanders G. The safety of the H1N1 influenza A vaccine in egg allergic individuals. Ann Allergy Asthma Immunol. 2010;105(5):387-393. - 100. Des Roches A, Paradis L, Gagnon R, et al. Egg-allergic patients can be safely vaccinated against influenza. J Allergy Clin Immunol. 2012;130(5):1213-1216 e1211. - 101. Forsdahl BA.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 704,
+        "end_sentence_index": 714,
+        "sentence_count": 10,
+        "token_count": 121,
+        "character_count": 360
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0088",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 101. Forsdahl BA. Reactions of Norwegian children with severe egg allergy to an egg- containing influenza A (H1N1) vaccine: a retrospective audit. BMJ Open. 2012;2:e000186. - 102. https://www.gov.uk. Vaccine update. In:2019;. Date of access: 14/10/19\n- 103. PHE Influenza ovalbumin content; 2019. https://assets.publi shing.service.gov.uk/government/uploads/system/uploads/attac hment_data/file/814097/PHE_Influenza_ovalbumin_contenttab le_2019_2020.pdf date of access 8/9/19\n- 104.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 712,
+        "end_sentence_index": 722,
+        "sentence_count": 10,
+        "token_count": 164,
+        "character_count": 484
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0089",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Date of access: 14/10/19\n- 103. PHE Influenza ovalbumin content; 2019. https://assets.publi shing.service.gov.uk/government/uploads/system/uploads/attac hment_data/file/814097/PHE_Influenza_ovalbumin_contenttab le_2019_2020.pdf date of access 8/9/19\n- 104. Tetra F. Fluenz Tetra. In:2019. - 105. YFVC Yellow fever vaccination centres. https://nathnacyfzone. org.uk/search-centres Date of access 17/8/18\n- 106. Smith D, Wong P, Gomez R, White K. Ovalbumin content in the yellow fever vaccine. J Allergy Clin Immunol Pract.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 720,
+        "end_sentence_index": 730,
+        "sentence_count": 10,
+        "token_count": 177,
+        "character_count": 521
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0090",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Smith D, Wong P, Gomez R, White K. Ovalbumin content in the yellow fever vaccine. J Allergy Clin Immunol Pract. 2015;3(5):794-795. - 107. Kelso JM. Raw egg allergy-a potential issue in vaccine allergy. J Allergy Clin Immunol. 2000;106(5):990. - 108. YFVC/memberhttps://nathnacyfzome.org.uk/become-a-yfvc Date of access 17/8/18\n- 109.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 728,
+        "end_sentence_index": 738,
+        "sentence_count": 10,
+        "token_count": 121,
+        "character_count": 333
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0091",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 108. YFVC/memberhttps://nathnacyfzome.org.uk/become-a-yfvc Date of access 17/8/18\n- 109. Mosimann B, Stoll B, Francillon C, Pecoud A. Yellow fever vaccine and egg allergy. J Allergy Clin Immunol. 1995;95(5 Pt 1):1064. - 110. Rutkowski K, Ewan PW, Nasser SM. Administration of yellow fever vaccine in patients with egg allergy. Int Arch Allergy Immunol. 2013;161(3):274-278.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 736,
+        "end_sentence_index": 746,
+        "sentence_count": 10,
+        "token_count": 132,
+        "character_count": 375
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0092",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Int Arch Allergy Immunol. 2013;161(3):274-278. - 111. Roukens AH, Visser LG, Kroon FP. A note of caution on yellow fever vaccination during maraviroc treatment: a hypothesis on a potential dangerous interaction. AIDS. 2009;23(4):542-543. - 112. Roukens AH, Vossen AC, Bredenbeek PJ, van Dissel JT, Visser LG. Intradermally administered yellow fever vaccine at reduced dose induces a protective immune response: a randomized controlled non-inferiority trial.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 744,
+        "end_sentence_index": 754,
+        "sentence_count": 10,
+        "token_count": 136,
+        "character_count": 457
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0093",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Roukens AH, Vossen AC, Bredenbeek PJ, van Dissel JT, Visser LG. Intradermally administered yellow fever vaccine at reduced dose induces a protective immune response: a randomized controlled non-inferiority trial. PLoS ONE. 2008;3(4):e1993. - 113. Freigang B, Jadavji TP, Freigang DW. Lack of adverse reactions to measles, mumps, and rubella vaccine in egg-allergic children. Ann Allergy. 1994;73(6):486-488. - 114.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 752,
+        "end_sentence_index": 762,
+        "sentence_count": 10,
+        "token_count": 137,
+        "character_count": 414
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0094",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "1994;73(6):486-488. - 114. Aickin R, Hill D, Kemp A. Measles immunisation in children with allergy to egg. BMJ. 1994;309(6949):223-225. - 115. Chernin LR, Swender D, Hostoffer RW Jr. Cracking the shell on egg-hypersensitive patients and egg-containing vaccines. J Am Osteopath Assoc. 2011;111(10 Suppl 6):S5-S6.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 760,
+        "end_sentence_index": 770,
+        "sentence_count": 10,
+        "token_count": 110,
+        "character_count": 311
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0095",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "J Am Osteopath Assoc. 2011;111(10 Suppl 6):S5-S6. - 116. Dobardzic A, Izurieta H, Woo EJ, et al. Safety review of the purified chick embryo cell rabies vaccine: data from the Vaccine Adverse Event Reporting System (VAERS), 1997–2005. Vaccine. 2007;25(21):4244-4251. - 117. DfEpupilsatschoolwithmedicalconditions 2015. https://assets. publishing.service.gov.uk/government/uploads/system/uploads/ attachment_data/file/803956/supporting-pupils-at-school-withmedical-conditions.pdf Date of access 2/8/18\n- 118.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 768,
+        "end_sentence_index": 778,
+        "sentence_count": 10,
+        "token_count": 173,
+        "character_count": 506
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0096",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "DfEpupilsatschoolwithmedicalconditions 2015. https://assets. publishing.service.gov.uk/government/uploads/system/uploads/ attachment_data/file/803956/supporting-pupils-at-school-withmedical-conditions.pdf Date of access 2/8/18\n- 118. DfEearlyyearsfoundationstageframework. 2017. - 119. Muraro A, Clark A, Beyer K, et al. The management of the allergic child at school: EAACI/GA2LEN Task Force on the allergic child at school. Allergy. 2010;65(6):681-689. - 120.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 776,
+        "end_sentence_index": 786,
+        "sentence_count": 10,
+        "token_count": 152,
+        "character_count": 461
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0097",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "2010;65(6):681-689. - 120. Marklund B, Ahlstedt S, Nordström G. Food hypersensitivity and quality of life. Curr Opin Allergy Clin Immunol. 2007;7(3):279-287. - 121. Cummings AJ, Knibb RC, King RM, Lucas JS. The psychosocial impact of food allergy and food hypersensitivity in children, adolescents and their families: a review. Allergy. 2010;65(8):933-945.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 784,
+        "end_sentence_index": 794,
+        "sentence_count": 10,
+        "token_count": 112,
+        "character_count": 356
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0098",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Allergy. 2010;65(8):933-945. - 122. Morou Z, Tatsioni A, Dimoliatis ID, Papadopoulos NG. Healthrelated quality of life in children with food allergy and their parents: a systematic review of the literature. J Investig Allergol Clin Immunol. 2014;24(6):382-395. - 123. Bollinger ME, Dahlquist LM, Mudd K, Sonntag C, Dillinger L, McKenna K. The impact of food allergy on the daily activities of children and their families. Ann Allergy Asthma Immunol.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 792,
+        "end_sentence_index": 802,
+        "sentence_count": 10,
+        "token_count": 132,
+        "character_count": 449
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0099",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Bollinger ME, Dahlquist LM, Mudd K, Sonntag C, Dillinger L, McKenna K. The impact of food allergy on the daily activities of children and their families. Ann Allergy Asthma Immunol. 2006;96(3):415-421. - 124. Fong AT, Katelaris CH, Wainstein B. Bullying and quality of life in children and adolescents with food allergy. J Paediatr Child Health. 2017;53(7):630-635. - 125. Eigenmann PA, Caubet JC, Zamora SA. Continuing food-avoidance diets after negative food challenges.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 800,
+        "end_sentence_index": 810,
+        "sentence_count": 10,
+        "token_count": 144,
+        "character_count": 472
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0100",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Eigenmann PA, Caubet JC, Zamora SA. Continuing food-avoidance diets after negative food challenges. Pediatr Allergy Immunol. 2006;17(8):601-605. - 126. Kovalenko PA, Hoven CW, Wu P, Wicks J, Mandell DJ, Tiet Q. Association between allergy and anxiety disorders in youth. Aust N Z J Psychiatry. 2001;35(6):815-821. - 127. Polloni L, Ferruzza E, Ronconi L, et al.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 808,
+        "end_sentence_index": 818,
+        "sentence_count": 10,
+        "token_count": 125,
+        "character_count": 361
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0101",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 127. Polloni L, Ferruzza E, Ronconi L, et al. Mental health and behavior of food-allergic adolescents compared to a healthy matched sample. Ann Allergy Asthma Immunol. 2015;115(2):158-160. - 128. Herbert LJ, Dahlquist LM. Perceived history of anaphylaxis and parental overprotection, autonomy, anxiety, and depression in food allergic young adults. J Clin Psychol Med Settings. 2008;15(4):261-269.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 816,
+        "end_sentence_index": 826,
+        "sentence_count": 10,
+        "token_count": 119,
+        "character_count": 399
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0102",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "J Clin Psychol Med Settings. 2008;15(4):261-269. - 129. DunnGalvin A, Hourihane JB. Developmental trajectories in food allergy: a review. Adv Food Nutr Res. 2009;56:65-100. - 130. Knibb RC, Barnes C, Stalker C. Parental confidence in managing food allergy: development and validation of the Food Allergy Self-Efficacy Scale for Parents (FASE-P). Clin Exp Allergy. 2015;45(11):1681-1689.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 824,
+        "end_sentence_index": 834,
+        "sentence_count": 10,
+        "token_count": 128,
+        "character_count": 386
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0103",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Clin Exp Allergy. 2015;45(11):1681-1689. - 131. LeBovidge JS, Michaud A, Deleon A, Harada L, Waserman S, Schneider L. Evaluating a handbook for parents of children with food allergy: a randomized clinical trial. Ann Allergy Asthma Immunol. 2016;116(3):230-236.e231. - 132. Boyle RJ, Umasunthar T, Smith JG, et al. A brief psychological intervention for mothers of children with food allergy can change risk perception and reduce anxiety: outcomes of a randomized controlled trial. Clin Exp Allergy.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 832,
+        "end_sentence_index": 842,
+        "sentence_count": 10,
+        "token_count": 152,
+        "character_count": 498
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0104",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "A brief psychological intervention for mothers of children with food allergy can change risk perception and reduce anxiety: outcomes of a randomized controlled trial. Clin Exp Allergy. 2017;47(10):1309-1317. - 133. Perkin MR, Logan K, Tseng A, et al. Randomized trial of introduction of allergenic foods in breast-fed infants. N Engl J Med. 2016;374(18):1733-1743. - 134. Palmer DJ, Metcalfe J, Makrides M, et al.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 840,
+        "end_sentence_index": 850,
+        "sentence_count": 10,
+        "token_count": 124,
+        "character_count": 413
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0105",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "- 134. Palmer DJ, Metcalfe J, Makrides M, et al. Early regular egg exposure in infants with eczema: a randomized controlled trial. J Allergy Clin Immunol. 2013;132(2):387-392.e381. - 135. Metcalfe JR, Marsh JA, D'Vaz N, et al. Effects of maternal dietary egg intake during early lactation on human milk ovalbumin concentration: a randomized controlled trial. Clin Exp Allergy. 2016;46(12):1605-1613.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 848,
+        "end_sentence_index": 858,
+        "sentence_count": 10,
+        "token_count": 130,
+        "character_count": 399
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0106",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Clin Exp Allergy. 2016;46(12):1605-1613. - 136. Natsume O, Kabashima S, Nakazato J, et al. Two-step egg introduction for prevention of egg allergy in high-risk infants with eczema (PETIT): a randomised, double-blind, placebo-controlled trial. Lancet. 2017;389(10066):276-286. - 137. Ierodiakonou D, Garcia-Larsen V, Logan A, et al. Timing of allergenic food introduction to the infant diet and risk of allergic or autoimmune disease: a systematic review and meta-analysis.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 856,
+        "end_sentence_index": 866,
+        "sentence_count": 10,
+        "token_count": 152,
+        "character_count": 472
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0107",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Ierodiakonou D, Garcia-Larsen V, Logan A, et al. Timing of allergenic food introduction to the infant diet and risk of allergic or autoimmune disease: a systematic review and meta-analysis. JAMA. 2016;316(11):1181-1192. - 138. Koplin JJ, Osborne NJ, Wake M, et al. Can early introduction of egg prevent egg allergy in infants? A population-based study. J Allergy Clin Immunol. 2010;126(4):807-813.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 864,
+        "end_sentence_index": 874,
+        "sentence_count": 10,
+        "token_count": 128,
+        "character_count": 397
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0108",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "J Allergy Clin Immunol. 2010;126(4):807-813. - 139. Bellach J, Schwarz V, Ahrens B, et al. Randomized placebocontrolled trial of hen's egg consumption for primary prevention in infants. J Allergy Clin Immunol. 2017;139(5):1591-1599.e1592. 13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense\n\n140. Spergel JM, Boguniewicz M, Schneider L, Hanifin JM, Paller AS, Eichenfield LF. Food allergy in infants with atopic dermatitis: limitations of food-specific IgE measurements.",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 872,
+        "end_sentence_index": 882,
+        "sentence_count": 10,
+        "token_count": 251,
+        "character_count": 762
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0109",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    },
+    {
+      "text": "Spergel JM, Boguniewicz M, Schneider L, Hanifin JM, Paller AS, Eichenfield LF. Food allergy in infants with atopic dermatitis: limitations of food-specific IgE measurements. Pediatrics. 2015;136(6):e1530-1538. SUPPORTING INFORMATION Additional supporting information may be found in the online version of the article at the publisher’s website. How to cite this article: Leech SC, Ewan PW, Skypala IJ, et al. BSACI 2021 guideline for the management of egg allergy. Clin Exp Allergy. 2021;51:1262–1278. https://doi.org/10.1111/\n\ncea.14009\n\n13652222,2021,10,Downloadedfromhttps://onlinelibrary.wiley.com/doi/10.1111/cea.14009bySpanishCochraneNationalProvision(MinisteriodeSanidad),WileyOnlineLibraryon[31/10/2025].SeetheTermsandConditions(https://onlinelibrary.wiley.com/terms-and-conditions)onWileyOnlineLibraryforrulesofuse;OAarticlesaregovernedbytheapplicableCreativeCommonsLicense",
+      "metadata": {
+        "chunker": "sentence_group_chunking",
+        "sentences_per_chunk": 10,
+        "overlap_sentences": 2,
+        "start_sentence_index": 880,
+        "end_sentence_index": 890,
+        "sentence_count": 10,
+        "token_count": 277,
+        "character_count": 882
+      },
+      "chunk_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy_chunk_0110",
+      "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy"
+    }
+  ]
+}

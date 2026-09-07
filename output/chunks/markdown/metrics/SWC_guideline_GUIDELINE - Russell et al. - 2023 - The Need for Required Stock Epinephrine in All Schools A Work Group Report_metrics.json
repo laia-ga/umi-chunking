@@ -1,0 +1,31 @@
+{
+  "strategy": "sliding_window_token_chunking",
+  "type": "SlidingWindowTokenChunker",
+  "abbreviation": "SWC",
+  "params": {
+    "window_size": 512,
+    "step_size": 75
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
+  "source_path": "guideline\\GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 281,
+  "empty_chunks": 0,
+  "tokens_min": 507,
+  "tokens_p25": 514.0,
+  "tokens_median": 514.0,
+  "tokens_mean": 514.12,
+  "tokens_p75": 514.0,
+  "tokens_max": 515,
+  "tokens_std": 0.61,
+  "tokens_total": 144468,
+  "tokens_original": 21507,
+  "tokens_ratio": 6.717,
+  "execution_time_seconds": 0.099526,
+  "ram_before_mb": 811.33,
+  "ram_after_mb": 814.63,
+  "ram_increase_mb": 3.3
+}

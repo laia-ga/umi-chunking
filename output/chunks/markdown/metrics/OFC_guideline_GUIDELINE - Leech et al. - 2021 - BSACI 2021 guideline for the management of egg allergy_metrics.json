@@ -1,0 +1,31 @@
+{
+  "strategy": "overlapping_token_chunking",
+  "type": "OverlappingTokenChunker",
+  "abbreviation": "OFC",
+  "params": {
+    "chunk_size": 512,
+    "overlap_size": 75
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "source_path": "guideline\\GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 57,
+  "empty_chunks": 0,
+  "tokens_min": 246,
+  "tokens_p25": 514.0,
+  "tokens_median": 514.0,
+  "tokens_mean": 509.35,
+  "tokens_p75": 514.0,
+  "tokens_max": 515,
+  "tokens_std": 35.19,
+  "tokens_total": 29033,
+  "tokens_original": 24718,
+  "tokens_ratio": 1.175,
+  "execution_time_seconds": 0.055422,
+  "ram_before_mb": 811.22,
+  "ram_after_mb": 811.94,
+  "ram_increase_mb": 0.72
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "llm_boundary_detection_chunking",
+  "type": "LLMBoundaryDetectionChunker",
+  "abbreviation": "LBDC",
+  "params": {
+    "max_tokens": 512,
+    "overlap_tokens": 75
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
+  "source_path": "guideline\\GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 44,
+  "empty_chunks": 0,
+  "tokens_min": 418,
+  "tokens_p25": 558.0,
+  "tokens_median": 565.0,
+  "tokens_mean": 560.16,
+  "tokens_p75": 576.0,
+  "tokens_max": 584,
+  "tokens_std": 29.12,
+  "tokens_total": 24647,
+  "tokens_original": 21507,
+  "tokens_ratio": 1.146,
+  "execution_time_seconds": 1.072332,
+  "ram_before_mb": 1265.79,
+  "ram_after_mb": 1265.79,
+  "ram_increase_mb": 0.0
+}

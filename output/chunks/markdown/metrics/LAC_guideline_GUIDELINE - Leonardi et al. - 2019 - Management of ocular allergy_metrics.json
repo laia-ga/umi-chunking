@@ -1,0 +1,31 @@
+{
+  "strategy": "length_aware_chunking",
+  "type": "LengthAwareChunker",
+  "abbreviation": "LAC",
+  "params": {
+    "target_length": 512,
+    "tolerance": 50
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "source_path": "guideline\\GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 46,
+  "empty_chunks": 0,
+  "tokens_min": 189,
+  "tokens_p25": 499.0,
+  "tokens_median": 534.0,
+  "tokens_mean": 519.67,
+  "tokens_p75": 549.5,
+  "tokens_max": 1390,
+  "tokens_std": 174.5,
+  "tokens_total": 23905,
+  "tokens_original": 23815,
+  "tokens_ratio": 1.004,
+  "execution_time_seconds": 0.511715,
+  "ram_before_mb": 1287.07,
+  "ram_after_mb": 1287.78,
+  "ram_increase_mb": 0.71
+}

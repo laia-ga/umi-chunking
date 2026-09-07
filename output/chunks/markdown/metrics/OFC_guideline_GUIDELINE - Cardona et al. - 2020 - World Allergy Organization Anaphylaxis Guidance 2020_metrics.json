@@ -1,0 +1,31 @@
+{
+  "strategy": "overlapping_token_chunking",
+  "type": "OverlappingTokenChunker",
+  "abbreviation": "OFC",
+  "params": {
+    "chunk_size": 512,
+    "overlap_size": 75
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020.md",
+  "source_path": "guideline\\GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 52,
+  "empty_chunks": 0,
+  "tokens_min": 500,
+  "tokens_p25": 514.0,
+  "tokens_median": 514.0,
+  "tokens_mean": 513.88,
+  "tokens_p75": 514.0,
+  "tokens_max": 515,
+  "tokens_std": 1.98,
+  "tokens_total": 26722,
+  "tokens_original": 22787,
+  "tokens_ratio": 1.173,
+  "execution_time_seconds": 0.052919,
+  "ram_before_mb": 800.66,
+  "ram_after_mb": 810.86,
+  "ram_increase_mb": 10.2
+}

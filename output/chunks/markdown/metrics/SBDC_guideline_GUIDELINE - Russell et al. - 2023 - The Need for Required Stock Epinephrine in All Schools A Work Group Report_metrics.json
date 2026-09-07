@@ -1,0 +1,32 @@
+{
+  "strategy": "semantic_boundary_detection",
+  "type": "SemanticBoundaryChunker",
+  "abbreviation": "SBDC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0,
+    "buffer_size": 1,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
+  "source_path": "guideline\\GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 173,
+  "empty_chunks": 0,
+  "tokens_min": 3,
+  "tokens_p25": 17.0,
+  "tokens_median": 41.0,
+  "tokens_mean": 126.31,
+  "tokens_p75": 74.0,
+  "tokens_max": 3383,
+  "tokens_std": 380.85,
+  "tokens_total": 21851,
+  "tokens_original": 21507,
+  "tokens_ratio": 1.016,
+  "execution_time_seconds": 6.60878,
+  "ram_before_mb": 1213.9,
+  "ram_after_mb": 1240.71,
+  "ram_increase_mb": 26.82
+}

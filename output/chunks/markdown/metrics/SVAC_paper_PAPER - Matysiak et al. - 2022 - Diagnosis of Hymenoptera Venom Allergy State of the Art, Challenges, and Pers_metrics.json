@@ -1,0 +1,32 @@
+{
+  "strategy": "semantic_variance_adaptive_chunking",
+  "type": "SemanticVarianceAdaptiveChunker",
+  "abbreviation": "SVAC",
+  "params": {
+    "sensitivity": 0.2,
+    "window_size": 5,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "status": "completed",
+  "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers",
+  "document_type": "paper",
+  "input_file": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.md",
+  "source_path": "paper\\PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 137,
+  "empty_chunks": 0,
+  "tokens_min": 5,
+  "tokens_p25": 27.0,
+  "tokens_median": 98.0,
+  "tokens_mean": 149.94,
+  "tokens_p75": 208.0,
+  "tokens_max": 1208,
+  "tokens_std": 177.48,
+  "tokens_total": 20542,
+  "tokens_original": 20270,
+  "tokens_ratio": 1.013,
+  "execution_time_seconds": 3.880985,
+  "ram_before_mb": 1288.48,
+  "ram_after_mb": 1282.34,
+  "ram_increase_mb": -6.14
+}

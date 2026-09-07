@@ -1,0 +1,30 @@
+{
+  "strategy": "content_density_adaptive_chunking",
+  "type": "ContentDensityAdaptiveChunker",
+  "abbreviation": "CDAC",
+  "params": {
+    "base_chunk_size": 300
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "source_path": "guideline\\GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 156,
+  "empty_chunks": 0,
+  "tokens_min": 16,
+  "tokens_p25": 138.0,
+  "tokens_median": 149.0,
+  "tokens_mean": 160.44,
+  "tokens_p75": 170.25,
+  "tokens_max": 482,
+  "tokens_std": 59.67,
+  "tokens_total": 25028,
+  "tokens_original": 24718,
+  "tokens_ratio": 1.013,
+  "execution_time_seconds": 0.312717,
+  "ram_before_mb": 1227.45,
+  "ram_after_mb": 1227.45,
+  "ram_increase_mb": 0.0
+}

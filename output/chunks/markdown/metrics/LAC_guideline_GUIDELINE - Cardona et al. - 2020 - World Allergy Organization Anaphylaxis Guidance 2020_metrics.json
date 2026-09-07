@@ -1,0 +1,31 @@
+{
+  "strategy": "length_aware_chunking",
+  "type": "LengthAwareChunker",
+  "abbreviation": "LAC",
+  "params": {
+    "target_length": 512,
+    "tolerance": 50
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020.md",
+  "source_path": "guideline\\GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 46,
+  "empty_chunks": 0,
+  "tokens_min": 47,
+  "tokens_p25": 486.0,
+  "tokens_median": 538.0,
+  "tokens_mean": 497.33,
+  "tokens_p75": 553.0,
+  "tokens_max": 633,
+  "tokens_std": 103.06,
+  "tokens_total": 22877,
+  "tokens_original": 22787,
+  "tokens_ratio": 1.004,
+  "execution_time_seconds": 0.479365,
+  "ram_before_mb": 1287.26,
+  "ram_after_mb": 1287.66,
+  "ram_increase_mb": 0.4
+}

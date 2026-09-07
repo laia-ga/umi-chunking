@@ -1,0 +1,31 @@
+{
+  "strategy": "length_aware_chunking",
+  "type": "LengthAwareChunker",
+  "abbreviation": "LAC",
+  "params": {
+    "target_length": 512,
+    "tolerance": 50
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "source_path": "guideline\\GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 46,
+  "empty_chunks": 0,
+  "tokens_min": 361,
+  "tokens_p25": 509.25,
+  "tokens_median": 541.5,
+  "tokens_mean": 518.33,
+  "tokens_p75": 555.75,
+  "tokens_max": 562,
+  "tokens_std": 53.73,
+  "tokens_total": 23843,
+  "tokens_original": 23749,
+  "tokens_ratio": 1.004,
+  "execution_time_seconds": 0.435217,
+  "ram_before_mb": 1291.28,
+  "ram_after_mb": 1287.18,
+  "ram_increase_mb": -4.1
+}

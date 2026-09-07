@@ -1,0 +1,31 @@
+{
+  "strategy": "dynamic_token_size_chunking",
+  "type": "DynamicTokenSizeChunker",
+  "abbreviation": "DFC",
+  "params": {
+    "min_chunk_size": 150,
+    "max_chunk_size": 512
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "source_path": "guideline\\GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 50,
+  "empty_chunks": 0,
+  "tokens_min": 244,
+  "tokens_p25": 483.75,
+  "tokens_median": 495.5,
+  "tokens_mean": 477.68,
+  "tokens_p75": 508.0,
+  "tokens_max": 514,
+  "tokens_std": 54.0,
+  "tokens_total": 23884,
+  "tokens_original": 23815,
+  "tokens_ratio": 1.003,
+  "execution_time_seconds": 0.078608,
+  "ram_before_mb": 1220.13,
+  "ram_after_mb": 1234.93,
+  "ram_increase_mb": 14.8
+}

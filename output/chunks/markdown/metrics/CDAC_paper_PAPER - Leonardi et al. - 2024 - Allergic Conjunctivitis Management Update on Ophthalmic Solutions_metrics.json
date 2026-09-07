@@ -1,0 +1,30 @@
+{
+  "strategy": "content_density_adaptive_chunking",
+  "type": "ContentDensityAdaptiveChunker",
+  "abbreviation": "CDAC",
+  "params": {
+    "base_chunk_size": 300
+  },
+  "status": "completed",
+  "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
+  "document_type": "paper",
+  "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "source_path": "paper\\PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 118,
+  "empty_chunks": 0,
+  "tokens_min": 21,
+  "tokens_p25": 139.0,
+  "tokens_median": 148.0,
+  "tokens_mean": 159.42,
+  "tokens_p75": 161.75,
+  "tokens_max": 814,
+  "tokens_std": 81.95,
+  "tokens_total": 18812,
+  "tokens_original": 18579,
+  "tokens_ratio": 1.013,
+  "execution_time_seconds": 0.302584,
+  "ram_before_mb": 1225.2,
+  "ram_after_mb": 1226.29,
+  "ram_increase_mb": 1.08
+}

@@ -1,0 +1,1539 @@
+{
+  "strategy": "semantic_variance_adaptive_chunking",
+  "type": "SemanticVarianceAdaptiveChunker",
+  "abbreviation": "SVAC",
+  "params": {
+    "sensitivity": 0.2,
+    "window_size": 5,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "source_path": "guideline\\GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
+  "tokenizer model": "BAAI/bge-m3",
+  "original_token_count": 23815,
+  "number_of_chunks": 80,
+  "chunks": [
+    {
+      "text": "## Edinburgh Research Explorer\n\n### Management of ocular allergy\n\nCitation for published version: Leonardi, A, Silva, D, Perez Formigo, D, Bozkurt, B, Sharma, V, Allegri, P, Rondon, C, Calder, V, Ryan, D, Kowalsky, M, Delgado, L, Doan, S & Fauquert, JL 2019, 'Management of ocular allergy', Allergy. https://doi.org/10.1111/all.13786\n\n###### Digital Object Identifier (DOI): 10.1111/all.13786\n\nLink: Link to publication record in Edinburgh Research Explorer\n\nDocument Version: Peer reviewed version\n\n###### Published In: Allergy\n\nPublisher Rights Statement: This is the author’s peer-reviewed manuscript as accepted for publication.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.275,
+        "recent_mean_similarity": 0.5708,
+        "mean_internal_similarity": 0.5708,
+        "start_sentence_index": 0,
+        "end_sentence_index": 2,
+        "sentence_count": 2,
+        "character_count": 632,
+        "token_count": 183
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0000",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "General rights Copyright for the publications made accessible via the Edinburgh Research Explorer is retained by the author(s) and / or other copyright owners and it is a condition of accessing these publications that users recognise and abide by the legal requirements associated with these rights. Take down policy The University of Edinburgh has made every reasonable effort to ensure that Edinburgh Research Explorer content complies with UK legislation.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1298,
+        "recent_mean_similarity": 0.4494,
+        "mean_internal_similarity": 0.5025,
+        "start_sentence_index": 2,
+        "end_sentence_index": 4,
+        "sentence_count": 2,
+        "character_count": 458,
+        "token_count": 85
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0001",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "If you believe that the public display of this file breaches copyright please contact [CORREO OMITIDO] providing details, and we will remove access to the work immediately and investigate your claim.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1502,
+        "recent_mean_similarity": 0.3695,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 4,
+        "end_sentence_index": 5,
+        "sentence_count": 1,
+        "character_count": 199,
+        "token_count": 44
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0002",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Download date: 27. Aug.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0024,
+        "recent_mean_similarity": 0.2806,
+        "mean_internal_similarity": 0.3454,
+        "start_sentence_index": 5,
+        "end_sentence_index": 7,
+        "sentence_count": 2,
+        "character_count": 23,
+        "token_count": 8
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0003",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "2022\n\nArticle Type: EAACI Position Paper\n\n#### Management of ocular allergy\n\n# Accepted Article\n\nAndrea Leonardi1, Diana Silva2, Daniel Perez Formigo3, Banu Bozkurt4, Vibha Sharma5, Pia Allegri6, Carmen Rondon7, Virginia Calder8, Dermot Ryan9, Marek Kowalsky10, Luis Delgado2, Serge Doan11, Jean Luc Fauquert12\n\n- 1 Department of Neuroscience, Ophthalmology Unit, University of Padua, Italy\n- 2 Basic and Clinical Immunology, Department of Pathology, Faculty of Medicine, University of Porto, Serviço de Imunoalergologia, Centro Hospitalar São João, EPE – Porto, Portugal\n- 3 Department of Ophthalmology, Hospital Universitario de Torrejon, Madrid, Spain; Faculty of Medicine, University of Francisco de Vitoria (UFV), Pozuelo de Alarcon, Madrid, Spain\n- 4 Department of Ophthalmology, Selcuk University, Faculty of Medicine, Konya, Turkey\n- 5 Department of Paediatric Allergy and Immunology, Royal Manchester Children's Hospital, Manchester University NHS Foundation Trust Oxford Road, Manchester M13 9WL\n- 6 Ocular Inflammatory Diseases Referral Center, Allergic Conjunctivitis Unit, Rapallo Hospital Ophthalmology Department, Genova, Italy\n- 7 Allergy Unit, Regional University Hospital of Malaga, IBIMA, UMA, Malaga, Spain\n- 8 Department of Ocular Biology & Therapeutics, UCL Institute of Ophthalmology, London, UK\n- 9 Allergy and Respiratory Research Group, Usher Institute of Population Health Sciences and Informatics, University of Edinburgh. Doorway 3, Medical School, Teviot Place, Edinburgh EH8 9AG\n- 10 Department of Immunology, Rheumatology, and Allergy, Medical University of Lodz, Poland\n- 11 Service d’Ophtalmologie, Hôpital Bichat and Fondation A. de Rothschild, Paris, France\n- 12 CHU Estaing, Unité d’Allergologie de l’Enfant CHU Estaing 63003 Clermont-Ferrand Cedex1, France\n\n\nShort Title: Ocular Allergy Management Source of Funding: supported by EAACI BoO and ExCom TF budget 2016-18 Submitted for Approval by EAACI ExCom August 2018.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.04,
+        "recent_mean_similarity": 0.2749,
+        "mean_internal_similarity": 0.7469,
+        "start_sentence_index": 7,
+        "end_sentence_index": 9,
+        "sentence_count": 2,
+        "character_count": 1956,
+        "token_count": 524
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0004",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Accepted from ExCom 19 December 2018\n\nThis article has been accepted for publication and undergone full peer review but has not been through the copyediting, typesetting, pagination and proofreading process, which may lead to differences between this version and the Version of Record.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0211,
+        "recent_mean_similarity": 0.257,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 9,
+        "end_sentence_index": 10,
+        "sentence_count": 1,
+        "character_count": 285,
+        "token_count": 63
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0005",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Please cite this article as doi: 10.1111/all.13786\n\nCorresponding author: Andrea Leonardi, MD Department of Neuroscience, Ophthalmology Unit, University of Padua via Giustiniani 2 35128 Padua, Italy Fax: +39-049-875 5168 email: [CORREO OMITIDO]\n\nAccepted Article\n\n#### Abstract\n\nThe treatment and management of ocular allergy (OA) remains a major concern for different specialties, including allergists, ophthalmologists, primary care physicians, rhinologists, pediatricians, dermatologists, clinical immunologists and pharmacists. We performed a systematic review of all relevant publications in Medline, SCOPUS and WebScience including systematic reviews and meta-analysis. Publications were considered relevant if they addressed treatments, or management strategies of OA. A further wider systematic literature search was performed if no evidence or good quality evidence was found. There are effective drugs for the treatment of OA, however there is a lack an optimal treatment for the perennial and severe forms. Topical antihistamines, mast cell stabilizers or double action drugs are the first choice of treatment. All of them are effective in reducing signs and symptoms of OA. The safety and optimal dosing regimen of the most effective topical anti-inflammatory drugs, corticosteroids, is still a major concern. Topical calcineurine inhibitors may be used in steroid-dependent/resistant cases of severe allergic keratoconjunctivitis. Allergen specific immunotherapy may be considered in cases of failure of first line treatments or to modify the natural course of OA disease. Based on the current wealth of publications and on the collective experience, recommendations on management of OA have been proposed. Key words: Ocular allergy, allergic conjunctivitis; systematic review; management; treatment. Introduction Ocular allergy (OA) represents a collection of ocular hypersensitivity disorders affecting the eyelid, conjunctiva and cornea. OA includes seasonal and perennial allergic conjunctivitis (SAC and PAC), vernal and atopic keratoconjunctivitis (VKC and AKC) and contact blepharoconjunctivitis (CBC) (1). These clinical subtypes may be diagnosed and managed by ophthalmologists, allergists, pediatricians and rhinologists, with or without experience in managing allergies, considering clinical history and signs and symptoms, aided by in vivo and in vitro tests (1-3). Although several studies suggest a high co-morbidity of conjunctivitis and rhinitis, conjunctival symptoms are often perceived by clinicians as a minor problem and sub-optimally treated.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.2164,
+        "recent_mean_similarity": 0.5012,
+        "mean_internal_similarity": 0.3707,
+        "start_sentence_index": 10,
+        "end_sentence_index": 26,
+        "sentence_count": 16,
+        "character_count": 2577,
+        "token_count": 632
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0006",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "A recent survey revealed that daily treatment of OA has little concordance with current recommendations(4).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.225,
+        "recent_mean_similarity": 0.5001,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 26,
+        "end_sentence_index": 27,
+        "sentence_count": 1,
+        "character_count": 107,
+        "token_count": 22
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0007",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Topical ocular decongestants and corticosteroids were used in the majority of cases.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1418,
+        "recent_mean_similarity": 0.405,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 27,
+        "end_sentence_index": 28,
+        "sentence_count": 1,
+        "character_count": 84,
+        "token_count": 24
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0008",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "This was independent of the specific diagnosis of OA subtype and severity.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.071,
+        "recent_mean_similarity": 0.3063,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 28,
+        "end_sentence_index": 29,
+        "sentence_count": 1,
+        "character_count": 74,
+        "token_count": 20
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0009",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Topical antihistamines and mast cell stabilizers, which\n\nare the first line therapy in most published recommendations, were used less frequently (4). The incorrect management of OA may increase the risk of local and systemic treatmentrelated side effects (4). This systematic review (SR) intends to provide a comprehensive overview of the currently available treatments for OA and of ocular comorbidities and/or complication, and suggest recommendations for their management using best available evidence in published literature. Accepted Article\n\nMethods General Search Strategy The literature search was based on the systematic literature search in Medline, SCOPUS and WebScience. First, we performed a SR of all SR and meta-analyses that addressed OA treatments, according to the search query. For each subtype of OA or treatment, if good quality SR or systematic analysis of randomized controlled trials (RCTs) were found, no further systematic search was performed. If no evidence or poor quality of evidence was found, a further systematic search was performed. The included literature was selected with respect to their hierarchy in the ‘evidence pyramid’.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1454,
+        "recent_mean_similarity": 0.4504,
+        "mean_internal_similarity": 0.4231,
+        "start_sentence_index": 29,
+        "end_sentence_index": 37,
+        "sentence_count": 8,
+        "character_count": 1163,
+        "token_count": 246
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0010",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Eligibility Criteria We included SR of observational and interventional studies regarding treatment of OA (SAC, PAC, VKC, AKC and CBC). The following treatments were included: anti-histamines, mast cell stabilizers, dual-acting agents (topical mast cell stabilizers and anti-histamines), nonsteroidal anti-inflammatory drugs (prostaglandin and leukotriene inhibitors), steroids, calcineurin inhibitors, allergen-specific immunotherapy and biologics.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0761,
+        "recent_mean_similarity": 0.4118,
+        "mean_internal_similarity": 0.3507,
+        "start_sentence_index": 37,
+        "end_sentence_index": 39,
+        "sentence_count": 2,
+        "character_count": 449,
+        "token_count": 122
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0011",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "A SR was defined as a review of the literature with a predetermined and transparent search strategy, where the search strategy and inclusion and exclusion criteria were explicitly described and included guidelines or position papers containing information regarding quality of evidence. Our systematic literature search included non-pharmacological interventions including surgery, psychological, lid hygiene and lubricants. Specific search strategy, selection of the study, and assessment of the quality of the evidence are reported as Supplementary Information. Results The flowchart of the selection strategy is shown in Figure 1. 1.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0498,
+        "recent_mean_similarity": 0.1993,
+        "mean_internal_similarity": 0.2301,
+        "start_sentence_index": 39,
+        "end_sentence_index": 44,
+        "sentence_count": 5,
+        "character_count": 636,
+        "token_count": 121
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0012",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Overview of the available pharmacological classes of anti-allergic drugs There is a wide range of treatment options for OA, some of which are off-label. Currently available topical drugs for OA can be classified into different pharmacological classes based on their mechanism of action (Table 1): anti-histamines, mast cell stabilizers, dual-acting agents (topical mast cell stabilizers and anti-histamines), alpha-adrenergic agonists (vasoconstrictors), non-steroidal anti-inflammatory drugs (prostaglandin inhibitors), corticosteroids, and calcineurin inhibitors. Immunomodulatory treatments for OA include allergen-specific immunotherapy and biologicals. 1.1 Topical anti-histamines, mast cell stabilizers and dual-acting agents Three SR addressed the use of topical anti-histamines, topical mast cell stabilizers or topical dual-acting agents for the treatment of SAC and PAC (Table 2): one included 23 RCTs (5), the second 30 RCTs (6) in a head-to-head study, and the third 41 RCTs (7). All the 3 reviews concluded that these drugs were effective in reducing ocular symptoms vs. placebo (7). Direct comparisons of different antihistamines and mast cell stabilizers showed insufficient evidence to recommend one drug over another (6) even though the peer-reviewed literature suggested that olopatadine may be clinically superior to the other anti-allergic molecules (8), and alcaftadine may be superior to olopatadine in reducing ocular itch (5). A fourth SR (9) comparing olopatadine with other topical anti-histamines (epinastine, ketotifen, alcaftadine), showed a significant benefit from the use of alcaftadine in reducing symptoms scores when compared to the others drugs. Alcaftadine is only currently approved and available in the US.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1334,
+        "recent_mean_similarity": 0.3869,
+        "mean_internal_similarity": 0.4297,
+        "start_sentence_index": 44,
+        "end_sentence_index": 53,
+        "sentence_count": 9,
+        "character_count": 1745,
+        "token_count": 442
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0013",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Since the publication of the last SR, a further clinical trial has been published demonstrating efficacy of epinastine in controlling symptoms of birch pollen allergic patients (10). Overall, topical antihistamines and mast cell stabilizers appear to be safe and well tolerated (6, 11). The most frequently reported side effects from the use of these agents were burning and stinging sensation, blurred vision and unacceptable aftertaste (5, 6). Data on their longterm efficacy and safety is still lacking. To minimize possible toxic effects of preservative compounds on the ocular surface, single dose preservative-free eye drops should be used whenever possible. A SR of 20 RCT evaluated the efficacy of topical anti-histamines and mast cell stabilizers for the treatment of VKC showing an improvement of ocular symptoms score with use of all these drugs (12).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0394,
+        "recent_mean_similarity": 0.3236,
+        "mean_internal_similarity": 0.3236,
+        "start_sentence_index": 53,
+        "end_sentence_index": 59,
+        "sentence_count": 6,
+        "character_count": 862,
+        "token_count": 201
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0014",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "The pooled data was unable to recommend use of one agent over the other.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0004,
+        "recent_mean_similarity": 0.2304,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 59,
+        "end_sentence_index": 60,
+        "sentence_count": 1,
+        "character_count": 72,
+        "token_count": 19
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0015",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "A RCT published after this SR showed benefit with improved inflammatory biomarkers and total symptom score using preservative free N-acetyl-aspartyl-glutamic acid (NAAGA) compared to levocabastine (13). The treatment of AKC with anti-histamines and mast cell stabilizers has only been reported in a few case reports and case series (14). Accepted Article\n\n#### Recommendations\n\n-  All topical drugs are effective in reducing signs and symptoms ⨁⨁⨁⨁↑↑\n-  Topical antihistamines and dual acting drugs may have lead to a quicker onset symptom relief when compared to mast cell stabilizers ⨁◯◯◯↑? -  Dual acting agents with combined mast cell stabilizer and antihistaminic function provide better symptom control ⨁◯◯◯↑? -  Mast cell stabilizers such as chromones require multiple daily doses and have a delayed onset of action, hence are less preferable ⨁◯◯◯↑? -  SAC and PAC can be managed using the same drugs ⨁⨁⨁⨁↑↑\n-  The duration of treatment is longer in PAC compared to SAC ⨁◯◯◯↑?",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.2986,
+        "recent_mean_similarity": 0.5617,
+        "mean_internal_similarity": 0.5617,
+        "start_sentence_index": 60,
+        "end_sentence_index": 66,
+        "sentence_count": 6,
+        "character_count": 989,
+        "token_count": 264
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0016",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "-  Topical antihistamines and mast cell stabilizers can be used in VKC ⨁⨁◯◯↑ and AKC ⨁◯◯◯↑? -  All these drugs can be used in combination ⨁◯◯◯↑? - 1.2 Topical alpha-adrenergic agonists (vasoconstrictors) Topical decongestants are frequently used as first-line treatment due to their availability over the counter (4). They merely alleviate hyperemia, having little to no relief from itch and a short duration of action (7). In a recent randomized controlled trial comparing several treatment options, the use of naphazoline/antazoline was associated with lower tolerability profile of all treatment. They may cause side effects such as rebound redness, chronic follicular conjunctivitis and tachyphylaxis. In older formulations ocular decongestants are paired with topical 1st generation antihistamines, such as pheniramine and antazoline, to relieve both itching and redness. Recommendations\n\n-  Vasoconstrictors alleviate only hyperemia ⨁◯◯◯ ↑? -  They should be used with caution and for a short period of 5-7 days because of side effects and tachyphylaxis (TF expert opinion)↑↑\n\n\n- 1.3 Non-steroidal anti-inflammatory drugs NSAID (topical prostaglandin and oral leukotriene inhibitors) One SR (15) based on 8 RCTs, concluded that topical NSAIDS are more effective than placebo in reducing ocular itching and redness. Use of varied outcome parameters did not permit a comparison (15, 16) (Table 3). NSAIDs are rarely used due to their local side effects, such as burning/stinging after application. The oral leukotriene inhibitor montelukast has shown to be useful in the treatment of ocular symptoms in SAC and PAC, but less effective than oral anti-histamines (17). Recommendations from the TF group\n\n-  NSAIDs are effective for their short-term use but do not target specific inflammatory mechanisms ⨁◯◯◯↓? -  In adult SAC patients, leukotriene inhibitors are less efficacious than oral antihistamines ⨁◯◯◯↑? - 1.4 Systemic antihistamines Oral anti-histamines are frequently used in case of allergic co-morbidities such as rhinitis and are used in almost one third of the patients with ocular symptoms(4). Drugs such as loratadine, desloratadine(18), fexofenadine(19) are highly effective for the treatment of allergic rhinoconjunctivitis (ARC) (Table 4).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1597,
+        "recent_mean_similarity": 0.4641,
+        "mean_internal_similarity": 0.3177,
+        "start_sentence_index": 66,
+        "end_sentence_index": 82,
+        "sentence_count": 16,
+        "character_count": 2267,
+        "token_count": 617
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0017",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Most of the SRs have addressed total symptoms scores (18, 19), without evaluating impact on specific ocular symptoms. Itching and watery eye symptoms significantly improved after rupatadine treatment compared to placebo(20). While the drowsiness so commonly noted with the older 1st generation systemic antihistamines has improved in the newer second-generation anti-histamines, some of the new molecules still inhibit muscarinic receptors, leading to mucosal dryness(21, 22). Moreover, patients with dry eye have reduced barrier function at the mucosal interface against environmental allergens and pollutants and possibly a lower threshold for allergen response. Some oral antihistamines may exacerbate OA by lowering the barrier defense offered by a healthy tear film. Accepted Article\n\nRecommendations\n\n-  Systemic anti-histamines should be used in case of comorbidities that require it use ⨁◯◯◯↑? -  Some systemic anti-histamines may induce drying effects, particularly relevant at the ocular surface barrier ⨁◯◯◯↑?",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1704,
+        "recent_mean_similarity": 0.4431,
+        "mean_internal_similarity": 0.4225,
+        "start_sentence_index": 82,
+        "end_sentence_index": 89,
+        "sentence_count": 7,
+        "character_count": 1022,
+        "token_count": 251
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0018",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Accepted Article\n\n1.4 Corticosteroids Should not be the first choice of therapy for OA. In clinical practice, they are the most effective anti-inflammatory agents in active OA. Because of potential adverse effects (increased intraocular pressure, with a potential evolution towards glaucoma, cataract formation, bacterial, viral and fungal super-infections), their use must be monitored by an ophthalmologist (especially in prolonged treatments). A SR (Table 5) on the use of a loteprednol eye drops for treating SAC (4 RCTs) and VKC (1 RCT) reached a high level of confidence using AMSTAR2 score (23), supporting the efficacy of this treatment. Loteprednol 0.5% and 0.2% were considered effective in treating signs and symptoms of SAC, but should be used with caution due to the higher incidence of intraocular pressure (IOP) elevation (pooled odds ratio = 3.03) compared with placebo and olopatadine (23). A second review demonstrated significantly lower rates of IOP elevation (>/=10 mm Hg) when compared to topical prednisolone 1% or dexamethasone 0.1%, suggesting a favorable IOPsafety profile for loteprednol with both short-term and long-term use.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1257,
+        "recent_mean_similarity": 0.4922,
+        "mean_internal_similarity": 0.4922,
+        "start_sentence_index": 89,
+        "end_sentence_index": 95,
+        "sentence_count": 6,
+        "character_count": 1154,
+        "token_count": 299
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0019",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "However, this review received a critically low AMSTAR score (24).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0703,
+        "recent_mean_similarity": 0.422,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 95,
+        "end_sentence_index": 96,
+        "sentence_count": 1,
+        "character_count": 65,
+        "token_count": 16
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0020",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "A wide variety of corticosteroid eye drops of different potencies are available across the world (Table 1) (1). There are no studies directly comparing formulation, strength or regimen of any specific corticosteroid over another for the treatment of OA. There are two main regimens used in OA: 1) pulsed therapy of 3-4 drops per day for 3 to 5 days; 2) prolonged treatment of 1 to 3 weeks, tapered slowly over several days. Pulsed therapy is the favored treatment of acute exacerbations of VKC and AKC especially when the cornea is involved. The potency and treatment duration of the topical corticosteroid should be chosen clinically based on the severity of ocular inflammation and corneal involvement. The beneficial effect of intranasal corticosteroids (INCs) on ocular symptoms has been demonstrated in several studies suggesting that their reduction is mediated via the ocularnasal reflex inhibition. The variability of the effect depends on the affinity of the drug to its glucocorticoid receptor(25).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1863,
+        "recent_mean_similarity": 0.4398,
+        "mean_internal_similarity": 0.4421,
+        "start_sentence_index": 96,
+        "end_sentence_index": 103,
+        "sentence_count": 7,
+        "character_count": 1008,
+        "token_count": 243
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0021",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Four SR evaluated the use of INCs for the treatment of ocular symptoms associated with allergic rhinitis(26, 27) (Table 5) showing that INCs are welltolerated and effective in reducing the total ocular symptom score (TOSS), even though the outcome measures were not designed to focus specifically on ocular symptoms. It is noted that oral/topical antihistamines are not superior to INCs in reducing TOSS (28, 29).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1398,
+        "recent_mean_similarity": 0.4371,
+        "mean_internal_similarity": 0.6558,
+        "start_sentence_index": 103,
+        "end_sentence_index": 105,
+        "sentence_count": 2,
+        "character_count": 413,
+        "token_count": 102
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0022",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "However, despite large patient cohorts, all SR had a low or critically low confidence rating of results according to AMSTAR2.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1403,
+        "recent_mean_similarity": 0.3823,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 105,
+        "end_sentence_index": 106,
+        "sentence_count": 1,
+        "character_count": 125,
+        "token_count": 30
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0023",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "A recent metanalysis of 3 RCTs noted benefit of a topical nasal combination, fluticasone proprionate and azelastine on TOSS in patients with seasonal ARC\n\n(30). There are no studies specifically comparing INCs against each other for the treatment of ocular symptoms. Although data is scarce, there is no evidence that INCs used for prolonged periods of several months increase the risk of cataract formation, intraocular hypertension and glaucoma, since they have little or no systemic absorption (fluticasone and mometasone) (30). The use of corticosteroids as dermatologic applications in OA is reserved for AKC and CBC\n\n(1). Lowest appropriate potency corticosteroids, such as hydrocortisone or budesonide on the eyelid skin, are recommended for the treatment of severe acute eyelid eczema. Accepted Article\n\nSupra-tarsal injections of dexamethasone sodium phosphate, triamcinolone acetonide or hydrocortisone sodium succinate, have been proposed to treat recalcitrant AKC and VKC cases (31), but should only be used by specialists with caution in severe patients unresponsive to other treatments. Systemic corticosteroids may be used as short course in selected severe hyper-acute exacerbations involving either eyelid skin or cornea especially in VKC and AKC. #### Recommendations\n\n-  Topical corticosteroids eye drops should be used with caution under ophthalmologist’s monitoring and preferably for shorter duration due to the high risk of local and potential blinding side effects ⨁◯◯◯↑↑\n-  For the treatment of SAC and PAC topical corticosteroids are rarely needed ⨁◯◯◯↓↓\n-  Corticosteroid eye drops can be used preferably as short, pulsed therapy in acute exacerbations of OA, especially in VKC and AKC or when the cornea is involved under ophthalmologist supervision (TF expert opinion)↑↑\n-  INCs are effective and well-tolerated in the treatment of ocular symptoms associated with ARC ⨁◯◯◯ ↑? -  INCs should not be used if only ocular signs and symptoms are present (TF expert opinion) ↓↓\n-  Topical skin corticosteroid applications should be used in the acute phase of eyelid eczema, with a preference for low potency corticosteroids (TF expert opinion) ↑? 1.5 Calcineurin inhibitors Topical calcineurin inhibitors are the most frequently used treatments as steroid-sparing agents in steroid dependent cases of VKC and AKC. Two SR evaluated the use of topical cyclosporine (CsA) in VKC and AKC (32, 33) (Table 5). The first one showed that topical CsA is effective in alleviating the signs and symptoms of VKC and AKC, reducing the dependency on topical steroid eye drops while maintaining similar safety profile as of placebo. The second SR, highlighted the relative scarcity of RCTs assessing the efficacy of topical CsA in AKC, and suggested that CsA provides clinical and symptomatic improvement and may help in reducing topical steroid use in patients with steroid-dependent or non steroid-responsive AKC (33). Compounded formulations of CsA are prepared in many countries by hospital and retail pharmacies with differing excipients, processes, and quality.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.2636,
+        "recent_mean_similarity": 0.5826,
+        "mean_internal_similarity": 0.5132,
+        "start_sentence_index": 106,
+        "end_sentence_index": 120,
+        "sentence_count": 14,
+        "character_count": 3081,
+        "token_count": 798
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0024",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Drug concentrations range from 0.05% to 2% and posology from 1 to 6 instillations daily.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1891,
+        "recent_mean_similarity": 0.5669,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 120,
+        "end_sentence_index": 121,
+        "sentence_count": 1,
+        "character_count": 88,
+        "token_count": 23
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0025",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "CsA 0.1% cationic emulsion (CE) is commercially available for the treatment of severe dry eye disease(34). The same formulation has obtained in 2018 the marketing authorization by EMA for the treatment of severe VKC. Severe VKC patients treated with this formulation achieved significant improvements in signs, symptoms and QoL compared with patients who received vehicle alone (35). Tacrolimus 0.03%-0.1% eye drops or ointments have been proposed for the treatment of severe, refractory cases of AKC and VKC. A commercial eye drop preparation is available only in Asia with the indication of severe AKC and VKC.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1442,
+        "recent_mean_similarity": 0.5169,
+        "mean_internal_similarity": 0.5988,
+        "start_sentence_index": 121,
+        "end_sentence_index": 126,
+        "sentence_count": 5,
+        "character_count": 612,
+        "token_count": 149
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0026",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "One review, with a critically low quality of evidence score, highlighted the benefits of tacrolimus over placebo in 2 RCTs and 4 case series (36) (Table 5). A RCT comparing the effect of tacrolimus 0.1% versus CsA 2%\n\nAccepted Article\n\n(37) showed that both drugs were effective in treating VKC without significant differences between the two. In a second RCT, CsA-resistant VKC patients (38), treated with tacrolimus\n\n- 0.1% showed a significant improvement in clinical scores over CsA 1%. A recent trial comparing the effect of 0.1% topical tacrolimus alone or in combination with topical corticosteroids in refractory allergic ocular diseases also showed a potential steroid-sparing effect (39). In addition, tacrolimus skin ointments 0.03% or 0.1% have been shown to be beneficial in the treatment of lid eczema in AKC patients (40-42).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.2827,
+        "recent_mean_similarity": 0.5447,
+        "mean_internal_similarity": 0.6449,
+        "start_sentence_index": 126,
+        "end_sentence_index": 131,
+        "sentence_count": 5,
+        "character_count": 840,
+        "token_count": 209
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0027",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Tolerability of topical calcineurin inhibitors is a concern as burning sensation is frequently reported.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0779,
+        "recent_mean_similarity": 0.5724,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 131,
+        "end_sentence_index": 132,
+        "sentence_count": 1,
+        "character_count": 104,
+        "token_count": 25
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0028",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Infections with molluscum contagiosum, papilloma virus and herpes are infrequent but are recognized risks.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0883,
+        "recent_mean_similarity": 0.4505,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 132,
+        "end_sentence_index": 133,
+        "sentence_count": 1,
+        "character_count": 106,
+        "token_count": 30
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0029",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "A systemic immunosuppressive treatment may be prescribed in most refractory cases of AKC threatening vision. Cyclosporine is the most frequently used drug (43). Tacrolimus and mycophenolate mofetil are alternative options. Recommendations\n\n-  CsA eye drops are not recommended for SAC and PAC (TF expert opinion)↑↑\n-  CsA eye drops may be used as a steroid-sparing agent in steroid-dependent cases of VKC or AKC ⨁⨁◯◯ ↑↑\n-  Tacrolimus off label eye drops/ointment should be reserved for use in severe VKC and AKC cases refractory to CsA ⨁◯◯◯↑? - 1.6 Allergen-specific immunotherapy Since in most patients OA is associated with AR, criteria for allergen immunotherapy (AIT) should follow the recommendations given by the EAACI guidelines(44). AIT should be consider only when IgE-mediated allergy is evidenced and when all of following criteria are met: moderate-to-severe symptoms strongly suggestive of ARC, which interfere with usual daily activities or sleep despite regular and appropriate pharmacotherapy and/or avoidance strategies and evidencing of IgE sensitization (positive SPT and/or serum-specific IgE) to one or more clinically relevant allergens(44, 45). In addition, conjunctival allergen provocation test may be helpful in detection of the most relevant allergen before initiating and as a follow-up tool in assessing response of AIT(2). AIT should also be considered in less severe ARC to take advantage of the long-term benefit on AR and potential prevention of asthma\n\n\n(46). Seven of the 8 selected SR with high and moderate AMSTAR2 scores (Table 6), recommended the use of SLIT and SCIT for moderate improvement of ocular symptoms in the treatment of ARC (45, 47-52). In two recent RCT regarding house dust mite immunotherapy, an improvement was seen in ocular symptoms score (53, 54). Only one SR (Table 6) (28 RCT including 1619 children and adolescents with ARC) showed low evidence of the efficacy of SLIT and SCIT on ocular symptoms (55). Meta analysis showed evidence for AIT, with some heterogeneity, in both adults and children, with both SLIT and SCIT(52), drop and tablet formulations, in perennial and seasonal allergies, in pre/co-seasonal therapy and with continuous therapy and in various\n\nformulations. Concerns were focused on standardization of allergen extracts and formulation of SLIT preparations. In cases of isolated allergic conjunctivitis, AIT may be considered. TOSS was evaluated as the primary outcome parameter in 36 studies (1725 SLIT and 1674 placebo) (51); TOSS was significantly reduced when compared with placebo, as well as individual ocular symptoms scores (redness, itchy and watery eyes). No significant reduction of ocular eye drops use was observed whereas the threshold dose for conjunctival immediate allergen sensitivity was increased. Two other SRs focusing on ocular symptoms (50) concluded that the evidence was of moderate strength in support of SLIT and low for SCIT for treating allergic conjunctivitis. No publication was found assessing impact of AIT in VKC and AKC. Accepted Article\n\n#### Recommendation\n\n-  AIT may be considered in cases of failure of first line treatments or to modify the natural course of ocular allergic disease ⨁⨁◯◯↑? -  AIT can only be considered only when IgE-mediated hypersensitivity is evidenced ⨁⨁⨁⨁↑↑\n-  Before AIT is recommended, control of symptoms of allergic conjunctivitis and other systemic symptoms to assess suitability should be taken into account.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0031,
+        "recent_mean_similarity": 0.4704,
+        "mean_internal_similarity": 0.4205,
+        "start_sentence_index": 133,
+        "end_sentence_index": 153,
+        "sentence_count": 20,
+        "character_count": 3464,
+        "token_count": 876
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0030",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "⨁⨁◯◯↑?",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0364,
+        "recent_mean_similarity": 0.3793,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 153,
+        "end_sentence_index": 154,
+        "sentence_count": 1,
+        "character_count": 6,
+        "token_count": 8
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0031",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "-  AIT is effective for the treatment of allergic conjunctivitis due to grass pollen (⨁⨁⨁⨁↑↑) and house dust mite (⨁⨁⨁◯↑?) -  SLIT is effective in reducing total and individual ocular symptom score in subjects with allergic conjunctivitis ⨁⨁⨁⨁↑? -  There are no studies on AIT in VKC and AKC patients. In these forms AIT requires case-to-case assessment by experts (TF expert opinion)↑? - 1.7 Biologicals Omalizumab, a systemic anti-IgE antibody approved for severe asthma, has been used in refractory VKC and AKC and reported in a few case reports/series (56). Control of the disease was partial or complete in most patients, but poor response was noted in some with very severe presentation (57). Dupilumab is a promising intervention in the management of atopic dermatitis and asthma, however, dupilumab-associated ocular inflammation leading to cicatricial ectropion has been reported suggesting that this drug may not be ideal for the treatment of AKC with eyelid eczema(58).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0612,
+        "recent_mean_similarity": 0.1777,
+        "mean_internal_similarity": 0.2468,
+        "start_sentence_index": 154,
+        "end_sentence_index": 161,
+        "sentence_count": 7,
+        "character_count": 983,
+        "token_count": 265
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0032",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "- 2. Non-pharmacological management Patients and caregivers should receive educative support regarding the anticipated duration and prognosis of the OA, and possible complications from suboptimal control (1). The first line of management is the identification of offending allergens and avoidance measures. Particularly during exacerbations in VKC, minimizing exposure to nonspecific triggering factors, such as sun, wind, and salty water, using measures such as sunglasses, hats with visors, and swimming goggles. Frequent hand, face, lid hygiene and eye washing should also be suggested. Cold compresses may provide decongestant effect. Tear substitutes aid in stabilization of the tear film providing a better mucosal barrier against allergens, acting as an eye-wash and diluting the concentration of mediators in the tear film in contact with the ocular surface. Products with herbal extracts such as chamomile-containing eye drops,\n\n\nshould be avoided as they may cross-react with allergens (for example Artemisia vulgaris)(59) .",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.052,
+        "recent_mean_similarity": 0.3223,
+        "mean_internal_similarity": 0.2624,
+        "start_sentence_index": 161,
+        "end_sentence_index": 169,
+        "sentence_count": 8,
+        "character_count": 1034,
+        "token_count": 248
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0033",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Psychological support may be necessary in severe cases of VKC and AKC. The psychodynamic research on OA is currently poor. For patients with AKC and VKC, a collaborative approach between the family doctor, the medical specialist, the psychologist, and occupational therapists should be considered (60). There are reports of impact on QoL in different types of OA. There is a dearth of reported interventions of mitigation of psychological impact of the disease (3). Accepted Article\n\n3. Management in specific populations Pregnancy. Few reports are available in literature concerning the management of OA in pregnant or lactating women. Careful evaluation of allergic status and need of drug administration is warranted. Allergen avoidance and environmental measures are the first step, before mast cells stabilizers eye-drops can be used. Topical anti-histamines or doubleacting drugs can be safely tried. As yet there is no evidence of severe adverse events with their use, although US-FDA has assigned many of them to the C category (use with caution if benefits outweigh risks). Short courses of topical corticosteroids if required, are cautiously permitted. Vasoconstrictors and decongestants are generally avoided during pregnancy. The use of systemic medications should be minimized if possible. Pregnant (especially in the first trimester) and lactating women can receive second-generation oral anti-histamine treatment (no teratogenic effects have been described), low concentrations of these drugs are secreted in breast milk (61, 62). Immunotherapy may be continued but not initiated in pregnancy (63).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.016,
+        "recent_mean_similarity": 0.3214,
+        "mean_internal_similarity": 0.2912,
+        "start_sentence_index": 169,
+        "end_sentence_index": 186,
+        "sentence_count": 17,
+        "character_count": 1613,
+        "token_count": 369
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0034",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Children. Topical eye-drops used for adults are also approved in children over the age of three years, giving the advice to the subject to close the punctum with a finger to avoid systemic absorption. First-generation anti-histamines are not indicated because of the sedative effect; secondgeneration anti-histamines display a good long-term safety profile in the pediatric population. The use of these drugs is not licensed in children under the age of six months\n\n(62). Elderly people. OA may persist into older age and can occasionally make its initial appearance in the elderly (64, 65). The complex process of the aging immune system, affects both the innate and the adaptive immunity, also on the ocular surface (66). However, structural changes of the eyelid, eyelid margin, lacrimal system, conjunctiva and the cornea more frequently induce a variety of ocular surface dysfunctions that can be broadly included under the umbrella of the dry eye disease (DED).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1439,
+        "recent_mean_similarity": 0.3789,
+        "mean_internal_similarity": 0.3467,
+        "start_sentence_index": 186,
+        "end_sentence_index": 194,
+        "sentence_count": 8,
+        "character_count": 967,
+        "token_count": 233
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0035",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Descriptions of OA in elderly are scarce. Therefore, OA treatment options in elderly patients may be limited by comorbidities and drug-interactions (64). Systemic and local corticosteroids in these patients should be limited to short-time administration because of their known side effects (diabetes, hypertension, osteoporosis, cataract and glaucoma). Topical and systemic decongestants, and systemic anti-histamines may cause dryness and should be avoided. In elderly patients, cumulative use of antihistamines and other anticholinergic drugs needs to be taken into consideration (67).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0081,
+        "recent_mean_similarity": 0.3905,
+        "mean_internal_similarity": 0.4521,
+        "start_sentence_index": 194,
+        "end_sentence_index": 199,
+        "sentence_count": 5,
+        "character_count": 587,
+        "token_count": 150
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0036",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "4.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0214,
+        "recent_mean_similarity": 0.3633,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 199,
+        "end_sentence_index": 200,
+        "sentence_count": 1,
+        "character_count": 2,
+        "token_count": 3
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0037",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Treatments of ocular comorbidities and complications OA and DED are distinct clinical entities but some overlapping features suggest a complex interaction of mechanisms involving the immune, endocrine and nervous systems(68). For example, mucosal hyper-responsiveness to non-specific environmental stimuli has been described in both OA and DED. However, OA is mostly a disease of youth while DED is more common at an older age when signs and symptoms of allergy generally disappear. Artificial tears, routinely used for DED patients, may improve symptoms in all the clinical varieties of OA. Both OA and DED may show a favorable response to topical anti-inflammatory agents such as steroids and CsA(69). Accepted Article\n\nCorneal epithelial erosions, shield ulcers and plaques, frequently observed in AKC and VKC, occur as a result of mediators released from inflammatory cells and partially by the mechanical trauma from upper tarsal conjunctival giant papillae (GP) (70). Delayed epithelial healing may lead to secondary infections, corneal opacities and amblyopia.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0681,
+        "recent_mean_similarity": 0.4569,
+        "mean_internal_similarity": 0.4422,
+        "start_sentence_index": 200,
+        "end_sentence_index": 207,
+        "sentence_count": 7,
+        "character_count": 1067,
+        "token_count": 276
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0038",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "GP resection and cryotherapy are usually not necessary. GP excision with intraoperative application of 0.02% mitomycin-C may be helpful in preventing recurrent corneal complications in severe AKC and VKC cases. The treatment of corneal ulcer can be based on the Cameron clinical grading of shield ulcers (71, 72). Contact lenses and/or amniotic membrane grafts may be a useful treatment option in the management of refractory vernal ulcers (73). Allergic patients in childhood may develop keratoconus (74), a progressive, noninflammatory disorder of the cornea characterized by thinning and steepening in the central or paracentral cornea causing irregular astigmatism and subsequent decrease in visual acuity. Corneal cross-linking, consisting in the topical application of a 0.1% riboflavin 5phosphate solution to the de-epithelized corneal surface followed by exposure to UVA radiation, seems to be a safe and effective surgical option to arrest disease progression (75), which may be very aggressive in children(76). Visual rehabilitation in early and moderate stages consists of spectacles, contact lenses and intra-corneal ring implantation(77). Although the clinical outcome of corneal transplantation in keratoconus with and without VKC is comparable, post-operative complications are more common in VKC(78, 79). Atopy is a risk factor for complications after corneal grafting. Prolonged treatment with topical steroids should be avoided since glaucoma can occur in all age groups (24, 80). Withdrawal of steroids and addition of anti-glaucoma medications is effective in controlling IOP in the majority of patients(80). Glaucoma surgery is rarely necessary(81).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.2899,
+        "recent_mean_similarity": 0.4968,
+        "mean_internal_similarity": 0.4514,
+        "start_sentence_index": 207,
+        "end_sentence_index": 219,
+        "sentence_count": 12,
+        "character_count": 1670,
+        "token_count": 418
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0039",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Limbal stem cell deficiency (LSCD) is a rare complication of longstanding VKC and AKC, contributing to severe visual impairment(82).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.2565,
+        "recent_mean_similarity": 0.4573,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 219,
+        "end_sentence_index": 220,
+        "sentence_count": 1,
+        "character_count": 132,
+        "token_count": 40
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0040",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "It is characterized by conjunctival epithelial ingrowth on the cornea, neovascularization, ocular surface inflammation, and/or recurrent corneal epithelial defects. Fibrovascular pannus resection with amniotic membrane transplantation(83) or allolimbal transplantation with systemic immunosuppression have been reported in severe patients(83)\n\n- 5.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0251,
+        "recent_mean_similarity": 0.3923,
+        "mean_internal_similarity": 0.3007,
+        "start_sentence_index": 220,
+        "end_sentence_index": 222,
+        "sentence_count": 2,
+        "character_count": 348,
+        "token_count": 91
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0041",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Final TF recommendations (Table 7, Figure 2)\n- 6.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0574,
+        "recent_mean_similarity": 0.2649,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 222,
+        "end_sentence_index": 223,
+        "sentence_count": 1,
+        "character_count": 49,
+        "token_count": 16
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0042",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Conclusions and unmet needs There are effective drugs for the treatment of OA, however there is a lack an optimal treatment for the perennial and severe forms, especially for AKC and VKC. The safety and optimal dosing regimen of the most effective topical anti-inflammatory drugs, corticosteroids, is still a major concern but no specific randomized clinical trials have ever been performed because of the lack of marketing interest. There are no guidelines or consensus from scientific societies on how, when and duration of use of topical formulations of immunomodulators such as cyclosporine and tacrolimus. Pharmacological and immunological research has identified new possibilities to modifying the allergic immune response. Hopefully, this progress will be applied to the eye and eventually lead to complete control of moderate to severe forms of OA. However, just looking in the in www.clinicaltrials.gov for “ongoing clinical trials in allergic conjunctivitis”, it seems that the OA indication has not attracted investors and the pharmaceutical industry.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1842,
+        "recent_mean_similarity": 0.3848,
+        "mean_internal_similarity": 0.3848,
+        "start_sentence_index": 223,
+        "end_sentence_index": 229,
+        "sentence_count": 6,
+        "character_count": 1062,
+        "token_count": 247
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0043",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Accepted Article\n\nAcknowledgments. - a. Funding/Support: This work was done under the approval of EAACI with a TF budget 2015-18\n- b. Conflicts of Interest: Andrea Leonardi: No Conflicts of Interest. Diana Silva: No Conflicts of Interest Daniel Perez Formigo: No Conflicts of Interest Banu Bozkurt: No Conflicts of Interest Vibha Sharma: No Conflicts of Interest Pia Allegri: No Conflicts of Interest Carmen Rondon: No Conflicts of Interest Virginia Calder: No Conflicts of Interest Dermot Ryan: No Conflicts of Interest Marek Kowalski: No Conflicts of Interest Luis Delgado: No Conflicts of Interest Serge Doan: No Conflicts of Interest Jean Luc Fauquert: No Conflicts of Interest\n\n\nc. Contributions to Authors in each of these areas: Andrea Leonardi (AL), Diana Silva (DS) Daniel Perez Formigo (DPF), Banu Bozkurt (BB), Vibha Sharma (VS), Pia Allegri (PA), Carmen Rondon (CR), Virginia Calder (VC), Dermot Ryan (DR), Marek Kowalski (MK), Luis Delgado (LD), Serge Doan (SD), Jean Luc Fauquert (JLF) Conseption and Design: AL, DS, JLF, LD, VC, SD\n\nAccepted Article\n\nAnalysis and interpretation: DS, AL, LD, JLF, SD Writing the article: AL, DS, SD, JLF, BB, DPF, PA, LD, VS, CR Critical revision of the article: DR, MK, VC Final approval of the article: AL, SD, JLF, LD, SD, DR, MK Data Collection: DS, DPF, AL, LD, SD, JLF Provision of materials, patients, or resources: AL, DS, LD, SD, JLF Statistical expertise: DS Obtaining funding: AL Literature search: DS, DPF, AL, SD, JLF, BB, PA, FM, CR Administrative, technical or logistic support: AL, DS, JLF, VC, LD\n\n- d. Statement about Conformity with Author Information: none\n- e. Other Acknowledgments: none\n\n\nFigure Legends.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.096,
+        "recent_mean_similarity": 0.3249,
+        "mean_internal_similarity": 0.3957,
+        "start_sentence_index": 229,
+        "end_sentence_index": 232,
+        "sentence_count": 3,
+        "character_count": 1675,
+        "token_count": 522
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0044",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "- Figure 1.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0081,
+        "recent_mean_similarity": 0.3124,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 232,
+        "end_sentence_index": 233,
+        "sentence_count": 1,
+        "character_count": 11,
+        "token_count": 6
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0045",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Flowchart of the selection strategy of the systematic reviews potentially relevant for the purpose of the position paper. Of the 432 publications, 28 were selected and included (see Tables 2-6). - Figure 2.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0206,
+        "recent_mean_similarity": 0.1966,
+        "mean_internal_similarity": 0.18,
+        "start_sentence_index": 233,
+        "end_sentence_index": 236,
+        "sentence_count": 3,
+        "character_count": 206,
+        "token_count": 47
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0046",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Treatment of different forms and different severities of ocular allergies based on recommendations given by the TF. SAC= Seasonal allergic conjunctivitis; PAC= perennial allergic conjunctivitis; VKC= vernal keratoconjunctivitis; AKC= atopic keratoconjunctivitis; AH= antihistamines; CS= steroids; DA= dual actions; MCS= mast cell stabilizers; T= topical; TCS= topical corticosteroids. References\n\n- 1. Leonardi A, Bogacka E, Fauquert JL, Kowalski ML, Groblewska A, JedrzejczakCzechowicz M, et al.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0831,
+        "recent_mean_similarity": 0.1505,
+        "mean_internal_similarity": 0.2203,
+        "start_sentence_index": 236,
+        "end_sentence_index": 240,
+        "sentence_count": 4,
+        "character_count": 496,
+        "token_count": 165
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0047",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Ocular allergy: recognizing and diagnosing hypersensitivity disorders of the ocular surface. Allergy.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0132,
+        "recent_mean_similarity": 0.237,
+        "mean_internal_similarity": 0.6073,
+        "start_sentence_index": 240,
+        "end_sentence_index": 242,
+        "sentence_count": 2,
+        "character_count": 101,
+        "token_count": 28
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0048",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "2012;67(11):1327-37. - 2. Fauquert JL, Jedrzejczak-Czechowicz M, Rondon C, Calder V, Silva D, Kvenshagen BK, et al. Conjunctival allergen provocation test : guidelines for daily practice. Allergy. 2017;72(1):43-54. - 3. Leonardi A, Doan S, Fauquert JL, Bozkurt B, Allegri P, Marmouz F, et al. Diagnostic tools in ocular allergy. Allergy. 2017;72(10):1485-98. - 4. Leonardi A, Piliego F, Castegnaro A, Lazzarini D, La Gloria Valerio A, Mattana P, et al.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0752,
+        "recent_mean_similarity": 0.1901,
+        "mean_internal_similarity": 0.1705,
+        "start_sentence_index": 242,
+        "end_sentence_index": 255,
+        "sentence_count": 13,
+        "character_count": 452,
+        "token_count": 166
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0049",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Allergic conjunctivitis: a cross-sectional study. Clin Exp Allergy. 2015;45(6):1118-25. - 5. Kam KW, Chen LJ, Wat N, Young AL. Topical Olopatadine in the Treatment of Allergic Conjunctivitis: A Systematic Review and Meta-analysis. Ocul Immunol Inflamm. 2016:1-15. - 6. Castillo M, Scott NW, Mustafa MZ, Mustafa MS, Azuara-Blanco A. Topical antihistamines and mast cell stabilisers for treating seasonal and perennial allergic conjunctivitis. Cochrane Database Syst Rev. 2015(6):CD009566. - 7.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0582,
+        "recent_mean_similarity": 0.1479,
+        "mean_internal_similarity": 0.1645,
+        "start_sentence_index": 255,
+        "end_sentence_index": 268,
+        "sentence_count": 13,
+        "character_count": 492,
+        "token_count": 158
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0050",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Owen CG, Shah A, Henshaw K, Smeeth L, Sheikh A. Topical treatments for seasonal allergic conjunctivitis: systematic review and meta-analysis of efficacy and effectiveness. Br J Gen Pract. 2004;54(503):451-6. - 8. Rosenwasser LJ, O'Brien T, Weyne J. Mast cell stabilization and anti-histamine effects of olopatadine ophthalmic solution: a review of pre-clinical and clinical research. Curr Med Res Opin. 2005;21(9):1377-87. - 9. Mahvan TD, Buckley WA, Hornecker JR. Alcaftadine for the prevention of itching associated with allergic conjunctivitis. Ann Pharmacother. 2012;46(7-8):1025-32. - 10. Tagawa Y, Namba K, Nakazono Y, Iwata D, Ishida S. Evaluating the efficacy of epinastine ophthalmic solution using a conjunctivitis allergen challenge model in patients with birch pollen allergic conjunctivitis. Allergol Int. 2017;66(2):338-43. - 11.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0778,
+        "recent_mean_similarity": 0.1448,
+        "mean_internal_similarity": 0.1091,
+        "start_sentence_index": 268,
+        "end_sentence_index": 285,
+        "sentence_count": 17,
+        "character_count": 843,
+        "token_count": 262
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0051",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Elieh Ali Komi D, Rambasek T, Bielory L. Clinical implications of mast cell involvement in allergic conjunctivitis. Allergy. 2018;73(3):528-39. - 12. Mantelli F, Santos MS, Petitti T, Sgrulletta R, Cortes M, Lambiase A, et al. Systematic review and meta-analysis of randomised clinical trials on topical treatments for vernal keratoconjunctivitis. Br J Ophthalmol. 2007;91(12):1656-61. - 13. Leonardi A, Bremond-Gignac D, Bortolotti M, Violato D, Pouliquen P, Delval L, et al. Clinical and biological efficacy of preservative-free NAAGA eye-drops versus levocabastine eye-drops in vernal keratoconjunctivitis patients. Br J Ophthalmol. 2007;91(12):1662-6. - 14. Jay JL. Clinical features and diagnosis of adult atopic keratoconjunctivitis and the effect of treatment with sodium cromoglycate. Br J Ophthalmol. 1981;65(5):335-40. - 15.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0353,
+        "recent_mean_similarity": 0.1689,
+        "mean_internal_similarity": 0.1591,
+        "start_sentence_index": 285,
+        "end_sentence_index": 304,
+        "sentence_count": 19,
+        "character_count": 834,
+        "token_count": 272
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0052",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Swamy BN, Chilov M, McClellan K, Petsoglou C. Topical non-steroidal antiinflammatory drugs in allergic conjunctivitis: meta-analysis of randomized trial data. Ophthalmic Epidemiol. 2007;14(5):311-9. - 16.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0503,
+        "recent_mean_similarity": 0.1833,
+        "mean_internal_similarity": 0.2419,
+        "start_sentence_index": 304,
+        "end_sentence_index": 308,
+        "sentence_count": 4,
+        "character_count": 204,
+        "token_count": 69
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0053",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Wilson DJ, Schutte SM, Abel SR. Comparing the Efficacy of Ophthalmic NSAIDs in Common Indications: A Literature Review to Support Cost-effective Prescribing. Ann Pharmacother. 2015;49(6):727-34. - 17.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0996,
+        "recent_mean_similarity": 0.174,
+        "mean_internal_similarity": 0.2373,
+        "start_sentence_index": 308,
+        "end_sentence_index": 312,
+        "sentence_count": 4,
+        "character_count": 200,
+        "token_count": 62
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0054",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Gane J, Buckley R. Leukotriene receptor antagonists in allergic eye disease: a systematic review and meta-analysis. J Allergy Clin Immunol Pract. 2013;1(1):65-74. Accepted Article\n\n- 18. Canonica GW, Tarantini F, Compalati E, Penagos M. Efficacy of desloratadine in the treatment of allergic rhinitis: a meta-analysis of randomized, double-blind, controlled trials. Allergy.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.019,
+        "recent_mean_similarity": 0.237,
+        "mean_internal_similarity": 0.237,
+        "start_sentence_index": 312,
+        "end_sentence_index": 318,
+        "sentence_count": 6,
+        "character_count": 374,
+        "token_count": 115
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0055",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "2007;62(4):359-66. - 19. Compalati E, Baena-Cagnani R, Penagos M, Badellino H, Braido F, Gomez RM, et al. Systematic review on the efficacy of fexofenadine in seasonal allergic rhinitis: a metaanalysis of randomized, double-blind, placebo-controlled clinical trials. Int Arch Allergy Immunol. 2011;156(1):1-15. - 20. Compalati E, Canonica GW. Efficacy and safety of rupatadine for allergic rhinoconjunctivitis: a systematic review of randomized, double-blind, placebo-controlled studies with meta-analysis. Curr Med Res Opin. 2013;29(11):1539-51. - 21. Ousler GW, 3rd, Workman DA, Torkildsen GL. An open-label, investigator-masked, crossover study of the ocular drying effects of two antihistamines, topical epinastine and systemic loratadine, in adult volunteers with seasonal allergic conjunctivitis. Clin Ther. 2007;29(4):611-6. - 22. Ousler GW, Wilcox KA, Gupta G, Abelson MB. An evaluation of the ocular drying effects of 2 systemic antihistamines: loratadine and cetirizine hydrochloride. Ann Allergy Asthma Immunol. 2004;93(5):460-4. - 23. Wu LQ, Chen X, Lou H, Cheng JW, Wei RL. Loteprednol etabonate in the treatment of allergic conjunctivitis: a meta-analysis. Curr Med Res Opin. 2015;31(8):1509-18. - 24. Sheppard JD, Comstock TL, Cavet ME. Impact of the Topical Ophthalmic Corticosteroid Loteprednol Etabonate on Intraocular Pressure. Adv Ther. 2016;33(4):532-52. - 25. Baroody FM, Shenaq D, DeTineo M, Wang J, Naclerio RM. Fluticasone furoate nasal spray reduces the nasal-ocular reflex: a mechanism for the efficacy of topical steroids in controlling allergic eye symptoms. J Allergy Clin Immunol. 2009;123(6):1342-8. - 26. Weiner JM, Abramson MJ, Puy RM. Intranasal corticosteroids versus oral H1 receptor antagonists in allergic rhinitis: systematic review of randomised controlled trials. BMJ. 1998;317(7173):1624-9. - 27. Hong J, Bielory B, Rosenberg JL, Bielory L. Efficacy of intranasal corticosteroids for the ocular symptoms of allergic rhinitis: A systematic review. Allergy Asthma Proc. 2011;32(1):22-35. - 28.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0314,
+        "recent_mean_similarity": 0.1802,
+        "mean_internal_similarity": 0.1252,
+        "start_sentence_index": 318,
+        "end_sentence_index": 364,
+        "sentence_count": 46,
+        "character_count": 2034,
+        "token_count": 650
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0056",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Naclerio R. Intranasal corticosteroids reduce ocular symptoms associated with allergic rhinitis. Otolaryngol Head Neck Surg. 2008;138(2):129-39. - 29. Yanez A, Rodrigo GJ. Intranasal corticosteroids versus topical H1 receptor antagonists for the treatment of allergic rhinitis: a systematic review with meta-analysis. Ann Allergy Asthma Immunol. 2002;89(5):479-84. - 30. Carr W, Bernstein J, Lieberman P, Meltzer E, Bachert C, Price D, et al. A novel intranasal therapy of azelastine with fluticasone for the treatment of allergic rhinitis. J Allergy Clin Immunol. 2012;129(5):1282-9 e10. - 31. Singh S, Pal V, Dhull CS. Supratarsal injection of corticosteroids in the treatment of refractory vernal keratoconjunctivitis. Indian J Ophthalmol. 2001;49(4):241-5. - 32. Wan KH, Chen LJ, Rong SS, Pang CP, Young AL.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0241,
+        "recent_mean_similarity": 0.1859,
+        "mean_internal_similarity": 0.1557,
+        "start_sentence_index": 364,
+        "end_sentence_index": 384,
+        "sentence_count": 20,
+        "character_count": 811,
+        "token_count": 253
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0057",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Topical cyclosporine in the treatment of allergic conjunctivitis: a meta-analysis. Ophthalmology. 2013;120(11):2197203. - 33.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0692,
+        "recent_mean_similarity": 0.133,
+        "mean_internal_similarity": 0.2115,
+        "start_sentence_index": 384,
+        "end_sentence_index": 388,
+        "sentence_count": 4,
+        "character_count": 125,
+        "token_count": 43
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0058",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Gonzalez-Lopez JJ, Lopez-Alcalde J, Morcillo Laiz R, Fernandez Buenaga R, Rebolleda Fernandez G. Topical cyclosporine for atopic keratoconjunctivitis. Cochrane Database Syst Rev. 2012(9):CD009078. - 34. Leonardi A, Van Setten G, Amrane M, Ismail D, Garrigue JS, Figueiredo FC, et al. Efficacy and safety of 0.1% cyclosporine A cationic emulsion in the treatment of severe dry eye disease: a multicenter randomized trial. Eur J Ophthalmol. 2016;26(4):287-96. Accepted Article\n\n- 35. Leonardi A, Doan S, Amrane M, Ismail D, Montero J, Nemeth J, et al. A Randomized, Controlled Trial of Cyclosporine A Cationic Emulsion in Pediatric Vernal Keratoconjunctivitis: The VEKTIS Study. Ophthalmology. 2018. - 36.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.021,
+        "recent_mean_similarity": 0.1997,
+        "mean_internal_similarity": 0.1695,
+        "start_sentence_index": 388,
+        "end_sentence_index": 402,
+        "sentence_count": 14,
+        "character_count": 703,
+        "token_count": 234
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0059",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Zhai J, Gu J, Yuan J, Chen J. Tacrolimus in the treatment of ocular diseases. BioDrugs. 2011;25(2):89-103. - 37. Labcharoenwongs P, Jirapongsananuruk O, Visitsunthorn N, Kosrirukvongs P, Saengin P, Vichyanond P. A double-masked comparison of 0.1% tacrolimus ointment and 2% cyclosporine eye drops in the treatment of vernal keratoconjunctivitis in children. Asian Pac J Allergy Immunol. 2012;30(3):177-84. - 38. Pucci N, Caputo R, di Grande L, de Libero C, Mori F, Barni S, et al. Tacrolimus vs. cyclosporine eyedrops in severe cyclosporine-resistant vernal keratoconjunctivitis: A randomized, comparative, double-blind, crossover study. Pediatr Allergy Immunol. 2015;26(3):256-61. - 39. Miyazaki D, Fukushima A, Ohashi Y, Ebihara N, Uchio E, Okamoto S, et al. SteroidSparing Effect of 0.1% Tacrolimus Eye Drop for Treatment of Shield Ulcer and Corneal Epitheliopathy in Refractory Allergic Ocular Diseases. Ophthalmology. 2017;124(3):287-94. - 40. Nivenius E, van der Ploeg I, Jung K, Chryssanthou E, van Hage M, Montan PG. Tacrolimus ointment vs steroid ointment for eyelid dermatitis in patients with atopic keratoconjunctivitis. Eye (Lond). 2007;21(7):968-75. - 41. Zribi H, Descamps V, Hoang-Xuan T, Crickx B, Doan S. Dramatic improvement of atopic keratoconjunctivitis after topical treatment with tacrolimus ointment restricted to the eyelids. J Eur Acad Dermatol Venereol. 2009;23(4):489-90. - 42. Al-Amri AM. Long-term follow-up of tacrolimus ointment for treatment of atopic keratoconjunctivitis. Am J Ophthalmol. 2014;157(2):280-6. - 43.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0639,
+        "recent_mean_similarity": 0.1986,
+        "mean_internal_similarity": 0.1563,
+        "start_sentence_index": 402,
+        "end_sentence_index": 435,
+        "sentence_count": 33,
+        "character_count": 1548,
+        "token_count": 533
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0060",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Hoang-Xuan T, Prisant O, Hannouche D, Robin H. Systemic cyclosporine A in severe atopic keratoconjunctivitis. Ophthalmology. 1997;104(8):1300-5. - 44. Roberts G, Pfaar O, Akdis CA, Ansotegui IJ, Durham SR, Gerth van Wijk R, et al. EAACI Guidelines on Allergen Immunotherapy: Allergic rhinoconjunctivitis. Allergy. 2018;73(4):765-98. - 45. Dhami S, Nurmatov U, Arasi S, Khan T, Asaria M, Zaman H, et al. Allergen immunotherapy for allergic rhinoconjunctivitis: A systematic review and meta-analysis. Allergy. 2017;72(11):1597-631. - 46. Halken S, Agertoft L, Seidenberg J, Bauer CP, Payot F, Martin-Munoz MF, et al. Five-grass pollen 300IR SLIT tablets: efficacy and safety in children and adolescents. Pediatr Allergy Immunol. 2010;21(6):970-6. - 47. Di Bona D, Plaia A, Leto-Barone MS, La Piana S, Di Lorenzo G. Efficacy of Grass Pollen Allergen Sublingual Immunotherapy Tablets for Seasonal Allergic Rhinoconjunctivitis: A Systematic Review and Meta-analysis. JAMA Intern Med. 2015;175(8):1301-9. - 48. Nelson H, Cartier S, Allen-Ramey F, Lawton S, Calderon MA. Network metaanalysis shows commercialized subcutaneous and sublingual grass products have comparable efficacy. J Allergy Clin Immunol Pract. 2015;3(2):256-66 e3. - 49. Devillier P, Dreyfus JF, Demoly P, Calderon MA. A meta-analysis of sublingual allergen immunotherapy and pharmacotherapy in pollen-induced seasonal allergic rhinoconjunctivitis. BMC Med. 2014;12:71. - 50. Lin SY, Erekosima N, Kim JM, Ramanathan M, Suarez-Cuervo C, Chelladurai Y, et al. Sublingual immunotherapy for the treatment of allergic rhinoconjunctivitis and asthma: a systematic review. JAMA. 2013;309(12):1278-88. Accepted Article\n\n- 51. Calderon MA, Penagos M, Sheikh A, Canonica GW, Durham SR. Sublingual immunotherapy for allergic conjunctivitis: Cochrane systematic review and meta-analysis. Clin Exp Allergy.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0383,
+        "recent_mean_similarity": 0.1628,
+        "mean_internal_similarity": 0.1357,
+        "start_sentence_index": 435,
+        "end_sentence_index": 475,
+        "sentence_count": 40,
+        "character_count": 1854,
+        "token_count": 628
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0061",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "2011;41(9):1263-72. - 52. Kim JM, Lin SY, Suarez-Cuervo C, Chelladurai Y, Ramanathan M, Segal JB, et al. Allergen-specific immunotherapy for pediatric asthma and rhinoconjunctivitis: a systematic review. Pediatrics. 2013;131(6):1155-67. - 53.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0631,
+        "recent_mean_similarity": 0.1914,
+        "mean_internal_similarity": 0.2146,
+        "start_sentence_index": 475,
+        "end_sentence_index": 482,
+        "sentence_count": 7,
+        "character_count": 242,
+        "token_count": 89
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0062",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Okamoto Y, Fujieda S, Okano M, Yoshida Y, Kakudo S, Masuyama K. House dust mite sublingual tablet is effective and safe in patients with allergic rhinitis. Allergy.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0055,
+        "recent_mean_similarity": 0.2412,
+        "mean_internal_similarity": 0.3968,
+        "start_sentence_index": 482,
+        "end_sentence_index": 484,
+        "sentence_count": 2,
+        "character_count": 164,
+        "token_count": 54
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0063",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "2017;72(3):435-43. - 54. Zieglmayer P, Nolte H, Nelson HS, Bernstein DI, Kaur A, Jacobi H, et al.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.021,
+        "recent_mean_similarity": 0.1792,
+        "mean_internal_similarity": 0.2784,
+        "start_sentence_index": 484,
+        "end_sentence_index": 487,
+        "sentence_count": 3,
+        "character_count": 97,
+        "token_count": 42
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0064",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Long-term effects of a house dust mite sublingual immunotherapy tablet in an environmental exposure chamber trial. Ann Allergy Asthma Immunol. 2016;117(6):690-6 e1. - 55. Roder E, Berger MY, de Groot H, van Wijk RG.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0384,
+        "recent_mean_similarity": 0.1624,
+        "mean_internal_similarity": 0.2083,
+        "start_sentence_index": 487,
+        "end_sentence_index": 492,
+        "sentence_count": 5,
+        "character_count": 215,
+        "token_count": 68
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0065",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Immunotherapy in children and adolescents with allergic rhinoconjunctivitis: a systematic review. Pediatr Allergy Immunol. 2008;19(3):197-207. - 56. Williams PB, Sheppard JD, Jr. Omalizumab: a future innovation for treatment of severe ocular allergy? Expert Opin Biol Ther. 2005;5(12):1603-9. - 57. Doan S, Amat F, Gabison E, Saf S, Cochereau I, Just J. Omalizumab in Severe Refractory Vernal Keratoconjunctivitis in Children: Case Series and Review of the Literature. Ophthalmol Ther. 2017;6(1):195-206. - 58. Barnes AC, Blandford AD, Perry JD. Cicatricial ectropion in a patient treated with dupilumab. Am J Ophthalmol Case Rep. 2017;7:120-2. - 59. Subiza J, Subiza JL, Alonso M, Hinojosa M, Garcia R, Jerez M, et al. Allergic conjunctivitis to chamomile tea. Ann Allergy. 1990;65(2):127-32. - 60. Burroni AG, Maio M. Ocular allergies: a psychodynamic approach. Curr Opin Allergy Clin Immunol. 2008;8(5):461-5. - 61.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0682,
+        "recent_mean_similarity": 0.2174,
+        "mean_internal_similarity": 0.1564,
+        "start_sentence_index": 492,
+        "end_sentence_index": 519,
+        "sentence_count": 27,
+        "character_count": 918,
+        "token_count": 306
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0066",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Etwel F, Djokanovic N, Moretti ME, Boskovic R, Martinovic J, Koren G. The fetal safety of cetirizine: an observational cohort study and meta-analysis. J Obstet Gynaecol. - 2014;34(5):392-9. - 62.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0117,
+        "recent_mean_similarity": 0.2255,
+        "mean_internal_similarity": 0.2764,
+        "start_sentence_index": 519,
+        "end_sentence_index": 523,
+        "sentence_count": 4,
+        "character_count": 195,
+        "token_count": 70
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0067",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Gilbert C, Mazzotta P, Loebstein R, Koren G. Fetal safety of drugs used in the treatment of allergic rhinitis: a critical review. Drug Saf. 2005;28(8):707-19. - 63. Pitsios C, Demoly P, Bilo MB, Gerth van Wijk R, Pfaar O, Sturm GJ, et al. Clinical contraindications to allergen immunotherapy: an EAACI position paper. Allergy. - 2015;70(8):897-909. - 64. Cardona V, Guilarte M, Luengo O, Labrador-Horrillo M, Sala-Cunill A, Garriga T. Allergic diseases in the elderly. Clin Trans Allergy.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0239,
+        "recent_mean_similarity": 0.275,
+        "mean_internal_similarity": 0.2065,
+        "start_sentence_index": 523,
+        "end_sentence_index": 534,
+        "sentence_count": 11,
+        "character_count": 488,
+        "token_count": 168
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0068",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "2011;1(1):11. - 65. Ventura MT, Scichilone N, Paganelli R, Minciullo PL, Patella V, Bonini M, et al. Allergic diseases in the elderly: biological characteristics and main immunological and nonimmunological mechanisms. Clinical and molecular allergy : CMA. 2017;15:2. - 66. Mashaghi A, Hong J, Chauhan SK, Dana R. Ageing and ocular surface immunity. Br J Ophthalmol.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0236,
+        "recent_mean_similarity": 0.2501,
+        "mean_internal_similarity": 0.1858,
+        "start_sentence_index": 534,
+        "end_sentence_index": 543,
+        "sentence_count": 9,
+        "character_count": 365,
+        "token_count": 116
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0069",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "2017;101(1):1-5. - 67. Gray SL, Anderson ML, Dublin S, Hanlon JT, Hubbard R, Walker R, et al. Cumulative use of strong anticholinergics and incident dementia: a prospective cohort study. JAMA Intern Med. 2015;175(3):401-7. - 68. Bron AJ, de Paiva CS, Chauhan SK, Bonini S, Gabison EE, Jain S, et al. TFOS DEWS II pathophysiology report. Ocul Surf. 2017;15(3):438-510. - 69. Lambiase A, Leonardi A, Sacchetti M, Deligianni V, Sposato S, Bonini S. Topical cyclosporine prevents seasonal recurrences of vernal keratoconjunctivitis in a randomized, double-masked, controlled 2-year study. J Allergy Clin Immunol. 2011;128(4):896-7 e9. Accepted Article\n\n- 70. Reddy JC, Basu S, Saboo US, Murthy SI, Vaddavalli PK, Sangwan VS. Management, clinical outcomes, and complications of shield ulcers in vernal keratoconjunctivitis. Am J Ophthalmol. 2013;155(3):550-9 e1. - 71. Cameron JA. Shield ulcers and plaques of the cornea in vernal keratoconjunctivitis. Ophthalmology. 1995;102(6):985-93. - 72. Guo P, Kheirkhah A, Zhou WW, Qin L, Shen XL. Surgical resection and amniotic membrane transplantation for treatment of refractory giant papillae in vernal keratoconjunctivitis. Cornea. 2013;32(6):816-20. - 73. Quah SA, Hemmerdinger C, Nicholson S, Kaye SB. Treatment of refractory vernal ulcers with large-diameter bandage contact lenses. Eye Contact Lens.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0256,
+        "recent_mean_similarity": 0.1866,
+        "mean_internal_similarity": 0.1518,
+        "start_sentence_index": 543,
+        "end_sentence_index": 577,
+        "sentence_count": 34,
+        "character_count": 1345,
+        "token_count": 460
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0070",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "2006;32(5):245-7. - 74. Merdler I, Hassidim A, Sorkin N, Shapira S, Gronovich Y, Korach Z. Keratoconus and allergic diseases among Israeli adolescents between 2005 and 2013. Cornea. 2015;34(5):525-9. - 75.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0888,
+        "recent_mean_similarity": 0.1785,
+        "mean_internal_similarity": 0.1785,
+        "start_sentence_index": 577,
+        "end_sentence_index": 583,
+        "sentence_count": 6,
+        "character_count": 205,
+        "token_count": 72
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0071",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Li W, Wang B. Efficacy and safety of transepithelial corneal collagen crosslinking surgery versus standard corneal collagen crosslinking surgery for keratoconus: a metaanalysis of randomized controlled trials. BMC Ophthalmol. 2017;17(1):262. - 76. Kankariya VP, Kymionis GD, Diakonis VF, Yoo SH. Management of pediatric keratoconus - evolving role of corneal collagen cross-linking: an update. Indian J Ophthalmol. 2013;61(8):435-40. - 77. El-Khoury S, Abdelmassih Y, Hamade A, Slim E, Cherfan CG, Chelala E, et al. Pediatric Keratoconus in a Tertiary Referral Center: Incidence, Presentation, Risk Factors, and Treatment. J Refract Surg. 2016;32(8):534-41. - 78. Egrilmez S, Sahin S, Yagci A. The effect of vernal keratoconjunctivitis on clinical outcomes of penetrating keratoplasty for keratoconus. Can J Ophthalmol. 2004;39(7):772-7. - 79. Mahmood MA, Wagoner MD.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0441,
+        "recent_mean_similarity": 0.195,
+        "mean_internal_similarity": 0.1794,
+        "start_sentence_index": 583,
+        "end_sentence_index": 603,
+        "sentence_count": 20,
+        "character_count": 867,
+        "token_count": 292
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0072",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Penetrating keratoplasty in eyes with keratoconus and vernal keratoconjunctivitis. Cornea. 2000;19(4):468-70. - 80. Kaur S, Dhiman I, Kaushik S, Raj S, Pandav SS. Outcome of Ocular Steroid Hypertensive Response in Children. J Glaucoma. 2016;25(4):343-7. - 81.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0508,
+        "recent_mean_similarity": 0.1924,
+        "mean_internal_similarity": 0.1988,
+        "start_sentence_index": 603,
+        "end_sentence_index": 611,
+        "sentence_count": 8,
+        "character_count": 259,
+        "token_count": 90
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0073",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Ang M, Ho CL, Tan D, Chan C. Severe vernal keratoconjunctivitis requiring trabeculectomy with mitomycin C for corticosteroid-induced glaucoma. Clin Exp Ophthalmol. 2012;40(4):e149-55. - 82.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.014,
+        "recent_mean_similarity": 0.2194,
+        "mean_internal_similarity": 0.3005,
+        "start_sentence_index": 611,
+        "end_sentence_index": 615,
+        "sentence_count": 4,
+        "character_count": 189,
+        "token_count": 69
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0074",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Saboo US, Basu S, Tiwari S, Mohamed A, Vemuganti GK, Sangwan VS. Clinical and Cytologic Evidence of Limbal Stem Cell Deficiency in Eyes With Long-Standing Vernal Keratoconjunctivitis. Asia Pac J Ophthalmol (Phila). 2013;2(2):88-93. - 83. Sangwan VS, Jain V, Vemuganti GK, Murthy SI. Vernal keratoconjunctivitis with limbal stem cell deficiency. Cornea. 2011;30(5):491-6. - 84.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.1244,
+        "recent_mean_similarity": 0.114,
+        "mean_internal_similarity": 0.1517,
+        "start_sentence_index": 615,
+        "end_sentence_index": 625,
+        "sentence_count": 10,
+        "character_count": 376,
+        "token_count": 136
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0075",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "O'Gallagher M, Bunce C, Hingorani M, Larkin F, Tuft S, Dahlmann-Noor A. Topical treatments for blepharokeratoconjunctivitis in children. Cochrane Database Syst Rev. 2017;2:CD011965. Accepted Article\n\n# Accepted Article\n\nTables\n\n- Table 1. Topical Ocular Allergy Approved Medications\n\n\n|Class|Drug|Dosing|Indication|Considerations|\n|---|---|---|---|---|\n|Antihistamines (second generation)|Levocabastine Emedastine|4x daily|- Relief of itching<br>- Relief of signs and symptoms<br>|- Short duration of action<br>- Frequently not enough to treat alone the entire disease<br>|\n|Mast cell stabilizers|Cromolyn Nedocromil Lodoxamide NAAGA|4x daily|- Relief of signs and symptoms|- Long-term usage<br>- Slow onset of action<br>- Prophylactic dosing<br>- Frequently not enough to treat alone the entire disease<br>|\n|Dual-acting agents (Antihistamine/ mast cell stabilizers)|Alcaftadine Azelastine Bepotastine Epinastine Ketotifen Olopatadine|2x daily|- Relief of itching<br>- Relief of signs and symptoms<br>|- Bitter taste (azelastine)<br>- No reported serious side effects<br>- Frequently not enough to treat alone the entire disease<br>|\n|Vasoconstrictor/ Vasoconstrictor Antihistamine Combinations|Naphazoline/ Pheniramine|2-4x daily|- Rapid onset of action<br>- Episodic itching and redness<br>|- Short duration of action<br>- Tachyphylaxis<br>- Mydriasis<br>- Ocular irritation<br>- Hypersensitivity<br>- Systemic Hypertension<br>- Potential for inappropriate patient use<br>|\n|Corticosteroids (listed in ascending potency order)|Hydrocortisone Loteprednol Fluorometholone Desonide Rimexolone Prednisolone Dexamethasone Betamethasone|As required|- Treatment of allergic inflammation<br>- Use in moderate to severe forms<br>|- Risk for long-term side effects<br>- No mast cell stabilization<br>- Potential for inappropriate patient use<br>- Requires close monitoring<br>|\n|Calcineurine inhibitors|Cyclosporine A Tacrolimus|2-4x daily|-Treatment of severe VKC and AKC not responding anti-allergic drugs|-Off label in OA (tacrolimus approved for VKC only in Japan)<br>-CsA 0.1% received marketing authorization by EMA in July 2018 for severe VKC<br>-Magistral/officinals preparations are different from center to center<br>-Quality control and availability of magistral preparations are poor<br>|\n\n\n# Accepted Article\n\n#### Table 2. Topical anti-histamines, mast cell stabilizers, dual-acting agents\n\nAuthor Year\n\nStudies design\n\nParticipants Intervention Comparisons\n\nOutcomes Main results Author`s conclusion Amstar\n\nscore Topical anti-histamines\n\n|Kam K et al 2016(5)|23 RCT|Allergic conjunctivitis (n=3388 eyes)|Olopatadine 0.05 to 0.20% vs placebo; ketotifen ; alcaftadine|Symptoms scores (itcing, hypere mia)|Olopatadine vs placebo Itch SMD -1.33[-1.43;-1.23]/Itch score -2.62[-3.25;-1.99] Hyperemia -0.92[-1.19;-0.65] / -1.92[-2.67;-1.17] Olopatadine vs Epinastine no significant differences Olopatadine vs Ketotifen no significant differences Olopatadine vs Alcaftadine SMD 0.30[0.28;0.50]|Topical olopatadine is safe and effective, but alcaftadine appears to be superior|High|\n|---|---|---|---|---|---|---|---|\n|Castillo M et al, 2015(6)|30 RCT 4 Metaanalysis|Seasonal and perennial allergic conjunctivitis (n=4344)|Topical antihistamines Mast cell stabilizers (alone and in combination)|Symptoms scores (itching, irritation, watering eyes or photophobia)|Mast cell stabilizers vs. placebo (8 RCT), not pooled, nedocromil sodium or sodium cromoglycate is more effective than placebo in improving ocular symptoms Azelastine vs. Placebo (9 RCT), not pooled, individuals studies improved symptoms Levocavastine vs. Placebo (5 RCT), not pooled, individual studies with improvement symptoms Olopatadine vs Ketotifen (4 RCT) MSD -0.32[-0.59;-0.06] for itching; MSD -0.06 [-0.35;0.22] for tearing Nedocromil vs. levobacastine (2 RCT), not pooled Azelastine vs levocabastine (2 RCT), not pooled Olopatadine vs control (2 RCT), not pooled, evidence from two small trials may improve symptoms Nedocromil vs azelastine (1 RCT), no difference Olopatadine vs nedocromil (1 RCT), olopatdine more effective Levocabastine vs antazoline and tetryzoline, no difference Ketotifen vs placebo (1 RCT) more effective Ketotifen vs levocabastine (1RCT) Ketotifen is superior Levocabastine and pemirolast vs levocabastine, combination is more effective Levocabastine vs mequitazine (1 RCT) equally effective Bepotastine vs placebo (1RCT), effective Bepotastine vs olopatadine (1RCT), insufficient|All topical antihistamines and mast cell stabilizers reduce symptoms and signs of seasonal allergic conjunctivitis when compared with placebo in the short term are safe and well tolerated. Olopatadine may be more effective than ketotifen|High|\n|Mahvan TD, 2012(9)|2 RCT|Allergic conjunctivitis (n=228)|Alcaftadine 0.05 to 0.25% vs placebo|Ocular itching Ocular redness|Improved ocular itching improvement, no improvement in ocular redness, not pooled|Alcaftadine is safe and effective|Critically low|\n|Rosenwasser L et al 2005 (8)|9 CT|Allergic conjunctivitis (n=714)|Olopatadine 0.1 and 0.5% vs placebo; ketorolac, nedocromil, ketotifen, azelastine and epinastine|Not pooled|No significant side effects; no ocular dryness or irritation with topical use. Reduces redness, itching and swelling. Comparison with ketorolac 0.5%, nedocromil, ketotifen, azelastine and epinastine- not pooled|Olopatadine is clinically superior to the other anti-allergic molecules|Critically low|\n\n\n# Accepted Article\n\nTopical mast cell stabilizers\n\n|Owen C et al, 2004(7)|40 RCT|Seasonal allergic conjunctivitis (n=790)|Topical mast cell stabilizers; topical anti-histamines and topical mast cell stabilisers with antihistamines|Ocular symptom score (itching, burning, lacrimation and soreness)|Sodium cromoglycate vs placebo (8 RCT) OR =17[4;78] to benefit from treatment Nedocromil sodium vs placebo (5 RCT) OR =1.8[1.3;2.6] Lodoxamide tromethamine vs placebo (1 RCT) Topical anti-histamines vs placebo (9 RCT; 6 lebocabastine; 1 azelastine; 1 emedastine; 1 antazoline) not pooled Topical mast cell stabilizers vs topical antihistamines (8 RCT) Levocabastine vs mast cell stabilisers OR 1.3[0.8;2.2]|Confirm the benefit of topical mast cell stabilizers and antihistamines over placebo for the treatment of allergic conjunctivitis. There is insufficient evidence to recommend the use of one type of medication over another.|Moderate|\n|---|---|---|---|---|---|---|---|\n|Mantelli et al, 2007(12)|27 RCT 10 metaanalysis|Vernal Keratoconjuncitivis (n=1092 patients, 2184 eyes) Mean age 13.3(4.5 years)|Mast cell stabilisers vs placebo (n=10) Mast cell stabilisers vs another (n=8) Mast cell stabilisers vs corticosteroids (n=2) Mast cell stabilisers vs antihistamines (n=1) NSAID vs placebo (n=2) NSAID vs CCT (n=1) Antimitotic drug (n=1)|Irching, tearing, fotofobia, hyperemia, tarsal papillae, limbal disease and corneal involvement|: Itching (mytomicin; sodium cromoglicate, ciclosporin 2%, ketorolac) SMD -1.43 [-1.76;-1.10] Tearing (mytomicin, sodium cromoglicate, cilosporin 2%) SMD<br><br>-0.84[-1.20;-0.49] Photophobia (mytomicin, sodium cromoglicate, cyclosporine 2%) -0.27[-0.82;0.39] Total signs (ciclosporin and sodium cromoglicate) SMD -0.94;[1.34;-0.54] Total symptoms (ciclosporin 2% and sodium cromoglicate) SMD -0.73[-1.14;-0.32] Tarsal papillae (mytomicin, sodium cromoglicate, ciclosporin)<br><br>SMD -0.32[-0.64:-0.00] Corneal Involvement (mytomicin, sodium cromoglicate, ciclosporin) SMD -1.15[-1.50;-0.80] Limbal disease (mytomicin, sodium cromoglicate, ciclosporin)<br>SMD -1.17[-1.50;-0.83] Hyperaemia (mytomicin, sodium cromoglicate, ciclosporin, mipragoside 0.5) SMD -1.07[-1.38;-0.76]<br>|The currently available topical drugs are effective in treating acute phases of VKC. There is a lack of evidence to support the recommendation of one specific type of medication for treating this disorder|Low|\n\n\nRCT- randomized clinical trials; SMD= standardized mean difference; NSAID- non steroid anti-inflammatory drug; CCT-Corticosteroids * nedocromil sodium or sodium cromoglycate, olopatadine, ketotifen, azelastine, emedastine, levocabastine (or levocabastine), mequitazine, bepotastine besilate, combination of antazoline and tetryzoline, combination of levocabastine and pemirolast potassium.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0389,
+        "recent_mean_similarity": 0.5778,
+        "mean_internal_similarity": 0.4535,
+        "start_sentence_index": 625,
+        "end_sentence_index": 640,
+        "sentence_count": 15,
+        "character_count": 8271,
+        "token_count": 2655
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0076",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "# Accepted Article\n\n#### Table 3.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0533,
+        "recent_mean_similarity": 0.4367,
+        "mean_internal_similarity": null,
+        "start_sentence_index": 640,
+        "end_sentence_index": 641,
+        "sentence_count": 1,
+        "character_count": 33,
+        "token_count": 10
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0077",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Non-steroidal anti-inflammatory drugs (topical prostaglandin and oral leukotriene inhibitors)\n\nAuthor Year\n\nStudies design\n\nParticipants Intervention Comparisons\n\nOutcomes Main results Author`s conclusion Amstar\n\nscore Non-steroid anti-inflammatory drug\n\n|Swamy et al, 2007(15)|8 RCT|Allergic conjunctivitis (n=712)|Ophtalmic NSAID ((ketorolac, diclofenac, flurbiprofen) piroxicam and hydrocortisone ) versus placebo|Symptoms, ocular itching and conjunctival injection Side effects|Itching SMD -0.54[-0.84;-0.24] Lacrimation SMD -0.21[-0.41;-0.01] Conjunctival injection SMD -0.52[-0.97;-0.05] Ocular discomfort with treatment SMD 3.97[2.67;5.89]|NSAID are more effective than placebo in reducing conjunctival itching and improving a cardinal sign|Low|\n|---|---|---|---|---|---|---|---|\n|Wilson D et al, 2015(16)|8 clinical trials 2 reviews|Seasonal Allergic conjunctivitis (number of participants not specified)|Ophtalmic nonsteroidal antiinflammatory drugs (Ketorolac 0.5% and diclofenac 0.1%)|Symptoms score change|Decrease short term treatment in comparison with placebo (7-14 days) in 3 studies; 2 cross-over without benefit ketorolac 0.5%. Diclofenac 0.1% better than ketorolac 0.5% in 1 trial for symptoms. Data not pooled.|Effective in decreasing short term symptoms|Critically low|\n\n\nLeukotriene antagonist (montelukast) Gane J et al, 2013(17)\n\n18 RCT 6 metaanalysis\n\nOcular eye disease 12 SAC, 5 PAC\n\nLeukotriene receptor antagonists (montelukast)\n\nOcular symptom scores LTRA vs placebo (6 RCT) SMD -0.10[-0.14:-0.07] LTRA vs oral anti-histamine (3RCT) 0.08[0.02;0.14] in favor of antihistamines LTRA and oral antihistamine vs placebo (2RCT) 0.30[-0.38;-0.21]\n\nIn seasonal AC LTRAs are more efficacious than placebo but less efficacious than oral antihistamines in adult patients. Moderate\n\n(n=9017 adult) (n=175 children 214 years)\n\nAC- Alllergic conjunctivitis; CCT-Corticosteroids ; LTRA- Leukotriene receptor antagonists NSAID- non steroid anti-inflammatory drug; PAC- Perennial allergic conjunctivitis; RCT- randomized clinical trials; SAC-Seasonal allergic conjunctivitis; SMD= standardized mean difference;\n\n# Accepted Article\n\n#### Table 4. Systemic anti-histamines\n\nAuthor Year\n\nStudies design\n\nParticipants Intervention Comparisons\n\nOutcomes Main results Author`s conclusion Amstar score\n\nCompalati et al, 2013(20)\n\n4RCT Allergic rhinoconjunctivitis (n=1135)\n\nRupatadine vs ebastine ; placebo (n= 473) RUpatadine vs loratadine; placebo (n=283) Rupatadine vs desloratadine ; placebo (n=379)\n\nItchy and watery eyes Itch eyes SMD: - 0.29, 95% CI -0.45 to -0.14 Watery eyes reduction SMD: -0.25, 95% CI -0.45 to\n\nImprovement ocular symptom of rupatadine versus placebo. Low\n\n-0.06 (;\n\nRCT- randomized clinical trials; SMD= standardized mean difference;\n\n# Accepted Article\n\nTable 5. Corticosteroids and calcineurin inhibitors\n\nAuthor Year\n\nStudies design\n\nParticipants Intervention Comparisons\n\nOutcomes Main results Author`s conclusion Amstar\n\nscore Topical corticosteroids\n\n|O’Gallagher M, et al 2017 (84)|1 RCT|Blepharoconjunctivitis (n=137 chilren))|Loteprednol etabonate|Improvement of symptoms Elimination clinical signs Adverse effects|No sufficient data on the improvement in symptoms or signs; no difference on adverse effects|No high-quality evidence regarding safety and efficacy of topical treatments for BKC|High|\n|---|---|---|---|---|---|---|---|\n|Sheppard J et al 2016(24)|40 clinical trials SAC(4) PAC(1) VKC(1) BKC (3)|SAC(n=856) PAC(n=159)<br><br>VKC(n=37) BKC (n=355)|Loteprednol etabonate|Incidence of IOP|0.2% suspension there was no increase in IOP for SAC or PAC; 0.5% suspension there was no increase in VKC or SAC (both in comparison with vehicle)|Favorable IOP-safety profile for Llteprednol etabonate<br><br>with both short-term and long-term use|Critically low|\n|Wu et al, 2015(23)|8 RCT SAC (4RCT), GPC (3 RCT) VKC (1 RCT)|(n=1445)|Loteprednol etabonate vs placebo; topical olopatadine; topical fluorometholone acetate|Ocular symptoms (ocular itching) Sign (bulbar conjunctival injection or papillae) Increased intraocular pressure (IOP)|Compared to placebo: Sign severity SMD -0.85[-1-35;-0.35] (all) SAC -0.45[-0.62;-0.28]; only one trial GPC and VKC Weighted mean difference -0.66[-0.97;-0.35] (all) SAC -0.43[-0.46;-0.31]; only one trial GPC and VKC IOP OR 3.03[1.04;8.80]<br><br>Compared to topical olopatadine Sign severity SMD -3.78[-10.61;3.04]<br><br>WMD -0.98[-2.00;0.05] (all interventions)|Topical loteprednol etabonate is effective in treating allergic conjunctivitis|High|\n\n\nNasal Corticosteroids\n\n|Weiner J et al, 1998(26)|16 RCT|Allergic rhinoconjunctivitis (n=2267)|Nasal corticosteroids vs oral antihistamines (terfenadine; astemizole; loratadine; cetirizine)|Ocular symptoms (included 11 studies)|Nasal steroid vs oral anti-histamines SMD -0.043[-0.157;0.072]|There was no significant difference between intranasal corticosteroids and oral anti-histamines on ocular symptoms|Low|\n|---|---|---|---|---|---|---|---|\n|Hong et al, 2011(27)|32 studies RCT|SAC and PAC (n=6573)|Nasal corticosteroids|Total ocular symptom score (TOSS)|Data not pooled Improvement of TOSS in 9 out of 10 studies Total eye symptoms 5 out of 13 studies|Intranasal corticosteroids have a positive impact on the on the TOSS of AR.|Critically low|\n\n\n# Accepted Article\n\n|Naclerio et al, 2008 (28)|3 SR 5 RCT|Allergic rhinoconjuntivitis TAA (n=375) FP (n=1645) MF (n=1198) FF (n=940) BUD(n=280)|Nasal corticosteroids Triamcinolone acetonide (n=375) Proprionate Fluticasone (7 RCT data association) Mometasone furoate (2 RS 1 RCT) Furoate fluticasone (2 RCT) Budesonide (1RCT)|Total ocular symptom score|Data not pooled, an improvement of total eye symptom score was seen versus placebo was seen in all clinical trials and meta-analysis|Intranasal corticosteroids are effective and well-tolerated in the treatment of ocular symptoms associated with allergic rhinitis.|Critically low|\n|---|---|---|---|---|---|---|---|\n|Yánez A et al, 2002(29)|4 RCT|Allergic rhinitis Beclomethasone (n=166) BUD (n=31) Fluticasone (n=193) Flunisolide (n=38) Azelastine (n=240) Levocabastine (n=408)|Beclomethasone or flunisolide vs azelastine (n=2 RCT) Budesonide or fluticasone vs levocabastine (n=2 RCT)|Eye symptoms|Nasal steroid vs nasal anti-histamines SMD -0.07[-<br><br>-0.27;0.12, p=0.4]|There was no difference between interventions in the relief of ocular symptoms|Critically low|\n\n\nTopical cyclosporin\n\nWan KH et al, 2013(32)\n\n7 RCT Allergic conjunctivitis (n=306 eyes of 153 patients) 3 studies recruited steroiddependent allergic conjuntivitis\n\nTopical cyclosporine in concentration from 0.05% to 2%\n\nComposite sign score (average of at least one of the following signs: hyperemia, swelling, papillae and giant papillae on the tarsal conjunctiva, hyperemia and edema of the bulbar conjunctiva, or corneal involvement) Composite symptom score (average of: redness, tearing, burning, discomfort, foreign body sensation, discharge, and photophobia.) Medication use\n\nCompared to placebo: Composite sign score: SMD -1.21 95%CI, [-1.80; -\n\nTopical cyclosporine could be an effective and safe treatment method for allergic conjunctivitis\n\nLow\n\n- 0.62] Composite symptom score: SMD -0.84 95%CI[-\n- 1.51;-0.16] Reduction on steroid eye drop (3RCT) SMD -61.2[101.6;-20.7]\n\n\n# Accepted Article\n\n|GonzálezLópez et al, 2012(33)|3 RCT|Atopic keratoconjuntivitis (n=58) (|Cyclosporin 0.05% or Cyclosporin 2% in maize oil vs preservative free artificial tears or placebo|Symptoms improvement (reported by the participant) itching, tearing, discomfort, mucous discharge, photophobia or pain Topical steroid use Clinical signs Adverse effects|Not pooled Symptoms composite score significantly improved for all associated, but not for specific symptoms in one study ( Clinical signs improved in the composite score in one study Reduction of topical steroid use in one study|Topical CsA may provide clinical and symptomatic relief in AKC and may help to reduce topical steroid use in patients with steroid-dependent or steroid-resistant AKC. No serious adverse events were reported|High|\n|---|---|---|---|---|---|---|---|\n|Mantelli et al, 2007(12)|27 RCT 10 metaanalysis|Vernal Keratoconjuncitivis (n=1092 patients, 2184 eyes) mean age 13.3(4.5 years)|Mast cell stabilisers vs placebo (n=10) Mast cell stabilisers vs another (n=8) Mast cell stabilisers vs corticosteroids (n=2) Mast cell stabilisers vs antihistamines (n=1) NSAID vs placebo (n=2= NSAID vs CCT (n=1) Antimitotic drug (n=1)|Irching, tearing, fotofobia, hyperemia, tarsal papillae, limbal disease and corneal involvement|Itching (mytomicin; sodium cromoglicate, ciclosporin 2%, ketorolac) SMD -1.43 [-1.76;-1.10] Tearing (mytomicin, sodium cromoglicate, cilosporin 2%) SMD -0.84[-1.20;-0.49] Photophobia (mytomicin, sodium cromoglicate, cyclosporine 2%) -0.27[-0.82;0.39] Total signs (ciclosporin and sodium cromoglicate) SMD -0.94;[-1.34;-0.54] Total symptoms (ciclosporin 2% and sodium cromoglicate) SMD -0.73[-1.14;-0.32] Tarsal papillae (mytomicin, sodium cromoglicate,<br><br>ciclosporin) SMD -0.32[-0.64:-0.00] Corneal Involvement (mytomicin, sodium cromoglicate, ciclosporin) SMD -1.15[-1.50;-0.80] Limbal disease (mytomicin, sodium cromoglicate,<br>ciclosporin) SMD -1.17[-1.50;-0.83] Hyperaemia (mytomicin, sodium cromoglicate, ciclosporin, mipragoside 0.5) SMD -1.07[-1.38;0.76]<br>|The currently available topical drugs are effective in treating acute phases of VKC. However, there is a lack of evidence to support the recommendation of one specific type of medication for treating this disorder|Low|\n\n\nTacrolimus Zhai J et al 2010(36)\n\n2RCT 4 Case series\n\nVKC (n=87) AKC(n=35) PAC (n=20)\n\n0.1% tacrolimus ophthalmic suspension 0.03% tacrolimus Tacrolimus ointment vs clobetasol AKC\n\nTotal objective score Symptom score Ulcer improvement\n\nNot pooled Improvement of total score with tacrolimus versus placebo (-5.6 ±5.1 for tacrolimus ophthalmic suspension vs -0.1 ±4.5 for placebo) Similar effect to topical corticosteroids for AKC\n\nNeeded more studies Critically low\n\nIOP- intra-ocular pressure; CCT-Corticosteroids ; NSAID- non steroid anti-inflammatory drug; RCT- randomized clinical trials;TOSS- Total ocular symptom score\n\n# Accepted Article\n\n#### Table 6. Allergen specific immunotherapy\n\nAuthor Year\n\nStudies design\n\nParticipants Intervention Comparisons\n\nOutcomes Main results Author`s conclusion Amstar\n\nscore Immunotherapy\n\n|Dhami et al, 2017(45)|160, 134 DBRCT 61 SCIT; 71 SLIT|Allergic rhinoconjunctivitis or allergic rhinitis 6,379 patients SCIT 13,636 patients SLIT|Weed,tree and grass pollens, molds, cat and dog dander, and house dust mites|Difference symptom score Difference medication score Difference QoL|Symptom score<br><br>[SMD -0.53 (95% CI -0.63 to -0.42); SCIT -0.65(0.86 to -0.36) vs SLIT -0.48 (95%CCI -0.61 to 0.36); Seasonal allergens (-0.37 (95% CI -0.45 to -0.28] Medication score SMD of -0.38 (95% CI -0.49, -0.26) [SCIT SMD 0.52 (95% CI -0.75, -0.29) ; SLIT -0.31 (95% CI 0.44, -0.18)|AIT is effective in achieving clinically important short-term improvements in symptom, medication, and combined symptom and medication scores.|High|\n|---|---|---|---|---|---|---|---|\n|Di Bona et al<br><br>(47) 2015|13 RCT|Seasonal allergic rhinoconjuncitivitis (n=4659)|Grass pollen SLIT versus placebo Phleum p5 or 5 grass extracts|Difference in symptom score Difference medication score Number adverse events|Symptom score (SMD, −0.28; 95%CI, −0.37 to −0.19; P < .001) Medication score (SMD, −0.24; 95%CI, −0.31 to −0.17; P < .001) OR adverse events 2.91|Small benefit of grass SLIT tablets in the treatment of SARC|Moderate|\n|Nelson et al, 2015(48)|37 RCT 14 SLIT tablet; 14 SLIT drop; 9SCIT|Allergic rhinitis treated with IT (n=4016) and placebo (n=3743)|SCIT vs SLIT grass pollen IT versus placebo SLIT tablets vs SLIT drops|Difference in symptom score (rhinoconjuncitivitis score preferred) Difference medication score|Symptom score [SCIT vs placebo SMDs (95% CI): 0.32 (-0.45 to -0.18); SLIT vs placebo SMDs (95% CI): -0.32 (-0.41 to -0.23)] Medication score [SCIT vs placebo SMDs (95% CI):<br><br>-0.33 (-0.52 to -0.13); SLIT vs Placebo SMDs (95% CI): -0.44 (-0.83 to -0.06)] No difference between SCIT or SLIT|Comparable reduction in allergic conjunctivitis symptoms with SLIT and SCIT|Moderate|\n|Devillier et al, 2014(49)|38 DBRCT 28 med 10 SLIT|Seasonal allergic rhinitis (n=21223)|Antihistamines (desloratadine; bilastine; loratadine; fexofenadine; cetirizine); Nasal CCT; montelukast and grass pollen SLIT tablet,|Symptoms score Combined symptommedication score Relative clinical impact Reported post-treatment or season-long nasal Total symptom scores. 100 × (score Placebo – score Active)/score Placebo)|Five grass pollen SLIT tablets [ -0.30(-0.36, 0.23)]; -29.6% (-23% to -37%) Timothy SLIT tablets -19.2% (-6% to -29%) Nasal corticosteroids [– 0.55 (-0.63, -0.47)]<br><br>-23.5% (-7% to -54%) azelastine-fluticasone[SMD –1.00 (-1.10, -0.90)]<br>-17.1% (-15% to -20%) H1-antihistamines [SMD -0.39 (-0.43, -0.35)]<br>-15.0% (-3% to -26%) Montelukast [ –0.23 (-0.30, -0.16)]<br>-6.5% (-3% to -10%)<br>|Grass pollen SLIT tablets had a greater mean relative clinical impact than secondgeneration antihistamines and montelukast and similar to the mean relative clinical impact of nasal corticosteroids|Moderate|\n|Lin et al, 2013<br><br>(50)|RCT 13SLIT|Conjunctivitis (n=1074)|SLIT Grass mix, dust mite, parietaria, timothy grass, olive, tree mix|Symptom score|No pooled All but two studies showed a greater improvement in SLIT|Moderate strength in support of SLIT for treating allergic conjunctivitis|High|\n|Calderon et al, 2011 (51)|RCT 42|Allergic conjunctivitis|SLIT Grass, mites, weeds|TOSS Individual symptom score|TOSS (n=36 studies) SMD -0.41[-0.53;-0.28], not significant for perennial allergens (n=6) and|SLIT is effective in reducing total and|High|\n\n\n# Accepted Article\n\n| | |seasonal and perennial (n=3399)|vs placebo|Medication score Conjunctival immediate allergen sensitivity|significant for children and adults Itch SMD -0.31[-0.42;-0.20] Watery eyes SMD -0.23[-0.34;-0.11] Red eyes SMD -0.33[-0.45;-0.22] No significant differences in medication score|individual symptom score in subjects with ARC or conjunctivitis.| |\n|---|---|---|---|---|---|---|---|\n|Kim J et al, 2013(52)|RCT 3 SCIT 5 SLIT|Conjunctivitis (n=513)|AIT pollen and dust mite|Percent difference in pre-topost change for conjunctivitis symptoms (<15% weak; 1540 moderate; > 40% strong)|Without specific values of percent of increase for conjunctivitis. SCIT showed an improvement versus placebo in all studies and 4 out of 5 studies showed an improvement with SLIT.|The strength of evidence is low for SCIT and moderate for SLIT in conjunctivitis symptoms improvement|Moderate|\n|Röder et al, 2008(55)|RCT<br><br>6 SCIT 4 LNIT<br>7 OIT 11 SLIT<br>|Allergic rhinoconjunctivitis (n=1619)|19 trials with seasonal allergen (grass pollen) 9 trials (house dust mite)|Symptoms scores Medication scores|Did not present specific data; not pooled|Insufficient evidence that immunotherapy in any administration has a positive effect on symptoms and/or medication|Low|\n\n\nIT- allergen mmunotherapy; DBRCT- Double blind randomized controlled trail; LNIT- nasal immunotherapy; OIT-oral immunotherapy; RCT- randomized clinical trials; SCIT- Subcutaneous immunotherapy; SLIT- sublingual immunotherapy; SMD- standardized mean diference;\n\n# Accepted Article\n\n#### Table 7. Practical treatment of ocular allergy\n\nAvoidance of clinically relevant allergens is the first step in the prevention of ocular allergy symptoms Topical antihistamines, mast cell stabilizers or double action drugs are the first choice of treatment, and all effective in reducing signs and symptoms Dual acting agents with combined mast cell stabilizer and antihistaminic function increase the possibility of symptom improvement, and have a faster relief of symptoms compared to mast cell stabilizers Avoid topical corticosteroids, as they are rarely needed Intranasal corticosteroids are effective and well-tolerated in the treatment of ocular symptoms associated with ARC, but should not be used if only ocular signs and symptoms are present Topical vasoconstrictors alleviate only hyperemia and should be used with caution for a short period of 5-7 days because of side effects and tachyphylaxis Systemic anti-histamines should be used in acute forms or when ocular symptoms are associated with other allergic co-morbidities Leukotriene inhibitors are reported to be less efficacious than oral antihistamines in adult SAC patients Consider SIT when specific sensitization is the main cause of ocular allergy, as it is effective for the treatment of ARC to seasonal allergens and perennial allergens SLIT has been shown to be effective in reducing total and individual ocular symptom score in subjects with conjunctivitis\n\n###### A. How to treat IgE-mediated diseases SAC and PAC\n\nAvoidance of specific and non-specific triggers is the first step in the prevention of ocular allergy symptoms Use cold compresses, good eyelid hygiene, and lubricants Topical antihistamines, mast cell stabilizers or double action drugs are the first treatment choice and may be used in combination. They should be used frequently during the day and during the whole season Systemic anti-allergic drugs should be used when ocular symptoms are associated with other allergic co-morbidities Topical corticosteroids should be used as short, pulsed therapy, in acute exacerbations or when the cornea is involved, under ophthalmologist’s monitoring Topical calcineurin inhibitors, preferentially cyclosporine A (0.1% on-label treatment in the EU), may be used as a steroid-sparing agent in steroid-dependent patients followed in specialized centers; tacrolimus 0.1% eye drops should be reserved for severe VKC and AKC cases refractory to CsA (off-label treatment in the EU) A systemic immunosuppressive treatment should be prescribed in most refractory cases of AKC with visual threat. Cyclosporine is the most frequently used drug.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.3622,
+        "recent_mean_similarity": 0.6424,
+        "mean_internal_similarity": 0.5219,
+        "start_sentence_index": 641,
+        "end_sentence_index": 657,
+        "sentence_count": 16,
+        "character_count": 18058,
+        "token_count": 5691
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0078",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Tacrolimus and mycophenolate mofetil are alternative options\n\n###### B. How to treat persistent/chronic forms (IgEand non-IgE-mediated) VKC and AKC\n\nAvoidance of irritants and/or sensitizing antigens Eyelid hygiene Emollients and skin moisturing agents Oral antihistamines can be used to alleviate eyelid itching and inflammation Topical corticosteroids ointments or dermatological creams should be used in the acute phases of eyelid eczema, with a preference for low\n\n###### C. How to treat non IgEmediated diseases CBC\n\n# Accepted Article\n\npotency corticosteroids, such as hydrocortisone, desonide, and triamcinolone acetonide Topical calcineurin inhibitors skin ointments 0.03% or 0.1% have been shown to be useful in the treatment of lid eczema in AKC patients. Tolerability is a concern as burning sensation is frequently reported and secondary infections, although infrequent, have been recognized\n\nAKC: atopic keratoconjunctivitis; CBC: contact blepharoconjunctivitis; PAC: Perennial allergic conjunctivitis; SAC: Seasonal allergic conjunctivitis; VKC: vernal keratoconjunctivitis\n\n# Accepted Article\n\n# Accepted Article",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": null,
+        "recent_mean_similarity": null,
+        "mean_internal_similarity": 0.4586,
+        "start_sentence_index": 657,
+        "end_sentence_index": 659,
+        "sentence_count": 2,
+        "character_count": 1127,
+        "token_count": 320
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0079",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "length_aware_chunking",
+  "type": "LengthAwareChunker",
+  "abbreviation": "LAC",
+  "params": {
+    "target_length": 512,
+    "tolerance": 50
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
+  "source_path": "guideline\\GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 42,
+  "empty_chunks": 0,
+  "tokens_min": 17,
+  "tokens_p25": 520.5,
+  "tokens_median": 543.0,
+  "tokens_mean": 514.02,
+  "tokens_p75": 555.5,
+  "tokens_max": 653,
+  "tokens_std": 106.98,
+  "tokens_total": 21589,
+  "tokens_original": 21507,
+  "tokens_ratio": 1.004,
+  "execution_time_seconds": 0.654713,
+  "ram_before_mb": 1287.78,
+  "ram_after_mb": 1287.54,
+  "ram_increase_mb": -0.25
+}

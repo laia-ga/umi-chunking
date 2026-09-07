@@ -1,0 +1,31 @@
+{
+  "strategy": "length_aware_chunking",
+  "type": "LengthAwareChunker",
+  "abbreviation": "LAC",
+  "params": {
+    "target_length": 512,
+    "tolerance": 50
+  },
+  "status": "completed",
+  "doc_id": "paper_PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
+  "document_type": "paper",
+  "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "source_path": "paper\\PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 30,
+  "empty_chunks": 0,
+  "tokens_min": 251,
+  "tokens_p25": 520.0,
+  "tokens_median": 542.0,
+  "tokens_mean": 578.6,
+  "tokens_p75": 554.0,
+  "tokens_max": 2228,
+  "tokens_std": 313.96,
+  "tokens_total": 17358,
+  "tokens_original": 17300,
+  "tokens_ratio": 1.003,
+  "execution_time_seconds": 0.384778,
+  "ram_before_mb": 1287.28,
+  "ram_after_mb": 1288.02,
+  "ram_increase_mb": 0.74
+}

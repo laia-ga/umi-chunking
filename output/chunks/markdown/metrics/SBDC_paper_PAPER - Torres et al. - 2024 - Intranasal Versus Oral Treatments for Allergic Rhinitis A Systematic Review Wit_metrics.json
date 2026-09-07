@@ -1,0 +1,32 @@
+{
+  "strategy": "semantic_boundary_detection",
+  "type": "SemanticBoundaryChunker",
+  "abbreviation": "SBDC",
+  "params": {
+    "breakpoint_threshold_amount": 80.0,
+    "buffer_size": 1,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "status": "completed",
+  "doc_id": "paper_PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
+  "document_type": "paper",
+  "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "source_path": "paper\\PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 92,
+  "empty_chunks": 0,
+  "tokens_min": 8,
+  "tokens_p25": 15.75,
+  "tokens_median": 57.0,
+  "tokens_mean": 190.02,
+  "tokens_p75": 87.0,
+  "tokens_max": 2836,
+  "tokens_std": 453.07,
+  "tokens_total": 17482,
+  "tokens_original": 17300,
+  "tokens_ratio": 1.011,
+  "execution_time_seconds": 4.394626,
+  "ram_before_mb": 1220.69,
+  "ram_after_mb": 1229.2,
+  "ram_increase_mb": 8.51
+}

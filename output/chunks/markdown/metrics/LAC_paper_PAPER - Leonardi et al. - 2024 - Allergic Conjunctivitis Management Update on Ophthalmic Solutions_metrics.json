@@ -1,0 +1,31 @@
+{
+  "strategy": "length_aware_chunking",
+  "type": "LengthAwareChunker",
+  "abbreviation": "LAC",
+  "params": {
+    "target_length": 512,
+    "tolerance": 50
+  },
+  "status": "completed",
+  "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
+  "document_type": "paper",
+  "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "source_path": "paper\\PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 36,
+  "empty_chunks": 0,
+  "tokens_min": 245,
+  "tokens_p25": 513.75,
+  "tokens_median": 542.5,
+  "tokens_mean": 518.0,
+  "tokens_p75": 559.0,
+  "tokens_max": 814,
+  "tokens_std": 95.68,
+  "tokens_total": 18648,
+  "tokens_original": 18579,
+  "tokens_ratio": 1.004,
+  "execution_time_seconds": 0.520311,
+  "ram_before_mb": 1286.64,
+  "ram_after_mb": 1287.78,
+  "ram_increase_mb": 1.14
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "paragraph_group_chunking",
+  "type": "ParagraphGroupChunker",
+  "abbreviation": "PGC",
+  "params": {
+    "paragraphs_per_chunk": 2,
+    "overlap": 1
+  },
+  "status": "completed",
+  "doc_id": "paper_PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
+  "document_type": "paper",
+  "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "source_path": "paper\\PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 363,
+  "empty_chunks": 0,
+  "tokens_min": 5,
+  "tokens_p25": 22.0,
+  "tokens_median": 31.0,
+  "tokens_mean": 96.26,
+  "tokens_p75": 108.0,
+  "tokens_max": 2624,
+  "tokens_std": 208.95,
+  "tokens_total": 34944,
+  "tokens_original": 17300,
+  "tokens_ratio": 2.02,
+  "execution_time_seconds": 0.103316,
+  "ram_before_mb": 807.7,
+  "ram_after_mb": 807.69,
+  "ram_increase_mb": -0.0
+}

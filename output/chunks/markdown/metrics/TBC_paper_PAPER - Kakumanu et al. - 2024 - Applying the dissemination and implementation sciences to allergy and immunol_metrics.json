@@ -1,0 +1,31 @@
+{
+  "strategy": "topic_based_chunking",
+  "type": "TopicBasedChunker",
+  "abbreviation": "TBC",
+  "params": {
+    "distance_threshold": 0.4,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "status": "completed",
+  "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "document_type": "paper",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "source_path": "paper\\PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 214,
+  "empty_chunks": 0,
+  "tokens_min": 4,
+  "tokens_p25": 16.0,
+  "tokens_median": 29.0,
+  "tokens_mean": 71.5,
+  "tokens_p75": 54.75,
+  "tokens_max": 1184,
+  "tokens_std": 145.69,
+  "tokens_total": 15302,
+  "tokens_original": 14869,
+  "tokens_ratio": 1.029,
+  "execution_time_seconds": 1.844443,
+  "ram_before_mb": 1139.85,
+  "ram_after_mb": 1153.46,
+  "ram_increase_mb": 13.61
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "semantic_embedding_based_chunking",
+  "type": "SemanticEmbeddingChunker",
+  "abbreviation": "SEBC",
+  "params": {
+    "breakpoint_threshold_amount": 70.0,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "status": "completed",
+  "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
+  "document_type": "paper",
+  "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "source_path": "paper\\PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 220,
+  "empty_chunks": 0,
+  "tokens_min": 4,
+  "tokens_p25": 5.0,
+  "tokens_median": 15.0,
+  "tokens_mean": 86.44,
+  "tokens_p75": 64.0,
+  "tokens_max": 8893,
+  "tokens_std": 605.03,
+  "tokens_total": 19017,
+  "tokens_original": 18579,
+  "tokens_ratio": 1.024,
+  "execution_time_seconds": 5.627299,
+  "ram_before_mb": 990.72,
+  "ram_after_mb": 988.35,
+  "ram_increase_mb": -2.37
+}

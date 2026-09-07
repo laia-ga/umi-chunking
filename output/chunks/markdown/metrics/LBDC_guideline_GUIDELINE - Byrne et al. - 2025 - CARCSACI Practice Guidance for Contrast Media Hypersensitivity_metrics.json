@@ -1,0 +1,31 @@
+{
+  "strategy": "llm_boundary_detection_chunking",
+  "type": "LLMBoundaryDetectionChunker",
+  "abbreviation": "LBDC",
+  "params": {
+    "max_tokens": 512,
+    "overlap_tokens": 75
+  },
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "source_path": "guideline\\GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
+  "tokenizer_model": "BAAI/bge-m3",
+  "number_of_chunks": 50,
+  "empty_chunks": 0,
+  "tokens_min": 265,
+  "tokens_p25": 544.75,
+  "tokens_median": 563.5,
+  "tokens_mean": 545.98,
+  "tokens_p75": 576.0,
+  "tokens_max": 584,
+  "tokens_std": 53.61,
+  "tokens_total": 27299,
+  "tokens_original": 23749,
+  "tokens_ratio": 1.149,
+  "execution_time_seconds": 0.74169,
+  "ram_before_mb": 1292.74,
+  "ram_after_mb": 1265.46,
+  "ram_increase_mb": -27.28
+}
