@@ -192,3 +192,7 @@ __pycache__/
 
 # Copias automáticas de Jupyter
 .ipynb_checkpoints/
+
+# Archivos de modelos
+models/
+hf_cache/
