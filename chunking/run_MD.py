@@ -92,7 +92,7 @@ SCRIPTS_DIR = BASE_DIR / "scripts"
 
 # Carpeta que contiene los documentos Markdown de entrada
 # main/data/raw/markdown
-INPUT_DIR = BASE_DIR / "data" / "test"
+INPUT_DIR = BASE_DIR / "data" / "raw" / "markdown"
 
 # Carpeta general de salida
 OUTPUT_DIR = BASE_DIR / "output" / "chunks" / "markdown"
