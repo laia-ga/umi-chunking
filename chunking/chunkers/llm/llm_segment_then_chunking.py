@@ -22,13 +22,9 @@ class LLMSegmentThenChunker(BaseChunker):
         self,
         token_counter: Callable[[str], int],
         llm: Optional[LLMClient] = None,
-        max_chars: int = 500,
         overlap_tokens: int = 75,
-        llm_refine_threshold: int = 500, ## a partir de qué valor se manda al LLM para que lo divida
         enable_llm_refinement: bool = True,
-        llm_timeout_sec: float = 8.0,
-        llm_max_tokens: int = 256,
-        llm_temperature: float = 0.0,
+        max_tokens: int = 512,
     ):
         if max_tokens <= 0:
             raise ValueError(
@@ -45,11 +41,6 @@ class LLMSegmentThenChunker(BaseChunker):
                 "overlap debe ser menor que max_tokens."
             )
 
-        if llm_refine_threshold <= 0:
-            raise ValueError(
-                "llm_refine_threshold debe ser mayor que 0."
-            )
-
         if not callable(token_counter):
             raise ValueError(
                 "token_counter debe ser una función."
@@ -60,12 +51,9 @@ class LLMSegmentThenChunker(BaseChunker):
 
         self.max_tokens = max_tokens
         self.overlap_tokens = overlap_tokens
-        self.llm_refine_threshold = llm_refine_threshold
         self.enable_llm_refinement = enable_llm_refinement
 
-        self.llm_timeout_sec = llm_timeout_sec
-        self.llm_max_tokens = llm_max_tokens
-        self.llm_temperature = llm_temperature
+        self.llm_max_tokens = max_tokens
 
     # ======================================================
     # API pública
@@ -138,9 +126,6 @@ class LLMSegmentThenChunker(BaseChunker):
                         ),
                         "max_tokens": self.max_tokens,
                         "overlap_tokens": self.overlap_tokens,
-                        "llm_refine_threshold": (
-                            self.llm_refine_threshold
-                        ),
                         "unit_type": part["unit_type"],
                         "source_segment_index": part[
                             "source_segment_index"
@@ -303,8 +288,6 @@ class LLMSegmentThenChunker(BaseChunker):
 
             should_refine = (
                 self.enable_llm_refinement
-                and self.token_counter(text)
-                > self.llm_refine_threshold
             )
 
             if not should_refine:
@@ -397,10 +380,7 @@ Formato exacto:
 
         try:
             response = self.llm.complete_json(
-                prompt,
-                timeout=self.llm_timeout_sec,
-                max_tokens=self.llm_max_tokens,
-                temperature=self.llm_temperature,
+                prompt
             )
 
         except Exception:

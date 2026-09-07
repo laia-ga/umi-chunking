@@ -21,7 +21,7 @@ class DynamicTokenSizeChunker(BaseChunker):
         self,
         min_chunk_size: int,
         max_chunk_size: int,
-        tokenizer: str = PreTrainedTokenizerBase,
+        tokenizer: PreTrainedTokenizerBase,
     ):
         if min_chunk_size <= 0:
             raise ValueError(
@@ -51,7 +51,7 @@ class DynamicTokenSizeChunker(BaseChunker):
             return []
 
         # Se utiliza el tokenizador del modelo configurado en global
-        tokens = self.encoding.encode(
+        tokens = self.tokenizer.encode(
             text,
             add_special_tokens=False
         )

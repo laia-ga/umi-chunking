@@ -1,4 +1,5 @@
 from typing import Callable, List, Optional
+import re
 import statistics
 
 import nltk
@@ -14,7 +15,7 @@ class LLMBoundaryDetectionChunker(BaseChunker):
 
     Flujo:
     1. Separa el texto respetando párrafos y frases.
-    2. Genera chunks de hasta max_chars caracteres.
+    2. Genera chunks de hasta max_tokens caracteres.
     3. Si los tamaños están muy desequilibrados, pide al LLM
     que proponga mejores límites.
     4. Ajusta las propuestas del LLM a límites reales de frase
@@ -26,12 +27,9 @@ class LLMBoundaryDetectionChunker(BaseChunker):
         self,
         token_counter: Callable[[str], int], # función que devuelve el número de tokens de un texto
         llm: Optional[LLMClient] = None,
-        max_tokens: int = 500,
+        max_tokens: int = 512,
         overlap_tokens: int = 75,
         enable_llm_refinement: bool = True,
-        llm_timeout_sec: float = 8.0,
-        llm_max_tokens: int = 128,
-        llm_temperature: float = 0.0,
     ):
         if max_tokens <= 0:
             raise ValueError(
@@ -59,10 +57,6 @@ class LLMBoundaryDetectionChunker(BaseChunker):
         self.max_tokens = max_tokens
         self.overlap_tokens = overlap_tokens
         self.enable_llm_refinement = enable_llm_refinement
-
-        self.llm_timeout_sec = llm_timeout_sec
-        self.llm_max_tokens = llm_max_tokens
-        self.llm_temperature = llm_temperature
 
     def chunk(
         self,
@@ -190,9 +184,9 @@ class LLMBoundaryDetectionChunker(BaseChunker):
 
     def _heuristic_chunk(self, text: str) -> List[str]:
         """
-        Agrupa frases completas sin superar max_chars.
+        Agrupa frases completas sin superar max_tokens.
 
-        Si una frase individual supera max_chars,
+        Si una frase individual supera max_tokens,
         se divide mediante _split_long_unit().
         """
 
@@ -307,7 +301,7 @@ class LLMBoundaryDetectionChunker(BaseChunker):
             for chunk in chunks
         ]
 
-        small_chunk_limit = self.max_chars * 0.35
+        small_chunk_limit = self.max_tokens * 0.35
 
         small_chunks = sum(
             size < small_chunk_limit
@@ -393,10 +387,7 @@ Formato exacto:
 
         try:
             response = self.llm.complete_json(
-                prompt,
-                timeout=self.llm_timeout_sec,
-                max_tokens=self.llm_max_tokens,
-                temperature=self.llm_temperature,
+                prompt
             )
 
         except Exception:
@@ -471,7 +462,7 @@ Formato exacto:
         para evitar comenzar en mitad de una palabra.
         """
 
-        if self.overlap <= 0 or not chunks:
+        if self.overlap_tokens <= 0 or not chunks:
             return chunks
 
         output = [chunks[0]]
