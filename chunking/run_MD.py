@@ -7,6 +7,7 @@ import os
 import time
 from pathlib import Path
 from typing import Any, Dict
+import inspect
 
 import pandas as pd
 import psutil
@@ -79,7 +80,10 @@ BASE_DIR = CHUNKING_DIR.parent
 
 # Archivo JSON con la configuración de los chunkers:
 # main/configs
-CONFIG_FILE = BASE_DIR / "configs" / "chunker_config.json"
+CHUNKING_CONFIG_FILE = BASE_DIR / "configs" / "chunker_config.json"
+
+# Archivo JSON con la configuración del tokenizador:
+TOKENIZER_CONFIG_FILE = BASE_DIR / "configs" / "tokenizer_config.json"
 
 # Carpeta que contiene los scripts de análisis:
 # main/scripts
@@ -293,19 +297,22 @@ def main() -> None:
     # 3. Cargar la configuración
     # --------------------------------------------------------
 
-    config = load_config(CONFIG_FILE)
+    chunker_config = load_config(CHUNKING_CONFIG_FILE)
 
-    embedding_model_name = config["embedding_model"]["name"]
+    tokenizer_config = load_config(TOKENIZER_CONFIG_FILE)
 
-    token_counter = create_token_counter(embedding_model_name)
+    # Modelo cuyo tokenizador se utilizará de forma común para contar los tokens
+    tokenizer_model_name = tokenizer_config["tokenizer"]["model_name"]
+
+    token_counter = create_token_counter(tokenizer_model_name)
 
     # Contar los tokens de cada documento original
     for document in documents:
-        document["character_count"] = token_counter(
+        document["token_count"] = token_counter(
             document["text"]
         )
 
-    strategies = config["strategies"]
+    strategies = chunker_config["strategies"]
 
     enabled_strategies = [
         strategy
@@ -399,7 +406,23 @@ def main() -> None:
         # ----------------------------------------------------
 
         try:
-            chunker = chunker_class(**params)
+            # Copiamos los parámetros definidos para el chunker
+            chunker_params = params.copy()
+
+            # Comprobamos qué parámetros acepta su constructor
+            constructor_params = inspect.signature(
+                chunker_class.__init__
+            ).parameters
+
+            # Los chunkers que necesitan contar tokens utilizan
+            # siempre el tokenizador definido en tokenizer_config.json
+            if "token_counter" in constructor_params:
+                chunker_params["token_counter"] = token_counter
+
+            # Creamos el chunker
+            chunker = chunker_class(
+                **chunker_params
+            )
 
         except Exception as error:
             print(
@@ -539,7 +562,7 @@ def main() -> None:
                 "document_type": document["document_type"],
                 "input_file": document["file_name"],
                 "source_path": document["source_path"],
-                "embedding_model": embedding_model_name,
+                "tokenizer model": tokenizer_model_name,
                 "original_token_count": document["token_count"],
                 "number_of_chunks": len(
                     document_chunks
@@ -588,7 +611,7 @@ def main() -> None:
                 "document_type": document["document_type"],
                 "input_file": document["file_name"],
                 "source_path": document["source_path"],
-                "embedding_model": embedding_model_name,
+                "tokenizer_model": tokenizer_model_name,
                 **document_stats,
             }
 
