@@ -15,6 +15,7 @@ import psutil
 # Utilidades
 from utilities import (
     calculate_stats,
+    create_tokenizer,
     create_token_counter,
     load_config,
     save_json,
@@ -91,7 +92,7 @@ SCRIPTS_DIR = BASE_DIR / "scripts"
 
 # Carpeta que contiene los documentos Markdown de entrada
 # main/data/raw/markdown
-INPUT_DIR = BASE_DIR / "data" / "raw" / "markdown"
+INPUT_DIR = BASE_DIR / "data" / "test"
 
 # Carpeta general de salida
 OUTPUT_DIR = BASE_DIR / "output" / "chunks" / "markdown"
@@ -304,7 +305,11 @@ def main() -> None:
     # Modelo cuyo tokenizador se utilizará de forma común para contar los tokens
     tokenizer_model_name = tokenizer_config["tokenizer"]["model_name"]
 
-    token_counter = create_token_counter(tokenizer_model_name)
+    tokenizer = create_tokenizer(
+        tokenizer_model_name
+    )
+
+    token_counter = create_token_counter(tokenizer)
 
     # Contar los tokens de cada documento original
     for document in documents:
@@ -418,6 +423,9 @@ def main() -> None:
             # siempre el tokenizador definido en tokenizer_config.json
             if "token_counter" in constructor_params:
                 chunker_params["token_counter"] = token_counter
+
+            if "tokenizer" in constructor_params:
+                chunker_params["tokenizer"] = tokenizer
 
             # Creamos el chunker
             chunker = chunker_class(

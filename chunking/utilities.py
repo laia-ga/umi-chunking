@@ -127,8 +127,21 @@ def save_json(
 # FUNCIÓN PARA CREAR EL CONTADOR DE TOKENS
 # ============================================================
 
-def create_token_counter(
+def create_tokenizer(
     model_name: str,
+):
+    """
+    Carga el tokenizer del modelo indicado.
+    """
+
+    tokenizer = AutoTokenizer.from_pretrained(
+        model_name
+    )
+
+    return tokenizer
+
+def create_token_counter(
+    tokenizer,
     add_special_tokens: bool = True,
 ) -> Callable[[str], int]:
     """
@@ -144,10 +157,6 @@ def create_token_counter(
         Indica si se deben añadir tokens especiales al contar.
         Por defecto se conserva el comportamiento anterior.
     """
-
-    tokenizer = AutoTokenizer.from_pretrained(
-        model_name
-    )
 
     def count_tokens(text: str) -> int:
         if not text or not text.strip():

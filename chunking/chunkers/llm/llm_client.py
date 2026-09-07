@@ -62,7 +62,7 @@ class LLMClient:
 
     def __init__(
         self,
-        model_name: Optional[str] = "sentence-transformers/all-MiniLM-L6-v2",
+        model_name: Optional[str] = "Qwen/Qwen2.5-0.5B-Instruct",
         llm_fn: Optional[Callable[[str], str]] = None,
         max_new_tokens: int = 512,
         temperature: float = 0.1,
@@ -235,7 +235,7 @@ if __name__ == "__main__":
     # model_name = "microsoft/Phi-3-mini-4k-instruct"
     # model_name = "google/gemma-2b-it"
 
-    model_name = "sentence-transformers/all-MiniLM-L6-v2"
+    model_name = "Qwen/Qwen2.5-0.5B-Instruct"
 
     client = LLMClient(
         model_name=model_name,

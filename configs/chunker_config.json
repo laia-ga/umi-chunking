@@ -13,7 +13,7 @@
         },
         {
             "name": "fixed_token_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "FixedTokenChunker",
                 "params": {
@@ -24,7 +24,7 @@
         },
         {
             "name": "sliding_window_token_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "SlidingWindowTokenChunker",
                 "params": {
@@ -35,7 +35,7 @@
         },
         {
             "name": "overlapping_token_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "OverlappingTokenChunker",
                 "params": {
@@ -46,7 +46,7 @@
         },
         {
             "name": "sentence_based_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "SentenceBasedChunker",
                 "params": {}
@@ -54,7 +54,7 @@
         },
         {
             "name": "sentence_group_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "SentenceGroupChunker",
                 "params": {
@@ -65,7 +65,7 @@
         },
         {
             "name": "paragraph_based_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "ParagraphBasedChunker",
                 "params": {}
@@ -73,7 +73,7 @@
         },
         {
             "name": "paragraph_group_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "ParagraphGroupChunker",
                 "params": {
@@ -84,7 +84,7 @@
         },
         {
             "name": "recursive_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "RecursiveChunker",
                 "params": {
@@ -95,7 +95,7 @@
         },
         {
             "name": "recursive_token_fallback_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "RecursiveTokenChunker",
                 "params": {
@@ -106,7 +106,7 @@
         },
         {
             "name": "parent_child_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "ParentChildChunker",
                 "params": {
@@ -118,7 +118,7 @@
         },
         {
             "name": "semantic_embedding_based_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "SemanticEmbeddingChunker",
                 "params": {
@@ -129,7 +129,7 @@
         },
         {
             "name": "semantic_similarity_threshold_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "SemanticSimilarityThresholdChunker",
                 "params": {
@@ -140,7 +140,7 @@
         },
         {
             "name": "topic_based_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "TopicBasedChunker",
                 "params": {
@@ -151,7 +151,7 @@
         },
         {
             "name": "semantic_boundary_detection",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "SemanticBoundaryChunker",
                 "params": {
@@ -163,7 +163,7 @@
         },
         {
             "name": "dynamic_token_size_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "DynamicTokenSizeChunker",
                 "params": {
@@ -174,7 +174,7 @@
         },
         {
             "name": "content_density_adaptive_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "ContentDensityAdaptiveChunker",
                 "params": {
@@ -184,7 +184,7 @@
         },
         {
             "name": "semantic_variance_adaptive_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "SemanticVarianceAdaptiveChunker",
                 "params": {
@@ -196,7 +196,7 @@
         },
         {
             "name": "length_aware_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "LengthAwareChunker",
                 "params": {
@@ -207,12 +207,12 @@
         },
         {
             "name": "llm_boundary_detection_chunking",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "LLMBoundaryDetectionChunker",
                 "params": {
                     "max_tokens": 512,
-                    "overlap": 75
+                    "overlap_tokens": 75
                 }
             }
         },
@@ -223,8 +223,7 @@
                 "type": "LLMSegmentThenChunker",
                 "params": {
                     "max_tokens": 512,
-                    "overlap": 50,
-                    "llm_refine_threshold": 512
+                    "overlap_tokens": 75
                 }
             }
         }
