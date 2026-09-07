@@ -1,0 +1,18 @@
+{
+    "qdrant": {
+        "host": "localhost",
+        "port": 6333,
+        "collection_name": "json__JSONChunking__bge_m3"
+    },
+    "embeddings": {
+        "model_name": "BAAI/bge-m3",
+        "device": "cpu",
+        "normalize_embeddings": true
+    },
+    "indexing": {
+        "batch_size": 32,
+        "formats": [
+            "json"
+        ]
+    }
+}
