@@ -1,4 +1,4 @@
-from typing import List
+from typing import Callable, List
 
 import nltk
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -19,6 +19,7 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
     def __init__(
         self,
         threshold: float,
+        token_counter: Callable[[str], int],
         embedding_model: str = (
             "sentence-transformers/all-MiniLM-L6-v2"
         ),
@@ -28,9 +29,16 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
                 "threshold debe estar entre 0 y 1."
             )
 
+        if not callable(token_counter):
+            raise ValueError(
+                "token_counter debe ser una función."
+            )
+
         self.threshold = threshold
+        self.token_counter = token_counter
         self.embedding_model = embedding_model
 
+        # Modelo utilizado para calcular similitud semántica
         self.embeddings = HuggingFaceEmbeddings(
             model_name=embedding_model,
             model_kwargs={
@@ -86,6 +94,8 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
                         "threshold": self.threshold,
                         "embedding_model": self.embedding_model,
                         "sentence_count": 1,
+                        "mean_internal_similarity": None,
+                        "token_count": self.token_counter(sentence),
                         "character_count": len(sentence),
                     },
                     chunk_id=f"{doc_id}_chunk_0000",
@@ -141,6 +151,7 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
                                 if mean_similarity is not None
                                 else None
                             ),
+                            "token_count": self.token_counter(chunk_text),
                             "character_count": len(chunk_text),
                         },
                         chunk_id=(
@@ -181,6 +192,7 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
                             if mean_similarity is not None
                             else None
                         ),
+                        "token_count": self.token_counter(chunk_text),
                         "character_count": len(chunk_text),
                     },
                     chunk_id=(

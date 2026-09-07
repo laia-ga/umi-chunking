@@ -1,5 +1,5 @@
 import re
-from typing import List
+from typing import Callable, List
 
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -20,6 +20,7 @@ class SemanticEmbeddingChunker(BaseChunker):
 
     def __init__(
         self,
+        token_counter: Callable[[str], int],
         embedding_model: str = (
             "sentence-transformers/all-MiniLM-L6-v2"
         ),
@@ -30,6 +31,11 @@ class SemanticEmbeddingChunker(BaseChunker):
         if buffer_size < 0:
             raise ValueError(
                 "buffer_size no puede ser negativo."
+            )
+
+        if not callable(token_counter):
+            raise ValueError(
+                "token_counter debe ser una función."
             )
 
         valid_threshold_types = {
@@ -45,6 +51,7 @@ class SemanticEmbeddingChunker(BaseChunker):
                 f"{sorted(valid_threshold_types)}"
             )
 
+        self.token_counter = token_counter
         self.embedding_model = embedding_model
         self.breakpoint_threshold_type = (
             breakpoint_threshold_type
@@ -54,6 +61,7 @@ class SemanticEmbeddingChunker(BaseChunker):
         )
         self.buffer_size = buffer_size
 
+        # Modelo utilizado para detectar fronteras semánticas
         self.embeddings = HuggingFaceEmbeddings(
             model_name=embedding_model,
             model_kwargs={
@@ -112,6 +120,7 @@ class SemanticEmbeddingChunker(BaseChunker):
                             self.breakpoint_threshold_amount
                         ),
                         "buffer_size": self.buffer_size,
+                        "token_count": self.token_counter(text),
                         "character_count": len(text),
                         "single_sentence_document": True,
                     },
@@ -145,6 +154,7 @@ class SemanticEmbeddingChunker(BaseChunker):
                             self.breakpoint_threshold_amount
                         ),
                         "buffer_size": self.buffer_size,
+                        "token_count": self.token_counter(chunk_text),
                         "character_count": len(chunk_text),
                     },
                     chunk_id=(
