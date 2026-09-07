@@ -122,7 +122,7 @@
             "spec": {
                 "type": "SemanticEmbeddingChunker",
                 "params": {
-                    "breakpoint_threshold_amount": 80.0,
+                    "breakpoint_threshold_amount": 70.0,
                     "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
                 }
             }
@@ -133,7 +133,7 @@
             "spec": {
                 "type": "SemanticSimilarityThresholdChunker",
                 "params": {
-                    "threshold": 0.6,
+                    "threshold": 0.5,
                     "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
                 }
             }
