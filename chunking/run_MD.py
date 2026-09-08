@@ -570,7 +570,7 @@ def main() -> None:
                 "document_type": document["document_type"],
                 "input_file": document["file_name"],
                 "source_path": document["source_path"],
-                "tokenizer model": tokenizer_model_name,
+                "tokenizer_model": tokenizer_model_name,
                 "original_token_count": document["token_count"],
                 "number_of_chunks": len(
                     document_chunks

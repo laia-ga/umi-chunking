@@ -15,6 +15,7 @@ import psutil
 # Utilidades
 from utilities import (
     calculate_stats,
+    create_tokenizer,
     create_token_counter,
     load_config,
     save_json,
@@ -136,8 +137,9 @@ def main() -> None:
     target_tokens = tokenizer_cfg["tokenizer"]["target_tokens"]
     max_tokens = tokenizer_cfg["tokenizer"]["max_tokens"]
 
+    tokenizer = create_tokenizer(model_name)
     token_counter = create_token_counter(
-        model_name,
+        tokenizer,
         add_special_tokens=add_special_tokens,
     )
 
@@ -187,7 +189,11 @@ def main() -> None:
             "document_type": doc["document_type"],
             "input_file": doc["file_name"],
             "source_path": doc["source_path"],
-            "embedding_model": model_name,
+            "tokenizer_model": model_name,
+            "params": {
+                "target_tokens": target_tokens,
+                "max_tokens": max_tokens,
+            },
             "original_token_count": doc["token_count"],
             "number_of_chunks": len(chunks),
             "chunks": serialized,
@@ -214,7 +220,11 @@ def main() -> None:
             "document_type": doc["document_type"],
             "input_file": doc["file_name"],
             "source_path": doc["source_path"],
-            "embedding_model": model_name,
+            "tokenizer_model": model_name,
+            "params": {
+                "target_tokens": target_tokens,
+                "max_tokens": max_tokens,
+            },
             **stats,
         }
 
