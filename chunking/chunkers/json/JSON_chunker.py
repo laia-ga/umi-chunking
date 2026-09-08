@@ -1,3 +1,28 @@
+"""
+HierarchicalJSONChunker: Chunking jerárquico para documentos JSON clínicos.
+
+Este chunker:
+1. Recorre el documento JSON siguiendo un document plan específico
+   para cada tipología documental (paper, guideline, ficha técnica).
+2. Respeta la estructura jerárquica del documento:
+   - niveles,
+   - grupos,
+   - rutas JSON,
+   - listas indivisibles,
+   - bloques semánticos.
+3. Evita cortes peligrosos en tablas, listas clínicas y secciones críticas.
+4. Genera metadatos completos para trazabilidad:
+   - nivel,
+   - grupo,
+   - rutas JSON,
+   - límites de tokens,
+   - flags de exceso de tamaño.
+5. Produce chunks seguros y adecuados para RAG médico.
+
+Este archivo define la lógica del chunking JSON. Los document plans
+definen la estructura que se debe seguir para cada tipo documental.
+"""
+
 from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Callable
