@@ -1,4 +1,27 @@
 # ============================================================
+# CHUNKING JSON
+# ============================================================
+
+"""
+Ejecuta el chunking jerárquico para documentos JSON estructurados.
+
+Este script:
+1. Carga los documentos JSON desde data/raw/json.
+2. Detecta automáticamente la tipología documental (paper, guideline,
+   ficha técnica) según la carpeta de origen.
+3. Selecciona el document plan correspondiente.
+4. Aplica el HierarchicalJSONChunker, que:
+   - respeta la estructura del JSON,
+   - evita cortes peligrosos,
+   - genera chunks semánticos y trazables,
+   - añade metadatos como nivel, grupo, rutas JSON y límites de tokens.
+5. Guarda los chunks en output/chunks/json/chunk_results.
+6. Guarda las métricas en output/chunks/json/metrics.
+7. Genera un summary.csv con una fila por documento.
+"""
+
+
+# ============================================================
 # IMPORTS GENERALES
 # ============================================================
 
@@ -13,7 +36,7 @@ import pandas as pd
 import psutil
 
 # Utilidades
-from utilities import (
+from .utilities import (
     calculate_stats,
     create_tokenizer,
     create_token_counter,

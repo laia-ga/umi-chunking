@@ -1,4 +1,25 @@
 # ============================================================
+# CHUNKING MARKDOWN
+# ============================================================
+
+"""
+Ejecuta todas las estrategias de chunking para documentos Markdown.
+
+Este script:
+1. Carga los documentos Markdown desde data/raw/markdown.
+2. Aplica todos los chunkers disponibles (rule-based, recursivos,
+   semánticos, dinámicos y basados en LLM).
+3. Genera un archivo JSON por cada documento con:
+   - los chunks producidos,
+   - los metadatos del chunker,
+   - las estadísticas de tokens,
+   - la configuración utilizada.
+4. Guarda los resultados en output/chunks/markdown/chunk_results.
+5. Guarda las métricas en output/chunks/markdown/metrics.
+6. Genera un summary.csv con una fila por estrategia.
+"""
+
+# ============================================================
 # IMPORTS GENERALES
 # ============================================================
 
@@ -13,7 +34,7 @@ import pandas as pd
 import psutil
 
 # Utilidades
-from utilities import (
+from .utilities import (
     calculate_stats,
     create_tokenizer,
     create_token_counter,
