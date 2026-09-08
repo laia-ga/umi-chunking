@@ -91,6 +91,17 @@ def select_document_plan(document_type: str):
             f"Tipos disponibles: {available_types}"
         ) from error
 
+# INVIDISIBLE LIST PATHS
+
+INDIVISIBLE_LIST_PATHS = {
+
+    "paper": ["authors", "keywords"],
+
+    "guideline": ["toc", "references", "abbreviations", "metadata.authors"],
+
+    "ficha_tecnica": ["excipients","national_codes","national_codes_queried"],
+}
+
 # ============================================================
 # FUNCIÓN PRINCIPAL
 # ============================================================
@@ -166,7 +177,7 @@ def main() -> None:
             token_counter=token_counter,
             document_plan=plan,
             root_field=None,
-            indivisible_list_paths=None,
+            indivisible_list_paths=INDIVISIBLE_LIST_PATHS,
         )
 
         ram_before = process.memory_info().rss / (1024**2)
