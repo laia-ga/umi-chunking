@@ -12,7 +12,7 @@
     "indexing": {
         "batch_size": 32,
         "formats": [
-            "json"
+            "json", "markdown"
         ]
     }
 }
