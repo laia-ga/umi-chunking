@@ -1,0 +1,8 @@
+{
+    "retrieval": {
+        "top_k": 5,
+        "strategies": null,
+        "document_type": "ficha_tecnica",
+        "document_format": null
+    }
+}
