@@ -184,6 +184,7 @@ cython_debug/
 ##### Añadidos
 desktop.ini
 Thumbs.db
+.vscode/
 
 # Cache de Python
 __pycache__/
