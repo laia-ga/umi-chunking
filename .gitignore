@@ -181,12 +181,14 @@ cython_debug/
 .cursorindexingignore
 
 
-##### Añadidos
+# Archivos de sistema
 desktop.ini
 Thumbs.db
+
+# Configuración local de VS Code
 .vscode/
 
-# Cache de Python
+# Caché y compilados de Python
 __pycache__/
 *.py[cod]
 *$py.class
