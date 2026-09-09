@@ -1,0 +1,31 @@
+{
+  "strategy": "JSONChunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "JC",
+  "status": "completed",
+  "doc_id": "ficha_tecnica_FICHA TECNICA - JEXT 300 microgramos SOLUCION INYECTABLE EN PLUMA PRECARGADA",
+  "document_type": "ficha_tecnica",
+  "input_file": "FICHA TECNICA - JEXT 300 microgramos SOLUCION INYECTABLE EN PLUMA PRECARGADA.json",
+  "source_path": "ficha_tecnica\\FICHA TECNICA - JEXT 300 microgramos SOLUCION INYECTABLE EN PLUMA PRECARGADA.json",
+  "tokenizer_model": "BAAI/bge-m3",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192
+  },
+  "number_of_chunks": 20,
+  "empty_chunks": 0,
+  "tokens_min": 14,
+  "tokens_p25": 45.25,
+  "tokens_median": 224.5,
+  "tokens_mean": 289.2,
+  "tokens_p75": 450.25,
+  "tokens_max": 967,
+  "tokens_std": 278.24,
+  "tokens_total": 5784,
+  "tokens_original": 6311,
+  "tokens_ratio": 0.916,
+  "execution_time_seconds": 0.03293,
+  "ram_before_mb": 770.98,
+  "ram_after_mb": 771.03,
+  "ram_increase_mb": 0.05
+}

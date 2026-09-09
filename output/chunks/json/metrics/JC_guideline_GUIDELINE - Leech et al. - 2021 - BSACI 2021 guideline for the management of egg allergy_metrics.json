@@ -1,0 +1,31 @@
+{
+  "strategy": "JSONChunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "JC",
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.json",
+  "source_path": "guideline\\GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.json",
+  "tokenizer_model": "BAAI/bge-m3",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192
+  },
+  "number_of_chunks": 154,
+  "empty_chunks": 0,
+  "tokens_min": 22,
+  "tokens_p25": 42.25,
+  "tokens_median": 72.0,
+  "tokens_mean": 137.62,
+  "tokens_p75": 146.75,
+  "tokens_max": 2425,
+  "tokens_std": 250.85,
+  "tokens_total": 21194,
+  "tokens_original": 28448,
+  "tokens_ratio": 0.745,
+  "execution_time_seconds": 0.116616,
+  "ram_before_mb": 771.29,
+  "ram_after_mb": 771.33,
+  "ram_increase_mb": 0.04
+}

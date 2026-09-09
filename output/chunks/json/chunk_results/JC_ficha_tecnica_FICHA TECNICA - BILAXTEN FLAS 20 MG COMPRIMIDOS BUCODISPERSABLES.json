@@ -1,0 +1,397 @@
+{
+  "strategy": "JSONChunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "JC",
+  "doc_id": "ficha_tecnica_FICHA TECNICA - BILAXTEN FLAS 20 MG COMPRIMIDOS BUCODISPERSABLES",
+  "document_type": "ficha_tecnica",
+  "input_file": "FICHA TECNICA - BILAXTEN FLAS 20 MG COMPRIMIDOS BUCODISPERSABLES.json",
+  "source_path": "ficha_tecnica\\FICHA TECNICA - BILAXTEN FLAS 20 MG COMPRIMIDOS BUCODISPERSABLES.json",
+  "tokenizer_model": "BAAI/bge-m3",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192
+  },
+  "original_token_count": 11161,
+  "number_of_chunks": 17,
+  "chunks": [
+    {
+      "text": "Medicine name: Bilaxten Flas 20 mg comprimidos bucodispersables\n\nPharmaceutical form: Comprimido bucodispersable. Comprimidos blancos, redondos, planos, grabados con “20” en una cara y de 8 mm de diámetro.\n\nComposition: Cada comprimido bucodispersable contiene 20 mg de bilastina. Excipiente con efecto conocido: cada comprimido bucodispersable contiene 0,0030 mg de etanol. Para consultar la lista completa de excipientes, ver sección 6.1.\n\nIndications:\n  - Tratamiento sintomático de la rinoconjuntivitis alérgica (estacional y perenne) y de la urticaria. Bilaxten Flas 20 mg comprimidos bucodispersables está indicado en adultos y adolescentes (edad igual o superior a 12 años).",
+      "block": "document",
+      "group_name": "identification",
+      "level": 1,
+      "json_paths": [
+        "document.medicine_name",
+        "document.pharmaceutical_form",
+        "document.composition",
+        "document.indications"
+      ],
+      "token_count": 186,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "medicine_name",
+          "pharmaceutical_form",
+          "composition",
+          "indications"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Posology: Posología y forma de administración\n\nPosología\n\nAdultos y adolescentes (edad igual o superior a 12 años). 20 mg de bilastina una vez al día para el alivio de los síntomas de la rinoconjuntivitis alérgica (rinitis estacional y perenne) y de la urticaria. El comprimido debe administrarse una hora antes o dos horas después de la ingesta de alimentos o de zumos de frutas (ver sección 4.5). Duración del tratamiento: Para rinoconjuntivitis alérgica el tratamiento debe limitarse al periodo de exposición a los alérgenos. Para rinitis alérgica estacional el tratamiento puede interrumpirse cuando se hayan resuelto los síntomas y reiniciarse en caso de que estos reaparezcan. En rinitis alérgica perenne se puede proponer al paciente el tratamiento continuado durante los periodos de exposición a los alérgenos. Para urticaria la duración del tratamiento depende del tipo, duración y evolución de los síntomas. Poblaciones especiales Pacientes de edad avanzada No se requiere ajuste de dosis en pacientes de edad avanzada (ver secciones 5.1 y 5.2). Insuficiencia renal Los estudios realizados en grupos de adultos con un riesgo especial (pacientes con insuficiencia renal) indican que no se requiere ajustar la dosis de bilastina en adultos (ver sección 5.2). Insuficiencia hepática No hay experiencia clínica en pacientes adultos con insuficiencia hepática. Sin embargo, dado que bilastina no se metaboliza y se elimina inalterada en orina y heces, no se espera que la insuficiencia hepática aumente la exposición sistémica por encima del margen de seguridad en pacientes adultos. Por ello, no se requiere ajustar la dosis en pacientes adultos con insuficiencia hepática (ver sección 5.2). Población pediátrica Niños de 2 a 11 años de edad con un peso corporal mínimo de 15 kg Bilastina 10 mg comprimidos bucodispersables y bilastina 2,5 mg/ml solución oral son apropiados para administrar a esta población. No se ha establecido todavía la seguridad y eficacia de bilastina en niños con insuficiencia renal o hepática. Forma de administración Vía oral El comprimido bucodispersable se debe colocar en la boca donde se disuelve rápidamente en la saliva, por lo que se puede tragar fácilmente. Alternativamente, el comprimido bucodispersable se puede dispersar en agua antes de la administración. No se debe utilizar zumo de pomelo o cualquier otro zumo de fruta para la dispersión (ver sección 4.5)\n\nAdultos y adolescentes (edad igual o superior a 12 años). 20 mg de bilastina una vez al día para el alivio de los síntomas de la rinoconjuntivitis alérgica (rinitis estacional y perenne) y de la urticaria. El comprimido debe administrarse una hora antes o dos horas después de la ingesta de alimentos o de zumos de frutas (ver sección 4.5). Duración del tratamiento: Para rinoconjuntivitis alérgica el tratamiento debe limitarse al periodo de exposición a los alérgenos. Para rinitis alérgica estacional el tratamiento puede interrumpirse cuando se hayan resuelto los síntomas y reiniciarse en caso de que estos reaparezcan. En rinitis alérgica perenne se puede proponer al paciente el tratamiento continuado durante los periodos de exposición a los alérgenos. Para urticaria la duración del tratamiento depende del tipo, duración y evolución de los síntomas. Poblaciones especiales Pacientes de edad avanzada No se requiere ajuste de dosis en pacientes de edad avanzada (ver secciones 5.1 y 5.2). Insuficiencia renal Los estudios realizados en grupos de adultos con un riesgo especial (pacientes con insuficiencia renal) indican que no se requiere ajustar la dosis de bilastina en adultos (ver sección 5.2). Insuficiencia hepática No hay experiencia clínica en pacientes adultos con insuficiencia hepática. Sin embargo, dado que bilastina no se metaboliza y se elimina inalterada en orina y heces, no se espera que la insuficiencia hepática aumente la exposición sistémica por encima del margen de seguridad en pacientes adultos. Por ello, no se requiere ajustar la dosis en pacientes adultos con insuficiencia hepática (ver sección 5.2). Población pediátrica Niños de 2 a 11 años de edad con un peso corporal mínimo de 15 kg Bilastina 10 mg comprimidos bucodispersables y bilastina 2,5 mg/ml solución oral son apropiados para administrar a esta población. No se ha establecido todavía la seguridad y eficacia de bilastina en niños con insuficiencia renal o hepática. Forma de administración Vía oral El comprimido bucodispersable se debe colocar en la boca donde se disuelve rápidamente en la saliva, por lo que se puede tragar fácilmente. Alternativamente, el comprimido bucodispersable se puede dispersar en agua antes de la administración. No se debe utilizar zumo de pomelo o cualquier otro zumo de fruta para la dispersión (ver sección 4.5)",
+      "block": "document",
+      "group_name": "posology",
+      "level": 1,
+      "json_paths": [
+        "document.posology"
+      ],
+      "token_count": 1093,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "posology"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Contraindications:\n  - Hipersensibilidad al principio activo o a alguno de los excipientes incluidos en la sección 6.1.",
+      "block": "document",
+      "group_name": "contraindications",
+      "level": 1,
+      "json_paths": [
+        "document.contraindications"
+      ],
+      "token_count": 29,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "contraindications"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Warnings and precautions: Población pediátrica La eficacia y seguridad de bilastina en niños menores de 2 años de edad y con un peso corporal de menos de 15 kg no han sido establecidas por lo que bilastina no se debería utilizar en niños menores de 2 años de edad o con un peso corporal de menos de 15 kg. En pacientes con insuficiencia renal moderada o severa, la administración concomitante de bilastina con inhibidores de la P-glicoproteína, tales como p.ej., ketoconazol, eritromicina, ciclosporina, ritonavir o diltiazem, puede aumentar los niveles plasmáticos de bilastina y por tanto aumentar el riesgo de efectos adversos de bilastina. Por ello, la administración concomitante de bilastina e inhibidores de la P-glicoproteína debe evitarse en pacientes con insuficiencia renal moderada o severa. Se han notificado casos de prolongación del intervalo QT en el electrocardiograma en pacientes que toman bilastina (ver secciones 4.8, 4.9 y 5.1). Se sospecha que los medicamentos que causan prolongación del intervalo QT/QTc aumentan el riesgo de Torsade de pointes. Por lo tanto, se recomienda precaución al administrar bilastina a pacientes que tienen un mayor riesgo de sufrir una prolongación del intervalo QT/QTc. Esto incluye a pacientes con antecedentes de arritmias cardíacas; pacientes con hipopotasemia, hipomagnesemia, hipocalcemia; pacientes con prolongación conocida del intervalo QT o bradicardia significativa; pacientes con administración concomitante de otros medicamentos asociados con la prolongación del intervalo QT/QTc. Excipientes Este medicamento contiene menos de 1 mmol de sodio (23 mg) por comprimido bucodispersable; esto es, esencialmente “exento de sodio”. Este medicamento contiene 0,0030 mg de alcohol (etanol) en cada comprimido bucodispersable que equivale a 1,6 mg/100 g (0,0016 % p/p). La cantidad en un comprimido bucodispersable de 185 mg es equivalente a menos de 1 ml de cerveza o 1 ml de vino. La pequeña cantidad de alcohol que contiene este medicamento no produce ningún efecto perceptible.",
+      "block": "document",
+      "group_name": "warnings_and_precautions",
+      "level": 1,
+      "json_paths": [
+        "document.warnings_and_precautions"
+      ],
+      "token_count": 502,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "warnings_and_precautions"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Interactions: Los estudios de interacciones se han realizado sólo en adultos y se resumen a continuación. Interacción con alimentos: Los alimentos reducen significativamente la biodisponibilidad oral de bilastina en un 30 %. Interacción con zumo de pomelo: La administración concomitante de bilastina 20 mg y zumo de pomelo disminuyó la biodisponibilidad de bilastina en un 30 %. Este efecto puede ocurrir también con otros zumos de frutas. El grado de reducción en la biodisponibilidad puede variar entre fabricantes y frutos. El mecanismo responsable de esta interacción es la inhibición del OATP1A2, un transportador de captación, del cual bilastina es sustrato (ver sección 5.2). Los medicamentos que sean sustratos o inhibidores de OATP1A2, tales como ritonavir o rifampicina, podrían igualmente reducir las concentraciones plasmáticas de bilastina. Interacción con ketoconazol o eritromicina: La administración concomitante de bilastina 20 mg una vez al día y ketoconazol 400 mg una vez al día o eritromicina 500 mg 3 veces al día aumentó el AUC de bilastina en 2 veces y la Cmax en 2-3 veces. Estos cambios se pueden explicar debido a la interacción con transportadores intestinales de excreción, ya que bilastina es sustrato de la P-gp y no es metabolizada (ver sección 5.2). Estos cambios no parecen afectar al perfil de seguridad de bilastina y ketoconazol o eritromicina, respectivamente. Otros medicamentos que sean sustratos o inhibidores de la P-gp, tal como ciclosporina, podrían igualmente aumentar las concentraciones plasmáticas de bilastina. Interacción con diltiazem: La administración concomitante de bilastina 20 mg una vez al día y diltiazem 60 mg una vez al día aumentó la Cmax de bilastina un 50 %. Este efecto se puede explicar por la interacción con transportadores intestinales de excreción (ver sección 5.2) y no parece afectar al perfil de seguridad de bilastina. Interacción con alcohol: El rendimiento psicomotor tras la administración concomitante de alcohol y 20 mg de bilastina una vez al día fue similar al observado tras la administración de alcohol y placebo. Interacción con lorazepam: La administración concomitante de bilastina 20 mg una vez al día y lorazepam 3 mg una vez al día durante 8 días no potenció los efectos depresores del SNC de lorazepam. Población pediátrica Los ensayos de interacciones se han realizado sólo en adultos. Dado que no hay experiencia clínica sobre la interacción de bilastina con otros medicamentos, alimentos o zumos de frutas en niños, actualmente se deben considerar los resultados obtenidos en los estudios de interacciones con adultos cuando se prescriba bilastina pediátrica. No existen datos clínicos en niños para asegurar que los cambios en la AUC o Cmax debidos a interacciones afectan al perfil de seguridad de bilastina.",
+      "block": "document",
+      "group_name": "interactions",
+      "level": 1,
+      "json_paths": [
+        "document.interactions"
+      ],
+      "token_count": 674,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "interactions"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Pregnancy and lactation: Embarazo No hay datos o estos son limitados relativos al uso de bilastina en mujeres embarazadas. Los estudios realizados en animales han mostrado toxicidad para la reproducción pero estos efectos solo se observaron con exposiciones consideradas superiores a la máxima humana, lo que indica poca relevancia para el uso clínico (ver sección 5.3). Como medida de precaución, es preferible evitar el uso de este medicamento durante el embarazo. Lactancia La excreción de bilastina en la leche no ha sido estudiada en humanos. Los datos farmacocinéticos disponibles en animales muestran que bilastina se excreta en la leche (ver sección 5.3). Se debe decidir si continuar/discontinuar la lactancia o interrumpir/abstenerse del tratamiento con bilastina tras considerar el beneficio de la lactancia para el niño y el beneficio del tratamiento con bilastina para la mujer. Fertilidad No hay datos clínicos o éstos son limitados. En un estudio en ratas no se detectó ningún efecto negativo sobre la fertilidad (ver sección 5.3).",
+      "block": "document",
+      "group_name": "pregnancy_and_lactation",
+      "level": 1,
+      "json_paths": [
+        "document.pregnancy_and_lactation"
+      ],
+      "token_count": 235,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "pregnancy_and_lactation"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Effects on driving: Un estudio realizado en adultos para evaluar los efectos de bilastina sobre la capacidad para conducir, demostró que el tratamiento con 20 mg de bilastina no afectó al rendimiento durante la conducción. No obstante, dado que puede variar la respuesta individual al medicamento, se recomienda a los pacientes no conducir o utilizar máquinas hasta que hayan establecido su propia respuesta a bilastina.",
+      "block": "document",
+      "group_name": "effects_on_driving",
+      "level": 1,
+      "json_paths": [
+        "document.effects_on_driving"
+      ],
+      "token_count": 85,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "effects_on_driving"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Adverse reactions: Resumen del perfil de seguridad en pacientes adultos y adolescentes La incidencia de acontecimientos adversos en pacientes adultos y adolescentes afectados de rinoconjuntivitis alérgica o urticaria crónica idiopática tratados con bilastina 20 mg en los estudios clínicos fue comparable a la incidencia en pacientes que recibieron placebo (12,7% frente a 12,8%). Los ensayos clínicos de fase II y III realizados durante el desarrollo clínico incluyeron 2.525 pacientes adultos y adolescentes tratados con diferentes dosis de bilastina, de los cuales, 1.697 recibieron 20 mg de bilastina. En estos ensayos 1.362 pacientes recibieron placebo. Las reacciones adversas notificadas más frecuentemente por los pacientes tratados con bilastina 20 mg para la indicación de rinoconjuntivitis alérgica o urticaria crónica idiopática fueron cefalea, somnolencia, mareo y fatiga. Estos acontecimientos adversos ocurrieron con una frecuencia similar en los pacientes que recibieron placebo. Resumen tabulado de reacciones adversas en pacientes adultos y adolescentes La siguiente tabla muestra las reacciones adversas al menos posiblemente relacionadas con bilastina y notificadas en más del 0,1% de los pacientes tratados con bilastina 20 mg durante el desarrollo clínico (N = 1.697). Las frecuencias se han clasificado de la siguiente forma: Muy frecuentes (≥1/10) Frecuentes (≥1/100 a <1/10) Poco frecuentes (≥1/1.000 a <1/100) Raras (≥1/10.000 a <1/1.000) Muy raras (<1/10.000) Frecuencia no conocida (no puede estimarse a partir de los datos disponibles) Las reacciones adversas raras, muy raras y de frecuencia no conocida no se han incluido en la tabla. Clasificación por órganos y sistemas Bilastina 20 mg N=1697 Bilastina cualquier dosis N=2525 Placebo N=1362 Frecuencia Reacción adversa Infecciones e infestaciones Poco frecuente Herpes labial 2 (0,12%) 2 (0,08%) 0 (0,0%) Trastornos del metabolismo y de la nutrición Poco frecuente Aumento del apetito 10 (0,59%) 11 (0,44%) 7 (0,51%) Trastornos psiquiátricos Poco frecuente Ansiedad 6 (0,35%) 8 (0,32%) 0 (0,0%) Insomnio 2 (0,12%) 4 (0,16%) 0 (0,0%) Trastornos del sistema nervioso Frecuente Somnolencia 52 (3,06%) 82 (3,25%) 39 (2,86%) Cefalea 68 (4,01%) 90 (3,56%) 46 (3,38%) Poco frecuente Mareo 14 (0,83%) 23 (0,91%) 8 (0,59%) Trastornos del oído y del laberinto Poco frecuente Tinnitus 2 (0,12%) 2 (0,08%) 0 (0,0%) Vértigo 3 (0,18%) 3 (0,12%) 0 (0,0%) Trastornos cardiacos Poco frecuente Bloqueo de rama derecha 4 (0,24%) 5 (0,20%) 3 (0,22%) Arritmia sinusal 5 (0,30%) 5 (0,20%) 1 (0,07%) Intervalo QT del electrocardiograma prolongado* 9 (0,53%) 10 (0,40%) 5 (0,37%) Otras anomalías del ECG 7 (0,41%) 11 (0,44%) 2 (0,15%) Trastornos respiratorios, torácicos y mediastínicos Poco frecuente Disnea 2 (0,12%) 2 (0,08%) 0 (0,0%) Molestias nasales 2 (0,12%) 2 (0,08%) 0 (0,0%) Sequedad nasal 3 (0,18%) 6 (0,24%) 4 (0,29%) Trastornos gastrointestinales Poco frecuente Dolor abdominal superior 11 (0,65%) 14 (0,55%) 6 (0,44%) Dolor abdominal 5 (0,30%) 5 (0,20%) 4 (0,29%) Náusea 7 (0,41%) 10 (0,40%) 14 (1,03%) Molestias gástricas 3 (0,18%) 4 (0,16%) 0 (0,0%) Diarrea 4 (0,24%) 6 (0,24%) 3 (0,22%) Sequedad bucal 2 (0,12%) 6 (0,24%) 5 (0,37%) Dispepsia 2 (0,12%) 4 (0,16%) 4 (0,29%) Gastritis 4 (0,24%) 4 (0,16%) 0 (0,0%) Trastornos de la piel y del tejido subcutáneo Poco frecuente Prurito 2 (0,12%) 4 (0,16%) 2 (0,15%) Trastornos generales y alteraciones en el lugar de administración Poco frecuente Fatiga 14 (0,83%) 19 (0,75%) 18 (1,32%) Sed 3 (0,18%) 4 (0,16%) 1 (0,07%) Mejoría de una condición preexistente 2 (0,12%) 2 (0,08%) 1 (0,07%) Pirexia 2 (0,12%) 3 (0,12%) 1 (0,07%) Astenia 3 (0,18%) 4 (0,16%) 5 (0,37%) Exploraciones complementarias Poco frecuente Aumento de gamma-glutamiltransferasa 7 (0,41%) 8 (0,32%) 2 (0,15%) Aumento de alanina aminotransferasa 5 (0,30%) 5 (0,20%) 3 (0,22%) Aumento de aspartato aminotransferasa 3 (0,18%) 3 (0,12%) 3 (0,22%) Aumento de creatinina plasmática 2 (0,12%) 2 (0,08%) 0 (0,0%) Aumento de triglicéridos plasmáticos 2 (0,12%) 2 (0,08%) 3 (0,22%) Aumento de peso 8 (0,47%) 12 (0,48%) 2 (0,15%) *También se han notificado prolongaciones del intervalo QT en el electrocardiograma después de la comercialización. Frecuencia no conocida (no puede estimarse a partir de los datos disponibles): se han observado palpitaciones, taquicardia, reacciones de hipersensibilidad (como anafilaxia, angioedema, disnea, erupción cutánea, edema localizado/hinchazón local y eritema) y vómitos durante el período de post-comercialización. Descripción de las reacciones adversas relevantes en pacientes adultos y adolescentes Se observaron somnolencia, cefalea, mareo y fatiga tanto en pacientes tratados con 20 mg de bilastina o con placebo. Las frecuencias notificadas para bilastina vs. placebo fueron: 3,06% vs. 2,86% para somnolencia; 4,01% vs. 3,38% para cefalea; 0,83% vs. 0,59 para mareo; y 0,83% vs. 1,32 para fatiga. La información recogida durante la post-comercialización ha confirmado el perfil de seguridad observado durante el desarrollo clínico. Resumen del perfil de seguridad en población pediátrica Durante el desarrollo clínico, la frecuencia, el tipo e intensidad de las reacciones adversas en adolescentes (de 12 a 17 años) fueron las mismas que las observadas en adultos. La información recogida en esta población (adolescentes) durante la post-comercialización ha confirmado los resultados de los ensayos clínicos. En un ensayo clínico controlado de 12 semanas, el porcentaje de niños (2-11 años) que notificaron acontecimientos adversos (AAs) después del tratamiento con bilastina 10 mg para rinoconjuntivitis alérgica o urticaria idiopática crónica fue comparable con los pacientes que recibieron placebo (68,5% versus 67,5 %). Los AAs relacionados notificados más frecuentemente por 328 niños (2-11 años) que recibieron bilastina (en la forma farmacéutica de comprimidos bucodispersables) durante los ensayos clínicos (#260 niños expuestos en el estudio clínico de seguridad, 68 niños expuestos en los estudios farmacocinéticos) fueron dolor de cabeza, conjuntivitis alérgica, rinitis y dolor abdominal. Estos acontecimientos adversos relacionados ocurrieron con una frecuencia comparable en 249 pacientes que recibieron placebo. Resumen tabulado de reacciones adversas en la población pediátrica La siguiente tabla muestra los acontecimientos adversos al menos posiblemente relacionados con bilastina y notificados en más del 0,1% de los niños (2-11 años) tratados con bilastina durante el desarrollo clínico. Las frecuencias se han clasificado de la siguiente forma: Muy frecuentes (≥ 1/10) Frecuentes (≥ 1/100 a < 1/10) Poco frecuentes (≥ 1/1.000 a < 1/100) Raras (≥ 1/10.000 a < 1/1.000) Muy raras (< 1/10.000) Frecuencia no conocida (no puede estimarse a partir de los datos disponibles) Las reacciones adversas raras, muy raras y de frecuencia no conocida no se han incluido en la tabla. Clasificación por órganos y sistemas Bilastina 10 mg (n = 328)# Placebo (n = 249) Frecuencia Reacción Adversa Infecciones e infestaciones Poco Frecuente Rinitis 3 (0,9%) 3 (1,2%) Trastornos del sistema nervioso Frecuente Cefalea 6 (1,8%) 3 (1,2%) Poco frecuente Mareo 1 (0,3%) 0 (0,0%) Pérdida de conciencia 1 (0,3%) 0 (0,0%) Trastornos oculares Frecuente Conjuntivitis alérgica 4 (1,2%) 5 (2,0%) Poco frecuente Irritación ocular 1 (0,3%) 0 (0,0%) Trastornos gastrointestinales Poco frecuente Dolor abdominal / Dolor abdominal superior 3 (0,9%) 3 (1,2%) Diarrea 2 (0,6%) 0 (0,0%) Náuseas 1 (0,3%) 0 (0,0%) Hinchazón de los labios 1 (0,3%) 0 (0,0%) Trastornos de la piel y del tejido subcutáneo Poco frecuente Eczema 1 (0,3%) 0 (0,0%) Urticaria 2 (0,6%) 2 (0,8%) Trastornos generales y alteraciones en el lugar de administración Poco frecuente Fatiga 3 (0,9%) 0 (0,0%) #260 niños expuestos en el estudio clínico de seguridad, 68 niños expuestos en los estudios farmacocinéticos. Descripción de las reacciones adversas relevantes en la población pediátrica Se observaron cefalea, dolor abdominal, conjuntivitis alérgica y rinitis tanto en niños tratados con 10 mg de bilastina como con placebo. Las frecuencias notificadas para bilastina vs. placebo fueron: 1,8% vs. 1,2% para cefalea; 0,9% vs. 1,2% para dolor abdominal; 1,2% vs. 2,0% para conjuntivitis alérgica; y 0,9% vs. 1,2% para rinitis. Notificación de sospechas de reacciones adversas Es importante notificar sospechas de reacciones adversas al medicamento tras su autorización. Ello permite una supervisión continuada de la relación beneficio/riesgo del medicamento. Se invita a los profesionales sanitarios a notificar las sospechas de reacciones adversas a través del Sistema Español de Farmacovigilancia de Medicamentos de Uso Humano: www.notificaRAM.es",
+      "block": "document",
+      "group_name": "adverse_reactions",
+      "level": 1,
+      "json_paths": [
+        "document.adverse_reactions[0]"
+      ],
+      "token_count": 2445,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "adverse_reactions"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Overdose: La información relacionada con sobredosis aguda de bilastina se recoge de la experiencia de los ensayos clínicos realizados durante el desarrollo en adultos y la vigilancia post-comercialización. En los ensayos clínicos, tras la administración de bilastina a dosis de 10 a 11 veces la dosis terapéutica (220 mg como dosis única o 200 mg/día durante 7 días) a 26 voluntarios adultos sanos, la frecuencia de acontecimientos adversos tras el tratamiento fue dos veces superior a la observada tras la administración de placebo. Las reacciones adversas más frecuentemente notificadas fueron mareo, cefalea y náusea. No se notificaron acontecimientos adversos graves ni prolongaciones significativas del intervalo QTc. La información recogida durante la postcomercialización coincide con la información obtenida en los ensayos clínicos. La evaluación crítica del efecto de dosis múltiples de bilastina (100 mg durante 4 días) sobre la repolarización ventricular en un estudio cruzado de “thorough QT/QTc” realizado con 30 voluntarios adultos sanos no mostró ninguna prolongación significativa del intervalo QTc. No hay datos de sobredosis en niños. En caso de producirse una sobredosis se recomienda tratamiento sintomático y de soporte. No se conoce ningún antídoto específico para bilastina",
+      "block": "document",
+      "group_name": "overdose",
+      "level": 1,
+      "json_paths": [
+        "document.overdose"
+      ],
+      "token_count": 288,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "overdose"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Pharmacodynamics: Propiedades farmacodinámicas\n\nGrupo farmacoterapéutico: Antihistamínicos de uso sistémico, otros antihistamínicos de uso sistémico. Código ATC: R06AX29.\n\nMecanismo de acción\n\nBilastina es un antihistamínico no sedante y de acción prolongada, con afinidad antagonista selectiva por los receptores H1 periféricos y sin afinidad por los receptores muscarínicos. Tras la administración de una dosis única bilastina inhibió durante 24 horas las reacciones cutáneas de habón y eritema inducidas por histamina. \n\nEficacia clínica y seguridad\n\nLos estudios de eficacia y seguridad se realizaron con la formulación en comprimidos, a la que se ha demostrado que bilastina 20 mg comprimidos bucodispersables es bioequivalente. En ensayos clínicos realizados en pacientes adultos y adolescentes con rinoconjuntivitis alérgica (estacional y perenne), bilastina administrada en una única dosis diaria de 20 mg durante 14-28 días fue eficaz para aliviar los síntomas, tales como estornudos, rinorrea, picor nasal, congestión nasal, picor ocular, lagrimeo y enrojecimiento ocular. Bilastina controló los síntomas de forma eficaz durante 24 horas. En dos ensayos clínicos realizados en pacientes con urticaria crónica idiopática, bilastina administrada en una única dosis diaria de 20 mg durante 28 días fue eficaz para aliviar la intensidad del prurito y el número y tamaño de los habones, así como el malestar de los pacientes derivado de la urticaria. Los pacientes obtuvieron una mejoría en la calidad del sueño y en la calidad de vida. En los ensayos clínicos realizados con bilastina no se observó ninguna prolongación del intervalo QTc ni ningún otro efecto cardiovascular clínicamente relevantes, incluso a dosis hasta 200 mg diarios (10 veces la dosis terapéutica) durante 7 días en 9 sujetos o incluso cuando se administraron de forma concomitante inhibidores de P-gp, tales como ketoconazol (24 sujetos) y eritromicina (24 sujetos). Además, se ha llevado a cabo un estudio “thorough QT” en 30 voluntarios. En los ensayos clínicos controlados realizados con la dosis recomendada, 20 mg una vez al día, el perfil de seguridad de bilastina sobre el SNC fue similar al placebo y la incidencia de somnolencia no fue estadísticamente diferente a placebo. Bilastina a dosis hasta 40 mg cada día no afectó al rendimiento psicomotor en los ensayos clínicos y no afectó a la capacidad de conducción en un estudio estándar de conducción. La eficacia y seguridad de bilastina en los pacientes de edad avanzada (≥ 65 años) incluidos en los estudios de fase II y III no mostraron diferencias con respecto a pacientes más jóvenes. Un estudio post autorización con 146 pacientes de edad avanzada no mostró diferencias en el perfil de seguridad con respecto a la población adulta. \n\nPoblación pediátrica\n\nEn el desarrollo clínico se incluyeron adolescentes (de 12 a 17 años). Durante los ensayos clínicos 128 adolescentes recibieron bilastina (81 en ensayos doble ciego de rinoconjuntivitis alérgica). Otros 116 adolescentes fueron asignados al azar a comparadores activos o placebo. No se observaron diferencias en eficacia ni en seguridad entre adultos y adolescentes. De acuerdo a las directrices, la eficacia probada en adultos y adolescentes se puede extrapolar a niños, habiéndose demostrado que la exposición sistémica de 10 mg de bilastina en niños de 2 a 11 años de edad con un peso corporal mínimo de 15 kg es equivalente a la exposición de 20 mg de bilastina en adultos (ver sección 5.2). La extrapolación de datos de adultos y adolescentes se considera apropiada para este medicamento dado que la fisiopatología de la rinoconjuntivitis alérgica y la urticaria es la misma para todos los grupos de edad. En un ensayo clínico controlado de 12 semanas con niños de 2 a 11 años de edad (509 niños en total, 260 tratados con 10 mg de bilastina: 58 de 2 a <6 años de edad, 105 de 6 a <9 años de edad y 97 de 9 a <12 años de edad; y 249 tratados con placebo: 58 de 2 a <6 años de edad, 95 de 6 a <9 años de edad y 96 de 9 a <12 años de edad), a la dosis pediátrica recomendada de 10 mg una vez al día, el perfil de seguridad de bilastina (n = 260) fue similar a placebo (n = 249), con reacciones adversas a medicamentos observados en 5,8% y 8,0% de los pacientes que tomaron 10 mg de bilastina y placebo, respectivamente. Durante este estudio, ambos grupos, bilastina 10 mg y placebo, mostraron una ligera disminución en las puntuaciones de somnolencia y sedación en el Cuestionario de Sueño Pediátrico, sin diferencias estadísticamente significativas entre los grupos de tratamiento. En estos niños de 2-11 años de edad no se detectaron diferencias significativas en QTc tras la administración de 10 mg de bilastina diaria en comparación con placebo. Los cuestionarios de Calidad de Vida específicos para niños con rinoconjuntivitis alérgica o urticaria crónica mostraron un incremento general en las puntuaciones tras 12 semanas sin diferencia estadísticamente significativa entre los grupos de bilastina y placebo. La población total de 509 niños incluyó: 479 sujetos con rinoconjuntivitis alérgica y 30 sujetos diagnosticados de urticaria crónica. 260 niños recibieron bilastina, 252 (96,9%) para rinoconjuntivitis alérgica y 8 (3,1%) para la urticaria crónica. Por analogía, 249 niños recibieron placebo, 227 (91,2%) para rinoconjuntivitis alérgica y 22 (8,8%) para la urticaria crónica. La Agencia Europea de Medicamentos ha eximido de la obligación de presentar los resultados de los ensayos realizados con bilastina en todos los grupos de la población pediátrica menores de 2 años de edad (ver sección 4.2 para consultar la información sobre el uso en la población pediátrica).\n\nBilastina es un antihistamínico no sedante y de acción prolongada, con afinidad antagonista selectiva por los receptores H1 periféricos y sin afinidad por los receptores muscarínicos. Tras la administración de una dosis única bilastina inhibió durante 24 horas las reacciones cutáneas de habón y eritema inducidas por histamina.\n\nLos estudios de eficacia y seguridad se realizaron con la formulación en comprimidos, a la que se ha demostrado que bilastina 20 mg comprimidos bucodispersables es bioequivalente. En ensayos clínicos realizados en pacientes adultos y adolescentes con rinoconjuntivitis alérgica (estacional y perenne), bilastina administrada en una única dosis diaria de 20 mg durante 14-28 días fue eficaz para aliviar los síntomas, tales como estornudos, rinorrea, picor nasal, congestión nasal, picor ocular, lagrimeo y enrojecimiento ocular. Bilastina controló los síntomas de forma eficaz durante 24 horas. En dos ensayos clínicos realizados en pacientes con urticaria crónica idiopática, bilastina administrada en una única dosis diaria de 20 mg durante 28 días fue eficaz para aliviar la intensidad del prurito y el número y tamaño de los habones, así como el malestar de los pacientes derivado de la urticaria. Los pacientes obtuvieron una mejoría en la calidad del sueño y en la calidad de vida. En los ensayos clínicos realizados con bilastina no se observó ninguna prolongación del intervalo QTc ni ningún otro efecto cardiovascular clínicamente relevantes, incluso a dosis hasta 200 mg diarios (10 veces la dosis terapéutica) durante 7 días en 9 sujetos o incluso cuando se administraron de forma concomitante inhibidores de P-gp, tales como ketoconazol (24 sujetos) y eritromicina (24 sujetos). Además, se ha llevado a cabo un estudio “thorough QT” en 30 voluntarios. En los ensayos clínicos controlados realizados con la dosis recomendada, 20 mg una vez al día, el perfil de seguridad de bilastina sobre el SNC fue similar al placebo y la incidencia de somnolencia no fue estadísticamente diferente a placebo. Bilastina a dosis hasta 40 mg cada día no afectó al rendimiento psicomotor en los ensayos clínicos y no afectó a la capacidad de conducción en un estudio estándar de conducción. La eficacia y seguridad de bilastina en los pacientes de edad avanzada (≥ 65 años) incluidos en los estudios de fase II y III no mostraron diferencias con respecto a pacientes más jóvenes. Un estudio post autorización con 146 pacientes de edad avanzada no mostró diferencias en el perfil de seguridad con respecto a la población adulta.\n\nEn el desarrollo clínico se incluyeron adolescentes (de 12 a 17 años). Durante los ensayos clínicos 128 adolescentes recibieron bilastina (81 en ensayos doble ciego de rinoconjuntivitis alérgica). Otros 116 adolescentes fueron asignados al azar a comparadores activos o placebo. No se observaron diferencias en eficacia ni en seguridad entre adultos y adolescentes. De acuerdo a las directrices, la eficacia probada en adultos y adolescentes se puede extrapolar a niños, habiéndose demostrado que la exposición sistémica de 10 mg de bilastina en niños de 2 a 11 años de edad con un peso corporal mínimo de 15 kg es equivalente a la exposición de 20 mg de bilastina en adultos (ver sección 5.2). La extrapolación de datos de adultos y adolescentes se considera apropiada para este medicamento dado que la fisiopatología de la rinoconjuntivitis alérgica y la urticaria es la misma para todos los grupos de edad. En un ensayo clínico controlado de 12 semanas con niños de 2 a 11 años de edad (509 niños en total, 260 tratados con 10 mg de bilastina: 58 de 2 a <6 años de edad, 105 de 6 a <9 años de edad y 97 de 9 a <12 años de edad; y 249 tratados con placebo: 58 de 2 a <6 años de edad, 95 de 6 a <9 años de edad y 96 de 9 a <12 años de edad), a la dosis pediátrica recomendada de 10 mg una vez al día, el perfil de seguridad de bilastina (n = 260) fue similar a placebo (n = 249), con reacciones adversas a medicamentos observados en 5,8% y 8,0% de los pacientes que tomaron 10 mg de bilastina y placebo, respectivamente. Durante este estudio, ambos grupos, bilastina 10 mg y placebo, mostraron una ligera disminución en las puntuaciones de somnolencia y sedación en el Cuestionario de Sueño Pediátrico, sin diferencias estadísticamente significativas entre los grupos de tratamiento. En estos niños de 2-11 años de edad no se detectaron diferencias significativas en QTc tras la administración de 10 mg de bilastina diaria en comparación con placebo. Los cuestionarios de Calidad de Vida específicos para niños con rinoconjuntivitis alérgica o urticaria crónica mostraron un incremento general en las puntuaciones tras 12 semanas sin diferencia estadísticamente significativa entre los grupos de bilastina y placebo. La población total de 509 niños incluyó: 479 sujetos con rinoconjuntivitis alérgica y 30 sujetos diagnosticados de urticaria crónica. 260 niños recibieron bilastina, 252 (96,9%) para rinoconjuntivitis alérgica y 8 (3,1%) para la urticaria crónica. Por analogía, 249 niños recibieron placebo, 227 (91,2%) para rinoconjuntivitis alérgica y 22 (8,8%) para la urticaria crónica. La Agencia Europea de Medicamentos ha eximido de la obligación de presentar los resultados de los ensayos realizados con bilastina en todos los grupos de la población pediátrica menores de 2 años de edad (ver sección 4.2 para consultar la información sobre el uso en la población pediátrica).",
+      "block": "document",
+      "group_name": "pharmacodynamics",
+      "level": 1,
+      "json_paths": [
+        "document.pharmacodynamics"
+      ],
+      "token_count": 2699,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "pharmacodynamics"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Pharmacokinetics: Las propiedades farmacocinéticas se estudiaron en la formulación de comprimidos. Se llevaron a cabo dos estudios farmacocinéticos en voluntarios sanos para comparar bilastina 20 mg comprimidos bucodispersables y bilastina 20 mg comprimidos, que han demostrado la bioequivalencia de las dos formulaciones. Absorción Bilastina se absorbe rápidamente tras la administración oral con un tiempo de aproximadamente 1,3 horas hasta alcanzar la concentración plasmática máxima. No se ha observado acumulación. La biodisponibilidad oral media de bilastina es del 61%. Distribución Estudios in vitro e in vivo han demostrado que bilastina es un substrato de la P-gp (ver sección 4.5 “Interacción con ketoconazol o eritromicina” e “Interacción con diltiazem”) y del OATP (ver sección 4.5 “Interacción con zumo de pomelo”). Bilastina no parece ser un substrato del transportador BCRP ni de los transportadores renales OCT2, OAT1 y OAT3. En base a los estudios in vitro, no cabe esperar que bilastina inhiba los siguientes transportadores a nivel de la circulación sistémica: P-gp, MRP2, BCRP, BSEP, OATP1B1, OATP1B3, OATP2B1, OAT1, OAT3, OCT1, OCT2, y NTCP, ya que sólo se detectó una ligera inhibición para P-gp, OATP2B1 y OCT1, estimándose una CI50 ≥ 300 µM, muy superior a la concentración plasmática máxima Cmax y por ello, estas interacciones carecen de relevancia clínica. Sin embargo, en base a estos resultados no se puede descartar que bilastina sea inhibidor de transportadores presentes en la mucosa intestinal, como por ejemplo P-gp. A las dosis terapéuticas la unión de bilastina a las proteínas plasmáticas es de 84 - 90%. Biotransformación En estudios in vitro, bilastina no indujo ni inhibió la actividad de los isoenzimas del CYP450. Eliminación En un estudio de balance de masas realizado en voluntarios adultos sanos, tras la administración de una dosis única de 20 mg de 14C-bilastina, casi el 95% de la dosis administrada fue recuperada en orina (28,3%) y heces (66,5%) como bilastina inalterada, confirmando que bilastina no es significativamente metabolizada en humanos. La vida media de eliminación calculada en voluntarios sanos fue de 14,5 h. Linealidad Bilastina presenta una farmacocinética lineal en el rango de dosis estudiado (5 a 220 mg), con una baja variabilidad interindividual. Insuficiencia renal En un estudio realizado en sujetos con insuficiencia renal la AUC0-? media (±DE) aumentó de 737,4 (±260,8) ng x h/ml en sujetos sin insuficiencia (IFG: > 80 ml/min/1,73 m2) a 967,4 (±140,2) ng x h/ml en sujetos con insuficiencia leve (IFG: 50-80 ml/min/1,73 m2), 1384,2 (±263,23) ng x h/ml en sujetos con insuficiencia moderada (IFG: 30-<50 ml/min/1,73 m2), y 1708,5 (±699,0) ng x h/ml en sujetos con insuficiencia grave (IFG: < 30 ml/min/1,73 m2). La semivida de eliminación media (±DE) de bilastina fue de 9,3 h (±2,8) en sujetos sin insuficiencia, 15,1 h (±7,7) en sujetos con insuficiencia leve, 10,5 h (±2,3) en sujetos con insuficiencia moderada y 18,4 h (±11,4) en sujetos con insuficiencia grave. La excreción urinaria de bilastina fue esencialmente completa tras 48-72 h en todos los sujetos. No cabe esperar que estos cambios farmacocinéticos tengan una influencia clínicamente relevante sobre la seguridad de bilastina, ya que los niveles plasmáticos de bilastina en pacientes con insuficiencia renal continúan estando dentro del rango de seguridad de bilastina. Insuficiencia hepática No hay datos farmacocinéticos en sujetos con insuficiencia hepática. Bilastina no es metabolizada en humanos. Puesto que los resultados del estudio en insuficiencia renal indican que la vía renal es la vía principal responsable de la eliminación, cabe esperar que la excreción biliar sólo esté implicada de forma marginal en la eliminación de bilastina. No se espera que los cambios en la función hepática tengan una influencia clínicamente relevante en la farmacocinética de bilastina. Pacientes de edad avanzada En sujetos mayores de 65 años sólo se dispone de datos farmacocinéticos limitados. No se han observado diferencias estadísticamente significativas en la farmacocinética de bilastina en pacientes de edad avanzada (mayores de 65 años) comparados con la población adulta de edad comprendida entre 18 y 35 años. Población pediátrica No se dispone de datos farmacocinéticos en adolescentes (de 12 a 17 años) ya que para este producto se considera apropiada la extrapolación a partir de los datos disponibles en adultos. Los análisis farmacocinéticos en niños han sido llevados a cabo con datos obtenidos de dos estudios con 66 niños de edades comprendidas entre 2 y 11 años con rinoconjuntivitis alérgica o urticaria crónica, a los cuales se les administró una toma diaria de bilastina 10 mg comprimidos bucodispersables. El análisis farmacocinético de los datos de concentraciones plasmáticas mostró que la dosis pediátrica de bilastina 10 mg una vez al día da como resultado una exposición sistémica dentro del rango observado después de una dosis de 20 mg en adultos y adolescentes, siendo el rango de valores de AUC (IC del 95%) de 511,5 a 1.450 ng x h/ml para niños de 2 a 11 años. Estos resultados estuvieron muy por debajo del umbral de seguridad basado en los datos de dosis de 80 mg una vez al día en adultos de acuerdo con el perfil de seguridad del medicamento. Estos resultados confirmaron la elección de bilastina 10 mg vía oral una vez al día como la dosis terapéutica recomendada para población pediátrica en el rango de edad de 2 a 11 años con un peso corporal mínimo de 15 kg.",
+      "block": "document",
+      "group_name": "pharmacokinetics",
+      "level": 1,
+      "json_paths": [
+        "document.pharmacokinetics"
+      ],
+      "token_count": 1427,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "pharmacokinetics"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Excipients:\n  - Manitol (E421) Croscarmelosa sódica Fumarato de estearilo y sodio Sucralosa (E955) Aroma de uva roja (componentes mayoritarios: goma arábiga, butirato de etilo, triacetina, antranilato de metilo, etanol, d-limoneno, linalol)\n\nIncompatibilities: No procede.\n\nShelf life: 4 años\n\nStorage conditions: Este medicamento no requiere condiciones especiales de conservación.\n\nContainer: Blísteres precortados unidosis OPA/Al/PVC//Al de 10x1, 20x1, 30x1, 40x1, 50x1 comprimidos bucodispersables envasados en estuches de cartón. Puede que solamente estén comercializados algunos tamaños de envases.\n\nHandling instructions: La eliminación del medicamento no utilizado y de todos los materiales que hayan estado en contacto con él, se realizará de acuerdo con la normativa local.",
+      "block": "document",
+      "group_name": "pharmaceutical",
+      "level": 1,
+      "json_paths": [
+        "document.excipients",
+        "document.incompatibilities",
+        "document.shelf_life",
+        "document.storage_conditions",
+        "document.container",
+        "document.handling_instructions"
+      ],
+      "token_count": 219,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "excipients",
+          "incompatibilities",
+          "shelf_life",
+          "storage_conditions",
+          "container",
+          "handling_instructions"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Marketing authorisation holder: Faes Farma, S.A. Autonomia Etorbidea, 10 48940 Leioa (Bizkaia) España\n\nMarketing authorisation number: 88727",
+      "block": "document",
+      "group_name": "marketing",
+      "level": 1,
+      "json_paths": [
+        "document.marketing_authorisation_holder",
+        "document.marketing_authorisation_number"
+      ],
+      "token_count": 43,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "marketing_authorisation_holder",
+          "marketing_authorisation_number"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Active ingredient: BILASTINA\n\nStrength: 20 mg\n\nRoute of administration: VÍA ORAL",
+      "block": "document",
+      "group_name": "administration",
+      "level": 1,
+      "json_paths": [
+        "document.active_ingredient",
+        "document.strength",
+        "document.route_of_administration"
+      ],
+      "token_count": 22,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "active_ingredient",
+          "strength",
+          "route_of_administration"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "National codes:\n  - 762412\n  - 764972",
+      "block": "document",
+      "group_name": "national_codes",
+      "level": 1,
+      "json_paths": [
+        "document.national_codes"
+      ],
+      "token_count": 14,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "national_codes"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Source:\n  Origin: CIMA/AEMPS docSegmentado\n  Registration number: 88727\n  Name: BILAXTEN FLAS 20 MG COMPRIMIDOS BUCODISPERSABLES\n  Atc:\n    - R06AX29\n  National codes:\n    - 762412\n    - 764972\n  Generic: No\n  Smpc date: 1778234628000\n  Pdf url: https://cima.aemps.es/cima/pdfs/ft/88727/FT_88727.pdf\n  Active ingredient salt: BILASTINA\n  Section hashes:\n    Medicine name: e83615cbfe1fcb25\n    Composition: 0da3deb779e076a5\n    Pharmaceutical form: 85d1f50cbab776bf\n    Indications: a1d345bdbd89366c\n    Posology: 452883b6e131685a\n    Contraindications: 3fd485172291d9e5\n    Warnings and precautions: 6f93e494cfaaac64\n    Interactions: 47a4d866735f2051\n    Pregnancy and lactation: 2d3e11fbc089b675\n    Effects on driving: 7a88fd0439e30602\n    Adverse reactions: 343656aa7b9424c7\n    Overdose: d980f158e85ebfa4\n    Pharmacodynamics: f83e4a1e4f78a14f\n    Pharmacokinetics: 5de6dd02eba372bc\n    Excipients: 671a6548863fa90d\n    Incompatibilities: b379e79f5666e4c9\n    Shelf life: 344a9162b90cea40\n    Storage conditions: 38495e58052a757b\n    Container: 43f6207b89e9a392\n    Handling instructions: 2a090011b89b0619\n    Marketing authorisation holder: d0f9b7865ac47145\n    Marketing authorisation number: f4178af91921a268",
+      "block": "document",
+      "group_name": "_source",
+      "level": 1,
+      "json_paths": [
+        "document._source"
+      ],
+      "token_count": 428,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "_source"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Reimbursement:\n  Status: queried\n  Source: BIFIMED\n  Queried by: national_code\n  N presentations: 2\n  Presentations:\n    - National code: 762412\n      Name: BILAXTEN FLAS 20 MG COMPRIMIDOS BUCODISPERSABLES, 20 comprimidos\n      Laboratory: FAES FARMA S.A.\n      Retrieved at: 2026-08-06T01:16:23.276327\n      Source: BIFIMED\n      Reimbursement situation: Si\n      Nomenclator status: ALTA\n      Patient copayment: NORMAL\n      Reimbursement start date: 01/06/2023\n    - National code: 764972\n      Name: BILAXTEN FLAS 20 MG COMPRIMIDOS BUCODISPERSABLES, 30 comprimidos\n      Laboratory: FAES FARMA S.A.\n      Retrieved at: 2026-08-06T01:16:24.039827\n      Source: BIFIMED\n      Reimbursement situation: Si\n      Nomenclator status: ALTA\n      Patient copayment: NORMAL\n      Reimbursement start date: 01/08/2024\n  National codes queried:\n    - 762412\n    - 764972",
+      "block": "document",
+      "group_name": "reimbursement",
+      "level": 1,
+      "json_paths": [
+        "document.reimbursement"
+      ],
+      "token_count": 239,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "reimbursement"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,3280 @@
+{
+  "strategy": "JSONChunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "JC",
+  "doc_id": "guideline_GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.json",
+  "source_path": "guideline\\GUIDELINE - Leech et al. - 2021 - BSACI 2021 guideline for the management of egg allergy.json",
+  "tokenizer_model": "BAAI/bge-m3",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192
+  },
+  "original_token_count": 28448,
+  "number_of_chunks": 154,
+  "chunks": [
+    {
+      "text": "Schema version: 1.0\n\nDocument type: clinical_guideline\n\nTitle: BSACI 2021 guideline for the management of egg allergy\n\nOrganization: British Society for Allergy and Clinical Immunology (BSACI)\n\nAuthors:\n  - Name: Susan C. Leech\n    Affiliation: Department of Child Health, Kings College Hospital, London, UK\n  - Name: Pamela W. Ewan\n    Affiliation: Allergy Clinic, NHS Foundation Trust, Cambridge University, Cambridge, UK\n  - Name: Isabel J. Skypala\n    Affiliation: Royal Brompton & Harefield NHS Trust, London, UK\n  - Name: Nicola Brathwaite\n    Affiliation: Department of Child Health, Kings College Hospital, London, UK\n  - Name: Mich Erlewyn-Lajeunesse\n    Affiliation: University Hospital Southampton NHS Foundation Trust, Southampton, UK\n  - Name: Sarah Heath\n    Affiliation: Department of Child Health, Kings College Hospital, London, UK\n  - Name: Heidi Ball\n    Affiliation: University Hospitals Leicester, Leicester, UK\n  - Name: Polly James\n    Affiliation: Evelina Children's Hospital, Guys and St Thomas' NHS Foundation Trust, London, UK\n  - Name: Karen Murphy\n    Affiliation: Evelina Children's Hospital, Guys and St Thomas' NHS Foundation Trust, London, UK\n  - Name: Andrew T. Clark\n    Affiliation: Allergy Clinic, NHS Foundation Trust, Cambridge University, Cambridge, UK\n\nYear: 2021\n\nLanguage: English\n\nExtraction date: 2025-01-01\n\nAudience: clinician\n\nSpecialty: Allergy and Clinical Immunology\n\nJurisdiction: United Kingdom\n\nSummary: This guideline provides evidence-based recommendations for the diagnosis and management of IgE-mediated egg allergy, primarily in children but also addressing adult patients. It covers epidemiology, risk factors, clinical presentation, diagnostic testing, dietary avoidance, egg reintroduction strategies, and the management of co-morbidities. Vaccination guidance for egg-allergic individuals and preventative measures, including early introduction of egg, are also included.",
+      "block": "document",
+      "group_name": "metadata",
+      "level": 1,
+      "json_paths": [
+        "document.schema_version",
+        "document.document_type",
+        "document.metadata.title",
+        "document.metadata.organization",
+        "document.metadata.authors",
+        "document.metadata.year",
+        "document.metadata.language",
+        "document.metadata.extraction_date",
+        "document.metadata.audience",
+        "document.metadata.specialty",
+        "document.metadata.jurisdiction",
+        "document.metadata.summary"
+      ],
+      "token_count": 442,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "schema_version",
+          "document_type",
+          "title",
+          "organization",
+          "authors",
+          "year",
+          "language",
+          "extraction_date",
+          "audience",
+          "specialty",
+          "jurisdiction",
+          "summary"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Conditions covered:\n  - IgE-mediated egg allergy\n  - Hen's egg allergy\n  - Egg protein allergy\n  - Eosinophilic oesophagitis related to egg\n  - Food protein-induced enterocolitis syndrome to egg\n\nCare settings:\n  - Secondary care\n  - Primary care\n  - Allergy clinic\n  - Home\n  - Nurseries and schools\n\nTarget population:\n  - Infants\n  - Children\n  - Adults\n  - Breastfeeding mothers\n  - Patients with history of severe reactions\n  - Patients with asthma\n  - Patients with multiple food allergies\n  - Patients requiring immunizations\n\nTherapeutic areas:\n  - Allergen avoidance\n  - Dietary management\n  - Egg reintroduction\n  - Immunotherapy\n  - Vaccination management\n  - Emergency medication\n  - Psychological support",
+      "block": "document",
+      "group_name": "scope",
+      "level": 1,
+      "json_paths": [
+        "document.scope.conditions_covered",
+        "document.scope.care_settings",
+        "document.scope.target_population",
+        "document.scope.therapeutic_areas"
+      ],
+      "token_count": 164,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "conditions_covered",
+          "care_settings",
+          "target_population",
+          "therapeutic_areas"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_01\n  Heading path:\n    - Key Message\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[0]"
+      ],
+      "token_count": 22,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_02\n  Heading path:\n    - 1. INTRODUCTION\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[1]"
+      ],
+      "token_count": 25,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_03\n  Heading path:\n    - 2. DEFINITION AND MECHANISM\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[2]"
+      ],
+      "token_count": 29,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_04\n  Heading path:\n    - 3. PREVALENCE\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[3]"
+      ],
+      "token_count": 23,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_05\n  Heading path:\n    - 4. RISK FACTORS\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[4]"
+      ],
+      "token_count": 25,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_06\n  Heading path:\n    - 5. CLINICAL PRESENTATION AND SEVERITY\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[5]"
+      ],
+      "token_count": 31,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_07\n  Heading path:\n    - 6. DIAGNOSIS\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[6]"
+      ],
+      "token_count": 23,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_08\n  Heading path:\n    - 7. INVESTIGATIONS\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[7]"
+      ],
+      "token_count": 23,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_09\n  Heading path:\n    - 7. INVESTIGATIONS\n    - 7.1 Skin prick test\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[8]"
+      ],
+      "token_count": 29,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_10\n  Heading path:\n    - 7. INVESTIGATIONS\n    - 7.2 Egg-specific IgE\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[9]"
+      ],
+      "token_count": 30,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_11\n  Heading path:\n    - 7. INVESTIGATIONS\n    - 7.3 Egg component testing\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[10]"
+      ],
+      "token_count": 29,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_12\n  Heading path:\n    - 8. MANAGEMENT\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[11]"
+      ],
+      "token_count": 23,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_13\n  Heading path:\n    - 8. MANAGEMENT\n    - 8.1 Avoidance diets\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[12]"
+      ],
+      "token_count": 30,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_14\n  Heading path:\n    - 8. MANAGEMENT\n    - 8.2 Allergen labelling\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[13]"
+      ],
+      "token_count": 30,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_15\n  Heading path:\n    - 8. MANAGEMENT\n    - 8.3 Breastfeeding and egg allergy\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[14]"
+      ],
+      "token_count": 33,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_16\n  Heading path:\n    - 8. MANAGEMENT\n    - 8.4 Cross-reactivity between eggs from hens and other bird species\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[15]"
+      ],
+      "token_count": 42,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_17\n  Heading path:\n    - 8. MANAGEMENT\n    - 8.5 When to refer to a dietician\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[16]"
+      ],
+      "token_count": 34,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_18\n  Heading path:\n    - 8. MANAGEMENT\n    - 8.6 Provision of emergency medication and treatment plans\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[17]"
+      ],
+      "token_count": 34,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_19\n  Heading path:\n    - 9. RESOLUTION OF EGG ALLERGY\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[18]"
+      ],
+      "token_count": 29,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_20\n  Heading path:\n    - 9. RESOLUTION OF EGG ALLERGY\n    - 9.1 Prediction of resolution\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[19]"
+      ],
+      "token_count": 37,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_21\n  Heading path:\n    - 9. RESOLUTION OF EGG ALLERGY\n    - 9.2 Natural history of resolution\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[20]"
+      ],
+      "token_count": 36,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_22\n  Heading path:\n    - 9. RESOLUTION OF EGG ALLERGY\n    - 9.3 Reintroduction of egg into the diet\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[21]"
+      ],
+      "token_count": 41,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_23\n  Heading path:\n    - 9. RESOLUTION OF EGG ALLERGY\n    - 9.4 Home introduction of egg\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[22]"
+      ],
+      "token_count": 37,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_24\n  Heading path:\n    - 9. RESOLUTION OF EGG ALLERGY\n    - 9.5 Children with severe egg allergy\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[23]"
+      ],
+      "token_count": 38,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_25\n  Heading path:\n    - 9. RESOLUTION OF EGG ALLERGY\n    - 9.6 Oral immunotherapy\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[24]"
+      ],
+      "token_count": 36,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_26\n  Heading path:\n    - 10. EGG ALLERGY IN ADULTS\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[25]"
+      ],
+      "token_count": 29,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_27\n  Heading path:\n    - 11. OTHER EGG-RELATED CONDITIONS\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[26]"
+      ],
+      "token_count": 31,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_28\n  Heading path:\n    - 11. OTHER EGG-RELATED CONDITIONS\n    - 11.1 Egg allergy and asthma\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[27]"
+      ],
+      "token_count": 41,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_29\n  Heading path:\n    - 11. OTHER EGG-RELATED CONDITIONS\n    - 11.2 Egg allergy as a risk factor for peanut allergy\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[28]"
+      ],
+      "token_count": 46,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_30\n  Heading path:\n    - 11. OTHER EGG-RELATED CONDITIONS\n    - 11.3 Egg allergy and Eosinophilic oesophagitis\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[29]"
+      ],
+      "token_count": 47,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_31\n  Heading path:\n    - 11. OTHER EGG-RELATED CONDITIONS\n    - 11.4 Use of Propofol in egg-allergic patients\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[30]"
+      ],
+      "token_count": 45,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_32\n  Heading path:\n    - 11. OTHER EGG-RELATED CONDITIONS\n    - 11.5 FPIES to egg\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[31]"
+      ],
+      "token_count": 39,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_33\n  Heading path:\n    - 12. IMMUNIZATION OF EGG-ALLERGIC CHILDREN AND ADULTS\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[32]"
+      ],
+      "token_count": 39,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_34\n  Heading path:\n    - 12. IMMUNIZATION OF EGG-ALLERGIC CHILDREN AND ADULTS\n    - 12.1 Influenza vaccine\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[33]"
+      ],
+      "token_count": 47,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_35\n  Heading path:\n    - 12. IMMUNIZATION OF EGG-ALLERGIC CHILDREN AND ADULTS\n    - 12.2 Yellow fever vaccine\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[34]"
+      ],
+      "token_count": 47,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_36\n  Heading path:\n    - 12. IMMUNIZATION OF EGG-ALLERGIC CHILDREN AND ADULTS\n    - 12.3 MMR vaccine\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[35]"
+      ],
+      "token_count": 46,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_37\n  Heading path:\n    - 12. IMMUNIZATION OF EGG-ALLERGIC CHILDREN AND ADULTS\n    - 12.4 Rabies vaccine\n  Level: 2",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[36]"
+      ],
+      "token_count": 46,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_38\n  Heading path:\n    - 13. MANAGEMENT OF EGG ALLERGY IN NURSERIES AND SCHOOLS\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[37]"
+      ],
+      "token_count": 37,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_39\n  Heading path:\n    - 14. PSYCHOLOGICAL AND SOCIAL IMPLICATIONS OF EGG ALLERGY\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[38]"
+      ],
+      "token_count": 36,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_40\n  Heading path:\n    - 15. PRIMARY PREVENTION; INTRODUCTION OF EGG INTO THE DIET OF INFANTS FROM ATOPIC FAMILIES\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[39]"
+      ],
+      "token_count": 51,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_41\n  Heading path:\n    - 16. FUTURE RESEARCH\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[40]"
+      ],
+      "token_count": 25,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_42\n  Heading path:\n    - AUTHOR CONTRIBUTIONS\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[41]"
+      ],
+      "token_count": 26,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_43\n  Heading path:\n    - ACKNOWLEDGEMENTS\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[42]"
+      ],
+      "token_count": 26,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_44\n  Heading path:\n    - REFERENCES\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[43]"
+      ],
+      "token_count": 23,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toc:\n  Id: toc_45\n  Heading path:\n    - SUPPORTING INFORMATION\n  Level: 1",
+      "block": "document",
+      "group_name": "toc",
+      "level": 1,
+      "json_paths": [
+        "document.toc[44]"
+      ],
+      "token_count": 24,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toc"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Conditions:\n  Condition id: cond_01\n  Name: Egg allergy\n  Synonyms:\n    - Hen's egg allergy\n    - IgE-mediated egg allergy\n    - Type-1 hypersensitivity to egg\n  Description: An adverse immunologic reaction to egg proteins, primarily ovalbumin (Gal d 2) and ovomucoid (Gal d 1), mediated by specific IgE antibodies. The reaction is typically immediate type-1 hypersensitivity with rapid symptom onset; late-phase and delayed hypersensitivity reactions can also occur, particularly in the context of eczema.\n  Epidemiology: Prevalence is approximately 2% in children and 0.1% in adults in the United Kingdom. Onset most commonly occurs in infancy, often after the first apparent ingestion; new-onset egg allergy in adults is rare.\n  Clinical presentation: Typical presentation is in infancy, with rapid onset (within minutes) of cutaneous symptoms (erythema, urticaria, angioedema) and/or vomiting following egg ingestion. Severe reactions are less common and may involve respiratory symptoms (cough, wheeze, breathing difficulty) or cardiovascular symptoms (pallor, floppiness). Reaction severity is influenced by the amount of egg ingested and the degree of cooking; raw egg white is the most allergenic form. Delayed worsening of eczema may also occur.\n  Subtypes:\n    - Name: Childhood-onset egg allergy\n      Distinguishing features: Usually presents in infancy, often with mild to moderate symptoms; high rate of spontaneous resolution by adolescence; commonly associated with other atopic conditions such as eczema and asthma.\n    - Name: Adult-onset egg allergy\n      Distinguishing features: Rare; may occur as new onset in adulthood after years of tolerance, or as persistence of childhood allergy; tends to be more severe and persistent; can be associated with bird-egg syndrome or occupational sensitization.\n    - Name: Occupational egg allergy\n      Distinguishing features: Results from inhalation of egg protein aerosols in occupational settings (e.g., baking industry); may develop respiratory symptoms and subsequently react upon ingestion.\n  Diagnostic workup:\n    - Test: Clinical history\n      Purpose: To establish a diagnosis of egg allergy based on typical symptoms.\n      When indicated: All patients with suspected egg allergy.\n      Interpretation: Rapid onset (minutes) of erythema, urticaria, angioedema, and/or vomiting after egg ingestion is highly suggestive. Mild reactions in a clear history are sufficient for diagnosis without further testing.\n    - Test: Skin prick test (SPT) with standardized whole egg reagent\n      Purpose: To confirm IgE sensitization to egg.\n      When indicated: Moderate‑severe reactions, or when the clinical history is unclear.\n      Interpretation: A weal size of ≥3 mm in combination with a supportive clinical history is diagnostic in most cases. Higher cut‑offs (e.g., ≥5 mm in children under 2 years) increase specificity. SPT weal size does not predict clinical severity. SPT should not be used for screening in the absence of suspected reaction.\n    - Test: Egg‑specific IgE assay (serum)\n      Purpose: To detect circulating egg‑specific IgE antibodies.\n      When indicated: When SPT is unavailable, or in moderate‑severe cases to support diagnosis.\n      Interpretation: No single diagnostic cut‑off value is applicable across all ages; low levels can be found in egg‑tolerant children. Therefore, results must be correlated with clinical history. Egg‑specific IgE should not be measured in asymptomatic individuals as it may lead to unnecessary dietary restriction.\n    - Test: Component‑resolved diagnostics (specific IgE to Gal d 1, Gal d 2, Gal d 3, Gal d 5)\n      Purpose: To identify sensitization to individual egg allergens, which aids in predicting persistence and tolerance to baked egg.\n      When indicated: When assessing likelihood of resolution, especially in older children or adults; may guide decisions on oral food challenge.\n      Interpretation: Sensitization to multiple components, particularly Gal d 1 (ovomucoid), suggests persistent allergy. Negative Gal d 1 IgE is associated with a higher chance of tolerating baked egg. Ovalbumin (Gal d 2) IgE is common but less predictive of severity. Gal d 5 indicates egg yolk allergy and possible bird‑egg syndrome.\n    - Test: Oral food challenge (OFC)\n      Purpose: To definitively confirm or refute the diagnosis, or to prove tolerance has developed.\n      When indicated: When clinical history and test results are discordant, or to assess resolution of allergy. Hospital‑based challenges are reserved for high‑risk patients (Box 4).\n      Interpretation: A controlled graded ingestion of egg (baked, lightly cooked, or raw) under medical supervision; positive if objective allergic symptoms occur. Baked egg challenges are used to determine if heat‑processed egg is tolerated.\n    - Test: Prick‑to‑prick testing with raw egg\n      Purpose: To detect sensitization to raw egg proteins.\n      When indicated: Not routinely recommended; may be considered in research settings.\n      Interpretation: A weal of ≥13 mm has been reported as diagnostic. Does not predict baked egg tolerance and carries a risk of systemic reaction; not standardized.\n    - Test: Skin prick test with baked egg slurry\n      Purpose: To predict the outcome of a baked egg challenge.\n      When indicated: Research setting; not routinely used in clinical practice.\n      Interpretation: High negative predictive value reported in one study.\n    - Test: Peanut‑specific IgE (co‑testing)\n      Purpose: To assess risk of peanut allergy and guide early peanut introduction advice.\n      When indicated: Infants with moderate‑severe egg allergy.\n      Interpretation: Egg allergy in infancy is associated with increased risk of peanut allergy; early peanut introduction may prevent its development.\n  Pathology markers:\n    - Marker: Egg white‑specific IgE\n      Expected result: Elevated\n      Clinical significance: Indicates sensitization to egg white proteins; supports clinical diagnosis when history is positive but not diagnostic in isolation.\n    - Marker: Ovalbumin (Gal d 2) specific IgE\n      Expected result: Detectable\n      Clinical significance: Major heat‑labile egg white allergen; commonly detected in egg‑allergic individuals.\n    - Marker: Ovomucoid (Gal d 1) specific IgE\n      Expected result: Detectable or elevated\n      Clinical significance: Heat‑stable and immunodominant allergen; sensitization is associated with persistent egg allergy, greater severity, and reduced likelihood of baked egg tolerance.\n    - Marker: Gal d 3 specific IgE\n      Expected result: Detectable\n      Clinical significance: Egg white allergen; may contribute to sensitization profile.\n    - Marker: Alpha‑livetin (Gal d 5) specific IgE\n      Expected result: Detectable\n      Clinical significance: Egg yolk allergen; marker for bird‑egg syndrome; indicates cross‑reactivity with bird feather allergens.\n    - Marker: Skin prick test weal diameter (to egg white)\n      Expected result: ≥3 mm\n      Clinical significance: Supports diagnosis of egg allergy when combined with history; larger weals increase specificity but do not correlate with severity.\n  Prognostic tools:\n    - Name: Prognostic indicators for resolution of egg allergy\n      Components:\n      - Age at tolerance to baked egg\n      - Reaction severity (mild/cutaneous only vs respiratory/multisystem)\n      - Presence of asthma\n      - Severity of eczema\n      - Egg‑specific IgE level\n      - Sensitization to multiple egg allergen components (especially ovomucoid/Gal d 1)\n      - Number of co‑existing food allergies\n      - Atopic comorbidities\n      Risk groups:\n      - Group: Favorable prognosis\n      Criteria: Mild or cutaneous‑only initial reactions, no asthma, low egg‑specific IgE, early tolerance of baked egg, absence of ovomucoid or multi‑component sensitization, and no other food allergies or severe eczema.\n      Expected outcome: High likelihood of outgrowing allergy; median age of resolution for well‑cooked egg is 67 months and for uncooked egg 127 months; approximately 68% resolve by 16 years.\n      - Group: Unfavorable prognosis\n      Criteria: History of respiratory or cardiovascular severe reactions, presence of asthma or severe eczema, high egg‑specific IgE, sensitization to multiple components (especially ovomucoid), and multiple food allergies.\n      Expected outcome: More likely to have persistent allergy into adolescence or adulthood; delayed achievement of tolerance to well‑cooked egg and uncooked egg.\n      Interpretation: These factors guide the timing and setting of egg reintroduction (home vs hospital) and the need for specialist allergy follow‑up. Children with favorable features may attempt home‑based baked egg introduction from 12 months.\n  Follow up:\n    Schedule: All infants and young children with egg allergy should be periodically assessed for suitability of reintroduction. Adults and older children with persistent egg allergy should be reviewed at intervals to update emergency medication training, repeat specific IgE testing, and consider component testing and oral food challenges to determine if resolution has occurred. Exact frequency is not specified but typically annual or as guided by clinical progress.\n    Recommended tests:\n      - Interval clinical history (new reactions, dietary adherence, growth)\n      - Egg‑specific IgE (and possibly component IgE) to monitor sensitization trends\n      - Skin prick testing when appropriate\n      - Consideration of oral food challenge to baked egg or cooked egg when prognostic factors are favorable\n    Long term effects:\n      - Risk of accidental anaphylaxis, including fatalities\n      - Dietary restrictions impacting quality of life and social participation\n      - Psychosocial burden: anxiety, bullying, family stress\n      - Potential for nutritional deficiencies if multiple food allergies\n      - In persistent cases, lifelong egg avoidance may be required\n    Survivorship notes: Many children outgrow egg allergy; early introduction of baked egg may accelerate tolerance. Adults with persistent allergy should receive ongoing support and education. All patients need an up‑to‑date emergency management plan and ready access to antihistamines and adrenaline auto‑injectors.",
+      "block": "document",
+      "group_name": "conditions",
+      "level": 1,
+      "json_paths": [
+        "document.conditions[0]"
+      ],
+      "token_count": 2425,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "conditions"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Conditions:\n  Condition id: cond_02\n  Name: Bird‑egg syndrome\n  Synonyms:\n    - Alpha‑livetin allergy\n    - Egg yolk allergy with bird feather sensitization\n  Description: A distinct form of egg allergy in which sensitization to alpha‑livetin (Gal d 5), a protein abundant in egg yolk and bird feathers, leads to allergic symptoms upon ingestion of egg (especially yolk) and respiratory symptoms on exposure to birds. The syndrome is classically described in adults, predominantly women, who are exposed to caged birds or pigeons.\n  Epidemiology: Rare; described mainly in adults, particularly women, with prolonged exposure to budgerigars, pigeons, or other caged birds.\n  Clinical presentation: Upper and lower respiratory symptoms (rhinoconjunctivitis, asthma) on inhalation of bird allergens; gastrointestinal symptoms with chicken meat or lightly cooked eggs. Symptoms are triggered by ingestion of egg yolk, which contains high concentrations of alpha‑livetin. Onset typically after years of bird exposure.\n  Diagnostic workup:\n    - Test: Clinical history\n      Purpose: To identify the characteristic cross‑reactivity between bird and egg allergens.\n      When indicated: Suspected cases with respiratory symptoms on bird exposure and food reactions to egg yolk.\n      Interpretation: A history of bird feather sensitivity and symptoms with egg (especially yolk) or chicken meat is highly suggestive.\n    - Test: Skin prick test or specific IgE to egg yolk\n      Purpose: To confirm sensitization to egg yolk proteins.\n      When indicated: When bird‑egg syndrome is suspected.\n      Interpretation: Positive test indicates sensitization to yolk allergen; further distinction can be made with component testing.\n    - Test: Specific IgE to alpha‑livetin (Gal d 5)\n      Purpose: To identify the specific cross‑reactive allergen.\n      When indicated: All patients with suspected bird‑egg syndrome.\n      Interpretation: Elevated Gal d 5 IgE confirms the diagnosis.\n    - Test: Skin prick test to bird feathers\n      Purpose: To demonstrate sensitization to bird allergens.\n      When indicated: When respiratory symptoms on bird exposure are present.\n      Interpretation: Positive test supports the diagnosis of bird‑related respiratory allergy.\n  Pathology markers:\n    - Marker: Alpha‑livetin (Gal d 5) specific IgE\n      Expected result: Elevated\n      Clinical significance: Diagnostic for bird‑egg syndrome; explains the cross‑reactivity between bird feather allergens and egg yolk.\n  Follow up:\n    Schedule: Periodic specialist review, similar to adult egg allergy; frequency not defined. Repeat specific IgE testing and reassessment of bird avoidance measures.\n    Recommended tests:\n      - Alpha‑livetin (Gal d 5) specific IgE\n      - Spirometry if asthma symptoms present\n    Long term effects:\n      - Persistent allergy to egg yolk and bird feather allergens\n      - Risk of anaphylaxis with egg yolk ingestion\n      - Need for bird avoidance and egg‑free diet\n    Survivorship notes: This syndrome tends to persist lifelong. Patients must carry emergency medications and avoid egg yolk and bird exposure.",
+      "block": "document",
+      "group_name": "conditions",
+      "level": 1,
+      "json_paths": [
+        "document.conditions[1]"
+      ],
+      "token_count": 767,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "conditions"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Treatment pathways:\n  Pathway id: path_01\n  Condition ref: cond_01\n  Setting: first_line\n  Patient population: patients diagnosed with IgE-mediated egg allergy\n  Decision rules:\n    - clinical history and supportive testing (SPT ≥3 mm or positive specific IgE) confirm diagnosis\n    - after acute reaction, initiate egg avoidance and provide emergency medication\n  Recommended regimens:\n    - Name: Egg avoidance and emergency medication\n      Evidence level: D\n      Recommendation grade: D\n      Summary: Strict dietary exclusion of egg, coupled with provision of an oral antihistamine; consider an adrenaline autoinjector if there is a history of anaphylaxis\n      Duration cycles: ongoing\n  Supportive care:\n    - referral to a dietitian for detailed avoidance guidance and nutritional assessment, especially when multiple food allergies or nutritional concerns exist\n    - education on reading food labels and cross-contamination risks",
+      "block": "document",
+      "group_name": "treatment_pathways",
+      "level": 1,
+      "json_paths": [
+        "document.treatment_pathways[0]"
+      ],
+      "token_count": 208,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "treatment_pathways"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Treatment pathways:\n  Pathway id: path_02\n  Condition ref: cond_01\n  Setting: maintenance\n  Patient population: children with mild-moderate egg allergy (cutaneous reactions only), no asthma, who are candidates for home reintroduction\n  Decision rules:\n    - if reactions are mild and there is no asthma, home reintroduction can begin at 12 months of age or 6 months after the last reaction\n    - start with small amounts of baked egg (Stage 1)\n    - in case of mild symptoms, reduce to a lower stage or smaller amount; if symptoms persist, stop and seek medical advice\n    - regular ingestion of baked egg may accelerate tolerance\n    - after tolerating baked egg, progress to loosely cooked egg (Stage 2), then to raw egg (Stage 3)\n  Recommended regimens:\n    - Name: Home-based egg reintroduction ladder\n      Evidence level: B\n      Recommendation grade: B\n      Summary: Gradual, stepwise introduction of egg-containing foods following a three-stage ladder: Stage 1 – baked/well-cooked egg (e.g. cake, hard biscuits); Stage 2 – well-cooked egg dishes and loosely cooked egg (e.g. scrambled egg, omelette); Stage 3 – raw egg products (e.g. mayonnaise). Each stage is introduced in small amounts first.\n      Key outcomes: approximately one third of children outgrow well-cooked egg allergy by 3 years, and two-thirds by 6 years; tolerance to baked egg predicts eventual resolution\n      Duration cycles: ongoing with regular ingestion; progress through stages as tolerated\n  Response assessment:\n    - Timepoint: after each new food introduction and during routine follow-up\n      Method: clinical monitoring for allergic symptoms\n      Interpretation: tolerance to a stage is demonstrated by absence of immediate allergic reactions; progression to the next stage is appropriate after a period of consistent tolerance\n  Supportive care:\n    - dietitian referral if help with the reintroduction ladder is needed\n  Special considerations: families should be educated to recognize and manage possible allergic reactions; oral antihistamine should be available",
+      "block": "document",
+      "group_name": "treatment_pathways",
+      "level": 1,
+      "json_paths": [
+        "document.treatment_pathways[1]"
+      ],
+      "token_count": 489,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "treatment_pathways"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Treatment pathways:\n  Pathway id: path_03\n  Condition ref: cond_01\n  Setting: first_line\n  Patient population: children with a history of severe egg reaction, severe eczema, or faltering growth\n  Decision rules:\n    - severe reactions (respiratory or cardiovascular involvement), severe eczema, or growth failure indicate a higher likelihood of persistent allergy\n    - reintroduction must be guided by an allergy specialist\n  Recommended regimens:\n    - Name: Specialist-guided egg reintroduction\n      Evidence level: D\n      Recommendation grade: D\n      Summary: The same egg reintroduction ladder is followed, but under direct medical supervision in a specialist allergy clinic, with readiness to treat anaphylaxis\n      Duration cycles: as tolerated, with possible progression over months to years\n  Response assessment:\n    - Timepoint: during in-clinic challenges and follow-up visits\n      Method: physician-observed food challenge with monitoring of symptoms and vital signs\n      Interpretation: objective tolerance at each step determines progression\n  Supportive care:\n    - dietitian referral for advice on strict egg avoidance and nutritional support\n  Special considerations: excellent asthma control is a priority before any attempt at reintroduction",
+      "block": "document",
+      "group_name": "treatment_pathways",
+      "level": 1,
+      "json_paths": [
+        "document.treatment_pathways[2]"
+      ],
+      "token_count": 269,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "treatment_pathways"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Treatment pathways:\n  Pathway id: path_04\n  Condition ref: cond_01\n  Setting: third_line_plus\n  Patient population: children with persistent egg allergy, typically over 5 years of age, who have not outgrown allergy despite baked egg introduction\n  Decision rules:\n    - egg OIT is not recommended as a routine treatment for long-term tolerance\n    - it may be considered only in highly specialized allergy centres for carefully selected patients with persistent disease\n  Alternative regimens:\n    - Name: Egg oral immunotherapy (OIT)\n      Evidence level: low (Cochrane review)\n      Summary: Gradual ingestion of increasing amounts of egg protein under medical supervision, aiming to induce desensitization. Daily dosing is more effective than weekly. Low pretreatment egg white and ovomucoid IgE predict sustained unresponsiveness.\n      Conditions for use: only in highly specialized allergy centres; not for routine clinical use\n  Not recommended:\n    - Name: Routine use of egg OIT\n      Reason: high incidence of adverse events (adrenaline required in 26% of children in one study), absence of standardized protocols, and low-quality evidence for long-term tolerance\n  Special considerations: EAACI does not currently recommend egg OIT as a treatment to achieve long-term tolerance",
+      "block": "document",
+      "group_name": "treatment_pathways",
+      "level": 1,
+      "json_paths": [
+        "document.treatment_pathways[3]"
+      ],
+      "token_count": 290,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "treatment_pathways"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Treatment pathways:\n  Pathway id: path_05\n  Condition ref: cond_01\n  Setting: first_line\n  Patient population: egg-allergic patients of any age requiring routine vaccination with MMR, influenza, or yellow fever\n  Decision rules:\n    - MMR vaccine: administer in primary care without special precautions (Grade B)\n    - influenza vaccine (nasal live attenuated or intramuscular): can be given in primary care unless there has been anaphylaxis to egg requiring intensive care admission; in that case, refer to an allergy specialist (Grade B)\n    - yellow fever vaccine: contains egg protein; always refer to an allergy specialist with access to a designated yellow fever vaccination centre for assessment and administration (Grade B)\n  Recommended regimens:\n    - Name: Vaccination protocol for egg allergy\n      Evidence level: B\n      Recommendation grade: B\n      Summary: MMR given routinely; influenza given in primary care with observation, except after severe anaphylaxis; yellow fever given only under specialist supervision in a designated centre",
+      "block": "document",
+      "group_name": "treatment_pathways",
+      "level": 1,
+      "json_paths": [
+        "document.treatment_pathways[4]"
+      ],
+      "token_count": 242,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "treatment_pathways"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Treatment pathways:\n  Pathway id: path_06\n  Condition ref: cond_01\n  Setting: first_line\n  Patient population: adults with egg allergy, including those with persistent childhood-onset allergy and new adult-onset disease\n  Decision rules:\n    - egg avoidance and emergency medication training are the mainstay\n    - periodic measurement of specific IgE to monitor allergy status\n    - component testing (particularly Gal d 1/ovomucoid) can help select patients for oral food challenges; a negative Gal d 1 test suggests baked egg might be tolerated\n    - oral food challenges should be considered to establish the likelihood of tolerance, as fatal anaphylaxis has been reported\n  Recommended regimens:\n    - Name: Egg avoidance and emergency medication (adult)\n      Evidence level: D\n      Recommendation grade: D\n      Summary: Strict avoidance of egg, availability of antihistamine and adrenaline autoinjector, and periodic reassessment with specialist advice\n      Duration cycles: lifelong, though tolerance may develop; periodic reevaluation is advised\n  Special considerations: occupational egg allergy (e.g. in bakers) and bird-egg syndrome should be identified and managed accordingly",
+      "block": "document",
+      "group_name": "treatment_pathways",
+      "level": 1,
+      "json_paths": [
+        "document.treatment_pathways[5]"
+      ],
+      "token_count": 268,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "treatment_pathways"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Treatment pathways:\n  Pathway id: path_07\n  Condition ref: cond_02\n  Setting: first_line\n  Patient population: infants with eczema, who are at high risk of developing egg allergy\n  Decision rules:\n    - early introduction of well-cooked or baked egg into the diet reduces the incidence of egg allergy\n    - introduce egg around 6 months of age (but not before 4 months) and ensure regular ongoing consumption\n  Recommended regimens:\n    - Name: Early egg introduction for prevention\n      Evidence level: A\n      Recommendation grade: A\n      Summary: Feed infants with eczema well-cooked or baked egg starting around 6 months of age to reduce the risk of developing egg allergy\n      Key outcomes: reduction in egg allergy incidence\n      Duration cycles: regular consumption as part of the diet\n  Special considerations: do not introduce egg if the infant already has a confirmed egg allergy; this pathway is for primary prevention only",
+      "block": "document",
+      "group_name": "treatment_pathways",
+      "level": 1,
+      "json_paths": [
+        "document.treatment_pathways[6]"
+      ],
+      "token_count": 218,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "treatment_pathways"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Therapies index:\n  Name: Egg avoidance diet\n  Type: other\n  Mechanism: Elimination of egg and egg-containing foods to prevent IgE-mediated allergic reactions.\n  Approved indications:\n    - Established egg allergy to avoid acute allergic reactions.\n  Administration: Oral dietary restriction, with strict label reading and awareness of cross-contamination.\n  Key toxicities:\n    - Nutritional deficiencies (e.g., vitamin D, protein) if not properly substituted\n    - Social and dietary restrictions\n    - Anxiety\n  Monitoring:\n    - Dietetic review\n    - Growth monitoring in children",
+      "block": "document",
+      "group_name": "therapies_index",
+      "level": 1,
+      "json_paths": [
+        "document.therapies_index[0]"
+      ],
+      "token_count": 136,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "therapies_index"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Therapies index:\n  Name: Second-generation non-drowsy oral antihistamine\n  Type: drug\n  Mechanism: H1 receptor antagonist, reduces histamine-mediated symptoms of mild allergic reactions.\n  Approved indications:\n    - Emergency treatment of mild allergic reactions following accidental egg ingestion.\n  Administration: Oral, as needed per weight-appropriate dosing.\n  Key toxicities:\n    - Somnolence (less with second-generation)",
+      "block": "document",
+      "group_name": "therapies_index",
+      "level": 1,
+      "json_paths": [
+        "document.therapies_index[1]"
+      ],
+      "token_count": 104,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "therapies_index"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Therapies index:\n  Name: Adrenaline autoinjector\n  Type: drug\n  Mechanism: Sympathomimetic agent; alpha- and beta-adrenergic agonist that reverses anaphylactic shock and airway obstruction.\n  Approved indications:\n    - Emergency treatment of anaphylaxis (severe allergic reactions) in egg-allergic patients with respiratory or cardiovascular symptoms.\n  Administration: Intramuscular injection via autoinjector device (e.g., EpiPen) into the anterolateral thigh.\n  Key toxicities:\n    - Tachycardia\n    - Hypertension\n    - Tremor\n    - Anxiety\n    - Injection site pain\n  Monitoring:\n    - Annual specialist review to reassess need and provide training",
+      "block": "document",
+      "group_name": "therapies_index",
+      "level": 1,
+      "json_paths": [
+        "document.therapies_index[2]"
+      ],
+      "token_count": 165,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "therapies_index"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Therapies index:\n  Name: Egg oral immunotherapy (OIT)\n  Type: procedure\n  Mechanism: Regular ingestion of gradually increasing amounts of egg protein to induce desensitization and potentially sustained unresponsiveness.\n  Approved indications:\n    - Persistent egg allergy in children over 5 years, under specialist supervision in highly specialized centres. Not recommended as standard therapy per EAACI.\n  Administration: Oral daily dosing with controlled dose escalation; may be combined with baked egg protocols.\n  Key toxicities:\n    - High incidence of adverse reactions during build-up\n    - Anaphylaxis (adrenaline required in 26% of children in one study)\n    - Gastrointestinal side effects\n    - Eosinophilic oesophagitis\n  Monitoring:\n    - Regular specialist allergy clinic visits\n    - Symptom diaries\n    - Adherence checks",
+      "block": "document",
+      "group_name": "therapies_index",
+      "level": 1,
+      "json_paths": [
+        "document.therapies_index[3]"
+      ],
+      "token_count": 192,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "therapies_index"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Therapies index:\n  Name: Egg ladder (Home-based baked egg introduction)\n  Type: procedure\n  Mechanism: Gradual dietary reintroduction of egg in forms of increasing allergenicity (baked to raw) to assess tolerance and promote oral tolerance.\n  Approved indications:\n    - Children >12 months with mild-moderate egg allergy, mild reactions only, and no asthma, to achieve resolution at home.\n  Administration: Oral, starting with a pea-sized amount of sponge cake (low egg content, well-baked), advancing per the BSACI egg ladder every few months if tolerated.\n  Key toxicities:\n    - Mild cutaneous reactions at very low starting doses; anaphylaxis not reported in home series.\n  Monitoring:\n    - Parental observation for allergic symptoms\n    - Dietetic support recommended at 6 months",
+      "block": "document",
+      "group_name": "therapies_index",
+      "level": 1,
+      "json_paths": [
+        "document.therapies_index[4]"
+      ],
+      "token_count": 192,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "therapies_index"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Therapies index:\n  Name: Maternal egg exclusion diet\n  Type: other\n  Mechanism: Elimination of egg from the maternal diet to reduce secretion of egg protein into breast milk and thus reduce allergic symptoms in the breastfed infant.\n  Approved indications:\n    - Breastfed infants with persistent eczema where egg is a trigger, or suspected reactions to maternal egg ingestion.\n  Administration: Oral maternal diet; strict avoidance for 4–6 weeks trial, then reintroduction to confirm effect.\n  Key toxicities:\n    - Maternal nutritional deficiency if prolonged and unsupervised\n  Monitoring:\n    - Dietetic counselling for nutritional adequacy",
+      "block": "document",
+      "group_name": "therapies_index",
+      "level": 1,
+      "json_paths": [
+        "document.therapies_index[5]"
+      ],
+      "token_count": 152,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "therapies_index"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Therapies index:\n  Name: Measles, mumps, rubella (MMR) vaccine\n  Type: other\n  Mechanism: Active immunization using live attenuated viruses grown in chick embryo fibroblast cultures; vaccine does not contain significant egg protein.\n  Approved indications:\n    - All children with egg allergy should receive the MMR immunization as part of the routine vaccination schedule.\n  Administration: Subcutaneous injection in primary care; no special precautions for egg-allergic patients.\n  Key toxicities:\n    - Routine vaccine side effects unrelated to egg allergy; no increased risk of allergic reactions in egg-allergic children.\n  Monitoring:\n    - Standard post-vaccination observation",
+      "block": "document",
+      "group_name": "therapies_index",
+      "level": 1,
+      "json_paths": [
+        "document.therapies_index[6]"
+      ],
+      "token_count": 161,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "therapies_index"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Therapies index:\n  Name: Influenza vaccine (inactivated and live attenuated)\n  Type: other\n  Mechanism: Vaccines derived from chicken embryos; most modern formulations contain very low ovalbumin levels (<0.12 mcg/mL) and are safe in egg allergy.\n  Approved indications:\n    - All egg-allergic children and adults can receive the influenza vaccine in primary care, except those who have had anaphylaxis to egg requiring intensive care admission.\n  Administration: Intramuscular injection (inactivated) or intranasal spray (LAIV). The nasal LAIV is safe for egg-allergic children.\n  Key toxicities:\n    - Minimal egg-related allergic reactions due to very low ovalbumin content.\n  Monitoring:\n    - Routine post-vaccination observation; those with history of severe anaphylaxis to egg should be referred to a specialist.",
+      "block": "document",
+      "group_name": "therapies_index",
+      "level": 1,
+      "json_paths": [
+        "document.therapies_index[7]"
+      ],
+      "token_count": 208,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "therapies_index"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Therapies index:\n  Name: Yellow fever vaccine\n  Type: other\n  Mechanism: Live attenuated vaccine grown in hen's eggs; induces immunity against yellow fever virus.\n  Approved indications:\n    - Egg-allergic individuals travelling to yellow fever endemic areas; administration under specialist allergy guidance with risk assessment and possible desensitization.\n  Administration: Subcutaneous injection given at designated Yellow Fever Vaccination Centres; may require skin testing and a split-dose protocol.\n  Key toxicities:\n    - Anaphylaxis (estimated rate 1 in 238,000 doses)\n    - Possible egg protein-related reactions\n  Monitoring:\n    - Prior skin prick testing to egg and vaccine\n    - Intradermal testing if initial skin test negative\n    - Supervised administration with emergency equipment\n    - Serological follow-up if skin test positive or desensitization used",
+      "block": "document",
+      "group_name": "therapies_index",
+      "level": 1,
+      "json_paths": [
+        "document.therapies_index[8]"
+      ],
+      "token_count": 193,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "therapies_index"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Therapies index:\n  Name: Purified chick embryo cell (PCEC) rabies vaccine\n  Type: other\n  Mechanism: Inactivated rabies virus vaccine prepared in chick embryo cell culture; contains trace egg proteins.\n  Approved indications:\n    - For pre-exposure and post-exposure prophylaxis against rabies in egg-allergic individuals; relative contraindication in those with egg anaphylaxis, but benefit outweighs risk for post-exposure.\n  Administration: Intramuscular injection.\n  Key toxicities:\n    - Allergic reactions including anaphylaxis in egg-sensitized individuals\n  Monitoring:\n    - Observation after vaccination; risk assessment in those with severe egg allergy.",
+      "block": "document",
+      "group_name": "therapies_index",
+      "level": 1,
+      "json_paths": [
+        "document.therapies_index[9]"
+      ],
+      "token_count": 163,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "therapies_index"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Therapies index:\n  Name: Psychological intervention\n  Type: other\n  Mechanism: Cognitive-behavioural therapy and other psychological techniques to reduce food allergy-related anxiety, phobias, and improve quality of life.\n  Approved indications:\n    - Egg-allergic patients with significant anxiety, post-traumatic stress following severe reactions, or impaired quality of life.\n  Administration: Delivered via paediatric psychology services, CAMHS (children), or IAPT (adults).\n  Key toxicities:\n    - None reported",
+      "block": "document",
+      "group_name": "therapies_index",
+      "level": 1,
+      "json_paths": [
+        "document.therapies_index[10]"
+      ],
+      "token_count": 122,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "therapies_index"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toxicities:\n  Event: Acute IgE-mediated allergic reaction to egg\n  Associated therapies:\n    - egg ingestion\n    - accidental exposure\n  Incidence: Cutaneous symptoms in 80-90%, gastrointestinal in 10-44% within minutes to 2 hours. Anaphylaxis prior to allergy service referral in 7%. Fatal anaphylaxis reported in one adult in the UK since 1992.\n  Recognition:\n    - Rapid onset (within minutes) of erythema, urticaria, angioedema\n    - Gastrointestinal symptoms: vomiting\n    - Severe: respiratory symptoms (cough, wheeze, stridor, breathing difficulty), cardiovascular (pallor, floppiness)\n  Grading: Clinical severity: mild (cutaneous only), moderate-severe (respiratory/cardiovascular)\n  Management:\n    - Severity: mild\n      Actions: Administer non-drowsy second-generation antihistamine; observe at home.\n    - Severity: moderate-severe\n      Actions: Administer intramuscular adrenaline; seek emergency medical attention; provide anaphylaxis plan and regular review by allergy specialist.\n  Prevention:\n    - Strict dietary avoidance of egg and egg-containing products\n    - Read food labels carefully, as egg is declared as a priority allergen in the EU\n    - Avoid loose foods and buffets in severe cases\n    - Referral to a dietician for avoidance advice",
+      "block": "document",
+      "group_name": "toxicities",
+      "level": 2,
+      "json_paths": [
+        "document.safety.toxicities[0]"
+      ],
+      "token_count": 319,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toxicities"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toxicities:\n  Event: Allergic reaction during home-based egg reintroduction\n  Associated therapies:\n    - home reintroduction ladder\n  Incidence: In a cohort of 211 children undergoing home baked egg introduction, no anaphylaxis was reported. Risk of anaphylaxis is considered minimal when using a gradual, low-dose approach starting at approximately 20 mg egg protein.\n  Recognition:\n    - Symptoms usually mild, e.g., cutaneous reactions\n  Management:\n    - Severity: any reaction\n      Actions: Stop the reintroduction, revert to the previously tolerated step in the ladder, and consider re-attempting gradual introduction after 3-6 months.\n  Prevention:\n    - Gradual, staged, low-dose approach according to the egg ladder\n    - Do not attempt within 6 months of a significant allergic reaction to egg\n    - Exclude patients with history of severe reactions, poorly controlled asthma, severe eczema (>40% body surface), severe multisystem allergic disease, or recent trace reactions from home introduction; these require hospital-based challenge",
+      "block": "document",
+      "group_name": "toxicities",
+      "level": 2,
+      "json_paths": [
+        "document.safety.toxicities[1]"
+      ],
+      "token_count": 243,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toxicities"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toxicities:\n  Event: Adverse reaction during hospital-based egg challenge\n  Associated therapies:\n    - hospital egg challenge\n  Incidence: Adrenaline required in 2% of 236 children in one study; no adrenaline needed in 181 challenges. In another study of 678 challenges, two children meeting home introduction criteria developed airway symptoms, but these challenges used higher starting doses (200 mg egg protein) and rapid escalation compared to gradual home introduction (starting 20 mg).\n  Recognition:\n    - Rapid onset of allergic symptoms following ingestion, monitored in hospital setting\n  Management:\n    - Severity: any\n      Actions: Challenge conducted under medical supervision with immediate access to emergency medications including adrenaline; appropriate treatment according to reaction severity.\n  Prevention:\n    - Select patients for hospital challenge according to criteria: severe previous reactions, asthma, severe eczema, multisystem disease, high anxiety, persistent egg allergy, etc.\n    - Use low starting doses and gradual escalation",
+      "block": "document",
+      "group_name": "toxicities",
+      "level": 2,
+      "json_paths": [
+        "document.safety.toxicities[2]"
+      ],
+      "token_count": 214,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toxicities"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toxicities:\n  Event: Adverse reactions to egg oral immunotherapy\n  Associated therapies:\n    - egg oral immunotherapy\n  Incidence: High incidence of adverse events; in one study, adrenaline required in 26% of children. Early discontinuation associated with asthma, higher specific IgE, and lower reaction threshold. Ovomucoid IgE >8.85 kU/L indicates 95% probability of early discontinuation or persistent reactions.\n  Recognition:\n    - Allergic symptoms during dose escalation, including anaphylaxis\n  Management:\n    - Severity: severe\n      Actions: Discontinue immunotherapy and treat according to anaphylaxis protocol; OIT should only be performed in highly specialized allergy centres.\n  Prevention:\n    - EAACI does not currently recommend egg OIT for long-term tolerance in children with persistent egg allergy\n    - Should only be undertaken in highly specialized centres\n    - Consider predictors: high ovomucoid IgE, asthma, lower reaction threshold",
+      "block": "document",
+      "group_name": "toxicities",
+      "level": 2,
+      "json_paths": [
+        "document.safety.toxicities[3]"
+      ],
+      "token_count": 228,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toxicities"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toxicities:\n  Event: Eosinophilic esophagitis as complication of egg oral immunotherapy\n  Associated therapies:\n    - egg oral immunotherapy\n  Incidence: Has been reported as a complication; usually reversible after early diagnosis and stopping immunotherapy.\n  Recognition:\n    - Symptoms of esophageal dysfunction (not specified in detail, likely dysphagia, food impaction)\n  Management:\n    - Severity: any\n      Actions: Stop immunotherapy; condition is usually reversible.\n  Prevention:\n    - Early diagnosis by monitoring for symptoms",
+      "block": "document",
+      "group_name": "toxicities",
+      "level": 2,
+      "json_paths": [
+        "document.safety.toxicities[4]"
+      ],
+      "token_count": 130,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toxicities"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toxicities:\n  Event: Food protein-induced enterocolitis syndrome (FPIES) to egg\n  Associated therapies:\n    - egg ingestion\n  Incidence: Egg is a common trigger; 30% of infants with milk or soy FPIES also react to egg. Resolution typically by around 42 months, with tolerance to baked egg occurring earlier (around 30 months) than raw egg (43 months).\n  Recognition:\n    - Recurrent vomiting, fluid loss, dehydration, shock occurring within 4 hours of ingestion\n  Management:\n    - Severity: acute episode\n      Actions: Rapid intravenous fluid resuscitation may be needed; management in a centre experienced in food challenges with prolonged observation.\n    - Severity: follow-up\n      Actions: Confirm resolution by supervised food challenge in an appropriate facility.\n  Prevention:\n    - Avoidance of egg protein; cautious introduction of baked egg under supervision may be tolerated before raw egg.",
+      "block": "document",
+      "group_name": "toxicities",
+      "level": 2,
+      "json_paths": [
+        "document.safety.toxicities[5]"
+      ],
+      "token_count": 210,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toxicities"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toxicities:\n  Event: Hypersensitivity reaction to propofol in egg-allergic patients\n  Associated therapies:\n    - propofol\n  Incidence: One case reported of a child with egg anaphylaxis developing urticaria and erythema on two occasions after propofol. Generally considered safe in egg-allergic patients, both children and adults.\n  Recognition:\n    - Urticaria, erythema\n  Management:\n    - Severity: mild\n      Actions: Treat with antihistamines; no specific contraindication, propofol may still be used.\n  Prevention:\n    - Propofol can be used safely in egg-allergic patients; no specific preventive measures required.",
+      "block": "document",
+      "group_name": "toxicities",
+      "level": 2,
+      "json_paths": [
+        "document.safety.toxicities[6]"
+      ],
+      "token_count": 148,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toxicities"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toxicities:\n  Event: Allergic reaction to influenza vaccine in egg-allergic patients\n  Associated therapies:\n    - influenza vaccine (inactivated and LAIV)\n  Incidence: Reports of egg-related allergic reactions are now largely historical. Ovalbumin content in most current vaccines is <0.12 mcg/ml (<0.06 mcg per 0.5 ml dose). Safe even in those with previous egg anaphylaxis. No safety data on children with anaphylaxis requiring ICU admission.\n  Recognition:\n    - Immediate hypersensitivity symptoms\n  Management:\n    - Severity: mild\n      Actions: Observe for 30 minutes post-vaccination; treat with antihistamines if needed.\n    - Severity: history of anaphylaxis to egg requiring ICU\n      Actions: Refer to specialist for supervised immunization or consider egg-free influenza vaccine if available and age-appropriate.\n  Prevention:\n    - Use vaccines with low ovalbumin content\n    - Routine administration in primary care for most egg-allergic patients\n    - For those with life-threatening anaphylaxis to egg requiring ICU, specialist assessment recommended",
+      "block": "document",
+      "group_name": "toxicities",
+      "level": 2,
+      "json_paths": [
+        "document.safety.toxicities[7]"
+      ],
+      "token_count": 257,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toxicities"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toxicities:\n  Event: Allergic reaction to yellow fever vaccine in egg-allergic patients\n  Associated therapies:\n    - yellow fever vaccine\n  Incidence: Rate of anaphylaxis: 1 in 238,000 doses when given alone, 1 in 131,000 when co-administered.\n  Recognition:\n    - Anaphylactic symptoms; thought to be related to residual egg protein, though other allergens possible.\n  Management:\n    - Severity: risk assessment before vaccination\n      Actions: Refer to allergy specialist at least 2 months before travel; perform skin prick test to egg and undiluted vaccine; if negative, intradermal test at 1:10 or 1:100 dilution. Negative IDT predicts tolerance; proceed with vaccine. Positive testing: consider certificate of exemption if travel not essential, or if seroconversion not confirmed, or perform 7-step desensitization regime.\n    - Severity: acute reaction\n      Actions: Treat per anaphylaxis protocol in vaccination centre.\n  Prevention:\n    - Specialist allergy centre assessment with skin testing and possible graded dosing or desensitization; collaboration with Yellow Fever Vaccination Centre",
+      "block": "document",
+      "group_name": "toxicities",
+      "level": 2,
+      "json_paths": [
+        "document.safety.toxicities[8]"
+      ],
+      "token_count": 252,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toxicities"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Toxicities:\n  Event: Allergic reaction to purified chick embryo cell (PCEC) rabies vaccine\n  Associated therapies:\n    - PCEC rabies vaccine (Rabipur)\n  Incidence: Reports of allergic reactions and anaphylaxis, some possibly related to egg allergy.\n  Recognition:\n    - Immediate hypersensitivity\n  Management:\n    - Severity: post-exposure prophylaxis in egg-allergic patient with anaphylaxis history\n      Actions: Use human diploid cell vaccine (egg-free) if available; if PCEC is only option, administer under close monitoring due to high fatality of rabies, risk of vaccine reaction is outweighed.\n  Prevention:\n    - Avoid PCEC in those with previous egg anaphylaxis if alternative egg-free vaccine available; post-exposure prophylaxis necessity overrides relative contraindication",
+      "block": "document",
+      "group_name": "toxicities",
+      "level": 2,
+      "json_paths": [
+        "document.safety.toxicities[9]"
+      ],
+      "token_count": 203,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "toxicities"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Prophylaxis:\n  Type: allergen_avoidance\n  Recommendation: Strict avoidance of egg and egg-containing foods; read labels; avoid loose foods and buffets if severe allergy.\n  Target population: all egg-allergic patients\n  Duration: until resolution",
+      "block": "document",
+      "group_name": "prophylaxis",
+      "level": 2,
+      "json_paths": [
+        "document.safety.prophylaxis[0]"
+      ],
+      "token_count": 64,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "prophylaxis"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Prophylaxis:\n  Type: emergency_medication\n  Recommendation: Prescribe non-drowsy antihistamine for all; adrenaline autoinjector for those with history of severe reactions, asthma on preventer, or persistent allergy. Provide anaphylaxis action plan and annual review.\n  Target population: all patients: antihistamine; autoinjector: severe reactors\n  Duration: as long as allergy persists",
+      "block": "document",
+      "group_name": "prophylaxis",
+      "level": 2,
+      "json_paths": [
+        "document.safety.prophylaxis[1]"
+      ],
+      "token_count": 96,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "prophylaxis"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Prophylaxis:\n  Type: nutritional_support\n  Recommendation: Refer to dietician for multiple food allergies, nutritional concerns, severe egg allergy requiring strict avoidance, or assistance with reintroduction ladder.\n  Target population: selected patients\n  Duration: as needed",
+      "block": "document",
+      "group_name": "prophylaxis",
+      "level": 2,
+      "json_paths": [
+        "document.safety.prophylaxis[2]"
+      ],
+      "token_count": 62,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "prophylaxis"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Prophylaxis:\n  Type: maternal_diet\n  Recommendation: Most mothers should continue unrestricted diet; consider maternal egg exclusion for 4-6 weeks if persistent eczema triggered by egg or suspected infant reaction, then reintroduce.\n  Target population: breastfeeding mothers of egg-allergic infants\n  Duration: 4-6 weeks trial",
+      "block": "document",
+      "group_name": "prophylaxis",
+      "level": 2,
+      "json_paths": [
+        "document.safety.prophylaxis[3]"
+      ],
+      "token_count": 79,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "prophylaxis"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Prophylaxis:\n  Type: primary_prevention\n  Recommendation: Introduce well-cooked egg early (from 4-6 months) in infants with eczema, starting with small amounts, to reduce risk of egg allergy.\n  Target population: infants with eczema\n  Duration: during weaning",
+      "block": "document",
+      "group_name": "prophylaxis",
+      "level": 2,
+      "json_paths": [
+        "document.safety.prophylaxis[4]"
+      ],
+      "token_count": 67,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "prophylaxis"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Prophylaxis:\n  Type: food_allergy_prevention\n  Recommendation: Introduce peanut early in egg-allergic infants under 11 months to reduce risk of peanut allergy.\n  Target population: egg-allergic infants\n  Duration: ongoing",
+      "block": "document",
+      "group_name": "prophylaxis",
+      "level": 2,
+      "json_paths": [
+        "document.safety.prophylaxis[5]"
+      ],
+      "token_count": 55,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "prophylaxis"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Prophylaxis:\n  Type: vaccination_safety\n  Recommendation: Most egg-allergic children and adults can receive influenza vaccine in primary care; refer those with anaphylaxis to egg requiring ICU to specialist.\n  Target population: egg-allergic patients\n  Duration: as per immunization schedule",
+      "block": "document",
+      "group_name": "prophylaxis",
+      "level": 2,
+      "json_paths": [
+        "document.safety.prophylaxis[6]"
+      ],
+      "token_count": 67,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "prophylaxis"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Prophylaxis:\n  Type: vaccination_safety\n  Recommendation: Refer to allergy specialist for assessment before yellow fever vaccination; skin testing, possible desensitization if necessary.\n  Target population: egg-allergic patients requiring YFV\n  Duration: pre-travel",
+      "block": "document",
+      "group_name": "prophylaxis",
+      "level": 2,
+      "json_paths": [
+        "document.safety.prophylaxis[7]"
+      ],
+      "token_count": 61,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "prophylaxis"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Prophylaxis:\n  Type: vaccination_safety\n  Recommendation: All children with egg allergy should receive MMR vaccine in primary care without special precautions.\n  Target population: all egg-allergic children\n  Duration: as per schedule",
+      "block": "document",
+      "group_name": "prophylaxis",
+      "level": 2,
+      "json_paths": [
+        "document.safety.prophylaxis[8]"
+      ],
+      "token_count": 53,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "prophylaxis"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Prophylaxis:\n  Type: vaccination_safety\n  Recommendation: For post-exposure prophylaxis, use egg-free human diploid cell vaccine if available; if PCEC only option, administer with caution as benefit outweighs risk.\n  Target population: egg-allergic patients with history of anaphylaxis\n  Duration: as needed post-exposure",
+      "block": "document",
+      "group_name": "prophylaxis",
+      "level": 2,
+      "json_paths": [
+        "document.safety.prophylaxis[9]"
+      ],
+      "token_count": 85,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "prophylaxis"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_01\n  Statement: Allergic sensitization to egg without a history of reacting should not prevent the introduction of egg into the diet, as this carries a risk of unnecessary dietary exclusion.\n  Strength: Grade D\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[0]"
+      ],
+      "token_count": 86,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_02\n  Statement: In moderate-severe cases or where there is diagnostic uncertainty, measuring egg-specific IgE or performing skin prick testing is useful.\n  Strength: Grade B\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[1]"
+      ],
+      "token_count": 79,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_03\n  Statement: An egg skin prick test weal of 3 mm or more, combined with a compatible clinical history, is considered adequate to confirm a diagnosis of egg allergy in most cases.\n  Strength: Grade B\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[2]"
+      ],
+      "token_count": 85,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_04\n  Statement: Clinical severity cannot be judged on the basis of skin prick test weal size or serum-specific IgE alone.\n  Strength: Grade C\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[3]"
+      ],
+      "token_count": 72,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_05\n  Statement: In the absence of a suspected reaction, patients should not be routinely tested for egg allergy.\n  Strength: Grade D\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[4]"
+      ],
+      "token_count": 67,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_06\n  Statement: A food challenge may be necessary to confirm or refute conflicting history and test results but is rarely required in practice to confirm the diagnosis of egg allergy.\n  Strength: Grade D\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[5]"
+      ],
+      "token_count": 79,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_07\n  Statement: Following an acute allergic reaction to egg, egg avoidance advice is the cornerstone of management.\n  Strength: Grade D\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[6]"
+      ],
+      "token_count": 66,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_08\n  Statement: Most infants with egg allergy should continue to breastfeed, with their mother on an unrestricted diet.\n  Strength: Grade D\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[7]"
+      ],
+      "token_count": 68,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_09\n  Statement: Mothers breastfeeding egg-allergic infants may wish to try egg exclusion if their infants have persistent eczema and egg is a trigger, or if the infant is suspected of reacting to maternal egg ingestion.\n  Strength: Grade C\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[8]"
+      ],
+      "token_count": 93,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_10\n  Statement: Referral to a dietician is required if there are multiple food allergies, nutritional concerns, or help is needed following the reintroduction ladder.\n  Strength: Grade D\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[9]"
+      ],
+      "token_count": 78,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_11\n  Statement: Referral to a dietician is needed for children with severe egg allergy for advice about strict egg avoidance.\n  Strength: Grade D\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[10]"
+      ],
+      "token_count": 68,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_12\n  Statement: Mild egg allergy usually resolves; attempts to introduce baked egg as an ingredient (e.g. in cake) may be made from the age of 12 months, or 6 months from the last reaction.\n  Strength: Grade B\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[11]"
+      ],
+      "token_count": 89,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_13\n  Statement: Regular ingestion of baked egg may promote tolerance and should be encouraged.\n  Strength: Grade C\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[12]"
+      ],
+      "token_count": 62,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_14\n  Statement: Once loosely cooked egg is tolerated, egg allergy is outgrown and egg should be eaten as part of the normal diet.\n  Strength: Grade D\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[13]"
+      ],
+      "token_count": 77,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_15\n  Statement: Resolution occurs gradually over time; assessment for reintroduction of baked egg in all infants and young children presenting with egg allergy is advised, as prolonged total exclusion may lead to more persistent allergy and increases dietary and social exclusion.\n  Strength: Grade B\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[14]"
+      ],
+      "token_count": 102,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_16\n  Statement: Children with mild-moderate symptoms can reintroduce egg at home, starting with baked egg in small amounts.\n  Strength: Grade D\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[15]"
+      ],
+      "token_count": 69,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_17\n  Statement: Children with a history of a severe egg reaction or severe eczema and faltering growth are more likely to have persistent disease; avoidance and reintroduction should be guided by a specialist allergy service.\n  Strength: Grade D\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[16]"
+      ],
+      "token_count": 88,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_18\n  Statement: Early introduction of well-cooked or baked egg into the diet of infants with eczema reduces the incidence of egg allergy and is recommended.\n  Strength: Grade A\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[17]"
+      ],
+      "token_count": 82,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_19\n  Statement: Egg allergy in infancy is associated with an increased risk of developing peanut allergy; early introduction of peanut into the diet is recommended to prevent this.\n  Strength: Grade B\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[18]"
+      ],
+      "token_count": 80,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_20\n  Statement: All children with egg allergy should receive the MMR immunization in primary care.\n  Strength: Grade B\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[19]"
+      ],
+      "token_count": 61,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_21\n  Statement: Children with egg allergy can receive the nasal live attenuated influenza vaccine (LAIV), and most children and adults can receive the intramuscular influenza vaccine in primary care, unless they have had anaphylaxis to egg requiring admission to intensive care.\n  Strength: Grade B\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[20]"
+      ],
+      "token_count": 103,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_22\n  Statement: If yellow fever vaccine is required, the egg-allergic patient should be referred to an allergy specialist with access to a designated yellow fever vaccination centre for assessment and immunization.\n  Strength: Grade B\n  Grading system: SIGN\n  Condition ref: egg_allergy\n  Source heading: Key Message",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[21]"
+      ],
+      "token_count": 86,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_23\n  Statement: Referral to an allergy clinic is recommended for patients with egg allergy in the following circumstances: history of moderate to severe reaction, diagnostic uncertainty, association with other IgE-mediated food allergies, severe eczema on an egg-containing diet, allergy to baked egg persisting beyond 6–7 years, adult-onset egg allergy, requirement for yellow fever immunisation, inability to reintroduce egg due to high anxiety, or use of biologics/immunosuppressants.\n  Condition ref: egg_allergy\n  Source heading: BOX 1 Which patients with egg allergy should be referred to an allergy clinic",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[22]"
+      ],
+      "token_count": 161,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_24\n  Statement: For the diagnosis of egg allergy: most children should receive a clinical diagnosis without food challenge; a negative skin prick test can exclude egg allergy if the history is unclear; skin prick test weal size or specific IgE level do not predict severity; the severity of a reaction depends on the amount of allergen ingested, the matrix, how well it is cooked, and concomitant asthma, exercise or illness.\n  Condition ref: egg_allergy\n  Source heading: BOX 2 Making a diagnosis of egg allergy",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[23]"
+      ],
+      "token_count": 143,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_25\n  Statement: Hospital-based egg challenge should be considered after an interval of >1 year from the last reaction in patients with: severe symptoms affecting breathing, circulation, or severe gastrointestinal symptoms; severe/poorly controlled asthma; severe multisystem allergic disease. Relative indications include: mild-moderate reactions to trace exposure, stable asthma on regular preventer, multiple complex food allergies, inability to adhere to a protocol, high anxiety, immunosuppressant or biologic use, and older patients with persistent egg allergy.\n  Condition ref: egg_allergy\n  Source heading: BOX 4 Hospital based egg challenge should be considered...",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[24]"
+      ],
+      "token_count": 160,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_26\n  Statement: Skin testing with raw egg is not routinely recommended outside research settings because it lacks standardization and carries a risk of severe reactions.\n  Condition ref: egg_allergy\n  Source heading: 7.1 Skin prick test",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[25]"
+      ],
+      "token_count": 63,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_27\n  Statement: Measurement of peanut-specific IgE should be included in infants with moderate/severe egg allergy to guide peanut allergy prevention advice.\n  Condition ref: egg_allergy\n  Source heading: 7.2 Egg-specific IgE",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[26]"
+      ],
+      "token_count": 69,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_28\n  Statement: Egg component testing is rarely needed for the routine diagnosis and management of egg allergy in children but can be a useful adjunct for the assessment of egg allergy resolution in adults.\n  Condition ref: egg_allergy\n  Source heading: 7.3 Egg component testing",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[27]"
+      ],
+      "token_count": 73,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_29\n  Statement: Those avoiding hen's egg should also avoid eggs from other avian species, such as duck, goose and quail, due to common cross-reactivity.\n  Condition ref: egg_allergy\n  Source heading: 8.4 Cross-reactivity between eggs from hens and other bird species",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[28]"
+      ],
+      "token_count": 84,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_30\n  Statement: All families with egg-allergic children should have an appropriate oral antihistamine available, preferably a second-generation, non-drowsy antihistamine, to treat allergic reactions due to accidental ingestion.\n  Condition ref: egg_allergy\n  Source heading: 8.6 Provision of emergency medication and treatment plans",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[29]"
+      ],
+      "token_count": 85,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_31\n  Statement: Children with egg allergy and asthma requiring regular preventative treatment with inhaled corticosteroids should be considered for an adrenaline autoinjector.\n  Condition ref: egg_allergy\n  Source heading: 8.6 Provision of emergency medication and treatment plans",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[30]"
+      ],
+      "token_count": 73,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_32\n  Statement: Families should receive training in how to use their emergency medication, including demonstration with a trainer device and provision of a management plan.\n  Condition ref: egg_allergy\n  Source heading: 8.6 Provision of emergency medication and treatment plans",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[31]"
+      ],
+      "token_count": 65,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_33\n  Statement: Adults and young people with persisting egg allergy should be re-assessed, especially prior to a move away from home, and provided with updated dietary management advice and review of the need for an adrenaline autoinjector.\n  Condition ref: egg_allergy\n  Source heading: 8.6 Provision of emergency medication and treatment plans",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[32]"
+      ],
+      "token_count": 88,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_34\n  Statement: If a reaction occurs during home reintroduction, the previously tolerated diet should be followed, and further reintroduction considered after 3–6 months.\n  Condition ref: egg_allergy\n  Source heading: 9.4 Home introduction of egg",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[33]"
+      ],
+      "token_count": 69,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_35\n  Statement: Egg introduction or challenge should not be deferred for concern of increasing sensitization.\n  Condition ref: egg_allergy\n  Source heading: 9.4 Home introduction of egg",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[34]"
+      ],
+      "token_count": 54,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_36\n  Statement: Children with severe egg allergy should be followed up periodically to assess the likelihood of resolution and to refresh avoidance advice and emergency medication training.\n  Condition ref: egg_allergy\n  Source heading: 9.5 Children with severe egg allergy",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[35]"
+      ],
+      "token_count": 67,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_37\n  Statement: Reintroduction can be attempted if there has been no significant recent clinical reaction, accompanied by a reduction in SPT wheal size or serum-specific IgE over time.\n  Condition ref: egg_allergy\n  Source heading: 9.5 Children with severe egg allergy",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[36]"
+      ],
+      "token_count": 79,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_38\n  Statement: Children with severe egg allergy should have a supervised challenge in hospital, not at home.\n  Condition ref: egg_allergy\n  Source heading: 9.5 Children with severe egg allergy",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[37]"
+      ],
+      "token_count": 56,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_39\n  Statement: Egg oral immunotherapy should only be undertaken in highly specialized allergy centres.\n  Condition ref: egg_allergy\n  Source heading: 9.6 Oral immunotherapy",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[38]"
+      ],
+      "token_count": 53,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_40\n  Statement: Older children or adults with pre-existing egg allergy should be assessed for the likely resolution of egg allergy; component testing can be useful in determining whether a baked egg challenge might be tolerated.\n  Condition ref: egg_allergy\n  Source heading: 10 EGG ALLERGY IN ADULTS",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[39]"
+      ],
+      "token_count": 84,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_41\n  Statement: Excellent asthma control should be a priority in children with egg allergy, as the presence of asthma may increase the potential severity of accidental egg reactions.\n  Condition ref: egg_allergy\n  Source heading: 11.1 Egg allergy and asthma",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[40]"
+      ],
+      "token_count": 74,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_42\n  Statement: Propofol is safe to use in children with egg allergy.\n  Condition ref: egg_allergy\n  Source heading: 11.4 Use of Propofol in egg-allergic patients",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[41]"
+      ],
+      "token_count": 55,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_43\n  Statement: Resolution of food protein-induced enterocolitis syndrome (FPIES) to egg should be confirmed by food challenge in a centre with experience in food challenges, facilities for rapid intravenous fluid resuscitation, and prolonged observation.\n  Condition ref: egg_allergy\n  Source heading: 11.5 FPIES to egg",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[42]"
+      ],
+      "token_count": 86,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_44\n  Statement: Egg-allergic patients requiring yellow fever vaccine should be assessed in a specialist allergy centre, ideally at least 2 months prior to travel.\n  Condition ref: egg_allergy\n  Source heading: 12.2 Yellow fever vaccine",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[43]"
+      ],
+      "token_count": 68,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_45\n  Statement: If yellow fever immunization is not given after assessment, consider a certificate of exemption after serological confirmation if intradermal testing was performed; if no seroconversion, a desensitization regime may be considered.\n  Condition ref: egg_allergy\n  Source heading: 12.2 Yellow fever vaccine",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[44]"
+      ],
+      "token_count": 82,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Recommendations:\n  Rec id: rec_46\n  Statement: Infants with moderate-severe or early-onset eczema or existing food allergy should have the first couple of ingestions of baked egg in tiny (pea-sized) amounts due to higher risk of reacting on initial introduction.\n  Condition ref: egg_allergy\n  Source heading: 15 PRIMARY PREVENTION",
+      "block": "document",
+      "group_name": "recommendations",
+      "level": 1,
+      "json_paths": [
+        "document.recommendations[45]"
+      ],
+      "token_count": 91,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "recommendations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_01\n  Type: table\n  Title: Key Messages of the Guideline\n  Source heading: Key Message\n  Data:\n    Row 1:\n      Recommendation: Egg allergy refers to an immunological reaction against egg protein, with this guideline emphasizing IgE-mediated type 1 hypersensitivity.\n    Row 2:\n      Recommendation: In the UK, egg allergy has an estimated prevalence of around 2% in children and 0.1% in adults.\n      Grade: B\n    Row 3:\n      Recommendation: The common presence of egg sensitization in infants who have never reacted should not discourage the introduction of egg, as unnecessary avoidances carry risks.\n      Grade: D\n    Row 4:\n      Recommendation: Infancy is the typical onset, often upon first exposure, marked by rapid development of erythema, urticaria, angioedema, and/or vomiting.\n      Grade: B\n    Row 5:\n      Recommendation: Severe manifestations like respiratory or cardiovascular involvement (e.g., cough, wheeze, breathing trouble, pallor, floppiness) are infrequent.\n      Grade: B\n    Row 6:\n      Recommendation: A clinical diagnosis hinges on the swift appearance of characteristic symptoms after egg intake, usually within minutes.\n      Grade: B\n    Row 7:\n      Recommendation: The reaction’s severity depends on the quantity of egg consumed and the cooking extent, with raw egg white being the most allergenic form.\n      Grade: D\n    Row 8:\n      Recommendation: Detecting egg-specific IgE (via SPT or specific IgE assay) is valuable for managing moderate-to-severe cases or when the diagnosis is uncertain.\n      Grade: B\n    Row 9:\n      Recommendation: Studies show variable egg-specific IgE thresholds for diagnosis, so a single cut-off applicable to all ages cannot be established.\n      Grade: B\n    Row 10:\n      Recommendation: A skin prick test weal ≥3 mm together with a compatible history is generally sufficient to diagnose egg allergy in the majority of patients.\n      Grade: B\n    Row 11:\n      Recommendation: Neither SPT weal size nor serum-specific IgE level alone can reliably predict clinical severity.\n      Grade: C\n    Row 12:\n      Recommendation: Routine testing for egg allergy is not recommended without a history of suspected reaction.\n      Grade: D\n    Row 13:\n      Recommendation: Food challenges may be needed to clarify conflicting history and test results, but they are seldom required for straightforward egg allergy diagnoses.\n      Grade: D\n    Row 14:\n      Recommendation: The mainstay of management after an acute allergic reaction is strict egg avoidance guidance.\n      Grade: D\n    Row 15:\n      Recommendation: Most breastfed infants with egg allergy should continue breastfeeding while the mother maintains a regular diet.\n      Grade: D\n    Row 16:\n      Recommendation: Breastfeeding mothers may consider a trial egg exclusion diet if the infant has persistent eczema triggered by egg, or if they suspect reactions to maternal egg intake.\n      Grade: C\n    Row 17:\n      Recommendation: Dietetic referral is indicated for multiple food allergies, nutritional concerns, or assistance with the egg ladder reintroduction.\n      Grade: D\n    Row 18:\n      Recommendation: Children with severe egg allergy need dietetic referral for advice on rigorous egg avoidance.\n      Grade: D\n    Row 19:\n      Recommendation: Mild egg allergy frequently resolves; attempts to introduce baked egg (e.g., in cake) can start at 12 months of age or 6 months after the last reaction.\n      Grade: B\n    Row 20:\n      Recommendation: Regular consumption of baked egg may facilitate tolerance development.\n      Grade: C\n    Row 21:\n      Recommendation: When loosely cooked egg is well tolerated, egg allergy is considered outgrown, and egg should be integrated into the normal diet.\n      Grade: D\n    Row 22:\n      Recommendation: Allergy resolution is gradual; clinicians should assess all young children with egg allergy for baked egg reintroduction to avoid prolonged exclusion, which can lead to persistent allergy and increased dietary/social limitations.\n      Grade: B\n    Row 23:\n      Recommendation: Children with mild-to-moderate egg allergy can undertake home reintroduction, beginning with small amounts of baked egg.\n      Grade: D\n    Row 24:\n      Recommendation: Persistent disease is more common in children with a history of severe reactions, severe eczema, or poor growth; their avoidance and reintroduction should be specialist-led.\n      Grade: D\n    Row 25:\n      Recommendation: Introducing well-cooked or baked egg early into the diet of infants with eczema lowers the incidence of egg allergy.\n      Grade: A\n    Row 26:\n      Recommendation: Egg allergy in infancy raises the risk of peanut allergy, but this can be mitigated by early introduction of peanut.\n      Grade: B\n    Row 27:\n      Recommendation: Adult-onset egg allergy is rare, typically more severe, and tends to endure.\n      Grade: D\n    Row 28:\n      Recommendation: All children with egg allergy ought to receive the MMR vaccine in primary care.\n      Grade: B\n    Row 29:\n      Recommendation: The nasal LAIV and intramuscular influenza vaccines can be given to most egg-allergic children and adults in primary care, except those who experienced anaphylaxis requiring intensive care admission.\n      Grade: B\n    Row 30:\n      Recommendation: Yellow Fever vaccines contain egg protein in unquantified amounts; egg-allergic individuals requiring this vaccine should be evaluated by an allergy specialist at a designated yellow fever vaccination centre.\n      Grade: B\n  Summary: Compilation of the main evidence-based recommendations from the guideline, each accompanied by its SIGN-derived grade of recommendation (A–D). It covers epidemiology, diagnosis, management, resolution, vaccination, and prevention.\n  Clinical relevance: Serves as a quick reference for clinicians to understand the strength of recommendations on critical aspects of egg allergy care.",
+      "block": "document",
+      "group_name": "artifacts",
+      "level": 1,
+      "json_paths": [
+        "document.artifacts[0]"
+      ],
+      "token_count": 1422,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "artifacts"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_02\n  Type: checklist\n  Title: Box 1: Criteria for Allergy Clinic Referral\n  Source heading: 5 | Clinical Presentation and Severity, Box 1\n  Data:\n    Row 1:\n      Referral criterion: Moderate to severe past reaction (refer to Box 4 for definition)\n    Row 2:\n      Referral criterion: Diagnostic uncertainty\n    Row 3:\n      Referral criterion: Additional IgE-mediated food allergies alongside egg allergy\n    Row 4:\n      Referral criterion: Severe eczema in a child who still consumes egg\n    Row 5:\n      Referral criterion: Baked egg allergy persisting beyond the typical resolution age of 6–7 years\n    Row 6:\n      Referral criterion: Egg allergy beginning in adulthood\n    Row 7:\n      Referral criterion: Need for yellow fever vaccination\n    Row 8:\n      Referral criterion: Child desiring egg reintroduction but prevented by significant anxiety\n    Row 9:\n      Referral criterion: Use of biologic agents or immunosuppressants\n  Summary: List of clinical scenarios that warrant specialist allergy referral for egg-allergic patients, as defined by the guideline.\n  Clinical relevance: Helps primary care physicians identify patients who require specialist input, ensuring timely access to appropriate diagnostic and management resources.",
+      "block": "document",
+      "group_name": "artifacts",
+      "level": 1,
+      "json_paths": [
+        "document.artifacts[1]"
+      ],
+      "token_count": 285,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "artifacts"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_03\n  Type: checklist\n  Title: Box 2: Key Points for Diagnosing Egg Allergy\n  Source heading: 7 | Investigations, Box 2\n  Data:\n    Row 1:\n      Diagnostic pearls: Clinical diagnosis suffices for most children, avoiding food challenges.\n    Row 2:\n      Diagnostic pearls: A negative SPT can rule out egg allergy when the history is uncertain.\n    Row 3:\n      Diagnostic pearls: SPT weal size or specific IgE level fails to forecast reaction severity.\n    Row 4:\n      Diagnostic pearls: Reaction severity hinges on the ingested allergen quantity, food matrix, cooking degree, and co-factors like asthma, exercise, or illness.\n  Summary: Concise reminders on the diagnostic approach to egg allergy, highlighting the primacy of clinical history and the limited predictive value of test results for severity.\n  Clinical relevance: Reduces unnecessary testing and challenges by reinforcing that most cases can be diagnosed clinically, while emphasizing when tests are useful.",
+      "block": "document",
+      "group_name": "artifacts",
+      "level": 1,
+      "json_paths": [
+        "document.artifacts[2]"
+      ],
+      "token_count": 247,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "artifacts"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_04\n  Type: figure\n  Title: Figure 1: BSACI Egg Ladder for Home Reintroduction\n  Source heading: 8 | Management, Figure 1\n  Data:\n    Row 1:\n      Stage: Stage 1: Baked/well cooked egg (low egg / with matrix)\n      Sub-stage: Early-stage introduction\n      Foods and guidance: Cake (1 egg/8 cake recipe), Hard Biscuits, TUC crackers, Sorbet, Cold/Hot Souffle, Luxury and fresh ice cream (e.g., Ben & Jerry, Haagan Daaz), Soft meringue (lemon meringue, pavlova), Fresh Mousse and other uncooked desserts, Mini Frozen Yorkshire pudding, Pastry containing egg (sausage roll, pie, Choux), Trifle sponge/Jaffa cake, Breadcrumb coating (e.g., fish finger, nugget), Sushi, Tartare steak, Confit Egg, Florentine pizza, eggs benedict, Wheat free bread/bread sticks\n    Row 2:\n      Stage: Later stage introduction\n      Sub-stage: Bread containing egg (e.g., Brioche, Croissants, Buns, Panettone, Naan, Focaccia), Cake (standard recipe), Muffins, madeleines, Scotch pancakes, blinis, Welsh cakes, Soft Mallow (snowball, teacake), Royal and fondant icing/decoration, Raw cake mixture, Homemade marzipan, Fondant confectionary (e.g., creme egg), Uncooked egg white powder, Soft cookies, Toasting waffles, waffle cones, Egg pasta and dishes with pasta, Cooked egg glaze, Prawn crackers, Cocktails/drinks (e.g., Advocaat)\n    Row 3:\n      Stage: Stage 2: Well cooked egg dishes and loosely cooked egg\n      Sub-stage: Early-stage introduction\n      Foods and guidance: Homemade Pancakes, crepes, and waffles Batter, Homemade Yorkshire pudding, Egg noodles, Scrambled egg (firm), Hard Boiled / fried / poached egg, Scotch egg, Omelette/frittata, Egg fried rice, Quiche and flans, Duchess potato, Heated sauces (e.g., Hollandaise sauce), Egg custard, Crème caramel, Crème Brulée, Nougat and Nougat confectionary (e.g., mars), Hard Meringue/pavlova\n    Row 4:\n      Stage: Later stage introduction\n      Sub-stage: Loosely cooked scrambled egg or omelette, Carbonara Sauce, French toast, Welsh rarebit\n    Row 5:\n      Stage: Stage 3: Raw egg products\n      Sub-stage: Mayonnaise and mayonnaise based sauces (e.g., Horseradish sauce, tartar sauce, ranch dressing), Salad cream, coleslaw, Dippy/uncooked boiled/fried/poached egg\n  Description: A stepwise dietary advancement tool beginning with extensively heated (baked) egg in a wheat matrix, progressing to well-cooked and loosely cooked egg dishes, and finally to raw or minimally cooked egg products. Each stage should be introduced in small amounts, increasing if tolerated; if symptoms occur, regress to the previous stage. Foods marked with * may be more allergenic depending on cooking.\n  Summary: Visual guide to the gradual home introduction of egg from least to most allergenic forms, designed to safely promote tolerance in egg-allergic children.\n  Clinical relevance: Provides a practical, evidence-based pathway for families and clinicians to reintroduce egg, helping to accelerate resolution of allergy while minimizing risk.",
+      "block": "document",
+      "group_name": "artifacts",
+      "level": 1,
+      "json_paths": [
+        "document.artifacts[3]"
+      ],
+      "token_count": 873,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "artifacts"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_05\n  Type: table\n  Title: Figure 2: Classification of Egg-Containing Foods\n  Source heading: 8 | Management, Figure 2\n  Data:\n    Row 1:\n      Stage: Stage 3: Raw egg products\n      Food items and notes: Mayonnaise and mayonnaise based sauces (e.g., Horseradish sauce, tartar sauce, ranch dressing), Salad cream, coleslaw, Dippy/uncooked boiled/fried/poached egg\n    Row 2:\n      Stage: Stage 2: Well cooked egg dishes and loosely cooked egg (Early-stage)\n      Food items and notes: Homemade Pancakes, crepes, and waffles Batter, Homemade Yorkshire pudding, Egg noodles, Scrambled egg (firm), Hard Boiled/fried/poached egg, Scotch egg, Omelette/frittata, Egg fried rice, Quiche and flans, Duchess potato, Heated sauces (e.g., Hollandaise sauce), Egg custard, Crème caramel, Crème Brulée, Nougat and Nougat confectionary (e.g., mars), Hard Meringue/pavlova\n    Row 3:\n      Stage: Stage 2: Well cooked egg dishes and loosely cooked egg (Later-stage)\n      Food items and notes: Loosely cooked scrambled egg or omelette, Carbonara Sauce, French toast, Welsh rarebit\n    Row 4:\n      Stage: Stage 1: Baked/well cooked egg (low egg / with matrix) (Early-stage)\n      Food items and notes: Cake (1 egg/8 cake recipe), Hard Biscuits, TUC crackers, Sorbet, Cold/Hot Souffle, Luxury and fresh ice cream (e.g., Ben & Jerry, Haagan Daaz), Soft meringue (lemon meringue, pavlova), Fresh Mousse and other uncooked desserts, Mini Frozen Yorkshire pudding, Pastry containing egg (sausage roll, pie, Choux), Trifle sponge/Jaffa cake, Breadcrumb coating (e.g., fish finger, nugget), Sushi, Tartare steak, Confit Egg, Florentine pizza, eggs benedict, Wheat free bread/bread sticks\n    Row 5:\n      Stage: Stage 1: Baked/well cooked egg (low egg / with matrix) (Later-stage)\n      Food items and notes: Bread containing egg (e.g., Brioche, Croissants, Buns, Panettone, Naan, Focaccia), Cake (standard recipe), Muffins, madeleines, Scotch pancakes, blinis, Welsh cakes, Soft Mallow (snowball, teacake), Royal and fondant icing/decoration, Raw cake mixture, Homemade marzipan, Fondant confectionary (e.g., creme egg), Uncooked egg white powder, Soft cookies, Toasting waffles, waffle cones, Egg pasta and dishes with pasta, Cooked egg glaze, Prawn crackers, Cocktails/drinks (e.g., Advocaat)\n    Row 6:\n      Stage: Additional notes\n      Food items and notes: Pasteurised egg, *Egg as binder e.g., burger, meatball - well cooked, Quorn. Each stage to be tried in small amounts first. Reduce to lower stage/smaller amount if symptoms. * these foods may cause allergic reaction depending on degree of cooking (fully cooked = less allergen)\n  Summary: Detailed categorization of egg-containing foods by processing level, from highly heated (baked) to raw, to guide reintroduction. Foods are ranked by allergenicity, with baking reducing allergenic potential.\n  Clinical relevance: Assists patients and dietitians in selecting appropriate foods during the egg ladder process, ensuring safe progression and minimizing the risk of reactions.",
+      "block": "document",
+      "group_name": "artifacts",
+      "level": 1,
+      "json_paths": [
+        "document.artifacts[4]"
+      ],
+      "token_count": 907,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "artifacts"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_06\n  Type: checklist\n  Title: Box 3: Advantages of Home Introduction of Egg\n  Source heading: 9 | Resolution of Egg Allergy, Box 3\n  Data:\n    Row 1:\n      Benefit: Encourages natural resolution of egg allergy\n    Row 2:\n      Benefit: Diminishes anxiety around food\n    Row 3:\n      Benefit: Broadens and normalises the dietary pattern\n    Row 4:\n      Benefit: Enhances nutritional status\n    Row 5:\n      Benefit: Prevents hospital-based anxiety (particularly in children with communication disorders)\n  Summary: Enumerates the benefits of supervised home reintroduction of egg using a ladder approach over hospital-based challenges.\n  Clinical relevance: Supports shared decision-making by highlighting the potential quality-of-life and nutritional gains from home-based protocols for appropriately selected patients.",
+      "block": "document",
+      "group_name": "artifacts",
+      "level": 1,
+      "json_paths": [
+        "document.artifacts[5]"
+      ],
+      "token_count": 190,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "artifacts"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_07\n  Type: checklist\n  Title: Box 4: Indications for Hospital-Based Egg Challenge\n  Source heading: 9 | Resolution of Egg Allergy, Box 4\n  Data:\n    Row 1:\n      Indication: Strong indication: Past severe reaction affecting airways (cough, wheeze, throat swelling, choking), circulation (collapse, shock), or GI tract (intense vomiting/diarrhoea)\n    Row 2:\n      Indication: Strong indication: Egg allergy with severe/uncontrolled asthma\n    Row 3:\n      Indication: Strong indication: Severe multisystem allergic disease\n    Row 4:\n      Indication: Relative indication: Mild-to-moderate reactions after trace egg exposure\n    Row 5:\n      Indication: Relative indication: Egg allergy with asthma managed by regular preventer therapy\n    Row 6:\n      Indication: Relative indication: Coexisting multiple/complex food allergies\n    Row 7:\n      Indication: Relative indication: Patients/families unable to understand or follow a protocol\n    Row 8:\n      Indication: Relative indication: Anxiety that prevents home introduction\n    Row 9:\n      Indication: Relative indication: Use of immunosuppressants or biologics\n    Row 10:\n      Indication: Relative indication: Older individuals with ongoing egg allergy\n  Summary: Lists clinical criteria that favour supervised food challenge in a hospital setting rather than home reintroduction, including strong and relative indications.\n  Clinical relevance: Helps identify patients at higher risk for severe reactions, ensuring that reintroduction is conducted in a safe, monitored environment.",
+      "block": "document",
+      "group_name": "artifacts",
+      "level": 1,
+      "json_paths": [
+        "document.artifacts[6]"
+      ],
+      "token_count": 365,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "artifacts"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Artifacts:\n  Artifact id: art_08\n  Type: figure\n  Title: Figure 3: Persistence of Egg Allergy to Cooked vs. Uncooked Egg\n  Source heading: 9 | Resolution of Egg Allergy, Figure 3\n  Description: Kaplan–Meier survival curves displaying the proportion of children remaining allergic to well-cooked egg and to uncooked egg over time. The log-rank test shows a significant difference between the two curves (p < 0.0001). Median age of tolerance acquisition is 67 months (5.6 years) for well-cooked egg and 127 months (10.3 years) for uncooked egg.\n  Summary: Graphical comparison of allergy persistence demonstrating that tolerance to extensively heated egg develops earlier and more quickly than tolerance to raw egg.\n  Clinical relevance: Reinforces the prognostic importance of baked egg tolerance and underpins the rationale for early baked egg introduction to accelerate allergy resolution.",
+      "block": "document",
+      "group_name": "artifacts",
+      "level": 1,
+      "json_paths": [
+        "document.artifacts[7]"
+      ],
+      "token_count": 226,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "artifacts"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Special populations:\n  Population: Breastfeeding mothers of egg-allergic infants\n  Considerations: Mothers may consider trying egg exclusion from their diet if the infant has persistent eczema and egg is a trigger, or if the infant is suspected of reacting to maternal egg ingestion. Most infants should continue breastfeeding with the mother on an unrestricted diet.",
+      "block": "document",
+      "group_name": "special_populations",
+      "level": 1,
+      "json_paths": [
+        "document.special_populations[0]"
+      ],
+      "token_count": 86,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "special_populations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Special populations:\n  Population: Infants with eczema\n  Considerations: Infants with eczema are at higher risk of developing egg allergy. Early introduction of well‑cooked or baked egg into the diet from 4–6 months of age reduces the incidence of egg allergy (Grade A recommendation). Infants with moderate‑severe eczema or existing food allergy are at highest risk of reacting on initial egg introduction, so the first ingestions should be in tiny (pea‑sized) amounts.",
+      "block": "document",
+      "group_name": "special_populations",
+      "level": 1,
+      "json_paths": [
+        "document.special_populations[1]"
+      ],
+      "token_count": 125,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "special_populations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Special populations:\n  Population: Children with severe eczema or faltering growth\n  Considerations: These children are more likely to have persistent egg allergy. Avoidance and reintroduction should be guided by a specialist allergy service.",
+      "block": "document",
+      "group_name": "special_populations",
+      "level": 1,
+      "json_paths": [
+        "document.special_populations[2]"
+      ],
+      "token_count": 53,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "special_populations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Special populations:\n  Population: Children with a history of severe reaction to egg\n  Considerations: Home reintroduction should not be attempted if previous reactions involved severe gastrointestinal, respiratory or cardiovascular symptoms. Hospital‑based egg challenge should be considered. This includes patients with egg allergy and severe/poorly controlled asthma.",
+      "block": "document",
+      "group_name": "special_populations",
+      "level": 1,
+      "json_paths": [
+        "document.special_populations[3]"
+      ],
+      "token_count": 75,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "special_populations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Special populations:\n  Population: Patients with asthma and egg allergy\n  Considerations: Patients with severe or poorly controlled asthma should undergo hospital‑based egg challenge. Those with well‑controlled mild asthma may attempt home introduction if they have only had mild cutaneous reactions.",
+      "block": "document",
+      "group_name": "special_populations",
+      "level": 1,
+      "json_paths": [
+        "document.special_populations[4]"
+      ],
+      "token_count": 70,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "special_populations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Special populations:\n  Population: Adults with new‑onset egg allergy\n  Considerations: Egg allergy in adults is rare, usually more severe, and tends to persist.",
+      "block": "document",
+      "group_name": "special_populations",
+      "level": 1,
+      "json_paths": [
+        "document.special_populations[5]"
+      ],
+      "token_count": 40,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "special_populations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Special populations:\n  Population: Patients requiring yellow fever vaccination\n  Considerations: Yellow fever vaccines contain detectable amounts of egg protein. Egg‑allergic patients requiring this vaccine should be referred to an allergy specialist with access to a designated yellow fever vaccination centre for assessment and immunization.",
+      "block": "document",
+      "group_name": "special_populations",
+      "level": 1,
+      "json_paths": [
+        "document.special_populations[6]"
+      ],
+      "token_count": 72,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "special_populations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Special populations:\n  Population: Egg‑allergic patients on biologics or immunosuppressants\n  Considerations: These patients should be referred to an allergy clinic. They are also a relative indication for hospital‑based egg challenge.",
+      "block": "document",
+      "group_name": "special_populations",
+      "level": 1,
+      "json_paths": [
+        "document.special_populations[7]"
+      ],
+      "token_count": 52,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "special_populations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Special populations:\n  Population: Children with high anxiety or inability to adhere to a home introduction protocol\n  Considerations: Home introduction may not be appropriate; specialist referral or hospital‑based challenge may be needed. Children with communication disorders may benefit from home introduction to avoid hospital‑related anxiety.",
+      "block": "document",
+      "group_name": "special_populations",
+      "level": 1,
+      "json_paths": [
+        "document.special_populations[8]"
+      ],
+      "token_count": 66,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "special_populations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Special populations:\n  Population: Older children with persistent egg allergy\n  Considerations: A more cautious approach to home reintroduction should be taken, and hospital challenge may be considered.",
+      "block": "document",
+      "group_name": "special_populations",
+      "level": 1,
+      "json_paths": [
+        "document.special_populations[9]"
+      ],
+      "token_count": 43,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "special_populations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Abbreviations:\n  - Abbr: BSACI\n    Meaning: British Society for Allergy and Clinical Immunology\n  - Abbr: SOCC\n    Meaning: Standards of Care Committee\n  - Abbr: SIGN\n    Meaning: Scottish Intercollegiate Guidelines Network\n  - Abbr: IgE\n    Meaning: immunoglobulin E\n  - Abbr: SPT\n    Meaning: skin prick test\n  - Abbr: MMR\n    Meaning: measles, mumps, rubella\n  - Abbr: LAIV\n    Meaning: live attenuated influenza vaccine\n  - Abbr: WHO\n    Meaning: World Health Organization\n  - Abbr: NICE\n    Meaning: National Institute for Health and Care Excellence",
+      "block": "document",
+      "group_name": "abbreviations",
+      "level": 1,
+      "json_paths": [
+        "document.abbreviations"
+      ],
+      "token_count": 156,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "abbreviations"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Keywords:\n  - Enriched:\n    - egg allergy\n    - IgE‑mediated allergy\n    - skin prick test\n    - specific IgE\n    - baked egg\n    - egg ladder\n    - home introduction\n    - food challenge\n    - anaphylaxis\n    - MMR vaccine\n    - influenza vaccine\n    - yellow fever vaccine\n    - egg avoidance\n    - breastfeeding\n    - eczema\n    - weaning\n    - early introduction\n    - tolerance induction\n    - dietitian referral\n    - food allergy",
+      "block": "document",
+      "group_name": "keywords",
+      "level": 1,
+      "json_paths": [
+        "document.keywords"
+      ],
+      "token_count": 101,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "keywords"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Usage:\n  Model: deepseek-v4-pro\n  Input tokens: 203479\n  Output tokens: 23563\n  Total tokens: 227042",
+      "block": "document",
+      "group_name": "usage",
+      "level": 1,
+      "json_paths": [
+        "document._usage"
+      ],
+      "token_count": 35,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "_usage"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "JSONChunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "JC",
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.json",
+  "source_path": "guideline\\GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.json",
+  "tokenizer_model": "BAAI/bge-m3",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192
+  },
+  "number_of_chunks": 81,
+  "empty_chunks": 0,
+  "tokens_min": 19,
+  "tokens_p25": 28.0,
+  "tokens_median": 80.0,
+  "tokens_mean": 169.21,
+  "tokens_p75": 180.0,
+  "tokens_max": 980,
+  "tokens_std": 213.66,
+  "tokens_total": 13706,
+  "tokens_original": 17334,
+  "tokens_ratio": 0.791,
+  "execution_time_seconds": 0.078477,
+  "ram_before_mb": 771.18,
+  "ram_after_mb": 771.22,
+  "ram_increase_mb": 0.05
+}

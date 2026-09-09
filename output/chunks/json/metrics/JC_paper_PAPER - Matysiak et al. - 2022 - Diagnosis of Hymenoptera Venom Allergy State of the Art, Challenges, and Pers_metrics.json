@@ -1,0 +1,31 @@
+{
+  "strategy": "JSONChunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "JC",
+  "status": "completed",
+  "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers",
+  "document_type": "paper",
+  "input_file": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.json",
+  "source_path": "paper\\PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.json",
+  "tokenizer_model": "BAAI/bge-m3",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192
+  },
+  "number_of_chunks": 55,
+  "empty_chunks": 0,
+  "tokens_min": 9,
+  "tokens_p25": 46.0,
+  "tokens_median": 51.0,
+  "tokens_mean": 65.15,
+  "tokens_p75": 58.0,
+  "tokens_max": 413,
+  "tokens_std": 62.0,
+  "tokens_total": 3583,
+  "tokens_original": 4644,
+  "tokens_ratio": 0.772,
+  "execution_time_seconds": 0.025256,
+  "ram_before_mb": 771.4,
+  "ram_after_mb": 771.4,
+  "ram_increase_mb": 0.0
+}

@@ -1,0 +1,31 @@
+{
+  "strategy": "JSONChunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "JC",
+  "status": "completed",
+  "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
+  "document_type": "paper",
+  "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.json",
+  "source_path": "paper\\PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.json",
+  "tokenizer_model": "BAAI/bge-m3",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192
+  },
+  "number_of_chunks": 52,
+  "empty_chunks": 0,
+  "tokens_min": 9,
+  "tokens_p25": 47.25,
+  "tokens_median": 59.0,
+  "tokens_mean": 114.46,
+  "tokens_p75": 122.75,
+  "tokens_max": 697,
+  "tokens_std": 127.41,
+  "tokens_total": 5952,
+  "tokens_original": 7308,
+  "tokens_ratio": 0.814,
+  "execution_time_seconds": 0.049462,
+  "ram_before_mb": 771.39,
+  "ram_after_mb": 771.39,
+  "ram_increase_mb": 0.0
+}

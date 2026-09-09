@@ -1,0 +1,31 @@
+{
+  "strategy": "JSONChunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "JC",
+  "status": "completed",
+  "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
+  "document_type": "paper",
+  "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.json",
+  "source_path": "paper\\PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.json",
+  "tokenizer_model": "BAAI/bge-m3",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192
+  },
+  "number_of_chunks": 31,
+  "empty_chunks": 0,
+  "tokens_min": 27,
+  "tokens_p25": 38.5,
+  "tokens_median": 48.0,
+  "tokens_mean": 152.65,
+  "tokens_p75": 288.0,
+  "tokens_max": 806,
+  "tokens_std": 177.2,
+  "tokens_total": 4732,
+  "tokens_original": 5758,
+  "tokens_ratio": 0.822,
+  "execution_time_seconds": 0.043503,
+  "ram_before_mb": 771.38,
+  "ram_after_mb": 771.39,
+  "ram_increase_mb": 0.01
+}

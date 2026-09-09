@@ -36,7 +36,7 @@ import pandas as pd
 import psutil
 
 # Utilidades
-from .utilities import (
+from utilities import (
     calculate_stats,
     create_tokenizer,
     create_token_counter,

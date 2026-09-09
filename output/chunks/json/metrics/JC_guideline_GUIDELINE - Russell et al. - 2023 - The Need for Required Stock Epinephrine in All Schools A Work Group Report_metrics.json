@@ -1,0 +1,31 @@
+{
+  "strategy": "JSONChunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "JC",
+  "status": "completed",
+  "doc_id": "guideline_GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report",
+  "document_type": "guideline",
+  "input_file": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.json",
+  "source_path": "guideline\\GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.json",
+  "tokenizer_model": "BAAI/bge-m3",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192
+  },
+  "number_of_chunks": 88,
+  "empty_chunks": 0,
+  "tokens_min": 15,
+  "tokens_p25": 56.75,
+  "tokens_median": 75.5,
+  "tokens_mean": 126.11,
+  "tokens_p75": 96.25,
+  "tokens_max": 1037,
+  "tokens_std": 176.92,
+  "tokens_total": 11098,
+  "tokens_original": 13940,
+  "tokens_ratio": 0.796,
+  "execution_time_seconds": 0.069237,
+  "ram_before_mb": 771.37,
+  "ram_after_mb": 771.38,
+  "ram_increase_mb": 0.01
+}
