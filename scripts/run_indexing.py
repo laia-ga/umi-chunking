@@ -17,13 +17,19 @@ de comandos.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
+import re
+import time
 import uuid
 import argparse
+from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, Iterator, List
+from typing import Any, Dict, Iterator, List, Tuple
 
+import numpy as np
 from langchain_huggingface import HuggingFaceEmbeddings
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
@@ -51,6 +57,14 @@ INDEXING_OUTPUT_DIR = PROJECT_ROOT / "output" / "indexing"
 # Archivo normalizado, con un registro JSON por línea:
 # main/output/indexing/normalized_chunks.jsonl
 NORMALIZED_OUTPUT_FILE = INDEXING_OUTPUT_DIR / "normalized_chunks.jsonl"
+
+# Carpeta donde se guarda la caché de embeddings:
+# main/output/indexing/embeddings_cache
+EMBEDDINGS_CACHE_DIR = INDEXING_OUTPUT_DIR / "embeddings_cache"
+
+# Log de tiempos de cada ejecución, un JSON por línea:
+# main/output/indexing/logs/run_log.jsonl
+RUN_LOG_FILE = INDEXING_OUTPUT_DIR / "logs" / "run_log.jsonl"
 
 # Archivo de configuración de la indexación:
 # main/configs/indexing_config.json
@@ -372,6 +386,292 @@ def create_embeddings(config: Dict[str, Any]) -> HuggingFaceEmbeddings:
     )
 
 
+# ============================================================
+# CACHÉ DE EMBEDDINGS EN DISCO
+# ============================================================
+
+
+def _sanitize_model_name(model_name: str) -> str:
+    """
+    Convierte el nombre del modelo en un nombre de archivo seguro.
+
+    Reemplaza caracteres no alfanuméricos por guiones bajos.
+    """
+
+    return re.sub(r"[^a-zA-Z0-9]+", "_", model_name)
+
+
+def _text_hash(text: str) -> str:
+    """
+    Genera un hash corto y estable del texto de un chunk,
+    usado para invalidar la caché si el texto cambia 
+    aunque el chunk_id se mantenga igual.
+    """
+
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def embeddings_cache_path(model_name: str) -> Path:
+    """
+    Devuelve la ruta del archivo de caché para un modelo específico.
+    """
+    
+    EMBEDDINGS_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    return EMBEDDINGS_CACHE_DIR / f"{_sanitize_model_name(model_name)}.jsonl"
+
+
+def load_embeddings_cache(model_name: str) -> Dict[str, Dict[str, Any]]:
+    """
+    Carga la caché de embeddings desde disco para un modelo específico.
+
+    Returns
+    -------
+    Dict[str, Dict[str, Any]]
+        Diccionario con chunk_id como clave y un diccionario con
+        'vector' y 'text_hash' como valor.
+        Si hay líneas duplicadas para el mismo chunk_id, se queda con
+        la última (permite sobrescribir por append)
+    """
+
+    cache_file = embeddings_cache_path(model_name)
+    cache: Dict[str, Dict[str, Any]] = {}
+
+    if not cache_file.exists():
+        return cache
+
+    with cache_file.open("r", encoding="utf-8") as file:
+        for line in file:
+            if not line.strip():
+                continue
+            record = json.loads(line)
+            cache[record["chunk_id"]] = {
+                "vector": record["vector"],
+                "text_hash": record["text_hash"],
+            }
+    return cache
+
+
+def append_to_embedding_cache(
+        model_name: str,
+        entries: List[Tuple[str, str, List[float]]]
+) -> None:
+    """
+    Añade nuevas entradas a la caché de embeddings de un modelo.
+
+    Parameters
+    ----------
+    entries:
+        Lista de tuplas (chunk_id, text_hash, vector)
+    """
+    
+    if not entries:
+        return
+    
+    cache_file = embeddings_cache_path(model_name)
+    with cache_file.open("a", encoding="utf-8") as file:
+        for chunk_id, text_hash, vector in entries:
+            file.write(
+                json.dumps(
+                    {
+                        "chunk_id": chunk_id,
+                        "text_hash": text_hash,
+                        "vector": vector,
+                    },
+                    ensure_ascii=False,
+                    )
+                    +"\n"
+            )
+
+
+# ============================================================
+# LOG DE TIEMPOS
+# ============================================================
+
+
+def append_run_log(record: Dict [str, Any]) -> None:
+    """
+    Añade un registro de ejecución al log de tiempos.
+
+    Guardar un log acumulativo permite comparar entre sí distintas
+    ejecuciones: JSON vs Markdown, distinto número de workers,
+    con/sin caché, distintos modelos de embedding, etc.
+    """
+
+    RUN_LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with RUN_LOG_FILE.open("a", encoding="utf-8") as file:
+        file.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def print_run_summary(record: Dict[str, Any]) -> None:
+    """
+    Imprime un resumen de los tiempos de la ejecución actual.
+    """
+
+    print("-" * 70)
+    print("RESUMEN DE TIEMPOS")
+    print("-" * 70)
+    if record.get("normalize_seconds") is not None:
+        print(f"Normalización:      {record['normalize_seconds']:.2f} s")
+    if record.get("chunks_by_format"):
+        print(f"Chunks por formato: {record['chunks_by_format']}")
+    if record.get("cache_hits") is not None:
+        print(
+            f"Embeddings de caché:  {record['cache_hits']}  |   "
+            f"calculados: {record['cache_misses']}"
+        )
+    if record.get("embedding_seconds") is not None:
+        print(f"Generación embeddings:  {record['embedding_seconds']:.2f} s")
+        if record.get("cache_misses"):
+            rate = record["cache_misses"] / max (record["embedding_seconds"], 1e-9)
+            print(f"    ({rate:.1f} chunks/s)")
+    if record.get("upsert_seconds") is not None:
+        print(f"Indexación Qdrant:  {record['upsert_seconds']:.2f} s")
+    print(f"Total:              {record['total_seconds']:.2f} s")
+    print(f"Log guardado en:    {RUN_LOG_FILE}")
+    print("-" * 70)
+
+
+# ============================================================
+# GENERACIÓN DE EMBEDDINGS (secuencial y paralela)
+# ============================================================
+
+
+def embed_texts_paralel(
+    embeddings: HuggingFaceEmbeddings,
+    texts: List[str],
+    num_workers: int,
+    batch_size: int,
+) -> List[List[float]]:
+    """
+    Genera embeddings de manera paralela usando múltiples workers.
+
+    Usa el pool multiproceso de sentence-transformers a través del modelo 
+    interno que envuelve HuggingFaceEmbeddings (``embeddings.client``).
+    Como el pool no aplica automáticamente encode_kwargs (p. ej.
+    normalize_embeddings), la normalización se hace a mano después si 
+    estaba activada en la configuración
+
+    Parameters
+    ----------
+    num_workers:
+        Numero de procesos worker. Cada uno carga su propia copia del
+        modelo en memoria: no debe subirse más de lo que aguante la RAM
+    """
+
+    modelo = embeddings.client  # SentenceTransformer subyacente
+
+    # Evita oversubscription: si cada uno de los N procesos usa todos los
+    # hilos de la CPU, se pisan entre ellos y va más lento que en secuencial
+    previous_omp = os.environ.get("OMP_NUM_THREADS")
+    os.environ["OMP_NUM_THREADS"] = "1"
+
+    pool = model.start_multi_process_pool(
+        target_devices=["cpu"] * num_workers
+    )
+    try:
+        vectors = model.encode_multi_process(
+            texts,
+            pool,
+            batch_size=batch_size,
+        )
+    finally:
+        model.stop_multi_process_pool(pool)
+        if previous_omp is None:
+            os.environ.pop("OMP_NUM_THREADS", None):
+        else:
+            os.environ["OMP_NUM_THREADS"] = previous_omp
+
+    vectors = np.asarray(vectors)
+    if embeddings.encode_kwargs.get("normalize_embeddings", True):
+        norms = np.linalg.norm(vectors, axis=1, keepdims=True)
+        norms[norms == 0] = 1.0
+        vectors = vectors / norms
+
+    return vectors.tolist()
+
+
+def embed_with_cache(
+        embeddings: HuggingFaceEmbeddings,
+        chunks: List[Dict[str, Any]],
+        model_name: str,
+        num_workers: int,
+        batch_size: int,
+        use_cache: bool,
+) -> Tuple[List[List[float]], Dict[str, Any]]:
+    """
+    Genera los embeddings de una lista de chunks, reutilizando la caché
+    en disco cuando sea posible y calculando en paralelo el resto.
+
+    Returns
+    -------
+    Tuple[List[List[float]], Dict[str, Any]]
+        Un vector por chunk (mismo orden que ``chunks``) y un diccionario
+        de estadísticas: cache_hits, cache_misses, embedding_secons (solo
+        el tiempo de cómputo real, sin contar la lectura de la caché)
+    """
+
+    cache = load_embedding_cache(model_name) if use_cache else {}
+
+    vectors: List[List[float] | None] = [None] * len(chunks)
+    pending_indices: List[int] = []
+    pending_texts: List[str] = []
+    pending_hashes: List[str] = []
+
+    hits = 0
+    for index, chunk in enumerate(chunks):
+        text_hash = _text_hash(chunk["text"])
+        cached = cache.get(chunk["chunk_id"])
+        if cached is not None and cached["text_hash"] == text_hash:
+            vectors[index] = cached["vector"]
+            hits += 1
+        else:
+            pending_indices.append(index)
+            pending_texts.append(chunk["text"])
+            pending_hashes.append(text_hash)
+    
+    print(
+        f"Embeddings reutilizados de caché: {hits}/{len(chunks)}"
+        f"Pendientes de calcular: {len(pending_texts)}"
+    )
+
+    embedding_seconds = 0.0
+    if pending_texts:
+        start = time.perf_counter()
+        if num_workers > 1:
+            new_vectors = embed_texts_paralel(
+                embeddings, pending_texts, num_workers, batch_size
+            )
+        else:
+            new_vectors = embeddings.embed_documents(pending_texts)
+        embedding_seconds = time.perf_counter() - start
+
+        new_cache_entries = []
+        for position, index in enumerate(pending_indices):
+            vectors[index] = new_vectors[position]
+            new_cache_entries.append(
+                (
+                    chunks[index]["chunk_id"],
+                    pending_hashes[position],
+                    new_vectors[position],
+                )
+            )
+
+        if use_cache:
+            append_to_embedding_cache(model_name, new_cache_entries)
+
+    stats = {
+        "cache_hits": hits,
+        "cache_misses": len(pending_texts),
+        "embedding_seconds": embedding_seconds
+    }
+    return vectors, stats   # type: ignore[return-value]
+
+
+# ============================================================
+# QDRANT
+# ============================================================
+
+
 def connect_to_qdrant(config: Dict[str, Any]) -> QdrantClient:
     """
     Crea un cliente conectado al servidor local de Qdrant.
@@ -425,9 +725,13 @@ def index_chunks(
     chunks: List[Dict[str, Any]],
     collection_name: str,
     batch_size: int,
-) -> None:
+    model_name: str,
+    num_workers: int,
+    use_cache: bool,
+) -> Dict[str, Any]:
     """
-    Genera embeddings densos y los inserta en Qdrant por lotes.
+    Genera embeddings densos  (con caché y, opcionalmente, en 
+    paralelo) y los inserta en Qdrant por lotes.
 
     Parameters
     ----------
@@ -439,11 +743,22 @@ def index_chunks(
 
     chunks:
         Chunks normalizados que se van a indexar.
+
+    Returns
+    -------
+    Dict[str, Any]
+        Estadísticas de tiempo y caché (embedding + upsert).
     """
 
-    texts = [chunk["text"] for chunk in chunks]
-    print(f"Generando embeddings para {len(texts)} chunks...")
-    vectors = embeddings.embed_documents(texts)
+    print(f"Generando embeddings para {len(chunks)} chunks...")
+    vectors, stats = embed_with_cache(
+        embeddings=embeddings
+        chunks=chunks,
+        model_name=model_name,
+        num_workers=num_workers,
+        batch_size=batch_size,
+        use_cache=use_cache,
+    )
 
     points = []
     for chunk, vector in zip(chunks, vectors):
@@ -467,6 +782,7 @@ def index_chunks(
             )
         )
 
+    upsert_start = time.perf_couner()
     for start in range(0, len(points), batch_size):
         batch = points[start:start + batch_size]
         client.upsert(
@@ -474,18 +790,27 @@ def index_chunks(
             points=batch,
         )
         print(f"Puntos indexados: {min(start + batch_size, len(points))}/{len(points)}")
+    stats["upser_seconds"] = time.perf_counter() - upsert_start
+
+    return stats
 
 # ============================================================
 # FUNCIÓN PRINCIPAL
 # ============================================================
 
-def main(normalize_only: bool = False, index_only: bool = False) -> None:
+def main(
+    normalize_only: bool = False, 
+    index_only: bool = False,
+    workers_override: int | None = None,
+    use_cache: bool = True,    
+) -> None:
     """
-    Normaliza los outputs de chunking para la futura indexación vectorial.
+    Normaliza los outputs de chunking y, salvo que se indique lo
+    contrario, genera embeddings y los indexa en Qdrant
+    """
 
-    El script no genera embeddings ni modifica las fuentes originales.
-    Solo prepara un archivo JSONL común para la siguiente fase.
-    """
+    run_start = time.perf_counter()
+    normalize_seconds = None
 
     print("=" * 70)
     print("INICIO DE LA NORMALIZACIÓN PARA INDEXACIÓN")
@@ -493,7 +818,9 @@ def main(normalize_only: bool = False, index_only: bool = False) -> None:
 
     # 1. Normalizar los chunks y escribir el archivo JSONL
     if not index_only:
+        normalize_start = time.perf_counter()
         count = normalize_chunks()
+        normalize_seconds = time.perf_couner() - normalize_start
         print(f"Chunks normalizados: {count}")
         print(f"Archivo generado: {NORMALIZED_OUTPUT_FILE}")
 
@@ -502,13 +829,28 @@ def main(normalize_only: bool = False, index_only: bool = False) -> None:
         print("=" * 70)
         print("FIN DE LA INDEXACIÓN")
         print("=" * 70)
+        record = {
+            "timestamp": datetime.now(timezone.utc).isoformat()
+            "mode": "normalize-only",
+            "normalize_seconds": normalize_seconds,
+            "total_seconds": time.perf_counter() - run_start,
+        }
+        append_run_log(record)
+        print_run_summary(record)
         return
 
     # 2. Cargar la configuración y los chunks JSON para la indexación densa
     config = load_indexing_config()
     formats = config["indexing"]["formats"]
     chunks = load_normalized_chunks(formats)
+    chunks_by_format = dict(Counter(chunk["format"] for chunk in chunks))
     embeddings = create_embeddings(config)
+    model_name = config["embeddings"]["model_name"]
+
+    num_workers = workers_override or int(config["indexing"].get("num_workers", 1))
+    num_workers = max(1, min(num_workers, os.cpu_count() or 1))
+    print(f"Workers para generación de embeddings: {num_workers}")
+    print(f"Chunks por formato: {chunks_by_format}")
 
     # 3. Obtener la dimensión y preparar la colección Qdrant
     vector_size = len(embeddings.embed_query("dimension check"))
@@ -518,12 +860,15 @@ def main(normalize_only: bool = False, index_only: bool = False) -> None:
     recreate_collection(client, vector_size, collection_name)
 
     # 4. Generar embeddings e insertar los puntos
-    index_chunks(
+    index_stats = index_chunks(
         client,
         embeddings,
         chunks,
         collection_name,
         batch_size,
+        model_name=model_name,
+        num_workers=num_workers,
+        use_cache=use_cache,
     )
 
     print(f"Colección Qdrant: {collection_name}")
@@ -531,9 +876,28 @@ def main(normalize_only: bool = False, index_only: bool = False) -> None:
     print("FIN DE LA NORMALIZACIÓN PARA INDEXACIÓN")
     print("=" * 70)
 
+    record = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "mode": "index-only" if index_only else "full",
+        "model_name": model_name,
+        "num_workers": num_workers,
+        "batch_size": batch_size,
+        "use_cache": use_cache,
+        "collection_name": collection_name,
+        "total_chunks": len(chunks),
+        "chunks_by_format": chunks_by_format,
+        "normalize_seconds": normalize_seconds,
+        **index_stats,
+        "total_secons": time.perf_counter() - run_start,
+    }
+    append_run_log(record)
+    print_run_summary(record)
+
+
 # ============================================================
 # PUNTO DE ENTRADA
 # ============================================================
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
@@ -550,8 +914,25 @@ if __name__ == "__main__":
         action="store_true",
         help="Indexa el JSONL existente sin regenerarlo.",
     )
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=None,
+        help="Número de workers para generar embeddings (por defecto, 1).",
+    )
+    parser.add_argument(
+        "--no-cache--",
+        action = "store_true",
+        help=(
+            "Ignora la caché de embeddings en disco: recalcula todo y no"
+            "guarda los resultados nuevos."
+        ),
+    )
+
     arguments = parser.parse_args()
     main(
         normalize_only=arguments.normalize_only,
         index_only=arguments.index_only,
+        workers_override=arguments.workers,
+        use_cache=not arguments.no_cache,
     )
