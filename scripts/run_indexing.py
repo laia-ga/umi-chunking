@@ -48,7 +48,8 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 
 # Carpeta que contiene los chunks generados por los runners:
 # main/output/chunks
-CHUNKS_ROOT = PROJECT_ROOT / "output" / "chunks"
+# CHUNKS_ROOT = PROJECT_ROOT / "output" / "chunks"
+CHUNKS_ROOT = PROJECT_ROOT / "output" / "test"
 
 # Carpeta general de salida de la indexación:
 # main/output/indexing
@@ -558,7 +559,7 @@ def embed_texts_paralel(
         modelo en memoria: no debe subirse más de lo que aguante la RAM
     """
 
-    modelo = embeddings.client  # SentenceTransformer subyacente
+    model = embeddings.client  # SentenceTransformer subyacente
 
     # Evita oversubscription: si cada uno de los N procesos usa todos los
     # hilos de la CPU, se pisan entre ellos y va más lento que en secuencial
@@ -577,7 +578,7 @@ def embed_texts_paralel(
     finally:
         model.stop_multi_process_pool(pool)
         if previous_omp is None:
-            os.environ.pop("OMP_NUM_THREADS", None):
+            os.environ.pop("OMP_NUM_THREADS", None)
         else:
             os.environ["OMP_NUM_THREADS"] = previous_omp
 
@@ -610,7 +611,7 @@ def embed_with_cache(
         el tiempo de cómputo real, sin contar la lectura de la caché)
     """
 
-    cache = load_embedding_cache(model_name) if use_cache else {}
+    cache = load_embeddings_cache(model_name) if use_cache else {}
 
     vectors: List[List[float] | None] = [None] * len(chunks)
     pending_indices: List[int] = []
@@ -752,7 +753,7 @@ def index_chunks(
 
     print(f"Generando embeddings para {len(chunks)} chunks...")
     vectors, stats = embed_with_cache(
-        embeddings=embeddings
+        embeddings=embeddings,
         chunks=chunks,
         model_name=model_name,
         num_workers=num_workers,
@@ -782,7 +783,7 @@ def index_chunks(
             )
         )
 
-    upsert_start = time.perf_couner()
+    upsert_start = time.perf_counter()
     for start in range(0, len(points), batch_size):
         batch = points[start:start + batch_size]
         client.upsert(
@@ -790,7 +791,7 @@ def index_chunks(
             points=batch,
         )
         print(f"Puntos indexados: {min(start + batch_size, len(points))}/{len(points)}")
-    stats["upser_seconds"] = time.perf_counter() - upsert_start
+    stats["upsert_seconds"] = time.perf_counter() - upsert_start
 
     return stats
 
@@ -820,7 +821,7 @@ def main(
     if not index_only:
         normalize_start = time.perf_counter()
         count = normalize_chunks()
-        normalize_seconds = time.perf_couner() - normalize_start
+        normalize_seconds = time.perf_counter() - normalize_start
         print(f"Chunks normalizados: {count}")
         print(f"Archivo generado: {NORMALIZED_OUTPUT_FILE}")
 
@@ -830,7 +831,7 @@ def main(
         print("FIN DE LA INDEXACIÓN")
         print("=" * 70)
         record = {
-            "timestamp": datetime.now(timezone.utc).isoformat()
+            "timestamp": datetime.now(timezone.utc).isoformat(),
             "mode": "normalize-only",
             "normalize_seconds": normalize_seconds,
             "total_seconds": time.perf_counter() - run_start,
@@ -888,7 +889,7 @@ def main(
         "chunks_by_format": chunks_by_format,
         "normalize_seconds": normalize_seconds,
         **index_stats,
-        "total_secons": time.perf_counter() - run_start,
+        "total_seconds": time.perf_counter() - run_start,
     }
     append_run_log(record)
     print_run_summary(record)
@@ -921,7 +922,7 @@ if __name__ == "__main__":
         help="Número de workers para generar embeddings (por defecto, 1).",
     )
     parser.add_argument(
-        "--no-cache--",
+        "--no-cache",
         action = "store_true",
         help=(
             "Ignora la caché de embeddings en disco: recalcula todo y no"
