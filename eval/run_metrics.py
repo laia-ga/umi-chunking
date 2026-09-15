@@ -24,7 +24,7 @@ def parse_args():
 
     parser = argparse.ArgumentParser(
         description=(
-            "Calcula métricas de evaluación a partir "
+            "Calcula métricas de retrieval a partir "
             "del CSV generado por run_judge.py."
         )
     )
@@ -53,22 +53,23 @@ def dcg(scores):
     """
     Discounted Cumulative Gain.
 
-    Usa directamente las relevancias graduadas:
+    Mantiene la relevancia graduada del LLM judge:
+
     0 = no relevante
     1 = parcialmente relevante
     2 = altamente relevante
     """
 
-    score = 0.0
+    value = 0.0
 
     for i, relevance in enumerate(scores):
 
         gain = (2 ** relevance) - 1
         discount = np.log2(i + 2)
 
-        score += gain / discount
+        value += gain / discount
 
-    return score
+    return value
 
 
 def ndcg_at_k(scores, k):
@@ -76,8 +77,8 @@ def ndcg_at_k(scores, k):
     """
     nDCG@k.
 
-    Compara el ranking real con el ranking ideal
-    de los mismos chunks juzgados.
+    Compara el orden obtenido por el retrieval
+    con el orden ideal de esos chunks.
     """
 
     scores = list(scores)[:k]
@@ -92,12 +93,66 @@ def ndcg_at_k(scores, k):
         reverse=True,
     )
 
-    ideal_dcg = dcg(ideal_scores)
+    ideal_dcg = dcg(
+        ideal_scores
+    )
 
     if ideal_dcg == 0:
         return 0.0
 
     return actual_dcg / ideal_dcg
+
+
+# ============================================================
+# PRECISION
+# ============================================================
+
+def precision_at_k(scores, k):
+
+    """
+    Precision@k.
+
+    Consideramos relevante:
+        score 1
+        score 2
+
+    Consideramos no relevante:
+        score 0
+    """
+
+    scores = list(scores)[:k]
+
+    if not scores:
+        return 0.0
+
+    relevant = sum(
+        score >= 1
+        for score in scores
+    )
+
+    return relevant / len(scores)
+
+
+# ============================================================
+# HIT RATE
+# ============================================================
+
+def hit_at_k(scores, k):
+
+    """
+    Hit@k.
+
+    Devuelve 1 si existe al menos un chunk
+    relevante entre los primeros k resultados.
+    En caso contrario devuelve 0.
+    """
+
+    scores = list(scores)[:k]
+
+    if any(score >= 1 for score in scores):
+        return 1
+
+    return 0
 
 
 # ============================================================
@@ -109,11 +164,14 @@ def average_precision_at_k(scores, k):
     """
     AP@k.
 
-    Para AP convertimos la relevancia a binaria:
+    Para AP convertimos las relevancias a binarias:
 
-    score 0 -> no relevante
-    score 1 -> relevante
-    score 2 -> relevante
+        0 -> no relevante
+        1 -> relevante
+        2 -> relevante
+
+    MAP@k será posteriormente la media del AP@k
+    de todas las preguntas.
     """
 
     scores = list(scores)[:k]
@@ -140,78 +198,43 @@ def average_precision_at_k(scores, k):
 
             relevant_found += 1
 
-            precision_at_rank = (
+            precision_sum += (
                 relevant_found / rank
             )
-
-            precision_sum += precision_at_rank
 
     return precision_sum / total_relevant
 
 
 # ============================================================
-# PRECISION / RECALL / F1
+# RECIPROCAL RANK
 # ============================================================
 
-def precision_recall_f1_at_k(
-    all_scores,
-    k,
-):
+def reciprocal_rank(scores):
 
     """
-    Calcula Precision@k, Recall@k y F1@k.
+    Reciprocal Rank.
 
-    Un chunk se considera relevante si:
-    relevance_score >= 1.
+    Busca el primer chunk relevante.
 
-    IMPORTANTE:
-    El recall se calcula respecto a todos los chunks
-    relevantes presentes en el conjunto juzgado.
+    Ejemplos:
+
+    [2, 0, 0, 0, 0] -> 1
+    [0, 2, 0, 0, 0] -> 1/2
+    [0, 0, 1, 0, 0] -> 1/3
+    [0, 0, 0, 0, 0] -> 0
+
+    MRR será la media del RR de todas las preguntas.
     """
 
-    all_scores = list(all_scores)
+    for rank, score in enumerate(
+        scores,
+        start=1,
+    ):
 
-    binary_all = [
-        1 if score >= 1 else 0
-        for score in all_scores
-    ]
+        if score >= 1:
+            return 1 / rank
 
-    binary_k = binary_all[:k]
-
-    relevant_retrieved = sum(binary_k)
-
-    total_relevant = sum(binary_all)
-
-    # Precision
-    if len(binary_k) == 0:
-        precision = 0.0
-    else:
-        precision = (
-            relevant_retrieved
-            / len(binary_k)
-        )
-
-    # Recall
-    if total_relevant == 0:
-        recall = 0.0
-    else:
-        recall = (
-            relevant_retrieved
-            / total_relevant
-        )
-
-    # F1
-    if precision + recall == 0:
-        f1 = 0.0
-    else:
-        f1 = (
-            2
-            * precision
-            * recall
-            / (precision + recall)
-        )
-
-    return precision, recall, f1
+    return 0.0
 
 
 # ============================================================
@@ -223,7 +246,7 @@ def calculate_query_metrics(
     k_values,
 ):
 
-    # Asegurar orden correcto del ranking
+    # Ordenar los chunks según el ranking
     query_df = query_df.sort_values(
         "rank"
     )
@@ -238,17 +261,24 @@ def calculate_query_metrics(
         "query_id": query_df.iloc[0]["query_id"],
         "query": query_df.iloc[0]["query"],
         "n_chunks": len(query_df),
+
         "n_highly_relevant": sum(
             score == 2
             for score in scores
         ),
+
         "n_partially_relevant": sum(
             score == 1
             for score in scores
         ),
+
         "n_irrelevant": sum(
             score == 0
             for score in scores
+        ),
+
+        "RR": reciprocal_rank(
+            scores
         ),
     }
 
@@ -264,23 +294,20 @@ def calculate_query_metrics(
             actual_k,
         )
 
-        result[f"AP@{k}"] = (
-            average_precision_at_k(
-                scores,
-                actual_k,
-            )
+        result[f"Precision@{k}"] = precision_at_k(
+            scores,
+            actual_k,
         )
 
-        precision, recall, f1 = (
-            precision_recall_f1_at_k(
-                scores,
-                actual_k,
-            )
+        result[f"AP@{k}"] = average_precision_at_k(
+            scores,
+            actual_k,
         )
 
-        result[f"Precision@{k}"] = precision
-        result[f"Recall@{k}"] = recall
-        result[f"F1@{k}"] = f1
+        result[f"Hit@{k}"] = hit_at_k(
+            scores,
+            actual_k,
+        )
 
     return result
 
@@ -306,7 +333,7 @@ def main():
         )
 
     # --------------------------------------------------------
-    # Cargar resultados del judge
+    # Cargar CSV del judge
     # --------------------------------------------------------
 
     df = pd.read_csv(
@@ -332,7 +359,10 @@ def main():
             + ", ".join(missing)
         )
 
+    # --------------------------------------------------------
     # Eliminar evaluaciones fallidas
+    # --------------------------------------------------------
+
     df_valid = df[
         df["relevance_score"].notna()
     ].copy()
@@ -386,52 +416,44 @@ def main():
     )
 
     # --------------------------------------------------------
-    # Resumen global
+    # RESUMEN GLOBAL
     # --------------------------------------------------------
 
     summary = {
         "n_queries": len(per_query_df),
+
+        # Mean Reciprocal Rank
+        "MRR": per_query_df["RR"].mean(),
     }
 
-    metric_columns = [
-        column
-        for column in per_query_df.columns
-        if (
-            column.startswith("nDCG@")
-            or column.startswith("AP@")
-            or column.startswith("Precision@")
-            or column.startswith("Recall@")
-            or column.startswith("F1@")
-        )
-    ]
+    for k in k_values:
 
-    for column in metric_columns:
-
-        mean_value = (
-            per_query_df[column].mean()
+        summary[f"Mean_nDCG@{k}"] = (
+            per_query_df[f"nDCG@{k}"].mean()
         )
 
-        # AP promedio = MAP
-        if column.startswith("AP@"):
+        summary[f"Mean_Precision@{k}"] = (
+            per_query_df[
+                f"Precision@{k}"
+            ].mean()
+        )
 
-            k = column.split("@")[1]
+        # Mean Average Precision
+        summary[f"MAP@{k}"] = (
+            per_query_df[f"AP@{k}"].mean()
+        )
 
-            summary[f"MAP@{k}"] = (
-                mean_value
-            )
-
-        else:
-
-            summary[
-                f"Mean_{column}"
-            ] = mean_value
+        # Media de Hit@k = Hit Rate@k
+        summary[f"HitRate@{k}"] = (
+            per_query_df[f"Hit@{k}"].mean()
+        )
 
     summary_df = pd.DataFrame(
         [summary]
     )
 
     # --------------------------------------------------------
-    # Nombre del Excel
+    # NOMBRE DEL EXCEL
     # --------------------------------------------------------
 
     OUTPUT_DIR.mkdir(
@@ -450,7 +472,7 @@ def main():
     )
 
     # --------------------------------------------------------
-    # Guardar Excel
+    # GUARDAR EXCEL
     # --------------------------------------------------------
 
     with pd.ExcelWriter(
@@ -458,23 +480,30 @@ def main():
         engine="openpyxl",
     ) as writer:
 
+        # Resumen global del método
         summary_df.to_excel(
             writer,
             sheet_name="summary",
             index=False,
         )
 
+        # Métricas individuales por pregunta
         per_query_df.to_excel(
             writer,
             sheet_name="per_query",
             index=False,
         )
 
+        # Todos los chunks evaluados
         df_valid.to_excel(
             writer,
             sheet_name="chunks",
             index=False,
         )
+
+    # --------------------------------------------------------
+    # RESULTADO
+    # --------------------------------------------------------
 
     print("=" * 70)
     print("MÉTRICAS CALCULADAS")
@@ -488,6 +517,15 @@ def main():
     print(
         f"K evaluados: {k_values}"
     )
+
+    print("\nResumen:")
+
+    for key, value in summary.items():
+
+        if key == "n_queries":
+            print(f"  {key}: {value}")
+        else:
+            print(f"  {key}: {value:.4f}")
 
     print(
         f"\nResultados guardados en:\n"
