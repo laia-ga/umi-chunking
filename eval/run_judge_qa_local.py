@@ -296,45 +296,51 @@ def parse_llm_json(
 # ==============================================================================
 
 def llm_judge_relevance(
-    query: str,
-    answer: str,
+    question: str,
+    gold_answer: str,
     chunk_text: str,
 ):
     prompt = f"""
-    Your task is to determine how much of the REFERENCE ANSWER
-    is supported by the RETRIEVED CHUNK.
+    Your task is to evaluate the relevance of the RETRIEVED CHUNK
+    for answering the QUESTION, using the GOLD ANSWER as reference.
 
     QUESTION:
-    {query}
+    {question}
 
-    REFERENCE ANSWER:
-    {answer}
+    GOLD ANSWER:
+    {gold_answer}
 
     RETRIEVED CHUNK:
     {chunk_text}
 
-    Compare the retrieved chunk directly with the reference answer.
+    Compare the retrieved chunk directly with the gold answer.
 
     Assign:
 
     2 = The chunk contains the answer, or enough information to
     answer the question correctly.
 
-    1 = The chunk contains some information from the reference
-    answer or useful information toward answering the question,
-    but the answer is incomplete.
+    1 = The chunk contains useful information toward answering
+    the question, but the information is incomplete and is not
+    sufficient to answer the question fully.
 
     0 = The chunk contains no information useful for answering
     the question.
 
     IMPORTANT:
+    Evaluate semantic content, not exact wording.
+
     If the chunk contains the same factual information as the
-    reference answer, even using different words, assign 2.
+    gold answer, even using different words, assign 2.
 
-    If the chunk contains only part of the reference answer,
-    assign 1.
+    If the chunk contains only part of the information needed
+    to answer the question, assign 1.
 
-    Do NOT require exact wording.
+    Do not give credit for information that is merely related
+    to the topic but does not help answer the question.
+
+    Base your evaluation only on the information contained in
+    the retrieved chunk.
 
     Return only:
 
@@ -488,9 +494,9 @@ def append_judge_row(
 # ==============================================================================
 
 def judge_chunks(
-    query_id,
-    query_text,
-    answers,
+    question_id,
+    question,
+    gold_answer,
     retrieved_chunks,
     top_k,
     output_file,
@@ -515,53 +521,22 @@ def judge_chunks(
         )
 
         # ------------------------------------------------------
-        # Variables para guardar la mejor evaluación
+        # Evaluar el chunk
         # ------------------------------------------------------
 
-        best_score = None
-        best_reason = ""
-        best_answer = ""
-        judge_error = ""
-
-        # ------------------------------------------------------
-        # Evaluar contra todas las respuestas
-        # ------------------------------------------------------
-
-        for answer in answers:
-
-            score, reason, error = (
-                llm_judge_relevance(
-                    query=query_text,
-                    answer=answer,
-                    chunk_text=chunk_text,
-                )
+        score, reason, judge_error = (
+            llm_judge_relevance(
+                question=question,
+                gold_answer=gold_answer,
+                chunk_text=chunk_text,
             )
+        )
 
-            # Si hubo error técnico
-            if error:
-
-                judge_error = error
-
-                print(
-                    f"    ERROR rank {rank}: "
-                    f"{error}"
-                )
-
-                continue
-
-            # Primera evaluación válida
-            if best_score is None:
-
-                best_score = score
-                best_reason = reason
-                best_answer = answer
-
-            # Conservar la puntuación más alta
-            elif score > best_score:
-
-                best_score = score
-                best_reason = reason
-                best_answer = answer
+        if judge_error:
+            print(
+                f"    ERROR rank {rank}: "
+                f"{judge_error}"
+            )
 
         # ------------------------------------------------------
         # Strategy
@@ -570,7 +545,6 @@ def judge_chunks(
         chunk_strategy = strategy
 
         if chunk_strategy is None:
-
             chunk_strategy = chunk.get(
                 "strategy"
             )
@@ -581,11 +555,11 @@ def judge_chunks(
 
         print(
             f"    Rank {rank}: "
-            f"score={best_score}"
+            f"score={score}"
         )
 
         print(
-            f"    Reason: {best_reason}"
+            f"    Reason: {reason}"
         )
 
         print(
@@ -601,11 +575,14 @@ def judge_chunks(
         append_judge_row(
             output_file,
             {
-                "query_id":
-                    query_id,
+                "question_id":
+                    question_id,
 
-                "query":
-                    query_text,
+                "question":
+                    question,
+
+                "gold_answer":
+                    gold_answer,
 
                 "rank":
                     rank,
@@ -623,11 +600,6 @@ def judge_chunks(
                         "document_type"
                     ),
 
-                "format":
-                    chunk.get(
-                        "format"
-                    ),
-
                 "chunk_id":
                     chunk.get(
                         "chunk_id"
@@ -638,17 +610,14 @@ def judge_chunks(
                         "chunk_index"
                     ),
 
-                "reference_answer":
-                    best_answer,
-
                 "chunk_text":
                     chunk_text,
 
                 "relevance_score":
-                    best_score,
+                    score,
 
                 "llm_reason":
-                    best_reason,
+                    reason,
 
                 "judge_error":
                     judge_error,
@@ -769,56 +738,29 @@ def main():
     ):
 
         # ------------------------------------------------------
-        # QUERY ID
+        # QUESTION ID
         # ------------------------------------------------------
 
-        query_id = result.get(
-            "query_id",
-            f"q{query_number:03d}",
+        question_id = result.get(
+            "question_id"
         )
-
 
         # ------------------------------------------------------
         # PREGUNTA
-        #
-        # queries_and_answers.jsonl usa "input"
-        # retrieval_results.json puede usar "query"
-        #
-        # Admitimos ambos para evitar desajustes.
         # ------------------------------------------------------
 
-        query_text = result.get(
-            "input"
+        question = result.get(
+            "question", "",
         )
 
-        if not query_text:
-
-            query_text = result.get(
-                "query",
-                "",
-            )
-
-
         # ------------------------------------------------------
-        # RESPUESTAS DE REFERENCIA
+        # GOLD ANSWER
         # ------------------------------------------------------
 
-        answers = result.get(
-            "answers",
-            [],
+        gold_answer = result.get(
+            "gold_answer",
+            "",
         )
-
-        # Si hay una respuesta como string,
-        # convertirla en lista
-        if isinstance(
-            answers,
-            str,
-        ):
-
-            answers = [
-                answers
-            ]
-
 
         # ------------------------------------------------------
         # Mostrar pregunta
@@ -830,15 +772,27 @@ def main():
         )
 
         print(
-            f"Pregunta: {query_text}"
+            f"Pregunta: {question}"
         )
 
+        # ------------------------------------------------------
+        # Comprobar identificador de la pregunta
+        # ------------------------------------------------------
+
+        if not question_id:
+
+            print(
+                "  AVISO: no se encontró "
+                "el identificador de la pregunta."
+            )
+
+            continue
 
         # ------------------------------------------------------
         # Comprobar pregunta
         # ------------------------------------------------------
 
-        if not query_text:
+        if not question:
 
             print(
                 "  AVISO: no se encontró "
@@ -849,10 +803,10 @@ def main():
 
 
         # ------------------------------------------------------
-        # Comprobar respuestas
+        # Comprobar respuesta
         # ------------------------------------------------------
 
-        if not answers:
+        if not gold_answer:
 
             print(
                 "  AVISO: la pregunta no tiene "
@@ -880,9 +834,9 @@ def main():
             )
 
             judge_chunks(
-                query_id=query_id,
-                query_text=query_text,
-                answers=answers,
+                question_id=question_id,
+                question=question,
+                gold_answer=gold_answer,
                 retrieved_chunks=retrieved_chunks,
                 top_k=top_k,
                 output_file=output_file,
@@ -911,9 +865,9 @@ def main():
                 )
 
                 judge_chunks(
-                    query_id=query_id,
-                    query_text=query_text,
-                    answers=answers,
+                    question_id=question_id,
+                    question=question,
+                    gold_answer=gold_answer,
                     retrieved_chunks=retrieved_chunks,
                     top_k=top_k,
                     output_file=output_file,

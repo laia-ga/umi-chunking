@@ -299,7 +299,7 @@ def retrieve_chunks(
     client: QdrantClient,
     embeddings: HuggingFaceEmbeddings,
     collection_name: str,
-    question_text: str,
+    question: str,
     top_k: int,
     strategy: str = None,
     document_type: str = None,
@@ -314,7 +314,7 @@ def retrieve_chunks(
 
     # Generar embedding de la pregunta
     query_vector = embeddings.embed_query(
-        question_text
+        question
     )
 
     # Lista de condiciones para Qdrant
@@ -542,13 +542,13 @@ def main() -> None:
         question_id = query_item["question_id"]
 
         # Texto de la pregunta
-        question_text = query_item["question"]
+        question = query_item["question"]
 
         # Respuesta
         gold_answer = query_item["gold_answer"]
 
         print(
-            f"\nPregunta: {question_text}"
+            f"\nPregunta: {question}"
         )
 
         # ----------------------------------------------------
@@ -561,7 +561,7 @@ def main() -> None:
                 client=client,
                 embeddings=embeddings,
                 collection_name=collection_name,
-                question_text=question_text,
+                question=question,
                 top_k=top_k,
                 strategy=None,
                 document_type=document_type,
@@ -571,7 +571,7 @@ def main() -> None:
             all_results.append(
                 {
                     "question_id": question_id,
-                    "question": question_text,
+                    "question": question,
                     "gold_answer": gold_answer,
                     "document_type": document_type,
                     "document_format": document_format,
@@ -598,7 +598,7 @@ def main() -> None:
                     client=client,
                     embeddings=embeddings,
                     collection_name=collection_name,
-                    question_text=question_text,
+                    question=question,
                     top_k=top_k,
                     strategy=strategy,
                     document_type=document_type,
@@ -614,7 +614,7 @@ def main() -> None:
             all_results.append(
                 {
                     "question_id": question_id,
-                    "question": question_text,
+                    "question": question,
                     "gold_answer": gold_answer,
                     "document_type": document_type,
                     "document_format": document_format,
