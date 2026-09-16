@@ -1,7 +1,7 @@
 import re
 from typing import Callable, List
 
-from langchain_experimental.text_splitter import SemanticChunker
+from langchain_text_splitters import SemanticChunker
 from langchain_huggingface import HuggingFaceEmbeddings
 
 from ..base import BaseChunker, Chunk
@@ -23,6 +23,7 @@ class SemanticBoundaryChunker(BaseChunker):
         ),
         breakpoint_threshold_amount: float = 95.0,
         buffer_size: int = 1, # cuántas frases vecinas se consideran para calcular el embedding
+        max_chunk_tokens: int | None = 512,
     ):
         """
         Parámetros:
@@ -40,6 +41,11 @@ class SemanticBoundaryChunker(BaseChunker):
         buffer_size:
             Número de frases vecinas utilizadas para
             calcular cada embedding.
+        
+        max_chunk_tokens:
+            Tope de seguridad: si un chunk supera este número de tokens
+            (porque el criterio semántico no encontró un buen punto de
+            corte), se vuelve a partir por frases. None desactiva el tope.
         """
         if buffer_size < 0:
             raise ValueError(
@@ -57,6 +63,7 @@ class SemanticBoundaryChunker(BaseChunker):
             breakpoint_threshold_amount
         )
         self.buffer_size = buffer_size
+        self.max_chunk_tokens = max_chunk_tokens
 
         # Modelo para detectar los cambios semánticos
         self.embeddings = HuggingFaceEmbeddings(
@@ -99,7 +106,7 @@ class SemanticBoundaryChunker(BaseChunker):
         ]
 
         if len(sentences) <= 1:
-            return [
+            chunks = [
                 Chunk(
                     text=text,
                     metadata={
@@ -120,6 +127,9 @@ class SemanticBoundaryChunker(BaseChunker):
                     doc_id=doc_id,
                 )
             ]
+            return self.split_oversized_chunks(
+                chunks, self.token_counter, self.max_chunk_tokens, doc_id
+            )
 
         chunk_texts = self.splitter.split_text(text)
 
@@ -154,4 +164,6 @@ class SemanticBoundaryChunker(BaseChunker):
                 )
             )
 
-        return chunks
+        return self.split_oversized_chunks(
+            chunks, self.token_counter, self.max_chunk_tokens, doc_id
+        )

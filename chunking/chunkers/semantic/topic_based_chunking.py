@@ -21,7 +21,8 @@ class TopicBasedChunker(BaseChunker):
             self, 
             token_counter: Callable[[str], int],
             distance_threshold: float, 
-            embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+            embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2",
+            max_chunk_tokens: int | None = 512,
     ):
 
         if not callable(token_counter):
@@ -38,7 +39,7 @@ class TopicBasedChunker(BaseChunker):
         self.token_counter = token_counter
         self.distance_threshold = distance_threshold
         self.embedding_model = embedding_model
-
+        self.max_chunk_tokens = max_chunk_tokens
         # Modelo utilizado para los embeddings de las frases
         self.embeddings = HuggingFaceEmbeddings(model_name=embedding_model)
         
@@ -56,7 +57,7 @@ class TopicBasedChunker(BaseChunker):
             
         if len(sentences) < 2:
              # Just return one chunk
-            return [Chunk(
+            chunks = [Chunk(
                 text=sentences[0],
                 metadata={
                     "chunker": "topic_based_chunking",
@@ -69,8 +70,11 @@ class TopicBasedChunker(BaseChunker):
                 chunk_id=f"{doc_id}_chunk_0000",
                 doc_id=doc_id
             )]
-            
-        # Camculamos un embedding para cada frase
+            return self.split_oversized_chunks(
+                chunks, self.token_counter, self.max_chunk_tokens, doc_id
+            )
+        
+        # Calculamos un embedding para cada frase
         embeddings = self.embeddings.embed_documents(sentences)
         X = np.array(embeddings)
         
@@ -136,4 +140,6 @@ class TopicBasedChunker(BaseChunker):
                 )
             )
 
-        return chunks
+        return self.split_oversized_chunks(
+            chunks, self.token_counter, self.max_chunk_tokens, doc_id
+        )

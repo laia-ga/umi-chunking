@@ -1,7 +1,7 @@
 import re
 from typing import Callable, List
 
-from langchain_experimental.text_splitter import SemanticChunker
+from langchain_text_splitters import SemanticChunker
 from langchain_huggingface import HuggingFaceEmbeddings
 
 from ..base import BaseChunker, Chunk
@@ -27,6 +27,7 @@ class SemanticEmbeddingChunker(BaseChunker):
         breakpoint_threshold_type: str = "percentile",
         breakpoint_threshold_amount: float = 95.0,
         buffer_size: int = 1, # cuántas frases vecinas se añaden alrededor para calcular embedding
+        max_chunk_tokens: int | None = 512,
     ):
         if buffer_size < 0:
             raise ValueError(
@@ -60,6 +61,7 @@ class SemanticEmbeddingChunker(BaseChunker):
             breakpoint_threshold_amount
         )
         self.buffer_size = buffer_size
+        self.max_chunk_tokens = max_chunk_tokens
 
         # Modelo utilizado para detectar fronteras semánticas
         self.embeddings = HuggingFaceEmbeddings(
@@ -105,7 +107,7 @@ class SemanticEmbeddingChunker(BaseChunker):
         ]
 
         if len(sentences) <= 1:
-            return [
+            chunks = [
                 Chunk(
                     text=text,
                     metadata={
@@ -128,6 +130,9 @@ class SemanticEmbeddingChunker(BaseChunker):
                     doc_id=doc_id,
                 )
             ]
+            return self.split_oversized_chunks(
+                chunks, self.token_counter, self.max_chunk_tokens, doc_id
+            )
 
         chunk_texts = self.splitter.split_text(text)
 
@@ -164,4 +169,6 @@ class SemanticEmbeddingChunker(BaseChunker):
                 )
             )
 
-        return chunks
+        return self.split_oversized_chunks(
+            chunks, self.token_counter, self.max_chunk_tokens, doc_id
+        )

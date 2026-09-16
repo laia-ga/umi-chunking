@@ -20,6 +20,7 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
             "sentence-transformers/all-MiniLM-L6-v2"
         ),
         window_size: int = 3, # número de frases anteriores para calcular la media
+        max_chunk_tokens: int | None = 512,
     ):
         """
         Parameters
@@ -38,6 +39,11 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
         window_size:
             Número de similitudes anteriores utilizadas para
             calcular la media reciente.
+
+        max_chunk_tokens:
+            Tope de seguridad: si un chunk supera este número de tokens
+            (porque no se detectó una caída de similitud suficiente),
+            se vuelve a partir por frases. None desactiva el tope.
         """
         if sensitivity < 0:
             raise ValueError(
@@ -53,6 +59,7 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
         self.token_counter = token_counter
         self.embedding_model = embedding_model
         self.window_size = window_size
+        self.max_chunk_tokens = max_chunk_tokens
 
         # Modelo para calcular la similitud semántica entre frases consecutivas
         self.embeddings = HuggingFaceEmbeddings(
@@ -100,7 +107,7 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
         if len(sentences) == 1:
             sentence = sentences[0]
 
-            return [
+            chunks = [
                 Chunk(
                     text=sentence,
                     metadata={
@@ -117,7 +124,10 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
                     doc_id=doc_id,
                 )
             ]
-
+            return self.split_oversized_chunks(
+                chunks, self.token_counter, self.max_chunk_tokens, doc_id
+            )
+        
         # Generar embeddings de las frases
         sentence_embeddings = (
             self.embeddings.embed_documents(sentences)
@@ -283,4 +293,6 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
                 )
             )
 
-        return chunks
+        return self.split_oversized_chunks(
+            chunks, self.token_counter, self.max_chunk_tokens, doc_id
+        )

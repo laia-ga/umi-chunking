@@ -23,6 +23,7 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
         embedding_model: str = (
             "sentence-transformers/all-MiniLM-L6-v2"
         ),
+        max_chunk_tokens: int | None = 512,
     ):
         if not 0 <= threshold <= 1:
             raise ValueError(
@@ -37,6 +38,7 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
         self.threshold = threshold
         self.token_counter = token_counter
         self.embedding_model = embedding_model
+        self.max_chunk_tokens = max_chunk_tokens
 
         # Modelo utilizado para calcular similitud semántica
         self.embeddings = HuggingFaceEmbeddings(
@@ -84,7 +86,7 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
         if len(sentences) == 1:
             sentence = sentences[0]
 
-            return [
+            chunks = [
                 Chunk(
                     text=sentence,
                     metadata={
@@ -102,6 +104,9 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
                     doc_id=doc_id,
                 )
             ]
+            return self.split_oversized_chunks(
+                chunks, self.token_counter, self.max_chunk_tokens, doc_id
+            )
 
         # Generar embeddings de todas las frases
         sentence_embeddings = (
@@ -202,4 +207,6 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
                 )
             )
 
-        return chunks
+        return self.split_oversized_chunks(
+            chunks, self.token_counter, self.max_chunk_tokens, doc_id
+        )
