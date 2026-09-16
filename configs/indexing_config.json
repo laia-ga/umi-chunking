@@ -13,6 +13,7 @@
         "batch_size": 32,
         "formats": [
             "json", "markdown"
-        ]
+        ],
+        "num_workers": 8
     }
 }

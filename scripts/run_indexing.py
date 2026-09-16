@@ -48,8 +48,8 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 
 # Carpeta que contiene los chunks generados por los runners:
 # main/output/chunks
-# CHUNKS_ROOT = PROJECT_ROOT / "output" / "chunks"
-CHUNKS_ROOT = PROJECT_ROOT / "output" / "test"
+CHUNKS_ROOT = PROJECT_ROOT / "output" / "chunks"
+# CHUNKS_ROOT = PROJECT_ROOT / "output" / "test"
 
 # Carpeta general de salida de la indexación:
 # main/output/indexing
@@ -536,8 +536,24 @@ def print_run_summary(record: Dict[str, Any]) -> None:
 # GENERACIÓN DE EMBEDDINGS (secuencial y paralela)
 # ============================================================
 
+def _get_sentence_transformer(embeddings: HuggingFaceEmbeddings):
+    """
+    Devuelve el SentenceTransformer interno que envuelve HuggingFaceEmbeddings.
+    ...
+    """
+    model = getattr(embeddings, "client", None)
+    if model is None:
+        model = getattr(embeddings, "_client", None)
+    if model is None:
+        raise AttributeError(
+            "No se ha podido acceder al SentenceTransformer interno de "
+            "HuggingFaceEmbeddings ('client'/'_client' no encontrados). "
+            "Puede que la versión instalada de langchain_huggingface use "
+            "otro nombre de atributo."
+        )
+    return model
 
-def embed_texts_paralel(
+def embed_texts_parallel(
     embeddings: HuggingFaceEmbeddings,
     texts: List[str],
     num_workers: int,
@@ -559,7 +575,7 @@ def embed_texts_paralel(
         modelo en memoria: no debe subirse más de lo que aguante la RAM
     """
 
-    model = embeddings.client  # SentenceTransformer subyacente
+    model = _get_sentence_transformer(embeddings)
 
     # Evita oversubscription: si cada uno de los N procesos usa todos los
     # hilos de la CPU, se pisan entre ellos y va más lento que en secuencial
@@ -574,6 +590,7 @@ def embed_texts_paralel(
             texts,
             pool,
             batch_size=batch_size,
+            show_progress_bar=True,
         )
     finally:
         model.stop_multi_process_pool(pool)
@@ -631,7 +648,7 @@ def embed_with_cache(
             pending_hashes.append(text_hash)
     
     print(
-        f"Embeddings reutilizados de caché: {hits}/{len(chunks)}"
+        f"Embeddings reutilizados de caché: {hits}/{len(chunks)}. "
         f"Pendientes de calcular: {len(pending_texts)}"
     )
 
@@ -639,7 +656,7 @@ def embed_with_cache(
     if pending_texts:
         start = time.perf_counter()
         if num_workers > 1:
-            new_vectors = embed_texts_paralel(
+            new_vectors = embed_texts_parallel(
                 embeddings, pending_texts, num_workers, batch_size
             )
         else:
