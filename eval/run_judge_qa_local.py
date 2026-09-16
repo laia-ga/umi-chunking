@@ -25,6 +25,8 @@ import json
 import sys
 from pathlib import Path
 
+import argparse
+
 import torch
 
 from transformers import (
@@ -56,14 +58,6 @@ RETRIEVAL_CONFIG_FILE = (
     / "retrieval_config.json"
 )
 
-# Resultados creados por run_retrieval.py
-RETRIEVAL_RESULTS_FILE = (
-    BASE_DIR
-    / "output"
-    / "retrieval"
-    / "retrieval_results.json"
-)
-
 # Carpeta de salida
 OUTPUT_DIR = (
     BASE_DIR
@@ -71,25 +65,30 @@ OUTPUT_DIR = (
     / "judge"
 )
 
-# CSV final
-OUTPUT_FILE = (
-    OUTPUT_DIR
-    / "llm_judge_results.csv"
-)
 
+# Nombre del archivo de salida según configuración
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Evalúa los resultados de un retrieval mediante un LLM."
+    )
+
+    parser.add_argument(
+        "retrieval_file",
+        help="Nombre del archivo JSON generado por run_retrieval.py",
+    )
+
+    return parser.parse_args()
 
 # ==============================================================================
 # 3. CONFIGURACIÓN DEL MODELO
 # ==============================================================================
 
 # Modelo utilizado como juez
-MODEL_NAME = (
-    "Qwen/Qwen2.5-1.5B-Instruct"
-)
+MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
+# MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 
 # Máximo de tokens que generará el modelo
 MAX_NEW_TOKENS = 150
-
 
 # ==============================================================================
 # 4. CARGAR TOKENIZER Y MODELO
@@ -301,68 +300,49 @@ def llm_judge_relevance(
     answer: str,
     chunk_text: str,
 ):
-    """
-    Evalúa si el chunk contiene la información necesaria
-    para responder correctamente a la pregunta.
-
-    Devuelve:
-        score:
-            0 = no relevante
-            1 = parcialmente relevante
-            2 = totalmente relevante
-
-        reason:
-            explicación breve
-
-        error:
-            mensaje de error si algo falla
-    """
-
     prompt = f"""
-Evaluate whether the retrieved chunk contains the information
-needed to answer the question according to the reference answer.
+    Your task is to determine how much of the REFERENCE ANSWER
+    is supported by the RETRIEVED CHUNK.
 
-Question:
-{query}
+    QUESTION:
+    {query}
 
-Reference answer:
-{answer}
+    REFERENCE ANSWER:
+    {answer}
 
-Retrieved chunk:
-{chunk_text}
+    RETRIEVED CHUNK:
+    {chunk_text}
 
-Use the following relevance scale:
+    Compare the retrieved chunk directly with the reference answer.
 
-0 = NOT RELEVANT
-The retrieved chunk does not contain the information needed
-to answer the question.
+    Assign:
 
-1 = PARTIALLY RELEVANT
-The retrieved chunk contains some useful information,
-but it is incomplete or insufficient to fully answer
-the question.
+    2 = The chunk contains the answer, or enough information to
+    answer the question correctly.
 
-2 = FULLY RELEVANT
-The retrieved chunk contains enough information
-to correctly answer the question.
+    1 = The chunk contains some information from the reference
+    answer or useful information toward answering the question,
+    but the answer is incomplete.
 
-Important rules:
+    0 = The chunk contains no information useful for answering
+    the question.
 
-- Judge the information, not exact wording.
-- Do not penalize paraphrases.
-- A chunk is fully relevant if it contains the information
-  needed to answer the question correctly.
-- Return JSON only.
-- Do not include Markdown.
-- Do not include text outside the JSON.
+    IMPORTANT:
+    If the chunk contains the same factual information as the
+    reference answer, even using different words, assign 2.
 
-Return exactly this structure:
+    If the chunk contains only part of the reference answer,
+    assign 1.
 
-{{
-    "score": 0,
-    "reason": "short explanation"
-}}
-"""
+    Do NOT require exact wording.
+
+    Return only:
+
+    {{
+        "score": 0,
+        "reason": "brief explanation"
+    }}
+    """
 
     try:
 
@@ -513,6 +493,7 @@ def judge_chunks(
     answers,
     retrieved_chunks,
     top_k,
+    output_file,
     strategy=None,
 ):
     """
@@ -603,12 +584,22 @@ def judge_chunks(
             f"score={best_score}"
         )
 
+        print(
+            f"    Reason: {best_reason}"
+        )
+
+        print(
+            f"    Chunk: {chunk_text[:500]}"
+        )
+
+        print()
+
         # ------------------------------------------------------
         # Guardar resultado
         # ------------------------------------------------------
 
         append_judge_row(
-            OUTPUT_FILE,
+            output_file,
             {
                 "query_id":
                     query_id,
@@ -670,6 +661,24 @@ def judge_chunks(
 # ==============================================================================
 
 def main():
+    args = parse_args()
+
+    retrieval_results_file = (
+        BASE_DIR
+        / "output"
+        / "retrieval"
+        / args.retrieval_file
+    )
+
+    retrieval_suffix = retrieval_results_file.stem
+
+    if retrieval_suffix.startswith("retrieval_"):
+        retrieval_suffix = retrieval_suffix[len("retrieval_"):]
+
+    output_file = (
+        OUTPUT_DIR
+        / f"judge_{retrieval_suffix}.csv"
+    )
 
     print("=" * 70)
     print("EVALUACIÓN DE RETRIEVAL MEDIANTE LLM")
@@ -707,11 +716,11 @@ def main():
     # 10.2 COMPROBAR RESULTADOS DE RETRIEVAL
     # ==========================================================================
 
-    if not RETRIEVAL_RESULTS_FILE.exists():
+    if not retrieval_results_file.exists():
 
         raise FileNotFoundError(
             "\nNo se ha encontrado:\n"
-            f"{RETRIEVAL_RESULTS_FILE}\n\n"
+            f"{retrieval_results_file}\n\n"
             "Ejecuta primero run_retrieval.py."
         )
 
@@ -720,7 +729,7 @@ def main():
     # 10.3 CARGAR RETRIEVAL_RESULTS.JSON
     # ==========================================================================
 
-    with RETRIEVAL_RESULTS_FILE.open(
+    with retrieval_results_file.open(
         "r",
         encoding="utf-8",
     ) as file:
@@ -745,9 +754,9 @@ def main():
 
     # Borrar CSV anterior
     # para evitar duplicados
-    if OUTPUT_FILE.exists():
+    if output_file.exists():
 
-        OUTPUT_FILE.unlink()
+        output_file.unlink()
 
 
     # ==========================================================================
@@ -876,6 +885,7 @@ def main():
                 answers=answers,
                 retrieved_chunks=retrieved_chunks,
                 top_k=top_k,
+                output_file=output_file,
             )
 
 
@@ -906,6 +916,7 @@ def main():
                     answers=answers,
                     retrieved_chunks=retrieved_chunks,
                     top_k=top_k,
+                    output_file=output_file,
                     strategy=strategy,
                 )
 
@@ -933,7 +944,7 @@ def main():
 
     print(
         f"Resultados guardados en:\n"
-        f"{OUTPUT_FILE}"
+        f"{output_file}"
     )
 
 

@@ -66,12 +66,6 @@ OUTPUT_DIR = (
     / "retrieval"
 )
 
-# Archivo de salida
-OUTPUT_FILE = (
-    OUTPUT_DIR
-    / "retrieval_results.json"
-)
-
 sys.path.append(str(BASE_DIR))
 from chunking.utilities import load_config
 
@@ -123,6 +117,68 @@ def load_queries(
 # ============================================================
 # GUARDAR RESULTADOS
 # ============================================================
+
+# Crear nombre del archivo de salida según la configuración
+# retrieval 
+# + modelo
+# + formato (si no es null)
+# + estrategia (si no es null)
+# + documento (si no es null)
+# .json
+
+def create_output_file(
+    indexing_config: Dict[str, Any],
+    retrieval_params: Dict[str, Any],
+) -> Path:
+
+    """
+    Crea el nombre del archivo de resultados según
+    los parámetros utilizados en el retrieval.
+    """
+
+    # Modelo de embeddings
+    model_name = indexing_config["embeddings"]["model_name"]
+
+    # Quedarnos solo con el nombre final del modelo
+    # Ejemplo: "BAAI/bge-m3" -> "bge_m3"
+    model_name = model_name.split("/")[-1]
+    model_name = model_name.replace("-", "_").lower()
+
+    parts = [
+        "retrieval",
+        model_name,
+    ]
+
+    # Formato
+    document_format = retrieval_params.get(
+        "document_format"
+    )
+
+    if document_format is not None:
+        parts.append(document_format.upper())
+
+    # Estrategias
+    strategies = retrieval_params.get(
+        "strategies"
+    )
+
+    if strategies is not None:
+        if isinstance(strategies, list):
+            parts.extend(strategies)
+        else:
+            parts.append(strategies)
+
+    # Tipo de documento
+    document_type = retrieval_params.get(
+        "document_type"
+    )
+
+    if document_type is not None:
+        parts.append(document_type)
+
+    filename = "_".join(parts) + ".json"
+
+    return OUTPUT_DIR / filename
 
 def save_results(
     results: List[Dict[str, Any]],
@@ -389,6 +445,11 @@ def main() -> None:
         retrieval_config["retrieval"]
     )
 
+    output_file = create_output_file(
+        indexing_config=indexing_config,
+        retrieval_params=retrieval_params,
+    )
+
     top_k = retrieval_params["top_k"]
 
     strategies = retrieval_params[
@@ -554,13 +615,13 @@ def main() -> None:
 
     save_results(
         all_results,
-        OUTPUT_FILE,
+        output_file,
     )
 
     print()
     print(
         f"Resultados guardados en: "
-        f"{OUTPUT_FILE}"
+        f"{output_file}"
     )
 
     print("=" * 70)

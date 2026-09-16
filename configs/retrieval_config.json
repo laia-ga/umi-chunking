@@ -1,8 +1,8 @@
 {
     "retrieval": {
         "top_k": 5,
-        "strategies": null,
-        "document_type": "ficha_tecnica",
+        "strategies": ["DFC"],
+        "document_type": null,
         "document_format": null
     }
 }
