@@ -4,7 +4,8 @@
   "abbreviation": "SSTC",
   "params": {
     "threshold": 0.5,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "status": "completed",
   "doc_id": "guideline_GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020",
@@ -12,20 +13,20 @@
   "input_file": "GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020.md",
   "source_path": "guideline\\GUIDELINE - Cardona et al. - 2020 - World Allergy Organization Anaphylaxis Guidance 2020.md",
   "tokenizer_model": "BAAI/bge-m3",
-  "number_of_chunks": 819,
+  "number_of_chunks": 822,
   "empty_chunks": 0,
   "tokens_min": 3,
   "tokens_p25": 8.0,
   "tokens_median": 13.0,
-  "tokens_mean": 29.82,
+  "tokens_mean": 29.72,
   "tokens_p75": 25.0,
-  "tokens_max": 694,
-  "tokens_std": 67.29,
-  "tokens_total": 24423,
+  "tokens_max": 633,
+  "tokens_std": 62.63,
+  "tokens_total": 24429,
   "tokens_original": 22787,
   "tokens_ratio": 1.072,
-  "execution_time_seconds": 2.947264,
-  "ram_before_mb": 1080.5,
-  "ram_after_mb": 1019.66,
-  "ram_increase_mb": -60.84
+  "execution_time_seconds": 1.556374,
+  "ram_before_mb": 1089.05,
+  "ram_after_mb": 1088.94,
+  "ram_increase_mb": -0.11
 }

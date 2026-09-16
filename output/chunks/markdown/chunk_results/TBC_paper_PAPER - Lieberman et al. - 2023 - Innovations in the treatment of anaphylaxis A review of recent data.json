@@ -4,27 +4,47 @@
   "abbreviation": "TBC",
   "params": {
     "distance_threshold": 0.4,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
   "document_type": "paper",
   "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
   "source_path": "paper\\PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
-  "tokenizer model": "BAAI/bge-m3",
+  "tokenizer_model": "BAAI/bge-m3",
   "original_token_count": 16759,
-  "number_of_chunks": 151,
+  "number_of_chunks": 159,
   "chunks": [
     {
-      "text": "Ann Allergy Asthma Immunol 131 (2023) 185−193\n\nContents lists available at ScienceDirect\n\nReview\n\n# Innovations in the treatment of anaphylaxis: A review of recent data\n\nJay A. Lieberman, MD*; John Oppenheimer, MDy; Vivian P. Hernandez-Trujillo, MDz,x; Michael S. Blaiss, MDk\n\n* Division of Allergy and Immunology, The University of Tennessee Health Science Center, Memphis, Tennessee\n\n- y Division of Allergy, Rutgers New Jersey Medical School, Rutgers, New Jersey\n- z Nicklaus Children’s Hospital, Miami, Florida x Allergy and Immunology Care Center of South Florida, Miami Lakes, Florida k Department of Pediatrics, Medical College of Georgia, Augusta, Georgia\n\n\n|Key Messages<br><br>The epinephrine autoinjector (EAI) is the standard of outpatient emergency treatment for serious allergic reactions (type I), including anaphylaxis; however, there are numerous barriers to patient carriage and use.<br><br>Delays in epinephrine administration and lack of EAI use may have serious implications, including increased morbidity and mortality. Purpose of Review: The current standard of first-line emergency treatment of anaphylaxis is intramuscular (IM) epinephrine, mostly administered through epinephrine autoinjector (EAI) in the outpatient setting. In the Anaphylaxis in America survey, in patients with a confirmed previous anaphylaxis episode, 50% had never received an EAI prescription, and nearly half of those who did were not given an emergency action plan.3 Risks of underdosing or delayed use may include further progression of an evolving allergic or anaphylactic reaction and increased risk of a biphasic reaction, hospitalization, and ultimately death.6,8,13,31,35−37\n\nNeed for Innovative Therapies\n\nGiven the noted issues around EAIs, innovative therapies are needed to improve the carriage and use of epinephrine. Because of the serious nature of anaphylaxis, double-blind, randomized, controlled trials are not feasible owing to practical and ethical reasons.28 Thus, researchers test the performance of the device or product through animal and human pharmacokinetic (PK) and pharmacodynamic (PD) studies, in addition to studies on epinephrine delivery and muscle delivery depth in animal models. Because of the inherent risk of performing epinephrine studies in patients during anaphylaxis, 1 of the omnipresent limitations is that plasma epinephrine is used as a surrogate for treatment response.29 Some of the new technologies for epinephrine delivery cause a higher plasma concentration (ie, Cmax) than do EAIs; however, the optimal plasma epinephrine range that should be targeted to treat an episode of anaphylaxis is not known. Early treatment of food-induced anaphylaxis with epinephrine is associated with a lower risk of hospitalization. Epinephrine in the management of anaphylaxis. Epinephrine for the out-of-hospital (first-aid) treatment of anaphylaxis in infants: is the ampule/syringe/needle method practical? Emerging therapies in anaphylaxis: alternatives to intramuscular administration of epinephrine. Pitfalls in the use of epinephrine for anaphylaxis: patient and provider opportunities for improvement. Fromer L. Prevention of anaphylaxis: the role of the epinephrine auto-injector. Song TT, Worm M, Lieberman P. Anaphylaxis treatment: current barriers to adrenaline auto-injector use. Contemporary issues in anaphylaxis and the evolution of epinephrine autoinjectors: what will the future bring? Prince BT, Mikhail I, Stukus DR. Underuse of epinephrine for the treatment of anaphylaxis: missed opportunities. Community use of epinephrine for the treatment of anaphylaxis: a review and metaanalysis. Learning from epinephrine treatment characteristics among patients with severe allergic reactions including anaphylaxis to improve professional and patient education: analyses from a US claims database P022.",
+      "text": "Ann Allergy Asthma Immunol 131 (2023) 185−193\n\nContents lists available at ScienceDirect\n\nReview\n\n# Innovations in the treatment of anaphylaxis: A review of recent data\n\nJay A. Lieberman, MD*; John Oppenheimer, MDy; Vivian P. Hernandez-Trujillo, MDz,x; Michael S. Blaiss, MDk\n\n* Division of Allergy and Immunology, The University of Tennessee Health Science Center, Memphis, Tennessee\n\n- y Division of Allergy, Rutgers New Jersey Medical School, Rutgers, New Jersey\n- z Nicklaus Children’s Hospital, Miami, Florida x Allergy and Immunology Care Center of South Florida, Miami Lakes, Florida k Department of Pediatrics, Medical College of Georgia, Augusta, Georgia\n\n\n|Key Messages<br><br>The epinephrine autoinjector (EAI) is the standard of outpatient emergency treatment for serious allergic reactions (type I), including anaphylaxis; however, there are numerous barriers to patient carriage and use.<br><br>Delays in epinephrine administration and lack of EAI use may have serious implications, including increased morbidity and mortality. Purpose of Review: The current standard of first-line emergency treatment of anaphylaxis is intramuscular (IM) epinephrine, mostly administered through epinephrine autoinjector (EAI) in the outpatient setting. In the Anaphylaxis in America survey, in patients with a confirmed previous anaphylaxis episode, 50% had never received an EAI prescription, and nearly half of those who did were not given an emergency action plan.3 Risks of underdosing or delayed use may include further progression of an evolving allergic or anaphylactic reaction and increased risk of a biphasic reaction, hospitalization, and ultimately death.6,8,13,31,35−37\n\nNeed for Innovative Therapies\n\nGiven the noted issues around EAIs, innovative therapies are needed to improve the carriage and use of epinephrine.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 6,
         "sentence_count": 16,
-        "token_count": 965,
+        "token_count": 463,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1829,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0000"
       },
       "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0000",
+      "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Because of the serious nature of anaphylaxis, double-blind, randomized, controlled trials are not feasible owing to practical and ethical reasons.28 Thus, researchers test the performance of the device or product through animal and human pharmacokinetic (PK) and pharmacodynamic (PD) studies, in addition to studies on epinephrine delivery and muscle delivery depth in animal models. Because of the inherent risk of performing epinephrine studies in patients during anaphylaxis, 1 of the omnipresent limitations is that plasma epinephrine is used as a surrogate for treatment response.29 Some of the new technologies for epinephrine delivery cause a higher plasma concentration (ie, Cmax) than do EAIs; however, the optimal plasma epinephrine range that should be targeted to treat an episode of anaphylaxis is not known. Early treatment of food-induced anaphylaxis with epinephrine is associated with a lower risk of hospitalization. Epinephrine in the management of anaphylaxis. Epinephrine for the out-of-hospital (first-aid) treatment of anaphylaxis in infants: is the ampule/syringe/needle method practical? Emerging therapies in anaphylaxis: alternatives to intramuscular administration of epinephrine. Pitfalls in the use of epinephrine for anaphylaxis: patient and provider opportunities for improvement. Fromer L. Prevention of anaphylaxis: the role of the epinephrine auto-injector. Song TT, Worm M, Lieberman P. Anaphylaxis treatment: current barriers to adrenaline auto-injector use. Contemporary issues in anaphylaxis and the evolution of epinephrine autoinjectors: what will the future bring? Prince BT, Mikhail I, Stukus DR. Underuse of epinephrine for the treatment of anaphylaxis: missed opportunities. Community use of epinephrine for the treatment of anaphylaxis: a review and metaanalysis. Learning from epinephrine treatment characteristics among patients with severe allergic reactions including anaphylaxis to improve professional and patient education: analyses from a US claims database P022.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 6,
+        "sentence_count": 16,
+        "token_count": 504,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 2017,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0000"
+      },
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0001",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -37,7 +57,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0001",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0002",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -50,20 +70,55 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0002",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0003",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
-      "text": "Limitations of current evidence include no clinical or real-world studies of innovative products in anaphylaxis, limited data in pediatric patients, no head-to-head studies, and a lack of peer-reviewed data in the literature. This review explores innovative nasal and oral products under investigation for the outpatient emergency treatment of anaphylaxis. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)\n\nIntroduction\n\nAnaphylaxis is a serious, potentially fatal medical emergency involving an acute allergic reaction that may have various triggers, mechanisms, and clinical presentations.1 The clinical presentation and severity of symptoms are unpredictable, can differ among individuals, and may change over time within the same individual.1 They may also change with the presence of cofactors (eg, viral illness, alcohol ingestion, exercise).2\n\nThe lifetime prevalence of anaphylaxis is estimated between 1.6% and 5.1%.1,3 The incidence of anaphylaxis is increasing globally, although there does not seem to be an increase in deaths.4 The leading triggers of anaphylaxis may vary depending on the patient population, differing in various regions of the world and by age.1 In adults, medications and stinging insects are the most frequent triggers, whereas foods and stinging insects are the most common triggers in children and adolescents.1 Patients may also have risk factors for severe anaphylaxis such as older age, asthma, chronic obstructive pulmonary disease, beta-blocker or angiotensin-converting enzyme inhibitor use, or other comorbid conditions.1,5\n\nRapid identification and treatment of anaphylaxis are recognized as the best-practice strategy.1 The most effective treatment for anaphylaxis is epinephrine (adrenaline).1 Antihistamines and glucocorticoids are considered solely second-line therapy and should not be used before, or instead of, epinephrine.1 There is international consensus that epinephrine is the first-choice medication, and early\n\nadministration reduces hospitalization and may reduce death.5−7 Delaying administration of epinephrine may be associated with increased morbidity and mortality.1,8−11\n\nCurrent guidelines recommend that epinephrine be administered intramuscularly (IM) into the anterolateral thigh with a standard approved dose of 0.01 mg/kg of 1:1000 (1 mg/mL) solution up to a single maximum dose of 0.5 mg in adults and 0.3 mg in children.1,2 Dosing should be repeated every 5 to 15 minutes if symptoms remain unresolved.1,2\n\nThe epinephrine autoinjector (EAI) allows the administration of epinephrine by nonmedical individuals in an outpatient setting.12 The use of vial and syringe epinephrine administration is generally not recommended in the outpatient setting because it may contribute to overdosing, underdosing, and/or delay in administration,12,13 with 1 study showing an increased risk of dosing errors as much as 40-fold by parents and 2- to 8-fold by healthcare providers (HCPs).12,14\n\nIssues and Limitations of Currently Available Epinephrine Autoinjectors\n\nKey issues and limitations of currently available EAIs include device size, lack of carriage, needle phobia, needle-related injury, shelf life, storage concerns, and cost12,15−17 (Table 1). Education and training for patients and caregivers in the recognition and management of anaphylaxis remain important needs, along with policies and training, to improve the management of anaphylaxis in schools and other community settings.16,33\n\nLimitations of the current evidence include no clinical or real-world studies of these innovative products in anaphylaxis, limited data in pediatric patients, no head-to-head studies, and a lack of peer-reviewed data in the literature. Future research needs to include further data in pediatric patients, real-world studies evaluating efficacy in anaphylaxis, patient and caregiver preference, and ease of use and carriage, and to investigate age differences in response to treatment. Conclusion\n\nThere remains a large unmet need in the treatment of anaphylaxis. Anaphylaxis-a 2020 practice parameter update, systematic review, and Grading of Recommendations, Assessment, Development and Evaluation (GRADE) analysis. World Allergy Organization anaphylaxis guidance 2020. Anaphylaxis in America: the prevalence and characteristics of anaphylaxis in the United States. Dribin TE, Castells M. Anaphylaxis: data gaps and research needs. 2015 update of the evidence base: World Allergy Organization anaphylaxis guidelines. Anaphylaxis risk factors for hospitalization and intensive care: a comparison between adults and children in an upstate New York emergency department. Xu YS, Kastner M, Harada L, Xu A, Salter J, Waserman S. Anaphylaxis-related deaths in Ontario: a retrospective review of cases from 1986 to 2011. Fatal and near-fatal anaphylactic reactions to food in children and adolescents. Lessons for management of anaphylaxis from a study of fatal reactions. Fatal anaphylaxis: mortality rate and risk factors. EAACI guidelines: anaphylaxis (2021 update). The importance of understanding anaphylaxis among older adults. Incidence and characteristics of biphasic anaphylaxis: a prospective evaluation of 103 patients. Further evaluation of factors that may predict biphasic reactions in emergency department anaphylaxis patients.",
+      "text": "Limitations of current evidence include no clinical or real-world studies of innovative products in anaphylaxis, limited data in pediatric patients, no head-to-head studies, and a lack of peer-reviewed data in the literature. This review explores innovative nasal and oral products under investigation for the outpatient emergency treatment of anaphylaxis.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 30,
         "sentence_count": 20,
-        "token_count": 1273,
+        "token_count": 78,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 356,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0003"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0003",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0004",
+      "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)\n\nIntroduction\n\nAnaphylaxis is a serious, potentially fatal medical emergency involving an acute allergic reaction that may have various triggers, mechanisms, and clinical presentations.1 The clinical presentation and severity of symptoms are unpredictable, can differ among individuals, and may change over time within the same individual.1 They may also change with the presence of cofactors (eg, viral illness, alcohol ingestion, exercise).2\n\nThe lifetime prevalence of anaphylaxis is estimated between 1.6% and 5.1%.1,3 The incidence of anaphylaxis is increasing globally, although there does not seem to be an increase in deaths.4 The leading triggers of anaphylaxis may vary depending on the patient population, differing in various regions of the world and by age.1 In adults, medications and stinging insects are the most frequent triggers, whereas foods and stinging insects are the most common triggers in children and adolescents.1 Patients may also have risk factors for severe anaphylaxis such as older age, asthma, chronic obstructive pulmonary disease, beta-blocker or angiotensin-converting enzyme inhibitor use, or other comorbid conditions.1,5\n\nRapid identification and treatment of anaphylaxis are recognized as the best-practice strategy.1 The most effective treatment for anaphylaxis is epinephrine (adrenaline).1 Antihistamines and glucocorticoids are considered solely second-line therapy and should not be used before, or instead of, epinephrine.1 There is international consensus that epinephrine is the first-choice medication, and early\n\nadministration reduces hospitalization and may reduce death.5−7 Delaying administration of epinephrine may be associated with increased morbidity and mortality.1,8−11\n\nCurrent guidelines recommend that epinephrine be administered intramuscularly (IM) into the anterolateral thigh with a standard approved dose of 0.01 mg/kg of 1:1000 (1 mg/mL) solution up to a single maximum dose of 0.5 mg in adults and 0.3 mg in children.1,2 Dosing should be repeated every 5 to 15 minutes if symptoms remain unresolved.1,2\n\nThe epinephrine autoinjector (EAI) allows the administration of epinephrine by nonmedical individuals in an outpatient setting.12 The use of vial and syringe epinephrine administration is generally not recommended in the outpatient setting because it may contribute to overdosing, underdosing, and/or delay in administration,12,13 with 1 study showing an increased risk of dosing errors as much as 40-fold by parents and 2- to 8-fold by healthcare providers (HCPs).12,14\n\nIssues and Limitations of Currently Available Epinephrine Autoinjectors\n\nKey issues and limitations of currently available EAIs include device size, lack of carriage, needle phobia, needle-related injury, shelf life, storage concerns, and cost12,15−17 (Table 1).",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 30,
+        "sentence_count": 20,
+        "token_count": 717,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 2922,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0003"
+      },
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0005",
+      "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "Education and training for patients and caregivers in the recognition and management of anaphylaxis remain important needs, along with policies and training, to improve the management of anaphylaxis in schools and other community settings.16,33\n\nLimitations of the current evidence include no clinical or real-world studies of these innovative products in anaphylaxis, limited data in pediatric patients, no head-to-head studies, and a lack of peer-reviewed data in the literature. Future research needs to include further data in pediatric patients, real-world studies evaluating efficacy in anaphylaxis, patient and caregiver preference, and ease of use and carriage, and to investigate age differences in response to treatment. Conclusion\n\nThere remains a large unmet need in the treatment of anaphylaxis. Anaphylaxis-a 2020 practice parameter update, systematic review, and Grading of Recommendations, Assessment, Development and Evaluation (GRADE) analysis. World Allergy Organization anaphylaxis guidance 2020. Anaphylaxis in America: the prevalence and characteristics of anaphylaxis in the United States. Dribin TE, Castells M. Anaphylaxis: data gaps and research needs. 2015 update of the evidence base: World Allergy Organization anaphylaxis guidelines. Anaphylaxis risk factors for hospitalization and intensive care: a comparison between adults and children in an upstate New York emergency department. Xu YS, Kastner M, Harada L, Xu A, Salter J, Waserman S. Anaphylaxis-related deaths in Ontario: a retrospective review of cases from 1986 to 2011. Fatal and near-fatal anaphylactic reactions to food in children and adolescents. Lessons for management of anaphylaxis from a study of fatal reactions. Fatal anaphylaxis: mortality rate and risk factors. EAACI guidelines: anaphylaxis (2021 update). The importance of understanding anaphylaxis among older adults. Incidence and characteristics of biphasic anaphylaxis: a prospective evaluation of 103 patients. Further evaluation of factors that may predict biphasic reactions in emergency department anaphylaxis patients.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 30,
+        "sentence_count": 20,
+        "token_count": 482,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 2082,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0003"
+      },
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0006",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -76,7 +131,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0004",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0007",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -89,7 +144,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0005",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0008",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -102,7 +157,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0006",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0009",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -115,7 +170,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0007",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0010",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -128,7 +183,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0008",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0011",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -141,7 +196,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0009",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0012",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -154,7 +209,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0010",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0013",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -167,7 +222,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0011",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0014",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -180,7 +235,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0012",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0015",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -193,20 +248,39 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0013",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0016",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
-      "text": "This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)\n\nFindings: Human studies of epinephrine administered through nasal epinephrine spray, a nasal powder spray, and a sublingual film have been conducted. Nasal and sublingual epinephrine are the most common modes of administration under study, although other modes, including inhaled\n\nepinephrine, wet and dry dual-chamber EAI, and a needle-free EAI, are also in development.17 Three companies have published or presented data on nasal epinephrine spray, another on nasal powder, and 1 on sublingual film.44−54 Several companies are investigating their products in pediatric use; however, only results in adult subjects are presented in this report. Intranasal Epinephrine\n\nARS-1\n\nAn integrated analysis was conducted across 4 randomized, phase 1, open-label, single-dose, crossover studies comparing PK and PD parameters of 1-mg intranasal (IN) (ARS-1), 0.3-mg EAI (EpiPen, Mylan Specialty L.P., Morgantown, West Virginia), 0.3-mg prefilled syringe (Symjepi, Adamis Pharmaceuticals Corp., San Diego, California), and 0.3-mg IM manual syringe-administered epinephrine.44 Two studies included healthy subjects, and 2 included healthy subjects with a history of type 1 allergies (food allergy, allergic rhinitis, or venom allergy), all aged 19 to 55 years. - Table 2 Innovative Epinephrine Product Development Status at Time of Manuscript Submission Product Description Development Status\n\n\nSublingual film using prodrug of epinephrine; 12 mg (AQST-109-DESF)51,55,56 IND submitted February 2022 Fast Track designation March 2022 End-of-phase 2 meeting with FDA completed Q4 of 2022\n\nSingle-dose nasal epinephrine spray; 2 mg (ARS-1)57,58 Fast Track designation February 2019 FDA accepted NDA October 2022\n\nSingle, 2-spray dose nasal epinephrine spray; 13.2 mg (BRYN-NDS1C)59−61 IND submitted 2019 Fast Track designation February 2019 Phase 3 study completed\n\nSingle-dose nasal epinephrine powder; 1.6 mg and 3.2 mg (FMXIN002)62,63 Phase 3 trial expected Q2 of 2023 NDA submission expected Q2 of 2024\n\nSingle-dose, nasal epinephrine spray; 7 mg and 8.5 mg64−66 Fast Track designation August 2018\n\nAbbreviations: FDA, Food and Drug Administration; IND, investigational new drug application; NDA, new drug application. The IN powder spray was well tolerated, with no serious AEs.48\n\nHikma Epinephrine Intranasal\n\nA phase 1, open-label, single-dose, 5-treatment crossover PK study compared the bioavailability of epinephrine nasal spray (aqueous or hydroalcoholic formulations) with that of 0.3-mg EpiPen in 60 healthy adults with seasonal allergies.49 In the 2-part study, subjects were enrolled 12 per cohort. Multicenter, Randomized Crossover Healthcare Professional Preference Study of Two-Dose Epinephrine Nasal Spray Versus Epinephrine Autoinjector. Multicenter, randomized crossover preference study of bidose epinephrine nasal spray vs EpiPen . A phase 1, single-dose, open-label, 5-treatment, crossover, pharmacokinetic study of comparative bioavailability of epinephrine nasal spray and EpiPen in healthy adults with seasonal allergies.",
+      "text": "This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/)\n\nFindings: Human studies of epinephrine administered through nasal epinephrine spray, a nasal powder spray, and a sublingual film have been conducted. Nasal and sublingual epinephrine are the most common modes of administration under study, although other modes, including inhaled\n\nepinephrine, wet and dry dual-chamber EAI, and a needle-free EAI, are also in development.17 Three companies have published or presented data on nasal epinephrine spray, another on nasal powder, and 1 on sublingual film.44−54 Several companies are investigating their products in pediatric use; however, only results in adult subjects are presented in this report. Intranasal Epinephrine\n\nARS-1\n\nAn integrated analysis was conducted across 4 randomized, phase 1, open-label, single-dose, crossover studies comparing PK and PD parameters of 1-mg intranasal (IN) (ARS-1), 0.3-mg EAI (EpiPen, Mylan Specialty L.P., Morgantown, West Virginia), 0.3-mg prefilled syringe (Symjepi, Adamis Pharmaceuticals Corp., San Diego, California), and 0.3-mg IM manual syringe-administered epinephrine.44 Two studies included healthy subjects, and 2 included healthy subjects with a history of type 1 allergies (food allergy, allergic rhinitis, or venom allergy), all aged 19 to 55 years.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 58,
         "sentence_count": 8,
-        "token_count": 855,
+        "token_count": 375,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1364,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0014"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0014",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0017",
+      "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "- Table 2 Innovative Epinephrine Product Development Status at Time of Manuscript Submission Product Description Development Status\n\n\nSublingual film using prodrug of epinephrine; 12 mg (AQST-109-DESF)51,55,56 IND submitted February 2022 Fast Track designation March 2022 End-of-phase 2 meeting with FDA completed Q4 of 2022\n\nSingle-dose nasal epinephrine spray; 2 mg (ARS-1)57,58 Fast Track designation February 2019 FDA accepted NDA October 2022\n\nSingle, 2-spray dose nasal epinephrine spray; 13.2 mg (BRYN-NDS1C)59−61 IND submitted 2019 Fast Track designation February 2019 Phase 3 study completed\n\nSingle-dose nasal epinephrine powder; 1.6 mg and 3.2 mg (FMXIN002)62,63 Phase 3 trial expected Q2 of 2023 NDA submission expected Q2 of 2024\n\nSingle-dose, nasal epinephrine spray; 7 mg and 8.5 mg64−66 Fast Track designation August 2018\n\nAbbreviations: FDA, Food and Drug Administration; IND, investigational new drug application; NDA, new drug application. The IN powder spray was well tolerated, with no serious AEs.48\n\nHikma Epinephrine Intranasal\n\nA phase 1, open-label, single-dose, 5-treatment crossover PK study compared the bioavailability of epinephrine nasal spray (aqueous or hydroalcoholic formulations) with that of 0.3-mg EpiPen in 60 healthy adults with seasonal allergies.49 In the 2-part study, subjects were enrolled 12 per cohort. Multicenter, Randomized Crossover Healthcare Professional Preference Study of Two-Dose Epinephrine Nasal Spray Versus Epinephrine Autoinjector. Multicenter, randomized crossover preference study of bidose epinephrine nasal spray vs EpiPen . A phase 1, single-dose, open-label, 5-treatment, crossover, pharmacokinetic study of comparative bioavailability of epinephrine nasal spray and EpiPen in healthy adults with seasonal allergies.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 58,
+        "sentence_count": 8,
+        "token_count": 482,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1785,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0014"
+      },
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0018",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -219,7 +293,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0015",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0019",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -232,7 +306,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0016",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0020",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -245,7 +319,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0017",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0021",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -258,20 +332,39 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0018",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0022",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
-      "text": "Current EAI dosing options cause challenges in achieving the 0.01 mg/kg dosing recommendation.12 A 0.10-mg device18 is Food and Drug Administration (FDA)-approved for patients weighing 7.5 to 15 kg (»16.5-33 lb), along with 0.15-mg devices18−21 for patients\n\n- Table 1 Issues and Limitations of Current EAIs Available in the United States Limitations of Current EAIs\n\n\nLack of availability (eg, patient does not have EAI available when needed; patient was not prescribed an EAI; pharmacy stock of EAIs sometimes limited)17,22,23 Cost can be a barrier to access16,24 Needle length may be too short in patients with obesity or too long in young children and infants with smaller skin-to-bone distance2,13,16 Range of fixed-dose EAIs in the United States; currently, EAIs are available in 0.10-, 0.15-, and 0.30-mg devices; thus, it is not possible to dose patients per weight-based dosing as would be ideal; second dose may be given if not responsive to the first dose12,17 Recommended maximum dose EAI (0.50 mg) unavailable in United States2,12 Significant underdosing could theoretically occur owing to weight-based per kg recommended dosing12,13 Storage concerns: Required to be stored at 20°C to 25°C with excursions permitted from 15°C to 30°C12 Shelf-life concerns: Limited time from dispensing EAI to expiration; many expire before use16 Bulky or large device size15,25,26 Limited studies in infants, adolescents, older subjects,12,27 underrepresented minorities, or in subjects during anaphylaxis28,29\n\nIssues With EAIs Low rates of prescription potentially owing to difficulty in diagnosing anaphylaxis24,30 Hesitation to use26,31 and delayed administration30,31 owing to uncertainty around need for use, difficulty or fear of EAI use, or lack of EAI accessibility when needed Underuse by patients and caregivers potentially owing to lack of training, embarrassment of use, lack of carriage, needle phobia, etc16,32 Lack of carriage15,33 and need to carry 2 EAIs12,24; patients often do not carry because allergen avoidance is their primary strategy, they have never needed to use it or forget, and\n\nthe size and shape of the device make it challenging to carry Needle phobia16,17 and the potential for needle-related injury17,34 Lack of proper training regarding correct technique15,16,32\n\nAbbreviation: EAI, epinephrine autoinjector. weighing 15 to 30 kg (»33-66 lb), and 0.30-mg devices18−21 for those weighing more than 30 kg.12 Global guidelines recommend the 0.50mg dose in older children and adults weighing more than 50 kg (»110 lb); however, there is no 0.50-mg EAI approved in the United States,2 leaving some to question whether patients are being underdosed with available EAIs on the market.",
+      "text": "Current EAI dosing options cause challenges in achieving the 0.01 mg/kg dosing recommendation.12 A 0.10-mg device18 is Food and Drug Administration (FDA)-approved for patients weighing 7.5 to 15 kg (»16.5-33 lb), along with 0.15-mg devices18−21 for patients\n\n- Table 1 Issues and Limitations of Current EAIs Available in the United States Limitations of Current EAIs\n\n\nLack of availability (eg, patient does not have EAI available when needed; patient was not prescribed an EAI; pharmacy stock of EAIs sometimes limited)17,22,23 Cost can be a barrier to access16,24 Needle length may be too short in patients with obesity or too long in young children and infants with smaller skin-to-bone distance2,13,16 Range of fixed-dose EAIs in the United States; currently, EAIs are available in 0.10-, 0.15-, and 0.30-mg devices; thus, it is not possible to dose patients per weight-based dosing as would be ideal; second dose may be given if not responsive to the first dose12,17 Recommended maximum dose EAI (0.50 mg) unavailable in United States2,12 Significant underdosing could theoretically occur owing to weight-based per kg recommended dosing12,13 Storage concerns: Required to be stored at 20°C to 25°C with excursions permitted from 15°C to 30°C12 Shelf-life concerns: Limited time from dispensing EAI to expiration; many expire before use16 Bulky or large device size15,25,26 Limited studies in infants, adolescents, older subjects,12,27 underrepresented minorities, or in subjects during anaphylaxis28,29\n\nIssues With EAIs Low rates of prescription potentially owing to difficulty in diagnosing anaphylaxis24,30 Hesitation to use26,31 and delayed administration30,31 owing to uncertainty around need for use, difficulty or fear of EAI use, or lack of EAI accessibility when needed Underuse by patients and caregivers potentially owing to lack of training, embarrassment of use, lack of carriage, needle phobia, etc16,32 Lack of carriage15,33 and need to carry 2 EAIs12,24; patients often do not carry because allergen avoidance is their primary strategy, they have never needed to use it or forget, and\n\nthe size and shape of the device make it challenging to carry Needle phobia16,17 and the potential for needle-related injury17,34 Lack of proper training regarding correct technique15,16,32\n\nAbbreviation: EAI, epinephrine autoinjector.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 98,
         "sentence_count": 2,
-        "token_count": 735,
+        "token_count": 633,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 2342,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0019"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0019",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0023",
+      "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "weighing 15 to 30 kg (»33-66 lb), and 0.30-mg devices18−21 for those weighing more than 30 kg.12 Global guidelines recommend the 0.50mg dose in older children and adults weighing more than 50 kg (»110 lb); however, there is no 0.50-mg EAI approved in the United States,2 leaving some to question whether patients are being underdosed with available EAIs on the market.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 98,
+        "sentence_count": 2,
+        "token_count": 104,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 368,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0019"
+      },
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0024",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -284,7 +377,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0020",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0025",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -297,7 +390,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0021",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0026",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -310,7 +403,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0022",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0027",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -323,7 +416,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0023",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0028",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -336,7 +429,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0024",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0029",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -349,7 +442,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0025",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0030",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -362,7 +455,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0026",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0031",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -375,7 +468,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0027",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0032",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -388,7 +481,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0028",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0033",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -401,7 +494,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0029",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0034",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -414,20 +507,39 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0030",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0035",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
-      "text": "BRYN-NDS1C\n\nIn a phase 1, open-label, 2-part randomized bioavailability study comparing PK and PD in healthy adults (aged 19-45 years), participants were randomized to each receive 2 £ 6.6-mg IN epinephrine spray (13.2 mg IN total dose) administered as both sprays in the same nostril (SN) or 1 spray in opposite nostrils (ON), or 2 £ 0.3-mg EpiPen (0.6 mg IM total dose).45 The study design is further detailed in Figure 2. BRYN-NDS1C baseline-corrected plasma epinephrine PK (part 2: Cmax [pg/mL], mean § SD).45 Part 1 of this study was a randomized, 3-treatment, 5-period semireplicate design in which participants received a single administration each of 6.6-mg IN epinephrine spray (A), 0.3-mg EpiPen (B), or 0.5-mg IM epinephrine administered through syringe (C), per period. BRYN-NDS1C baseline-corrected plasma epinephrine PK (Cmax [pg/mL], mean [CV%]) after IN epinephrine or EAI.46 A 5-period, 5-treatment crossover study comparing PK of IN and IM epinephrine in 25 healthy adult subjects aged 19 to 45 years comparing dose-ranging effects was conducted. BRYN-NDS1C baseline-corrected plasma epinephrine PK (part 1: Cmax [pg/mL], [mean § SD]).45 Cmax, maximum concentration; IM, intramuscular; IN, intranasal; PD, pharmacodynamic; PK, pharmacokinetic; SD, standard deviation. BRYN-NDS1C baseline-corrected plasma epinephrine PK (AUC § SD [minutes £ pg/mL]) (part 1: A-B and part 2: C-D).45 (A) AUC0-20, (B) AUC0-360, (C) AUC0-20, (D) AUC0-\n\n\n360. BRYN-NDS1C baseline-corrected plasma epinephrine PK (Tmax [median, minutes] [range]) (part 1: A and part 2: B).45 IM, intramuscular; IN, intranasal; PK, pharmacokinetics; Tmax, time to maximum concentration. BRYN-NDS1C baseline-corrected plasma epinephrine PK (Cmax [10 minutes] pg/mL, mean [CV%]) after IN epinephrine or EAI.46 Cmax, maximum concentration; CV, coefficient of variation; EAI, epinephrine autoinjector; IN, intranasal; PK, pharmacokinetics. BRYN-NDS1C baseline-corrected plasma epinephrine PK (AUC mean § SE [minutes £ pg/mL]) after IN epinephrine or EAI.46 (A) AUC0-10, (B) AUC0-20, (C) AUC0-30, (D) AUC0-60, (E) AUC0-360. BRYN-NDS1C baseline-corrected plasma epinephrine PK (Tmax [median, minutes] [range]) after IN epinephrine or EAI.46 EAI, epinephrine autoinjector; IN, intranasal; PK, pharmacokinetics; Tmax, time to maximum concentration.",
+      "text": "BRYN-NDS1C\n\nIn a phase 1, open-label, 2-part randomized bioavailability study comparing PK and PD in healthy adults (aged 19-45 years), participants were randomized to each receive 2 £ 6.6-mg IN epinephrine spray (13.2 mg IN total dose) administered as both sprays in the same nostril (SN) or 1 spray in opposite nostrils (ON), or 2 £ 0.3-mg EpiPen (0.6 mg IM total dose).45 The study design is further detailed in Figure 2. BRYN-NDS1C baseline-corrected plasma epinephrine PK (part 2: Cmax [pg/mL], mean § SD).45 Part 1 of this study was a randomized, 3-treatment, 5-period semireplicate design in which participants received a single administration each of 6.6-mg IN epinephrine spray (A), 0.3-mg EpiPen (B), or 0.5-mg IM epinephrine administered through syringe (C), per period. BRYN-NDS1C baseline-corrected plasma epinephrine PK (Cmax [pg/mL], mean [CV%]) after IN epinephrine or EAI.46 A 5-period, 5-treatment crossover study comparing PK of IN and IM epinephrine in 25 healthy adult subjects aged 19 to 45 years comparing dose-ranging effects was conducted. BRYN-NDS1C baseline-corrected plasma epinephrine PK (part 1: Cmax [pg/mL], [mean § SD]).45 Cmax, maximum concentration; IM, intramuscular; IN, intranasal; PD, pharmacodynamic; PK, pharmacokinetic; SD, standard deviation. BRYN-NDS1C baseline-corrected plasma epinephrine PK (AUC § SD [minutes £ pg/mL]) (part 1: A-B and part 2: C-D).45 (A) AUC0-20, (B) AUC0-360, (C) AUC0-20, (D) AUC0-\n\n\n360.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 35,
         "sentence_count": 9,
-        "token_count": 800,
+        "token_count": 479,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1456,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0031"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0031",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0036",
+      "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "BRYN-NDS1C baseline-corrected plasma epinephrine PK (Tmax [median, minutes] [range]) (part 1: A and part 2: B).45 IM, intramuscular; IN, intranasal; PK, pharmacokinetics; Tmax, time to maximum concentration. BRYN-NDS1C baseline-corrected plasma epinephrine PK (Cmax [10 minutes] pg/mL, mean [CV%]) after IN epinephrine or EAI.46 Cmax, maximum concentration; CV, coefficient of variation; EAI, epinephrine autoinjector; IN, intranasal; PK, pharmacokinetics. BRYN-NDS1C baseline-corrected plasma epinephrine PK (AUC mean § SE [minutes £ pg/mL]) after IN epinephrine or EAI.46 (A) AUC0-10, (B) AUC0-20, (C) AUC0-30, (D) AUC0-60, (E) AUC0-360. BRYN-NDS1C baseline-corrected plasma epinephrine PK (Tmax [median, minutes] [range]) after IN epinephrine or EAI.46 EAI, epinephrine autoinjector; IN, intranasal; PK, pharmacokinetics; Tmax, time to maximum concentration.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 35,
+        "sentence_count": 9,
+        "token_count": 323,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 861,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0031"
+      },
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0037",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -440,33 +552,71 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0032",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0038",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
-      "text": "Single IN epinephrine (A, 6.6-mg) resulted in lower epinephrine exposure than did single IM epinephrine (B, 0.3-mg EpiPen and C, 0.5mg) (eFig 4A). Double IN epinephrine (D, 2 £ 6.6-mg ON and E, 2 £ 6.6mg SN) caused greater Cmax (Fig 2) and area under the curve (AUC) from time 0 to the 20-minute postdose time point (eFig 4C) than did single IM epinephrine (B pooled, 0.3-mg EpiPen) (eFig 3, eFig 4A). Double IN epinephrine (E, 2 £ 6.6-mg SN) caused greater exposure than did double IM epinephrine (F, 2 £ 0.3-mg EpiPen) (eFigs 4C and D). To ensure that patients were reaching adequate plasma epinephrine levels, the\n\nFigure 1. At most time points in this study, a greater percentage of participants reached epinephrine 100 and 200 pg/mL after epinephrine IN than after IM administration. The most common adverse event (AE) after IN epinephrine was nasal discomfort.45\n\nA 5-period, 5-treatment crossover study was conducted comparing PK of IN and IM epinephrine in 25 healthy adult subjects aged 19 to 45 years, comparing dose-ranging effects.46 Epinephrine administrations included 6.6-mg IN, 4.4-mg IN (2 £ 2.2 mg, ON), 8.8-mg IN (2 £ 4.4 mg, ON), 13.2-mg IN (2 £ 6.6 mg, ON), and 0.3-mg EAI (Mylan-Viatris-authorized generic EpiPen). Mean epinephrine exposure (eFigs 7A-E), in addition to mean Cmax values (Fig 3), were greater after epinephrine 6.6-mg IN than after 0.3-mg EAI. In both cohorts, 13.2-mg IN caused higher and more sustained epinephrine plasma concentrations than did the 0.3-mg EAI or 0.5mg manual syringe (0-360 minutes after dose). The rapid rate of absorption for 13.2-mg IN was comparable to that for the 0.3-mg EAI, and IN maintained a higher therapeutic level of epinephrine (>100 pg/mL) for approximately twice as long. Part 2 included a 3-treatment, 3-period crossover design conducted in parallel with part 1, when subjects received either\n\n- 2 £ 6.6-mg IN epinephrine in ON (D), 2 £ 6.6-mg IN in the SN (E), or 2 £ 0.3-mg EpiPen in opposite thighs (F) (all doses given 5 minutes apart). Epinephrine administrations included 6.6-mg IN, 4.4-mg\n\n\nIN (2 £ 2.2 mg, ON), 8.8-mg IN (2 £ 4.4 mg, ON), 13.2-mg IN (2 £ 6.6 mg, ON), and 0.3-mg EAI (Mylan-Viatris-authorized generic EpiPen). Overall, the proportions of subjects reaching epinephrine plasma concentration thresholds of 50, 100, or 200 pg/mL at 10-, 20-, 30-, and 60 minutes after the dose were equal to or greater than those of the 0.3-mg EAI for both ON and SN cohorts. In part 1, cohorts 1 to 4 received a single dose (3 mg or 6 mg) of IN epinephrine aqueous and hydroalcoholic in sequence. Compared with EpiPen, epinephrine exposure was 73% to 126% after 6-mg hydroalcoholic and 35% to 86% after 6-mg aqueous.",
+      "text": "Single IN epinephrine (A, 6.6-mg) resulted in lower epinephrine exposure than did single IM epinephrine (B, 0.3-mg EpiPen and C, 0.5mg) (eFig 4A). Double IN epinephrine (D, 2 £ 6.6-mg ON and E, 2 £ 6.6mg SN) caused greater Cmax (Fig 2) and area under the curve (AUC) from time 0 to the 20-minute postdose time point (eFig 4C) than did single IM epinephrine (B pooled, 0.3-mg EpiPen) (eFig 3, eFig 4A). Double IN epinephrine (E, 2 £ 6.6-mg SN) caused greater exposure than did double IM epinephrine (F, 2 £ 0.3-mg EpiPen) (eFigs 4C and D). To ensure that patients were reaching adequate plasma epinephrine levels, the\n\nFigure 1. At most time points in this study, a greater percentage of participants reached epinephrine 100 and 200 pg/mL after epinephrine IN than after IM administration. The most common adverse event (AE) after IN epinephrine was nasal discomfort.45\n\nA 5-period, 5-treatment crossover study was conducted comparing PK of IN and IM epinephrine in 25 healthy adult subjects aged 19 to 45 years, comparing dose-ranging effects.46 Epinephrine administrations included 6.6-mg IN, 4.4-mg IN (2 £ 2.2 mg, ON), 8.8-mg IN (2 £ 4.4 mg, ON), 13.2-mg IN (2 £ 6.6 mg, ON), and 0.3-mg EAI (Mylan-Viatris-authorized generic EpiPen). Mean epinephrine exposure (eFigs 7A-E), in addition to mean Cmax values (Fig 3), were greater after epinephrine 6.6-mg IN than after 0.3-mg EAI. In both cohorts, 13.2-mg IN caused higher and more sustained epinephrine plasma concentrations than did the 0.3-mg EAI or 0.5mg manual syringe (0-360 minutes after dose).",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 2,
         "sentence_count": 14,
-        "token_count": 837,
+        "token_count": 485,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1552,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0033"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0033",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0039",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
-      "text": "ARS-1 integrated analysis of PK parameters (Cmax [pg/mL], mean [CV%]) across 4 phase 1 studies.44 An integrated analysis was conducted across 4 randomized, phase 1, open-label, single-dose, crossover studies comparing PK and PD parameters of 1-mg IN (ARS-1), 0.3-mg EAI (EpiPen), 0.3-mg prefilled syringe (Symjepi), and 0.3-mg IM manual syringe-administered epinephrine. EPIPHAST part 2 PK parameters (Cmax [pg/mL], geometric mean [CV%]).52 In part 2 of EPIPHAST, 24 healthy adult subjects (aged 26-50 years) were randomized to receive 4 doses of epinephrine in 1 of 2 sequences (S1 and S2) comprising 4 periods. EPIPHAST II PK parameters (Cmax [pg/mL], geometric mean [CV%]).53 EPIPHAST II was a phase 1, multiperiod, crossover study in 24 healthy adults (aged 24-49 years). ARS-1 integrated analysis of PK parameters (AUC0-t [minutes £ pg/mL], mean [CV%]) across 4 phase 1 studies.44 AUC0-t, area under concentration-time curve from 0 to time t; CV, coefficient of variation; IM, intramuscular; PK, pharmacokinetic. ARS-1 integrated analysis of PK parameters (Tmax [median, minutes], [range]) across 4 phase 1 studies.44 IM, intramuscular; PK, pharmacokinetic; Tmax, time to maximum concentration. PK, pharmacokinetics; Tmax, time to maximum concentration; T100 pg/mL, time to 100 pg/mL. EPIPHAST part 2 PK parameters (AUC geometric mean [hours £ pg/mL]).52 (A) AUC0-5, (B) AUC0-10, (C) AUC0-15, (D) AUC0-20, (E) AUC0-30, (F) AUC0-t. AUC, area under the plasma concentration-time curve; IM, intramuscular; PK, pharmacokinetic. EPIPHAST part 2 PK parameters (Tmax [median, minutes]).52 IM, intramuscular; PK, pharmacokinetic; Tmax, time to maximum concentration. EPIPHAST II PK parameters (AUC geometric mean [hours £ pg/mL]).53 (A) AUC0-5, (B) AUC0-10, (C) AUC0-15, (D) AUC0-20, (E) AUC0-30, (F) AUC0-t. AUC, area under the plasma concentration-time curve; IM, intramuscular; PK, pharmacokinetic. EPIPHAST II PK parameters (Tmax [median, minutes]).53 IM, intramuscular; PK, pharmacokinetic; Tmax, time to maximum concentration.",
+      "text": "The rapid rate of absorption for 13.2-mg IN was comparable to that for the 0.3-mg EAI, and IN maintained a higher therapeutic level of epinephrine (>100 pg/mL) for approximately twice as long. Part 2 included a 3-treatment, 3-period crossover design conducted in parallel with part 1, when subjects received either\n\n- 2 £ 6.6-mg IN epinephrine in ON (D), 2 £ 6.6-mg IN in the SN (E), or 2 £ 0.3-mg EpiPen in opposite thighs (F) (all doses given 5 minutes apart). Epinephrine administrations included 6.6-mg IN, 4.4-mg\n\n\nIN (2 £ 2.2 mg, ON), 8.8-mg IN (2 £ 4.4 mg, ON), 13.2-mg IN (2 £ 6.6 mg, ON), and 0.3-mg EAI (Mylan-Viatris-authorized generic EpiPen). Overall, the proportions of subjects reaching epinephrine plasma concentration thresholds of 50, 100, or 200 pg/mL at 10-, 20-, 30-, and 60 minutes after the dose were equal to or greater than those of the 0.3-mg EAI for both ON and SN cohorts. In part 1, cohorts 1 to 4 received a single dose (3 mg or 6 mg) of IN epinephrine aqueous and hydroalcoholic in sequence. Compared with EpiPen, epinephrine exposure was 73% to 126% after 6-mg hydroalcoholic and 35% to 86% after 6-mg aqueous.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 2,
+        "sentence_count": 14,
+        "token_count": 354,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1142,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0033"
+      },
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0040",
+      "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "ARS-1 integrated analysis of PK parameters (Cmax [pg/mL], mean [CV%]) across 4 phase 1 studies.44 An integrated analysis was conducted across 4 randomized, phase 1, open-label, single-dose, crossover studies comparing PK and PD parameters of 1-mg IN (ARS-1), 0.3-mg EAI (EpiPen), 0.3-mg prefilled syringe (Symjepi), and 0.3-mg IM manual syringe-administered epinephrine. EPIPHAST part 2 PK parameters (Cmax [pg/mL], geometric mean [CV%]).52 In part 2 of EPIPHAST, 24 healthy adult subjects (aged 26-50 years) were randomized to receive 4 doses of epinephrine in 1 of 2 sequences (S1 and S2) comprising 4 periods. EPIPHAST II PK parameters (Cmax [pg/mL], geometric mean [CV%]).53 EPIPHAST II was a phase 1, multiperiod, crossover study in 24 healthy adults (aged 24-49 years). ARS-1 integrated analysis of PK parameters (AUC0-t [minutes £ pg/mL], mean [CV%]) across 4 phase 1 studies.44 AUC0-t, area under concentration-time curve from 0 to time t; CV, coefficient of variation; IM, intramuscular; PK, pharmacokinetic. ARS-1 integrated analysis of PK parameters (Tmax [median, minutes], [range]) across 4 phase 1 studies.44 IM, intramuscular; PK, pharmacokinetic; Tmax, time to maximum concentration. PK, pharmacokinetics; Tmax, time to maximum concentration; T100 pg/mL, time to 100 pg/mL. EPIPHAST part 2 PK parameters (AUC geometric mean [hours £ pg/mL]).52 (A) AUC0-5, (B) AUC0-10, (C) AUC0-15, (D) AUC0-20, (E) AUC0-30, (F) AUC0-t.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 63,
         "sentence_count": 10,
-        "token_count": 712,
+        "token_count": 500,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1435,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0034"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0034",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0041",
+      "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
+    },
+    {
+      "text": "AUC, area under the plasma concentration-time curve; IM, intramuscular; PK, pharmacokinetic. EPIPHAST part 2 PK parameters (Tmax [median, minutes]).52 IM, intramuscular; PK, pharmacokinetic; Tmax, time to maximum concentration. EPIPHAST II PK parameters (AUC geometric mean [hours £ pg/mL]).53 (A) AUC0-5, (B) AUC0-10, (C) AUC0-15, (D) AUC0-20, (E) AUC0-30, (F) AUC0-t. AUC, area under the plasma concentration-time curve; IM, intramuscular; PK, pharmacokinetic. EPIPHAST II PK parameters (Tmax [median, minutes]).53 IM, intramuscular; PK, pharmacokinetic; Tmax, time to maximum concentration.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 63,
+        "sentence_count": 10,
+        "token_count": 214,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 593,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0034"
+      },
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0042",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -479,7 +629,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0035",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0043",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -492,7 +642,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0036",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0044",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -505,7 +655,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0037",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0045",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -518,7 +668,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0038",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0046",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -531,7 +681,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0039",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0047",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -544,7 +694,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0040",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0048",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -557,7 +707,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0041",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0049",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -570,7 +720,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0042",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0050",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -583,7 +733,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0043",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0051",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -596,7 +746,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0044",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0052",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -609,7 +759,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0045",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0053",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -622,7 +772,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0046",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0054",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -635,7 +785,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0047",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0055",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -648,7 +798,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0048",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0056",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -661,7 +811,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0049",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0057",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -674,7 +824,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0050",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0058",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -687,7 +837,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0051",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0059",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -700,7 +850,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0052",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0060",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -713,7 +863,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0053",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0061",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -726,7 +876,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0054",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0062",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -739,7 +889,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0055",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0063",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -752,7 +902,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0056",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0064",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -765,7 +915,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0057",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0065",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -778,7 +928,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0058",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0066",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -791,7 +941,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0059",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0067",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -804,7 +954,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0060",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0068",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -817,7 +967,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0061",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0069",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -830,7 +980,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0062",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0070",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -843,7 +993,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0063",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0071",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -856,7 +1006,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0064",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0072",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -869,7 +1019,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0065",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0073",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -882,7 +1032,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0066",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0074",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -895,7 +1045,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0067",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0075",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -908,7 +1058,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0068",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0076",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -921,7 +1071,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0069",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0077",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -934,7 +1084,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0070",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0078",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -947,7 +1097,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0071",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0079",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -960,7 +1110,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0072",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0080",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -973,7 +1123,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0073",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0081",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -986,7 +1136,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0074",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0082",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -999,7 +1149,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0075",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0083",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1012,7 +1162,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0076",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0084",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1025,7 +1175,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0077",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0085",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1038,7 +1188,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0078",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0086",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1051,7 +1201,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0079",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0087",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1064,7 +1214,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0080",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0088",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1077,7 +1227,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0081",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0089",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1090,7 +1240,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0082",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0090",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1103,7 +1253,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0083",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0091",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1116,7 +1266,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0084",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0092",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1129,7 +1279,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0085",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0093",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1142,7 +1292,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0086",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0094",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1155,7 +1305,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0087",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0095",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1168,7 +1318,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0088",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0096",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1181,7 +1331,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0089",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0097",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1194,7 +1344,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0090",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0098",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1207,7 +1357,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0091",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0099",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1220,7 +1370,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0092",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0100",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1233,7 +1383,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0093",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0101",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1246,7 +1396,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0094",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0102",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1259,7 +1409,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0095",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0103",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1272,7 +1422,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0096",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0104",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1285,7 +1435,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0097",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0105",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1298,7 +1448,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0098",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0106",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1311,7 +1461,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0099",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0107",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1324,7 +1474,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0100",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0108",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1337,7 +1487,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0101",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0109",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1350,7 +1500,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0102",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0110",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1363,7 +1513,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0103",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0111",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1376,7 +1526,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0104",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0112",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1389,7 +1539,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0105",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0113",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1402,7 +1552,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0106",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0114",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1415,7 +1565,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0107",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0115",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1428,7 +1578,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0108",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0116",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1441,7 +1591,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0109",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0117",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1454,7 +1604,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0110",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0118",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1467,7 +1617,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0111",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0119",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1480,7 +1630,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0112",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0120",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1493,7 +1643,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0113",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0121",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1506,7 +1656,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0114",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0122",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1519,7 +1669,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0115",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0123",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1532,7 +1682,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0116",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0124",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1545,7 +1695,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0117",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0125",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1558,7 +1708,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0118",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0126",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1571,7 +1721,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0119",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0127",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1584,7 +1734,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0120",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0128",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1597,7 +1747,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0121",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0129",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1610,7 +1760,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0122",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0130",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1623,7 +1773,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0123",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0131",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1636,7 +1786,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0124",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0132",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1649,7 +1799,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0125",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0133",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1662,7 +1812,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0126",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0134",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1675,7 +1825,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0127",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0135",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1688,7 +1838,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0128",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0136",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1701,7 +1851,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0129",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0137",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1714,7 +1864,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0130",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0138",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1727,7 +1877,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0131",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0139",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1740,7 +1890,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0132",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0140",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1753,7 +1903,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0133",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0141",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1766,7 +1916,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0134",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0142",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1779,7 +1929,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0135",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0143",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1792,7 +1942,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0136",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0144",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1805,7 +1955,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0137",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0145",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1818,7 +1968,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0138",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0146",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1831,7 +1981,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0139",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0147",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1844,7 +1994,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0140",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0148",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1857,7 +2007,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0141",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0149",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1870,7 +2020,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0142",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0150",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1883,7 +2033,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0143",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0151",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1896,7 +2046,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0144",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0152",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1909,7 +2059,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0145",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0153",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1922,7 +2072,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0146",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0154",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1935,7 +2085,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0147",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0155",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1948,7 +2098,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0148",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0156",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1961,7 +2111,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0149",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0157",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     },
     {
@@ -1974,7 +2124,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0150",
+      "chunk_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data_chunk_0158",
       "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data"
     }
   ]

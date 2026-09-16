@@ -4,27 +4,47 @@
   "abbreviation": "TBC",
   "params": {
     "distance_threshold": 0.4,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
   "document_type": "guideline",
   "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
   "source_path": "guideline\\GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
-  "tokenizer model": "BAAI/bge-m3",
+  "tokenizer_model": "BAAI/bge-m3",
   "original_token_count": 23815,
-  "number_of_chunks": 272,
+  "number_of_chunks": 286,
   "chunks": [
     {
-      "text": "## Edinburgh Research Explorer\n\n### Management of ocular allergy\n\nCitation for published version: Leonardi, A, Silva, D, Perez Formigo, D, Bozkurt, B, Sharma, V, Allegri, P, Rondon, C, Calder, V, Ryan, D, Kowalsky, M, Delgado, L, Doan, S & Fauquert, JL 2019, 'Management of ocular allergy', Allergy. Aug. 2022\n\nArticle Type: EAACI Position Paper\n\n#### Management of ocular allergy\n\n# Accepted Article\n\nAndrea Leonardi1, Diana Silva2, Daniel Perez Formigo3, Banu Bozkurt4, Vibha Sharma5, Pia Allegri6, Carmen Rondon7, Virginia Calder8, Dermot Ryan9, Marek Kowalsky10, Luis Delgado2, Serge Doan11, Jean Luc Fauquert12\n\n- 1 Department of Neuroscience, Ophthalmology Unit, University of Padua, Italy\n- 2 Basic and Clinical Immunology, Department of Pathology, Faculty of Medicine, University of Porto, Serviço de Imunoalergologia, Centro Hospitalar São João, EPE – Porto, Portugal\n- 3 Department of Ophthalmology, Hospital Universitario de Torrejon, Madrid, Spain; Faculty of Medicine, University of Francisco de Vitoria (UFV), Pozuelo de Alarcon, Madrid, Spain\n- 4 Department of Ophthalmology, Selcuk University, Faculty of Medicine, Konya, Turkey\n- 5 Department of Paediatric Allergy and Immunology, Royal Manchester Children's Hospital, Manchester University NHS Foundation Trust Oxford Road, Manchester M13 9WL\n- 6 Ocular Inflammatory Diseases Referral Center, Allergic Conjunctivitis Unit, Rapallo Hospital Ophthalmology Department, Genova, Italy\n- 7 Allergy Unit, Regional University Hospital of Malaga, IBIMA, UMA, Malaga, Spain\n- 8 Department of Ocular Biology & Therapeutics, UCL Institute of Ophthalmology, London, UK\n- 9 Allergy and Respiratory Research Group, Usher Institute of Population Health Sciences and Informatics, University of Edinburgh. Doorway 3, Medical School, Teviot Place, Edinburgh EH8 9AG\n- 10 Department of Immunology, Rheumatology, and Allergy, Medical University of Lodz, Poland\n- 11 Service d’Ophtalmologie, Hôpital Bichat and Fondation A. de Rothschild, Paris, France\n- 12 CHU Estaing, Unité d’Allergologie de l’Enfant CHU Estaing 63003 Clermont-Ferrand Cedex1, France\n\n\nShort Title: Ocular Allergy Management Source of Funding: supported by EAACI BoO and ExCom TF budget 2016-18 Submitted for Approval by EAACI ExCom August 2018. Please cite this article as doi: 10.1111/all.13786\n\nCorresponding author: Andrea Leonardi, MD Department of Neuroscience, Ophthalmology Unit, University of Padua via Giustiniani 2 35128 Padua, Italy Fax: +39-049-875 5168 email: [CORREO OMITIDO]\n\nAccepted Article\n\n#### Abstract\n\nThe treatment and management of ocular allergy (OA) remains a major concern for different specialties, including allergists, ophthalmologists, primary care physicians, rhinologists, pediatricians, dermatologists, clinical immunologists and pharmacists. Key words: Ocular allergy, allergic conjunctivitis; systematic review; management; treatment. Introduction Ocular allergy (OA) represents a collection of ocular hypersensitivity disorders affecting the eyelid, conjunctiva and cornea. Treatment of different forms and different severities of ocular allergies based on recommendations given by the TF. Ocular allergy: recognizing and diagnosing hypersensitivity disorders of the ocular surface. Diagnostic tools in ocular allergy. Williams PB, Sheppard JD, Jr. Omalizumab: a future innovation for treatment of severe ocular allergy? Burroni AG, Maio M. Ocular allergies: a psychodynamic approach.",
+      "text": "## Edinburgh Research Explorer\n\n### Management of ocular allergy\n\nCitation for published version: Leonardi, A, Silva, D, Perez Formigo, D, Bozkurt, B, Sharma, V, Allegri, P, Rondon, C, Calder, V, Ryan, D, Kowalsky, M, Delgado, L, Doan, S & Fauquert, JL 2019, 'Management of ocular allergy', Allergy. Aug. 2022\n\nArticle Type: EAACI Position Paper\n\n#### Management of ocular allergy\n\n# Accepted Article\n\nAndrea Leonardi1, Diana Silva2, Daniel Perez Formigo3, Banu Bozkurt4, Vibha Sharma5, Pia Allegri6, Carmen Rondon7, Virginia Calder8, Dermot Ryan9, Marek Kowalsky10, Luis Delgado2, Serge Doan11, Jean Luc Fauquert12\n\n- 1 Department of Neuroscience, Ophthalmology Unit, University of Padua, Italy\n- 2 Basic and Clinical Immunology, Department of Pathology, Faculty of Medicine, University of Porto, Serviço de Imunoalergologia, Centro Hospitalar São João, EPE – Porto, Portugal\n- 3 Department of Ophthalmology, Hospital Universitario de Torrejon, Madrid, Spain; Faculty of Medicine, University of Francisco de Vitoria (UFV), Pozuelo de Alarcon, Madrid, Spain\n- 4 Department of Ophthalmology, Selcuk University, Faculty of Medicine, Konya, Turkey\n- 5 Department of Paediatric Allergy and Immunology, Royal Manchester Children's Hospital, Manchester University NHS Foundation Trust Oxford Road, Manchester M13 9WL\n- 6 Ocular Inflammatory Diseases Referral Center, Allergic Conjunctivitis Unit, Rapallo Hospital Ophthalmology Department, Genova, Italy\n- 7 Allergy Unit, Regional University Hospital of Malaga, IBIMA, UMA, Malaga, Spain\n- 8 Department of Ocular Biology & Therapeutics, UCL Institute of Ophthalmology, London, UK\n- 9 Allergy and Respiratory Research Group, Usher Institute of Population Health Sciences and Informatics, University of Edinburgh.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 54,
         "sentence_count": 11,
-        "token_count": 926,
+        "token_count": 478,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1755,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0000"
       },
       "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0000",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Doorway 3, Medical School, Teviot Place, Edinburgh EH8 9AG\n- 10 Department of Immunology, Rheumatology, and Allergy, Medical University of Lodz, Poland\n- 11 Service d’Ophtalmologie, Hôpital Bichat and Fondation A. de Rothschild, Paris, France\n- 12 CHU Estaing, Unité d’Allergologie de l’Enfant CHU Estaing 63003 Clermont-Ferrand Cedex1, France\n\n\nShort Title: Ocular Allergy Management Source of Funding: supported by EAACI BoO and ExCom TF budget 2016-18 Submitted for Approval by EAACI ExCom August 2018. Please cite this article as doi: 10.1111/all.13786\n\nCorresponding author: Andrea Leonardi, MD Department of Neuroscience, Ophthalmology Unit, University of Padua via Giustiniani 2 35128 Padua, Italy Fax: +39-049-875 5168 email: [CORREO OMITIDO]\n\nAccepted Article\n\n#### Abstract\n\nThe treatment and management of ocular allergy (OA) remains a major concern for different specialties, including allergists, ophthalmologists, primary care physicians, rhinologists, pediatricians, dermatologists, clinical immunologists and pharmacists. Key words: Ocular allergy, allergic conjunctivitis; systematic review; management; treatment. Introduction Ocular allergy (OA) represents a collection of ocular hypersensitivity disorders affecting the eyelid, conjunctiva and cornea. Treatment of different forms and different severities of ocular allergies based on recommendations given by the TF. Ocular allergy: recognizing and diagnosing hypersensitivity disorders of the ocular surface. Diagnostic tools in ocular allergy. Williams PB, Sheppard JD, Jr. Omalizumab: a future innovation for treatment of severe ocular allergy? Burroni AG, Maio M. Ocular allergies: a psychodynamic approach.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 54,
+        "sentence_count": 11,
+        "token_count": 450,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1682,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0000"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0001",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -37,7 +57,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0001",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0002",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -50,7 +70,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0002",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0003",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -63,7 +83,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0003",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0004",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -76,7 +96,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0004",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0005",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -89,7 +109,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0005",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0006",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -102,7 +122,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0006",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0007",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -115,7 +135,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0007",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0008",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -128,7 +148,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0008",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0009",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -141,7 +161,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0009",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0010",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -154,7 +174,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0010",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0011",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -167,7 +187,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0011",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0012",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -180,20 +200,39 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0012",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0013",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
-      "text": "Topical calcineurine inhibitors may be used in steroid-dependent/resistant cases of severe allergic keratoconjunctivitis. 1.5 Calcineurin inhibitors Topical calcineurin inhibitors are the most frequently used treatments as steroid-sparing agents in steroid dependent cases of VKC and AKC. Corticosteroids and calcineurin inhibitors\n\nAuthor Year\n\nStudies design\n\nParticipants Intervention Comparisons\n\nOutcomes Main results Author`s conclusion Amstar\n\nscore Topical corticosteroids\n\n|O’Gallagher M, et al 2017 (84)|1 RCT|Blepharoconjunctivitis (n=137 chilren))|Loteprednol etabonate|Improvement of symptoms Elimination clinical signs Adverse effects|No sufficient data on the improvement in symptoms or signs; no difference on adverse effects|No high-quality evidence regarding safety and efficacy of topical treatments for BKC|High|\n|---|---|---|---|---|---|---|---|\n|Sheppard J et al 2016(24)|40 clinical trials SAC(4) PAC(1) VKC(1) BKC (3)|SAC(n=856) PAC(n=159)<br><br>VKC(n=37) BKC (n=355)|Loteprednol etabonate|Incidence of IOP|0.2% suspension there was no increase in IOP for SAC or PAC; 0.5% suspension there was no increase in VKC or SAC (both in comparison with vehicle)|Favorable IOP-safety profile for Llteprednol etabonate<br><br>with both short-term and long-term use|Critically low|\n|Wu et al, 2015(23)|8 RCT SAC (4RCT), GPC (3 RCT) VKC (1 RCT)|(n=1445)|Loteprednol etabonate vs placebo; topical olopatadine; topical fluorometholone acetate|Ocular symptoms (ocular itching) Sign (bulbar conjunctival injection or papillae) Increased intraocular pressure (IOP)|Compared to placebo: Sign severity SMD -0.85[-1-35;-0.35] (all) SAC -0.45[-0.62;-0.28]; only one trial GPC and VKC Weighted mean difference -0.66[-0.97;-0.35] (all) SAC -0.43[-0.46;-0.31]; only one trial GPC and VKC IOP OR 3.03[1.04;8.80]<br><br>Compared to topical olopatadine Sign severity SMD -3.78[-10.61;3.04]<br><br>WMD -0.98[-2.00;0.05] (all interventions)|Topical loteprednol etabonate is effective in treating allergic conjunctivitis|High|\n\n\nNasal Corticosteroids\n\n|Weiner J et al, 1998(26)|16 RCT|Allergic rhinoconjunctivitis (n=2267)|Nasal corticosteroids vs oral antihistamines (terfenadine; astemizole; loratadine; cetirizine)|Ocular symptoms (included 11 studies)|Nasal steroid vs oral anti-histamines SMD -0.043[-0.157;0.072]|There was no significant difference between intranasal corticosteroids and oral anti-histamines on ocular symptoms|Low|\n|---|---|---|---|---|---|---|---|\n|Hong et al, 2011(27)|32 studies RCT|SAC and PAC (n=6573)|Nasal corticosteroids|Total ocular symptom score (TOSS)|Data not pooled Improvement of TOSS in 9 out of 10 studies Total eye symptoms 5 out of 13 studies|Intranasal corticosteroids have a positive impact on the on the TOSS of AR.|Critically low|\n\n\n# Accepted Article\n\n|Naclerio et al, 2008 (28)|3 SR 5 RCT|Allergic rhinoconjuntivitis TAA (n=375) FP (n=1645) MF (n=1198) FF (n=940) BUD(n=280)|Nasal corticosteroids Triamcinolone acetonide (n=375) Proprionate Fluticasone (7 RCT data association) Mometasone furoate (2 RS 1 RCT) Furoate fluticasone (2 RCT) Budesonide (1RCT)|Total ocular symptom score|Data not pooled, an improvement of total eye symptom score was seen versus placebo was seen in all clinical trials and meta-analysis|Intranasal corticosteroids are effective and well-tolerated in the treatment of ocular symptoms associated with allergic rhinitis.|Critically low|\n|---|---|---|---|---|---|---|---|\n|Yánez A et al, 2002(29)|4 RCT|Allergic rhinitis Beclomethasone (n=166) BUD (n=31) Fluticasone (n=193) Flunisolide (n=38) Azelastine (n=240) Levocabastine (n=408)|Beclomethasone or flunisolide vs azelastine (n=2 RCT) Budesonide or fluticasone vs levocabastine (n=2 RCT)|Eye symptoms|Nasal steroid vs nasal anti-histamines SMD -0.07[-<br><br>-0.27;0.12, p=0.4]|There was no difference between interventions in the relief of ocular symptoms|Critically low|\n\n\nTopical cyclosporin\n\nWan KH et al, 2013(32)\n\n7 RCT Allergic conjunctivitis (n=306 eyes of 153 patients) 3 studies recruited steroiddependent allergic conjuntivitis\n\nTopical cyclosporine in concentration from 0.05% to 2%\n\nComposite sign score (average of at least one of the following signs: hyperemia, swelling, papillae and giant papillae on the tarsal conjunctiva, hyperemia and edema of the bulbar conjunctiva, or corneal involvement) Composite symptom score (average of: redness, tearing, burning, discomfort, foreign body sensation, discharge, and photophobia.)",
+      "text": "Topical calcineurine inhibitors may be used in steroid-dependent/resistant cases of severe allergic keratoconjunctivitis. 1.5 Calcineurin inhibitors Topical calcineurin inhibitors are the most frequently used treatments as steroid-sparing agents in steroid dependent cases of VKC and AKC.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 28,
         "sentence_count": 3,
-        "token_count": 1462,
+        "token_count": 74,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 288,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0013"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0013",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0014",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Corticosteroids and calcineurin inhibitors\n\nAuthor Year\n\nStudies design\n\nParticipants Intervention Comparisons\n\nOutcomes Main results Author`s conclusion Amstar\n\nscore Topical corticosteroids\n\n|O’Gallagher M, et al 2017 (84)|1 RCT|Blepharoconjunctivitis (n=137 chilren))|Loteprednol etabonate|Improvement of symptoms Elimination clinical signs Adverse effects|No sufficient data on the improvement in symptoms or signs; no difference on adverse effects|No high-quality evidence regarding safety and efficacy of topical treatments for BKC|High|\n|---|---|---|---|---|---|---|---|\n|Sheppard J et al 2016(24)|40 clinical trials SAC(4) PAC(1) VKC(1) BKC (3)|SAC(n=856) PAC(n=159)<br><br>VKC(n=37) BKC (n=355)|Loteprednol etabonate|Incidence of IOP|0.2% suspension there was no increase in IOP for SAC or PAC; 0.5% suspension there was no increase in VKC or SAC (both in comparison with vehicle)|Favorable IOP-safety profile for Llteprednol etabonate<br><br>with both short-term and long-term use|Critically low|\n|Wu et al, 2015(23)|8 RCT SAC (4RCT), GPC (3 RCT) VKC (1 RCT)|(n=1445)|Loteprednol etabonate vs placebo; topical olopatadine; topical fluorometholone acetate|Ocular symptoms (ocular itching) Sign (bulbar conjunctival injection or papillae) Increased intraocular pressure (IOP)|Compared to placebo: Sign severity SMD -0.85[-1-35;-0.35] (all) SAC -0.45[-0.62;-0.28]; only one trial GPC and VKC Weighted mean difference -0.66[-0.97;-0.35] (all) SAC -0.43[-0.46;-0.31]; only one trial GPC and VKC IOP OR 3.03[1.04;8.80]<br><br>Compared to topical olopatadine Sign severity SMD -3.78[-10.61;3.04]<br><br>WMD -0.98[-2.00;0.05] (all interventions)|Topical loteprednol etabonate is effective in treating allergic conjunctivitis|High|\n\n\nNasal Corticosteroids\n\n|Weiner J et al, 1998(26)|16 RCT|Allergic rhinoconjunctivitis (n=2267)|Nasal corticosteroids vs oral antihistamines (terfenadine; astemizole; loratadine; cetirizine)|Ocular symptoms (included 11 studies)|Nasal steroid vs oral anti-histamines SMD -0.043[-0.157;0.072]|There was no significant difference between intranasal corticosteroids and oral anti-histamines on ocular symptoms|Low|\n|---|---|---|---|---|---|---|---|\n|Hong et al, 2011(27)|32 studies RCT|SAC and PAC (n=6573)|Nasal corticosteroids|Total ocular symptom score (TOSS)|Data not pooled Improvement of TOSS in 9 out of 10 studies Total eye symptoms 5 out of 13 studies|Intranasal corticosteroids have a positive impact on the on the TOSS of AR.|Critically low|\n\n\n# Accepted Article\n\n|Naclerio et al, 2008 (28)|3 SR 5 RCT|Allergic rhinoconjuntivitis TAA (n=375) FP (n=1645) MF (n=1198) FF (n=940) BUD(n=280)|Nasal corticosteroids Triamcinolone acetonide (n=375) Proprionate Fluticasone (7 RCT data association) Mometasone furoate (2 RS 1 RCT) Furoate fluticasone (2 RCT) Budesonide (1RCT)|Total ocular symptom score|Data not pooled, an improvement of total eye symptom score was seen versus placebo was seen in all clinical trials and meta-analysis|Intranasal corticosteroids are effective and well-tolerated in the treatment of ocular symptoms associated with allergic rhinitis.|Critically low|\n|---|---|---|---|---|---|---|---|\n|Yánez A et al, 2002(29)|4 RCT|Allergic rhinitis Beclomethasone (n=166) BUD (n=31) Fluticasone (n=193) Flunisolide (n=38) Azelastine (n=240) Levocabastine (n=408)|Beclomethasone or flunisolide vs azelastine (n=2 RCT) Budesonide or fluticasone vs levocabastine (n=2 RCT)|Eye symptoms|Nasal steroid vs nasal anti-histamines SMD -0.07[-<br><br>-0.27;0.12, p=0.4]|There was no difference between interventions in the relief of ocular symptoms|Critically low|\n\n\nTopical cyclosporin\n\nWan KH et al, 2013(32)\n\n7 RCT Allergic conjunctivitis (n=306 eyes of 153 patients) 3 studies recruited steroiddependent allergic conjuntivitis\n\nTopical cyclosporine in concentration from 0.05% to 2%\n\nComposite sign score (average of at least one of the following signs: hyperemia, swelling, papillae and giant papillae on the tarsal conjunctiva, hyperemia and edema of the bulbar conjunctiva, or corneal involvement) Composite symptom score (average of: redness, tearing, burning, discomfort, foreign body sensation, discharge, and photophobia.)",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 28,
+        "sentence_count": 3,
+        "token_count": 1390,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 4174,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0013"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0015",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -206,7 +245,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0014",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0016",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -219,7 +258,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0015",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0017",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -232,7 +271,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0016",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0018",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -245,7 +284,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0017",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0019",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -258,20 +297,39 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0018",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0020",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
-      "text": "Topical ocular decongestants and corticosteroids were used in the majority of cases. The potency and treatment duration of the topical corticosteroid should be chosen clinically based on the severity of ocular inflammation and corneal involvement. Lowest appropriate potency corticosteroids, such as hydrocortisone or budesonide on the eyelid skin, are recommended for the treatment of severe acute eyelid eczema. Systemic corticosteroids may be used as short course in selected severe hyper-acute exacerbations involving either eyelid skin or cornea especially in VKC and AKC. #### Recommendations\n\n-  Topical corticosteroids eye drops should be used with caution under ophthalmologist’s monitoring and preferably for shorter duration due to the high risk of local and potential blinding side effects ⨁◯◯◯↑↑\n-  For the treatment of SAC and PAC topical corticosteroids are rarely needed ⨁◯◯◯↓↓\n-  Corticosteroid eye drops can be used preferably as short, pulsed therapy in acute exacerbations of OA, especially in VKC and AKC or when the cornea is involved under ophthalmologist supervision (TF expert opinion)↑↑\n-  INCs are effective and well-tolerated in the treatment of ocular symptoms associated with ARC ⨁◯◯◯ ↑? -  INCs should not be used if only ocular signs and symptoms are present (TF expert opinion) ↓↓\n-  Topical skin corticosteroid applications should be used in the acute phase of eyelid eczema, with a preference for low potency corticosteroids (TF expert opinion) ↑? They should be used frequently during the day and during the whole season Systemic anti-allergic drugs should be used when ocular symptoms are associated with other allergic co-morbidities Topical corticosteroids should be used as short, pulsed therapy, in acute exacerbations or when the cornea is involved, under ophthalmologist’s monitoring Topical calcineurin inhibitors, preferentially cyclosporine A (0.1% on-label treatment in the EU), may be used as a steroid-sparing agent in steroid-dependent patients followed in specialized centers; tacrolimus 0.1% eye drops should be reserved for severe VKC and AKC cases refractory to CsA (off-label treatment in the EU) A systemic immunosuppressive treatment should be prescribed in most refractory cases of AKC with visual threat. How to treat persistent/chronic forms (IgEand non-IgE-mediated) VKC and AKC\n\nAvoidance of irritants and/or sensitizing antigens Eyelid hygiene Emollients and skin moisturing agents Oral antihistamines can be used to alleviate eyelid itching and inflammation Topical corticosteroids ointments or dermatological creams should be used in the acute phases of eyelid eczema, with a preference for low\n\n###### C. How to treat non IgEmediated diseases CBC\n\n# Accepted Article\n\npotency corticosteroids, such as hydrocortisone, desonide, and triamcinolone acetonide Topical calcineurin inhibitors skin ointments 0.03% or 0.1% have been shown to be useful in the treatment of lid eczema in AKC patients.",
+      "text": "Topical ocular decongestants and corticosteroids were used in the majority of cases. The potency and treatment duration of the topical corticosteroid should be chosen clinically based on the severity of ocular inflammation and corneal involvement. Lowest appropriate potency corticosteroids, such as hydrocortisone or budesonide on the eyelid skin, are recommended for the treatment of severe acute eyelid eczema. Systemic corticosteroids may be used as short course in selected severe hyper-acute exacerbations involving either eyelid skin or cornea especially in VKC and AKC. #### Recommendations\n\n-  Topical corticosteroids eye drops should be used with caution under ophthalmologist’s monitoring and preferably for shorter duration due to the high risk of local and potential blinding side effects ⨁◯◯◯↑↑\n-  For the treatment of SAC and PAC topical corticosteroids are rarely needed ⨁◯◯◯↓↓\n-  Corticosteroid eye drops can be used preferably as short, pulsed therapy in acute exacerbations of OA, especially in VKC and AKC or when the cornea is involved under ophthalmologist supervision (TF expert opinion)↑↑\n-  INCs are effective and well-tolerated in the treatment of ocular symptoms associated with ARC ⨁◯◯◯ ↑? -  INCs should not be used if only ocular signs and symptoms are present (TF expert opinion) ↓↓\n-  Topical skin corticosteroid applications should be used in the acute phase of eyelid eczema, with a preference for low potency corticosteroids (TF expert opinion) ↑?",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 91,
         "sentence_count": 8,
-        "token_count": 779,
+        "token_count": 392,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1488,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0019"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0019",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0021",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "They should be used frequently during the day and during the whole season Systemic anti-allergic drugs should be used when ocular symptoms are associated with other allergic co-morbidities Topical corticosteroids should be used as short, pulsed therapy, in acute exacerbations or when the cornea is involved, under ophthalmologist’s monitoring Topical calcineurin inhibitors, preferentially cyclosporine A (0.1% on-label treatment in the EU), may be used as a steroid-sparing agent in steroid-dependent patients followed in specialized centers; tacrolimus 0.1% eye drops should be reserved for severe VKC and AKC cases refractory to CsA (off-label treatment in the EU) A systemic immunosuppressive treatment should be prescribed in most refractory cases of AKC with visual threat. How to treat persistent/chronic forms (IgEand non-IgE-mediated) VKC and AKC\n\nAvoidance of irritants and/or sensitizing antigens Eyelid hygiene Emollients and skin moisturing agents Oral antihistamines can be used to alleviate eyelid itching and inflammation Topical corticosteroids ointments or dermatological creams should be used in the acute phases of eyelid eczema, with a preference for low\n\n###### C. How to treat non IgEmediated diseases CBC\n\n# Accepted Article\n\npotency corticosteroids, such as hydrocortisone, desonide, and triamcinolone acetonide Topical calcineurin inhibitors skin ointments 0.03% or 0.1% have been shown to be useful in the treatment of lid eczema in AKC patients.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 91,
+        "sentence_count": 8,
+        "token_count": 389,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1474,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0019"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0022",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -284,7 +342,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0020",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0023",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -297,7 +355,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0021",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0024",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -310,7 +368,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0022",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0025",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -323,7 +381,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0023",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0026",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -336,7 +394,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0024",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0027",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -349,7 +407,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0025",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0028",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -362,7 +420,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0026",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0029",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -375,7 +433,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0027",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0030",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -388,7 +446,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0028",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0031",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -401,20 +459,135 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0029",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0032",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
-      "text": "Direct comparisons of different antihistamines and mast cell stabilizers showed insufficient evidence to recommend one drug over another (6) even though the peer-reviewed literature suggested that olopatadine may be clinically superior to the other anti-allergic molecules (8), and alcaftadine may be superior to olopatadine in reducing ocular itch (5). A fourth SR (9) comparing olopatadine with other topical anti-histamines (epinastine, ketotifen, alcaftadine), showed a significant benefit from the use of alcaftadine in reducing symptoms scores when compared to the others drugs. A SR of 20 RCT evaluated the efficacy of topical anti-histamines and mast cell stabilizers for the treatment of VKC showing an improvement of ocular symptoms score with use of all these drugs (12). Rosenwasser LJ, O'Brien T, Weyne J. Mast cell stabilization and anti-histamine effects of olopatadine ophthalmic solution: a review of pre-clinical and clinical research. Topical Ocular Allergy Approved Medications\n\n\n|Class|Drug|Dosing|Indication|Considerations|\n|---|---|---|---|---|\n|Antihistamines (second generation)|Levocabastine Emedastine|4x daily|- Relief of itching<br>- Relief of signs and symptoms<br>|- Short duration of action<br>- Frequently not enough to treat alone the entire disease<br>|\n|Mast cell stabilizers|Cromolyn Nedocromil Lodoxamide NAAGA|4x daily|- Relief of signs and symptoms|- Long-term usage<br>- Slow onset of action<br>- Prophylactic dosing<br>- Frequently not enough to treat alone the entire disease<br>|\n|Dual-acting agents (Antihistamine/ mast cell stabilizers)|Alcaftadine Azelastine Bepotastine Epinastine Ketotifen Olopatadine|2x daily|- Relief of itching<br>- Relief of signs and symptoms<br>|- Bitter taste (azelastine)<br>- No reported serious side effects<br>- Frequently not enough to treat alone the entire disease<br>|\n|Vasoconstrictor/ Vasoconstrictor Antihistamine Combinations|Naphazoline/ Pheniramine|2-4x daily|- Rapid onset of action<br>- Episodic itching and redness<br>|- Short duration of action<br>- Tachyphylaxis<br>- Mydriasis<br>- Ocular irritation<br>- Hypersensitivity<br>- Systemic Hypertension<br>- Potential for inappropriate patient use<br>|\n|Corticosteroids (listed in ascending potency order)|Hydrocortisone Loteprednol Fluorometholone Desonide Rimexolone Prednisolone Dexamethasone Betamethasone|As required|- Treatment of allergic inflammation<br>- Use in moderate to severe forms<br>|- Risk for long-term side effects<br>- No mast cell stabilization<br>- Potential for inappropriate patient use<br>- Requires close monitoring<br>|\n|Calcineurine inhibitors|Cyclosporine A Tacrolimus|2-4x daily|-Treatment of severe VKC and AKC not responding anti-allergic drugs|-Off label in OA (tacrolimus approved for VKC only in Japan)<br>-CsA 0.1% received marketing authorization by EMA in July 2018 for severe VKC<br>-Magistral/officinals preparations are different from center to center<br>-Quality control and availability of magistral preparations are poor<br>|\n\n\n# Accepted Article\n\n#### Table 2. Topical anti-histamines, mast cell stabilizers, dual-acting agents\n\nAuthor Year\n\nStudies design\n\nParticipants Intervention Comparisons\n\nOutcomes Main results Author`s conclusion Amstar\n\nscore Topical anti-histamines\n\n|Kam K et al 2016(5)|23 RCT|Allergic conjunctivitis (n=3388 eyes)|Olopatadine 0.05 to 0.20% vs placebo; ketotifen ; alcaftadine|Symptoms scores (itcing, hypere mia)|Olopatadine vs placebo Itch SMD -1.33[-1.43;-1.23]/Itch score -2.62[-3.25;-1.99] Hyperemia -0.92[-1.19;-0.65] / -1.92[-2.67;-1.17] Olopatadine vs Epinastine no significant differences Olopatadine vs Ketotifen no significant differences Olopatadine vs Alcaftadine SMD 0.30[0.28;0.50]|Topical olopatadine is safe and effective, but alcaftadine appears to be superior|High|\n|---|---|---|---|---|---|---|---|\n|Castillo M et al, 2015(6)|30 RCT 4 Metaanalysis|Seasonal and perennial allergic conjunctivitis (n=4344)|Topical antihistamines Mast cell stabilizers (alone and in combination)|Symptoms scores (itching, irritation, watering eyes or photophobia)|Mast cell stabilizers vs. placebo (8 RCT), not pooled, nedocromil sodium or sodium cromoglycate is more effective than placebo in improving ocular symptoms Azelastine vs. Olopatadine may be more effective than ketotifen|High|\n|Mahvan TD, 2012(9)|2 RCT|Allergic conjunctivitis (n=228)|Alcaftadine 0.05 to 0.25% vs placebo|Ocular itching Ocular redness|Improved ocular itching improvement, no improvement in ocular redness, not pooled|Alcaftadine is safe and effective|Critically low|\n|Rosenwasser L et al 2005 (8)|9 CT|Allergic conjunctivitis (n=714)|Olopatadine 0.1 and 0.5% vs placebo; ketorolac, nedocromil, ketotifen, azelastine and epinastine|Not pooled|No significant side effects; no ocular dryness or irritation with topical use. Comparison with ketorolac 0.5%, nedocromil, ketotifen, azelastine and epinastine- not pooled|Olopatadine is clinically superior to the other anti-allergic molecules|Critically low|\n\n\n# Accepted Article\n\nTopical mast cell stabilizers\n\n|Owen C et al, 2004(7)|40 RCT|Seasonal allergic conjunctivitis (n=790)|Topical mast cell stabilizers; topical anti-histamines and topical mast cell stabilisers with antihistamines|Ocular symptom score (itching, burning, lacrimation and soreness)|Sodium cromoglycate vs placebo (8 RCT) OR =17[4;78] to benefit from treatment Nedocromil sodium vs placebo (5 RCT) OR =1.8[1.3;2.6] Lodoxamide tromethamine vs placebo (1 RCT) Topical anti-histamines vs placebo (9 RCT; 6 lebocabastine; 1 azelastine; 1 emedastine; 1 antazoline) not pooled Topical mast cell stabilizers vs topical antihistamines (8 RCT) Levocabastine vs mast cell stabilisers OR 1.3[0.8;2.2]|Confirm the benefit of topical mast cell stabilizers and antihistamines over placebo for the treatment of allergic conjunctivitis. There is insufficient evidence to recommend the use of one type of medication over another.|Moderate|\n|---|---|---|---|---|---|---|---|\n|Mantelli et al, 2007(12)|27 RCT 10 metaanalysis|Vernal Keratoconjuncitivis (n=1092 patients, 2184 eyes) Mean age 13.3(4.5 years)|Mast cell stabilisers vs placebo (n=10) Mast cell stabilisers vs another (n=8) Mast cell stabilisers vs corticosteroids (n=2) Mast cell stabilisers vs antihistamines (n=1) NSAID vs placebo (n=2) NSAID vs CCT (n=1) Antimitotic drug (n=1)|Irching, tearing, fotofobia, hyperemia, tarsal papillae, limbal disease and corneal involvement|: Itching (mytomicin; sodium cromoglicate, ciclosporin 2%, ketorolac) SMD -1.43 [-1.76;-1.10] Tearing (mytomicin, sodium cromoglicate, cilosporin 2%) SMD<br><br>-0.84[-1.20;-0.49] Photophobia (mytomicin, sodium cromoglicate, cyclosporine 2%) -0.27[-0.82;0.39] Total signs (ciclosporin and sodium cromoglicate) SMD -0.94;[1.34;-0.54] Total symptoms (ciclosporin 2% and sodium cromoglicate) SMD -0.73[-1.14;-0.32] Tarsal papillae (mytomicin, sodium cromoglicate, ciclosporin)<br><br>SMD -0.32[-0.64:-0.00] Corneal Involvement (mytomicin, sodium cromoglicate, ciclosporin) SMD -1.15[-1.50;-0.80] Limbal disease (mytomicin, sodium cromoglicate, ciclosporin)<br>SMD -1.17[-1.50;-0.83] Hyperaemia (mytomicin, sodium cromoglicate, ciclosporin, mipragoside 0.5) SMD -1.07[-1.38;-0.76]<br>|The currently available topical drugs are effective in treating acute phases of VKC. Medication use\n\nCompared to placebo: Composite sign score: SMD -1.21 95%CI, [-1.80; -\n\nTopical cyclosporine could be an effective and safe treatment method for allergic conjunctivitis\n\nLow\n\n- 0.62] Composite symptom score: SMD -0.84 95%CI[-\n- 1.51;-0.16] Reduction on steroid eye drop (3RCT) SMD -61.2[101.6;-20.7]\n\n\n# Accepted Article\n\n|GonzálezLópez et al, 2012(33)|3 RCT|Atopic keratoconjuntivitis (n=58) (|Cyclosporin 0.05% or Cyclosporin 2% in maize oil vs preservative free artificial tears or placebo|Symptoms improvement (reported by the participant) itching, tearing, discomfort, mucous discharge, photophobia or pain Topical steroid use Clinical signs Adverse effects|Not pooled Symptoms composite score significantly improved for all associated, but not for specific symptoms in one study ( Clinical signs improved in the composite score in one study Reduction of topical steroid use in one study|Topical CsA may provide clinical and symptomatic relief in AKC and may help to reduce topical steroid use in patients with steroid-dependent or steroid-resistant AKC. No serious adverse events were reported|High|\n|---|---|---|---|---|---|---|---|\n|Mantelli et al, 2007(12)|27 RCT 10 metaanalysis|Vernal Keratoconjuncitivis (n=1092 patients, 2184 eyes) mean age 13.3(4.5 years)|Mast cell stabilisers vs placebo (n=10) Mast cell stabilisers vs another (n=8) Mast cell stabilisers vs corticosteroids (n=2) Mast cell stabilisers vs antihistamines (n=1) NSAID vs placebo (n=2= NSAID vs CCT (n=1) Antimitotic drug (n=1)|Irching, tearing, fotofobia, hyperemia, tarsal papillae, limbal disease and corneal involvement|Itching (mytomicin; sodium cromoglicate, ciclosporin 2%, ketorolac) SMD -1.43 [-1.76;-1.10] Tearing (mytomicin, sodium cromoglicate, cilosporin 2%) SMD -0.84[-1.20;-0.49] Photophobia (mytomicin, sodium cromoglicate, cyclosporine 2%) -0.27[-0.82;0.39] Total signs (ciclosporin and sodium cromoglicate) SMD -0.94;[-1.34;-0.54] Total symptoms (ciclosporin 2% and sodium cromoglicate) SMD -0.73[-1.14;-0.32] Tarsal papillae (mytomicin, sodium cromoglicate,<br><br>ciclosporin) SMD -0.32[-0.64:-0.00] Corneal Involvement (mytomicin, sodium cromoglicate, ciclosporin) SMD -1.15[-1.50;-0.80] Limbal disease (mytomicin, sodium cromoglicate,<br>ciclosporin) SMD -1.17[-1.50;-0.83] Hyperaemia (mytomicin, sodium cromoglicate, ciclosporin, mipragoside 0.5) SMD -1.07[-1.38;0.76]<br>|The currently available topical drugs are effective in treating acute phases of VKC. Practical treatment of ocular allergy\n\nAvoidance of clinically relevant allergens is the first step in the prevention of ocular allergy symptoms Topical antihistamines, mast cell stabilizers or double action drugs are the first choice of treatment, and all effective in reducing signs and symptoms Dual acting agents with combined mast cell stabilizer and antihistaminic function increase the possibility of symptom improvement, and have a faster relief of symptoms compared to mast cell stabilizers Avoid topical corticosteroids, as they are rarely needed Intranasal corticosteroids are effective and well-tolerated in the treatment of ocular symptoms associated with ARC, but should not be used if only ocular signs and symptoms are present Topical vasoconstrictors alleviate only hyperemia and should be used with caution for a short period of 5-7 days because of side effects and tachyphylaxis Systemic anti-histamines should be used in acute forms or when ocular symptoms are associated with other allergic co-morbidities Leukotriene inhibitors are reported to be less efficacious than oral antihistamines in adult SAC patients Consider SIT when specific sensitization is the main cause of ocular allergy, as it is effective for the treatment of ARC to seasonal allergens and perennial allergens SLIT has been shown to be effective in reducing total and individual ocular symptom score in subjects with conjunctivitis\n\n###### A.",
+      "text": "Direct comparisons of different antihistamines and mast cell stabilizers showed insufficient evidence to recommend one drug over another (6) even though the peer-reviewed literature suggested that olopatadine may be clinically superior to the other anti-allergic molecules (8), and alcaftadine may be superior to olopatadine in reducing ocular itch (5). A fourth SR (9) comparing olopatadine with other topical anti-histamines (epinastine, ketotifen, alcaftadine), showed a significant benefit from the use of alcaftadine in reducing symptoms scores when compared to the others drugs. A SR of 20 RCT evaluated the efficacy of topical anti-histamines and mast cell stabilizers for the treatment of VKC showing an improvement of ocular symptoms score with use of all these drugs (12). Rosenwasser LJ, O'Brien T, Weyne J. Mast cell stabilization and anti-histamine effects of olopatadine ophthalmic solution: a review of pre-clinical and clinical research.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 2,
         "sentence_count": 12,
-        "token_count": 3485,
+        "token_count": 236,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 953,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0030"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0030",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0033",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Topical Ocular Allergy Approved Medications\n\n\n|Class|Drug|Dosing|Indication|Considerations|\n|---|---|---|---|---|\n|Antihistamines (second generation)|Levocabastine Emedastine|4x daily|- Relief of itching<br>- Relief of signs and symptoms<br>|- Short duration of action<br>- Frequently not enough to treat alone the entire disease<br>|\n|Mast cell stabilizers|Cromolyn Nedocromil Lodoxamide NAAGA|4x daily|- Relief of signs and symptoms|- Long-term usage<br>- Slow onset of action<br>- Prophylactic dosing<br>- Frequently not enough to treat alone the entire disease<br>|\n|Dual-acting agents (Antihistamine/ mast cell stabilizers)|Alcaftadine Azelastine Bepotastine Epinastine Ketotifen Olopatadine|2x daily|- Relief of itching<br>- Relief of signs and symptoms<br>|- Bitter taste (azelastine)<br>- No reported serious side effects<br>- Frequently not enough to treat alone the entire disease<br>|\n|Vasoconstrictor/ Vasoconstrictor Antihistamine Combinations|Naphazoline/ Pheniramine|2-4x daily|- Rapid onset of action<br>- Episodic itching and redness<br>|- Short duration of action<br>- Tachyphylaxis<br>- Mydriasis<br>- Ocular irritation<br>- Hypersensitivity<br>- Systemic Hypertension<br>- Potential for inappropriate patient use<br>|\n|Corticosteroids (listed in ascending potency order)|Hydrocortisone Loteprednol Fluorometholone Desonide Rimexolone Prednisolone Dexamethasone Betamethasone|As required|- Treatment of allergic inflammation<br>- Use in moderate to severe forms<br>|- Risk for long-term side effects<br>- No mast cell stabilization<br>- Potential for inappropriate patient use<br>- Requires close monitoring<br>|\n|Calcineurine inhibitors|Cyclosporine A Tacrolimus|2-4x daily|-Treatment of severe VKC and AKC not responding anti-allergic drugs|-Off label in OA (tacrolimus approved for VKC only in Japan)<br>-CsA 0.1% received marketing authorization by EMA in July 2018 for severe VKC<br>-Magistral/officinals preparations are different from center to center<br>-Quality control and availability of magistral preparations are poor<br>|\n\n\n# Accepted Article\n\n#### Table 2.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 2,
+        "sentence_count": 12,
+        "token_count": 671,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 2090,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0030"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0034",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Topical anti-histamines, mast cell stabilizers, dual-acting agents\n\nAuthor Year\n\nStudies design\n\nParticipants Intervention Comparisons\n\nOutcomes Main results Author`s conclusion Amstar\n\nscore Topical anti-histamines\n\n|Kam K et al 2016(5)|23 RCT|Allergic conjunctivitis (n=3388 eyes)|Olopatadine 0.05 to 0.20% vs placebo; ketotifen ; alcaftadine|Symptoms scores (itcing, hypere mia)|Olopatadine vs placebo Itch SMD -1.33[-1.43;-1.23]/Itch score -2.62[-3.25;-1.99] Hyperemia -0.92[-1.19;-0.65] / -1.92[-2.67;-1.17] Olopatadine vs Epinastine no significant differences Olopatadine vs Ketotifen no significant differences Olopatadine vs Alcaftadine SMD 0.30[0.28;0.50]|Topical olopatadine is safe and effective, but alcaftadine appears to be superior|High|\n|---|---|---|---|---|---|---|---|\n|Castillo M et al, 2015(6)|30 RCT 4 Metaanalysis|Seasonal and perennial allergic conjunctivitis (n=4344)|Topical antihistamines Mast cell stabilizers (alone and in combination)|Symptoms scores (itching, irritation, watering eyes or photophobia)|Mast cell stabilizers vs. placebo (8 RCT), not pooled, nedocromil sodium or sodium cromoglycate is more effective than placebo in improving ocular symptoms Azelastine vs.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 2,
+        "sentence_count": 12,
+        "token_count": 396,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1202,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0030"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0035",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Olopatadine may be more effective than ketotifen|High|\n|Mahvan TD, 2012(9)|2 RCT|Allergic conjunctivitis (n=228)|Alcaftadine 0.05 to 0.25% vs placebo|Ocular itching Ocular redness|Improved ocular itching improvement, no improvement in ocular redness, not pooled|Alcaftadine is safe and effective|Critically low|\n|Rosenwasser L et al 2005 (8)|9 CT|Allergic conjunctivitis (n=714)|Olopatadine 0.1 and 0.5% vs placebo; ketorolac, nedocromil, ketotifen, azelastine and epinastine|Not pooled|No significant side effects; no ocular dryness or irritation with topical use. Comparison with ketorolac 0.5%, nedocromil, ketotifen, azelastine and epinastine- not pooled|Olopatadine is clinically superior to the other anti-allergic molecules|Critically low|\n\n\n# Accepted Article\n\nTopical mast cell stabilizers\n\n|Owen C et al, 2004(7)|40 RCT|Seasonal allergic conjunctivitis (n=790)|Topical mast cell stabilizers; topical anti-histamines and topical mast cell stabilisers with antihistamines|Ocular symptom score (itching, burning, lacrimation and soreness)|Sodium cromoglycate vs placebo (8 RCT) OR =17[4;78] to benefit from treatment Nedocromil sodium vs placebo (5 RCT) OR =1.8[1.3;2.6] Lodoxamide tromethamine vs placebo (1 RCT) Topical anti-histamines vs placebo (9 RCT; 6 lebocabastine; 1 azelastine; 1 emedastine; 1 antazoline) not pooled Topical mast cell stabilizers vs topical antihistamines (8 RCT) Levocabastine vs mast cell stabilisers OR 1.3[0.8;2.2]|Confirm the benefit of topical mast cell stabilizers and antihistamines over placebo for the treatment of allergic conjunctivitis.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 2,
+        "sentence_count": 12,
+        "token_count": 493,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1583,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0030"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0036",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "There is insufficient evidence to recommend the use of one type of medication over another.|Moderate|\n|---|---|---|---|---|---|---|---|\n|Mantelli et al, 2007(12)|27 RCT 10 metaanalysis|Vernal Keratoconjuncitivis (n=1092 patients, 2184 eyes) Mean age 13.3(4.5 years)|Mast cell stabilisers vs placebo (n=10) Mast cell stabilisers vs another (n=8) Mast cell stabilisers vs corticosteroids (n=2) Mast cell stabilisers vs antihistamines (n=1) NSAID vs placebo (n=2) NSAID vs CCT (n=1) Antimitotic drug (n=1)|Irching, tearing, fotofobia, hyperemia, tarsal papillae, limbal disease and corneal involvement|: Itching (mytomicin; sodium cromoglicate, ciclosporin 2%, ketorolac) SMD -1.43 [-1.76;-1.10] Tearing (mytomicin, sodium cromoglicate, cilosporin 2%) SMD<br><br>-0.84[-1.20;-0.49] Photophobia (mytomicin, sodium cromoglicate, cyclosporine 2%) -0.27[-0.82;0.39] Total signs (ciclosporin and sodium cromoglicate) SMD -0.94;[1.34;-0.54] Total symptoms (ciclosporin 2% and sodium cromoglicate) SMD -0.73[-1.14;-0.32] Tarsal papillae (mytomicin, sodium cromoglicate, ciclosporin)<br><br>SMD -0.32[-0.64:-0.00] Corneal Involvement (mytomicin, sodium cromoglicate, ciclosporin) SMD -1.15[-1.50;-0.80] Limbal disease (mytomicin, sodium cromoglicate, ciclosporin)<br>SMD -1.17[-1.50;-0.83] Hyperaemia (mytomicin, sodium cromoglicate, ciclosporin, mipragoside 0.5) SMD -1.07[-1.38;-0.76]<br>|The currently available topical drugs are effective in treating acute phases of VKC.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 2,
+        "sentence_count": 12,
+        "token_count": 545,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1464,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0030"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0037",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Medication use\n\nCompared to placebo: Composite sign score: SMD -1.21 95%CI, [-1.80; -\n\nTopical cyclosporine could be an effective and safe treatment method for allergic conjunctivitis\n\nLow\n\n- 0.62] Composite symptom score: SMD -0.84 95%CI[-\n- 1.51;-0.16] Reduction on steroid eye drop (3RCT) SMD -61.2[101.6;-20.7]\n\n\n# Accepted Article\n\n|GonzálezLópez et al, 2012(33)|3 RCT|Atopic keratoconjuntivitis (n=58) (|Cyclosporin 0.05% or Cyclosporin 2% in maize oil vs preservative free artificial tears or placebo|Symptoms improvement (reported by the participant) itching, tearing, discomfort, mucous discharge, photophobia or pain Topical steroid use Clinical signs Adverse effects|Not pooled Symptoms composite score significantly improved for all associated, but not for specific symptoms in one study ( Clinical signs improved in the composite score in one study Reduction of topical steroid use in one study|Topical CsA may provide clinical and symptomatic relief in AKC and may help to reduce topical steroid use in patients with steroid-dependent or steroid-resistant AKC.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 2,
+        "sentence_count": 12,
+        "token_count": 308,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1074,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0030"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0038",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "No serious adverse events were reported|High|\n|---|---|---|---|---|---|---|---|\n|Mantelli et al, 2007(12)|27 RCT 10 metaanalysis|Vernal Keratoconjuncitivis (n=1092 patients, 2184 eyes) mean age 13.3(4.5 years)|Mast cell stabilisers vs placebo (n=10) Mast cell stabilisers vs another (n=8) Mast cell stabilisers vs corticosteroids (n=2) Mast cell stabilisers vs antihistamines (n=1) NSAID vs placebo (n=2= NSAID vs CCT (n=1) Antimitotic drug (n=1)|Irching, tearing, fotofobia, hyperemia, tarsal papillae, limbal disease and corneal involvement|Itching (mytomicin; sodium cromoglicate, ciclosporin 2%, ketorolac) SMD -1.43 [-1.76;-1.10] Tearing (mytomicin, sodium cromoglicate, cilosporin 2%) SMD -0.84[-1.20;-0.49] Photophobia (mytomicin, sodium cromoglicate, cyclosporine 2%) -0.27[-0.82;0.39] Total signs (ciclosporin and sodium cromoglicate) SMD -0.94;[-1.34;-0.54] Total symptoms (ciclosporin 2% and sodium cromoglicate) SMD -0.73[-1.14;-0.32] Tarsal papillae (mytomicin, sodium cromoglicate,<br><br>ciclosporin) SMD -0.32[-0.64:-0.00] Corneal Involvement (mytomicin, sodium cromoglicate, ciclosporin) SMD -1.15[-1.50;-0.80] Limbal disease (mytomicin, sodium cromoglicate,<br>ciclosporin) SMD -1.17[-1.50;-0.83] Hyperaemia (mytomicin, sodium cromoglicate, ciclosporin, mipragoside 0.5) SMD -1.07[-1.38;0.76]<br>|The currently available topical drugs are effective in treating acute phases of VKC.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 2,
+        "sentence_count": 12,
+        "token_count": 526,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1399,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0030"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0039",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Practical treatment of ocular allergy\n\nAvoidance of clinically relevant allergens is the first step in the prevention of ocular allergy symptoms Topical antihistamines, mast cell stabilizers or double action drugs are the first choice of treatment, and all effective in reducing signs and symptoms Dual acting agents with combined mast cell stabilizer and antihistaminic function increase the possibility of symptom improvement, and have a faster relief of symptoms compared to mast cell stabilizers Avoid topical corticosteroids, as they are rarely needed Intranasal corticosteroids are effective and well-tolerated in the treatment of ocular symptoms associated with ARC, but should not be used if only ocular signs and symptoms are present Topical vasoconstrictors alleviate only hyperemia and should be used with caution for a short period of 5-7 days because of side effects and tachyphylaxis Systemic anti-histamines should be used in acute forms or when ocular symptoms are associated with other allergic co-morbidities Leukotriene inhibitors are reported to be less efficacious than oral antihistamines in adult SAC patients Consider SIT when specific sensitization is the main cause of ocular allergy, as it is effective for the treatment of ARC to seasonal allergens and perennial allergens SLIT has been shown to be effective in reducing total and individual ocular symptom score in subjects with conjunctivitis\n\n###### A.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 2,
+        "sentence_count": 12,
+        "token_count": 324,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1433,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0030"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0040",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -427,7 +600,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0031",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0041",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -440,7 +613,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0032",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0042",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -453,7 +626,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0033",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0043",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -466,7 +639,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0034",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0044",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -479,7 +652,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0035",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0045",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -492,7 +665,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0036",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0046",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -505,7 +678,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0037",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0047",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -518,7 +691,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0038",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0048",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -531,7 +704,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0039",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0049",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -544,7 +717,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0040",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0050",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -557,7 +730,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0041",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0051",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -570,7 +743,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0042",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0052",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -583,7 +756,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0043",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0053",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -596,7 +769,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0044",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0054",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -609,7 +782,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0045",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0055",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -622,7 +795,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0046",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0056",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -635,7 +808,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0047",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0057",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -648,7 +821,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0048",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0058",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -661,7 +834,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0049",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0059",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -674,7 +847,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0050",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0060",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -687,7 +860,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0051",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0061",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -700,7 +873,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0052",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0062",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -713,7 +886,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0053",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0063",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -726,7 +899,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0054",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0064",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -739,7 +912,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0055",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0065",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -752,7 +925,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0056",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0066",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -765,7 +938,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0057",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0067",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -778,7 +951,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0058",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0068",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -791,7 +964,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0059",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0069",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -804,7 +977,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0060",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0070",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -817,7 +990,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0061",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0071",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -830,7 +1003,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0062",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0072",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -843,7 +1016,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0063",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0073",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -856,7 +1029,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0064",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0074",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -869,7 +1042,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0065",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0075",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -882,7 +1055,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0066",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0076",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -895,7 +1068,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0067",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0077",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -908,7 +1081,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0068",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0078",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -921,7 +1094,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0069",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0079",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -934,7 +1107,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0070",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0080",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -947,7 +1120,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0071",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0081",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -960,7 +1133,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0072",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0082",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -973,7 +1146,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0073",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0083",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -986,7 +1159,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0074",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0084",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -999,7 +1172,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0075",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0085",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1012,7 +1185,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0076",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0086",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1025,7 +1198,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0077",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0087",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1038,7 +1211,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0078",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0088",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1051,7 +1224,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0079",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0089",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1064,7 +1237,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0080",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0090",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1077,7 +1250,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0081",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0091",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1090,20 +1263,39 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0082",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0092",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
-      "text": "A recent trial comparing the effect of 0.1% topical tacrolimus alone or in combination with topical corticosteroids in refractory allergic ocular diseases also showed a potential steroid-sparing effect (39). Topical cyclosporine in the treatment of allergic conjunctivitis: a meta-analysis. Gonzalez-Lopez JJ, Lopez-Alcalde J, Morcillo Laiz R, Fernandez Buenaga R, Rebolleda Fernandez G. Topical cyclosporine for atopic keratoconjunctivitis. A Randomized, Controlled Trial of Cyclosporine A Cationic Emulsion in Pediatric Vernal Keratoconjunctivitis: The VEKTIS Study. Zhai J, Gu J, Yuan J, Chen J. Tacrolimus in the treatment of ocular diseases. Labcharoenwongs P, Jirapongsananuruk O, Visitsunthorn N, Kosrirukvongs P, Saengin P, Vichyanond P. A double-masked comparison of 0.1% tacrolimus ointment and 2% cyclosporine eye drops in the treatment of vernal keratoconjunctivitis in children. Tacrolimus vs. cyclosporine eyedrops in severe cyclosporine-resistant vernal keratoconjunctivitis: A randomized, comparative, double-blind, crossover study. SteroidSparing Effect of 0.1% Tacrolimus Eye Drop for Treatment of Shield Ulcer and Corneal Epitheliopathy in Refractory Allergic Ocular Diseases. Tacrolimus ointment vs steroid ointment for eyelid dermatitis in patients with atopic keratoconjunctivitis. Zribi H, Descamps V, Hoang-Xuan T, Crickx B, Doan S. Dramatic improvement of atopic keratoconjunctivitis after topical treatment with tacrolimus ointment restricted to the eyelids. Long-term follow-up of tacrolimus ointment for treatment of atopic keratoconjunctivitis. Hoang-Xuan T, Prisant O, Hannouche D, Robin H. Systemic cyclosporine A in severe atopic keratoconjunctivitis. Lambiase A, Leonardi A, Sacchetti M, Deligianni V, Sposato S, Bonini S. Topical cyclosporine prevents seasonal recurrences of vernal keratoconjunctivitis in a randomized, double-masked, controlled 2-year study.",
+      "text": "A recent trial comparing the effect of 0.1% topical tacrolimus alone or in combination with topical corticosteroids in refractory allergic ocular diseases also showed a potential steroid-sparing effect (39). Topical cyclosporine in the treatment of allergic conjunctivitis: a meta-analysis. Gonzalez-Lopez JJ, Lopez-Alcalde J, Morcillo Laiz R, Fernandez Buenaga R, Rebolleda Fernandez G. Topical cyclosporine for atopic keratoconjunctivitis. A Randomized, Controlled Trial of Cyclosporine A Cationic Emulsion in Pediatric Vernal Keratoconjunctivitis: The VEKTIS Study. Zhai J, Gu J, Yuan J, Chen J. Tacrolimus in the treatment of ocular diseases. Labcharoenwongs P, Jirapongsananuruk O, Visitsunthorn N, Kosrirukvongs P, Saengin P, Vichyanond P. A double-masked comparison of 0.1% tacrolimus ointment and 2% cyclosporine eye drops in the treatment of vernal keratoconjunctivitis in children. Tacrolimus vs. cyclosporine eyedrops in severe cyclosporine-resistant vernal keratoconjunctivitis: A randomized, comparative, double-blind, crossover study. SteroidSparing Effect of 0.1% Tacrolimus Eye Drop for Treatment of Shield Ulcer and Corneal Epitheliopathy in Refractory Allergic Ocular Diseases. Tacrolimus ointment vs steroid ointment for eyelid dermatitis in patients with atopic keratoconjunctivitis. Zribi H, Descamps V, Hoang-Xuan T, Crickx B, Doan S. Dramatic improvement of atopic keratoconjunctivitis after topical treatment with tacrolimus ointment restricted to the eyelids. Long-term follow-up of tacrolimus ointment for treatment of atopic keratoconjunctivitis. Hoang-Xuan T, Prisant O, Hannouche D, Robin H. Systemic cyclosporine A in severe atopic keratoconjunctivitis.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 5,
         "sentence_count": 13,
-        "token_count": 572,
+        "token_count": 506,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1683,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0083"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0083",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0093",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Lambiase A, Leonardi A, Sacchetti M, Deligianni V, Sposato S, Bonini S. Topical cyclosporine prevents seasonal recurrences of vernal keratoconjunctivitis in a randomized, double-masked, controlled 2-year study.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 5,
+        "sentence_count": 13,
+        "token_count": 68,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 210,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0083"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0094",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1116,7 +1308,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0084",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0095",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1129,7 +1321,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0085",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0096",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1142,7 +1334,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0086",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0097",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1155,7 +1347,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0087",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0098",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1168,7 +1360,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0088",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0099",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1181,7 +1373,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0089",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0100",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1194,7 +1386,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0090",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0101",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1207,7 +1399,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0091",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0102",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1220,7 +1412,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0092",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0103",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1233,7 +1425,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0093",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0104",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1246,7 +1438,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0094",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0105",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1259,7 +1451,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0095",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0106",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1272,7 +1464,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0096",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0107",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1285,7 +1477,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0097",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0108",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1298,7 +1490,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0098",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0109",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1311,7 +1503,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0099",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0110",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1324,7 +1516,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0100",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0111",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1337,7 +1529,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0101",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0112",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1350,7 +1542,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0102",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0113",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1363,7 +1555,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0103",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0114",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1376,7 +1568,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0104",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0115",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1389,7 +1581,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0105",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0116",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1402,7 +1594,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0106",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0117",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1415,7 +1607,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0107",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0118",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1428,7 +1620,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0108",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0119",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1441,7 +1633,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0109",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0120",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1454,7 +1646,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0110",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0121",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1467,7 +1659,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0111",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0122",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1480,7 +1672,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0112",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0123",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1493,7 +1685,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0113",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0124",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1506,7 +1698,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0114",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0125",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1519,7 +1711,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0115",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0126",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1532,7 +1724,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0116",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0127",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1545,7 +1737,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0117",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0128",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1558,7 +1750,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0118",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0129",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1571,7 +1763,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0119",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0130",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1584,7 +1776,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0120",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0131",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1597,7 +1789,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0121",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0132",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1610,7 +1802,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0122",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0133",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1623,7 +1815,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0123",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0134",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1636,7 +1828,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0124",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0135",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1649,7 +1841,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0125",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0136",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1662,7 +1854,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0126",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0137",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1675,7 +1867,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0127",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0138",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1688,7 +1880,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0128",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0139",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1701,7 +1893,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0129",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0140",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1714,7 +1906,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0130",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0141",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1727,7 +1919,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0131",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0142",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1740,7 +1932,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0132",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0143",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1753,7 +1945,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0133",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0144",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1766,7 +1958,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0134",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0145",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1779,7 +1971,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0135",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0146",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1792,7 +1984,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0136",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0147",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1805,7 +1997,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0137",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0148",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1818,7 +2010,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0138",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0149",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1831,7 +2023,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0139",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0150",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1844,7 +2036,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0140",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0151",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1857,7 +2049,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0141",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0152",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1870,7 +2062,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0142",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0153",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1883,7 +2075,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0143",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0154",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1896,7 +2088,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0144",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0155",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1909,7 +2101,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0145",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0156",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1922,7 +2114,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0146",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0157",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1935,7 +2127,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0147",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0158",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1948,7 +2140,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0148",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0159",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1961,7 +2153,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0149",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0160",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1974,7 +2166,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0150",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0161",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -1987,7 +2179,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0151",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0162",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2000,7 +2192,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0152",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0163",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2013,7 +2205,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0153",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0164",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2026,7 +2218,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0154",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0165",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2039,7 +2231,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0155",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0166",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2052,7 +2244,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0156",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0167",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2065,7 +2257,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0157",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0168",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2078,7 +2270,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0158",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0169",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2091,7 +2283,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0159",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0170",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2104,7 +2296,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0160",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0171",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2117,7 +2309,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0161",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0172",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2130,7 +2322,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0162",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0173",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2143,7 +2335,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0163",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0174",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2156,7 +2348,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0164",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0175",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2169,7 +2361,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0165",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0176",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2182,7 +2374,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0166",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0177",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2195,7 +2387,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0167",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0178",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2208,7 +2400,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0168",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0179",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2221,7 +2413,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0169",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0180",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2234,7 +2426,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0170",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0181",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2247,7 +2439,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0171",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0182",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2260,7 +2452,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0172",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0183",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2273,7 +2465,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0173",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0184",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2286,7 +2478,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0174",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0185",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2299,7 +2491,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0175",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0186",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2312,7 +2504,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0176",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0187",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2325,7 +2517,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0177",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0188",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2338,7 +2530,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0178",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0189",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2351,7 +2543,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0179",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0190",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2364,7 +2556,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0180",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0191",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2377,7 +2569,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0181",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0192",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2390,7 +2582,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0182",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0193",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2403,7 +2595,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0183",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0194",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2416,7 +2608,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0184",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0195",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2429,7 +2621,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0185",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0196",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2442,7 +2634,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0186",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0197",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2455,7 +2647,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0187",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0198",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2468,7 +2660,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0188",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0199",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2481,7 +2673,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0189",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0200",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2494,7 +2686,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0190",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0201",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2507,7 +2699,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0191",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0202",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2520,7 +2712,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0192",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0203",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2533,7 +2725,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0193",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0204",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2546,7 +2738,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0194",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0205",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2559,7 +2751,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0195",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0206",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2572,7 +2764,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0196",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0207",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2585,7 +2777,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0197",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0208",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2598,7 +2790,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0198",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0209",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2611,7 +2803,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0199",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0210",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2624,7 +2816,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0200",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0211",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2637,7 +2829,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0201",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0212",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2650,7 +2842,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0202",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0213",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2663,7 +2855,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0203",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0214",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2676,7 +2868,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0204",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0215",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2689,7 +2881,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0205",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0216",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2702,7 +2894,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0206",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0217",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2715,7 +2907,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0207",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0218",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2728,7 +2920,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0208",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0219",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2741,7 +2933,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0209",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0220",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2754,7 +2946,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0210",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0221",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2767,7 +2959,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0211",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0222",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2780,7 +2972,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0212",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0223",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2793,7 +2985,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0213",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0224",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2806,7 +2998,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0214",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0225",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2819,7 +3011,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0215",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0226",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2832,20 +3024,71 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0216",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0227",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
-      "text": "EAACI Guidelines on Allergen Immunotherapy: Allergic rhinoconjunctivitis. Allergen immunotherapy for allergic rhinoconjunctivitis: A systematic review and meta-analysis. Di Bona D, Plaia A, Leto-Barone MS, La Piana S, Di Lorenzo G. Efficacy of Grass Pollen Allergen Sublingual Immunotherapy Tablets for Seasonal Allergic Rhinoconjunctivitis: A Systematic Review and Meta-analysis. A meta-analysis of sublingual allergen immunotherapy and pharmacotherapy in pollen-induced seasonal allergic rhinoconjunctivitis. Sublingual immunotherapy for the treatment of allergic rhinoconjunctivitis and asthma: a systematic review. Allergen-specific immunotherapy for pediatric asthma and rhinoconjunctivitis: a systematic review. Immunotherapy in children and adolescents with allergic rhinoconjunctivitis: a systematic review. Allergen specific immunotherapy\n\nAuthor Year\n\nStudies design\n\nParticipants Intervention Comparisons\n\nOutcomes Main results Author`s conclusion Amstar\n\nscore Immunotherapy\n\n|Dhami et al, 2017(45)|160, 134 DBRCT 61 SCIT; 71 SLIT|Allergic rhinoconjunctivitis or allergic rhinitis 6,379 patients SCIT 13,636 patients SLIT|Weed,tree and grass pollens, molds, cat and dog dander, and house dust mites|Difference symptom score Difference medication score Difference QoL|Symptom score<br><br>[SMD -0.53 (95% CI -0.63 to -0.42); SCIT -0.65(0.86 to -0.36) vs SLIT -0.48 (95%CCI -0.61 to 0.36); Seasonal allergens (-0.37 (95% CI -0.45 to -0.28] Medication score SMD of -0.38 (95% CI -0.49, -0.26) [SCIT SMD 0.52 (95% CI -0.75, -0.29) ; SLIT -0.31 (95% CI 0.44, -0.18)|AIT is effective in achieving clinically important short-term improvements in symptom, medication, and combined symptom and medication scores.|High|\n|---|---|---|---|---|---|---|---|\n|Di Bona et al<br><br>(47) 2015|13 RCT|Seasonal allergic rhinoconjuncitivitis (n=4659)|Grass pollen SLIT versus placebo Phleum p5 or 5 grass extracts|Difference in symptom score Difference medication score Number adverse events|Symptom score (SMD, −0.28; 95%CI, −0.37 to −0.19; P < .001) Medication score (SMD, −0.24; 95%CI, −0.31 to −0.17; P < .001) OR adverse events 2.91|Small benefit of grass SLIT tablets in the treatment of SARC|Moderate|\n|Nelson et al, 2015(48)|37 RCT 14 SLIT tablet; 14 SLIT drop; 9SCIT|Allergic rhinitis treated with IT (n=4016) and placebo (n=3743)|SCIT vs SLIT grass pollen IT versus placebo SLIT tablets vs SLIT drops|Difference in symptom score (rhinoconjuncitivitis score preferred) Difference medication score|Symptom score [SCIT vs placebo SMDs (95% CI): 0.32 (-0.45 to -0.18); SLIT vs placebo SMDs (95% CI): -0.32 (-0.41 to -0.23)] Medication score [SCIT vs placebo SMDs (95% CI):<br><br>-0.33 (-0.52 to -0.13); SLIT vs Placebo SMDs (95% CI): -0.44 (-0.83 to -0.06)] No difference between SCIT or SLIT|Comparable reduction in allergic conjunctivitis symptoms with SLIT and SCIT|Moderate|\n|Devillier et al, 2014(49)|38 DBRCT 28 med 10 SLIT|Seasonal allergic rhinitis (n=21223)|Antihistamines (desloratadine; bilastine; loratadine; fexofenadine; cetirizine); Nasal CCT; montelukast and grass pollen SLIT tablet,|Symptoms score Combined symptommedication score Relative clinical impact Reported post-treatment or season-long nasal Total symptom scores. 100 × (score Placebo – score Active)/score Placebo)|Five grass pollen SLIT tablets [ -0.30(-0.36, 0.23)]; -29.6% (-23% to -37%) Timothy SLIT tablets -19.2% (-6% to -29%) Nasal corticosteroids [– 0.55 (-0.63, -0.47)]<br><br>-23.5% (-7% to -54%) azelastine-fluticasone[SMD –1.00 (-1.10, -0.90)]<br>-17.1% (-15% to -20%) H1-antihistamines [SMD -0.39 (-0.43, -0.35)]<br>-15.0% (-3% to -26%) Montelukast [ –0.23 (-0.30, -0.16)]<br>-6.5% (-3% to -10%)<br>|Grass pollen SLIT tablets had a greater mean relative clinical impact than secondgeneration antihistamines and montelukast and similar to the mean relative clinical impact of nasal corticosteroids|Moderate|\n|Lin et al, 2013<br><br>(50)|RCT 13SLIT|Conjunctivitis (n=1074)|SLIT Grass mix, dust mite, parietaria, timothy grass, olive, tree mix|Symptom score|No pooled All but two studies showed a greater improvement in SLIT|Moderate strength in support of SLIT for treating allergic conjunctivitis|High|\n|Calderon et al, 2011 (51)|RCT 42|Allergic conjunctivitis|SLIT Grass, mites, weeds|TOSS Individual symptom score|TOSS (n=36 studies) SMD -0.41[-0.53;-0.28], not significant for perennial allergens (n=6) and|SLIT is effective in reducing total and|High|\n\n\n# Accepted Article\n\n| | |seasonal and perennial (n=3399)|vs placebo|Medication score Conjunctival immediate allergen sensitivity|significant for children and adults Itch SMD -0.31[-0.42;-0.20] Watery eyes SMD -0.23[-0.34;-0.11] Red eyes SMD -0.33[-0.45;-0.22] No significant differences in medication score|individual symptom score in subjects with ARC or conjunctivitis.| |\n|---|---|---|---|---|---|---|---|\n|Kim J et al, 2013(52)|RCT 3 SCIT 5 SLIT|Conjunctivitis (n=513)|AIT pollen and dust mite|Percent difference in pre-topost change for conjunctivitis symptoms (<15% weak; 1540 moderate; > 40% strong)|Without specific values of percent of increase for conjunctivitis. SCIT showed an improvement versus placebo in all studies and 4 out of 5 studies showed an improvement with SLIT.|The strength of evidence is low for SCIT and moderate for SLIT in conjunctivitis symptoms improvement|Moderate|\n|Röder et al, 2008(55)|RCT<br><br>6 SCIT 4 LNIT<br>7 OIT 11 SLIT<br>|Allergic rhinoconjunctivitis (n=1619)|19 trials with seasonal allergen (grass pollen) 9 trials (house dust mite)|Symptoms scores Medication scores|Did not present specific data; not pooled|Insufficient evidence that immunotherapy in any administration has a positive effect on symptoms and/or medication|Low|\n\n\nIT- allergen mmunotherapy; DBRCT- Double blind randomized controlled trail; LNIT- nasal immunotherapy; OIT-oral immunotherapy; RCT- randomized clinical trials; SCIT- Subcutaneous immunotherapy; SLIT- sublingual immunotherapy; SMD- standardized mean diference;\n\n# Accepted Article\n\n#### Table 7.",
+      "text": "EAACI Guidelines on Allergen Immunotherapy: Allergic rhinoconjunctivitis. Allergen immunotherapy for allergic rhinoconjunctivitis: A systematic review and meta-analysis. Di Bona D, Plaia A, Leto-Barone MS, La Piana S, Di Lorenzo G. Efficacy of Grass Pollen Allergen Sublingual Immunotherapy Tablets for Seasonal Allergic Rhinoconjunctivitis: A Systematic Review and Meta-analysis. A meta-analysis of sublingual allergen immunotherapy and pharmacotherapy in pollen-induced seasonal allergic rhinoconjunctivitis. Sublingual immunotherapy for the treatment of allergic rhinoconjunctivitis and asthma: a systematic review. Allergen-specific immunotherapy for pediatric asthma and rhinoconjunctivitis: a systematic review. Immunotherapy in children and adolescents with allergic rhinoconjunctivitis: a systematic review.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 3,
         "sentence_count": 10,
-        "token_count": 1999,
+        "token_count": 232,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 815,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0217"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0217",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0228",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "Allergen specific immunotherapy\n\nAuthor Year\n\nStudies design\n\nParticipants Intervention Comparisons\n\nOutcomes Main results Author`s conclusion Amstar\n\nscore Immunotherapy\n\n|Dhami et al, 2017(45)|160, 134 DBRCT 61 SCIT; 71 SLIT|Allergic rhinoconjunctivitis or allergic rhinitis 6,379 patients SCIT 13,636 patients SLIT|Weed,tree and grass pollens, molds, cat and dog dander, and house dust mites|Difference symptom score Difference medication score Difference QoL|Symptom score<br><br>[SMD -0.53 (95% CI -0.63 to -0.42); SCIT -0.65(0.86 to -0.36) vs SLIT -0.48 (95%CCI -0.61 to 0.36); Seasonal allergens (-0.37 (95% CI -0.45 to -0.28] Medication score SMD of -0.38 (95% CI -0.49, -0.26) [SCIT SMD 0.52 (95% CI -0.75, -0.29) ; SLIT -0.31 (95% CI 0.44, -0.18)|AIT is effective in achieving clinically important short-term improvements in symptom, medication, and combined symptom and medication scores.|High|\n|---|---|---|---|---|---|---|---|\n|Di Bona et al<br><br>(47) 2015|13 RCT|Seasonal allergic rhinoconjuncitivitis (n=4659)|Grass pollen SLIT versus placebo Phleum p5 or 5 grass extracts|Difference in symptom score Difference medication score Number adverse events|Symptom score (SMD, −0.28; 95%CI, −0.37 to −0.19; P < .001) Medication score (SMD, −0.24; 95%CI, −0.31 to −0.17; P < .001) OR adverse events 2.91|Small benefit of grass SLIT tablets in the treatment of SARC|Moderate|\n|Nelson et al, 2015(48)|37 RCT 14 SLIT tablet; 14 SLIT drop; 9SCIT|Allergic rhinitis treated with IT (n=4016) and placebo (n=3743)|SCIT vs SLIT grass pollen IT versus placebo SLIT tablets vs SLIT drops|Difference in symptom score (rhinoconjuncitivitis score preferred) Difference medication score|Symptom score [SCIT vs placebo SMDs (95% CI): 0.32 (-0.45 to -0.18); SLIT vs placebo SMDs (95% CI): -0.32 (-0.41 to -0.23)] Medication score [SCIT vs placebo SMDs (95% CI):<br><br>-0.33 (-0.52 to -0.13); SLIT vs Placebo SMDs (95% CI): -0.44 (-0.83 to -0.06)] No difference between SCIT or SLIT|Comparable reduction in allergic conjunctivitis symptoms with SLIT and SCIT|Moderate|\n|Devillier et al, 2014(49)|38 DBRCT 28 med 10 SLIT|Seasonal allergic rhinitis (n=21223)|Antihistamines (desloratadine; bilastine; loratadine; fexofenadine; cetirizine); Nasal CCT; montelukast and grass pollen SLIT tablet,|Symptoms score Combined symptommedication score Relative clinical impact Reported post-treatment or season-long nasal Total symptom scores.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 3,
+        "sentence_count": 10,
+        "token_count": 829,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 2423,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0217"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0229",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "100 × (score Placebo – score Active)/score Placebo)|Five grass pollen SLIT tablets [ -0.30(-0.36, 0.23)]; -29.6% (-23% to -37%) Timothy SLIT tablets -19.2% (-6% to -29%) Nasal corticosteroids [– 0.55 (-0.63, -0.47)]<br><br>-23.5% (-7% to -54%) azelastine-fluticasone[SMD –1.00 (-1.10, -0.90)]<br>-17.1% (-15% to -20%) H1-antihistamines [SMD -0.39 (-0.43, -0.35)]<br>-15.0% (-3% to -26%) Montelukast [ –0.23 (-0.30, -0.16)]<br>-6.5% (-3% to -10%)<br>|Grass pollen SLIT tablets had a greater mean relative clinical impact than secondgeneration antihistamines and montelukast and similar to the mean relative clinical impact of nasal corticosteroids|Moderate|\n|Lin et al, 2013<br><br>(50)|RCT 13SLIT|Conjunctivitis (n=1074)|SLIT Grass mix, dust mite, parietaria, timothy grass, olive, tree mix|Symptom score|No pooled All but two studies showed a greater improvement in SLIT|Moderate strength in support of SLIT for treating allergic conjunctivitis|High|\n|Calderon et al, 2011 (51)|RCT 42|Allergic conjunctivitis|SLIT Grass, mites, weeds|TOSS Individual symptom score|TOSS (n=36 studies) SMD -0.41[-0.53;-0.28], not significant for perennial allergens (n=6) and|SLIT is effective in reducing total and|High|\n\n\n# Accepted Article\n\n| | |seasonal and perennial (n=3399)|vs placebo|Medication score Conjunctival immediate allergen sensitivity|significant for children and adults Itch SMD -0.31[-0.42;-0.20] Watery eyes SMD -0.23[-0.34;-0.11] Red eyes SMD -0.33[-0.45;-0.22] No significant differences in medication score|individual symptom score in subjects with ARC or conjunctivitis.| |\n|---|---|---|---|---|---|---|---|\n|Kim J et al, 2013(52)|RCT 3 SCIT 5 SLIT|Conjunctivitis (n=513)|AIT pollen and dust mite|Percent difference in pre-topost change for conjunctivitis symptoms (<15% weak; 1540 moderate; > 40% strong)|Without specific values of percent of increase for conjunctivitis.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 3,
+        "sentence_count": 10,
+        "token_count": 677,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1880,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0217"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0230",
+      "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
+    },
+    {
+      "text": "SCIT showed an improvement versus placebo in all studies and 4 out of 5 studies showed an improvement with SLIT.|The strength of evidence is low for SCIT and moderate for SLIT in conjunctivitis symptoms improvement|Moderate|\n|Röder et al, 2008(55)|RCT<br><br>6 SCIT 4 LNIT<br>7 OIT 11 SLIT<br>|Allergic rhinoconjunctivitis (n=1619)|19 trials with seasonal allergen (grass pollen) 9 trials (house dust mite)|Symptoms scores Medication scores|Did not present specific data; not pooled|Insufficient evidence that immunotherapy in any administration has a positive effect on symptoms and/or medication|Low|\n\n\nIT- allergen mmunotherapy; DBRCT- Double blind randomized controlled trail; LNIT- nasal immunotherapy; OIT-oral immunotherapy; RCT- randomized clinical trials; SCIT- Subcutaneous immunotherapy; SLIT- sublingual immunotherapy; SMD- standardized mean diference;\n\n# Accepted Article\n\n#### Table 7.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 3,
+        "sentence_count": 10,
+        "token_count": 267,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 899,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0217"
+      },
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0231",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2858,7 +3101,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0218",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0232",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2871,7 +3114,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0219",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0233",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2884,7 +3127,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0220",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0234",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2897,7 +3140,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0221",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0235",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2910,7 +3153,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0222",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0236",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2923,7 +3166,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0223",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0237",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2936,7 +3179,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0224",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0238",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2949,7 +3192,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0225",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0239",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2962,7 +3205,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0226",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0240",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2975,7 +3218,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0227",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0241",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -2988,7 +3231,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0228",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0242",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3001,7 +3244,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0229",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0243",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3014,7 +3257,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0230",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0244",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3027,7 +3270,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0231",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0245",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3040,7 +3283,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0232",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0246",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3053,7 +3296,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0233",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0247",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3066,7 +3309,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0234",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0248",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3079,7 +3322,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0235",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0249",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3092,7 +3335,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0236",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0250",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3105,7 +3348,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0237",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0251",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3118,7 +3361,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0238",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0252",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3131,7 +3374,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0239",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0253",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3144,7 +3387,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0240",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0254",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3157,7 +3400,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0241",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0255",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3170,7 +3413,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0242",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0256",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3183,7 +3426,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0243",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0257",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3196,7 +3439,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0244",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0258",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3209,7 +3452,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0245",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0259",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3222,7 +3465,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0246",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0260",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3235,7 +3478,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0247",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0261",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3248,7 +3491,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0248",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0262",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3261,7 +3504,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0249",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0263",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3274,7 +3517,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0250",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0264",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3287,7 +3530,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0251",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0265",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3300,7 +3543,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0252",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0266",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3313,7 +3556,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0253",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0267",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3326,7 +3569,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0254",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0268",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3339,7 +3582,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0255",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0269",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3352,7 +3595,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0256",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0270",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3365,7 +3608,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0257",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0271",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3378,7 +3621,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0258",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0272",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3391,7 +3634,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0259",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0273",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3404,7 +3647,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0260",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0274",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3417,7 +3660,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0261",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0275",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3430,7 +3673,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0262",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0276",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3443,7 +3686,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0263",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0277",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3456,7 +3699,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0264",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0278",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3469,7 +3712,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0265",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0279",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3482,7 +3725,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0266",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0280",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3495,7 +3738,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0267",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0281",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3508,7 +3751,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0268",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0282",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3521,7 +3764,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0269",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0283",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3534,7 +3777,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0270",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0284",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     },
     {
@@ -3547,7 +3790,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0271",
+      "chunk_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy_chunk_0285",
       "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy"
     }
   ]

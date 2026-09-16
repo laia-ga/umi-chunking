@@ -4,15 +4,16 @@
   "abbreviation": "TBC",
   "params": {
     "distance_threshold": 0.4,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
   "document_type": "paper",
   "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
   "source_path": "paper\\PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
-  "tokenizer model": "BAAI/bge-m3",
+  "tokenizer_model": "BAAI/bge-m3",
   "original_token_count": 14869,
-  "number_of_chunks": 214,
+  "number_of_chunks": 220,
   "chunks": [
     {
       "text": "AAAAI Work Group Report\n\n# Applying the dissemination and implementation sciences to allergy and immunology: A Work Group Report from the AAAAI Quality, Adherence, and Outcomes Committee\n\nSujani Kakumanu, MD,a,b Stanley Szefler, MD,c,d Andrea A. Pappalardo, MD,e Anne E. Sales, PhD, RN,f,g Alan P. Baptist, MD, MPH,h Jessica Stern, MD, MS,i and Sharmilee M. Nyenhuis, MDj Madison, Wis; Aurora, Colo; Chicago, Ill; Columbia, Mo; Ann Arbor and Detroit, Mich; and Rochester, NY\n\n||AAAAI Position Statements,Work Group Reports, and Systematic Reviews are not to be considered to reflect current AAAAI standards or policyafter 5 years from the date of publication. A 2021 work group report identified several areas of health inequities in allergy and immunology, including allergic rhinitis, atopic dermatitis, and primary immunodeficiency.10 In allergic rhinitis, gaps in care in minoritized populations were related to disease underdiagnosis as well as to lack of access to guidelinebased care. In this case, an application of the D&I sciences —suchas building ateam of key stakeholders withcommunity organizations and community primary care providers and using qualitative (focused groups, structured interviews) combined with quantitative (analysis of pharmacy and clinical encounter data) data to determine barriers to diagnosis and receipt of allergen immunotherapy—may lead to better and more equitable adherence of EBP for allergic rhinitis in minoritized populations. Health disparities in allergic and immunologic conditions in racial and ethnic underserved populations: a work group report of the AAAAI Committee on the Underserved. New considerations of health disparities within allergy and immunology.",
@@ -54,16 +55,51 @@
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
-      "text": "In allergy and immunology, the dissemination and implementation (D&I) sciences facilitate the study of how variations in knowledge, resources, patient populations, and staffing models lead to differences in the clinical care of asthma, allergic disease, and primary immunodeficiency. Used appropriately, the D&I sciences provide important tools to promote EBP and health equity as well as optimization of clinical practice in allergy and immunology. Although the D&I sciences are well recognized by the NIH and have gained traction in other medical disciplines, their use in allergy and immunology has lagged.12-17 As a result, allergists and immunologists are frequently tasked to develop local protocols to deliver care that is based on new evidencewithin their individual clinical settings. Although implementation strategies are occasionally included in more recent guidelines, there is still a need to improve the implementation of EBP within the field of allergy and immunology.18-24 In this American Academy of Allergy, Asthma & Immunology (AAAAI) work group report, we advocate for a greater awareness and understanding of the D&I sciences as distinct fields of study compared to quality improvement (QI), practice improvement, health services research, and GRADE (Grades of Recommendation Assessment, Development, and Evaluation) based guideline development. We also provide examples of where the D&I sciences can improve the care of allergy and immunology patients.15,25-27 Dissemination science is the study of how information and intervention materials are distributed to a specific audience; implementation science is the scientific study of methods to promote the systematic uptake of proven clinical treatments and practices as well as organizational and management interventions into routine clinical practice.15 We refer to these fields of study together as the D&I sciences. However, the D&I sciences can be used to show how existing guidelines may not be effective or feasible in real-world practice.32-36\n\nPROGRAM JUSTIFICATION, PARTNERSHIP ENGAGEMENT, AND CONVENING THE STUDY TEAM\n\nAs a new and quickly evolving field, D&I sciences can be difficult to conceptualize and the breadth of available frameworks, which use multilevel and mixed methods approaches, are often overwhelming.29-31,37,38 For the field of allergy and immunology, the D&I sciences could be leveraged to study factors leading to failures to implement impactful research findings and guideline recommendations for asthma and allergic disease, including, early introduction to peanutbased foods in infants, penicillin allergy delabeling initiatives, and delivery of single maintenance and reliever therapies (SMART) in asthma.36,39-52 In addition, D&I studies could be used to develop strategies to provide consistency and equity in biologic therapies and allergen immunotherapies across clinical settings (Table I). These are sometimes called report cards or dashboards and can be presented to individuals and organizations at the point of service within their clinical practice.89-93\n\nAPPLICATIONS OF D&I RESEARCH IN ALLERGY AND IMMUNOLOGY\n\nD&I research that focuses on translating EBPs into clinical practicewith an emphasis on equity, fidelity, and sustainability for asthma and allergic and immunologic disease is a growing need. A general process of how D&I can be used to help elevate EBP of an allergic and/or immunologic concern is provided in Fig 2. Table I highlights some examples of evidence-based allergy and immunology practices that may benefit from the D&I sciences to improve uptake or dissemination and/or increase equitable access to such practices in the real world. HOW THE D&I SCIENCES CAN IMPROVE RESEARCH IN HEALTH EQUITY IN ALLERGY AND IMMUNOLOGY\n\nApplying the perspectives and tools of the D&I sciences has the potential to significantly affect the study of health disparity and improve health equity in the field of allergy and immunology. The D&I sciences provide us with comprehensive approaches that prioritize intervention efficacy, fidelity, sustainability, and health equity as we translate EBP for asthma, allergic, and immunologic diseases into real-world clinical settings. For clinicians, policy leaders, health care systems, and payors, the findings of D&I research offer strategies to improve delivery of evidence-based asthma, allergy, and immunology care. Allergists and immunologists should be receptive to practice changes based on findings from D&I studies and should leverage this area of research to develop and adapt health care interventions. While the D&I sciences can provide effective tools to address health inequities, careful study of the contextual factors leading to a specific disparity is important and can be achieved through community collaboration and effective stakeholder engagement.31,70Increasinggrantsupport,improving training opportunities, and emphasizing the need to broaden research networks to include implementation scientists and health disparities researchers will further promote translation of EBP, thereby promoting health equity and a future evolution of the D&I sciences in allergy and immunology.",
+      "text": "In allergy and immunology, the dissemination and implementation (D&I) sciences facilitate the study of how variations in knowledge, resources, patient populations, and staffing models lead to differences in the clinical care of asthma, allergic disease, and primary immunodeficiency. Used appropriately, the D&I sciences provide important tools to promote EBP and health equity as well as optimization of clinical practice in allergy and immunology. Although the D&I sciences are well recognized by the NIH and have gained traction in other medical disciplines, their use in allergy and immunology has lagged.12-17 As a result, allergists and immunologists are frequently tasked to develop local protocols to deliver care that is based on new evidencewithin their individual clinical settings. Although implementation strategies are occasionally included in more recent guidelines, there is still a need to improve the implementation of EBP within the field of allergy and immunology.18-24 In this American Academy of Allergy, Asthma & Immunology (AAAAI) work group report, we advocate for a greater awareness and understanding of the D&I sciences as distinct fields of study compared to quality improvement (QI), practice improvement, health services research, and GRADE (Grades of Recommendation Assessment, Development, and Evaluation) based guideline development. We also provide examples of where the D&I sciences can improve the care of allergy and immunology patients.15,25-27 Dissemination science is the study of how information and intervention materials are distributed to a specific audience; implementation science is the scientific study of methods to promote the systematic uptake of proven clinical treatments and practices as well as organizational and management interventions into routine clinical practice.15 We refer to these fields of study together as the D&I sciences.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 3,
         "sentence_count": 14,
-        "token_count": 1184,
+        "token_count": 410,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1892,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0003"
       },
       "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0003",
+      "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
+    },
+    {
+      "text": "However, the D&I sciences can be used to show how existing guidelines may not be effective or feasible in real-world practice.32-36\n\nPROGRAM JUSTIFICATION, PARTNERSHIP ENGAGEMENT, AND CONVENING THE STUDY TEAM\n\nAs a new and quickly evolving field, D&I sciences can be difficult to conceptualize and the breadth of available frameworks, which use multilevel and mixed methods approaches, are often overwhelming.29-31,37,38 For the field of allergy and immunology, the D&I sciences could be leveraged to study factors leading to failures to implement impactful research findings and guideline recommendations for asthma and allergic disease, including, early introduction to peanutbased foods in infants, penicillin allergy delabeling initiatives, and delivery of single maintenance and reliever therapies (SMART) in asthma.36,39-52 In addition, D&I studies could be used to develop strategies to provide consistency and equity in biologic therapies and allergen immunotherapies across clinical settings (Table I). These are sometimes called report cards or dashboards and can be presented to individuals and organizations at the point of service within their clinical practice.89-93\n\nAPPLICATIONS OF D&I RESEARCH IN ALLERGY AND IMMUNOLOGY\n\nD&I research that focuses on translating EBPs into clinical practicewith an emphasis on equity, fidelity, and sustainability for asthma and allergic and immunologic disease is a growing need. A general process of how D&I can be used to help elevate EBP of an allergic and/or immunologic concern is provided in Fig 2. Table I highlights some examples of evidence-based allergy and immunology practices that may benefit from the D&I sciences to improve uptake or dissemination and/or increase equitable access to such practices in the real world. HOW THE D&I SCIENCES CAN IMPROVE RESEARCH IN HEALTH EQUITY IN ALLERGY AND IMMUNOLOGY\n\nApplying the perspectives and tools of the D&I sciences has the potential to significantly affect the study of health disparity and improve health equity in the field of allergy and immunology.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 3,
+        "sentence_count": 14,
+        "token_count": 511,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 2062,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0003"
+      },
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0004",
+      "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
+    },
+    {
+      "text": "The D&I sciences provide us with comprehensive approaches that prioritize intervention efficacy, fidelity, sustainability, and health equity as we translate EBP for asthma, allergic, and immunologic diseases into real-world clinical settings. For clinicians, policy leaders, health care systems, and payors, the findings of D&I research offer strategies to improve delivery of evidence-based asthma, allergy, and immunology care. Allergists and immunologists should be receptive to practice changes based on findings from D&I studies and should leverage this area of research to develop and adapt health care interventions. While the D&I sciences can provide effective tools to address health inequities, careful study of the contextual factors leading to a specific disparity is important and can be achieved through community collaboration and effective stakeholder engagement.31,70Increasinggrantsupport,improving training opportunities, and emphasizing the need to broaden research networks to include implementation scientists and health disparities researchers will further promote translation of EBP, thereby promoting health equity and a future evolution of the D&I sciences in allergy and immunology.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 3,
+        "sentence_count": 14,
+        "token_count": 267,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1209,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0003"
+      },
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0005",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -76,7 +112,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0004",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0006",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -89,7 +125,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0005",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0007",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -102,7 +138,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0006",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0008",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -115,7 +151,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0007",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0009",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -128,7 +164,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0008",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0010",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -141,7 +177,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0009",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0011",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -154,33 +190,71 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0010",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0012",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
-      "text": "(J Allergy Clin Immunol 2024;154:893-902.) J Allergy Clin Immunol Pract 2021;9: 3686-96. J Allergy Clin Immunol 2005;116:1307-13. J Allergy Clin Immunol 2023;151:869-80. J Allergy Clin Immunol 2021;147:1579-93. Curr Opin Allergy Clin Immunol 2016;16:142-7. J Allergy Clin Immunol Pract 2018;6: 1784-6. J Allergy Clin Immunol Pract 2019;7:681-4. Allergy Asthma Clin Immunol 2023;19:88. J Allergy Clin Immunol 2002;109(6 suppl):S554-9. J Allergy Clin Immunol Pract 2020;8:149-56.e1. J Allergy Clin Immunol 2016; 138:1131-41.e2. J Allergy Clin Immunol Pract 2017;5:1194-205. J Allergy Clin Immunol 2015;136:258-61. J Allergy Clin Immunol 2020;146:721-67. J Allergy Clin Immunol Pract 2022;10:697-706. J Allergy Clin Immunol 2022; 150:1333-93. J Allergy Clin Immunol Pract 2021;9:22-43.e4. J Allergy Clin Immunol Pract 2013;1:29-36. Allergy 2014;69:590-601. J Allergy Clin Immunol 2017;139:29-44. J Allergy Clin Immunol 2016;138:711-23. J Allergy Clin Immunol 2015;136:1186-205.e1-78. J Allergy Clin Immunol 2020;146:1217-70. J Allergy Clin Immunol 2022;149: 1525-60. J Allergy Clin Immunol 2023;151:314-23. J Allergy Clin Immunol Pract 2019;7:908-14. J Allergy Clin Immunol 2022;150: 535-48. J Allergy Clin Immunol Pract 2021;9:3091-7.e1. J Allergy Clin Immunol Pract 2020;8:3011-20.e2. J Allergy Clin Immunol Pract 2018;6: 886-94.e4. J Allergy Clin Immunol Pract 2023. J Allergy Clin Immunol Pract 2024;12:624-6. J Allergy Clin Immunol Pract 2021;9:3015-20. J Allergy Clin Immunol 2022;149(suppl):AB70. J Allergy Clin Immunol Pract 2019;7:2171-2. Curr Opin Allergy Clin Immunol 2015;15: 308-13. Allergy 2020;75:273-88. J Allergy Clin Immunol Pract 2022;10: 1178-88.",
+      "text": "(J Allergy Clin Immunol 2024;154:893-902.) J Allergy Clin Immunol Pract 2021;9: 3686-96. J Allergy Clin Immunol 2005;116:1307-13. J Allergy Clin Immunol 2023;151:869-80. J Allergy Clin Immunol 2021;147:1579-93. Curr Opin Allergy Clin Immunol 2016;16:142-7. J Allergy Clin Immunol Pract 2018;6: 1784-6. J Allergy Clin Immunol Pract 2019;7:681-4. Allergy Asthma Clin Immunol 2023;19:88. J Allergy Clin Immunol 2002;109(6 suppl):S554-9. J Allergy Clin Immunol Pract 2020;8:149-56.e1. J Allergy Clin Immunol 2016; 138:1131-41.e2. J Allergy Clin Immunol Pract 2017;5:1194-205. J Allergy Clin Immunol 2015;136:258-61. J Allergy Clin Immunol 2020;146:721-67. J Allergy Clin Immunol Pract 2022;10:697-706. J Allergy Clin Immunol 2022; 150:1333-93. J Allergy Clin Immunol Pract 2021;9:22-43.e4. J Allergy Clin Immunol Pract 2013;1:29-36. Allergy 2014;69:590-601. J Allergy Clin Immunol 2017;139:29-44. J Allergy Clin Immunol 2016;138:711-23. J Allergy Clin Immunol 2015;136:1186-205.e1-78. J Allergy Clin Immunol 2020;146:1217-70. J Allergy Clin Immunol 2022;149: 1525-60. J Allergy Clin Immunol 2023;151:314-23. J Allergy Clin Immunol Pract 2019;7:908-14. J Allergy Clin Immunol 2022;150: 535-48. J Allergy Clin Immunol Pract 2021;9:3091-7.e1. J Allergy Clin Immunol Pract 2020;8:3011-20.e2. J Allergy Clin Immunol Pract 2018;6: 886-94.e4.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 26,
         "sentence_count": 39,
-        "token_count": 627,
+        "token_count": 504,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1331,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0011"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0011",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0013",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
-      "text": "Key words: Dissemination, implementation science, evidence-based medicine guidelines, community-based participatory research, asthma, allergic diseases, food allergy, immunology, health equity, health care quality\n\nIn 2022 alone, the National Institutes of Health (NIH) spent over $45 billion on medical research.1 One primary goal of the investment is to support the transition of initial research discovery into clinical trials and subsequently into guidelines for use by frontline clinicians.2-6 Despite this established infrastructure, the actual uptake of research innovation into clinical practice is low and slow, with less than 50% of discoveries reaching the real-world setting and with an often cited 17-year time lag.7,8 In addition, adherence to clinical guidelines in allergy and immunology is variable and is influenced by resource availability, preexisting health inequities, clinician preferences, and environmental factors.9-11 For this reason, leveraging scientific\n\n893\n\n|Abbreviations used<br><br>AAAAI: American Academy of Allergy, Asthma & Immunology D&I: Dissemination and implementation EBP: Evidence-based practice EHR: Electronic health record EPIS: Exploration, preparation, implementation, sustainment<br><br>GINA: Global Health Initiative for Asthma<br><br>NIH: National Institutes of Health PCORI: Patient Centered Outcomes Research Institute PRISM: Practical Implementation Sustainability Model<br><br>QI: Quality improvement RE-AIM: Reach, Effectiveness, Adoption, Implementation, and Maintenance SMART: Single maintenance and reliever therapy|\n|---|\n\n\nmethods tailored to answering key questions like ‘‘Why are the recommendations of clinical guidelines not reaching certain populations?’’ To address this, a study of structural and social determinants of health influencing the EBP being studied should be integrated into the study planning phase; these are promoted by health equity frameworks such as the Health Equity Framework and the EquityBased Framework for Implementation Research.29,31,76,77 With use of these focused frameworks, and with careful integration of a health equity lens at the outset of study planning, D&I research can uncover how population and setting variations affect\n\nreach, adaptation, and fidelity of the EBP to historically marginalized populations.66-68 A full discussion of the role of the D&I sciences in addressing health disparities in asthma, allergic diseases, and primary immunodeficiency is beyond our scope here, but there is a well-recognized need to promote health equity in allergy and immunology.10,78\n\nAPPROACHES TO STUDY DESIGN\n\nThere are a number of ways to classify study design, which can be broadly categorized as observational, experimental, quasiexperimental, hybrid, and pragmatic trial designs.79 Observational studies focus on collecting data, often utilizing both qualitative and quantitative approaches, to identify the barriers and facilitators influencing an implementation strategy’s efficacy and use. With this dual focus, hybrid designs are well designed to accelerate the translation of EBP in routine clinical care and affect public health.15,66,81\n\nPragmatic trials share similarities with hybrid studies and are also designed to account for the real-world constraints in patient selection, outcome collection, and implementation evaluation within a frontline clinical practice.82,83 For example, pragmatic trials that study how to improve asthma medication adherence have recruited patients from clinical practices and randomized them to receive an intervention, such as a digital or phone reminder, asthma education, or access to a community health worker liaison.84-86 In these trials, patient selection and medication delivery occur within routine clinical practice. In addition, implementation studies that study how social determinants of health affect patients with asthma—including proximity to air pollutants, housing availability, school policies, and access to medical care—can inform the development of interventions to better reach and treat asthma patients with greater equity.9,10,110,111\n\nSimilarly, addressing the observed disparities in early introduction to peanut initiatives, as recommended by current food allergy prevention guidelines, will require a systematic assessment of individual and structural barriers in underserved populations, as well as study of how to adapt best practices by utilizing D&I health equity frameworks.10 Future work could also harness technological innovations, such as developing nonbiased EHR or artificial intelligence algorithms that identify patients at high risk for severe allergic disease and/or primary immunodeficiencies.",
+      "text": "J Allergy Clin Immunol Pract 2023. J Allergy Clin Immunol Pract 2024;12:624-6. J Allergy Clin Immunol Pract 2021;9:3015-20. J Allergy Clin Immunol 2022;149(suppl):AB70. J Allergy Clin Immunol Pract 2019;7:2171-2. Curr Opin Allergy Clin Immunol 2015;15: 308-13. Allergy 2020;75:273-88. J Allergy Clin Immunol Pract 2022;10: 1178-88.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 26,
+        "sentence_count": 39,
+        "token_count": 125,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 331,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0011"
+      },
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0014",
+      "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
+    },
+    {
+      "text": "Key words: Dissemination, implementation science, evidence-based medicine guidelines, community-based participatory research, asthma, allergic diseases, food allergy, immunology, health equity, health care quality\n\nIn 2022 alone, the National Institutes of Health (NIH) spent over $45 billion on medical research.1 One primary goal of the investment is to support the transition of initial research discovery into clinical trials and subsequently into guidelines for use by frontline clinicians.2-6 Despite this established infrastructure, the actual uptake of research innovation into clinical practice is low and slow, with less than 50% of discoveries reaching the real-world setting and with an often cited 17-year time lag.7,8 In addition, adherence to clinical guidelines in allergy and immunology is variable and is influenced by resource availability, preexisting health inequities, clinician preferences, and environmental factors.9-11 For this reason, leveraging scientific\n\n893\n\n|Abbreviations used<br><br>AAAAI: American Academy of Allergy, Asthma & Immunology D&I: Dissemination and implementation EBP: Evidence-based practice EHR: Electronic health record EPIS: Exploration, preparation, implementation, sustainment<br><br>GINA: Global Health Initiative for Asthma<br><br>NIH: National Institutes of Health PCORI: Patient Centered Outcomes Research Institute PRISM: Practical Implementation Sustainability Model<br><br>QI: Quality improvement RE-AIM: Reach, Effectiveness, Adoption, Implementation, and Maintenance SMART: Single maintenance and reliever therapy|\n|---|\n\n\nmethods tailored to answering key questions like ‘‘Why are the recommendations of clinical guidelines not reaching certain populations?’’ To address this, a study of structural and social determinants of health influencing the EBP being studied should be integrated into the study planning phase; these are promoted by health equity frameworks such as the Health Equity Framework and the EquityBased Framework for Implementation Research.29,31,76,77 With use of these focused frameworks, and with careful integration of a health equity lens at the outset of study planning, D&I research can uncover how population and setting variations affect\n\nreach, adaptation, and fidelity of the EBP to historically marginalized populations.66-68 A full discussion of the role of the D&I sciences in addressing health disparities in asthma, allergic diseases, and primary immunodeficiency is beyond our scope here, but there is a well-recognized need to promote health equity in allergy and immunology.10,78\n\nAPPROACHES TO STUDY DESIGN\n\nThere are a number of ways to classify study design, which can be broadly categorized as observational, experimental, quasiexperimental, hybrid, and pragmatic trial designs.79 Observational studies focus on collecting data, often utilizing both qualitative and quantitative approaches, to identify the barriers and facilitators influencing an implementation strategy’s efficacy and use.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 5,
         "sentence_count": 4,
-        "token_count": 1044,
+        "token_count": 690,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 2996,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0012"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0012",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0015",
+      "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
+    },
+    {
+      "text": "With this dual focus, hybrid designs are well designed to accelerate the translation of EBP in routine clinical care and affect public health.15,66,81\n\nPragmatic trials share similarities with hybrid studies and are also designed to account for the real-world constraints in patient selection, outcome collection, and implementation evaluation within a frontline clinical practice.82,83 For example, pragmatic trials that study how to improve asthma medication adherence have recruited patients from clinical practices and randomized them to receive an intervention, such as a digital or phone reminder, asthma education, or access to a community health worker liaison.84-86 In these trials, patient selection and medication delivery occur within routine clinical practice. In addition, implementation studies that study how social determinants of health affect patients with asthma—including proximity to air pollutants, housing availability, school policies, and access to medical care—can inform the development of interventions to better reach and treat asthma patients with greater equity.9,10,110,111\n\nSimilarly, addressing the observed disparities in early introduction to peanut initiatives, as recommended by current food allergy prevention guidelines, will require a systematic assessment of individual and structural barriers in underserved populations, as well as study of how to adapt best practices by utilizing D&I health equity frameworks.10 Future work could also harness technological innovations, such as developing nonbiased EHR or artificial intelligence algorithms that identify patients at high risk for severe allergic disease and/or primary immunodeficiencies.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 5,
+        "sentence_count": 4,
+        "token_count": 356,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 1685,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0012"
+      },
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0016",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -193,7 +267,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0013",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0017",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -206,7 +280,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0014",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0018",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -219,7 +293,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0015",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0019",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -232,7 +306,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0016",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0020",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -245,7 +319,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0017",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0021",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -258,7 +332,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0018",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0022",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -271,7 +345,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0019",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0023",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -284,7 +358,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0020",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0024",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -297,7 +371,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0021",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0025",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -310,7 +384,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0022",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0026",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -323,7 +397,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0023",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0027",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -336,7 +410,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0024",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0028",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -349,7 +423,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0025",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0029",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -362,20 +436,39 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0026",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0030",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
-      "text": "Allergy and immunology examples suitable for implementation science interventions\n\nDisease state Allergy and immunology EBP Possible intervention targets\n\nAsthma d 2020 focused NAEEP guidelines update53 d 2024 GINA guidelines54\n\nd SMART and ICS/SABA inhaler regimens d Real-world use of asthma biologics\n\nd Rhinitis 2020 practice parameters update40 d PID screening in patients with recurrent sinusitis d Sleep disorder screening in chronic rhinosinusitis\n\nChronic rhinosinusitis\n\nAtopic dermatitis d Atopic dermatitis guidelines41 d Atopic Dermatitis Workgroup Report 202242\n\nd Unification of skin barrier management d Food avoidance risks and benefits in patients with atopic derma-\n\ntitis\n\nDrug allergy d 2022 drug allergy update to practice parameters43 d Penicillin delabeling interventions d Cephalosporin treatment of penicillin-allergic patients d Targeted use of drug desensitization protocols\n\nFood allergy d Early introduction to peanut and allergy prevention guidelines/ consensus reports39,44-48 d Anaphylaxis practice parameters 202336\n\nd Survey of barriers and facilitators to food allergy guideline implementation d Study of shared decision-making approaches to early food introduction and oral food immunotherapy d Implementation of epinephrine injection training in schools and\n\ncommunity settings Health disparities d 2021 health disparities in allergy and immunology work group\n\nd Increased patient representation in clinical trials d Use of culturally competent and culturally sensitive patient\n\nreport10\n\neducation d Study of equity-focused, EHR-based algorithms to identify PID in vulnerable populations\n\nd Study of increased referrals to allergy and immunology in vulnerable populations to promote equal access to immunotherapy, intensive medical management, and biologics to treat severe allergic rhinitis, atopic dermatitis, and asthma\n\nSchool-based care coordination\n\nd 2023 work group report for equitable access to guideline-based asthma care9 d SA3MPRO and Environmental Protection Agency guidelines for school asthma management49,50\n\nd School-based asthma management programs d Home and school air quality management\n\nPID/inborn errors of immunity\n\nd Immune Deficiency Foundation diagnostic and clinical care\n\nd Timely administration of vaccines in PID d Screening in patients at risk of PID using Immune Deficiency\n\nguidelines51 d 2015 practice parameter for the diagnosis of PID52 d 2022 practical guidance for the diagnosis and management of\n\nFoundation tool kits d Judicious use of g-globulin replacement in patients with secondary hypogammaglobulinemia\n\nsecondary hypogammaglobulinemia55\n\nICS/SABA, Inhaled corticosteroid/short-acting b-agonist; NAEEP, National Asthma Education and Prevention Program; PID, primary immunodeficiency; SA3MPRO, SchoolBased Allergy Asthma and Anaphylaxis Management Program. Translation of guidelines and practice parameters related to other allergicdiseases such as drug allergy, chronic rhinosinusitis, and atopic dermatitis, as well as primary immunodeficiencies, faces similar obstacles. AAAAI/ACAAI JTF Atopic Dermatitis Guideline Panel, Chu DK, Schneider L, Asiniwasis RN, Boguniewicz M, De Benedetto A, et al. Atopic dermatitis (eczema) guidelines: 2023 American Academy of Allergy, Asthma & Immunology/American College of Allergy, Asthma & Immunology Joint Task Force on Practice Parameters GRADE- and Institute of Medicine–based recommendations. Atopic dermatitis and food allergy: best practices and knowledge gaps-a work group report from the AAAAI Allergic Skin Diseases Committee and Leadership Institute Project.",
+      "text": "Allergy and immunology examples suitable for implementation science interventions\n\nDisease state Allergy and immunology EBP Possible intervention targets\n\nAsthma d 2020 focused NAEEP guidelines update53 d 2024 GINA guidelines54\n\nd SMART and ICS/SABA inhaler regimens d Real-world use of asthma biologics\n\nd Rhinitis 2020 practice parameters update40 d PID screening in patients with recurrent sinusitis d Sleep disorder screening in chronic rhinosinusitis\n\nChronic rhinosinusitis\n\nAtopic dermatitis d Atopic dermatitis guidelines41 d Atopic Dermatitis Workgroup Report 202242\n\nd Unification of skin barrier management d Food avoidance risks and benefits in patients with atopic derma-\n\ntitis\n\nDrug allergy d 2022 drug allergy update to practice parameters43 d Penicillin delabeling interventions d Cephalosporin treatment of penicillin-allergic patients d Targeted use of drug desensitization protocols\n\nFood allergy d Early introduction to peanut and allergy prevention guidelines/ consensus reports39,44-48 d Anaphylaxis practice parameters 202336\n\nd Survey of barriers and facilitators to food allergy guideline implementation d Study of shared decision-making approaches to early food introduction and oral food immunotherapy d Implementation of epinephrine injection training in schools and\n\ncommunity settings Health disparities d 2021 health disparities in allergy and immunology work group\n\nd Increased patient representation in clinical trials d Use of culturally competent and culturally sensitive patient\n\nreport10\n\neducation d Study of equity-focused, EHR-based algorithms to identify PID in vulnerable populations\n\nd Study of increased referrals to allergy and immunology in vulnerable populations to promote equal access to immunotherapy, intensive medical management, and biologics to treat severe allergic rhinitis, atopic dermatitis, and asthma\n\nSchool-based care coordination\n\nd 2023 work group report for equitable access to guideline-based asthma care9 d SA3MPRO and Environmental Protection Agency guidelines for school asthma management49,50\n\nd School-based asthma management programs d Home and school air quality management\n\nPID/inborn errors of immunity\n\nd Immune Deficiency Foundation diagnostic and clinical care\n\nd Timely administration of vaccines in PID d Screening in patients at risk of PID using Immune Deficiency\n\nguidelines51 d 2015 practice parameter for the diagnosis of PID52 d 2022 practical guidance for the diagnosis and management of\n\nFoundation tool kits d Judicious use of g-globulin replacement in patients with secondary hypogammaglobulinemia\n\nsecondary hypogammaglobulinemia55\n\nICS/SABA, Inhaled corticosteroid/short-acting b-agonist; NAEEP, National Asthma Education and Prevention Program; PID, primary immunodeficiency; SA3MPRO, SchoolBased Allergy Asthma and Anaphylaxis Management Program.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 20,
         "sentence_count": 5,
-        "token_count": 844,
+        "token_count": 655,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 2841,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0027"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0027",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0031",
+      "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
+    },
+    {
+      "text": "Translation of guidelines and practice parameters related to other allergicdiseases such as drug allergy, chronic rhinosinusitis, and atopic dermatitis, as well as primary immunodeficiencies, faces similar obstacles. AAAAI/ACAAI JTF Atopic Dermatitis Guideline Panel, Chu DK, Schneider L, Asiniwasis RN, Boguniewicz M, De Benedetto A, et al. Atopic dermatitis (eczema) guidelines: 2023 American Academy of Allergy, Asthma & Immunology/American College of Allergy, Asthma & Immunology Joint Task Force on Practice Parameters GRADE- and Institute of Medicine–based recommendations. Atopic dermatitis and food allergy: best practices and knowledge gaps-a work group report from the AAAAI Allergic Skin Diseases Committee and Leadership Institute Project.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 20,
+        "sentence_count": 5,
+        "token_count": 191,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 751,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0027"
+      },
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0032",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -388,7 +481,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0028",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0033",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -401,7 +494,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0029",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0034",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -414,7 +507,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0030",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0035",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -427,7 +520,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0031",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0036",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -440,7 +533,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0032",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0037",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -453,7 +546,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0033",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0038",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -466,7 +559,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0034",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0039",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -479,7 +572,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0035",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0040",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -492,7 +585,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0036",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0041",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -505,7 +598,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0037",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0042",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -518,7 +611,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0038",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0043",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -531,7 +624,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0039",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0044",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -544,7 +637,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0040",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0045",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -557,7 +650,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0041",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0046",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -570,7 +663,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0042",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0047",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -583,7 +676,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0043",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0048",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -596,7 +689,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0044",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0049",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -609,7 +702,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0045",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0050",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -622,7 +715,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0046",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0051",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -635,20 +728,39 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0047",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0052",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
-      "text": "In their evaluation stage, the team used the RE-AIM framework to measure clinical outcomes such as childhood asthma control and health care utilization affected —and, importantly, the penetration, fidelity, and sustainability of their intended intervention.85,95,96\n\nIn the development of the 2020 focused asthma guidelines update, the National Heart, Lung, and Blood Institute recognized the need to create tools to aid with education and use in the clinical setting.53 During development of the guidelines, collaborations with partner organizations resulted in the development of educational materials and an asthma clinical decision support tool, butthese collaborations did not provide a comprehensiveimplementation strategy for frontline clinicians.97 Studies have also found that most clinicians were unaware of updates to the asthma guidelines and were not widely using the provided tools in their clinical practice.9,98-101 In addition, although the asthma guidelines were constructed using the best available evidence-based medicine at the time, they did not address important contextual factors such as US Food and Drug Administration medication approval or insurance coverage.53 Because payors are less inclined to approve costly medications such as combination inhaled corticosteroid–formoterol inhaler therapies that are not FDA approved, even clinicians aware of guideline recommendations were unable to consistently apply them.101,102 Recent updates to the Global Initiative for Asthma (GINA) guidelines have included additional implementation strategies in 2024, including a checklist for integrating GINA guideline recommendations into a health system.54 Future D&I research studies that investigate and address barriers to application of clinical guidelines may lead to more consistent incorporation of SMART into clinical practice and improved national policies for asthma management. Underuse of guideline-recommended long-term asthma management in children hospitalized to the intensive care unit: a multicenter observational study. Ensuring equitable access to guideline-based asthma care across the lifespan: tips and future directions to the successful implementation of the new NAEPP 2020 guidelines, a Work Group Report of the AAAAI Asthma, Cough, Diagnosis, and Treatment Committee. Barriers pediatricians face when using asthma practice guidelines. 2020 focused updates to the asthma management guidelines: a report from the national Asthma Education and Prevention Program Coordinating Committee Expert Panel Working Group.",
+      "text": "In their evaluation stage, the team used the RE-AIM framework to measure clinical outcomes such as childhood asthma control and health care utilization affected —and, importantly, the penetration, fidelity, and sustainability of their intended intervention.85,95,96\n\nIn the development of the 2020 focused asthma guidelines update, the National Heart, Lung, and Blood Institute recognized the need to create tools to aid with education and use in the clinical setting.53 During development of the guidelines, collaborations with partner organizations resulted in the development of educational materials and an asthma clinical decision support tool, butthese collaborations did not provide a comprehensiveimplementation strategy for frontline clinicians.97 Studies have also found that most clinicians were unaware of updates to the asthma guidelines and were not widely using the provided tools in their clinical practice.9,98-101 In addition, although the asthma guidelines were constructed using the best available evidence-based medicine at the time, they did not address important contextual factors such as US Food and Drug Administration medication approval or insurance coverage.53 Because payors are less inclined to approve costly medications such as combination inhaled corticosteroid–formoterol inhaler therapies that are not FDA approved, even clinicians aware of guideline recommendations were unable to consistently apply them.101,102 Recent updates to the Global Initiative for Asthma (GINA) guidelines have included additional implementation strategies in 2024, including a checklist for integrating GINA guideline recommendations into a health system.54 Future D&I research studies that investigate and address barriers to application of clinical guidelines may lead to more consistent incorporation of SMART into clinical practice and improved national policies for asthma management. Underuse of guideline-recommended long-term asthma management in children hospitalized to the intensive care unit: a multicenter observational study. Ensuring equitable access to guideline-based asthma care across the lifespan: tips and future directions to the successful implementation of the new NAEPP 2020 guidelines, a Work Group Report of the AAAAI Asthma, Cough, Diagnosis, and Treatment Committee. Barriers pediatricians face when using asthma practice guidelines.",
       "metadata": {
         "chunker": "topic_based_chunking",
         "topic_label": 17,
         "sentence_count": 5,
-        "token_count": 531,
+        "token_count": 497,
         "distance_threshold": 0.4,
-        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 2376,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0048"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0048",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0053",
+      "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
+    },
+    {
+      "text": "2020 focused updates to the asthma management guidelines: a report from the national Asthma Education and Prevention Program Coordinating Committee Expert Panel Working Group.",
+      "metadata": {
+        "chunker": "topic_based_chunking",
+        "topic_label": 17,
+        "sentence_count": 5,
+        "token_count": 36,
+        "distance_threshold": 0.4,
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "character_count": 175,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0048"
+      },
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0054",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -661,7 +773,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0049",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0055",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -674,7 +786,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0050",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0056",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -687,7 +799,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0051",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0057",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -700,7 +812,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0052",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0058",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -713,7 +825,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0053",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0059",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -726,7 +838,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0054",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0060",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -739,7 +851,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0055",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0061",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -752,7 +864,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0056",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0062",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -765,7 +877,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0057",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0063",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -778,7 +890,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0058",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0064",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -791,7 +903,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0059",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0065",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -804,7 +916,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0060",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0066",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -817,7 +929,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0061",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0067",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -830,7 +942,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0062",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0068",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -843,7 +955,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0063",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0069",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -856,7 +968,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0064",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0070",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -869,7 +981,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0065",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0071",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -882,7 +994,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0066",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0072",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -895,7 +1007,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0067",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0073",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -908,7 +1020,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0068",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0074",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -921,7 +1033,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0069",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0075",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -934,7 +1046,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0070",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0076",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -947,7 +1059,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0071",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0077",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -960,7 +1072,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0072",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0078",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -973,7 +1085,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0073",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0079",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -986,7 +1098,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0074",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0080",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -999,7 +1111,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0075",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0081",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1012,7 +1124,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0076",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0082",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1025,7 +1137,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0077",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0083",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1038,7 +1150,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0078",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0084",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1051,7 +1163,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0079",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0085",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1064,7 +1176,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0080",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0086",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1077,7 +1189,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0081",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0087",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1090,7 +1202,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0082",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0088",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1103,7 +1215,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0083",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0089",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1116,7 +1228,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0084",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0090",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1129,7 +1241,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0085",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0091",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1142,7 +1254,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0086",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0092",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1155,7 +1267,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0087",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0093",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1168,7 +1280,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0088",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0094",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1181,7 +1293,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0089",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0095",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1194,7 +1306,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0090",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0096",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1207,7 +1319,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0091",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0097",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1220,7 +1332,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0092",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0098",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1233,7 +1345,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0093",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0099",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1246,7 +1358,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0094",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0100",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1259,7 +1371,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0095",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0101",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1272,7 +1384,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0096",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0102",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1285,7 +1397,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0097",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0103",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1298,7 +1410,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0098",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0104",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1311,7 +1423,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0099",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0105",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1324,7 +1436,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0100",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0106",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1337,7 +1449,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0101",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0107",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1350,7 +1462,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0102",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0108",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1363,7 +1475,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0103",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0109",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1376,7 +1488,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0104",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0110",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1389,7 +1501,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0105",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0111",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1402,7 +1514,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0106",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0112",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1415,7 +1527,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0107",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0113",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1428,7 +1540,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0108",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0114",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1441,7 +1553,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0109",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0115",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1454,7 +1566,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0110",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0116",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1467,7 +1579,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0111",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0117",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1480,7 +1592,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0112",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0118",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1493,7 +1605,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0113",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0119",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1506,7 +1618,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0114",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0120",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1519,7 +1631,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0115",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0121",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1532,7 +1644,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0116",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0122",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1545,7 +1657,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0117",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0123",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1558,7 +1670,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0118",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0124",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1571,7 +1683,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0119",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0125",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1584,7 +1696,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0120",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0126",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1597,7 +1709,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0121",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0127",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1610,7 +1722,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0122",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0128",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1623,7 +1735,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0123",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0129",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1636,7 +1748,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0124",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0130",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1649,7 +1761,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0125",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0131",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1662,7 +1774,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0126",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0132",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1675,7 +1787,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0127",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0133",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1688,7 +1800,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0128",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0134",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1701,7 +1813,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0129",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0135",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1714,7 +1826,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0130",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0136",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1727,7 +1839,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0131",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0137",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1740,7 +1852,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0132",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0138",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1753,7 +1865,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0133",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0139",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1766,7 +1878,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0134",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0140",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1779,7 +1891,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0135",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0141",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1792,7 +1904,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0136",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0142",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1805,7 +1917,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0137",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0143",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1818,7 +1930,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0138",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0144",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1831,7 +1943,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0139",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0145",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1844,7 +1956,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0140",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0146",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1857,7 +1969,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0141",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0147",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1870,7 +1982,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0142",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0148",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1883,7 +1995,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0143",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0149",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1896,7 +2008,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0144",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0150",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1909,7 +2021,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0145",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0151",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1922,7 +2034,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0146",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0152",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1935,7 +2047,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0147",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0153",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1948,7 +2060,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0148",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0154",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1961,7 +2073,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0149",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0155",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1974,7 +2086,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0150",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0156",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -1987,7 +2099,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0151",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0157",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2000,7 +2112,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0152",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0158",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2013,7 +2125,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0153",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0159",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2026,7 +2138,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0154",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0160",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2039,7 +2151,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0155",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0161",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2052,7 +2164,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0156",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0162",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2065,7 +2177,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0157",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0163",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2078,7 +2190,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0158",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0164",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2091,7 +2203,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0159",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0165",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2104,7 +2216,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0160",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0166",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2117,7 +2229,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0161",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0167",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2130,7 +2242,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0162",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0168",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2143,7 +2255,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0163",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0169",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2156,7 +2268,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0164",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0170",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2169,7 +2281,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0165",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0171",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2182,7 +2294,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0166",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0172",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2195,7 +2307,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0167",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0173",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2208,7 +2320,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0168",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0174",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2221,7 +2333,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0169",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0175",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2234,7 +2346,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0170",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0176",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2247,7 +2359,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0171",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0177",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2260,7 +2372,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0172",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0178",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2273,7 +2385,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0173",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0179",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2286,7 +2398,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0174",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0180",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2299,7 +2411,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0175",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0181",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2312,7 +2424,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0176",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0182",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2325,7 +2437,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0177",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0183",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2338,7 +2450,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0178",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0184",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2351,7 +2463,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0179",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0185",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2364,7 +2476,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0180",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0186",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2377,7 +2489,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0181",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0187",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2390,7 +2502,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0182",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0188",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2403,7 +2515,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0183",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0189",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2416,7 +2528,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0184",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0190",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2429,7 +2541,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0185",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0191",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2442,7 +2554,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0186",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0192",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2455,7 +2567,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0187",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0193",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2468,7 +2580,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0188",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0194",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2481,7 +2593,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0189",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0195",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2494,7 +2606,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0190",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0196",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2507,7 +2619,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0191",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0197",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2520,7 +2632,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0192",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0198",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2533,7 +2645,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0193",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0199",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2546,7 +2658,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0194",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0200",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2559,7 +2671,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0195",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0201",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2572,7 +2684,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0196",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0202",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2585,7 +2697,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0197",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0203",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2598,7 +2710,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0198",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0204",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2611,7 +2723,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0199",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0205",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2624,7 +2736,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0200",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0206",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2637,7 +2749,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0201",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0207",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2650,7 +2762,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0202",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0208",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2663,7 +2775,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0203",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0209",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2676,7 +2788,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0204",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0210",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2689,7 +2801,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0205",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0211",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2702,7 +2814,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0206",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0212",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2715,7 +2827,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0207",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0213",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2728,7 +2840,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0208",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0214",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2741,7 +2853,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0209",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0215",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2754,7 +2866,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0210",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0216",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2767,7 +2879,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0211",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0217",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2780,7 +2892,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0212",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0218",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     },
     {
@@ -2793,7 +2905,7 @@
         "distance_threshold": 0.4,
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
       },
-      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0213",
+      "chunk_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol_chunk_0219",
       "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol"
     }
   ]

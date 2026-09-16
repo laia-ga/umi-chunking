@@ -10,7 +10,7 @@
   "document_type": "paper",
   "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
   "source_path": "paper\\PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
-  "tokenizer model": "BAAI/bge-m3",
+  "tokenizer_model": "BAAI/bge-m3",
   "original_token_count": 16759,
   "number_of_chunks": 154,
   "chunks": [

@@ -24,8 +24,8 @@
   "tokens_total": 24648,
   "tokens_original": 23749,
   "tokens_ratio": 1.038,
-  "execution_time_seconds": 0.049072,
-  "ram_before_mb": 807.7,
-  "ram_after_mb": 802.62,
-  "ram_increase_mb": -5.08
+  "execution_time_seconds": 0.024358,
+  "ram_before_mb": 848.69,
+  "ram_after_mb": 848.69,
+  "ram_increase_mb": 0.0
 }

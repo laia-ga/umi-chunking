@@ -5,7 +5,8 @@
   "params": {
     "breakpoint_threshold_amount": 80.0,
     "buffer_size": 1,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "status": "completed",
   "doc_id": "paper_PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol",
@@ -13,20 +14,20 @@
   "input_file": "PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
   "source_path": "paper\\PAPER - Kakumanu et al. - 2024 - Applying the dissemination and implementation sciences to allergy and immunol.md",
   "tokenizer_model": "BAAI/bge-m3",
-  "number_of_chunks": 118,
+  "number_of_chunks": 137,
   "empty_chunks": 0,
   "tokens_min": 9,
-  "tokens_p25": 15.0,
-  "tokens_median": 45.0,
-  "tokens_mean": 127.99,
-  "tokens_p75": 65.75,
-  "tokens_max": 7111,
-  "tokens_std": 656.95,
-  "tokens_total": 15103,
+  "tokens_p25": 17.0,
+  "tokens_median": 51.0,
+  "tokens_mean": 110.52,
+  "tokens_p75": 77.0,
+  "tokens_max": 655,
+  "tokens_std": 151.47,
+  "tokens_total": 15141,
   "tokens_original": 14869,
-  "tokens_ratio": 1.016,
-  "execution_time_seconds": 3.961177,
-  "ram_before_mb": 1241.83,
-  "ram_after_mb": 1241.05,
-  "ram_increase_mb": -0.78
+  "tokens_ratio": 1.018,
+  "execution_time_seconds": 2.238521,
+  "ram_before_mb": 1283.7,
+  "ram_after_mb": 1334.91,
+  "ram_increase_mb": 51.2
 }

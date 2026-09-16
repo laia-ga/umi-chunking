@@ -4,7 +4,8 @@
   "abbreviation": "SEBC",
   "params": {
     "breakpoint_threshold_amount": 70.0,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "status": "completed",
   "doc_id": "guideline_GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report",
@@ -12,20 +13,20 @@
   "input_file": "GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
   "source_path": "guideline\\GUIDELINE - Russell et al. - 2023 - The Need for Required Stock Epinephrine in All Schools A Work Group Report.md",
   "tokenizer_model": "BAAI/bge-m3",
-  "number_of_chunks": 259,
+  "number_of_chunks": 279,
   "empty_chunks": 0,
   "tokens_min": 3,
   "tokens_p25": 5.0,
-  "tokens_median": 35.0,
-  "tokens_mean": 85.03,
-  "tokens_p75": 58.0,
-  "tokens_max": 1904,
-  "tokens_std": 229.83,
-  "tokens_total": 22023,
+  "tokens_median": 40.0,
+  "tokens_mean": 79.08,
+  "tokens_p75": 68.5,
+  "tokens_max": 653,
+  "tokens_std": 128.43,
+  "tokens_total": 22063,
   "tokens_original": 21507,
-  "tokens_ratio": 1.024,
-  "execution_time_seconds": 6.594772,
-  "ram_before_mb": 995.56,
-  "ram_after_mb": 955.3,
-  "ram_increase_mb": -40.26
+  "tokens_ratio": 1.026,
+  "execution_time_seconds": 3.397004,
+  "ram_before_mb": 1011.91,
+  "ram_after_mb": 1039.5,
+  "ram_increase_mb": 27.59
 }

@@ -4,7 +4,8 @@
   "abbreviation": "TBC",
   "params": {
     "distance_threshold": 0.4,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "status": "completed",
   "doc_id": "guideline_GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy",
@@ -12,20 +13,20 @@
   "input_file": "GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
   "source_path": "guideline\\GUIDELINE - Leonardi et al. - 2019 - Management of ocular allergy.md",
   "tokenizer_model": "BAAI/bge-m3",
-  "number_of_chunks": 272,
+  "number_of_chunks": 286,
   "empty_chunks": 0,
   "tokens_min": 3,
-  "tokens_p25": 18.0,
-  "tokens_median": 32.5,
-  "tokens_mean": 89.55,
-  "tokens_p75": 67.25,
-  "tokens_max": 3485,
-  "tokens_std": 272.58,
-  "tokens_total": 24357,
+  "tokens_p25": 19.0,
+  "tokens_median": 34.0,
+  "tokens_mean": 85.26,
+  "tokens_p75": 77.0,
+  "tokens_max": 1390,
+  "tokens_std": 146.35,
+  "tokens_total": 24385,
   "tokens_original": 23815,
-  "tokens_ratio": 1.023,
-  "execution_time_seconds": 2.309322,
-  "ram_before_mb": 1126.58,
-  "ram_after_mb": 1172.36,
-  "ram_increase_mb": 45.78
+  "tokens_ratio": 1.024,
+  "execution_time_seconds": 1.178988,
+  "ram_before_mb": 1212.07,
+  "ram_after_mb": 1248.36,
+  "ram_increase_mb": 36.29
 }

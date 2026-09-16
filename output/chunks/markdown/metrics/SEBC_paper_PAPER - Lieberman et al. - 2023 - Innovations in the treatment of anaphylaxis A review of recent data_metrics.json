@@ -4,7 +4,8 @@
   "abbreviation": "SEBC",
   "params": {
     "breakpoint_threshold_amount": 70.0,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "status": "completed",
   "doc_id": "paper_PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data",
@@ -12,20 +13,20 @@
   "input_file": "PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
   "source_path": "paper\\PAPER - Lieberman et al. - 2023 - Innovations in the treatment of anaphylaxis A review of recent data.md",
   "tokenizer_model": "BAAI/bge-m3",
-  "number_of_chunks": 174,
+  "number_of_chunks": 190,
   "empty_chunks": 0,
   "tokens_min": 4,
   "tokens_p25": 5.0,
-  "tokens_median": 28.5,
-  "tokens_mean": 98.3,
-  "tokens_p75": 63.75,
-  "tokens_max": 4127,
-  "tokens_std": 356.01,
-  "tokens_total": 17105,
+  "tokens_median": 39.5,
+  "tokens_mean": 90.19,
+  "tokens_p75": 67.75,
+  "tokens_max": 717,
+  "tokens_std": 150.11,
+  "tokens_total": 17137,
   "tokens_original": 16759,
-  "tokens_ratio": 1.021,
-  "execution_time_seconds": 4.899789,
-  "ram_before_mb": 989.81,
-  "ram_after_mb": 964.03,
-  "ram_increase_mb": -25.78
+  "tokens_ratio": 1.023,
+  "execution_time_seconds": 2.415808,
+  "ram_before_mb": 1021.32,
+  "ram_after_mb": 1044.72,
+  "ram_increase_mb": 23.4
 }

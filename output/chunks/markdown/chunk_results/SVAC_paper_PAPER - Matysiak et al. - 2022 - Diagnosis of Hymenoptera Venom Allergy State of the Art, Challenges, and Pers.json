@@ -5,18 +5,19 @@
   "params": {
     "sensitivity": 0.2,
     "window_size": 5,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers",
   "document_type": "paper",
   "input_file": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.md",
   "source_path": "paper\\PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.md",
-  "tokenizer model": "BAAI/bge-m3",
+  "tokenizer_model": "BAAI/bge-m3",
   "original_token_count": 20270,
-  "number_of_chunks": 137,
+  "number_of_chunks": 146,
   "chunks": [
     {
-      "text": "# biomedicines\n\nReview\n\n## Diagnosis of Hymenoptera Venom Allergy: State of the Art, Challenges, and Perspectives\n\n#### Joanna Matysiak 1,* , Eliza Matuszewska 2 , Kacper Packi 2,3 and Agnieszka Klupczy´nska-Gabryszak 2\n\n- 1 Faculty of Health Sciences, Calisia University-Kalisz, 62-800 Kalisz, Poland\n- 2 Department of Inorganic and Analytical Chemistry, Poznan University of Medical Sciences, 60-806 Poznan, Poland\n- 3 AllerGen, Center of Personalized Medicine, 97-300 Piotrkow Trybunalski, Poland\n\n\n* Correspondence: [CORREO OMITIDO]\n\nCitation: Matysiak, J.; Matuszewska, E.; Packi, K.; Klupczyn´ska-Gabryszak, A. Diagnosis of Hymenoptera Venom Allergy: State of the Art, Challenges, and Perspectives. Biomedicines 2022, 10, 2170. https://doi.org/10.3390/ biomedicines10092170\n\nAcademic Editor: Claudia Landi\n\nReceived: 22 July 2022 Accepted: 31 August 2022 Published: 2 September 2022 Corrected: 8 August 2023\n\nPublisher’s Note: MDPI stays neutral with regard to jurisdictional claims in published maps and institutional affiliations. Copyright: © 2022 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https:// creativecommons.org/licenses/by/ 4.0/). Abstract: Hymenoptera venom allergy is the most common cause of anaphylaxis in adults and the second-most frequent in children. The proper diagnosis of this life-threatening allergy remains a challenge. This review focuses on the current knowledge regarding diagnostics of Hymenoptera venom allergy. The paper includes a brief description of the representatives of Hymenoptera order and the composition of their venoms. Then, diagnostic tests for allergy to Hymenoptera venom are described. Common diagnostic problems, especially double positivity in tests for IgE antibodies specific to honeybee and wasp venom, are also discussed.",
+      "text": "# biomedicines\n\nReview\n\n## Diagnosis of Hymenoptera Venom Allergy: State of the Art, Challenges, and Perspectives\n\n#### Joanna Matysiak 1,* , Eliza Matuszewska 2 , Kacper Packi 2,3 and Agnieszka Klupczy´nska-Gabryszak 2\n\n- 1 Faculty of Health Sciences, Calisia University-Kalisz, 62-800 Kalisz, Poland\n- 2 Department of Inorganic and Analytical Chemistry, Poznan University of Medical Sciences, 60-806 Poznan, Poland\n- 3 AllerGen, Center of Personalized Medicine, 97-300 Piotrkow Trybunalski, Poland\n\n\n* Correspondence: [CORREO OMITIDO]\n\nCitation: Matysiak, J.; Matuszewska, E.; Packi, K.; Klupczyn´ska-Gabryszak, A. Diagnosis of Hymenoptera Venom Allergy: State of the Art, Challenges, and Perspectives. Biomedicines 2022, 10, 2170. https://doi.org/10.3390/ biomedicines10092170\n\nAcademic Editor: Claudia Landi\n\nReceived: 22 July 2022 Accepted: 31 August 2022 Published: 2 September 2022 Corrected: 8 August 2023\n\nPublisher’s Note: MDPI stays neutral with regard to jurisdictional claims in published maps and institutional affiliations. Copyright: © 2022 by the authors. Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (https:// creativecommons.org/licenses/by/ 4.0/). Abstract: Hymenoptera venom allergy is the most common cause of anaphylaxis in adults and the second-most frequent in children. The proper diagnosis of this life-threatening allergy remains a challenge. This review focuses on the current knowledge regarding diagnostics of Hymenoptera venom allergy. The paper includes a brief description of the representatives of Hymenoptera order and the composition of their venoms. Then, diagnostic tests for allergy to Hymenoptera venom are described.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -28,10 +29,33 @@
         "start_sentence_index": 0,
         "end_sentence_index": 11,
         "sentence_count": 11,
-        "character_count": 1924,
-        "token_count": 514
+        "character_count": 1782,
+        "token_count": 482,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0000"
       },
       "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0000",
+      "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "Common diagnostic problems, especially double positivity in tests for IgE antibodies specific to honeybee and wasp venom, are also discussed.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.2519,
+        "recent_mean_similarity": 0.612,
+        "mean_internal_similarity": 0.3875,
+        "start_sentence_index": 0,
+        "end_sentence_index": 11,
+        "sentence_count": 11,
+        "character_count": 141,
+        "token_count": 34,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0000"
+      },
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0001",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -50,7 +74,7 @@
         "character_count": 99,
         "token_count": 20
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0001",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0002",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -69,7 +93,7 @@
         "character_count": 912,
         "token_count": 219
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0002",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0003",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -88,7 +112,7 @@
         "character_count": 839,
         "token_count": 222
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0003",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0004",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -107,7 +131,7 @@
         "character_count": 69,
         "token_count": 17
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0004",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0005",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -126,7 +150,7 @@
         "character_count": 274,
         "token_count": 61
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0005",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0006",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -145,7 +169,7 @@
         "character_count": 205,
         "token_count": 74
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0006",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0007",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -164,7 +188,7 @@
         "character_count": 48,
         "token_count": 13
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0007",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0008",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -183,7 +207,7 @@
         "character_count": 9,
         "token_count": 5
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0008",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0009",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -202,7 +226,7 @@
         "character_count": 724,
         "token_count": 184
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0009",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0010",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -221,7 +245,7 @@
         "character_count": 215,
         "token_count": 68
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0010",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0011",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -240,7 +264,7 @@
         "character_count": 421,
         "token_count": 113
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0011",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0012",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -259,7 +283,7 @@
         "character_count": 289,
         "token_count": 84
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0012",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0013",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -278,7 +302,7 @@
         "character_count": 1632,
         "token_count": 419
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0013",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0014",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -297,7 +321,7 @@
         "character_count": 289,
         "token_count": 84
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0014",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0015",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -316,7 +340,7 @@
         "character_count": 803,
         "token_count": 244
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0015",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0016",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -335,7 +359,7 @@
         "character_count": 764,
         "token_count": 203
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0016",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0017",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -354,7 +378,7 @@
         "character_count": 387,
         "token_count": 97
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0017",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0018",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -373,7 +397,7 @@
         "character_count": 850,
         "token_count": 247
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0018",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0019",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -392,7 +416,7 @@
         "character_count": 24,
         "token_count": 9
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0019",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0020",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -411,7 +435,7 @@
         "character_count": 856,
         "token_count": 268
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0020",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0021",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -430,7 +454,7 @@
         "character_count": 453,
         "token_count": 142
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0021",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0022",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -449,7 +473,7 @@
         "character_count": 864,
         "token_count": 264
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0022",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0023",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -468,7 +492,7 @@
         "character_count": 642,
         "token_count": 190
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0023",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0024",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -487,7 +511,7 @@
         "character_count": 373,
         "token_count": 126
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0024",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0025",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -506,7 +530,7 @@
         "character_count": 58,
         "token_count": 15
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0025",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0026",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -525,7 +549,7 @@
         "character_count": 384,
         "token_count": 120
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0026",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0027",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -544,7 +568,7 @@
         "character_count": 1860,
         "token_count": 483
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0027",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0028",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -563,7 +587,7 @@
         "character_count": 32,
         "token_count": 13
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0028",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0029",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -582,7 +606,7 @@
         "character_count": 9,
         "token_count": 5
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0029",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0030",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -601,7 +625,7 @@
         "character_count": 393,
         "token_count": 100
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0030",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0031",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -620,7 +644,7 @@
         "character_count": 817,
         "token_count": 203
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0031",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0032",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -639,7 +663,7 @@
         "character_count": 1283,
         "token_count": 334
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0032",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0033",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -658,7 +682,7 @@
         "character_count": 142,
         "token_count": 50
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0033",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0034",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -677,7 +701,7 @@
         "character_count": 9,
         "token_count": 5
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0034",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0035",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -696,7 +720,7 @@
         "character_count": 1475,
         "token_count": 365
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0035",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0036",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -715,7 +739,7 @@
         "character_count": 151,
         "token_count": 53
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0036",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0037",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -734,7 +758,7 @@
         "character_count": 1602,
         "token_count": 462
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0037",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0038",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -753,7 +777,7 @@
         "character_count": 163,
         "token_count": 42
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0038",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0039",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -772,7 +796,7 @@
         "character_count": 356,
         "token_count": 121
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0039",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0040",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -791,7 +815,7 @@
         "character_count": 49,
         "token_count": 9
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0040",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0041",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -810,7 +834,7 @@
         "character_count": 1036,
         "token_count": 269
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0041",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0042",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -829,7 +853,7 @@
         "character_count": 129,
         "token_count": 33
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0042",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0043",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -848,7 +872,7 @@
         "character_count": 7,
         "token_count": 5
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0043",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0044",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -867,7 +891,7 @@
         "character_count": 1154,
         "token_count": 296
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0044",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0045",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -886,7 +910,7 @@
         "character_count": 419,
         "token_count": 120
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0045",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0046",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -905,7 +929,7 @@
         "character_count": 1467,
         "token_count": 325
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0046",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0047",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -924,11 +948,11 @@
         "character_count": 7,
         "token_count": 5
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0047",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0048",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
-      "text": "Searching for New Diagnostic Capabilities of Hymenoptera Venom Allergy\n\nStudies conducted to determine the protein–peptide profile in biological material obtained from allergic patients and healthy individuals (control group) have shown a relationship between the presence of a condition and the composition of body fluids/tissues. Molecular differences between pathological and normal profiles can be used as biomarkers of disease processes and serve as a tool for correctly diagnosing and treating allergic conditions [57–61]. Proteins whose levels in the examined biological material correlate with the allergic disease have a regulatory function. According to the available literature, potential biomarkers include the hornsin, psoriasin, and calgranulin-B, as well as apolipoproteins, particularly apolipoprotein E9 and apolipoprotein H [57,59,60,62]. Acute phase proteins are the second crucial functional group of structures that are characteristic of allergic diseases. Their concentrations change in response to inflammation. This group includes plasma albumin, transferrin, lactoferrin, fibrinogen (alpha chain), and orosomucoid (ORM-1 and ORM-2) [62–64]. However, very few experimental reports focus on diagnosing Hymenoptera allergy using modern analytical platforms, such as liquid chromatography coupled with mass spectrometry. Our research team has previously proposed a sophisticated methodology for searching for Hymenoptera venom allergy markers, based mainly on the mass spectrometry technique. For depicting alterations in protein–peptide patterns caused by bees’ and wasps’ venom, a highly sensitive and specific nano-liquid chromatography—matrix-assisted laser desorption/ionization time-of-flight mass spectrometry (nanoLC-MALDI-TOF MS) method was utilized [65]. As a result of the study, changes caused by venom administration have been observed in several compounds present in human serum. The proteins that change in allergic patients exposed to venom were coagulation factor XIII chain A, fibrinogen alpha chain, complement C4-A, and inter-alpha-trypsin inhibitor heavy chain H4. All these proteins participate in inflammation following an insect sting. Additionally, in the previous study performed by our team using the MALDI-TOF MS technique, we identified inflammation factors whose expression were altered in human serum under the influence of Hymenoptera venom immunotherapy [66]. The results of the abovementioned research indicate that most of the identified proteins change in serum after occasional stinging by insects and after venom-specific immunotherapy-Figure 5.",
+      "text": "Searching for New Diagnostic Capabilities of Hymenoptera Venom Allergy\n\nStudies conducted to determine the protein–peptide profile in biological material obtained from allergic patients and healthy individuals (control group) have shown a relationship between the presence of a condition and the composition of body fluids/tissues. Molecular differences between pathological and normal profiles can be used as biomarkers of disease processes and serve as a tool for correctly diagnosing and treating allergic conditions [57–61]. Proteins whose levels in the examined biological material correlate with the allergic disease have a regulatory function. According to the available literature, potential biomarkers include the hornsin, psoriasin, and calgranulin-B, as well as apolipoproteins, particularly apolipoprotein E9 and apolipoprotein H [57,59,60,62]. Acute phase proteins are the second crucial functional group of structures that are characteristic of allergic diseases. Their concentrations change in response to inflammation. This group includes plasma albumin, transferrin, lactoferrin, fibrinogen (alpha chain), and orosomucoid (ORM-1 and ORM-2) [62–64]. However, very few experimental reports focus on diagnosing Hymenoptera allergy using modern analytical platforms, such as liquid chromatography coupled with mass spectrometry. Our research team has previously proposed a sophisticated methodology for searching for Hymenoptera venom allergy markers, based mainly on the mass spectrometry technique. For depicting alterations in protein–peptide patterns caused by bees’ and wasps’ venom, a highly sensitive and specific nano-liquid chromatography—matrix-assisted laser desorption/ionization time-of-flight mass spectrometry (nanoLC-MALDI-TOF MS) method was utilized [65]. As a result of the study, changes caused by venom administration have been observed in several compounds present in human serum.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -940,10 +964,33 @@
         "start_sentence_index": 232,
         "end_sentence_index": 247,
         "sentence_count": 15,
-        "character_count": 2604,
-        "token_count": 631
+        "character_count": 1914,
+        "token_count": 468,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0048"
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0048",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0049",
+      "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "The proteins that change in allergic patients exposed to venom were coagulation factor XIII chain A, fibrinogen alpha chain, complement C4-A, and inter-alpha-trypsin inhibitor heavy chain H4. All these proteins participate in inflammation following an insect sting. Additionally, in the previous study performed by our team using the MALDI-TOF MS technique, we identified inflammation factors whose expression were altered in human serum under the influence of Hymenoptera venom immunotherapy [66]. The results of the abovementioned research indicate that most of the identified proteins change in serum after occasional stinging by insects and after venom-specific immunotherapy-Figure 5.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1668,
+        "recent_mean_similarity": 0.5576,
+        "mean_internal_similarity": 0.4879,
+        "start_sentence_index": 232,
+        "end_sentence_index": 247,
+        "sentence_count": 15,
+        "character_count": 689,
+        "token_count": 165,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0048"
+      },
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0050",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -962,7 +1009,7 @@
         "character_count": 59,
         "token_count": 21
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0049",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0051",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -981,7 +1028,7 @@
         "character_count": 86,
         "token_count": 26
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0050",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0052",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1000,7 +1047,7 @@
         "character_count": 9,
         "token_count": 5
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0051",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0053",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1019,7 +1066,7 @@
         "character_count": 1552,
         "token_count": 411
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0052",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0054",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1038,7 +1085,7 @@
         "character_count": 110,
         "token_count": 33
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0053",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0055",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1057,11 +1104,11 @@
         "character_count": 228,
         "token_count": 54
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0054",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0056",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
-      "text": "Consequently, the mediators of inflammation are released to restore homeostasis and neutralize toxins [68,69]. The abovementioned results prove these well-known reports, as several inflammatory features were marked as differentiating between allergy and healthy controls. The findings indicate that as a result of venom exposition, the complement pathway is activated, causing the production of kinin and the symptoms of allergic sensitization. This mechanism is based on various reactions and the involvement of other complement components proteins which differentiate the studied groups, such as fibrinogen and coagulation factors. The inflammation is observed both after spontaneous stings and after controlled administration of small amounts of venom as immunotherapy. Additionally, both sTNFR-1 and sCD30 molecules can be essential in regulating or activating allergic inflammation [70–72]. Moreover, for the search of the Hymenoptera venom allergy biomarkers, the methodology based on two-dimensional gel electrophoresis (2-DE) and LC–Orbitrap-MS was applied [73]. This study identified a cleaved form of haptoglobin as a specific protein marker in patients allergic to bee venom. Haptoglobin is a member of the family of acute-phase plasma proteins. It acts as a plasma detoxifier. This protein may be potentially used for the diagnosis of Hymenoptera allergy. Interestingly, the results suggest that cleaved haptoglobin may be a significant prognostic protein for anaphylaxis. It has been reported that a high incidence of hypersensitivity to bee venom may be associated with the haptoglobin genotype. The molecular changes in serum caused by Hymenoptera venom also affect the metabolic profile. A study performed with liquid chromatography–tandem mass spectrometry revealed almost 300 metabolites that were significantly different among patients stung by wasp versus healthy controls [74]. The investigation of the metabolic profile indicated that changes occurring after wasp venom exposition were associated with sphingolipid, linoleic acid, and thiamine metabolism, as well as with phenylalanine, tyrosine, and tryptophan biosynthesis. These findings may provide a basis for exploring mechanisms of wasp sting sensitization and potential targets for sensitive therapy. The effect of bee venom on the metabolic profile was also confirmed in a study on rats [75]. The research results obtained using nuclear magnetic resonance (NMR) showed that the bioactivities of bee venom are correlated to serum compounds involved in oxidation reduction or inflammatory reactions. The development of modern, high-throughput analytical techniques (proteomics and metabolomics platforms) allow for a detailed analysis of alterations accompanying Hymenoptera venom allergy at the molecular level and gives a broader perspective on the subject. Understanding the inflammatory reaction caused by Hymenoptera venom may help to explain the complete mechanism of bee venom allergy. This knowledge may contribute to developing new, sensitive, and specific diagnostic methods for allergy. The improvement of the diagnostics is essential because, at the present state of knowledge, it is difficult to differentiate between allergies caused by different insect species, e.g., bees and wasps.",
+      "text": "Consequently, the mediators of inflammation are released to restore homeostasis and neutralize toxins [68,69]. The abovementioned results prove these well-known reports, as several inflammatory features were marked as differentiating between allergy and healthy controls. The findings indicate that as a result of venom exposition, the complement pathway is activated, causing the production of kinin and the symptoms of allergic sensitization. This mechanism is based on various reactions and the involvement of other complement components proteins which differentiate the studied groups, such as fibrinogen and coagulation factors. The inflammation is observed both after spontaneous stings and after controlled administration of small amounts of venom as immunotherapy. Additionally, both sTNFR-1 and sCD30 molecules can be essential in regulating or activating allergic inflammation [70–72]. Moreover, for the search of the Hymenoptera venom allergy biomarkers, the methodology based on two-dimensional gel electrophoresis (2-DE) and LC–Orbitrap-MS was applied [73]. This study identified a cleaved form of haptoglobin as a specific protein marker in patients allergic to bee venom. Haptoglobin is a member of the family of acute-phase plasma proteins. It acts as a plasma detoxifier. This protein may be potentially used for the diagnosis of Hymenoptera allergy. Interestingly, the results suggest that cleaved haptoglobin may be a significant prognostic protein for anaphylaxis. It has been reported that a high incidence of hypersensitivity to bee venom may be associated with the haptoglobin genotype. The molecular changes in serum caused by Hymenoptera venom also affect the metabolic profile. A study performed with liquid chromatography–tandem mass spectrometry revealed almost 300 metabolites that were significantly different among patients stung by wasp versus healthy controls [74].",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -1073,10 +1120,33 @@
         "start_sentence_index": 262,
         "end_sentence_index": 285,
         "sentence_count": 23,
-        "character_count": 3277,
-        "token_count": 765
+        "character_count": 1898,
+        "token_count": 455,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0055"
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0055",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0057",
+      "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "The investigation of the metabolic profile indicated that changes occurring after wasp venom exposition were associated with sphingolipid, linoleic acid, and thiamine metabolism, as well as with phenylalanine, tyrosine, and tryptophan biosynthesis. These findings may provide a basis for exploring mechanisms of wasp sting sensitization and potential targets for sensitive therapy. The effect of bee venom on the metabolic profile was also confirmed in a study on rats [75]. The research results obtained using nuclear magnetic resonance (NMR) showed that the bioactivities of bee venom are correlated to serum compounds involved in oxidation reduction or inflammatory reactions. The development of modern, high-throughput analytical techniques (proteomics and metabolomics platforms) allow for a detailed analysis of alterations accompanying Hymenoptera venom allergy at the molecular level and gives a broader perspective on the subject. Understanding the inflammatory reaction caused by Hymenoptera venom may help to explain the complete mechanism of bee venom allergy. This knowledge may contribute to developing new, sensitive, and specific diagnostic methods for allergy. The improvement of the diagnostics is essential because, at the present state of knowledge, it is difficult to differentiate between allergies caused by different insect species, e.g., bees and wasps.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0321,
+        "recent_mean_similarity": 0.6472,
+        "mean_internal_similarity": 0.4909,
+        "start_sentence_index": 262,
+        "end_sentence_index": 285,
+        "sentence_count": 23,
+        "character_count": 1378,
+        "token_count": 312,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0055"
+      },
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0058",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1095,7 +1165,7 @@
         "character_count": 7,
         "token_count": 5
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0056",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0059",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1114,7 +1184,7 @@
         "character_count": 927,
         "token_count": 241
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0057",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0060",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1133,7 +1203,7 @@
         "character_count": 64,
         "token_count": 18
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0058",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0061",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1152,7 +1222,7 @@
         "character_count": 1296,
         "token_count": 376
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0059",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0062",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1171,7 +1241,7 @@
         "character_count": 1058,
         "token_count": 316
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0060",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0063",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1190,7 +1260,7 @@
         "character_count": 282,
         "token_count": 76
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0061",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0064",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1209,7 +1279,7 @@
         "character_count": 9,
         "token_count": 5
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0062",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0065",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1228,7 +1298,7 @@
         "character_count": 350,
         "token_count": 100
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0063",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0066",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1247,7 +1317,7 @@
         "character_count": 19,
         "token_count": 8
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0064",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0067",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1266,7 +1336,7 @@
         "character_count": 667,
         "token_count": 170
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0065",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0068",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1285,7 +1355,7 @@
         "character_count": 19,
         "token_count": 9
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0066",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0069",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1304,7 +1374,7 @@
         "character_count": 235,
         "token_count": 54
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0067",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0070",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1323,7 +1393,7 @@
         "character_count": 401,
         "token_count": 115
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0068",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0071",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1342,7 +1412,7 @@
         "character_count": 14,
         "token_count": 7
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0069",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0072",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1361,7 +1431,7 @@
         "character_count": 370,
         "token_count": 104
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0070",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0073",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1380,7 +1450,7 @@
         "character_count": 73,
         "token_count": 22
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0071",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0074",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1399,7 +1469,7 @@
         "character_count": 413,
         "token_count": 102
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0072",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0075",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1418,7 +1488,7 @@
         "character_count": 465,
         "token_count": 120
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0073",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0076",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1437,7 +1507,7 @@
         "character_count": 503,
         "token_count": 121
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0074",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0077",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1456,7 +1526,7 @@
         "character_count": 7,
         "token_count": 5
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0075",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0078",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1475,7 +1545,7 @@
         "character_count": 1183,
         "token_count": 263
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0076",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0079",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1494,7 +1564,7 @@
         "character_count": 287,
         "token_count": 115
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0077",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0080",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1513,7 +1583,7 @@
         "character_count": 78,
         "token_count": 27
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0078",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0081",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1532,7 +1602,7 @@
         "character_count": 671,
         "token_count": 208
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0079",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0082",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1551,7 +1621,7 @@
         "character_count": 843,
         "token_count": 337
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0080",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0083",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1570,7 +1640,7 @@
         "character_count": 669,
         "token_count": 242
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0081",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0084",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1589,7 +1659,7 @@
         "character_count": 226,
         "token_count": 97
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0082",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0085",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1608,7 +1678,7 @@
         "character_count": 920,
         "token_count": 345
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0083",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0086",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1627,7 +1697,7 @@
         "character_count": 78,
         "token_count": 48
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0084",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0087",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1646,7 +1716,7 @@
         "character_count": 89,
         "token_count": 29
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0085",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0088",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1665,7 +1735,7 @@
         "character_count": 295,
         "token_count": 117
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0086",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0089",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1684,7 +1754,7 @@
         "character_count": 82,
         "token_count": 35
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0087",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0090",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1703,7 +1773,7 @@
         "character_count": 921,
         "token_count": 358
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0088",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0091",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1722,7 +1792,7 @@
         "character_count": 71,
         "token_count": 20
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0089",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0092",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1741,7 +1811,7 @@
         "character_count": 386,
         "token_count": 159
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0090",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0093",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1760,7 +1830,7 @@
         "character_count": 319,
         "token_count": 140
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0091",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0094",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1779,7 +1849,7 @@
         "character_count": 61,
         "token_count": 17
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0092",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0095",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1798,7 +1868,7 @@
         "character_count": 58,
         "token_count": 29
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0093",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0096",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1817,7 +1887,7 @@
         "character_count": 250,
         "token_count": 112
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0094",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0097",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1836,7 +1906,7 @@
         "character_count": 111,
         "token_count": 36
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0095",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0098",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1855,7 +1925,7 @@
         "character_count": 322,
         "token_count": 130
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0096",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0099",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1874,11 +1944,11 @@
         "character_count": 282,
         "token_count": 120
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0097",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0100",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
-      "text": "2014, 133, 1635–1643.e1. [CrossRef]\n- 28. Mosbech, H.; Tang, L.; Linneberg, A. Insect Sting Reactions and Specific IgE to Venom and Major Allergens in a General Population. Int. Arch. Allergy Immunol. 2016, 170, 194–200. [CrossRef]\n- 29. Vachová, M.; Panzner, P.; Malkusová, I.; Hanzlíková, J.; Vlas, T. Utility of Laboratory Testing for the Diagnosis of Hymenoptera Venom Allergy. Allergy Asthma Proc. 2016, 37, 248–255. [CrossRef]\n- 30. Pfaar, O.; Bachert, C.; Bufe, A.; Buhl, R.; Ebner, C.; Eng, P.; Friedrichs, F.; Fuchs, T.; Hamelmann, E.; Hartwig-Bade, D.; et al. Guideline on Allergen-Specific Immunotherapy in IgE-Mediated Allergic Diseases: S2k Guideline of the German Society for Allergology and Clinical Immunology (DGAKI), the Society for Pediatric Allergy and Environmental Medicine (GPA), the Medical Association of German Allergologists (AeDA), the Austrian Society for Allergy and Immunology (ÖGAI), the Swiss Society for Allergy and Immunology (SGAI), the German Society of Dermatology (DDG), the German Society of Oto-Rhino-Laryngology, Head and Neck. Allergo J. Int. 2014, 23, 28–67. [CrossRef]\n- 31. Bilò, B.M. ; Bonifazi, F. Hymenoptera Venom Immunotherapy. Immunotherapy 2011, 3, 229–246. [CrossRef] [PubMed]\n\n\n- 32. Vos, B.; Köhler, J.; Müller, S.; Stretz, E.; Ruëff, F.; Jakob, T. Spiking Venom with RVes v 5 Improves Sensitivity of IgE Detection in Patients with Allergy to Vespula Venom. J. Allergy Clin. Immunol.",
+      "text": "2014, 133, 1635–1643.e1. [CrossRef]\n- 28. Mosbech, H.; Tang, L.; Linneberg, A. Insect Sting Reactions and Specific IgE to Venom and Major Allergens in a General Population. Int. Arch. Allergy Immunol. 2016, 170, 194–200. [CrossRef]\n- 29. Vachová, M.; Panzner, P.; Malkusová, I.; Hanzlíková, J.; Vlas, T. Utility of Laboratory Testing for the Diagnosis of Hymenoptera Venom Allergy. Allergy Asthma Proc. 2016, 37, 248–255. [CrossRef]\n- 30. Pfaar, O.; Bachert, C.; Bufe, A.; Buhl, R.; Ebner, C.; Eng, P.; Friedrichs, F.; Fuchs, T.; Hamelmann, E.; Hartwig-Bade, D.; et al. Guideline on Allergen-Specific Immunotherapy in IgE-Mediated Allergic Diseases: S2k Guideline of the German Society for Allergology and Clinical Immunology (DGAKI), the Society for Pediatric Allergy and Environmental Medicine (GPA), the Medical Association of German Allergologists (AeDA), the Austrian Society for Allergy and Immunology (ÖGAI), the Swiss Society for Allergy and Immunology (SGAI), the German Society of Dermatology (DDG), the German Society of Oto-Rhino-Laryngology, Head and Neck. Allergo J. Int. 2014, 23, 28–67. [CrossRef]\n- 31. Bilò, B.M. ; Bonifazi, F. Hymenoptera Venom Immunotherapy. Immunotherapy 2011, 3, 229–246. [CrossRef] [PubMed]\n\n\n- 32. Vos, B.; Köhler, J.; Müller, S.; Stretz, E.; Ruëff, F.; Jakob, T. Spiking Venom with RVes v 5 Improves Sensitivity of IgE Detection in Patients with Allergy to Vespula Venom. J. Allergy Clin.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -1890,10 +1960,33 @@
         "start_sentence_index": 560,
         "end_sentence_index": 584,
         "sentence_count": 24,
-        "character_count": 1439,
-        "token_count": 515
+        "character_count": 1430,
+        "token_count": 512,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0098"
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0098",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0101",
+      "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "Immunol.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0368,
+        "recent_mean_similarity": 0.397,
+        "mean_internal_similarity": 0.1993,
+        "start_sentence_index": 560,
+        "end_sentence_index": 584,
+        "sentence_count": 24,
+        "character_count": 8,
+        "token_count": 5,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0098"
+      },
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0102",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1912,7 +2005,7 @@
         "character_count": 50,
         "token_count": 26
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0099",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0103",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1931,7 +2024,7 @@
         "character_count": 281,
         "token_count": 114
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0100",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0104",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1950,7 +2043,7 @@
         "character_count": 218,
         "token_count": 91
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0101",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0105",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1969,7 +2062,7 @@
         "character_count": 19,
         "token_count": 10
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0102",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0106",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -1988,7 +2081,7 @@
         "character_count": 534,
         "token_count": 228
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0103",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0107",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2007,7 +2100,7 @@
         "character_count": 51,
         "token_count": 18
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0104",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0108",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2026,7 +2119,7 @@
         "character_count": 375,
         "token_count": 139
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0105",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0109",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2045,7 +2138,7 @@
         "character_count": 57,
         "token_count": 31
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0106",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0110",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2064,7 +2157,7 @@
         "character_count": 336,
         "token_count": 124
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0107",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0111",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2083,7 +2176,7 @@
         "character_count": 108,
         "token_count": 44
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0108",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0112",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2102,7 +2195,7 @@
         "character_count": 248,
         "token_count": 98
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0109",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0113",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2121,7 +2214,7 @@
         "character_count": 234,
         "token_count": 91
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0110",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0114",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2140,7 +2233,7 @@
         "character_count": 21,
         "token_count": 10
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0111",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0115",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2159,11 +2252,11 @@
         "character_count": 711,
         "token_count": 287
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0112",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0116",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
-      "text": "2012, 129, 1406–1408. [CrossRef]\n- 46. Šelb, J.; Bidovec Stojkovi´c, U.; Bajrovi´c, N.; Kopaˇc, P.; Eržen, R.; Zidarn, M.; Košnik, M.; Korošec, P. Limited Ability of Recombinant Hymenoptera Venom Allergens to Resolve IgE Double Sensitization. J. Allergy Clin. Immunol. Pract. 2018, 6, 2118–2120. [CrossRef] [PubMed]\n- 47. Monsalve, R.I. ; Vega, A.; Marqués, L.; Miranda, A.; Fernández, J.; Soriano, V.; Cruz, S.; Domínguez-Noche, C.; Sánchez-Morillas, L.; Armisen-Gil, M.; et al. Component-Resolved Diagnosis of Vespid Venom-Allergic Individuals: Phospholipases and Antigen 5s Are Necessary to Identify Vespula or Polistes Sensitization. Allergy 2012, 67, 528–536. [CrossRef]\n- 48. Quercia, O.; Cova, V.; Martini, M.; Cortellini, G.; Murzilli, F.; Bignardi, D.; Cilia, M.; Scarpa, A.; Bilò, M.B. CAP-Inhibition, Molecular Diagnostics, and Total IgE in the Evaluation of Polistes and Vespula Double Sensitization. Int. Arch. Allergy Immunol. 2018, 177, 365–369. [CrossRef]\n- 49. Gattinger, P.; Lupinek, C.; Kalogiros, L.; Silar, M.; Zidarn, M.; Korosec, P.; Koessler, C.; Novak, N.; Valenta, R.; Mittermann, I. The Culprit Insect but Not Severity of Allergic Reactions to Bee and Wasp Venom Can Be Determined by Molecular Diagnosis. PLoS ONE 2018, 13, e0199250. [CrossRef]\n- 50. Blank, S.; Etzold, S.; Darsow, U.; Schiener, M.; Eberlein, B.; Russkamp, D.; Wolf, S.; Graessel, A.; Biedermann, T.; Ollert, M.; et al. Component-Resolved Evaluation of the Content of Major Allergens in Therapeutic Extracts for Specific Immunotherapy of Honeybee Venom Allergy. Hum. Vaccines Immunother. 2017, 13, 2482–2489. [CrossRef]\n- 51. Korošec, P.; Šilar, M.; Eržen, R.; Celesnik,ˇ N.; Bajrovic´, N.; Zidarn, M.; Košnik, M. Clinical Routine Utility of Basophil Activation Testing for Diagnosis of Hymenoptera-Allergic Patients with Emphasis on Individuals with Negative Venom-Specific IgE Antibodies. Int. Arch. Allergy Immunol. 2013, 161, 363–368. [CrossRef] [PubMed]\n- 52. Balzer, L.; Pennino, D.; Blank, S.; Seismann, H.; Darsow, U.; Schnedler, M.; McIntyre, M.; Ollert, M.W. ; Durham, S.R. ; Spillner, E.; et al. Basophil Activation Test Using Recombinant Allergens: Highly Specific Diagnostic Method Complementing Routine Tests in Wasp Venom Allergy. PLoS ONE 2014, 9, e108619. [CrossRef] [PubMed]\n- 53. Michel, J.; Brockow, K.; Darsow, U.; Ring, J.; Schmidt-Weber, C.B. ; Grunwald, T.; Blank, S.; Ollert, M. Added Sensitivity of Component-Resolved Diagnosis in Hymenoptera Venom-Allergic Patients with Elevated Serum Tryptase and/or Mastocytosis. Allergy 2016, 71, 651–660. [CrossRef] [PubMed]\n- 54. Bonadonna, P.; Bonifacio, M.; Lombardo, C.; Zanotti, R. Hymenoptera Allergy and Mast Cell Activation Syndromes. Curr. Allergy Asthma Rep. 2016, 16, 5. [CrossRef] [PubMed]\n\n\n- 55. van de Veen, W.; Stanic, B.; Yaman, G.; Wawrzyniak, M.; Söllner, S.; Akdis, D.G. ; Rückert, B.; Akdis, C.A. ; Akdis, M. IgG4 Production Is Confined to Human IL-10-Producing Regulatory B Cells That Suppress Antigen-Specific Immune Responses. J. Allergy Clin. Immunol.",
+      "text": "2012, 129, 1406–1408. [CrossRef]\n- 46. Šelb, J.; Bidovec Stojkovi´c, U.; Bajrovi´c, N.; Kopaˇc, P.; Eržen, R.; Zidarn, M.; Košnik, M.; Korošec, P. Limited Ability of Recombinant Hymenoptera Venom Allergens to Resolve IgE Double Sensitization. J. Allergy Clin. Immunol. Pract. 2018, 6, 2118–2120. [CrossRef] [PubMed]\n- 47. Monsalve, R.I. ; Vega, A.; Marqués, L.; Miranda, A.; Fernández, J.; Soriano, V.; Cruz, S.; Domínguez-Noche, C.; Sánchez-Morillas, L.; Armisen-Gil, M.; et al. Component-Resolved Diagnosis of Vespid Venom-Allergic Individuals: Phospholipases and Antigen 5s Are Necessary to Identify Vespula or Polistes Sensitization. Allergy 2012, 67, 528–536. [CrossRef]\n- 48. Quercia, O.; Cova, V.; Martini, M.; Cortellini, G.; Murzilli, F.; Bignardi, D.; Cilia, M.; Scarpa, A.; Bilò, M.B. CAP-Inhibition, Molecular Diagnostics, and Total IgE in the Evaluation of Polistes and Vespula Double Sensitization. Int. Arch. Allergy Immunol. 2018, 177, 365–369. [CrossRef]\n- 49. Gattinger, P.; Lupinek, C.; Kalogiros, L.; Silar, M.; Zidarn, M.; Korosec, P.; Koessler, C.; Novak, N.; Valenta, R.; Mittermann, I. The Culprit Insect but Not Severity of Allergic Reactions to Bee and Wasp Venom Can Be Determined by Molecular Diagnosis. PLoS ONE 2018, 13, e0199250.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -2175,10 +2268,54 @@
         "start_sentence_index": 662,
         "end_sentence_index": 717,
         "sentence_count": 55,
-        "character_count": 3035,
-        "token_count": 1208
+        "character_count": 1260,
+        "token_count": 509,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0113"
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0113",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0117",
+      "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "[CrossRef]\n- 50. Blank, S.; Etzold, S.; Darsow, U.; Schiener, M.; Eberlein, B.; Russkamp, D.; Wolf, S.; Graessel, A.; Biedermann, T.; Ollert, M.; et al. Component-Resolved Evaluation of the Content of Major Allergens in Therapeutic Extracts for Specific Immunotherapy of Honeybee Venom Allergy. Hum. Vaccines Immunother. 2017, 13, 2482–2489. [CrossRef]\n- 51. Korošec, P.; Šilar, M.; Eržen, R.; Celesnik,ˇ N.; Bajrovic´, N.; Zidarn, M.; Košnik, M. Clinical Routine Utility of Basophil Activation Testing for Diagnosis of Hymenoptera-Allergic Patients with Emphasis on Individuals with Negative Venom-Specific IgE Antibodies. Int. Arch. Allergy Immunol. 2013, 161, 363–368. [CrossRef] [PubMed]\n- 52. Balzer, L.; Pennino, D.; Blank, S.; Seismann, H.; Darsow, U.; Schnedler, M.; McIntyre, M.; Ollert, M.W. ; Durham, S.R. ; Spillner, E.; et al. Basophil Activation Test Using Recombinant Allergens: Highly Specific Diagnostic Method Complementing Routine Tests in Wasp Venom Allergy. PLoS ONE 2014, 9, e108619. [CrossRef] [PubMed]\n- 53. Michel, J.; Brockow, K.; Darsow, U.; Ring, J.; Schmidt-Weber, C.B. ; Grunwald, T.; Blank, S.; Ollert, M. Added Sensitivity of Component-Resolved Diagnosis in Hymenoptera Venom-Allergic Patients with Elevated Serum Tryptase and/or Mastocytosis.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.023,
+        "recent_mean_similarity": 0.2569,
+        "mean_internal_similarity": 0.1489,
+        "start_sentence_index": 662,
+        "end_sentence_index": 717,
+        "sentence_count": 55,
+        "character_count": 1275,
+        "token_count": 503,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0113"
+      },
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0118",
+      "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "Allergy 2016, 71, 651–660. [CrossRef] [PubMed]\n- 54. Bonadonna, P.; Bonifacio, M.; Lombardo, C.; Zanotti, R. Hymenoptera Allergy and Mast Cell Activation Syndromes. Curr. Allergy Asthma Rep. 2016, 16, 5. [CrossRef] [PubMed]\n\n\n- 55. van de Veen, W.; Stanic, B.; Yaman, G.; Wawrzyniak, M.; Söllner, S.; Akdis, D.G. ; Rückert, B.; Akdis, C.A. ; Akdis, M. IgG4 Production Is Confined to Human IL-10-Producing Regulatory B Cells That Suppress Antigen-Specific Immune Responses. J. Allergy Clin. Immunol.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.023,
+        "recent_mean_similarity": 0.2569,
+        "mean_internal_similarity": 0.1489,
+        "start_sentence_index": 662,
+        "end_sentence_index": 717,
+        "sentence_count": 55,
+        "character_count": 498,
+        "token_count": 200,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0113"
+      },
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0119",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2197,7 +2334,7 @@
         "character_count": 197,
         "token_count": 90
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0114",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0120",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2216,7 +2353,7 @@
         "character_count": 632,
         "token_count": 280
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0115",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0121",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2235,7 +2372,7 @@
         "character_count": 110,
         "token_count": 35
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0116",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0122",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2254,7 +2391,7 @@
         "character_count": 237,
         "token_count": 108
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0117",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0123",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2273,7 +2410,7 @@
         "character_count": 137,
         "token_count": 66
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0118",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0124",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2292,7 +2429,7 @@
         "character_count": 436,
         "token_count": 179
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0119",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0125",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2311,7 +2448,7 @@
         "character_count": 71,
         "token_count": 23
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0120",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0126",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2330,11 +2467,11 @@
         "character_count": 138,
         "token_count": 67
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0121",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0127",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
-      "text": "; Bortolotti, M.; Garozzo, D. Identification of Human Tear Fluid Biomarkers in Vernal Keratoconjunctivitis Using ITRAQ Quantitative Proteomics. Allergy 2014, 69, 254–260. [CrossRef] [PubMed]\n- 65. Matuszewska, E.; Matysiak, J.; Br¸eborowicz, A.; Olejniczak, K.; Kycler, Z.; Kokot, Z.J. ; Matysiak, J. Proteomic Features Characterization of Hymenoptera Venom Allergy. Allergy Asthma Clin. Immunol. 2019, 15, 77. [CrossRef]\n- 66. Matysiak, J.; Matuszewska, E.; Kowalski, M.L. ; Kosin´ski, S.W. ; Smorawska-Sabanty, E.; Matysiak, J. Association between Venom Immunotherapy and Changes in Serum Protein—Peptide Patterns. Vaccines 2021, 9, 249. [CrossRef]\n- 67. Packi, K.; Matysiak, J.; Matuszewska, E.; Br˛eborowicz, A.; Kycler, Z.; Matysiak, J. New Biomarkers of Hymenoptera Venom Allergy in a Group of Inflammation Factors. Int. J. Environ. Res. Public Health 2021, 18, 4011. [CrossRef]\n- 68. Araki, S.; Yamamoto, Y.; Saito, R.; Kawakita, A.; Eguchi, M.; Goto, M.; Kubo, K.; Kawagoe, R.; Kawada, Y.; Kusuhara, K. Plasma but Not Serum Brain-Derived Neurotrophic Factor Concentration Is Decreased by Oral Glucose Tolerance Test-Induced Hyperglycemia in Children. J. Pediatric Endocrinol. Metab. 2017, 30, 525–530. [CrossRef]\n- 69. Galli, S.J. ; Tsai, M. IgE and Mast Cells in Allergic Disease. Nat. Med. 2012, 18, 693–704. [CrossRef]\n- 70. Ahmad, S.; Azid, N.A. ; Boer, J.C. ; Lim, J.; Chen, X.; Plebanski, M.; Mohamud, R. The Key Role of TNF-TNFR2 Interactions in the Modulation of Allergic Inflammation: A Review.",
+      "text": "; Bortolotti, M.; Garozzo, D. Identification of Human Tear Fluid Biomarkers in Vernal Keratoconjunctivitis Using ITRAQ Quantitative Proteomics. Allergy 2014, 69, 254–260. [CrossRef] [PubMed]\n- 65. Matuszewska, E.; Matysiak, J.; Br¸eborowicz, A.; Olejniczak, K.; Kycler, Z.; Kokot, Z.J. ; Matysiak, J. Proteomic Features Characterization of Hymenoptera Venom Allergy. Allergy Asthma Clin. Immunol. 2019, 15, 77. [CrossRef]\n- 66. Matysiak, J.; Matuszewska, E.; Kowalski, M.L. ; Kosin´ski, S.W. ; Smorawska-Sabanty, E.; Matysiak, J. Association between Venom Immunotherapy and Changes in Serum Protein—Peptide Patterns. Vaccines 2021, 9, 249. [CrossRef]\n- 67. Packi, K.; Matysiak, J.; Matuszewska, E.; Br˛eborowicz, A.; Kycler, Z.; Matysiak, J. New Biomarkers of Hymenoptera Venom Allergy in a Group of Inflammation Factors. Int. J. Environ. Res. Public Health 2021, 18, 4011. [CrossRef]\n- 68. Araki, S.; Yamamoto, Y.; Saito, R.; Kawakita, A.; Eguchi, M.; Goto, M.; Kubo, K.; Kawagoe, R.; Kawada, Y.; Kusuhara, K. Plasma but Not Serum Brain-Derived Neurotrophic Factor Concentration Is Decreased by Oral Glucose Tolerance Test-Induced Hyperglycemia in Children. J. Pediatric Endocrinol. Metab. 2017, 30, 525–530. [CrossRef]\n- 69. Galli, S.J. ; Tsai, M.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -2346,10 +2483,33 @@
         "start_sentence_index": 778,
         "end_sentence_index": 811,
         "sentence_count": 33,
-        "character_count": 1511,
-        "token_count": 609
+        "character_count": 1249,
+        "token_count": 504,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0122"
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0122",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0128",
+      "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "IgE and Mast Cells in Allergic Disease. Nat. Med. 2012, 18, 693–704. [CrossRef]\n- 70. Ahmad, S.; Azid, N.A. ; Boer, J.C. ; Lim, J.; Chen, X.; Plebanski, M.; Mohamud, R. The Key Role of TNF-TNFR2 Interactions in the Modulation of Allergic Inflammation: A Review.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.1676,
+        "recent_mean_similarity": 0.1521,
+        "mean_internal_similarity": 0.1737,
+        "start_sentence_index": 778,
+        "end_sentence_index": 811,
+        "sentence_count": 33,
+        "character_count": 261,
+        "token_count": 107,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0122"
+      },
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0129",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2368,7 +2528,7 @@
         "character_count": 468,
         "token_count": 188
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0123",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0130",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2387,11 +2547,11 @@
         "character_count": 87,
         "token_count": 27
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0124",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0131",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
-      "text": "J. Acupunct. Meridian Stud. 2021, 14, 102–109. [CrossRef] [PubMed]\n- 74. Yang, X.; Chai, L.; Liu, C.; Liu, M.; Han, L.; Li, C.; Guo, H.; Sun, Y.; Rao, X.; Xiao, M.; et al. Serum Metabolomics Analysis in Wasp Sting Patients. Biomed. Res. Int. 2018, 2018, 5631372. [CrossRef] [PubMed]\n- 75. Zhao, Y.; Zhang, J.; Chen, Y.; Li, Z.; Nie, H.; Peng, W.; Su, S. Altered Serum Metabolite Profiling and Relevant Pathway Analysis in Rats Stimulated by Honeybee Venom: New Insight into Allergy to Honeybee Venom. J. Agric. Food Chem. 2018, 66, 871–880. [CrossRef]\n- 76. Eržen, R.; Korošec, P.; Šilar, M.; Mušicˇ, E.; Košnik, M. Carbohydrate Epitopes as a Cause of Cross-Reactivity in Patients Allergic to Hymenoptera Venom. Wien. Klin. Wochenschr. 2009, 121, 349–352. [CrossRef]\n- 77. Bousquet, J.; Müller, U.R. ; Dreborg, S.; Jarisch, R.; Malling, H.-J.; Mosbech, H.; Urbanek, R.; Youlten, L. Immunotherapy with Hymenoptera Venoms. Position Paper of the Working Group on Immunotherapy of the European Academy of Allergy and Clinical Immunology. Allergy 1987, 42, 401–413. [CrossRef]\n- 78. Straumann, F.; Bucher, C.; Wüthrich, B. Double Sensitization to Honeybee and Wasp Venom: Immunotherapy with One or with Both Venoms? Value of FEIA Inhibition for the Identification of the Cross-Reacting Ige Antibodies in Double-Sensitized Patients to Honeybee and Wasp Venom.",
+      "text": "J. Acupunct. Meridian Stud. 2021, 14, 102–109. [CrossRef] [PubMed]\n- 74. Yang, X.; Chai, L.; Liu, C.; Liu, M.; Han, L.; Li, C.; Guo, H.; Sun, Y.; Rao, X.; Xiao, M.; et al. Serum Metabolomics Analysis in Wasp Sting Patients. Biomed. Res. Int. 2018, 2018, 5631372. [CrossRef] [PubMed]\n- 75. Zhao, Y.; Zhang, J.; Chen, Y.; Li, Z.; Nie, H.; Peng, W.; Su, S. Altered Serum Metabolite Profiling and Relevant Pathway Analysis in Rats Stimulated by Honeybee Venom: New Insight into Allergy to Honeybee Venom. J. Agric. Food Chem. 2018, 66, 871–880. [CrossRef]\n- 76. Eržen, R.; Korošec, P.; Šilar, M.; Mušicˇ, E.; Košnik, M. Carbohydrate Epitopes as a Cause of Cross-Reactivity in Patients Allergic to Hymenoptera Venom. Wien. Klin. Wochenschr. 2009, 121, 349–352. [CrossRef]\n- 77. Bousquet, J.; Müller, U.R. ; Dreborg, S.; Jarisch, R.; Malling, H.-J.; Mosbech, H.; Urbanek, R.; Youlten, L. Immunotherapy with Hymenoptera Venoms. Position Paper of the Working Group on Immunotherapy of the European Academy of Allergy and Clinical Immunology. Allergy 1987, 42, 401–413. [CrossRef]\n- 78. Straumann, F.; Bucher, C.; Wüthrich, B. Double Sensitization to Honeybee and Wasp Venom: Immunotherapy with One or with Both Venoms?",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -2403,10 +2563,33 @@
         "start_sentence_index": 832,
         "end_sentence_index": 860,
         "sentence_count": 28,
-        "character_count": 1353,
-        "token_count": 524
+        "character_count": 1210,
+        "token_count": 482,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0125"
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0125",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0132",
+      "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "Value of FEIA Inhibition for the Identification of the Cross-Reacting Ige Antibodies in Double-Sensitized Patients to Honeybee and Wasp Venom.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0852,
+        "recent_mean_similarity": 0.4234,
+        "mean_internal_similarity": 0.2055,
+        "start_sentence_index": 832,
+        "end_sentence_index": 860,
+        "sentence_count": 28,
+        "character_count": 142,
+        "token_count": 44,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0125"
+      },
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0133",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2425,7 +2608,7 @@
         "character_count": 10,
         "token_count": 7
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0126",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0134",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2444,7 +2627,7 @@
         "character_count": 16,
         "token_count": 7
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0127",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0135",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2463,7 +2646,7 @@
         "character_count": 204,
         "token_count": 84
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0128",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0136",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2482,7 +2665,7 @@
         "character_count": 147,
         "token_count": 60
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0129",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0137",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2501,7 +2684,7 @@
         "character_count": 70,
         "token_count": 31
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0130",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0138",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2520,7 +2703,7 @@
         "character_count": 57,
         "token_count": 21
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0131",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0139",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2539,7 +2722,7 @@
         "character_count": 317,
         "token_count": 114
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0132",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0140",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2558,7 +2741,7 @@
         "character_count": 362,
         "token_count": 154
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0133",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0141",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2577,11 +2760,11 @@
         "character_count": 126,
         "token_count": 40
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0134",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0142",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
-      "text": "1997, 100, 327–334. [CrossRef]\n- 85. Mari, A.; Ooievaar-De Heer, P.; Scala, E.; Giani, M.; Pirrotta, L.; Zuidmeer, L.; Bethell, D.; van Ree, R. Evaluation by Double-Blind Placebo-Controlled Oral Challenge of the Clinical Relevance of IgE Antibodies against Plant Glycans. Allergy 2008, 63, 891–896. [CrossRef]\n- 86. Mertens, M.; Amler, S.; Moerschbacher, B.M. ; Brehler, R. Cross-Reactive Carbohydrate Determinants Strongly Affect the Results of the Basophil Activation Test in Hymenoptera-Venom Allergy. Clin. Exp. Allergy 2010, 40, 1333–1345. [CrossRef]\n- 87. Fötisch, K.; Altmann, F.; Haustein, D.; Vieths, S. Involvement of Carbohydrate Epitopes in the IgE Response of Celery-Allergic Patients. Int. Arch. Allergy Immunol. 1999, 120, 30–42. [CrossRef] [PubMed]\n- 88. Vieths, S.; Lüttkopf, D.; Reindl, J.; Anliker, M.D. ; Wüthrich, B.; Ballmer-Weber, B.K. Allergens in Celery and Zucchini. Allergy 2002, 57 (Suppl. S72), 100–105. [CrossRef]\n- 89. Matricardi, P.M. ; Kleine-Tebbe, J.; Hoffmann, H.J. ; Valenta, R.; Hilger, C.; Hofmaier, S.; Aalberse, R.C. ; Agache, I.; Asero, R.; Ballmer-Weber, B.; et al. EAACI Molecular Allergology User’s Guide. Pediatr Allergy Immunol 2016, 27 (Suppl. S23), 1–250. [CrossRef]\n- 90. Mari, A. IgE to Cross-Reactive Carbohydrate Determinants: Analysis of the Distribution and Appraisal of the in Vivo and in Vitro Reactivity.",
+      "text": "1997, 100, 327–334. [CrossRef]\n- 85. Mari, A.; Ooievaar-De Heer, P.; Scala, E.; Giani, M.; Pirrotta, L.; Zuidmeer, L.; Bethell, D.; van Ree, R. Evaluation by Double-Blind Placebo-Controlled Oral Challenge of the Clinical Relevance of IgE Antibodies against Plant Glycans. Allergy 2008, 63, 891–896. [CrossRef]\n- 86. Mertens, M.; Amler, S.; Moerschbacher, B.M. ; Brehler, R. Cross-Reactive Carbohydrate Determinants Strongly Affect the Results of the Basophil Activation Test in Hymenoptera-Venom Allergy. Clin. Exp. Allergy 2010, 40, 1333–1345. [CrossRef]\n- 87. Fötisch, K.; Altmann, F.; Haustein, D.; Vieths, S. Involvement of Carbohydrate Epitopes in the IgE Response of Celery-Allergic Patients. Int. Arch. Allergy Immunol. 1999, 120, 30–42. [CrossRef] [PubMed]\n- 88. Vieths, S.; Lüttkopf, D.; Reindl, J.; Anliker, M.D. ; Wüthrich, B.; Ballmer-Weber, B.K. Allergens in Celery and Zucchini. Allergy 2002, 57 (Suppl. S72), 100–105. [CrossRef]\n- 89. Matricardi, P.M. ; Kleine-Tebbe, J.; Hoffmann, H.J. ; Valenta, R.; Hilger, C.; Hofmaier, S.; Aalberse, R.C. ; Agache, I.; Asero, R.; Ballmer-Weber, B.; et al. EAACI Molecular Allergology User’s Guide. Pediatr Allergy Immunol 2016, 27 (Suppl. S23), 1–250. [CrossRef]\n- 90. Mari, A.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -2593,10 +2776,33 @@
         "start_sentence_index": 905,
         "end_sentence_index": 937,
         "sentence_count": 32,
-        "character_count": 1362,
-        "token_count": 542
+        "character_count": 1230,
+        "token_count": 506,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0135"
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0135",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0143",
+      "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
+    },
+    {
+      "text": "IgE to Cross-Reactive Carbohydrate Determinants: Analysis of the Distribution and Appraisal of the in Vivo and in Vitro Reactivity.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0029,
+        "recent_mean_similarity": 0.2231,
+        "mean_internal_similarity": 0.2005,
+        "start_sentence_index": 905,
+        "end_sentence_index": 937,
+        "sentence_count": 32,
+        "character_count": 131,
+        "token_count": 38,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0135"
+      },
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0144",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     },
     {
@@ -2615,7 +2821,7 @@
         "character_count": 58,
         "token_count": 28
       },
-      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0136",
+      "chunk_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers_chunk_0145",
       "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers"
     }
   ]

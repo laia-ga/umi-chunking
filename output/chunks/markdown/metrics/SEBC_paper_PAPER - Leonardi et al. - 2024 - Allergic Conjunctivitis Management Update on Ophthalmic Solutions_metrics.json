@@ -4,7 +4,8 @@
   "abbreviation": "SEBC",
   "params": {
     "breakpoint_threshold_amount": 70.0,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "status": "completed",
   "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
@@ -12,20 +13,20 @@
   "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
   "source_path": "paper\\PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
   "tokenizer_model": "BAAI/bge-m3",
-  "number_of_chunks": 220,
+  "number_of_chunks": 242,
   "empty_chunks": 0,
   "tokens_min": 4,
   "tokens_p25": 5.0,
-  "tokens_median": 15.0,
-  "tokens_mean": 86.44,
-  "tokens_p75": 64.0,
-  "tokens_max": 8893,
-  "tokens_std": 605.03,
-  "tokens_total": 19017,
+  "tokens_median": 33.5,
+  "tokens_mean": 78.76,
+  "tokens_p75": 69.75,
+  "tokens_max": 814,
+  "tokens_std": 136.42,
+  "tokens_total": 19061,
   "tokens_original": 18579,
-  "tokens_ratio": 1.024,
-  "execution_time_seconds": 5.627299,
-  "ram_before_mb": 990.72,
-  "ram_after_mb": 988.35,
-  "ram_increase_mb": -2.37
+  "tokens_ratio": 1.026,
+  "execution_time_seconds": 2.888106,
+  "ram_before_mb": 1020.73,
+  "ram_after_mb": 1021.32,
+  "ram_increase_mb": 0.59
 }

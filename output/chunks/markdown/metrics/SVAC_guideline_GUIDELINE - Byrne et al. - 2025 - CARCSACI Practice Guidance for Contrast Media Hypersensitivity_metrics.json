@@ -5,7 +5,8 @@
   "params": {
     "sensitivity": 0.2,
     "window_size": 5,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "status": "completed",
   "doc_id": "guideline_GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity",
@@ -13,20 +14,20 @@
   "input_file": "GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
   "source_path": "guideline\\GUIDELINE - Byrne et al. - 2025 - CARCSACI Practice Guidance for Contrast Media Hypersensitivity.md",
   "tokenizer_model": "BAAI/bge-m3",
-  "number_of_chunks": 88,
+  "number_of_chunks": 110,
   "empty_chunks": 0,
   "tokens_min": 4,
-  "tokens_p25": 37.75,
-  "tokens_median": 144.5,
-  "tokens_mean": 271.9,
-  "tokens_p75": 370.0,
-  "tokens_max": 1522,
-  "tokens_std": 320.56,
-  "tokens_total": 23927,
+  "tokens_p25": 63.5,
+  "tokens_median": 200.0,
+  "tokens_mean": 217.92,
+  "tokens_p75": 347.75,
+  "tokens_max": 522,
+  "tokens_std": 171.54,
+  "tokens_total": 23971,
   "tokens_original": 23749,
-  "tokens_ratio": 1.007,
-  "execution_time_seconds": 3.856131,
-  "ram_before_mb": 1219.75,
-  "ram_after_mb": 1306.85,
-  "ram_increase_mb": 87.1
+  "tokens_ratio": 1.009,
+  "execution_time_seconds": 1.711954,
+  "ram_before_mb": 1293.87,
+  "ram_after_mb": 1333.49,
+  "ram_increase_mb": 39.62
 }

@@ -4,7 +4,8 @@
   "abbreviation": "TBC",
   "params": {
     "distance_threshold": 0.4,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "status": "completed",
   "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers",
@@ -12,20 +13,20 @@
   "input_file": "PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.md",
   "source_path": "paper\\PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers.md",
   "tokenizer_model": "BAAI/bge-m3",
-  "number_of_chunks": 305,
+  "number_of_chunks": 316,
   "empty_chunks": 0,
   "tokens_min": 3,
   "tokens_p25": 12.0,
-  "tokens_median": 26.0,
-  "tokens_mean": 68.45,
-  "tokens_p75": 61.0,
-  "tokens_max": 2996,
-  "tokens_std": 205.2,
-  "tokens_total": 20878,
+  "tokens_median": 27.0,
+  "tokens_mean": 66.14,
+  "tokens_p75": 67.25,
+  "tokens_max": 508,
+  "tokens_std": 104.11,
+  "tokens_total": 20900,
   "tokens_original": 20270,
-  "tokens_ratio": 1.03,
-  "execution_time_seconds": 2.959505,
-  "ram_before_mb": 1154.47,
-  "ram_after_mb": 1193.08,
-  "ram_increase_mb": 38.61
+  "tokens_ratio": 1.031,
+  "execution_time_seconds": 1.545447,
+  "ram_before_mb": 1185.98,
+  "ram_after_mb": 1187.33,
+  "ram_increase_mb": 1.35
 }

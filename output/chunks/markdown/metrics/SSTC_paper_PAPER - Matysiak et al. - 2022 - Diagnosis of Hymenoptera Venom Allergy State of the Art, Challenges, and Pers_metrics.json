@@ -4,7 +4,8 @@
   "abbreviation": "SSTC",
   "params": {
     "threshold": 0.5,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "status": "completed",
   "doc_id": "paper_PAPER - Matysiak et al. - 2022 - Diagnosis of Hymenoptera Venom Allergy State of the Art, Challenges, and Pers",
@@ -24,8 +25,8 @@
   "tokens_total": 21858,
   "tokens_original": 20270,
   "tokens_ratio": 1.078,
-  "execution_time_seconds": 3.209786,
-  "ram_before_mb": 1113.52,
-  "ram_after_mb": 1038.79,
-  "ram_increase_mb": -74.73
+  "execution_time_seconds": 1.939311,
+  "ram_before_mb": 1110.41,
+  "ram_after_mb": 1117.69,
+  "ram_increase_mb": 7.28
 }

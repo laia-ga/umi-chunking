@@ -4,7 +4,8 @@
   "abbreviation": "TBC",
   "params": {
     "distance_threshold": 0.4,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "status": "completed",
   "doc_id": "paper_PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit",
@@ -12,20 +13,20 @@
   "input_file": "PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
   "source_path": "paper\\PAPER - Torres et al. - 2024 - Intranasal Versus Oral Treatments for Allergic Rhinitis A Systematic Review Wit.md",
   "tokenizer_model": "BAAI/bge-m3",
-  "number_of_chunks": 154,
+  "number_of_chunks": 163,
   "empty_chunks": 0,
   "tokens_min": 5,
-  "tokens_p25": 18.0,
-  "tokens_median": 34.5,
-  "tokens_mean": 114.32,
-  "tokens_p75": 93.75,
-  "tokens_max": 5116,
-  "tokens_std": 421.1,
-  "tokens_total": 17606,
+  "tokens_p25": 19.0,
+  "tokens_median": 37.0,
+  "tokens_mean": 108.12,
+  "tokens_p75": 112.0,
+  "tokens_max": 2224,
+  "tokens_std": 207.79,
+  "tokens_total": 17624,
   "tokens_original": 17300,
-  "tokens_ratio": 1.018,
-  "execution_time_seconds": 1.932698,
-  "ram_before_mb": 1194.14,
-  "ram_after_mb": 1152.91,
-  "ram_increase_mb": -41.23
+  "tokens_ratio": 1.019,
+  "execution_time_seconds": 1.094169,
+  "ram_before_mb": 1187.33,
+  "ram_after_mb": 1188.39,
+  "ram_increase_mb": 1.05
 }

@@ -5,15 +5,16 @@
   "params": {
     "sensitivity": 0.2,
     "window_size": 5,
-    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2"
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "max_chunk_tokens": 512
   },
   "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions",
   "document_type": "paper",
   "input_file": "PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
   "source_path": "paper\\PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions.md",
-  "tokenizer model": "BAAI/bge-m3",
+  "tokenizer_model": "BAAI/bge-m3",
   "original_token_count": 18579,
-  "number_of_chunks": 61,
+  "number_of_chunks": 80,
   "chunks": [
     {
       "text": "Current Allergy and Asthma Reports (2024) 24:347–360 https://doi.org/10.1007/s11882-024-01150-0\n\nREVIEW\n\n# Allergic Conjunctivitis Management: Update on Ophthalmic Solutions\n\n#### Andrea Leonardi1 · Luigi Quintieri2 · Ignacio Jáuregui Presa3 · Jesús Merayo LLoves4 · Jesús Montero5,6 · José Manuel Benítez‑del‑Castillo7 · Francisco Javier Seoane Lestón8 · Eloína González‑Mancebo9 · Riccardo Asero10 · Anna Groblewska11 · Piotr Kuna12\n\nAccepted: 13 May 2024 / Published online: 13 June 2024 © The Author(s) 2024\n\nAbstract Purpose of Review The aim of this review, is to present an updated revision of topical management of SAC and PAC, based on the available scientific evidence and focused on the impact of ophthalmic solution formulations on eye surface. Recent Findings Physicians treating ocular allergy should be aware of tear film and tear film disruption in SAC and PAC, and how eye drop composition and additives affect the physiology of the allergic eye. Summary Seasonal and perennial allergic conjunctivitis (SAC and PAC) are the most frequent causes of ocular allergy (OA), and both conditions are underdiagnosed and undertreated. SAC and PAC are immunoglobulin E (IgE)-mediated hypersensitivity reactions.",
@@ -35,7 +36,7 @@
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "The additional tear film disruption caused by the release of inflammatory mediators increases and exacerbates the impact of signs and symptoms and may trigger damage of the ocular surface. Comorbidities are frequent, and dry eye disease in particular must be considered. Clinical guidelines for the management of SAC and PAC recommend topical therapy with antihistamines, mast cells stabilizers or dualaction agents as first-line treatment, but care should be taken, as many medications contain other compounds that may contribute to ocular surface damage. Keywords Allergic Conjunctivitis · Topical Treatment · Antihistamines · Preservatives · Benzalkonium Chloride (BAK) · Hyaluronic acid (HA)\n\n## Introduction\n\nOcular allergy (OA) is a common immunological inflammatory process of the anterior surface of the eye [1]. In fact, OA represents a collection of underestimated diseases of the eye observed in children and adults that present with a wide spectrum of clinical forms [2]. * Andrea Leonardi [CORREO OMITIDO]\n\n- 1 Department of Neurosciences & Ophthalmology, University of Padua, Padua, Italy\n- 2 Laboratory of Drug Metabolism, Department of Pharmaceutical and Pharmacological Sciences, University of Padua, Padua, Italy\n- 3 Allergy Department, Hospital Universitario de Cruces, Bilbao, Spain\n- 4 Instituto Universitario Fernández-Vega, University of Oviedo, Asturias, Spain\n- 5 Department of Surgery, University of Seville, Seville, Spain\n- 6 CARTUJAVISION Eye Clinic, Seville, Spain\n\n\nAllergic conjunctivitis (AC) is the most frequent OA and affects the ocular surface for the duration of aeroallergen exposure. Therefore, its nosology includes seasonal allergic conjunctivitis (SAC) and perennial allergic conjunctivitis (PAC), depending on whether the specific aeroallergen is seasonal or permanent [1]. Grass pollen is the most common allergen in SAC, while dust mites and animal dander are the\n\n- 7 Department of Ophthalmology, Hospital Clínico San Carlos, Universidad Complutense, Clínica Rementería Madrid, Madrid, Spain\n- 8 Department of Allergy, Hospital Severo Ochoa de Leganés, Madrid, Spain\n- 9 Unit of Allergy. Hospital Universitario de Fuenlabrada, Madrid, Spain\n- 10 Department of Allergy, Clinica San Carlo, Paderno Dugnano, Milan, Italy\n- 11 Ophthalmology Department, Polish Mother’s Memorial Hospital, Lodz, Poland\n- 12 Department of Internal Medicine, Asthma and Allergy, Medical University od Lodz, Lodz, Poland\n\n\nVol. :(0123456789)\n\nmost frequent sensitization in PAC; food allergens may also occasionally cause ocular symptoms [1, 3].",
+      "text": "The additional tear film disruption caused by the release of inflammatory mediators increases and exacerbates the impact of signs and symptoms and may trigger damage of the ocular surface. Comorbidities are frequent, and dry eye disease in particular must be considered. Clinical guidelines for the management of SAC and PAC recommend topical therapy with antihistamines, mast cells stabilizers or dualaction agents as first-line treatment, but care should be taken, as many medications contain other compounds that may contribute to ocular surface damage. Keywords Allergic Conjunctivitis · Topical Treatment · Antihistamines · Preservatives · Benzalkonium Chloride (BAK) · Hyaluronic acid (HA)\n\n## Introduction\n\nOcular allergy (OA) is a common immunological inflammatory process of the anterior surface of the eye [1]. In fact, OA represents a collection of underestimated diseases of the eye observed in children and adults that present with a wide spectrum of clinical forms [2]. * Andrea Leonardi [CORREO OMITIDO]\n\n- 1 Department of Neurosciences & Ophthalmology, University of Padua, Padua, Italy\n- 2 Laboratory of Drug Metabolism, Department of Pharmaceutical and Pharmacological Sciences, University of Padua, Padua, Italy\n- 3 Allergy Department, Hospital Universitario de Cruces, Bilbao, Spain\n- 4 Instituto Universitario Fernández-Vega, University of Oviedo, Asturias, Spain\n- 5 Department of Surgery, University of Seville, Seville, Spain\n- 6 CARTUJAVISION Eye Clinic, Seville, Spain\n\n\nAllergic conjunctivitis (AC) is the most frequent OA and affects the ocular surface for the duration of aeroallergen exposure. Therefore, its nosology includes seasonal allergic conjunctivitis (SAC) and perennial allergic conjunctivitis (PAC), depending on whether the specific aeroallergen is seasonal or permanent [1].",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -47,10 +48,33 @@
         "start_sentence_index": 4,
         "end_sentence_index": 14,
         "sentence_count": 10,
-        "character_count": 2567,
-        "token_count": 643
+        "character_count": 1817,
+        "token_count": 447,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0001"
       },
       "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0001",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Grass pollen is the most common allergen in SAC, while dust mites and animal dander are the\n\n- 7 Department of Ophthalmology, Hospital Clínico San Carlos, Universidad Complutense, Clínica Rementería Madrid, Madrid, Spain\n- 8 Department of Allergy, Hospital Severo Ochoa de Leganés, Madrid, Spain\n- 9 Unit of Allergy. Hospital Universitario de Fuenlabrada, Madrid, Spain\n- 10 Department of Allergy, Clinica San Carlo, Paderno Dugnano, Milan, Italy\n- 11 Ophthalmology Department, Polish Mother’s Memorial Hospital, Lodz, Poland\n- 12 Department of Internal Medicine, Asthma and Allergy, Medical University od Lodz, Lodz, Poland\n\n\nVol. :(0123456789)\n\nmost frequent sensitization in PAC; food allergens may also occasionally cause ocular symptoms [1, 3].",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.2358,
+        "recent_mean_similarity": 0.5091,
+        "mean_internal_similarity": 0.5093,
+        "start_sentence_index": 4,
+        "end_sentence_index": 14,
+        "sentence_count": 10,
+        "character_count": 749,
+        "token_count": 198,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0001"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0002",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -69,11 +93,11 @@
         "character_count": 123,
         "token_count": 40
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0002",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0003",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "The prevalence of OA has been increasing worldwide for several decades [6]. SAC and PAC can affect between 14% and up to 45% of the general population, depending on geographical region [6]. However, AC is an often underdiagnosed and undertreated health problem, with only 10% of patients with AC symptoms seeking medical attention: most sufferers manage their condition with over-the-counter (OTC) medications and complementary, non-pharmacological remedies [1]. SAC is by far the most common form of OA, representing over half of all cases [1]. Furthermore, OA commonly overlaps with other ocular disease disorders, including infections and dry eye disease (DED) [1]. OA also has a significant impact on quality of life (QoL) and carries a high economic burden [7]. Successful management of OA involves preventive, nonpharmacological, and pharmacological measures [1]. Over the years, various therapeutic options have been developed to achieve symptom control. First-line options are topical antihistamines, mast cell stabilizers, and dual-acting agents, while corticosteroids and immunomodulators are reserved for severe cases of keratoconjunctivitis [4, 5, 8]. It should be kept in mind that many patients with OA are treated with topical treatments over long periods of time [7] and, therefore, the short- and long-term safety and tolerability of products used to treat the eye surface are paramount. OA is treated by general practitioners, allergists, and ophthalmologists, and all these professionals should be aware of the benefits and potential harms of the products prescribed. For instance, some compounds found in ophthalmic solutions may induce damage to the ocular surface by the disruption of epithelial barrier of tear film, which can lead to other diseases such as dry eye, or could exacerbate SAC and PAC [8, 9]. The purpose of this review is to present updated information on the management of OA for healthcare providers seeing these patients, with a particular focus on topical treatments for SAC and PAC. ## Problems Associated with Allergic Conjunctivitis\n\n### Tear Film Disruption\n\nEpithelial barrier dysfunction is a hallmark feature of several ocular allergic disorders [8] and tear film alterations are often observed in patients with AC. The eye presents some physiological barriers, including complex junctions in conjunctival and corneal epithelium [8] that help it act as a physical and immune barrier, preventing the entrance of pathogens and allergens and helping maintain tissue homeostasis. In AC, allergens with intrinsic proteolytic activity cross the conjunctival epithelium and enter the submucosal space, where they interact with dendritic and conjunctival mast cells to induce allergic inflammation with activation of inflammatory cytokines such as interleukin 33 (IL-33), thymic stromal lymphopoietin (TSLP), and transforming growth factor (TGF)-β [8]. The disrupted corneal epithelium can also release neuromediators, including substance P (SP), calcitonin gene-related peptide (CGRP), vasoactive intestinal peptide (VIP), and nerve growth factor (NGF) [8]. These soluble mediators activate dendritic cells (DC) to generate a typical Th2 lymphocyte response in SAC and PAC [2]. The subsequent sensitization and activation of adaptive immune response leads to type 2 inflammation characteristic of the allergic disorders. In SAC and PAC, exposure of sensitized patients to the allergen results in a type I IgE-mediated allergic reaction, that provokes mast cell degranulation and the immediate release of histamine. Overexpression of Th2-associated cytokines (IL4, IL-5, IL-13) and histamine contribute to long-term conjunctival epithelial metaplasia, disruption of the corneal epithelium and stimulation of goblet cell secretion, which could modify the tear film [10]. In addition to the impact of AC on ocular surface, some of ophthalmic solutions for its treatment frequently contain compounds and preservatives that may contribute to the disruption of epithelial barrier of tear film [8, 9]. The most common preservative is benzalkonium chloride (BAK), and its impact on the ocular surface has been extensively studied [10]. BAK is a detergent [11] that disrupts the tear film and damages the epithelial barrier, exerting a pro-inflammatory action through activation of the nuclear factor kappa B (NF-kB) pathway [10]. In vitro studies and murine models [12, 13] suggest that prolonged exposure to BAK leads to ocular damage due to a loss of immune tolerance of the conjunctival epithelium of the eye.",
+      "text": "The prevalence of OA has been increasing worldwide for several decades [6]. SAC and PAC can affect between 14% and up to 45% of the general population, depending on geographical region [6]. However, AC is an often underdiagnosed and undertreated health problem, with only 10% of patients with AC symptoms seeking medical attention: most sufferers manage their condition with over-the-counter (OTC) medications and complementary, non-pharmacological remedies [1]. SAC is by far the most common form of OA, representing over half of all cases [1]. Furthermore, OA commonly overlaps with other ocular disease disorders, including infections and dry eye disease (DED) [1]. OA also has a significant impact on quality of life (QoL) and carries a high economic burden [7]. Successful management of OA involves preventive, nonpharmacological, and pharmacological measures [1]. Over the years, various therapeutic options have been developed to achieve symptom control. First-line options are topical antihistamines, mast cell stabilizers, and dual-acting agents, while corticosteroids and immunomodulators are reserved for severe cases of keratoconjunctivitis [4, 5, 8]. It should be kept in mind that many patients with OA are treated with topical treatments over long periods of time [7] and, therefore, the short- and long-term safety and tolerability of products used to treat the eye surface are paramount. OA is treated by general practitioners, allergists, and ophthalmologists, and all these professionals should be aware of the benefits and potential harms of the products prescribed. For instance, some compounds found in ophthalmic solutions may induce damage to the ocular surface by the disruption of epithelial barrier of tear film, which can lead to other diseases such as dry eye, or could exacerbate SAC and PAC [8, 9]. The purpose of this review is to present updated information on the management of OA for healthcare providers seeing these patients, with a particular focus on topical treatments for SAC and PAC.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -85,10 +109,54 @@
         "start_sentence_index": 15,
         "end_sentence_index": 40,
         "sentence_count": 25,
-        "character_count": 4546,
-        "token_count": 1136
+        "character_count": 2025,
+        "token_count": 488,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0003"
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0003",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0004",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "## Problems Associated with Allergic Conjunctivitis\n\n### Tear Film Disruption\n\nEpithelial barrier dysfunction is a hallmark feature of several ocular allergic disorders [8] and tear film alterations are often observed in patients with AC. The eye presents some physiological barriers, including complex junctions in conjunctival and corneal epithelium [8] that help it act as a physical and immune barrier, preventing the entrance of pathogens and allergens and helping maintain tissue homeostasis. In AC, allergens with intrinsic proteolytic activity cross the conjunctival epithelium and enter the submucosal space, where they interact with dendritic and conjunctival mast cells to induce allergic inflammation with activation of inflammatory cytokines such as interleukin 33 (IL-33), thymic stromal lymphopoietin (TSLP), and transforming growth factor (TGF)-β [8]. The disrupted corneal epithelium can also release neuromediators, including substance P (SP), calcitonin gene-related peptide (CGRP), vasoactive intestinal peptide (VIP), and nerve growth factor (NGF) [8]. These soluble mediators activate dendritic cells (DC) to generate a typical Th2 lymphocyte response in SAC and PAC [2]. The subsequent sensitization and activation of adaptive immune response leads to type 2 inflammation characteristic of the allergic disorders. In SAC and PAC, exposure of sensitized patients to the allergen results in a type I IgE-mediated allergic reaction, that provokes mast cell degranulation and the immediate release of histamine. Overexpression of Th2-associated cytokines (IL4, IL-5, IL-13) and histamine contribute to long-term conjunctival epithelial metaplasia, disruption of the corneal epithelium and stimulation of goblet cell secretion, which could modify the tear film [10]. In addition to the impact of AC on ocular surface, some of ophthalmic solutions for its treatment frequently contain compounds and preservatives that may contribute to the disruption of epithelial barrier of tear film [8, 9].",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.274,
+        "recent_mean_similarity": 0.5247,
+        "mean_internal_similarity": 0.4068,
+        "start_sentence_index": 15,
+        "end_sentence_index": 40,
+        "sentence_count": 25,
+        "character_count": 2010,
+        "token_count": 510,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0003"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0005",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "The most common preservative is benzalkonium chloride (BAK), and its impact on the ocular surface has been extensively studied [10]. BAK is a detergent [11] that disrupts the tear film and damages the epithelial barrier, exerting a pro-inflammatory action through activation of the nuclear factor kappa B (NF-kB) pathway [10]. In vitro studies and murine models [12, 13] suggest that prolonged exposure to BAK leads to ocular damage due to a loss of immune tolerance of the conjunctival epithelium of the eye.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.274,
+        "recent_mean_similarity": 0.5247,
+        "mean_internal_similarity": 0.4068,
+        "start_sentence_index": 15,
+        "end_sentence_index": 40,
+        "sentence_count": 25,
+        "character_count": 509,
+        "token_count": 142,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0003"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0006",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -107,7 +175,7 @@
         "character_count": 197,
         "token_count": 50
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0004",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0007",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -126,7 +194,7 @@
         "character_count": 53,
         "token_count": 14
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0005",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0008",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -145,7 +213,7 @@
         "character_count": 1046,
         "token_count": 249
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0006",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0009",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -164,7 +232,7 @@
         "character_count": 123,
         "token_count": 26
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0007",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0010",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -183,7 +251,7 @@
         "character_count": 348,
         "token_count": 86
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0008",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0011",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -202,7 +270,7 @@
         "character_count": 327,
         "token_count": 78
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0009",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0012",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -221,7 +289,7 @@
         "character_count": 1487,
         "token_count": 372
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0010",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0013",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -240,7 +308,7 @@
         "character_count": 1875,
         "token_count": 423
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0011",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0014",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -259,11 +327,11 @@
         "character_count": 618,
         "token_count": 141
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0012",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0015",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "When symptoms of allergic rhinitis are present, treatment options usually include systemic antihistamines and intranasal corticosteroids [1]. In this scenario, the use of second-generation systemic antihistamines, with fewer adverse events and a much better profile in terms of sedation, is recommended [4, 5, 7]. The potential of some systemic antihistamines to worsen the ocular surface due to their anticholinergic effect should be taken into account [10]. Systemic leukotriene receptor antagonists have proved to be useful in the treatment of allergic rhinitis, although less than oral antihistamines [17]; but they have a limited use for the treatment of OA [1, 24]. Topical immunomodulators such\n\n- as calcineurin inhibitors, cyclosporine and tacrolimus, are recommended for chronic diseases of OA (vernal or atopic keratoconjunctivitis) [1, 17]. Their use depends on severity and frequency of exacerbations. Topical corticosteroids may\n\n\nbe used for severe forms of OA and in uncontrolled exacerbations of SAC and PAC since their use is associated with potentially significant adverse reactions [17, 25]. Topical non-steroidal anti-inflammatory drugs (NSAIDs) are not recommended for the treatment of SAC and PAC [17]. Many patients also require the concomitant use of lubricating eye drops to maximize control of ocular allergy symptoms [26]. Finally, in patients with severe forms of SAC and PAC, following the recommendations of the EAACI guidelines, allergen immunotherapy (AIT) should be considered a therapeutic option [19]. AIT is indicated when IgE-mediated hypersensitivity is evidenced, after first-line treatment failure, or to modify the natural course of ocular allergic disease. Systemic immunosuppressive treatment and biologic therapy may be prescribed in severe forms of OA, such as refractory vernal or atopic keratoconjunctivitis [17]. Table 1 Characteristics of topical multi-dose antihistamines and dual-action agents for the treatment of SAC and PAC\n\nTopical ophthalmic solutions\n\nActive ophthalmic solution\n\nDose (mg/ml) Inactive ingredients (excipients) *\n\nCo-formulation with HA\n\nDaily dose * Preservatives (%)\n\nAntihistamines Bilastine [64] 0.6 mg/ml • hydroxypropyl-β\n\n- • cyclodextrin\n- • methyl cellulose\n- • sodium hyaluronate\n- • anhydrous glycerine\n- • sodium hydroxide 1n\n- • water for injection\n\n\nCetirizine [70] 2.4 mg/ ml • glycerine\n\n- • sodium phosphate\n- • dibasic\n- • edetate disodium\n- • polyethylene glycol 400\n- • polysorbate 80\n- • hypromellose\n- • hydrochloric acid/ sodium hydroxide (to adjust pH)\n- • water for injection\n\n\nEmedastine [71] 0.5 mg/ml • tromethamol\n\n- • sodium chloride\n- • hypromellose\n- • purified water\n- • hydrochloric acid and/ or sodium hydroxide (to adjust ph). Levocabastine [72] 0.5 mg/ml • propylene glycol\n\n- • disodium phosphate anhydrous\n- • monobasic sodium phosphate monohydrate\n- • hypromellose\n- • polysorbate 80\n- • edetate calcium disodium (e385)\n\n\nYes Once daily Free\n\nNo Three times daily\n\nBAK 0.01\n\nNo Twice daily BAK 0.01\n\nNo Twice daily BAK 0.15\n\nTable 1 (continued)\n\n|Topical ophthalmic solutions<br><br>Active ophthalmic solution|Dose (mg/ml) Inactive ingredients (excipients) *<br><br>Co-formulation with HA|Daily dose * Preservatives (%)|\n|---|---|---|\n|Dual-action agents Alcaftadine [73]|2.5 mg/ml • edetate disodium<br><br>• monobasic sodium<br>• phosphate<br>• purified water<br>• sodium chloride<br>• sodium hydroxide<br>• hydrochloric acid (to adjust pH)<br><br><br>No|Twice daily BAK 0.05|\n|Azelastine [74]|0.5 mg/ml • hypromellose<br><br>• disodium edetate<br>• liquid sorbitol (crystallising)<br>• sodium hydroxide (to adjust pH)<br>• water for injection<br><br><br>No|Twice daily BAK 0.125 Available Free [55, 75]|\n|Bepostatine besilate [76]|15 mg/ml • sodium phosphate<br><br>• sodium chloride<br>• sodium hydroxide<br>• water<br><br><br>No|Twice daily BAK 0.05|\n|Epinastine [77]|0.5 mg/ml • disodium edetate<br><br>• sodium chloride<br>• sodium dihydrogen phosphate dihydrate<br>• sodium hydroxide/ hydrochloric acid (to adjust pH)<br>• purified water<br><br><br>No|Twice daily BAK 0.1|\n|Ketotifen [78, 79]|0.025 mg/ml 0.05 mg/ml<br><br>• glycerol (e422)<br>• sodium hydroxide (e524)<br>• water for injections<br><br><br>No|Twice daily BAK 0.1 Available free [48]|\n|Olopatadine [80, 81]|1 mg/ml [80] 2.22 mg/ml [81]<br><br>• sodium chloride<br>• disodium hydrogen phosphate dodecahydrate (e339)<br>• hydrochloric acid (e507)<br>• sodium hydroxide (e524)<br>• purified water<br><br><br>No|Twice daily Once daily<br><br>BAK 0.1 Available free [49]|\n|BAK benzalkonium chloride, HA hyaluronic<br><br>* Described in technical data sheet|acid, OS ocular surface| |\n\n\n### Topical Antihistamines\n\nCompared with oral antihistamines, topical antihistamines directly target ocular tissues and have a faster onset of action, good tolerance, and a better safety profile due to a lower systemic exposition [7]. Topical ophthalmic formulations containing second-generation antihistamines include levocabastine, emedastine, together with the most recent approvals, cetirizine and bilastine. Emedastine has shown to be superior to levocabastine [27], while olopatadine [28] has shown to be superior to emedastine [29, 30], and similar in terms of symptom\n\nreduction to some of the so-called dual-action agents. As mentioned above, two new topical antihistamines have recently been approved for the treatment of SAC and PAC: cetirizine, approved by the Food and Drug Administration (FDA) in the USA (not available in Europe at present), and a topical bilastine formulation [31] approved by the European Medicines Agency (EMA) in July 2022 (Tables 1 and 2). An ophthalmic formulation with cetirizine 2.4 mg/ ml evaluated efficacy compared to its vehicle (clinical trial NCT01881113). The cetirizine-containing eye drops reduced ocular itching and conjunctival redness significantly\n\n##### Active ophthalmic solutionClinical trials Efficacy Safety: OS adverse events * Considerations\n\nClinical efficacy and safety of topical multi-dose approved antihistamines and dual action agents for treatment of SAC and PACTable 2\n\nApproved by EMA\n\nApproved by FDA\n\nAdverse reactions are uncommon\n\n[33, 34] Common side effects include:\n\n• increased ocular discomfort\n\n• eye burning/stinging upon\n\n- • eye discharge\n- • eye irritation\n- • lacrimation\n\n\n• blurry vision\n\nand include\n\ninstillation\n\n• dry eye\n\nNon-inferior compared with ketotifen\n\nPMID: 30,858,690 Superior compared with vehicle\n\nSuperior compared with vehicle\n\nSuperior to vehicle [31, 38]\n\n[31, 38, 82]. Bilastine [31, 35, 36, 39, 64] NCT03231969; NCT03479307\n\nPMID: 30,587,908\n\n- PMID: 35,234,641\n- PMID: 36,811,846\n\n\nPMID: 36,909,350\n\nCetirizine [33, 34, 70] NCT01881113\n\n• hyperaemia\n\n- • lid oedema\n- • keratitis\n\n\n• eye pain\n\nApproved by FDA and EMA\n\nLevocabastine preservative-free [86]\n\nApproved by FDA and EMA\n\n• Only in France approved\n\nketotifen) [83] Common adverse events:\n\n• itchy eyes\n\n• eye pain\n\nNCT00133627 NCT0013362 (in addition to\n\nEmedastine [71] CAC : C-93-19 CAC: C-94-90. Common adverse events:\n\n• redness of the eyes\n\n- • burning sensation\n- • watery eyes\n\n\n• blurred vision\n\n- • eye irritation\n- • pain\n- • swelling\n- • itching\n\n\n• redness\n\nSuperior compared with lodoxamide\n\nPMID: 7,902,024 Inferior compared with olopatadine\n\n[28]\n\n[85]\n\nLevocabastine [72] PMID: 8,101,534 [84]\n\n• Olopatadine 2.22 mg/ml is approved\n\n• In Europe, azelastine preservative-\n\nfree in single-dose [50] and multi-\n\n• In Europe, ketotifen preservative-\n\n• Olopatadine 1 mg/ml is approved\n\n• Olopatadine preservative-free in\n\nfree in single-dose [47, 54] and\n\n• Olopatadine 0.77 once daily is\n\nApproved by FDA and EMA\n\nApproved by FDA and EMA\n\nApproved by FDA and EMA\n\nmild, transient irritation in the eye. Approved by FDA and EMA\n\nmulti-dose dispenser [48]. multi-dose dispenser [49]\n\ndose dispenser [55, 75]\n\nby FDA and is an OTC\n\napproved by FDA\n\nApproved by FDA\n\nApproved by FDA\n\nActive ophthalmic solutionClinical trials Efficacy Safety: OS adverse events * Considerations\n\nby EMA\n\n- • taste perversion and bad taste\n- • eye irritation\n\n\n• burning and/or stinging upon\n\nCommon side effects include:\n\n• punctate erosion of corneal\n\nlevocabastine [99–102] Common side effects include\n\nCommon side effects include\n\nCommon side effects include\n\nCommon side effects include\n\nCommon side effects include\n\n• abnormal sensation in eyes\n\n- • burning sensation\n- • eye irritation\n\n\n• punctate keratitis\n\n• eye irritation,\n\n- • eye irritation\n- • dry eye\n\n\n- • eye irritation\n- • eye pain\n\n\n• eye pruritus\n\n• eye redness\n\nepithelium\n\ninstillation\n\n• eye pain\n\nMore comfortable than ketotifen and\n\nresolving the symptoms of allergic\n\nOlopatadine [80, 81] NCT01109485 Superior to ketotifen and superior to\n\nPMID:33,463,568 [45] Superior to vehicle and non-inferior\n\nSlightly inferior to olopatadine [91]\n\nBepotastine and alcaftadine appear\n\nPMID:19,668,586 [91] Non-inferior to levocabastine [90]\n\ncompared with ketotifen 0.05%\n\nPMID: 18,631,332 [99] Superior: ketotifen 0.025% more\n\nSafety in children between 7–15\n\nand to placebo and to sodium\n\nfluorometholone acetate [99]\n\neffective and better tolerated\n\nto outweigh olopatadine in\n\nSuperior to vehicle [94, 95]\n\nto olopatadine 0.1% [87]\n\n- Superior to placebo [88]\n- Superior to placebo [89]\n\n\nSuperior compared with\n\nNCT01861522 [93] Superior to vehicle [92]\n\nconjunctivitis [45]\n\ncromoglycate [96]\n\nSuperior to placebo\n\nazelastine [97]\n\nyears [93]\n\n[98]\n\nEpinastine [77] PMID: 14,996,516 [94]\n\nPMID: 14,996,515 [95]\n\nPMID: 12,841,924 [96]\n\nPMID: 18,691,985 [97]\n\nKetotifen [78] PMID:30,303,746 [98]\n\nPMID:12,841,925 [90]\n\nagents Alcaftadine [73] PMID:29,543,548 [87]\n\nAzelastine [74] PMID: 9,061,218 [88]\n\nPMID: 8,977,510 [89]\n\nBepostatine besilate [76] NCT00586664 [92]\n\n(continued)Table 2\n\naction\n\nDual-\n\n* Described in technical data sheet\n\nOS ocular surface\n\ncompared to vehicle, they were well tolerated, and showed an acceptable safety profile [32–34]. This cetirizine ophthalmic formulation needs to be used three times a day, as the dosage is one drop in each affected eye every 8 h. It contains BAK (0.01%) as a preservative to guarantee the sterility of the multi-dose formulation. As for the newest bilastine ophthalmic solution, efficacy, tolerability, and efficacy of a once-daily administration have been evaluated in clinical trials to date [31, 35–39]. The bilastine formulation has shown a fast onset of action and efficacy for as long as 16 h post-administration, indicating that it is suitable for a once-daily dosing [31, 38].",
+      "text": "When symptoms of allergic rhinitis are present, treatment options usually include systemic antihistamines and intranasal corticosteroids [1]. In this scenario, the use of second-generation systemic antihistamines, with fewer adverse events and a much better profile in terms of sedation, is recommended [4, 5, 7]. The potential of some systemic antihistamines to worsen the ocular surface due to their anticholinergic effect should be taken into account [10]. Systemic leukotriene receptor antagonists have proved to be useful in the treatment of allergic rhinitis, although less than oral antihistamines [17]; but they have a limited use for the treatment of OA [1, 24]. Topical immunomodulators such\n\n- as calcineurin inhibitors, cyclosporine and tacrolimus, are recommended for chronic diseases of OA (vernal or atopic keratoconjunctivitis) [1, 17]. Their use depends on severity and frequency of exacerbations. Topical corticosteroids may\n\n\nbe used for severe forms of OA and in uncontrolled exacerbations of SAC and PAC since their use is associated with potentially significant adverse reactions [17, 25]. Topical non-steroidal anti-inflammatory drugs (NSAIDs) are not recommended for the treatment of SAC and PAC [17]. Many patients also require the concomitant use of lubricating eye drops to maximize control of ocular allergy symptoms [26]. Finally, in patients with severe forms of SAC and PAC, following the recommendations of the EAACI guidelines, allergen immunotherapy (AIT) should be considered a therapeutic option [19]. AIT is indicated when IgE-mediated hypersensitivity is evidenced, after first-line treatment failure, or to modify the natural course of ocular allergic disease. Systemic immunosuppressive treatment and biologic therapy may be prescribed in severe forms of OA, such as refractory vernal or atopic keratoconjunctivitis [17].",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -275,10 +343,138 @@
         "start_sentence_index": 75,
         "end_sentence_index": 101,
         "sentence_count": 26,
-        "character_count": 10542,
-        "token_count": 3193
+        "character_count": 1861,
+        "token_count": 480,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0013"
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0013",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0016",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Table 1 Characteristics of topical multi-dose antihistamines and dual-action agents for the treatment of SAC and PAC\n\nTopical ophthalmic solutions\n\nActive ophthalmic solution\n\nDose (mg/ml) Inactive ingredients (excipients) *\n\nCo-formulation with HA\n\nDaily dose * Preservatives (%)\n\nAntihistamines Bilastine [64] 0.6 mg/ml • hydroxypropyl-β\n\n- • cyclodextrin\n- • methyl cellulose\n- • sodium hyaluronate\n- • anhydrous glycerine\n- • sodium hydroxide 1n\n- • water for injection\n\n\nCetirizine [70] 2.4 mg/ ml • glycerine\n\n- • sodium phosphate\n- • dibasic\n- • edetate disodium\n- • polyethylene glycol 400\n- • polysorbate 80\n- • hypromellose\n- • hydrochloric acid/ sodium hydroxide (to adjust pH)\n- • water for injection\n\n\nEmedastine [71] 0.5 mg/ml • tromethamol\n\n- • sodium chloride\n- • hypromellose\n- • purified water\n- • hydrochloric acid and/ or sodium hydroxide (to adjust ph).",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.3248,
+        "recent_mean_similarity": 0.5668,
+        "mean_internal_similarity": 0.5238,
+        "start_sentence_index": 75,
+        "end_sentence_index": 101,
+        "sentence_count": 26,
+        "character_count": 874,
+        "token_count": 275,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0013"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0017",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Levocabastine [72] 0.5 mg/ml • propylene glycol\n\n- • disodium phosphate anhydrous\n- • monobasic sodium phosphate monohydrate\n- • hypromellose\n- • polysorbate 80\n- • edetate calcium disodium (e385)\n\n\nYes Once daily Free\n\nNo Three times daily\n\nBAK 0.01\n\nNo Twice daily BAK 0.01\n\nNo Twice daily BAK 0.15\n\nTable 1 (continued)\n\n|Topical ophthalmic solutions<br><br>Active ophthalmic solution|Dose (mg/ml) Inactive ingredients (excipients) *<br><br>Co-formulation with HA|Daily dose * Preservatives (%)|\n|---|---|---|\n|Dual-action agents Alcaftadine [73]|2.5 mg/ml • edetate disodium<br><br>• monobasic sodium<br>• phosphate<br>• purified water<br>• sodium chloride<br>• sodium hydroxide<br>• hydrochloric acid (to adjust pH)<br><br><br>No|Twice daily BAK 0.05|\n|Azelastine [74]|0.5 mg/ml • hypromellose<br><br>• disodium edetate<br>• liquid sorbitol (crystallising)<br>• sodium hydroxide (to adjust pH)<br>• water for injection<br><br><br>No|Twice daily BAK 0.125 Available Free [55, 75]|\n|Bepostatine besilate [76]|15 mg/ml • sodium phosphate<br><br>• sodium chloride<br>• sodium hydroxide<br>• water<br><br><br>No|Twice daily BAK 0.05|\n|Epinastine [77]|0.5 mg/ml • disodium edetate<br><br>• sodium chloride<br>• sodium dihydrogen phosphate dihydrate<br>• sodium hydroxide/ hydrochloric acid (to adjust pH)<br>• purified water<br><br><br>No|Twice daily BAK 0.1|\n|Ketotifen [78, 79]|0.025 mg/ml 0.05 mg/ml<br><br>• glycerol (e422)<br>• sodium hydroxide (e524)<br>• water for injections<br><br><br>No|Twice daily BAK 0.1 Available free [48]|\n|Olopatadine [80, 81]|1 mg/ml [80] 2.22 mg/ml [81]<br><br>• sodium chloride<br>• disodium hydrogen phosphate dodecahydrate (e339)<br>• hydrochloric acid (e507)<br>• sodium hydroxide (e524)<br>• purified water<br><br><br>No|Twice daily Once daily<br><br>BAK 0.1 Available free [49]|\n|BAK benzalkonium chloride, HA hyaluronic<br><br>* Described in technical data sheet|acid, OS ocular surface| |\n\n\n### Topical Antihistamines\n\nCompared with oral antihistamines, topical antihistamines directly target ocular tissues and have a faster onset of action, good tolerance, and a better safety profile due to a lower systemic exposition [7].",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.3248,
+        "recent_mean_similarity": 0.5668,
+        "mean_internal_similarity": 0.5238,
+        "start_sentence_index": 75,
+        "end_sentence_index": 101,
+        "sentence_count": 26,
+        "character_count": 2167,
+        "token_count": 814,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0013"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0018",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Topical ophthalmic formulations containing second-generation antihistamines include levocabastine, emedastine, together with the most recent approvals, cetirizine and bilastine. Emedastine has shown to be superior to levocabastine [27], while olopatadine [28] has shown to be superior to emedastine [29, 30], and similar in terms of symptom\n\nreduction to some of the so-called dual-action agents. As mentioned above, two new topical antihistamines have recently been approved for the treatment of SAC and PAC: cetirizine, approved by the Food and Drug Administration (FDA) in the USA (not available in Europe at present), and a topical bilastine formulation [31] approved by the European Medicines Agency (EMA) in July 2022 (Tables 1 and 2). An ophthalmic formulation with cetirizine 2.4 mg/ ml evaluated efficacy compared to its vehicle (clinical trial NCT01881113). The cetirizine-containing eye drops reduced ocular itching and conjunctival redness significantly\n\n##### Active ophthalmic solutionClinical trials Efficacy Safety: OS adverse events * Considerations\n\nClinical efficacy and safety of topical multi-dose approved antihistamines and dual action agents for treatment of SAC and PACTable 2\n\nApproved by EMA\n\nApproved by FDA\n\nAdverse reactions are uncommon\n\n[33, 34] Common side effects include:\n\n• increased ocular discomfort\n\n• eye burning/stinging upon\n\n- • eye discharge\n- • eye irritation\n- • lacrimation\n\n\n• blurry vision\n\nand include\n\ninstillation\n\n• dry eye\n\nNon-inferior compared with ketotifen\n\nPMID: 30,858,690 Superior compared with vehicle\n\nSuperior compared with vehicle\n\nSuperior to vehicle [31, 38]\n\n[31, 38, 82].",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.3248,
+        "recent_mean_similarity": 0.5668,
+        "mean_internal_similarity": 0.5238,
+        "start_sentence_index": 75,
+        "end_sentence_index": 101,
+        "sentence_count": 26,
+        "character_count": 1640,
+        "token_count": 425,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0013"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0019",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Bilastine [31, 35, 36, 39, 64] NCT03231969; NCT03479307\n\nPMID: 30,587,908\n\n- PMID: 35,234,641\n- PMID: 36,811,846\n\n\nPMID: 36,909,350\n\nCetirizine [33, 34, 70] NCT01881113\n\n• hyperaemia\n\n- • lid oedema\n- • keratitis\n\n\n• eye pain\n\nApproved by FDA and EMA\n\nLevocabastine preservative-free [86]\n\nApproved by FDA and EMA\n\n• Only in France approved\n\nketotifen) [83] Common adverse events:\n\n• itchy eyes\n\n• eye pain\n\nNCT00133627 NCT0013362 (in addition to\n\nEmedastine [71] CAC : C-93-19 CAC: C-94-90. Common adverse events:\n\n• redness of the eyes\n\n- • burning sensation\n- • watery eyes\n\n\n• blurred vision\n\n- • eye irritation\n- • pain\n- • swelling\n- • itching\n\n\n• redness\n\nSuperior compared with lodoxamide\n\nPMID: 7,902,024 Inferior compared with olopatadine\n\n[28]\n\n[85]\n\nLevocabastine [72] PMID: 8,101,534 [84]\n\n• Olopatadine 2.22 mg/ml is approved\n\n• In Europe, azelastine preservative-\n\nfree in single-dose [50] and multi-\n\n• In Europe, ketotifen preservative-\n\n• Olopatadine 1 mg/ml is approved\n\n• Olopatadine preservative-free in\n\nfree in single-dose [47, 54] and\n\n• Olopatadine 0.77 once daily is\n\nApproved by FDA and EMA\n\nApproved by FDA and EMA\n\nApproved by FDA and EMA\n\nmild, transient irritation in the eye. Approved by FDA and EMA\n\nmulti-dose dispenser [48].",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.3248,
+        "recent_mean_similarity": 0.5668,
+        "mean_internal_similarity": 0.5238,
+        "start_sentence_index": 75,
+        "end_sentence_index": 101,
+        "sentence_count": 26,
+        "character_count": 1259,
+        "token_count": 420,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0013"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0020",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "multi-dose dispenser [49]\n\ndose dispenser [55, 75]\n\nby FDA and is an OTC\n\napproved by FDA\n\nApproved by FDA\n\nApproved by FDA\n\nActive ophthalmic solutionClinical trials Efficacy Safety: OS adverse events * Considerations\n\nby EMA\n\n- • taste perversion and bad taste\n- • eye irritation\n\n\n• burning and/or stinging upon\n\nCommon side effects include:\n\n• punctate erosion of corneal\n\nlevocabastine [99–102] Common side effects include\n\nCommon side effects include\n\nCommon side effects include\n\nCommon side effects include\n\nCommon side effects include\n\n• abnormal sensation in eyes\n\n- • burning sensation\n- • eye irritation\n\n\n• punctate keratitis\n\n• eye irritation,\n\n- • eye irritation\n- • dry eye\n\n\n- • eye irritation\n- • eye pain\n\n\n• eye pruritus\n\n• eye redness\n\nepithelium\n\ninstillation\n\n• eye pain\n\nMore comfortable than ketotifen and\n\nresolving the symptoms of allergic\n\nOlopatadine [80, 81] NCT01109485 Superior to ketotifen and superior to\n\nPMID:33,463,568 [45] Superior to vehicle and non-inferior\n\nSlightly inferior to olopatadine [91]\n\nBepotastine and alcaftadine appear\n\nPMID:19,668,586 [91] Non-inferior to levocabastine [90]\n\ncompared with ketotifen 0.05%\n\nPMID: 18,631,332 [99] Superior: ketotifen 0.025% more\n\nSafety in children between 7–15\n\nand to placebo and to sodium\n\nfluorometholone acetate [99]\n\neffective and better tolerated\n\nto outweigh olopatadine in\n\nSuperior to vehicle [94, 95]\n\nto olopatadine 0.1% [87]\n\n- Superior to placebo [88]\n- Superior to placebo [89]\n\n\nSuperior compared with\n\nNCT01861522 [93] Superior to vehicle [92]\n\nconjunctivitis [45]\n\ncromoglycate [96]\n\nSuperior to placebo\n\nazelastine [97]\n\nyears [93]\n\n[98]\n\nEpinastine [77] PMID: 14,996,516 [94]\n\nPMID: 14,996,515 [95]\n\nPMID: 12,841,924 [96]\n\nPMID: 18,691,985 [97]\n\nKetotifen [78] PMID:30,303,746 [98]\n\nPMID:12,841,925 [90]\n\nagents Alcaftadine [73] PMID:29,543,548 [87]\n\nAzelastine [74] PMID: 9,061,218 [88]\n\nPMID: 8,977,510 [89]\n\nBepostatine besilate [76] NCT00586664 [92]\n\n(continued)Table 2\n\naction\n\nDual-\n\n* Described in technical data sheet\n\nOS ocular surface\n\ncompared to vehicle, they were well tolerated, and showed an acceptable safety profile [32–34].",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.3248,
+        "recent_mean_similarity": 0.5668,
+        "mean_internal_similarity": 0.5238,
+        "start_sentence_index": 75,
+        "end_sentence_index": 101,
+        "sentence_count": 26,
+        "character_count": 2148,
+        "token_count": 630,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0013"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0021",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "This cetirizine ophthalmic formulation needs to be used three times a day, as the dosage is one drop in each affected eye every 8 h. It contains BAK (0.01%) as a preservative to guarantee the sterility of the multi-dose formulation. As for the newest bilastine ophthalmic solution, efficacy, tolerability, and efficacy of a once-daily administration have been evaluated in clinical trials to date [31, 35–39]. The bilastine formulation has shown a fast onset of action and efficacy for as long as 16 h post-administration, indicating that it is suitable for a once-daily dosing [31, 38].",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.3248,
+        "recent_mean_similarity": 0.5668,
+        "mean_internal_similarity": 0.5238,
+        "start_sentence_index": 75,
+        "end_sentence_index": 101,
+        "sentence_count": 26,
+        "character_count": 587,
+        "token_count": 161,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0013"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0022",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -297,11 +493,11 @@
         "character_count": 131,
         "token_count": 39
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0014",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0023",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "This newly EMA-approved bilastine formulation is a preservative-free solution co-formulated with hyaluronic acid, unique in its class, presented in a special multi-dose container. Preclinical in vitro and in vivo studies have shown that these two characteristics (preservative-free with hyaluronic acid) help preserve the tear film and ocular surface integrity [31, 38]. ### Topical Mast Cell Stabilizers\n\nThe mechanism of action by which topical mast cell stabilizers inhibit mast cell degranulation remains unclear [7]. Available mast cell stabilizers include lodoxamide, nedocromil or sodium cromoglycate, and others. However, recent studies [7, 26] suggest that mast cell stabilizers are not as effective in treating ocular allergies because to achieve their maximum effect they need to be used as a prophylactic measure prior to allergen exposure, thus decreasing compliance and adherence as compared to other anti-allergic ophthalmic agents [26, 40]. ### Topical Dual‑Activity Agents\n\nTopical dualactivity agents (antihistamine/mast cell stabilizing activity) have been well studied and are supported by extensive clinical experience [7]. Although topical antihistamines and dual-activity agents are treated as a separate category in this article, recent publications include both antihistamines and these topical drugs in the same group, since\n\n- at the conjunctival concentrations reached in direct topical use, almost all antihistamine eye drops also act as mast cell stabilizers to some extent [41, 42]. Examples of widely used topical dual-activity agents include azelastine, epinastine, ketotifen, olopatadine, alcaftadine, and bepotastine besilate (Tables 1 and 2). In terms of efficacy, olopatadine, ketotifen, alcaftadine and bepotastine have a similar efficacy profile [43, 44], although some studies reported that bepostatine and alcaftadine appear to be superior to olopatadine [45]. In the management of SAC, formulations containing ketotifen 0.025% have proven to be effective, although in a study that collected patient-reported measures of efficacy and comfort, patients preferred an olopatadine 0.1% solution [46].",
+      "text": "This newly EMA-approved bilastine formulation is a preservative-free solution co-formulated with hyaluronic acid, unique in its class, presented in a special multi-dose container. Preclinical in vitro and in vivo studies have shown that these two characteristics (preservative-free with hyaluronic acid) help preserve the tear film and ocular surface integrity [31, 38]. ### Topical Mast Cell Stabilizers\n\nThe mechanism of action by which topical mast cell stabilizers inhibit mast cell degranulation remains unclear [7]. Available mast cell stabilizers include lodoxamide, nedocromil or sodium cromoglycate, and others. However, recent studies [7, 26] suggest that mast cell stabilizers are not as effective in treating ocular allergies because to achieve their maximum effect they need to be used as a prophylactic measure prior to allergen exposure, thus decreasing compliance and adherence as compared to other anti-allergic ophthalmic agents [26, 40]. ### Topical Dual‑Activity Agents\n\nTopical dualactivity agents (antihistamine/mast cell stabilizing activity) have been well studied and are supported by extensive clinical experience [7]. Although topical antihistamines and dual-activity agents are treated as a separate category in this article, recent publications include both antihistamines and these topical drugs in the same group, since\n\n- at the conjunctival concentrations reached in direct topical use, almost all antihistamine eye drops also act as mast cell stabilizers to some extent [41, 42]. Examples of widely used topical dual-activity agents include azelastine, epinastine, ketotifen, olopatadine, alcaftadine, and bepotastine besilate (Tables 1 and 2). In terms of efficacy, olopatadine, ketotifen, alcaftadine and bepotastine have a similar efficacy profile [43, 44], although some studies reported that bepostatine and alcaftadine appear to be superior to olopatadine [45].",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -313,10 +509,33 @@
         "start_sentence_index": 102,
         "end_sentence_index": 112,
         "sentence_count": 10,
-        "character_count": 2137,
-        "token_count": 540
+        "character_count": 1901,
+        "token_count": 484,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0015"
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0015",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0024",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "In the management of SAC, formulations containing ketotifen 0.025% have proven to be effective, although in a study that collected patient-reported measures of efficacy and comfort, patients preferred an olopatadine 0.1% solution [46].",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.3139,
+        "recent_mean_similarity": 0.6703,
+        "mean_internal_similarity": 0.5876,
+        "start_sentence_index": 102,
+        "end_sentence_index": 112,
+        "sentence_count": 10,
+        "character_count": 235,
+        "token_count": 58,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0015"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0025",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -335,7 +554,7 @@
         "character_count": 388,
         "token_count": 90
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0016",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0026",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -354,7 +573,7 @@
         "character_count": 1939,
         "token_count": 503
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0017",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0027",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -373,7 +592,7 @@
         "character_count": 971,
         "token_count": 241
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0018",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0028",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -392,7 +611,7 @@
         "character_count": 165,
         "token_count": 42
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0019",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0029",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -411,7 +630,7 @@
         "character_count": 1849,
         "token_count": 480
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0020",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0030",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -430,7 +649,7 @@
         "character_count": 76,
         "token_count": 26
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0021",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0031",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -449,7 +668,7 @@
         "character_count": 1238,
         "token_count": 309
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0022",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0032",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -468,11 +687,11 @@
         "character_count": 221,
         "token_count": 50
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0023",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0033",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "Topical ocular decongestants and corticosteroids were used by most patients, independent of their diagnosis and OA severity [62]. Furthermore, patients often self-medicate with OTC preparations containing preservatives, including BAK, which may exacerbate ocular surface symptoms [7] and cause toxicity [8, 63]. Adherence to topical ophthalmic treatment in eye conditions has been widely studied. Patient preference for an eye drop can often be a primary factor in determining the level of compliance and adherence to treatment [46]. Discomfort upon instillation (as produced by NSAIDs) and long regular dosing (as required for efficacy in treatment with mast cells stabilizers) are other causes that have been associated with a poorer treatment adherence [1]. At present, there is a large market interest in preservative-free products,\n\nparticularly for patients who need daily eye drops for long periods. Single-dose or single-use containers, which do not need preservatives [50, 54], and some multi-dose [64], preservative-free ophthalmic solutions are now available thanks to innovative device design, making it possible for patient preferences to be considered. In our experience, some patients may prefer single-dose presentations, as they find them more convenient, however a multi-dose presentation has the benefit of reducing product waste, common in single-dose eye drops. In addition, patients requiring permanent or longterm topical eye treatment, namely glaucoma, have better treatment compliance with multi-dose delivery systems [65, 66], and this may be applicable to AC. Several single-dose eye drop formulations are available for allergic conjunctivitis [50, 54], in addition to the usual BAK-containing multidose solutions, and a new preservative-free multi-dose formulation of bilastine with sodium hyaluronate has been recently approved [64].Along with the dispensation format, approaches to improving treatment adherence include treatment tolerability [67] and dosing schedules, as complex drug dosing regimens have been cited as a significant barrier to patient compliance [68, 69]. Simplifying dosing can be achieved by prescribing treatments that require once- or twice-daily dosing rather than multiple daily doses [69].",
+      "text": "Topical ocular decongestants and corticosteroids were used by most patients, independent of their diagnosis and OA severity [62]. Furthermore, patients often self-medicate with OTC preparations containing preservatives, including BAK, which may exacerbate ocular surface symptoms [7] and cause toxicity [8, 63]. Adherence to topical ophthalmic treatment in eye conditions has been widely studied. Patient preference for an eye drop can often be a primary factor in determining the level of compliance and adherence to treatment [46]. Discomfort upon instillation (as produced by NSAIDs) and long regular dosing (as required for efficacy in treatment with mast cells stabilizers) are other causes that have been associated with a poorer treatment adherence [1]. At present, there is a large market interest in preservative-free products,\n\nparticularly for patients who need daily eye drops for long periods. Single-dose or single-use containers, which do not need preservatives [50, 54], and some multi-dose [64], preservative-free ophthalmic solutions are now available thanks to innovative device design, making it possible for patient preferences to be considered. In our experience, some patients may prefer single-dose presentations, as they find them more convenient, however a multi-dose presentation has the benefit of reducing product waste, common in single-dose eye drops. In addition, patients requiring permanent or longterm topical eye treatment, namely glaucoma, have better treatment compliance with multi-dose delivery systems [65, 66], and this may be applicable to AC. Several single-dose eye drop formulations are available for allergic conjunctivitis [50, 54], in addition to the usual BAK-containing multidose solutions, and a new preservative-free multi-dose formulation of bilastine with sodium hyaluronate has been recently approved [64].Along with the dispensation format, approaches to improving treatment adherence include treatment tolerability [67] and dosing schedules, as complex drug dosing regimens have been cited as a significant barrier to patient compliance [68, 69].",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -484,10 +703,33 @@
         "start_sentence_index": 147,
         "end_sentence_index": 158,
         "sentence_count": 11,
-        "character_count": 2245,
-        "token_count": 538
+        "character_count": 2104,
+        "token_count": 503,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0024"
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0024",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0034",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Simplifying dosing can be achieved by prescribing treatments that require once- or twice-daily dosing rather than multiple daily doses [69].",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.3423,
+        "recent_mean_similarity": 0.5724,
+        "mean_internal_similarity": 0.5195,
+        "start_sentence_index": 147,
+        "end_sentence_index": 158,
+        "sentence_count": 11,
+        "character_count": 140,
+        "token_count": 37,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0024"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0035",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -506,7 +748,7 @@
         "character_count": 1535,
         "token_count": 358
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0025",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0036",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -525,7 +767,7 @@
         "character_count": 499,
         "token_count": 120
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0026",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0037",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -544,7 +786,7 @@
         "character_count": 541,
         "token_count": 121
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0027",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0038",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -563,7 +805,7 @@
         "character_count": 104,
         "token_count": 25
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0028",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0039",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -582,7 +824,7 @@
         "character_count": 74,
         "token_count": 20
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0029",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0040",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -601,7 +843,7 @@
         "character_count": 82,
         "token_count": 21
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0030",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0041",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -620,11 +862,11 @@
         "character_count": 1159,
         "token_count": 311
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0031",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0042",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "RA has been a speaker, writer or scientific advisor for Novartis, GSK, Sanofi Genzyme, ThermoFisher, Lofarma, Smart Practice, HAL Allergy, Allergy Therapeutics, ALK. AG has received fees as a speaker, writing, scientific advisor, manuscript writing or educational event\n\nand support for attending meetings for Adamed, Alcon, Bausch, FAES Farma Menarini, Mediton, Novartis, Polpharma, Polfa Warszawa and Sanofi. PK has received fees for speaking, writing, scientific consultancy, manuscript writing and participation in educational events, and support for attending meetings for Adamed, AstraZeneca, Boehringer Ingelheim, GSK, Celon Pharma, Chiesi, Berlin Chemie Menarini, Novartis, Sanofi, Teva , Polpharma, Glenmark. Competing Interests AL: has received fees as a speaker, writing, scientific advisor from FAES Farma, Santen, Fidia and TheaLQ declares that he has no conflict of interest.IJP has received fees as a speaker, medical writer, lecturer and/or scientific advisor from FAES Farma, Sanofi, Novartis, GSK, Abbvie, and Organon; support for attending meetings from FAES Farma, Sanofi, Novartis, and GSK; and as a member of data monitoring committees from Roxall. JMBdC has received fees as a speaker, writing, scientific advisor from Alcon, Faes, Fidia, Santen, Sifi, Thea.FJSL has received fees as a speaker, writing, scientific advisor from Gebro Pharma, Chiesi and FAES Farma.RA has received fees as a speaker, writing, scientific advisor, manuscript writing or educational event and support for attending meetings from Allergy Therapeutics, Glaxo Smith Kline, HAL Allergy, Lofarma, Malesci, Novartis, Sanofi, Smart Practice and Thermo Fisher.JM has received support for attending meetings from Thea Lab, Brill Lab, and Santen.JMLL declares that he has no conflict of interest.EGM declares that she has no conflict of interestRA has been a speaker, writer or scientific advisor for Novartis, GSK, Sanofi Genzyme, ThermoFisher, Lofarma, Smart Practice, HAL Allergy, Allergy Therapeutics, ALKAG has received fees as a speaker, writing, scientific advisor, manuscript writing or educational event and support for attending meetings for Adamed, Alcon, Bausch, FAES Farma Menarini, Mediton, Novartis, Polpharma, Polfa Warszawa and Sanofi. PK has received fees for speaking, writing, scientific consultancy, manuscript writing and participation in educational events, and support for attending meetings for Adamed, AstraZeneca, Boehringer Ingelheim, GSK, Celon Pharma, Chiesi, Berlin Chemie Menarini, Novartis, Sanofi, Teva , Polpharma, Glenmark.",
+      "text": "RA has been a speaker, writer or scientific advisor for Novartis, GSK, Sanofi Genzyme, ThermoFisher, Lofarma, Smart Practice, HAL Allergy, Allergy Therapeutics, ALK. AG has received fees as a speaker, writing, scientific advisor, manuscript writing or educational event\n\nand support for attending meetings for Adamed, Alcon, Bausch, FAES Farma Menarini, Mediton, Novartis, Polpharma, Polfa Warszawa and Sanofi. PK has received fees for speaking, writing, scientific consultancy, manuscript writing and participation in educational events, and support for attending meetings for Adamed, AstraZeneca, Boehringer Ingelheim, GSK, Celon Pharma, Chiesi, Berlin Chemie Menarini, Novartis, Sanofi, Teva , Polpharma, Glenmark. Competing Interests AL: has received fees as a speaker, writing, scientific advisor from FAES Farma, Santen, Fidia and TheaLQ declares that he has no conflict of interest.IJP has received fees as a speaker, medical writer, lecturer and/or scientific advisor from FAES Farma, Sanofi, Novartis, GSK, Abbvie, and Organon; support for attending meetings from FAES Farma, Sanofi, Novartis, and GSK; and as a member of data monitoring committees from Roxall.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -636,10 +878,33 @@
         "start_sentence_index": 190,
         "end_sentence_index": 196,
         "sentence_count": 6,
-        "character_count": 2551,
-        "token_count": 681
+        "character_count": 1170,
+        "token_count": 316,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0032"
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0032",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0043",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "JMBdC has received fees as a speaker, writing, scientific advisor from Alcon, Faes, Fidia, Santen, Sifi, Thea.FJSL has received fees as a speaker, writing, scientific advisor from Gebro Pharma, Chiesi and FAES Farma.RA has received fees as a speaker, writing, scientific advisor, manuscript writing or educational event and support for attending meetings from Allergy Therapeutics, Glaxo Smith Kline, HAL Allergy, Lofarma, Malesci, Novartis, Sanofi, Smart Practice and Thermo Fisher.JM has received support for attending meetings from Thea Lab, Brill Lab, and Santen.JMLL declares that he has no conflict of interest.EGM declares that she has no conflict of interestRA has been a speaker, writer or scientific advisor for Novartis, GSK, Sanofi Genzyme, ThermoFisher, Lofarma, Smart Practice, HAL Allergy, Allergy Therapeutics, ALKAG has received fees as a speaker, writing, scientific advisor, manuscript writing or educational event and support for attending meetings for Adamed, Alcon, Bausch, FAES Farma Menarini, Mediton, Novartis, Polpharma, Polfa Warszawa and Sanofi. PK has received fees for speaking, writing, scientific consultancy, manuscript writing and participation in educational events, and support for attending meetings for Adamed, AstraZeneca, Boehringer Ingelheim, GSK, Celon Pharma, Chiesi, Berlin Chemie Menarini, Novartis, Sanofi, Teva , Polpharma, Glenmark.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.1115,
+        "recent_mean_similarity": 0.5089,
+        "mean_internal_similarity": 0.5089,
+        "start_sentence_index": 190,
+        "end_sentence_index": 196,
+        "sentence_count": 6,
+        "character_count": 1380,
+        "token_count": 367,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0032"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0044",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -658,7 +923,7 @@
         "character_count": 149,
         "token_count": 33
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0033",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0045",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -677,7 +942,7 @@
         "character_count": 850,
         "token_count": 177
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0034",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0046",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -696,7 +961,7 @@
         "character_count": 19,
         "token_count": 7
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0035",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0047",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -715,7 +980,7 @@
         "character_count": 159,
         "token_count": 54
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0036",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0048",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -734,7 +999,7 @@
         "character_count": 1125,
         "token_count": 388
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0037",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0049",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -753,7 +1018,7 @@
         "character_count": 99,
         "token_count": 33
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0038",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0050",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -772,7 +1037,7 @@
         "character_count": 175,
         "token_count": 63
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0039",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0051",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -791,7 +1056,7 @@
         "character_count": 104,
         "token_count": 40
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0040",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0052",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -810,7 +1075,7 @@
         "character_count": 124,
         "token_count": 30
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0041",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0053",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -829,7 +1094,7 @@
         "character_count": 1013,
         "token_count": 343
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0042",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0054",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -848,7 +1113,7 @@
         "character_count": 364,
         "token_count": 127
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0043",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0055",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -867,11 +1132,11 @@
         "character_count": 1345,
         "token_count": 434
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0044",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0056",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "The importance of preventing and managing tear dysfunction syndrome in allergic conjunctivitis and how to tackle this problem. J Investig Allergol Clin Immunol. 2023;33(6):439–45. - 26. Kimchi N, Bielory L. The allergic eye: recommendations about pharmacotherapy and recent therapeutic agents. Curr Opin Allergy Clin Immunol. 2020;20(4):414–20. - 27. Noble S, McTavish D, Levocabastine. An update of its pharmacology, clinical efficacy and tolerability in the topical treatment of allergic rhinitis and conjunctivitis. Drugs. 1995;50(6):1032–49. - 28. Abelson MB, Greiner JV. Comparative efficacy of olopatadine 0.1% ophthalmic solution versus levocabastine 0.05% ophthalmic suspension using the conjunctival allergen challenge model. Curr Med Res Opin. 2004;20(12):1953–8. - 29. Discepola M, Deschenes J, Abelson M. Comparison of the topical ocular antiallergic efficacy of emedastine 0.05% ophthalmic solution to ketorolac 0.5% ophthalmic solution in a clinical model of allergic conjunctivitis. Acta Ophthalmol Scand Suppl. 1999;(228):43–6. - 30. Secchi A, Leonardi A, Discepola M, Deschenes J, Abelson MB. An efficacy and tolerance comparison of emedastine difumarate 0.05% and levocabastine hydrochloride 0.05%: reducing chemosis and eyelid swelling in subjects with seasonal allergic conjunctivitis. Emadine Study Group. Acta Ophthalmol Scand Suppl. 2000;(230):48–51. - 31. Gomes PJ, Ciolino JB, Arranz P, Hernandez G, Fernandez N. Efficacy of once-daily ophthalmic bilastine for the treatment of allergic conjunctivitis: a dose-finding study. J Investig Allergol Clin Immunol. 2022;33(4):0. - 32. Multi-Center A. Evaluation of the Onset and Duration of Action of AC-170 0.24% Compared to Vehicle. Clinical Trials. gov. https://clinicaltrials.gov/ct2/show/NCT01881113?term= cetirizine+0.24&draw=2&rank=3. - 33. Malhotra RP, Meier E, Torkildsen G, Gomes PJ, Jasek MC. Safety of cetirizine ophthalmic solution 0.24% for the treatment of allergic conjunctivitis in adult and pediatric subjects. Clin Ophthalmol. 2019;13:403–13. - 34. Meier EJ, Torkildsen GL, Gomes PJ, Jasek MC. Phase III trials examining the efficacy of cetirizine ophthalmic solution 0.24% compared to vehicle for the treatment of allergic conjunctivitis in the conjunctival allergen challenge model. Clin Ophthalmol. 2018;12:2617–28. - 35. Gomes PJ, Ciolino JB, Arranz P, Hernández G, Fernández N. Bilastine 0.6% preservative-free eye drops, a once-daily treatment for allergic conjunctivitis. J Investig Allergol Clin Immunol. 2023;0. - 36. Kuna P, Jutel M, Pulka G, Tokarski S, Arranz P, Hernández G, et al. Safety and Tolerability of Bilastine 0.6% Ophthalmic Solution: an 8-Weeks phase III study. Clin Ophthalmol. 2023;17:735–\n\n46. The new once daily topical antihistamine for the treatment of ocular allergy that protects and hydrates ocular surface. - 37. Clinical Trials. gov. https://clinicaltrials.gov/ct2/show/NCT03 231969; https://clinicaltrials.gov/ct2/show/NCT03479307 [Last accessed: December, 2022]. - 38. Torrens I, Ganza Á, Hernández G, Gonzalo A, Zazpe A. Ocular biodistribution of once-daily 0.6% Bilastine Eye drops reveals highest levels in Conjunctiva up to 24 h postadministration. J Ocul Pharmacol Ther. 2022;38(9):617–25. - 39. Gomes PJ, Ciolino JB, Arranz P, Gonzalo A, Fernández N, Hernández G. Bilastine 0.6% preservative-free eye drops, an effective once-daily treatment to reduce signs and symptoms of allergic conjunctivitis: a pooled analysis of two randomized clinical trials. J Investig Allergol Clin Immunol. 2023;0. - 40. Carr W, Schaeffer J, Donnenfeld E. Treating allergic conjunctivitis: a once-daily medication that provides 24-hour symptom relief. Allergy Rhinol (Providence). 2016;7(2):107–14. - 41. Patel DS, Arunakirinathan M, Stuart A, Angunawela R. Allergic eye disease. BMJ. 2017;359:j4706. - 42. Burks AW, Holgate ST, O’Hehir RE, Broide DH, Bacharier LB, Hershey GKK, et al. Middleton’s allergy: principles and practice. Amsterdam: Elsevier; 2020. - 43. Kam KW, Chen LJ, Wat N, Young AL. Topical olopatadine in the treatment of allergic conjunctivitis: a systematic review and Meta-analysis. Ocul Immunol Inflamm. 2017;25(5):663–77. - 44.",
+      "text": "The importance of preventing and managing tear dysfunction syndrome in allergic conjunctivitis and how to tackle this problem. J Investig Allergol Clin Immunol. 2023;33(6):439–45. - 26. Kimchi N, Bielory L. The allergic eye: recommendations about pharmacotherapy and recent therapeutic agents. Curr Opin Allergy Clin Immunol. 2020;20(4):414–20. - 27. Noble S, McTavish D, Levocabastine. An update of its pharmacology, clinical efficacy and tolerability in the topical treatment of allergic rhinitis and conjunctivitis. Drugs. 1995;50(6):1032–49. - 28. Abelson MB, Greiner JV. Comparative efficacy of olopatadine 0.1% ophthalmic solution versus levocabastine 0.05% ophthalmic suspension using the conjunctival allergen challenge model. Curr Med Res Opin. 2004;20(12):1953–8. - 29. Discepola M, Deschenes J, Abelson M. Comparison of the topical ocular antiallergic efficacy of emedastine 0.05% ophthalmic solution to ketorolac 0.5% ophthalmic solution in a clinical model of allergic conjunctivitis. Acta Ophthalmol Scand Suppl. 1999;(228):43–6. - 30. Secchi A, Leonardi A, Discepola M, Deschenes J, Abelson MB. An efficacy and tolerance comparison of emedastine difumarate 0.05% and levocabastine hydrochloride 0.05%: reducing chemosis and eyelid swelling in subjects with seasonal allergic conjunctivitis. Emadine Study Group. Acta Ophthalmol Scand Suppl. 2000;(230):48–51. - 31. Gomes PJ, Ciolino JB, Arranz P, Hernandez G, Fernandez N. Efficacy of once-daily ophthalmic bilastine for the treatment of allergic conjunctivitis: a dose-finding study. J Investig Allergol Clin Immunol. 2022;33(4):0. - 32. Multi-Center A.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -883,10 +1148,54 @@
         "start_sentence_index": 316,
         "end_sentence_index": 403,
         "sentence_count": 87,
-        "character_count": 4159,
-        "token_count": 1316
+        "character_count": 1619,
+        "token_count": 498,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0045"
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0045",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0057",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Evaluation of the Onset and Duration of Action of AC-170 0.24% Compared to Vehicle. Clinical Trials. gov. https://clinicaltrials.gov/ct2/show/NCT01881113?term= cetirizine+0.24&draw=2&rank=3. - 33. Malhotra RP, Meier E, Torkildsen G, Gomes PJ, Jasek MC. Safety of cetirizine ophthalmic solution 0.24% for the treatment of allergic conjunctivitis in adult and pediatric subjects. Clin Ophthalmol. 2019;13:403–13. - 34. Meier EJ, Torkildsen GL, Gomes PJ, Jasek MC. Phase III trials examining the efficacy of cetirizine ophthalmic solution 0.24% compared to vehicle for the treatment of allergic conjunctivitis in the conjunctival allergen challenge model. Clin Ophthalmol. 2018;12:2617–28. - 35. Gomes PJ, Ciolino JB, Arranz P, Hernández G, Fernández N. Bilastine 0.6% preservative-free eye drops, a once-daily treatment for allergic conjunctivitis. J Investig Allergol Clin Immunol. 2023;0. - 36. Kuna P, Jutel M, Pulka G, Tokarski S, Arranz P, Hernández G, et al. Safety and Tolerability of Bilastine 0.6% Ophthalmic Solution: an 8-Weeks phase III study. Clin Ophthalmol. 2023;17:735–\n\n46. The new once daily topical antihistamine for the treatment of ocular allergy that protects and hydrates ocular surface. - 37. Clinical Trials. gov. https://clinicaltrials.gov/ct2/show/NCT03 231969; https://clinicaltrials.gov/ct2/show/NCT03479307 [Last accessed: December, 2022]. - 38. Torrens I, Ganza Á, Hernández G, Gonzalo A, Zazpe A. Ocular biodistribution of once-daily 0.6% Bilastine Eye drops reveals highest levels in Conjunctiva up to 24 h postadministration. J Ocul Pharmacol Ther.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.035,
+        "recent_mean_similarity": 0.1662,
+        "mean_internal_similarity": 0.1409,
+        "start_sentence_index": 316,
+        "end_sentence_index": 403,
+        "sentence_count": 87,
+        "character_count": 1580,
+        "token_count": 508,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0045"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0058",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "2022;38(9):617–25. - 39. Gomes PJ, Ciolino JB, Arranz P, Gonzalo A, Fernández N, Hernández G. Bilastine 0.6% preservative-free eye drops, an effective once-daily treatment to reduce signs and symptoms of allergic conjunctivitis: a pooled analysis of two randomized clinical trials. J Investig Allergol Clin Immunol. 2023;0. - 40. Carr W, Schaeffer J, Donnenfeld E. Treating allergic conjunctivitis: a once-daily medication that provides 24-hour symptom relief. Allergy Rhinol (Providence). 2016;7(2):107–14. - 41. Patel DS, Arunakirinathan M, Stuart A, Angunawela R. Allergic eye disease. BMJ. 2017;359:j4706. - 42. Burks AW, Holgate ST, O’Hehir RE, Broide DH, Bacharier LB, Hershey GKK, et al. Middleton’s allergy: principles and practice. Amsterdam: Elsevier; 2020. - 43. Kam KW, Chen LJ, Wat N, Young AL. Topical olopatadine in the treatment of allergic conjunctivitis: a systematic review and Meta-analysis. Ocul Immunol Inflamm. 2017;25(5):663–77. - 44.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.035,
+        "recent_mean_similarity": 0.1662,
+        "mean_internal_similarity": 0.1409,
+        "start_sentence_index": 316,
+        "end_sentence_index": 403,
+        "sentence_count": 87,
+        "character_count": 958,
+        "token_count": 314,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0045"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0059",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -905,11 +1214,11 @@
         "character_count": 541,
         "token_count": 186
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0046",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0060",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "Leonardi A, Zafirakis P. Efficacy and comfort of olopatadine versus ketotifen ophthalmic solutions: a double-masked, environmental study of patient preference. Curr Med Res Opin. 2004;20(8):1167–73. - 47. Mortemousque B, Bourcier T, Khairallah M, Messaoud R, BrignoleBaudouin F, Renault D, et al. Comparison of preservative-free ketotifen fumarate and preserved olopatadine hydrochloride eye drops in the treatment of moderate to severe seasonal allergic conjunctivitis. J Fr Ophtalmol. 2014;37(1):1–8. - 48. ZABAK 0. 25 mg/ml, eye drops, solution. Ketotifen. PACKAGE LEAFLET: INFORMATION FOR THE USER. https:// file.wuxuwang.com/hma/FR_H_0411_001_FinalPL.pdf. - 49. Olodon Free (Olopatadine 1 mg). POLPHARMA Polfa Warszawa Available at: S.A. https://polpharma.pl/wp-content/ uploads/2020/08/73992_.pdf. - 50. Tebarat. (Azelastine 0.5 mg/ml eye drops solution in a singledose package). Tecnical data sheet. https://cima.aemps.es/cima/ dochtml/ft/77005/FT_77005.html. - 51. Varu DM, Rhee MK, Akpek EK, Amescua G, Farid M, GarciaFerrer FJ, et al. Conjunctivitis Preferred Pract Pattern® Ophthalmol. 2019;126(1):P94–169. - 52. Anolik R, Pearlman D, Teper A, Gates D. Mometasone furoate improves nasal and ocular symptoms of seasonal allergic rhinitis in adolescents. Allergy Asthma Proc. 2009;30(4):406–12. - 53. Goldstein MH, Silva FQ, Blender N, Tran T, Vantipalli S. Ocular benzalkonium chloride exposure: problems and solutions. Eye (Lond). 2022;36(2):361–8. - 54. Zaditen 0. 25 mg/ml eye drops in solution in single-dose packs. Ketotifen.",
+      "text": "Leonardi A, Zafirakis P. Efficacy and comfort of olopatadine versus ketotifen ophthalmic solutions: a double-masked, environmental study of patient preference. Curr Med Res Opin. 2004;20(8):1167–73. - 47. Mortemousque B, Bourcier T, Khairallah M, Messaoud R, BrignoleBaudouin F, Renault D, et al. Comparison of preservative-free ketotifen fumarate and preserved olopatadine hydrochloride eye drops in the treatment of moderate to severe seasonal allergic conjunctivitis. J Fr Ophtalmol. 2014;37(1):1–8. - 48. ZABAK 0. 25 mg/ml, eye drops, solution. Ketotifen. PACKAGE LEAFLET: INFORMATION FOR THE USER. https:// file.wuxuwang.com/hma/FR_H_0411_001_FinalPL.pdf. - 49. Olodon Free (Olopatadine 1 mg). POLPHARMA Polfa Warszawa Available at: S.A. https://polpharma.pl/wp-content/ uploads/2020/08/73992_.pdf. - 50. Tebarat. (Azelastine 0.5 mg/ml eye drops solution in a singledose package). Tecnical data sheet. https://cima.aemps.es/cima/ dochtml/ft/77005/FT_77005.html. - 51. Varu DM, Rhee MK, Akpek EK, Amescua G, Farid M, GarciaFerrer FJ, et al. Conjunctivitis Preferred Pract Pattern® Ophthalmol. 2019;126(1):P94–169. - 52. Anolik R, Pearlman D, Teper A, Gates D. Mometasone furoate improves nasal and ocular symptoms of seasonal allergic rhinitis in adolescents. Allergy Asthma Proc. 2009;30(4):406–12. - 53. Goldstein MH, Silva FQ, Blender N, Tran T, Vantipalli S. Ocular benzalkonium chloride exposure: problems and solutions. Eye (Lond). 2022;36(2):361–8. - 54. Zaditen 0.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -921,14 +1230,37 @@
         "start_sentence_index": 412,
         "end_sentence_index": 450,
         "sentence_count": 38,
-        "character_count": 1540,
-        "token_count": 531
+        "character_count": 1476,
+        "token_count": 509,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0047"
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0047",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0061",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "Technical data sheet. https://cima.aemps.es/cima/ dochtml/ft/63616/FichaTecnica_63616.html. - 55. Azelastin-COMOD 0. 5 mg/ml eye drops, solution. Azelastine hydrochloride. Product information. https://www.google. com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved= 2ahUKEwiZ6LO1kfL_AhVtUaQEHcEfBZMQFnoECCEQAQ& url=https%3A%2F%2Fmri.cts-mrp.eu%2Fportal%2Fv1% 2Fodata%2FDocument(4483a37c-da29-eb11-80eb-0050569c593a)\n\n\n- %2FDownload&usg=AOvVaw2zumjX3hX9QO9AEtXI-DIy& opi=89978449. - 56. Labetoulle M, Benitez-Del-castillo JM, Barabino S, Vanrell RH, Daull P, Garrigue JS et al. Artificial tears: Biological Role of their ingredients in the management of Dry Eye Disease. Int J Mol Sci. 2022;23(5). - 57. La López-De A, Pinto-Fraga J, Blázquez Arauzo F, Rodríguez RU, González-García MJ. Safety and efficacy of an artificial tear containing 0.3% hyaluronic acid in the management of moderateto-severe dry eye disease. Eye Contact Lens. 2017;43(6):383–8. - 58. Aragona P, Simmons PA, Wang H, Wang T. Physicochemical properties of hyaluronic acid–based lubricant eye drops. Translational Vis Sci Technol. 2019;8(6). - 59. Belalcázar-Rey S, Sánchez Huerta V, Ochoa-Tabares JC, Altamirano Vallejo S, Soto-Gómez A, Suárez-Velasco R, et al. Efficacy and safety of Sodium Hyaluronate/chondroitin Sulfate Preservative-free Ophthalmic solution in the treatment of Dry Eye: a clinical trial. Curr Eye Res. 2021;46(7):919–29. - 60. Huerta Ángeles G, Nešporová K. Hyaluronan and its derivatives for ophthalmology: recent advances and future perspectives. Carbohydr Polym. 2021;259. - 61. Arana E. The new once daily multidose preservative free 0.6% bilastine eye drop formulation containing sodium hyaluronate protects against conjunctival dehydration and promotes corneal wound healing in a comparative in vitro study. EAACI 2022 #000949 Abstract Prague. Czech Republic; July 2022. - 62. Leonardi A, Piliego F, Castegnaro A, Lazzarini D, La Gloria Valerio A, Mattana P, et al.",
+      "text": "25 mg/ml eye drops in solution in single-dose packs. Ketotifen.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0366,
+        "recent_mean_similarity": 0.2163,
+        "mean_internal_similarity": 0.1622,
+        "start_sentence_index": 412,
+        "end_sentence_index": 450,
+        "sentence_count": 38,
+        "character_count": 63,
+        "token_count": 24,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0047"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0062",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Technical data sheet. https://cima.aemps.es/cima/ dochtml/ft/63616/FichaTecnica_63616.html. - 55. Azelastin-COMOD 0. 5 mg/ml eye drops, solution. Azelastine hydrochloride. Product information. https://www.google. com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved= 2ahUKEwiZ6LO1kfL_AhVtUaQEHcEfBZMQFnoECCEQAQ& url=https%3A%2F%2Fmri.cts-mrp.eu%2Fportal%2Fv1% 2Fodata%2FDocument(4483a37c-da29-eb11-80eb-0050569c593a)\n\n\n- %2FDownload&usg=AOvVaw2zumjX3hX9QO9AEtXI-DIy& opi=89978449. - 56. Labetoulle M, Benitez-Del-castillo JM, Barabino S, Vanrell RH, Daull P, Garrigue JS et al. Artificial tears: Biological Role of their ingredients in the management of Dry Eye Disease. Int J Mol Sci. 2022;23(5). - 57. La López-De A, Pinto-Fraga J, Blázquez Arauzo F, Rodríguez RU, González-García MJ. Safety and efficacy of an artificial tear containing 0.3% hyaluronic acid in the management of moderateto-severe dry eye disease. Eye Contact Lens. 2017;43(6):383–8. - 58. Aragona P, Simmons PA, Wang H, Wang T. Physicochemical properties of hyaluronic acid–based lubricant eye drops. Translational Vis Sci Technol. 2019;8(6). - 59. Belalcázar-Rey S, Sánchez Huerta V, Ochoa-Tabares JC, Altamirano Vallejo S, Soto-Gómez A, Suárez-Velasco R, et al.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -940,10 +1272,33 @@
         "start_sentence_index": 450,
         "end_sentence_index": 488,
         "sentence_count": 38,
-        "character_count": 1959,
-        "token_count": 699
+        "character_count": 1228,
+        "token_count": 478,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0048"
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0048",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0063",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Efficacy and safety of Sodium Hyaluronate/chondroitin Sulfate Preservative-free Ophthalmic solution in the treatment of Dry Eye: a clinical trial. Curr Eye Res. 2021;46(7):919–29. - 60. Huerta Ángeles G, Nešporová K. Hyaluronan and its derivatives for ophthalmology: recent advances and future perspectives. Carbohydr Polym. 2021;259. - 61. Arana E. The new once daily multidose preservative free 0.6% bilastine eye drop formulation containing sodium hyaluronate protects against conjunctival dehydration and promotes corneal wound healing in a comparative in vitro study. EAACI 2022 #000949 Abstract Prague. Czech Republic; July 2022. - 62. Leonardi A, Piliego F, Castegnaro A, Lazzarini D, La Gloria Valerio A, Mattana P, et al.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0853,
+        "recent_mean_similarity": 0.1621,
+        "mean_internal_similarity": 0.1472,
+        "start_sentence_index": 450,
+        "end_sentence_index": 488,
+        "sentence_count": 38,
+        "character_count": 730,
+        "token_count": 223,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0048"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0064",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -962,7 +1317,7 @@
         "character_count": 92,
         "token_count": 34
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0049",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0065",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -981,11 +1336,11 @@
         "character_count": 976,
         "token_count": 323
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0050",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0066",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "2021;15:1477–89. - 68. Tsai JC. A comprehensive perspective on patient adherence to topical glaucoma therapy. Ophthalmology. 2009;116(11 Suppl):S30–6. - 69. Robin AL, Novack GD, Covert DW, Crockett RS, Marcic TS. Adherence in glaucoma: objective measurements of oncedaily and adjunctive medication use. Am J Ophthalmol. 2007;144(4):533–40. - 70. ZERVIATE™(cetirizine ophthalmic. solution) 0.24%, for topical ophthalmic use. Product information. https://myzerviate.com/ files/Zerviate_PI.pdf. - 71. EMADINE 0. 5 mg/ml, eye drops, solution. Emadine. European public assessment report. Product Infomation. https://www.ema. europa.eu/en/documents/product-information/emadine-eparproduct-information_en.pdf. - 72. Bilina 0. 5 mg/ml eye drops suspension. Levocabastine. Technical data sheet. https://cima.aemps.es/cima/pdfs/es/ft/60917/ 60917_ft.pdf. - 73. LASTACAFT™ (alcaftadine ophthalmic. solution 0.25%). Product information. https://www.accessdata.fda.gov/drugsatfda_docs/ label/2010/022134s000lbl.pdf. - 74. Azelastine. hydrochloride 0.5 mg/ml Eye drops, solution. Product information. https://www.medicines.org.uk/emc/product/ 11152/smpc#gref. - 75. Azelastina POS. 0,5 mg/ml. Brill Pharma. Azelastina hidrocloruro al 0,05% (0,50 mg/ml). Technical data sheet. Available in: https://www.brillpharma.com/wp-content/uploads/2020/12/ FT_81144.pdf. - 76. Bepreve (bepotastine besilate ophthalmic solution) 1.5%. BEPREVE. Tampa, FL: Bausch & Lomb Incorporated. 2019 https://www.bausch.com/globalassets/pdf/packageinserts/ pharma/bepreve-prescribing-info.pdf. - 77. Relestat. 0.5 mg/ml, eye drops, solution. Epinastine. Product information. https://www.medicines.org.uk/emc/product/29.",
+      "text": "2021;15:1477–89. - 68. Tsai JC. A comprehensive perspective on patient adherence to topical glaucoma therapy. Ophthalmology. 2009;116(11 Suppl):S30–6. - 69. Robin AL, Novack GD, Covert DW, Crockett RS, Marcic TS. Adherence in glaucoma: objective measurements of oncedaily and adjunctive medication use. Am J Ophthalmol. 2007;144(4):533–40. - 70. ZERVIATE™(cetirizine ophthalmic. solution) 0.24%, for topical ophthalmic use. Product information. https://myzerviate.com/ files/Zerviate_PI.pdf. - 71. EMADINE 0. 5 mg/ml, eye drops, solution. Emadine. European public assessment report. Product Infomation. https://www.ema. europa.eu/en/documents/product-information/emadine-eparproduct-information_en.pdf. - 72. Bilina 0. 5 mg/ml eye drops suspension. Levocabastine. Technical data sheet. https://cima.aemps.es/cima/pdfs/es/ft/60917/ 60917_ft.pdf. - 73. LASTACAFT™ (alcaftadine ophthalmic. solution 0.25%). Product information. https://www.accessdata.fda.gov/drugsatfda_docs/ label/2010/022134s000lbl.pdf. - 74. Azelastine. hydrochloride 0.5 mg/ml Eye drops, solution. Product information. https://www.medicines.org.uk/emc/product/ 11152/smpc#gref. - 75. Azelastina POS. 0,5 mg/ml. Brill Pharma. Azelastina hidrocloruro al 0,05% (0,50 mg/ml). Technical data sheet. Available in: https://www.brillpharma.com/wp-content/uploads/2020/12/ FT_81144.pdf. - 76. Bepreve (bepotastine besilate ophthalmic solution) 1.5%. BEPREVE. Tampa, FL: Bausch & Lomb Incorporated.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -997,10 +1352,33 @@
         "start_sentence_index": 516,
         "end_sentence_index": 574,
         "sentence_count": 58,
-        "character_count": 1680,
-        "token_count": 589
+        "character_count": 1456,
+        "token_count": 509,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0051"
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0051",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0067",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "2019 https://www.bausch.com/globalassets/pdf/packageinserts/ pharma/bepreve-prescribing-info.pdf. - 77. Relestat. 0.5 mg/ml, eye drops, solution. Epinastine. Product information. https://www.medicines.org.uk/emc/product/29.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": 0.0461,
+        "recent_mean_similarity": 0.2574,
+        "mean_internal_similarity": 0.1879,
+        "start_sentence_index": 516,
+        "end_sentence_index": 574,
+        "sentence_count": 58,
+        "character_count": 223,
+        "token_count": 82,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0051"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0068",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -1019,7 +1397,7 @@
         "character_count": 56,
         "token_count": 24
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0052",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0069",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -1038,7 +1416,7 @@
         "character_count": 665,
         "token_count": 247
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0053",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0070",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -1057,7 +1435,7 @@
         "character_count": 5,
         "token_count": 5
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0054",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0071",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -1076,7 +1454,7 @@
         "character_count": 83,
         "token_count": 36
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0055",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0072",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -1095,11 +1473,11 @@
         "character_count": 97,
         "token_count": 30
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0056",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0073",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "Adv Ther. 2021;38(7):4070–81. - 83. Ketotifen Ophthalmic Solution With Emedastine in Patients With Seasonal Allergic Conjunctivitis. ClinicalTrials Gov Available in: https://clinicaltrials.gov/ct2/show/record/NCT00133627. - 84. Søhoel P, Freng BA, Kramer J, Poppe S, Rebo R, Korsrud FR, et al. Topical levocabastine compared with orally administered terfenadine for the prophylaxis and treatment of seasonal rhinoconjunctivitis. J Allergy Clin Immunol. 1993;92(1 Pt 1):73–81. - 85. Richard C, Trinquand C, Bloch-Michel E. Comparison of topical 0.05% levocabastine and 0.1% lodoxamide in patients with allergic conjunctivitis. Study Group. Eur J Ophthalmol. 1998;8(4):207–16. - 86. Allaire C, Siou-Mermet R, Bassols A. [Safety and efficacy of a new preservative-free levocabastine ophthalmic solution (Levofree®) using the conjunctival provocation test]. J Fr Ophtalmol. 2012;35(7):491–8. - 87. Nakatani H, Gomes P, Bradford R, Guo Q, Safyan E, Hollander DA. Alcaftadine 0.25% versus olopatadine 0.1% in preventing Cedar Pollen allergic conjunctivitis in Japan: a randomized study. Ocul Immunol Inflamm. 2019;27(4):622–31. - 88. Ciprandi G, Buscaglia S, Catrullo A, Pesce G, Fiorino N, Montagna P, et al. Azelastine eye drops reduce and prevent allergic conjunctival reaction and exert anti-allergic activity. Clin Exp Allergy. 1997;27(2):182–91. - 89. Ciprandi G, Pronzato C, Passalacqua G, Ricca V, Grögen J, Mela GS, et al. Topical azelastine reduces eosinophil activation and intercellular adhesion molecule-1 expression on nasal epithelial cells: an antiallergic activity. J Allergy Clin Immunol. 1996;98(6 Pt 1):1088–96. - 90. Canonica GW, Ciprandi G, Petzold U, Kolb C, Ellers-Lenz B, Hermann R. Topical azelastine in perennial allergic conjunctivitis. Curr Med Res Opin. 2003;19(4):321–9. - 91. Epstein AB, Van Hoven PT, Kaufman A, Carr WW. Management of allergic conjunctivitis: an evaluation of the perceived\n\n\n- comfort and therapeutic efficacy of olopatadine 0.2% and azelastine 0.05% from two prospective studies. Clin Ophthalmol. 2009;3:329–36. - 92.",
+      "text": "Adv Ther. 2021;38(7):4070–81. - 83. Ketotifen Ophthalmic Solution With Emedastine in Patients With Seasonal Allergic Conjunctivitis. ClinicalTrials Gov Available in: https://clinicaltrials.gov/ct2/show/record/NCT00133627. - 84. Søhoel P, Freng BA, Kramer J, Poppe S, Rebo R, Korsrud FR, et al. Topical levocabastine compared with orally administered terfenadine for the prophylaxis and treatment of seasonal rhinoconjunctivitis. J Allergy Clin Immunol. 1993;92(1 Pt 1):73–81. - 85. Richard C, Trinquand C, Bloch-Michel E. Comparison of topical 0.05% levocabastine and 0.1% lodoxamide in patients with allergic conjunctivitis. Study Group. Eur J Ophthalmol. 1998;8(4):207–16. - 86. Allaire C, Siou-Mermet R, Bassols A. [Safety and efficacy of a new preservative-free levocabastine ophthalmic solution (Levofree®) using the conjunctival provocation test]. J Fr Ophtalmol. 2012;35(7):491–8. - 87. Nakatani H, Gomes P, Bradford R, Guo Q, Safyan E, Hollander DA. Alcaftadine 0.25% versus olopatadine 0.1% in preventing Cedar Pollen allergic conjunctivitis in Japan: a randomized study. Ocul Immunol Inflamm. 2019;27(4):622–31. - 88. Ciprandi G, Buscaglia S, Catrullo A, Pesce G, Fiorino N, Montagna P, et al. Azelastine eye drops reduce and prevent allergic conjunctival reaction and exert anti-allergic activity. Clin Exp Allergy. 1997;27(2):182–91. - 89. Ciprandi G, Pronzato C, Passalacqua G, Ricca V, Grögen J, Mela GS, et al.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -1111,14 +1489,37 @@
         "start_sentence_index": 602,
         "end_sentence_index": 647,
         "sentence_count": 45,
-        "character_count": 2063,
-        "token_count": 701
+        "character_count": 1425,
+        "token_count": 494,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0057"
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0057",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0074",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
-      "text": "Efficacy and Safety Study of Bepotastine Besilate Ophthalmic Solution in Allergic Conjunctivitis. ClinivalTrials.gov. Available in: [https://clinicaltrials.gov/ct2/show/NCT00586664?term= Bepotastine+besilate&draw=2&rank=20]. - 93. Okubo K, Ichimura M, Koyama T, Susuta Y, Izaki H. Doubleblind placebo-controlled study of bepotastine besilate in pediatric patients with perennial allergic rhinitis. Expert Opin Pharmacother. 2015;16(16):2395–408. - 94. Abelson MB, Gomes P, Crampton HJ, Schiffman RM, Bradford RR, Whitcup SM. Efficacy and tolerability of ophthalmic epinastine assessed using the conjunctival antigen challenge model in patients with a history of allergic conjunctivitis. Clin Ther. 2004;26(1):35–47. - 95. Whitcup SM, Bradford R, Lue J, Schiffman RM, Abelson MB. Efficacy and tolerability of ophthalmic epinastine: a randomized, double-masked, parallel-group, active- and vehicle-controlled environmental trial in patients with seasonal allergic conjunctivitis. Clin Ther. 2004;26(1):29–34. - 96. James IG, Campbell LM, Harrison JM, Fell PJ, Ellers-Lenz B, Petzold U. Comparison of the efficacy and tolerability of topically administered azelastine, sodium cromoglycate and placebo in the treatment of seasonal allergic conjunctivitis and rhinoconjunctivitis. Curr Med Res Opin. 2003;19(4):313–20. - 97. Torkildsen GL, Ousler GW 3rd, Gomes P. Ocular comfort and drying effects of three topical antihistamine/mast cell stabilizers in adults with allergic conjunctivitis: a randomized, doublemasked crossover study. Clin Ther. 2008;30(7):1264–71. - 98. Leonardi A, Capobianco D, Benedetti N, Capobianco A, Cavarzeran F, Scalora T, et al. Efficacy and tolerability of Ketotifen in the treatment of Seasonal allergic conjunctivitis: comparison between Ketotifen 0.025% and 0.05% Eye drops. Ocul Immunol Inflamm. 2019;27(8):1352–6. - 99.",
+      "text": "Topical azelastine reduces eosinophil activation and intercellular adhesion molecule-1 expression on nasal epithelial cells: an antiallergic activity. J Allergy Clin Immunol. 1996;98(6 Pt 1):1088–96. - 90. Canonica GW, Ciprandi G, Petzold U, Kolb C, Ellers-Lenz B, Hermann R. Topical azelastine in perennial allergic conjunctivitis. Curr Med Res Opin. 2003;19(4):321–9. - 91. Epstein AB, Van Hoven PT, Kaufman A, Carr WW. Management of allergic conjunctivitis: an evaluation of the perceived\n\n\n- comfort and therapeutic efficacy of olopatadine 0.2% and azelastine 0.05% from two prospective studies. Clin Ophthalmol. 2009;3:329–36. - 92.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.0968,
+        "recent_mean_similarity": 0.1592,
+        "mean_internal_similarity": 0.1422,
+        "start_sentence_index": 602,
+        "end_sentence_index": 647,
+        "sentence_count": 45,
+        "character_count": 637,
+        "token_count": 209,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0057"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0075",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Efficacy and Safety Study of Bepotastine Besilate Ophthalmic Solution in Allergic Conjunctivitis. ClinivalTrials.gov. Available in: [https://clinicaltrials.gov/ct2/show/NCT00586664?term= Bepotastine+besilate&draw=2&rank=20]. - 93. Okubo K, Ichimura M, Koyama T, Susuta Y, Izaki H. Doubleblind placebo-controlled study of bepotastine besilate in pediatric patients with perennial allergic rhinitis. Expert Opin Pharmacother. 2015;16(16):2395–408. - 94. Abelson MB, Gomes P, Crampton HJ, Schiffman RM, Bradford RR, Whitcup SM. Efficacy and tolerability of ophthalmic epinastine assessed using the conjunctival antigen challenge model in patients with a history of allergic conjunctivitis. Clin Ther. 2004;26(1):35–47. - 95. Whitcup SM, Bradford R, Lue J, Schiffman RM, Abelson MB. Efficacy and tolerability of ophthalmic epinastine: a randomized, double-masked, parallel-group, active- and vehicle-controlled environmental trial in patients with seasonal allergic conjunctivitis. Clin Ther. 2004;26(1):29–34. - 96. James IG, Campbell LM, Harrison JM, Fell PJ, Ellers-Lenz B, Petzold U. Comparison of the efficacy and tolerability of topically administered azelastine, sodium cromoglycate and placebo in the treatment of seasonal allergic conjunctivitis and rhinoconjunctivitis. Curr Med Res Opin. 2003;19(4):313–20. - 97. Torkildsen GL, Ousler GW 3rd, Gomes P. Ocular comfort and drying effects of three topical antihistamine/mast cell stabilizers in adults with allergic conjunctivitis: a randomized, doublemasked crossover study. Clin Ther. 2008;30(7):1264–71. - 98.",
       "metadata": {
         "chunker": "semantic_variance_adaptive_chunking",
         "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -1130,10 +1531,33 @@
         "start_sentence_index": 647,
         "end_sentence_index": 678,
         "sentence_count": 31,
-        "character_count": 1848,
-        "token_count": 589
+        "character_count": 1566,
+        "token_count": 496,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0058"
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0058",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0076",
+      "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
+    },
+    {
+      "text": "Leonardi A, Capobianco D, Benedetti N, Capobianco A, Cavarzeran F, Scalora T, et al. Efficacy and tolerability of Ketotifen in the treatment of Seasonal allergic conjunctivitis: comparison between Ketotifen 0.025% and 0.05% Eye drops. Ocul Immunol Inflamm. 2019;27(8):1352–6. - 99.",
+      "metadata": {
+        "chunker": "semantic_variance_adaptive_chunking",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "sensitivity": 0.2,
+        "window_size": 5,
+        "split_similarity": -0.1044,
+        "recent_mean_similarity": 0.1301,
+        "mean_internal_similarity": 0.1009,
+        "start_sentence_index": 647,
+        "end_sentence_index": 678,
+        "sentence_count": 31,
+        "character_count": 281,
+        "token_count": 95,
+        "split_from_oversized_chunk": true,
+        "original_chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0058"
+      },
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0077",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -1152,7 +1576,7 @@
         "character_count": 339,
         "token_count": 114
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0059",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0078",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     },
     {
@@ -1171,7 +1595,7 @@
         "character_count": 834,
         "token_count": 245
       },
-      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0060",
+      "chunk_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions_chunk_0079",
       "doc_id": "paper_PAPER - Leonardi et al. - 2024 - Allergic Conjunctivitis Management Update on Ophthalmic Solutions"
     }
   ]

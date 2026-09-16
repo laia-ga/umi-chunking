@@ -1,7 +1,7 @@
 import re
 from typing import Callable, List
 
-from langchain_text_splitters import SemanticChunker
+from langchain_experimental.text_splitter import SemanticChunker
 from langchain_huggingface import HuggingFaceEmbeddings
 
 from ..base import BaseChunker, Chunk
