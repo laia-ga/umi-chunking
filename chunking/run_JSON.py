@@ -36,7 +36,7 @@ import pandas as pd
 import psutil
 
 # Utilidades
-from utilities import (
+from chunking.utilities import (
     calculate_stats,
     create_tokenizer,
     create_token_counter,
@@ -48,14 +48,14 @@ from utilities import (
 # JSON-CHUNKER
 # ============================================================
 
-from chunkers.json.JSON_chunker import (
+from chunking.chunkers.json.JSON_chunker import (
     HierarchicalJSONChunker,
 )
 
 # Document plans
-from chunkers.json.document_plan_ficha_tecnica import DOCUMENT_PLAN_FC
-from chunkers.json.document_plan_guideline import DOCUMENT_PLAN_GL
-from chunkers.json.document_plan_paper import DOCUMENT_PLAN_PAPER
+from chunking.chunkers.json.document_plan_ficha_tecnica import DOCUMENT_PLAN_FC
+from chunking.chunkers.json.document_plan_guideline import DOCUMENT_PLAN_GL
+from chunking.chunkers.json.document_plan_paper import DOCUMENT_PLAN_PAPER
 
 # ============================================================
 # RUTAS

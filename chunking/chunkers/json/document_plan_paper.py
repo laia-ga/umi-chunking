@@ -1,4 +1,4 @@
-from chunkers.json.JSON_chunker import SplitNode
+from chunking.chunkers.json.JSON_chunker import SplitNode
 
 DOCUMENT_PLAN_PAPER = SplitNode(
     name="complete_document",
