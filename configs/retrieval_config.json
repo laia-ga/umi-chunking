@@ -1,7 +1,7 @@
 {
     "retrieval": {
         "top_k": 5,
-        "strategies": ["DFC"],
+        "strategies": null,
         "document_type": null,
         "document_format": null
     }
