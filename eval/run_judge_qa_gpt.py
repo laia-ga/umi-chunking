@@ -26,6 +26,7 @@ from pathlib import Path
 
 import argparse
 
+from dotenv import load_dotenv
 from openai import OpenAI
 
 
@@ -84,6 +85,10 @@ MODEL_NAME = ""
 # 4. CLIENTE OPENAI
 # ==============================================================================
 
+# Cargar variables del archivo .env
+load_dotenv()
+
+# Cliente OpenAI
 client = OpenAI()
 
 # ==============================================================================
