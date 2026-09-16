@@ -56,7 +56,7 @@ QUERY_FILE = (
     BASE_DIR
     / "data"
     / "ground_truth"
-    / "queries_and_answers.jsonl"
+    / "rag_questions_1500_gold_evidence.jsonl"
 )
 
 # Carpeta donde se guardarán los resultados
@@ -103,13 +103,30 @@ def load_queries(
 
             item = json.loads(line)
 
-            if "input" not in item:
+            if "question" not in item:
                 raise ValueError(
                     f"La pregunta de la línea {line_number} "
-                    "no contiene el campo 'input'."
+                    "no contiene el campo 'question'."
                 )
 
-            queries.append(item)
+            if "gold_answer" not in item:
+                raise ValueError(
+                    f"La pregunta de la línea {line_number} "
+                    "no contiene el campo 'gold_answer'."
+                )
+
+            if "question_id" not in item:
+                raise ValueError(
+                    f"La pregunta de la línea {line_number} "
+                    "no contiene el campo 'question_id'."
+                )
+
+            queries.append(
+                {
+                    "question": item["question"],
+                    "gold_answer": item["gold_answer"],
+                }
+            )
 
     return queries
 
@@ -281,7 +298,7 @@ def retrieve_chunks(
     client: QdrantClient,
     embeddings: HuggingFaceEmbeddings,
     collection_name: str,
-    query_text: str,
+    question_text: str,
     top_k: int,
     strategy: str = None,
     document_type: str = None,
@@ -296,7 +313,7 @@ def retrieve_chunks(
 
     # Generar embedding de la pregunta
     query_vector = embeddings.embed_query(
-        query_text
+        question_text
     )
 
     # Lista de condiciones para Qdrant
@@ -521,20 +538,16 @@ def main() -> None:
     for query_item in queries:
 
         # ID opcional de la pregunta
-        query_id = query_item.get(
-            "query_id"
-        )
+        question_id = query_item["question_id"]
 
         # Texto de la pregunta
-        query_text = query_item["input"]
+        question_text = query_item["question"]
 
         # Respuesta
-        answers = query_item.get(
-            "answers"
-        )
+        gold_answer = query_item["gold_answer"]
 
         print(
-            f"\nPregunta: {query_text}"
+            f"\nPregunta: {question_text}"
         )
 
         # ----------------------------------------------------
@@ -547,7 +560,7 @@ def main() -> None:
                 client=client,
                 embeddings=embeddings,
                 collection_name=collection_name,
-                query_text=query_text,
+                question_text=question_text,
                 top_k=top_k,
                 strategy=None,
                 document_type=document_type,
@@ -556,9 +569,9 @@ def main() -> None:
 
             all_results.append(
                 {
-                    "query_id": query_id,
-                    "query": query_text,
-                    "answers": answers,
+                    "question_id": question_id,
+                    "question": question_text,
+                    "gold_answer": gold_answer,
                     "document_type": document_type,
                     "document_format": document_format,
                     "retrieved_chunks":
@@ -584,7 +597,7 @@ def main() -> None:
                     client=client,
                     embeddings=embeddings,
                     collection_name=collection_name,
-                    query_text=query_text,
+                    question_text=question_text,
                     top_k=top_k,
                     strategy=strategy,
                     document_type=document_type,
@@ -599,9 +612,9 @@ def main() -> None:
 
             all_results.append(
                 {
-                    "query_id": query_id,
-                    "query": query_text,
-                    "answers": answers,
+                    "question_id": question_id,
+                    "question": question_text,
+                    "gold_answer": gold_answer,
                     "document_type": document_type,
                     "document_format": document_format,
                     "strategies":
