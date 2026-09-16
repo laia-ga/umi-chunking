@@ -252,7 +252,7 @@ def llm_judge_relevance(
     Return only:
 
     {{
-        "score": 0,
+        "score": "score",
         "reason": "brief explanation"
     }}
     """
