@@ -34,7 +34,7 @@ import pandas as pd
 import psutil
 
 # Utilidades
-from utilities import (
+from chunking.utilities import (
     calculate_stats,
     create_tokenizer,
     create_token_counter,
@@ -46,47 +46,47 @@ from utilities import (
 # MÉTODOS RULE-BASED
 # ============================================================
 
-from chunkers.rulebased.fixed_character_chunking import FixedCharacterChunker
-from chunkers.rulebased.fixed_token_chunking import FixedTokenChunker
-from chunkers.rulebased.length_aware_chunking import LengthAwareChunker
-from chunkers.rulebased.overlapping_token_chunking import OverlappingTokenChunker
-from chunkers.rulebased.paragraph_based_chunking import ParagraphBasedChunker
-from chunkers.rulebased.paragraph_group_chunking import ParagraphGroupChunker
-from chunkers.rulebased.sentence_based_chunking import SentenceBasedChunker
-from chunkers.rulebased.sentence_group_chunking import SentenceGroupChunker
-from chunkers.rulebased.sliding_window_token_chunking import SlidingWindowTokenChunker
+from chunking.chunkers.rulebased.fixed_character_chunking import FixedCharacterChunker
+from chunking.chunkers.rulebased.fixed_token_chunking import FixedTokenChunker
+from chunking.chunkers.rulebased.length_aware_chunking import LengthAwareChunker
+from chunking.chunkers.rulebased.overlapping_token_chunking import OverlappingTokenChunker
+from chunking.chunkers.rulebased.paragraph_based_chunking import ParagraphBasedChunker
+from chunking.chunkers.rulebased.paragraph_group_chunking import ParagraphGroupChunker
+from chunking.chunkers.rulebased.sentence_based_chunking import SentenceBasedChunker
+from chunking.chunkers.rulebased.sentence_group_chunking import SentenceGroupChunker
+from chunking.chunkers.rulebased.sliding_window_token_chunking import SlidingWindowTokenChunker
 
 # ============================================================
 # MÉTODOS RECURSIVOS
 # ============================================================
 
-from chunkers.recursive.recursive_chunking import RecursiveChunker
-from chunkers.recursive.recursive_token_chunking import RecursiveTokenChunker
-from chunkers.recursive.parent_child_chunking import ParentChildChunker
+from chunking.chunkers.recursive.recursive_chunking import RecursiveChunker
+from chunking.chunkers.recursive.recursive_token_chunking import RecursiveTokenChunker
+from chunking.chunkers.recursive.parent_child_chunking import ParentChildChunker
 
 # ============================================================
 # MÉTODOS SEMÁNTICOS
 # ============================================================
 
-from chunkers.semantic.semantic_boundary_chunking import SemanticBoundaryChunker
-from chunkers.semantic.semantic_embedding_chunking import SemanticEmbeddingChunker
-from chunkers.semantic.semantic_similarity_threshold_chunking import SemanticSimilarityThresholdChunker
-from chunkers.semantic.topic_based_chunking import TopicBasedChunker
+from chunking.chunkers.semantic.semantic_boundary_chunking import SemanticBoundaryChunker
+from chunking.chunkers.semantic.semantic_embedding_chunking import SemanticEmbeddingChunker
+from chunking.chunkers.semantic.semantic_similarity_threshold_chunking import SemanticSimilarityThresholdChunker
+from chunking.chunkers.semantic.topic_based_chunking import TopicBasedChunker
 
 # ============================================================
 # MÉTODOS DINÁMICOS
 # ============================================================
 
-from chunkers.dynamic.content_density_adaptive_chunking import ContentDensityAdaptiveChunker
-from chunkers.dynamic.dynamic_token_size_chunking import DynamicTokenSizeChunker
-from chunkers.dynamic.semantic_variance_adaptive_chunking import SemanticVarianceAdaptiveChunker
+from chunking.chunkers.dynamic.content_density_adaptive_chunking import ContentDensityAdaptiveChunker
+from chunking.chunkers.dynamic.dynamic_token_size_chunking import DynamicTokenSizeChunker
+from chunking.chunkers.dynamic.semantic_variance_adaptive_chunking import SemanticVarianceAdaptiveChunker
 
 # ============================================================
 # MÉTODOS BASADOS EN LLM
 # ============================================================
 
-from chunkers.llm.llm_boundary_detection_chunking import LLMBoundaryDetectionChunker
-from chunkers.llm.llm_segment_then_chunking import LLMSegmentThenChunker
+from chunking.chunkers.llm.llm_boundary_detection_chunking import LLMBoundaryDetectionChunker
+from chunking.chunkers.llm.llm_segment_then_chunking import LLMSegmentThenChunker
 
 # ============================================================
 # RUTAS
