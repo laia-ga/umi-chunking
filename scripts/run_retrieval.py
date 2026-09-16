@@ -123,6 +123,7 @@ def load_queries(
 
             queries.append(
                 {
+                    "question_id": item["question_id"],
                     "question": item["question"],
                     "gold_answer": item["gold_answer"],
                 }
@@ -537,7 +538,7 @@ def main() -> None:
 
     for query_item in queries:
 
-        # ID opcional de la pregunta
+        # ID de la pregunta
         question_id = query_item["question_id"]
 
         # Texto de la pregunta
