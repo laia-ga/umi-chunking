@@ -56,7 +56,7 @@ QUERY_FILE = (
     BASE_DIR
     / "data"
     / "ground_truth"
-    / "rag_questions_1500_gold_evidence.jsonl"
+    / "rag_questions_1500_general.jsonl"
 )
 
 # Carpeta donde se guardarán los resultados
