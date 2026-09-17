@@ -241,26 +241,26 @@ def reciprocal_rank(scores):
 # MÉTRICAS POR PREGUNTA
 # ============================================================
 
-def calculate_query_metrics(
-    query_df,
+def calculate_question_metrics(
+    question_df,
     k_values,
 ):
 
     # Ordenar los chunks según el ranking
-    query_df = query_df.sort_values(
+    question_df = question_df.sort_values(
         "rank"
     )
 
     scores = (
-        query_df["relevance_score"]
+        question_df["relevance_score"]
         .astype(int)
         .tolist()
     )
 
     result = {
-        "query_id": query_df.iloc[0]["query_id"],
-        "query": query_df.iloc[0]["query"],
-        "n_chunks": len(query_df),
+        "question_id": question_df.iloc[0]["question_id"],
+        "question": question_df.iloc[0]["question"],
+        "n_chunks": len(question_df),
 
         "n_highly_relevant": sum(
             score == 2
@@ -341,8 +341,8 @@ def main():
     )
 
     required_columns = {
-        "query_id",
-        "query",
+        "question_id",
+        "question",
         "rank",
         "relevance_score",
     }
@@ -395,24 +395,24 @@ def main():
     # Métricas por pregunta
     # --------------------------------------------------------
 
-    query_results = []
+    question_results = []
 
-    for query_id, query_df in df_valid.groupby(
-        "query_id",
+    for question_id, question_df in df_valid.groupby(
+        "question_id",
         sort=False,
     ):
 
-        metrics = calculate_query_metrics(
-            query_df,
+        metrics = calculate_question_metrics(
+            question_df,
             k_values,
         )
 
-        query_results.append(
+        question_results.append(
             metrics
         )
 
-    per_query_df = pd.DataFrame(
-        query_results
+    per_question_df = pd.DataFrame(
+        question_results
     )
 
     # --------------------------------------------------------
@@ -420,32 +420,32 @@ def main():
     # --------------------------------------------------------
 
     summary = {
-        "n_queries": len(per_query_df),
+        "n_questions": len(per_question_df),
 
         # Mean Reciprocal Rank
-        "MRR": per_query_df["RR"].mean(),
+        "MRR": per_question_df["RR"].mean(),
     }
 
     for k in k_values:
 
         summary[f"Mean_nDCG@{k}"] = (
-            per_query_df[f"nDCG@{k}"].mean()
+            per_question_df[f"nDCG@{k}"].mean()
         )
 
         summary[f"Mean_Precision@{k}"] = (
-            per_query_df[
+            per_question_df[
                 f"Precision@{k}"
             ].mean()
         )
 
         # Mean Average Precision
         summary[f"MAP@{k}"] = (
-            per_query_df[f"AP@{k}"].mean()
+            per_question_df[f"AP@{k}"].mean()
         )
 
         # Media de Hit@k = Hit Rate@k
         summary[f"HitRate@{k}"] = (
-            per_query_df[f"Hit@{k}"].mean()
+            per_question_df[f"Hit@{k}"].mean()
         )
 
     summary_df = pd.DataFrame(
@@ -488,9 +488,9 @@ def main():
         )
 
         # Métricas individuales por pregunta
-        per_query_df.to_excel(
+        per_question_df.to_excel(
             writer,
-            sheet_name="per_query",
+            sheet_name="per_question",
             index=False,
         )
 
@@ -511,7 +511,7 @@ def main():
 
     print(
         f"\nPreguntas evaluadas: "
-        f"{len(per_query_df)}"
+        f"{len(per_question_df)}"
     )
 
     print(
@@ -522,7 +522,7 @@ def main():
 
     for key, value in summary.items():
 
-        if key == "n_queries":
+        if key == "n_questions":
             print(f"  {key}: {value}")
         else:
             print(f"  {key}: {value:.4f}")
