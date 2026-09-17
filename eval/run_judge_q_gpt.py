@@ -85,7 +85,7 @@ MODEL_NAME = ""
 # ==============================================================================
 
 # Cargar variables del archivo .env
-load_dotenv()
+load_dotenv(BASE_DIR / ".env")
 
 # Cliente OpenAI
 client = OpenAI()
