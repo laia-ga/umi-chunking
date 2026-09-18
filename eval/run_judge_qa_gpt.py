@@ -21,13 +21,16 @@
 
 import csv
 import json
+import os
 import sys
 from pathlib import Path
+from typing import Literal
 
 import argparse
 
 from dotenv import load_dotenv
 from openai import OpenAI
+from pydantic import BaseModel
 
 
 # ==============================================================================
@@ -72,6 +75,16 @@ def parse_args():
         help="Nombre del archivo JSON generado por run_retrieval.py",
     )
 
+    parser.add_argument(
+        "--restart",
+        action="store_true",
+        help=(
+            "Ignora el CSV de una ejecución anterior y empieza de cero "
+            "(por defecto, si el CSV ya existe, se reanuda a partir de "
+            "donde se quedó)."
+        ),
+    )
+
     return parser.parse_args()
 
 # ==============================================================================
@@ -79,140 +92,75 @@ def parse_args():
 # ==============================================================================
 
 # Modelo utilizado como juez
-MODEL_NAME = ""
+# gpt-5.6-luna: el más económico de la gama actual (sept. 2026),
+# más que suficiente para una clasificación 0/1/2 con criterio claro.
+MODEL_NAME = "gpt-5.6-luna"
 
 # ==============================================================================
 # 4. CLIENTE OPENAI
 # ==============================================================================
 
 # Cargar variables del archivo .env
-load_dotenv(BASE_DIR / ".env")
+load_dotenv()
+
+# El cliente de OpenAI busca por defecto la variable de entorno
+# OPENAI_API_KEY. Si en .env se llama distinto (p.ej. OPENAI_KEY),
+# la leemos explícitamente por su nombre.
+_openai_api_key = (
+    os.getenv("OPENAI_API_KEY")
+    or os.getenv("OPENAI_KEY")
+)
+
+if not _openai_api_key:
+    raise RuntimeError(
+        "No se ha encontrado la clave de la API de OpenAI. "
+        "Asegúrate de tener un archivo .env con "
+        "OPENAI_API_KEY=... (o OPENAI_KEY=...) en la raíz del proyecto."
+    )
 
 # Cliente OpenAI
-client = OpenAI()
+client = OpenAI(api_key=_openai_api_key)
 
 # ==============================================================================
 # 5. GENERACIÓN CON EL MODELO
 # ==============================================================================
 
+class RelevanceJudgment(BaseModel):
+    """
+    Esquema de la respuesta esperada del juez.
+
+    Usar Structured Outputs con este modelo garantiza que la API
+    devuelve JSON válido con estos dos campos, y que 'score' solo
+    puede ser 0, 1 o 2 (lo aplica la propia API, no un parseo manual).
+    """
+
+    score: Literal[0, 1, 2]
+    reason: str
+
+
 def generate_llm_response(
     prompt: str,
 ):
     """
-    Envía un prompt al modelo mediante la API de OpenAI
-    y devuelve únicamente el texto generado.
+    Envía un prompt al modelo mediante la API de OpenAI y devuelve
+    el objeto RelevanceJudgment ya parseado (Structured Outputs).
     """
 
-    response = client.responses.create(
+    response = client.responses.parse(
         model=MODEL_NAME,
         instructions=(
             "You are a strict information "
             "retrieval evaluator."
         ),
         input=prompt,
+        text_format=RelevanceJudgment,
     )
 
-    return response.output_text.strip()
+    return response.output_parsed
 
 
 # ==============================================================================
-# 6. EXTRAER JSON DE LA RESPUESTA
-# ==============================================================================
-
-def parse_llm_json(
-    raw_response: str,
-):
-    """
-    Intenta extraer el JSON generado por el modelo.
-
-    Devuelve:
-        parsed_json
-        error
-    """
-
-    if not raw_response:
-
-        return (
-            None,
-            "El modelo ha devuelto una respuesta vacía.",
-        )
-
-    text = raw_response.strip()
-
-    # ----------------------------------------------------------
-    # Eliminar bloques Markdown si aparecen
-    # ----------------------------------------------------------
-
-    if text.startswith("```"):
-
-        text = text.strip("`").strip()
-
-        if text.startswith("json"):
-            text = text[4:].strip()
-
-    # ----------------------------------------------------------
-    # Primer intento:
-    # respuesta completamente JSON
-    # ----------------------------------------------------------
-
-    try:
-
-        return (
-            json.loads(text),
-            "",
-        )
-
-    except json.JSONDecodeError:
-        pass
-
-    # ----------------------------------------------------------
-    # Segundo intento:
-    # buscar desde la primera { hasta la última }
-    # ----------------------------------------------------------
-
-    start = text.find("{")
-    end = text.rfind("}")
-
-    if (
-        start != -1
-        and end != -1
-        and end > start
-    ):
-
-        possible_json = text[
-            start:
-            end + 1
-        ]
-
-        try:
-
-            return (
-                json.loads(possible_json),
-                "",
-            )
-
-        except json.JSONDecodeError as error:
-
-            return (
-                None,
-                (
-                    "No se pudo interpretar el JSON. "
-                    f"Respuesta del modelo: {raw_response}. "
-                    f"Error: {error}"
-                ),
-            )
-
-    return (
-        None,
-        (
-            "No se encontró ningún JSON "
-            f"en la respuesta: {raw_response}"
-        ),
-    )
-
-
-# ==============================================================================
-# 7. FUNCIÓN LLM JUDGE
+# 6. FUNCIÓN LLM JUDGE
 # ==============================================================================
 
 def llm_judge_relevance(
@@ -220,6 +168,14 @@ def llm_judge_relevance(
     gold_answer: str,
     chunk_text: str,
 ):
+    """
+    Evalúa un chunk y devuelve (score, reason, judge_error).
+
+    Con Structured Outputs, la API garantiza que la respuesta cumple el
+    esquema de RelevanceJudgment (score en {0, 1, 2}, reason como string),
+    así que aquí ya no hace falta parsear ni validar nada a mano.
+    """
+
     prompt = f"""
     Your task is to evaluate the relevance of the RETRIEVED CHUNK
     for answering the QUESTION, using the GOLD ANSWER as reference.
@@ -255,104 +211,17 @@ def llm_judge_relevance(
     assign 1.
 
     Do NOT require exact wording.
-
-    Return only:
-
-    {{
-        "score": "score",
-        "reason": "brief explanation"
-    }}
     """
 
     try:
 
-        raw_response = generate_llm_response(
+        judgment = generate_llm_response(
             prompt
         )
 
-        parsed, error = parse_llm_json(
-            raw_response
-        )
-
-        if error:
-
-            return (
-                None,
-                "",
-                error,
-            )
-
-        # ------------------------------------------------------
-        # Extraer score
-        # ------------------------------------------------------
-
-        score = parsed.get(
-            "score"
-        )
-
-        if score is None:
-
-            return (
-                None,
-                parsed.get(
-                    "reason",
-                    "",
-                ),
-                (
-                    "El JSON generado no contiene "
-                    "el campo 'score'."
-                ),
-            )
-
-        try:
-
-            score = int(
-                score
-            )
-
-        except Exception:
-
-            return (
-                None,
-                parsed.get(
-                    "reason",
-                    "",
-                ),
-                (
-                    "El campo 'score' no puede "
-                    "convertirse a entero."
-                ),
-            )
-
-        # ------------------------------------------------------
-        # Comprobar rango
-        # ------------------------------------------------------
-
-        if score not in [
-            0,
-            1,
-            2,
-        ]:
-
-            return (
-                None,
-                parsed.get(
-                    "reason",
-                    "",
-                ),
-                (
-                    f"Score no válido: {score}"
-                ),
-            )
-
-        reason = parsed.get(
-            "reason",
-            "",
-        )
-
         return (
-            score,
-            reason,
+            judgment.score,
+            judgment.reason,
             "",
         )
 
@@ -366,7 +235,7 @@ def llm_judge_relevance(
 
 
 # ==============================================================================
-# 8. GUARDAR FILA EN CSV
+# 7. GUARDAR FILA EN CSV
 # ==============================================================================
 
 def append_judge_row(
@@ -404,7 +273,7 @@ def append_judge_row(
 
 
 # ==============================================================================
-# 9. EVALUAR LOS CHUNKS DE UNA PREGUNTA
+# 8. EVALUAR LOS CHUNKS DE UNA PREGUNTA
 # ==============================================================================
 
 def judge_chunks(
@@ -540,7 +409,7 @@ def judge_chunks(
 
 
 # ==============================================================================
-# 10. MAIN
+# 9. MAIN
 # ==============================================================================
 
 def main():
@@ -575,7 +444,7 @@ def main():
 
 
     # ==========================================================================
-    # 10.1 CARGAR CONFIGURACIÓN
+    # 9.1 CARGAR CONFIGURACIÓN
     # ==========================================================================
 
     retrieval_config = load_config(
@@ -596,7 +465,7 @@ def main():
 
 
     # ==========================================================================
-    # 10.2 COMPROBAR RESULTADOS DE RETRIEVAL
+    # 9.2 COMPROBAR RESULTADOS DE RETRIEVAL
     # ==========================================================================
 
     if not retrieval_results_file.exists():
@@ -609,7 +478,7 @@ def main():
 
 
     # ==========================================================================
-    # 10.3 CARGAR RETRIEVAL_RESULTS.JSON
+    # 9.3 CARGAR RETRIEVAL_RESULTS.JSON
     # ==========================================================================
 
     with retrieval_results_file.open(
@@ -627,7 +496,7 @@ def main():
 
 
     # ==========================================================================
-    # 10.4 PREPARAR SALIDA
+    # 9.4 PREPARAR SALIDA
     # ==========================================================================
 
     OUTPUT_DIR.mkdir(
@@ -635,15 +504,87 @@ def main():
         exist_ok=True,
     )
 
-    # Borrar CSV anterior
-    # para evitar duplicados
-    if output_file.exists():
+    if args.restart and output_file.exists():
 
         output_file.unlink()
 
+        print(
+            "Se ha borrado el CSV anterior (--restart)."
+        )
+
+    # Reanudación: si ya existe un CSV de una ejecución anterior,
+    # conservamos las preguntas ya evaluadas y solo repetimos la última
+    # (por si el proceso se cortó a mitad de evaluarla) y las que falten.
+    already_judged_question_ids = set()
+
+    if output_file.exists():
+
+        with output_file.open(
+            "r",
+            newline="",
+            encoding="utf-8",
+        ) as file:
+
+            existing_rows = list(
+                csv.DictReader(file)
+            )
+
+        existing_question_ids = [
+            row["question_id"]
+            for row in existing_rows
+            if row.get("question_id")
+        ]
+
+        if existing_question_ids:
+
+            # La última pregunta puede haberse quedado a medias si el
+            # proceso se interrumpió mientras se evaluaba (corte de luz,
+            # reinicio de Windows, etc.), así que se descarta y se repite
+            # entera por seguridad.
+            last_question_id = existing_question_ids[-1]
+
+            kept_rows = [
+                row for row in existing_rows
+                if row["question_id"] != last_question_id
+            ]
+
+            already_judged_question_ids = {
+                row["question_id"] for row in kept_rows
+            }
+
+            with output_file.open(
+                "w",
+                newline="",
+                encoding="utf-8",
+            ) as file:
+
+                if kept_rows:
+
+                    writer = csv.DictWriter(
+                        file,
+                        fieldnames=kept_rows[0].keys(),
+                    )
+
+                    writer.writeheader()
+                    writer.writerows(kept_rows)
+
+                else:
+
+                    # Solo había filas de la pregunta descartada:
+                    # dejamos el CSV vacío, se regenerará con la cabecera
+                    # en la primera fila nueva que se escriba.
+                    pass
+
+            print(
+                f"Reanudando: {len(already_judged_question_ids)} "
+                "preguntas ya evaluadas se conservan del CSV anterior. "
+                f"Se repite la última ({last_question_id!r}) por si "
+                "quedó a medias."
+            )
+
 
     # ==========================================================================
-    # 10.5 RECORRER PREGUNTAS
+    # 9.5 RECORRER PREGUNTAS
     # ==========================================================================
 
     for query_number, result in enumerate(
@@ -703,6 +644,18 @@ def main():
             continue
 
         # ------------------------------------------------------
+        # Reanudación: saltar preguntas ya evaluadas
+        # ------------------------------------------------------
+
+        if question_id in already_judged_question_ids:
+
+            print(
+                "  Ya evaluada en una ejecución anterior, se omite."
+            )
+
+            continue
+        
+        # ------------------------------------------------------
         # Comprobar pregunta
         # ------------------------------------------------------
 
@@ -714,7 +667,6 @@ def main():
             )
 
             continue
-
 
         # ------------------------------------------------------
         # Comprobar respuesta
@@ -802,7 +754,7 @@ def main():
 
 
     # ==========================================================================
-    # 10.6 FINAL
+    # 9.6 FINAL
     # ==========================================================================
 
     print()
@@ -817,7 +769,7 @@ def main():
 
 
 # ==============================================================================
-# 11. EJECUCIÓN
+# 10. EJECUCIÓN
 # ==============================================================================
 
 if __name__ == "__main__":
