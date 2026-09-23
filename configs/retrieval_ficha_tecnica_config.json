@@ -1,0 +1,8 @@
+{
+    "retrieval": {
+        "top_k": 5,
+        "strategies": ["JSONChunking"],
+        "document_type": "ficha_tecnica",
+        "format": "json"
+    }
+}
