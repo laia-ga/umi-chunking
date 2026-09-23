@@ -168,12 +168,12 @@ def create_output_file(
     ]
 
     # Formato
-    document_format = retrieval_params.get(
-        "document_format"
+    format = retrieval_params.get(
+        "format"
     )
 
-    if document_format is not None:
-        parts.append(document_format.upper())
+    if format is not None:
+        parts.append(format.upper())
 
     # Estrategias
     strategies = retrieval_params.get(
@@ -303,7 +303,7 @@ def retrieve_chunks(
     top_k: int,
     strategy: str = None,
     document_type: str = None,
-    document_format: str = None,
+    format: str = None,
 ):
     """
     Recupera los chunks más similares a una pregunta.
@@ -343,12 +343,12 @@ def retrieve_chunks(
         )
 
     # Filtro por formato
-    if document_format is not None:
+    if format is not None:
         conditions.append(
             models.FieldCondition(
                 key="format",
                 match=models.MatchValue(
-                    value=document_format
+                    value=format
                 ),
             )
         )
@@ -478,8 +478,8 @@ def main() -> None:
         "document_type"
     ]
 
-    document_format = retrieval_params[
-        "document_format"
+    format = retrieval_params[
+        "format"
     ]
 
 
@@ -496,7 +496,7 @@ def main() -> None:
     )
 
     print(
-        f"Formato: {document_format}"
+        f"Formato: {format}"
     )
 
     print(
@@ -565,7 +565,7 @@ def main() -> None:
                 top_k=top_k,
                 strategy=None,
                 document_type=document_type,
-                document_format=document_format,
+                format=format,
             )
 
             all_results.append(
@@ -574,7 +574,7 @@ def main() -> None:
                     "question": question,
                     "gold_answer": gold_answer,
                     "document_type": document_type,
-                    "document_format": document_format,
+                    "format": format,
                     "retrieved_chunks":
                         format_hits(hits),
                 }
@@ -602,7 +602,7 @@ def main() -> None:
                     top_k=top_k,
                     strategy=strategy,
                     document_type=document_type,
-                    document_format=document_format,
+                    format=format,
                 )
 
                 strategy_results[
@@ -617,7 +617,7 @@ def main() -> None:
                     "question": question,
                     "gold_answer": gold_answer,
                     "document_type": document_type,
-                    "document_format": document_format,
+                    "format": format,
                     "strategies":
                         strategy_results,
                 }
