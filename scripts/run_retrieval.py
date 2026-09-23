@@ -20,6 +20,7 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List
 import sys
+import argparse
 
 import torch
 
@@ -44,11 +45,10 @@ INDEXING_CONFIG_FILE = (
     / "indexing_config.json"
 )
 
-# Archivo de configuración de la búsqueda
-RETRIEVAL_CONFIG_FILE = (
+# Carpeta con los archivos de configuración
+CONFIGS_DIR = (
     BASE_DIR
     / "configs"
-    / "retrieval_config.json"
 )
 
 # Archivo que contiene las preguntas y respuestas
@@ -439,6 +439,20 @@ def format_hits(
 # FUNCIÓN PRINCIPAL
 # ============================================================
 
+def parse_args():
+
+    parser = argparse.ArgumentParser(
+        description="Retrieval sobre Qdrant a partir de un archivo de configuración."
+    )
+
+    parser.add_argument(
+        "retrieval_config",
+        help="Nombre del JSON de configuración dentro de configs/ "
+             "(p. ej. retrieval_config_bge_m3.json)",
+    )
+
+    return parser.parse_args()
+
 def main() -> None:
 
     print("=" * 70)
@@ -453,9 +467,18 @@ def main() -> None:
         INDEXING_CONFIG_FILE
     )
 
-    retrieval_config = load_config(
-        RETRIEVAL_CONFIG_FILE
-    )
+    args = parse_args()
+
+    retrieval_config_file = CONFIGS_DIR / args.retrieval_config
+
+    if not retrieval_config_file.exists():
+        raise FileNotFoundError(
+            f"No existe el archivo de configuración:\n{retrieval_config_file}"
+        )
+
+    print(f"Configuración de retrieval: {retrieval_config_file}")
+
+    retrieval_config = load_config(retrieval_config_file)
 
     # Configuración de Qdrant
     collection_name = (
