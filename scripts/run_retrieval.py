@@ -142,8 +142,8 @@ def load_queries(
 # Crear nombre del archivo de salida según la configuración
 # retrieval 
 # + modelo
-# + formato (si no es null)
-# + estrategia (si no es null)
+# + formato (si no es null) --> no lo usamos
+# + estrategia (si no es null) --> no lo usamos
 # + documento (si no es null)
 # .json
 
@@ -170,24 +170,24 @@ def create_output_file(
         model_name,
     ]
 
-    # Formato
-    format = retrieval_params.get(
-        "format"
-    )
+    # # Formato
+    # format = retrieval_params.get(
+    #     "format"
+    # )
 
-    if format is not None:
-        parts.append(format.upper())
+    # if format is not None:
+    #     parts.append(format.upper())
 
-    # Estrategias
-    strategies = retrieval_params.get(
-        "strategies"
-    )
+    # # Estrategias
+    # strategies = retrieval_params.get(
+    #     "strategies"
+    # )
 
-    if strategies is not None:
-        if isinstance(strategies, list):
-            parts.extend(strategies)
-        else:
-            parts.append(strategies)
+    # if strategies is not None:
+    #     if isinstance(strategies, list):
+    #         parts.extend(strategies)
+    #     else:
+    #         parts.append(strategies)
 
     # Tipo de documento
     document_type = retrieval_params.get(
