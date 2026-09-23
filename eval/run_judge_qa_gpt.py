@@ -23,6 +23,9 @@ import csv
 import json
 import os
 import sys
+import threading
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Literal
 
@@ -31,6 +34,13 @@ import argparse
 from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import BaseModel
+
+# Proteger la escritura al CSV cuando varios hilos terminan a la vez
+_csv_lock = threading.Lock()
+
+# Número de reintentos ante fallos transitorios de la API
+# (rate limits, cortes de red, etc.), con espera creciente entre intentos
+MAX_RETRIES = 5
 
 
 # ==============================================================================
@@ -82,6 +92,17 @@ def parse_args():
             "Ignora el CSV de una ejecución anterior y empieza de cero "
             "(por defecto, si el CSV ya existe, se reanuda a partir de "
             "donde se quedó)."
+        ),
+    )
+
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=10,
+        help=(
+            "Número de llamadas a la API en paralelo (por defecto: 10). "
+            "Súbelo si va sobrado de rate limit, bájalo si empiezas "
+            "a ver muchos reintentos por 429"
         ),
     )
 
@@ -146,17 +167,38 @@ def generate_llm_response(
     el objeto RelevanceJudgment ya parseado (Structured Outputs).
     """
 
-    response = client.responses.parse(
-        model=MODEL_NAME,
-        instructions=(
-            "You are a strict information "
-            "retrieval evaluator."
-        ),
-        input=prompt,
-        text_format=RelevanceJudgment,
-    )
+    last_error = None
 
-    return response.output_parsed
+    for attempt in range(MAX_RETRIES):
+
+        try:
+
+            response = client.responses.parse(
+                model=MODEL_NAME,
+                instructions=(
+                    "You are a strict information "
+                    "retrieval evaluator."
+                ),
+                input=prompt,
+                text_format=RelevanceJudgment,
+            )
+
+            return response.output_parsed
+
+        except Exception as error:
+        
+            last_error = error
+            wait_seconds = 2 ** attempt
+
+            print(
+                    f"    Aviso: fallo en la llamada a la API "
+                    f"(intento {attempt + 1}/{MAX_RETRIES}): {error}. "
+                    f"Reintentando en {wait_seconds}s..."
+                )
+
+            time.sleep(wait_seconds)
+
+    raise last_error
 
 
 # ==============================================================================
@@ -173,7 +215,7 @@ def llm_judge_relevance(
 
     Con Structured Outputs, la API garantiza que la respuesta cumple el
     esquema de RelevanceJudgment (score en {0, 1, 2}, reason como string),
-    así que aquí ya no hace falta parsear ni validar nada a mano.
+    así que no hace falta parsear ni validar nada a mano.
     """
 
     prompt = f"""
@@ -244,6 +286,10 @@ def append_judge_row(
 ):
     """
     Añade una fila al archivo CSV.
+
+    Protegido con un lock: con varios hilos evaluando chunks en
+    paralelo, dos escrituras a la vez podrían entrelazarse y dejar
+    el CSV corrupto si no se serializan.
     """
 
     csv_path.parent.mkdir(
@@ -251,161 +297,193 @@ def append_judge_row(
         exist_ok=True,
     )
 
-    file_exists = csv_path.exists()
+    with _csv_lock:
 
-    with csv_path.open(
-        "a",
-        newline="",
-        encoding="utf-8",
-    ) as file:
+        file_exists = csv_path.exists()
 
-        writer = csv.DictWriter(
-            file,
-            fieldnames=row.keys(),
-        )
+        with csv_path.open(
+            "a",
+            newline="",
+            encoding="utf-8",
+        ) as file:
 
-        if not file_exists:
-            writer.writeheader()
+            writer = csv.DictWriter(
+                file,
+                fieldnames=row.keys(),
+            )
 
-        writer.writerow(
-            row
-        )
+            if not file_exists:
+                writer.writeheader()
+
+            writer.writerow(
+                row
+            )
 
 
 # ==============================================================================
-# 8. EVALUAR LOS CHUNKS DE UNA PREGUNTA
+# 8. CONSTRUIR TAREAS Y EVALUAR UN CHUNK
 # ==============================================================================
 
-def judge_chunks(
-    question_id,
-    question,
-    gold_answer,
-    retrieved_chunks,
-    top_k,
-    output_file,
-    strategy=None,
+def build_judge_tasks(
+        results,
+        top_k,
+        already_judged_question_ids,
 ):
     """
-    Evalúa los Top-K chunks recuperados para una pregunta.
+    Aplana todas las preguntas y sus chunks recuperados en una lista
+    de tareas independientes (una por chunk a evaluar), para poder
+    repartirlas entre varios hilos.
+
+    Salta las preguntas que ya estén en already_judged_question_ids
+    (reanudación) y las que no tengan identificador, texto de
+    pregunta, o chunks recuperados reconocibles.
     """
 
-    chunks_to_judge = (
-        retrieved_chunks[:top_k]
-    )
+    tasks = []
 
-    for rank, chunk in enumerate(
-        chunks_to_judge,
-        start=1,
-    ):
+    for result in results:
 
-        chunk_text = chunk.get(
-            "text",
+        question_id = result.get(
+            "question_id"
+        )
+
+        question = result.get(
+            "question", "",
+        )
+
+        gold_answer = result.get(
+            "gold_answer",
             "",
         )
 
-        # ------------------------------------------------------
-        # Evaluar el chunk
-        # ------------------------------------------------------
+        if not question_id or not question:
+            continue
 
-        score, reason, judge_error = (
-            llm_judge_relevance(
-                question=question,
-                gold_answer=gold_answer,
-                chunk_text=chunk_text,
-            )
-        )
+        if not gold_answer:
 
-        if judge_error:
             print(
-                f"    ERROR rank {rank}: "
-                f"{judge_error}"
+                f"  AVISO: {question_id} no tiene "
+                "respuesta de referencia, se omite."
             )
 
-        # ------------------------------------------------------
-        # Strategy
-        # ------------------------------------------------------
+            continue
 
-        chunk_strategy = strategy
+        if question_id in already_judged_question_ids:
+            continue
 
-        if chunk_strategy is None:
-            chunk_strategy = chunk.get(
-                "strategy"
+        # --------------------------------------------------------
+        # CASO 1: retrieval global
+        # --------------------------------------------------------
+
+        if "retrieved_chunks" in result:
+
+            chunks_to_judge = result.get(
+                "retrieved_chunks", [],
+            )[:top_k]
+
+            for rank, chunk in enumerate(
+                chunks_to_judge,
+                start=1,
+            ):
+
+                tasks.append({
+                    "question_id": question_id,
+                    "question": question,
+                    "gold_answer": gold_answer,
+                    "chunk": chunk,
+                    "rank": rank,
+                    "strategy": None,
+                })
+
+        # --------------------------------------------------------
+        # CASO 2: retrieval separado por estrategia
+        # --------------------------------------------------------
+
+        elif "strategies" in result:
+
+            for strategy, retrieved_chunks in result.get(
+                "strategies", {},
+            ).items():
+
+                for rank, chunk in enumerate(
+                    retrieved_chunks[:top_k],
+                    start=1,
+                ):
+
+                    tasks.append({
+                        "question_id": question_id,
+                        "question": question,
+                        "gold_answer": gold_answer,
+                        "chunk": chunk,
+                        "rank": rank,
+                        "strategy": strategy,
+                    })
+
+        else:
+
+            print(
+                f"  AVISO: {question_id} no tiene "
+                "chunks recuperados reconocibles, se omite."
             )
 
-        # ------------------------------------------------------
-        # Mostrar resultado
-        # ------------------------------------------------------
+    return tasks
 
-        print(
-            f"    Rank {rank}: "
-            f"score={score}"
+
+def judge_and_save_task(
+    task,
+    output_file,
+):
+    """
+    Evalúa un único chunk (una tarea) y guarda la fila en el CSV.
+
+    Es la unidad de trabajo que se reparte entre los hilos: cada
+    llamada a la API ocurre aquí, de forma independiente del resto.
+    """
+
+    chunk = task["chunk"]
+
+    chunk_text = chunk.get(
+        "text", "",
+    )
+
+    score, reason, judge_error = (
+        llm_judge_relevance(
+            question=task["question"],
+            gold_answer=task["gold_answer"],
+            chunk_text=chunk_text,
         )
+    )
 
-        print(
-            f"    Reason: {reason}"
-        )
+    chunk_strategy = (
+        task["strategy"]
+        or chunk.get("strategy")
+    )
 
-        print(
-            f"    Chunk: {chunk_text[:500]}"
-        )
+    append_judge_row(
+        output_file,
+        {
+            "question_id": task["question_id"],
+            "question": task["question"],
+            "gold_answer": task["gold_answer"],
+            "rank": task["rank"],
+            "strategy": chunk_strategy,
+            "document_id": chunk.get("document_id"),
+            "document_type": chunk.get("document_type"),
+            "chunk_id": chunk.get("chunk_id"),
+            "chunk_index": chunk.get("chunk_index"),
+            "chunk_text": chunk_text,
+            "relevance_score": score,
+            "llm_reason": reason,
+            "judge_error": judge_error,
+        },
+    )
 
-        print()
-
-        # ------------------------------------------------------
-        # Guardar resultado
-        # ------------------------------------------------------
-
-        append_judge_row(
-            output_file,
-            {
-                "question_id":
-                    question_id,
-
-                "question":
-                    question,
-
-                "gold_answer":
-                    gold_answer,
-
-                "rank":
-                    rank,
-
-                "strategy":
-                    chunk_strategy,
-
-                "document_id":
-                    chunk.get(
-                        "document_id"
-                    ),
-
-                "document_type":
-                    chunk.get(
-                        "document_type"
-                    ),
-
-                "chunk_id":
-                    chunk.get(
-                        "chunk_id"
-                    ),
-
-                "chunk_index":
-                    chunk.get(
-                        "chunk_index"
-                    ),
-
-                "chunk_text":
-                    chunk_text,
-
-                "relevance_score":
-                    score,
-
-                "llm_reason":
-                    reason,
-
-                "judge_error":
-                    judge_error,
-            },
-        )
+    return (
+        task["question_id"],
+        task["rank"],
+        score,
+        judge_error,
+    )
 
 
 # ==============================================================================
@@ -584,173 +662,79 @@ def main():
 
 
     # ==========================================================================
-    # 9.5 RECORRER PREGUNTAS
+    # 9.5 CONSTRUIR TAREAS Y EVALUAR EN PARALELO
     # ==========================================================================
 
-    for query_number, result in enumerate(
+    tasks = build_judge_tasks(
         results,
-        start=1,
-    ):
+        top_k,
+        already_judged_question_ids,
+    )
 
-        # ------------------------------------------------------
-        # QUESTION ID
-        # ------------------------------------------------------
+    total = len(tasks)
 
-        question_id = result.get(
-            "question_id"
-        )
+    print(
+        f"Chunks a evaluar: {total}"
+    )
 
-        # ------------------------------------------------------
-        # PREGUNTA
-        # ------------------------------------------------------
+    print(
+        f"Llamadas en paralelo: {args.workers}"
+    )
 
-        question = result.get(
-            "question", "",
-        )
+    print()
 
-        # ------------------------------------------------------
-        # GOLD ANSWER
-        # ------------------------------------------------------
+    completed = 0
 
-        gold_answer = result.get(
-            "gold_answer",
-            "",
-        )
+    with ThreadPoolExecutor(
+        max_workers=args.workers,
+    ) as executor:
 
-        # ------------------------------------------------------
-        # Mostrar pregunta
-        # ------------------------------------------------------
-
-        print()
-        print(
-            f"[{query_number}/{len(results)}]"
-        )
-
-        print(
-            f"Pregunta: {question}"
-        )
-
-        # ------------------------------------------------------
-        # Comprobar identificador de la pregunta
-        # ------------------------------------------------------
-
-        if not question_id:
-
-            print(
-                "  AVISO: no se encontró "
-                "el identificador de la pregunta."
+        futures = [
+            executor.submit(
+                judge_and_save_task,
+                task,
+                output_file,
             )
+            for task in tasks
+        ]
 
-            continue
+        for future in as_completed(futures):
 
-        # ------------------------------------------------------
-        # Reanudación: saltar preguntas ya evaluadas
-        # ------------------------------------------------------
+            completed += 1
 
-        if question_id in already_judged_question_ids:
+            try:
 
-            print(
-                "  Ya evaluada en una ejecución anterior, se omite."
-            )
+                (
+                    question_id,
+                    rank,
+                    score,
+                    judge_error,
+                ) = future.result()
 
-            continue
-        
-        # ------------------------------------------------------
-        # Comprobar pregunta
-        # ------------------------------------------------------
-
-        if not question:
-
-            print(
-                "  AVISO: no se encontró "
-                "el texto de la pregunta."
-            )
-
-            continue
-
-        # ------------------------------------------------------
-        # Comprobar respuesta
-        # ------------------------------------------------------
-
-        if not gold_answer:
-
-            print(
-                "  AVISO: la pregunta no tiene "
-                "respuesta de referencia."
-            )
-
-            continue
-
-
-        # ======================================================================
-        # CASO 1:
-        # Retrieval global
-        # ======================================================================
-
-        if "retrieved_chunks" in result:
-
-            retrieved_chunks = result.get(
-                "retrieved_chunks",
-                [],
-            )
-
-            print(
-                f"  Chunks recuperados: "
-                f"{len(retrieved_chunks)}"
-            )
-
-            judge_chunks(
-                question_id=question_id,
-                question=question,
-                gold_answer=gold_answer,
-                retrieved_chunks=retrieved_chunks,
-                top_k=top_k,
-                output_file=output_file,
-            )
-
-
-        # ======================================================================
-        # CASO 2:
-        # Retrieval separado por estrategia
-        # ======================================================================
-
-        elif "strategies" in result:
-
-            strategy_results = result.get(
-                "strategies",
-                {},
-            )
-
-            for (
-                strategy,
-                retrieved_chunks,
-            ) in strategy_results.items():
+            except Exception as error:
 
                 print(
-                    f"  Estrategia: {strategy}"
+                    f"  [{completed}/{total}] "
+                    f"ERROR inesperado: {error}"
                 )
 
-                judge_chunks(
-                    question_id=question_id,
-                    question=question,
-                    gold_answer=gold_answer,
-                    retrieved_chunks=retrieved_chunks,
-                    top_k=top_k,
-                    output_file=output_file,
-                    strategy=strategy,
+                continue
+
+            if judge_error:
+
+                print(
+                    f"  [{completed}/{total}] "
+                    f"{question_id} rank={rank} "
+                    f"ERROR: {judge_error}"
                 )
 
+            else:
 
-        # ======================================================================
-        # FORMATO NO RECONOCIDO
-        # ======================================================================
-
-        else:
-
-            print(
-                "  AVISO: no se encontraron "
-                "chunks recuperados."
-            )
+                print(
+                    f"  [{completed}/{total}] "
+                    f"{question_id} rank={rank} "
+                    f"score={score}"
+                )
 
 
     # ==========================================================================
