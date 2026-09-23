@@ -202,3 +202,6 @@ __pycache__/
 # Archivos de modelos
 models/
 hf_cache/
+
+# Output de indexing
+output/indexing
