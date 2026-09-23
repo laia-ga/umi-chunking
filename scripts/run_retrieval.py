@@ -52,12 +52,15 @@ RETRIEVAL_CONFIG_FILE = (
 )
 
 # Archivo que contiene las preguntas y respuestas
-QUERY_FILE = (
-    BASE_DIR
-    / "data"
-    / "ground_truth"
-    / "rag_questions_1500_general.jsonl"
+GROUND_TRUTH_DIR = (
+    BASE_DIR / "data" / "ground_truth"
 )
+
+QUERY_FILES = {
+    "ficha_tecnica": GROUND_TRUTH_DIR / "rag_questions_ficha_tecnica.jsonl",
+    "paper": GROUND_TRUTH_DIR / "rag_questions_paper.jsonl",
+    "guideline": GROUND_TRUTH_DIR / "rag_questions_guideline.jsonl"
+}
 
 # Carpeta donde se guardarán los resultados
 OUTPUT_DIR = (
@@ -506,9 +509,9 @@ def main() -> None:
     # 2. Cargar preguntas
     # --------------------------------------------------------
 
-    queries = load_queries(
-        QUERY_FILE
-    )
+    query_file = QUERY_FILES[document_type]
+
+    queries = load_queries(query_file)
 
     print(
         f"Preguntas cargadas: {len(queries)}"
