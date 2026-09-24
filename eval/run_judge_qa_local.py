@@ -48,16 +48,6 @@ BASE_DIR = SCRIPTS_DIR.parent
 # Añadir la raíz del proyecto al path
 sys.path.append(str(BASE_DIR))
 
-from chunking.utilities import load_config
-
-
-# Archivo de configuración del retrieval
-RETRIEVAL_CONFIG_FILE = (
-    BASE_DIR
-    / "configs"
-    / "retrieval_config.json"
-)
-
 # Carpeta de salida
 OUTPUT_DIR = (
     BASE_DIR
@@ -76,6 +66,19 @@ def parse_args():
         "retrieval_file",
         help="Nombre del archivo JSON generado por run_retrieval.py",
     )
+
+    parser.add_argument(
+            "--top-k",
+            type=int,
+            default=None,
+            help=(
+                "Número máximo de chunks a evaluar por pregunta/estrategia. "
+                "Por defecto, se evalúan todos los que traiga el archivo de "
+                "retrieval (que ya vienen recortados a su propio top_k desde "
+                "que se generó). Solo hace falta si quieres evaluar menos de "
+                "los que hay en el archivo."
+            ),
+        )
 
     return parser.parse_args()
 
@@ -662,24 +665,18 @@ def main():
 
 
     # ==========================================================================
-    # 10.1 CARGAR CONFIGURACIÓN
+    # 10.1 TOP-K
     # ==========================================================================
 
-    retrieval_config = load_config(
-        RETRIEVAL_CONFIG_FILE
-    )
-
-    top_k = (
-        retrieval_config[
-            "retrieval"
-        ][
-            "top_k"
-        ]
-    )
-
+    # El archivo de retrieval ya trae los chunks recortados a su propio
+    # top_k desde que se generó (Qdrant limitó la búsqueda al crearlo),
+    # --top-k permite forzar un límite menor si se quiere evaluar menos
+    # chunks de los que trae el archivo
+    top_k = args.top_k
+    
     print(
-        f"Top K: {top_k}"
-    )
+            f"Top K: {'todos los del archivo' if top_k is None else top_k}"
+        )
 
 
     # ==========================================================================
