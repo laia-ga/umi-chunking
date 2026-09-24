@@ -203,5 +203,7 @@ __pycache__/
 models/
 hf_cache/
 
-# Output de indexing
+# Output de indexing y retrieval 
+# (demasiado pesados para subir)
 output/indexing
+output/retrieval
