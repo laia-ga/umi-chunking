@@ -84,7 +84,7 @@ def parse_args():
 # ==============================================================================
 
 # Modelo utilizado como juez
-MODEL_NAME = "Qwen/Qwen2.5-1.5B-Instruct"
+MODEL_NAME = "Qwen/Qwen3-8B"
 # MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 
 # Máximo de tokens que generará el modelo
@@ -153,6 +153,7 @@ def generate_llm_response(
         messages,
         tokenize=False,
         add_generation_prompt=True,
+        enable_thinking=False,
     )
 
     # Tokenizar
@@ -646,7 +647,7 @@ def main():
 
     output_file = (
         OUTPUT_DIR
-        / f"judge_{retrieval_suffix}.csv"
+        / f"local_judge_{retrieval_suffix}.csv"
     )
 
     print("=" * 70)

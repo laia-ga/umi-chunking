@@ -512,7 +512,7 @@ def main():
 
     output_file = (
         OUTPUT_DIR
-        / f"judge_{retrieval_suffix}.csv"
+        / f"gpt_judge_{retrieval_suffix}.csv"
     )
 
     print("=" * 70)
