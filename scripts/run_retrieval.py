@@ -300,9 +300,8 @@ def connect_to_qdrant(
 
 def retrieve_chunks(
     client: QdrantClient,
-    embeddings: HuggingFaceEmbeddings,
+    query_vector: List[float],
     collection_name: str,
-    question: str,
     top_k: int,
     strategy: str = None,
     document_type: str = None,
@@ -314,11 +313,6 @@ def retrieve_chunks(
     Los filtros por estrategia, tipo de documento y formato
     son opcionales.
     """
-
-    # Generar embedding de la pregunta
-    query_vector = embeddings.embed_query(
-        question
-    )
 
     # Lista de condiciones para Qdrant
     conditions = []
@@ -577,6 +571,12 @@ def main() -> None:
             f"\nPregunta: {question}"
         )
 
+        # Embedding de la pregunta, calculado una única vez y 
+        # reutilizado en todas las estrategias (si hay varias)
+        query_vector = embeddings.embed_query(
+            question
+        )
+
         # ----------------------------------------------------
         # CASO 1: No se comparan estrategias
         # ----------------------------------------------------
@@ -585,9 +585,8 @@ def main() -> None:
 
             hits = retrieve_chunks(
                 client=client,
-                embeddings=embeddings,
+                query_vector=query_vector,
                 collection_name=collection_name,
-                question=question,
                 top_k=top_k,
                 strategy=None,
                 document_type=document_type,
@@ -622,9 +621,8 @@ def main() -> None:
 
                 hits = retrieve_chunks(
                     client=client,
-                    embeddings=embeddings,
+                    query_vector=query_vector,
                     collection_name=collection_name,
-                    question=question,
                     top_k=top_k,
                     strategy=strategy,
                     document_type=document_type,
