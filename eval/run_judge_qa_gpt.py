@@ -327,16 +327,15 @@ def append_judge_row(
 def build_judge_tasks(
         results,
         top_k,
-        already_judged_question_ids,
+        done_keys,
 ):
     """
     Aplana todas las preguntas y sus chunks recuperados en una lista
     de tareas independientes (una por chunk a evaluar), para poder
     repartirlas entre varios hilos.
 
-    Salta las preguntas que ya estén en already_judged_question_ids
-    (reanudación) y las que no tengan identificador, texto de
-    pregunta, o chunks recuperados reconocibles.
+    Salta los chunks ya evaluados sin error (done keys) y las preguntas 
+    sin identificador, texto o chunks reconocibles.
     """
 
     tasks = []
@@ -368,9 +367,6 @@ def build_judge_tasks(
 
             continue
 
-        if question_id in already_judged_question_ids:
-            continue
-
         # --------------------------------------------------------
         # CASO 1: retrieval global
         # --------------------------------------------------------
@@ -386,13 +382,17 @@ def build_judge_tasks(
                 start=1,
             ):
 
+                chunk_strategy = chunk.get("strategy")
+                if (question_id, chunk_strategy or "", rank) in done_keys:
+                    continue
+
                 tasks.append({
                     "question_id": question_id,
                     "question": question,
                     "gold_answer": gold_answer,
                     "chunk": chunk,
                     "rank": rank,
-                    "strategy": None,
+                    "strategy": chunk_strategy,
                 })
 
         # --------------------------------------------------------
@@ -409,6 +409,8 @@ def build_judge_tasks(
                     retrieved_chunks[:top_k],
                     start=1,
                 ):
+                    if (question_id, strategy or "", rank) in done_keys:
+                        continue
 
                     tasks.append({
                         "question_id": question_id,
@@ -590,75 +592,39 @@ def main():
             "Se ha borrado el CSV anterior (--restart)."
         )
 
-    # Reanudación: si ya existe un CSV de una ejecución anterior,
-    # conservamos las preguntas ya evaluadas y solo repetimos la última
-    # (por si el proceso se cortó a mitad de evaluarla) y las que falten.
-    already_judged_question_ids = set()
+    # Reanudación por chunk: se conservan los chunks evaluados sin error y se
+    # repiten los que fallaron o faltan
+    
+    done_keys = set()
 
     if output_file.exists():
 
-        with output_file.open(
-            "r",
-            newline="",
-            encoding="utf-8",
-        ) as file:
+        with output_file.open("r", newline="", encoding="utf-8") as file:
+            existing_rows = list(csv.DictReader(file))
 
-            existing_rows = list(
-                csv.DictReader(file)
-            )
-
-        existing_question_ids = [
-            row["question_id"]
-            for row in existing_rows
-            if row.get("question_id")
+        # Solo se conservan los chunks evaluados sin error
+        ok_rows = [
+            row for row in existing_rows
+            if row.get("relevance_score") not in (None, "")
         ]
 
-        if existing_question_ids:
+        done_keys = {
+            (row["question_id"], row["strategy"] or "", int(row["rank"]))
+            for row in ok_rows
+        }
 
-            # La última pregunta puede haberse quedado a medias si el
-            # proceso se interrumpió mientras se evaluaba (corte de luz,
-            # reinicio de Windows, etc.), así que se descarta y se repite
-            # entera por seguridad.
-            last_question_id = existing_question_ids[-1]
+        if ok_rows:
+            with output_file.open("w", newline="", encoding="utf-8") as file:
+                writer = csv.DictWriter(file, fieldnames=ok_rows[0].keys())
+                writer.writeheader()
+                writer.writerows(ok_rows)
+        else:
+            output_file.unlink()
 
-            kept_rows = [
-                row for row in existing_rows
-                if row["question_id"] != last_question_id
-            ]
-
-            already_judged_question_ids = {
-                row["question_id"] for row in kept_rows
-            }
-
-            with output_file.open(
-                "w",
-                newline="",
-                encoding="utf-8",
-            ) as file:
-
-                if kept_rows:
-
-                    writer = csv.DictWriter(
-                        file,
-                        fieldnames=kept_rows[0].keys(),
-                    )
-
-                    writer.writeheader()
-                    writer.writerows(kept_rows)
-
-                else:
-
-                    # Solo había filas de la pregunta descartada:
-                    # dejamos el CSV vacío, se regenerará con la cabecera
-                    # en la primera fila nueva que se escriba.
-                    pass
-
-            print(
-                f"Reanudando: {len(already_judged_question_ids)} "
-                "preguntas ya evaluadas se conservan del CSV anterior. "
-                f"Se repite la última ({last_question_id!r}) por si "
-                "quedó a medias."
-            )
+        print(
+            f"Reanudando: {len(ok_rows)} chunks ya evaluados se conservan; "
+            f"{len(existing_rows) - len(ok_rows)} con error se repetirán."
+        )
 
 
     # ==========================================================================
@@ -668,7 +634,7 @@ def main():
     tasks = build_judge_tasks(
         results,
         top_k,
-        already_judged_question_ids,
+        done_keys,
     )
 
     total = len(tasks)
