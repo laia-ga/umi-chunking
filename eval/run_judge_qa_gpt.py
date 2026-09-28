@@ -42,6 +42,29 @@ _csv_lock = threading.Lock()
 # (rate limits, cortes de red, etc.), con espera creciente entre intentos
 MAX_RETRIES = 5
 
+class FatalAPIError(Exception):
+    """
+    Error de la API que no tiene sentido reintentar (sin crédito/cuota,
+    clave inválida...). Detiene toda la ejecución en vez de generar
+    miles de filas de error.
+    """
+
+
+def is_fatal_api_error(error: Exception) -> bool:
+    """
+    Detecta errores que reintentar no arregla: cuota agotada o
+    autenticación fallida.
+    """
+
+    text = str(error).lower()
+
+    return (
+        "insufficient_quota" in text
+        or "exceeded your current quota" in text
+        or "invalid_api_key" in text
+        or "incorrect api key" in text
+        or type(error).__name__ == "AuthenticationError"
+    )
 
 # ==============================================================================
 # 2. RUTAS
@@ -190,6 +213,11 @@ def generate_llm_response(
 
         except Exception as error:
         
+            if is_fatal_api_error(error):
+                raise FatalAPIError(
+                    str(error)
+                ) from error
+            
             last_error = error
             wait_seconds = 2 ** attempt
 
@@ -270,6 +298,10 @@ def llm_judge_relevance(
             "",
         )
 
+    except FatalAPIError:
+        # Detener toda la ejecución si la API devuelve un error fatal
+        raise
+    
     except Exception as error:
 
         return (
@@ -451,6 +483,10 @@ def judge_and_save_task(
         "text", "",
     )
 
+    # ------------------------------------------------------
+    # Evaluar el chunk
+    # ------------------------------------------------------
+    
     score, reason, judge_error = (
         llm_judge_relevance(
             question=task["question"],
@@ -459,11 +495,19 @@ def judge_and_save_task(
         )
     )
 
+    # ------------------------------------------------------
+    # Strategy
+    # ------------------------------------------------------
+    
     chunk_strategy = (
         task["strategy"]
         or chunk.get("strategy")
     )
 
+    # ------------------------------------------------------
+    # Guardar resultado
+    # ------------------------------------------------------
+    
     append_judge_row(
         output_file,
         {
@@ -674,6 +718,28 @@ def main():
                     judge_error,
                 ) = future.result()
 
+            except FatalAPIError as error:
+
+                # Sin cuota / clave inválida: reintentar no sirve.
+                # Se cancelan las tareas pendientes y se para.
+                print()
+                print(
+                    "ERROR FATAL de la API, se detiene la ejecución:"
+                )
+                print(f"  {error}")
+                print(
+                    "Lo ya evaluado está guardado en el CSV. Cuando se "
+                    "resuelva (p.ej. se amplíe el límite), vuelve a "
+                    "lanzar el mismo comando y continuará donde se quedó."
+                )
+
+                executor.shutdown(
+                    wait=True,
+                    cancel_futures=True,
+                )
+
+                sys.exit(1)
+            
             except Exception as error:
 
                 print(
