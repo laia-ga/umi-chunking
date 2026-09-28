@@ -3,6 +3,6 @@
         "top_k": 5,
         "strategies": null,
         "document_type": null,
-        "document_format": null
+        "format": null
     }
 }

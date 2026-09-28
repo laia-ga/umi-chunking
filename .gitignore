@@ -207,3 +207,6 @@ hf_cache/
 # (demasiado pesados para subir)
 output/indexing
 output/retrieval
+
+# Carpeta ~BROMIUM de ciberseguridad de HP
+~BROMIUM/
