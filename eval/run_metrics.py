@@ -8,22 +8,32 @@ import pandas as pd
 # MÉTRICAS A EVALUAR
 # ============================================================
 
-# Mean nDCG@5: mide la calidad global del ranking de los 5
-# chunks recuperados, teniendo en cuenta tanto el grado de 
-# relevancia como la posición
+# Mean nDCG@5: mide la calidad de los 5 chunks recuperados
+# frente a una situación ideal fija (5 chunks con score = 2),
+# teniendo en cuenta tanto el grado de relevancia como la
+# posición. Solo un ranking [2, 2, 2, 2, 2] obtiene 1.0
 
-# HitRate@5: porcentaje de preguntas en el que se consigue 
+# HitRate@5: porcentaje de preguntas en el que se consigue
 # recuperar al menos un chunk con información suficiente
 # (score = 2) entre los 5 chunks recuperados
 
-# MRR: media de los inversos de las posiciones de los chunks 
-# relevantes (score = 2) entre los chunks recuperados
+# MRR@5: media del inverso de la posición del PRIMER chunk
+# relevante (score = 2) entre los 5 chunks recuperados.
+# Si no hay ninguno, la pregunta aporta 0. Evalúa como de 
+# rápido encuentra una respuesta correcta
 
 # %score2: porcentaje de chunks relevantes recuperados (score = 2)
 
 # %score1: porcentaje de chunks útiles pero insuficientes recuperados (score = 1)
 
 # %score0: porcentaje de chunks irrelevantes recuperados (score = 0)
+
+# Notas:
+# - Las preguntas sin ningún chunk recuperado cuentan con
+#   nDCG = Hit = MRR = 0, para no inflar las métricas
+# - Las evaluaciones fallidas del judge (score NaN) se tratan
+#   como score = 0, para no desplazar las posiciones del ranking
+# - Los %score se calculan solo sobre los chunks recuperados
 
 
 # ============================================================
@@ -74,9 +84,8 @@ def dcg(scores):
         1 = útil pero insuficiente
         2 = suficiente para responder
 
-    Los chunks más relevantes reciben mayor ganancia
-    y los chunks situados en posiciones posteriores
-    reciben una penalización.
+    Ganancia = 2^relevancia - 1  ->  0, 1, 3
+    Descuento = log2(posición + 1)
     """
 
     value = 0.0
@@ -92,42 +101,35 @@ def dcg(scores):
 
 
 # ============================================================
-# nDCG@5
+# nDCG@5 (IDEAL FIJO)
 # ============================================================
+
+IDEAL_SCORES = [2, 2, 2, 2, 2]
+IDEAL_DCG = dcg(IDEAL_SCORES)
+
 
 def ndcg_at_5(scores):
 
     """
-    nDCG@5.
+    nDCG@5 con ideal fijo.
 
-    Mide la calidad global del ranking de los 5 chunks
-    recuperados, teniendo en cuenta tanto el grado de
-    relevancia como la posición.
+    El DCG de los 5 chunks recuperados se compara con el
+    DCG de la situación ideal: 5 chunks con puntuación 2.
 
-    El ranking obtenido se compara con el mejor orden
-    posible de esos mismos chunks.
+    Ejemplos:
+
+        [2, 2, 2, 2, 2] -> 1.0
+        [2, 0, 0, 0, 0] -> ~0.34
+        [1, 0, 0, 0, 0] -> ~0.11
+        [0, 0, 0, 0, 0] -> 0.0
+
+    Si se recuperan menos de 5 chunks, las posiciones
+    ausentes cuentan como 0.
     """
 
     scores = list(scores)[:5]
 
-    if not scores:
-        return 0.0
-
-    actual_dcg = dcg(scores)
-
-    ideal_scores = sorted(
-        scores,
-        reverse=True,
-    )
-
-    ideal_dcg = dcg(
-        ideal_scores
-    )
-
-    if ideal_dcg == 0:
-        return 0.0
-
-    return actual_dcg / ideal_dcg
+    return dcg(scores) / IDEAL_DCG
 
 
 # ============================================================
@@ -163,7 +165,7 @@ def reciprocal_rank(scores):
     """
     Reciprocal Rank.
 
-    Busca la posición del primer chunk con información
+    Busca la posición del PRIMER chunk con información
     suficiente para responder la pregunta (score = 2).
 
     Ejemplos:
@@ -180,10 +182,7 @@ def reciprocal_rank(scores):
 
     scores = list(scores)[:5]
 
-    for rank, score in enumerate(
-        scores,
-        start=1,
-    ):
+    for rank, score in enumerate(scores, start=1):
 
         if score == 2:
             return 1 / rank
@@ -195,9 +194,7 @@ def reciprocal_rank(scores):
 # MÉTRICAS POR PREGUNTA
 # ============================================================
 
-def calculate_question_metrics(
-    question_df,
-):
+def calculate_question_metrics(question_df):
 
     """
     Calcula nDCG@5, Hit@5 y RR para una pregunta.
@@ -205,9 +202,7 @@ def calculate_question_metrics(
     Los chunks se ordenan primero por su rank original.
     """
 
-    question_df = question_df.sort_values(
-        "rank"
-    )
+    question_df = question_df.sort_values("rank")
 
     scores = (
         question_df["relevance_score"]
@@ -219,17 +214,10 @@ def calculate_question_metrics(
     scores = scores[:5]
 
     return {
-        "question_id":
-            question_df.iloc[0]["question_id"],
-
-        "nDCG@5":
-            ndcg_at_5(scores),
-
-        "Hit@5":
-            hit_at_5(scores),
-
-        "RR":
-            reciprocal_rank(scores),
+        "question_id": question_df.iloc[0]["question_id"],
+        "nDCG@5": ndcg_at_5(scores),
+        "Hit@5": hit_at_5(scores),
+        "MRR@5": reciprocal_rank(scores),
     }
 
 
@@ -241,10 +229,7 @@ def main():
 
     args = parse_args()
 
-    judge_file = (
-        JUDGE_DIR
-        / args.judge_file
-    )
+    judge_file = JUDGE_DIR / args.judge_file
 
     # --------------------------------------------------------
     # Comprobar que existe el archivo
@@ -257,15 +242,11 @@ def main():
             f"{judge_file}"
         )
 
-
     # --------------------------------------------------------
     # Cargar CSV del judge
     # --------------------------------------------------------
 
-    df = pd.read_csv(
-        judge_file
-    )
-
+    df = pd.read_csv(judge_file)
 
     # --------------------------------------------------------
     # Comprobar columnas necesarias
@@ -280,10 +261,7 @@ def main():
         "relevance_score",
     }
 
-    missing = (
-        required_columns
-        - set(df.columns)
-    )
+    missing = required_columns - set(df.columns)
 
     if missing:
 
@@ -292,30 +270,42 @@ def main():
             + ", ".join(sorted(missing))
         )
 
+    # --------------------------------------------------------
+    # Preguntas esperadas por document_type
+    # --------------------------------------------------------
+    # Se calcula sobre el CSV completo (antes de tratar los
+    # fallos), para que ninguna pregunta desaparezca del
+    # denominador.
+
+    expected_questions = (
+        df.groupby("document_type")["question_id"]
+        .unique()
+        .to_dict()
+    )
 
     # --------------------------------------------------------
-    # Eliminar evaluaciones fallidas
+    # Evaluaciones fallidas del judge -> score 0
     # --------------------------------------------------------
+    # No se eliminan para no desplazar las posiciones del
+    # ranking. Se marcan para poder contarlas.
 
-    df_valid = df[
-        df["relevance_score"].notna()
-    ].copy()
+    df_valid = df.copy()
+
+    df_valid["judge_failed"] = df_valid["relevance_score"].isna()
+
+    n_failed_total = int(df_valid["judge_failed"].sum())
 
     df_valid["relevance_score"] = (
         df_valid["relevance_score"]
+        .fillna(0)
         .astype(int)
     )
-
 
     # --------------------------------------------------------
     # Comprobar scores
     # --------------------------------------------------------
 
-    valid_scores = {
-        0,
-        1,
-        2,
-    }
+    valid_scores = {0, 1, 2}
 
     unexpected_scores = (
         set(df_valid["relevance_score"].unique())
@@ -329,7 +319,6 @@ def main():
             f"{sorted(unexpected_scores)}"
         )
 
-
     # ========================================================
     # MÉTRICAS POR STRATEGY × DOCUMENT_TYPE
     # ========================================================
@@ -337,19 +326,12 @@ def main():
     summary_results = []
 
     grouped = df_valid.groupby(
-        [
-            "strategy",
-            "document_type",
-        ],
+        ["strategy", "document_type"],
         dropna=False,
         sort=False,
     )
 
-    for (
-        strategy,
-        document_type,
-    ), group_df in grouped:
-
+    for (strategy, document_type), group_df in grouped:
 
         # ----------------------------------------------------
         # Métricas individuales de cada pregunta
@@ -362,19 +344,42 @@ def main():
             sort=False,
         ):
 
-            metrics = calculate_question_metrics(
-                question_df
-            )
-
             question_results.append(
-                metrics
+                calculate_question_metrics(question_df)
             )
-
 
         per_question_df = pd.DataFrame(
-            question_results
+            question_results,
+            columns=["question_id", "nDCG@5", "Hit@5", "MRR@5"],
         )
 
+        # ----------------------------------------------------
+        # Preguntas sin ningún chunk recuperado -> métricas 0
+        # ----------------------------------------------------
+
+        retrieved = set(per_question_df["question_id"])
+
+        missing_q = [
+            q for q in expected_questions.get(document_type, [])
+            if q not in retrieved
+        ]
+
+        if missing_q:
+
+            empty = pd.DataFrame([
+                {
+                    "question_id": q,
+                    "nDCG@5": 0.0,
+                    "Hit@5": 0,
+                    "MRR@5": 0.0,
+                }
+                for q in missing_q
+            ])
+
+            per_question_df = pd.concat(
+                [per_question_df, empty],
+                ignore_index=True,
+            )
 
         # ----------------------------------------------------
         # Chunks considerados para los porcentajes
@@ -382,28 +387,14 @@ def main():
 
         top5_chunks = (
             group_df
-            .sort_values(
-                [
-                    "question_id",
-                    "rank",
-                ]
-            )
-            .groupby(
-                "question_id",
-                sort=False,
-            )
+            .sort_values(["question_id", "rank"])
+            .groupby("question_id", sort=False)
             .head(5)
         )
 
+        n_chunks = len(top5_chunks)
 
-        # ----------------------------------------------------
-        # Número total de chunks
-        # ----------------------------------------------------
-
-        n_chunks = len(
-            top5_chunks
-        )
-
+        n_failed = int(top5_chunks["judge_failed"].sum())
 
         # ----------------------------------------------------
         # Porcentaje de cada score
@@ -411,29 +402,11 @@ def main():
 
         if n_chunks > 0:
 
-            pct_score2 = (
-                (
-                    top5_chunks["relevance_score"]
-                    == 2
-                ).mean()
-                * 100
-            )
+            scores = top5_chunks["relevance_score"]
 
-            pct_score1 = (
-                (
-                    top5_chunks["relevance_score"]
-                    == 1
-                ).mean()
-                * 100
-            )
-
-            pct_score0 = (
-                (
-                    top5_chunks["relevance_score"]
-                    == 0
-                ).mean()
-                * 100
-            )
+            pct_score2 = (scores == 2).mean() * 100
+            pct_score1 = (scores == 1).mean() * 100
+            pct_score0 = (scores == 0).mean() * 100
 
         else:
 
@@ -441,113 +414,77 @@ def main():
             pct_score1 = 0.0
             pct_score0 = 0.0
 
-
         # ----------------------------------------------------
         # Resumen de la combinación
         # ----------------------------------------------------
 
-        summary = {
-            "strategy":
-                strategy,
-
-            "document_type":
-                document_type,
-
-            "n_questions":
-                len(per_question_df),
-
-            "n_chunks":
-                n_chunks,
-
-            "Mean_nDCG@5":
-                per_question_df[
-                    "nDCG@5"
-                ].mean(),
-
-            "HitRate@5":
-                per_question_df[
-                    "Hit@5"
-                ].mean(),
-
-            "MRR":
-                per_question_df[
-                    "RR"
-                ].mean(),
-
-            "%score2":
-                pct_score2,
-
-            "%score1":
-                pct_score1,
-
-            "%score0":
-                pct_score0,
-        }
-
-        summary_results.append(
-            summary
-        )
-
+        summary_results.append({
+            "strategy": strategy,
+            "document_type": document_type,
+            "n_questions": len(per_question_df),
+            "n_missing": len(missing_q),
+            "n_chunks": n_chunks,
+            "Mean_nDCG@5": per_question_df["nDCG@5"].mean(),
+            "HitRate@5": per_question_df["Hit@5"].mean(),
+            "MRR@5": per_question_df["MRR@5"].mean(),
+            "%score2": pct_score2,
+            "%score1": pct_score1,
+            "%score0": pct_score0,
+        })
 
     # ========================================================
     # CREAR DATAFRAME FINAL
     # ========================================================
 
-    summary_df = pd.DataFrame(
-        summary_results
-    )
-
-
-    # --------------------------------------------------------
-    # Ordenar resultados
-    # --------------------------------------------------------
+    summary_df = pd.DataFrame(summary_results)
 
     summary_df = summary_df.sort_values(
-        [
-            "strategy",
-            "document_type",
-        ]
+        ["strategy", "document_type"]
     )
 
+    # --------------------------------------------------------
+    # Combinaciones strategy × document_type ausentes
+    # --------------------------------------------------------
+
+    all_combinations = {
+        (s, d)
+        for s in df["strategy"].unique()
+        for d in df["document_type"].unique()
+    }
+
+    present_combinations = set(
+        zip(summary_df["strategy"], summary_df["document_type"])
+    )
+
+    absent_combinations = sorted(
+        all_combinations - present_combinations,
+        key=str,
+    )
 
     # ========================================================
     # ARCHIVO DE SALIDA
     # ========================================================
 
-    OUTPUT_DIR.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     suffix = judge_file.stem
 
     if suffix.startswith("judge_"):
+        suffix = suffix[len("judge_"):]
 
-        suffix = suffix[
-            len("judge_"):
-        ]
-
-    output_file = (
-        OUTPUT_DIR
-        / f"metrics_{suffix}.xlsx"
-    )
-
+    output_file = OUTPUT_DIR / f"metrics_{suffix}.xlsx"
 
     # ========================================================
     # GUARDAR EXCEL
     # ========================================================
 
-    with pd.ExcelWriter(
-        output_file,
-        engine="openpyxl",
-    ) as writer:
+    with pd.ExcelWriter(output_file, engine="openpyxl") as writer:
 
         summary_df.to_excel(
             writer,
             sheet_name="summary",
             index=False,
         )
-
 
     # ========================================================
     # RESULTADO
@@ -562,13 +499,24 @@ def main():
         f"{len(summary_df)}"
     )
 
+    print(
+        f"Evaluaciones fallidas del judge (tratadas como 0): "
+        f"{n_failed_total}"
+    )
+
+    if absent_combinations:
+
+        print(
+            "\nAVISO: combinaciones sin ninguna fila en el CSV "
+            "(no aparecen en el resumen):"
+        )
+
+        for strategy, document_type in absent_combinations:
+            print(f"  - {strategy} × {document_type}")
+
     print()
 
-    print(
-        summary_df.to_string(
-            index=False
-        )
-    )
+    print(summary_df.to_string(index=False))
 
     print(
         f"\nResultados guardados en:\n"

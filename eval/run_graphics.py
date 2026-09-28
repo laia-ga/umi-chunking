@@ -24,8 +24,10 @@ def parse_args():
 
     parser = argparse.ArgumentParser(
         description=(
-            "Genera heatmaps y dotplots de las métricas "
-            "de retrieval para papers y guidelines."
+            "Genera un heatmap doble (métricas y distribución de "
+            "scores) y un dotplot de las métricas "
+            "de retrieval a partir de un archivo de métricas "
+            "de un único tipo de documento."
         )
     )
 
@@ -46,107 +48,106 @@ def parse_args():
 
 def prepare_data(
     df,
-    document_type,
 ):
 
     """
-    Filtra un tipo de documento y ordena las estrategias
-    de mejor a peor según la media de:
-
-        - Mean_nDCG@5
-        - HitRate@5
-        - MRR
-
-    Esta media se utiliza únicamente para ordenar las
-    estrategias y no aparece en las gráficas.
+    Ordena las estrategias de mejor a peor según
+    Mean_nDCG@5.
     """
 
-    data = df[
-        df["document_type"]
-        .astype(str)
-        .str.lower()
-        == document_type.lower()
-    ].copy()
+    data = df.copy()
 
     if data.empty:
 
         raise ValueError(
-            f"No se encontraron resultados para "
-            f"document_type = '{document_type}'."
+            "El archivo de métricas no contiene resultados."
         )
 
     # --------------------------------------------------------
-    # Media de las tres métricas únicamente para ordenar
+    # nDCG@5 para ordenar
     # --------------------------------------------------------
 
-    data["_mean_metrics"] = data[
-        [
-            "Mean_nDCG@5",
-            "HitRate@5",
-            "MRR",
-        ]
-    ].mean(
-        axis=1
-    )
-
-    # Ordenar de mejor a peor
     data = data.sort_values(
-        "_mean_metrics",
+        "Mean_nDCG@5",
         ascending=False,
-    )
-
-    # Eliminar la columna auxiliar
-    data = data.drop(
-        columns="_mean_metrics"
     )
 
     return data
 
 
 # ============================================================
-# HEATMAP
+# TÍTULO
 # ============================================================
 
-def create_heatmap(
-    data,
-    document_type,
-    output_file,
+def get_title_label(
+    df,
+    metrics_file,
 ):
 
     """
-    Genera un heatmap con las estrategias en filas y
-    Mean nDCG@5, HitRate@5 y MRR en columnas.
-
-    Las estrategias están ordenadas de mejor a peor
-    según la media de las tres métricas.
+    Devuelve la etiqueta que se usa en el título de las
+    gráficas: el valor de la columna document_type si existe
+    y es único, o el nombre del archivo en caso contrario.
     """
 
-    metrics = [
-        "Mean_nDCG@5",
-        "HitRate@5",
-        "MRR",
-    ]
+    if "document_type" in df.columns:
 
-    metric_labels = [
-        "Mean nDCG@5",
-        "Hit Rate@5",
-        "MRR",
-    ]
+        values = df["document_type"].dropna().unique()
 
-    matrix = (
-        data
-        .set_index("strategy")[metrics]
-    )
+        if len(values) == 1:
+            return str(values[0]).capitalize()
 
-    # Altura dinámica según número de estrategias
-    height = max(
-        6,
-        len(matrix) * 0.42,
-    )
+    return metrics_file.stem
 
-    fig, ax = plt.subplots(
-        figsize=(8, height)
-    )
+
+# ============================================================
+# HEATMAP
+# ============================================================
+
+# Métricas del heatmap izquierdo (escala 0-1)
+METRICS = [
+    "Mean_nDCG@5",
+    "HitRate@5",
+    "MRR@5",
+]
+
+METRIC_LABELS = [
+    "Mean nDCG@5",
+    "Hit Rate@5",
+    "MRR@5",
+]
+
+# Porcentajes del heatmap derecho (escala 0-100)
+SCORE_COLUMNS = [
+    "%score2",
+    "%score1",
+    "%score0",
+]
+
+SCORE_LABELS = [
+    "% score 2",
+    "% score 1",
+    "% score 0",
+]
+
+
+def draw_heatmap(
+    ax,
+    matrix,
+    column_labels,
+    vmax,
+    value_format,
+    colorbar_label,
+    fig,
+):
+
+    """
+    Dibuja un heatmap en el eje indicado, con el valor de
+    cada celda escrito dentro y su propia barra de escala.
+
+    La escala va de 0 a vmax (1 para las métricas y 100
+    para los porcentajes).
+    """
 
     # --------------------------------------------------------
     # Heatmap
@@ -154,9 +155,6 @@ def create_heatmap(
     #
     # YlGnBu proporciona colores relativamente suaves
     # manteniendo una escala visual clara.
-    #
-    # La escala se fija entre 0 y 1 para que todas las
-    # métricas y ambos tipos de documento sean comparables.
     # --------------------------------------------------------
 
     image = ax.imshow(
@@ -164,46 +162,30 @@ def create_heatmap(
         aspect="auto",
         cmap="YlGnBu",
         vmin=0,
-        vmax=1,
+        vmax=vmax,
     )
 
-
     # --------------------------------------------------------
-    # Ejes
+    # Eje X
     # --------------------------------------------------------
 
     ax.set_xticks(
-        range(len(metrics))
+        range(len(column_labels))
     )
 
     ax.set_xticklabels(
-        metric_labels
-    )
-
-    ax.set_yticks(
-        range(len(matrix))
-    )
-
-    ax.set_yticklabels(
-        matrix.index
+        column_labels
     )
 
     ax.set_xlabel("")
-    ax.set_ylabel("Strategy")
-
-    ax.set_title(
-        f"Retrieval performance – "
-        f"{document_type.capitalize()}"
-    )
-
 
     # --------------------------------------------------------
     # Valores dentro de cada celda
     # --------------------------------------------------------
 
-    for row in range(len(matrix)):
+    for row in range(matrix.shape[0]):
 
-        for col in range(len(metrics)):
+        for col in range(matrix.shape[1]):
 
             value = matrix.iloc[
                 row,
@@ -212,7 +194,7 @@ def create_heatmap(
 
             # Texto negro para fondos claros y
             # blanco para fondos más oscuros
-            if value < 0.65:
+            if value < 0.65 * vmax:
                 text_color = "black"
             else:
                 text_color = "white"
@@ -220,13 +202,12 @@ def create_heatmap(
             ax.text(
                 col,
                 row,
-                f"{value:.3f}",
+                format(value, value_format),
                 ha="center",
                 va="center",
                 color=text_color,
                 fontsize=9,
             )
-
 
     # --------------------------------------------------------
     # Barra de escala
@@ -240,15 +221,135 @@ def create_heatmap(
     )
 
     colorbar.set_label(
-        "Score"
+        colorbar_label
     )
 
+
+def create_heatmap(
+    data,
+    title_label,
+    output_file,
+):
+
+    """
+    Genera una imagen con dos heatmaps alineados
+    horizontalmente:
+
+        - Izquierda: Mean nDCG@5, HitRate@5 y MRR@5
+          (escala 0-1).
+        - Derecha: porcentaje de chunks con score 2, 1 y 0
+          (escala 0-100).
+
+    Las estrategias aparecen en el mismo orden en ambos
+    (de mejor a peor según Mean_nDCG@5), y sus nombres
+    solo se muestran en el heatmap izquierdo.
+    """
+
+    matrix_metrics = (
+        data
+        .set_index("strategy")[METRICS]
+    )
+
+    matrix_scores = (
+        data
+        .set_index("strategy")[SCORE_COLUMNS]
+    )
+
+    # Altura dinámica según número de estrategias
+    height = max(
+        6,
+        len(matrix_metrics) * 0.42,
+    )
+
+    # --------------------------------------------------------
+    # Figura con dos heatmaps
+    # --------------------------------------------------------
+    #
+    # sharey=True garantiza que las filas (estrategias)
+    # coinciden exactamente en ambos heatmaps.
+    #
+    # wspace deja un hueco entre la barra de escala del
+    # heatmap izquierdo y el heatmap derecho.
+    # --------------------------------------------------------
+
+    fig, (ax_metrics, ax_scores) = plt.subplots(
+        1,
+        2,
+        figsize=(15, height),
+        sharey=True,
+        gridspec_kw={
+            "wspace": 0.35,
+        },
+    )
+
+    # --------------------------------------------------------
+    # Heatmap izquierdo: métricas
+    # --------------------------------------------------------
+
+    draw_heatmap(
+        ax=ax_metrics,
+        matrix=matrix_metrics,
+        column_labels=METRIC_LABELS,
+        vmax=1,
+        value_format=".3f",
+        colorbar_label="Score",
+        fig=fig,
+    )
+
+    ax_metrics.set_yticks(
+        range(len(matrix_metrics))
+    )
+
+    ax_metrics.set_yticklabels(
+        matrix_metrics.index
+    )
+
+    ax_metrics.set_ylabel("Strategy")
+
+    ax_metrics.set_title("Retrieval metrics")
+
+    # --------------------------------------------------------
+    # Heatmap derecho: porcentajes de score
+    # --------------------------------------------------------
+
+    draw_heatmap(
+        ax=ax_scores,
+        matrix=matrix_scores,
+        column_labels=SCORE_LABELS,
+        vmax=100,
+        value_format=".1f",
+        colorbar_label="% of retrieved chunks",
+        fig=fig,
+    )
+
+    # Ocultar los nombres de las estrategias en el
+    # heatmap derecho (ya aparecen en el izquierdo)
+    ax_scores.tick_params(
+        axis="y",
+        labelleft=False,
+        left=False,
+    )
+
+    ax_scores.set_title("Relevance score distribution")
+
+    # --------------------------------------------------------
+    # Título general
+    # --------------------------------------------------------
+
+    fig.suptitle(
+        f"Retrieval performance – "
+        f"{title_label}",
+        fontsize=14,
+    )
 
     # --------------------------------------------------------
     # Guardar
     # --------------------------------------------------------
-
-    fig.tight_layout()
+    #
+    # No se usa tight_layout porque sobrescribiría el
+    # espacio entre heatmaps definido en wspace;
+    # bbox_inches="tight" recorta los márgenes al guardar.
+    # --------------------------------------------------------
 
     fig.savefig(
         output_file,
@@ -265,7 +366,7 @@ def create_heatmap(
 
 def create_dotplot(
     data,
-    document_type,
+    title_label,
     output_file,
 ):
 
@@ -274,19 +375,19 @@ def create_dotplot(
     estrategia.
 
     Las estrategias están ordenadas de mejor a peor
-    según la media de las tres métricas.
+    según Mean_nDCG@5.
     """
 
     metrics = [
         "Mean_nDCG@5",
         "HitRate@5",
-        "MRR",
+        "MRR@5",
     ]
 
     metric_labels = [
         "Mean nDCG@5",
         "Hit Rate@5",
-        "MRR",
+        "MRR@5",
     ]
 
     # Invertir el dataframe para que la estrategia
@@ -361,7 +462,7 @@ def create_dotplot(
 
     ax.set_title(
         f"Retrieval performance – "
-        f"{document_type.capitalize()}"
+        f"{title_label}"
     )
 
 
@@ -451,10 +552,12 @@ def main():
 
     required_columns = {
         "strategy",
-        "document_type",
         "Mean_nDCG@5",
         "HitRate@5",
-        "MRR",
+        "MRR@5",
+        "%score2",
+        "%score1",
+        "%score0",
     }
 
     missing = (
@@ -484,66 +587,73 @@ def main():
     # GENERAR GRÁFICAS
     # ========================================================
 
-    for document_type in [
-        "paper",
-        "guideline",
-    ]:
+    title_label = get_title_label(
+        df,
+        metrics_file,
+    )
 
-        print(
-            f"\nGenerando gráficas para: "
-            f"{document_type}"
-        )
+    # Los nombres de las gráficas se basan en el nombre del
+    # archivo de métricas, para no sobrescribir las de otros
+    # tipos de documento o modelos
+    suffix = metrics_file.stem
 
+    if suffix.startswith("metrics_"):
+        suffix = suffix[len("metrics_"):]
 
-        # ----------------------------------------------------
-        # Preparar y ordenar datos
-        # ----------------------------------------------------
-
-        data = prepare_data(
-            df,
-            document_type,
-        )
+    print(
+        f"\nGenerando gráficas para: "
+        f"{metrics_file.name}"
+    )
 
 
-        # ----------------------------------------------------
-        # Heatmap
-        # ----------------------------------------------------
+    # --------------------------------------------------------
+    # Preparar y ordenar datos
+    # --------------------------------------------------------
 
-        heatmap_file = (
-            OUTPUT_DIR
-            / f"heatmap_{document_type}.png"
-        )
-
-        create_heatmap(
-            data,
-            document_type,
-            heatmap_file,
-        )
+    data = prepare_data(
+        df,
+    )
 
 
-        # ----------------------------------------------------
-        # Dotplot
-        # ----------------------------------------------------
+    # --------------------------------------------------------
+    # Heatmap
+    # --------------------------------------------------------
 
-        dotplot_file = (
-            OUTPUT_DIR
-            / f"dotplot_{document_type}.png"
-        )
+    heatmap_file = (
+        OUTPUT_DIR
+        / f"heatmap_{suffix}.png"
+    )
 
-        create_dotplot(
-            data,
-            document_type,
-            dotplot_file,
-        )
+    create_heatmap(
+        data,
+        title_label,
+        heatmap_file,
+    )
 
 
-        print(
-            f"  Heatmap: {heatmap_file}"
-        )
+    # --------------------------------------------------------
+    # Dotplot
+    # --------------------------------------------------------
 
-        print(
-            f"  Dotplot: {dotplot_file}"
-        )
+    dotplot_file = (
+        OUTPUT_DIR
+        / f"dotplot_{suffix}.png"
+    )
+
+    create_dotplot(
+        data,
+        title_label,
+        dotplot_file,
+    )
+
+
+    print(
+        f"  Heatmap: {heatmap_file}"
+    )
+
+    print(
+        f"  Dotplot: {dotplot_file}"
+    )
 
 
     print(
