@@ -182,8 +182,6 @@ class RelevanceJudgment(BaseModel):
     """
 
     score: Literal[0, 1, 2]
-    reason: str
-
 
 def generate_llm_response(
     prompt: str,
@@ -207,6 +205,7 @@ def generate_llm_response(
                 ),
                 input=prompt,
                 text_format=RelevanceJudgment,
+                reasoning={"effort": "low"}
             )
 
             return response.output_parsed
@@ -294,7 +293,7 @@ def llm_judge_relevance(
 
         return (
             judgment.score,
-            judgment.reason,
+            "",
             "",
         )
 

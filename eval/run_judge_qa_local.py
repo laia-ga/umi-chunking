@@ -91,7 +91,7 @@ MODEL_NAME = "Qwen/Qwen3-8B"
 # MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 
 # Máximo de tokens que generará el modelo
-MAX_NEW_TOKENS = 150
+MAX_NEW_TOKENS = 20
 
 # ==============================================================================
 # 4. CARGAR TOKENIZER Y MODELO
@@ -346,11 +346,11 @@ def llm_judge_relevance(
     Base your evaluation only on the information contained in
     the retrieved chunk.
 
-    Return only:
+    Return only a JSON object with the score as an integer (0, 1 or 2), 
+    with no explanation:
 
     {{
-        "score": "score",
-        "reason": "brief explanation"
+        "score": "score"
     }}
     """
 
@@ -560,10 +560,6 @@ def judge_chunks(
         print(
             f"    Rank {rank}: "
             f"score={score}"
-        )
-
-        print(
-            f"    Reason: {reason}"
         )
 
         print(
