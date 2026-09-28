@@ -212,3 +212,4 @@ output/retrieval
 ~BROMIUM/
 data/ground_truth/medmcqa/train.jsonl
 output/judge/gpt_judge_bge_m3_guideline.csv
+data/ground_truth/train.jsonl
