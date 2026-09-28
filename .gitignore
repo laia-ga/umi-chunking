@@ -210,3 +210,5 @@ output/retrieval
 
 # Carpeta ~BROMIUM de ciberseguridad de HP
 ~BROMIUM/
+data/ground_truth/medmcqa/train.jsonl
+output/judge/gpt_judge_bge_m3_guideline.csv
