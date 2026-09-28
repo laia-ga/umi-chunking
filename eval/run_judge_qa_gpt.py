@@ -111,11 +111,11 @@ def parse_args():
     parser.add_argument(
         "--workers",
         type=int,
-        default=10,
+        default=1,
         help=(
-            "Número de llamadas a la API en paralelo (por defecto: 10). "
-            "Súbelo si va sobrado de rate limit, bájalo si empiezas "
-            "a ver muchos reintentos por 429"
+            "Número de llamadas a la API en paralelo (por defecto: 1). "
+            "Puedes aumentarlo si el límite de concurrencia/rate limit de la API "
+            "lo permite. Si aparecen errores 429, redúcelo."
         ),
     )
 
