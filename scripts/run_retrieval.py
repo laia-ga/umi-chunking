@@ -56,11 +56,6 @@ GROUND_TRUTH_DIR = (
     BASE_DIR / "data" / "ground_truth"
 )
 
-QUERY_FILES = {
-    "ficha_tecnica": GROUND_TRUTH_DIR / "rag_questions_ficha_tecnica.jsonl",
-    "paper": GROUND_TRUTH_DIR / "rag_questions_paper.jsonl",
-    "guideline": GROUND_TRUTH_DIR / "rag_questions_guideline.jsonl"
-}
 
 # Carpeta donde se guardarán los resultados
 OUTPUT_DIR = (
@@ -502,6 +497,15 @@ def main() -> None:
         "format"
     ]
 
+    ground_truth_file = retrieval_params[
+        "ground_truth_file"
+    ]
+
+    query_file = (
+        GROUND_TRUTH_DIR
+        / ground_truth_file
+    )
+
 
     print(
         f"Colección Qdrant: {collection_name}"
@@ -522,11 +526,13 @@ def main() -> None:
     print(
         f"Estrategias: {strategies}"
     )
+
+    print(
+        f"Ground truth: {ground_truth_file}"
+    )
     # --------------------------------------------------------
     # 2. Cargar preguntas
     # --------------------------------------------------------
-
-    query_file = QUERY_FILES[document_type]
 
     queries = load_queries(query_file)
 
