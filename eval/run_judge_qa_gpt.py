@@ -205,7 +205,6 @@ def generate_llm_response(
                 ),
                 input=prompt,
                 text_format=RelevanceJudgment,
-                reasoning={"effort": "low"}
             )
 
             return response.output_parsed
