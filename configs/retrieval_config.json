@@ -1,8 +1,9 @@
 {
     "retrieval": {
-        "top_k": 5,
-        "strategies": null,
+        "top_k": 1,
+        "strategies": ["JSONChunking", "fixed_character_chunking", "fixed_token_chunking", "sliding_window_token_chunking", "overlapping_token_chunking", "sentence_based_chunking", "sentence_group_chunking", "paragraph_based_chunking", "paragraph_group_chunking", "recursive_chunking", "recursive_token_fallback_chunking", "parent_child_chunking", "semantic_embedding_based_chunking", "semantic_similarity_threshold_chunking", "topic_based_chunking", "semantic_boundary_detection", "dynamic_token_size_chunking", "content_density_adaptive_chunking", "semantic_variance_adaptive_chunking", "length_aware_chunking", "llm_boundary_detection_chunking", "llm_segment_then_chunk"],
         "document_type": null,
-        "format": null
+        "format": null,
+        "ground_truth_file": "ground_truth_filtered.jsonl"
     }
 }

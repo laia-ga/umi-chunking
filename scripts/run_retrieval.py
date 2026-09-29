@@ -119,13 +119,7 @@ def load_queries(
                     "no contiene el campo 'question_id'."
                 )
 
-            queries.append(
-                {
-                    "question_id": item["question_id"],
-                    "question": item["question"],
-                    "gold_answer": item["gold_answer"],
-                }
-            )
+            queries.append(item)
 
     return queries
 
@@ -293,6 +287,41 @@ def connect_to_qdrant(
 # BUSCAR CHUNKS
 # ============================================================
 
+# Las fichas técnicas solo se trocean con JSONChunking y forman parte
+# del corpus de todas las estrategias
+FICHA_DOCUMENT_TYPE = "ficha_tecnica"
+FICHA_STRATEGY = "JSONChunking"
+
+
+def match(key, value):
+    return models.FieldCondition(key=key, match=models.MatchValue(value=value))
+
+
+def build_corpus_filter(strategy):
+
+    """
+    Corpus de una estrategia = sus chunks + los chunks de fichas
+    técnicas generados con JSONChunking.
+
+    Para JSONChunking, su propio filtro ya incluye las fichas técnicas.
+    """
+
+    if strategy is None:
+        return None
+
+    if strategy == FICHA_STRATEGY:
+        return models.Filter(must=[match("strategy", strategy)])
+
+    return models.Filter(
+        should=[
+            models.Filter(must=[match("strategy", strategy)]),
+            models.Filter(must=[
+                match("strategy", FICHA_STRATEGY),
+                match("document_type", FICHA_DOCUMENT_TYPE),
+            ]),
+        ]
+    )
+
 def retrieve_chunks(
     client: QdrantClient,
     query_vector: List[float],
@@ -303,55 +332,25 @@ def retrieve_chunks(
     format: str = None,
 ):
     """
-    Recupera los chunks más similares a una pregunta.
+    Recupera los chunks más similares a una pregunta dentro del
+    corpus de una estrategia de chunking.
 
-    Los filtros por estrategia, tipo de documento y formato
-    son opcionales.
+    El corpus de cada estrategia está formado por sus propios chunks
+    más los chunks de fichas técnicas generados con JSONChunking
+    (ver build_corpus_filter). Se busca sobre todos los tipos de
+    documento a la vez.
+
+    Los parámetros document_type y format ya no se utilizan; se
+    mantienen solo por compatibilidad con las llamadas existentes.
     """
 
-    # Lista de condiciones para Qdrant
-    conditions = []
-
-    # Filtro por estrategia
-    if strategy is not None:
-        conditions.append(
-            models.FieldCondition(
-                key="strategy",
-                match=models.MatchValue(
-                    value=strategy
-                ),
-            )
+    if strategy is None:
+        raise ValueError(
+            "Hay que indicar una estrategia: sin ella se buscaría en los "
+            "chunks de todas las estrategias mezclados."
         )
 
-    # Filtro por tipo de documento
-    if document_type is not None:
-        conditions.append(
-            models.FieldCondition(
-                key="document_type",
-                match=models.MatchValue(
-                    value=document_type
-                ),
-            )
-        )
-
-    # Filtro por formato
-    if format is not None:
-        conditions.append(
-            models.FieldCondition(
-                key="format",
-                match=models.MatchValue(
-                    value=format
-                ),
-            )
-        )
-
-    # Solo crear filtro si hay alguna condición
-    query_filter = None
-
-    if conditions:
-        query_filter = models.Filter(
-            must=conditions
-        )
+    query_filter = build_corpus_filter(strategy)
 
     # Buscar en Qdrant
     search_result = client.query_points(
@@ -489,6 +488,13 @@ def main() -> None:
         "strategies"
     ]
 
+    if not strategies:
+        raise ValueError(
+            "La configuración debe incluir la lista de estrategias en "
+            "'strategies'. Con null se mezclarían todas las estrategias "
+            "en un único ranking."
+        )
+
     document_type = retrieval_params[
         "document_type"
     ]
@@ -584,74 +590,39 @@ def main() -> None:
         )
 
         # ----------------------------------------------------
-        # CASO 1: No se comparan estrategias
+        # Si se comparan varias estrategias
         # ----------------------------------------------------
 
-        if strategies is None:
+        strategy_results = {}
+
+        for strategy in strategies:
+
+            print(
+                f"  Estrategia: {strategy}"
+            )
 
             hits = retrieve_chunks(
                 client=client,
                 query_vector=query_vector,
                 collection_name=collection_name,
                 top_k=top_k,
-                strategy=None,
+                strategy=strategy,
                 document_type=document_type,
                 format=format,
             )
 
-            all_results.append(
-                {
-                    "question_id": question_id,
-                    "question": question,
-                    "gold_answer": gold_answer,
-                    "document_type": document_type,
-                    "format": format,
-                    "retrieved_chunks":
-                        format_hits(hits),
-                }
+            strategy_results[
+                strategy
+            ] = format_hits(
+                hits
             )
 
-        # ----------------------------------------------------
-        # CASO 2: Se comparan varias estrategias
-        # ----------------------------------------------------
-
-        else:
-
-            strategy_results = {}
-
-            for strategy in strategies:
-
-                print(
-                    f"  Estrategia: {strategy}"
-                )
-
-                hits = retrieve_chunks(
-                    client=client,
-                    query_vector=query_vector,
-                    collection_name=collection_name,
-                    top_k=top_k,
-                    strategy=strategy,
-                    document_type=document_type,
-                    format=format,
-                )
-
-                strategy_results[
-                    strategy
-                ] = format_hits(
-                    hits
-                )
-
-            all_results.append(
-                {
-                    "question_id": question_id,
-                    "question": question,
-                    "gold_answer": gold_answer,
-                    "document_type": document_type,
-                    "format": format,
-                    "strategies":
-                        strategy_results,
-                }
-            )
+        all_results.append(
+            {
+                **query_item,
+                "strategies": strategy_results,
+            }
+        )
 
     # --------------------------------------------------------
     # 6. Guardar resultados
