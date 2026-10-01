@@ -1,0 +1,32 @@
+# Procesamiento de datos, métricas y gráficos
+numpy
+pandas
+psutil
+matplotlib
+openpyxl
+scikit-learn
+
+# Chunking, embeddings y modelos Hugging Face
+nltk
+transformers
+torch
+tokenizers
+sentencepiece
+protobuf
+safetensors
+accelerate
+huggingface-hub
+langchain-huggingface
+langchain-text-splitters
+langchain-experimental
+
+# Indexación y recuperación vectorial
+qdrant-client
+
+# Evaluación con API y descarga de datasets
+openai
+python-dotenv
+datasets
+
+# Modelos de datos
+pydantic
