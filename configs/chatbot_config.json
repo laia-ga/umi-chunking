@@ -1,0 +1,27 @@
+{
+    "qdrant": {
+        "host": "localhost",
+        "port": 6333,
+        "collection_name": "json__JSONChunking__bge_m3"
+    },
+
+    "embeddings": {
+        "model_name": "BAAI/bge-m3",
+        "normalize_embeddings": true
+    },
+
+    "retrieval": {
+        "top_k": 5,
+        "strategies": {
+            "paper": "JSONChunking",
+            "guideline": "JSONChunking",
+            "ficha_tecnica": "JSONChunking"
+        }
+    },
+
+    "generation": {
+        "max_tokens": 500,
+        "temperature": 0.0,
+        "timeout": 120
+    }
+}
