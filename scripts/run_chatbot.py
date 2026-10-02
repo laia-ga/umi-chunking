@@ -183,7 +183,7 @@ def main():
     print(
         "\n"
         "========================================\n"
-        "CLARA RAG\n"
+        "UMI RAG\n"
         "========================================\n"
         "\n"
         "Escribe una pregunta para consultar "
