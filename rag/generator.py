@@ -177,7 +177,7 @@ def generate_answer(
     ].rstrip("/")
 
     endpoint = (
-        f"{base_url}/chat/completions"
+        f"{base_url}"
     )
 
     payload = {

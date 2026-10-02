@@ -2,7 +2,7 @@
     "qdrant": {
         "host": "localhost",
         "port": 6333,
-        "collection_name": "json__JSONChunking__bge_m3"
+        "collection_name": "JSON_test_bge_m3"
     },
 
     "embeddings": {
