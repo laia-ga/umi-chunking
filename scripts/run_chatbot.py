@@ -44,7 +44,7 @@ CONFIG_FILE = (
 # CONFIGURACIÓN DE vLLM
 # ============================================================
 
-VLLM_BASE_URL = "http://localhost:8000/v1"
+VLLM_BASE_URL = "http://localhost:8000/v1/chat/completions"
 
 VLLM_MODEL = "qwen3.6-27b-nvfp4"
 
