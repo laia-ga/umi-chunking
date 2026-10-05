@@ -1,8 +1,8 @@
 {
     "qdrant": {
-        "host": "localhost",
+        "host": "127.0.0.1",
         "port": 6333,
-        "collection_name": "JSON_test_bge_m3"
+        "collection_name": "test_bge_m3"
     },
 
     "embeddings": {
@@ -13,8 +13,8 @@
     "retrieval": {
         "top_k": 5,
         "strategies": {
-            "paper": "JSONChunking",
-            "guideline": "JSONChunking",
+            "paper": "sliding_window_token_chunking",
+            "guideline": "sliding_window_token_chunking",
             "ficha_tecnica": "JSONChunking"
         }
     },
