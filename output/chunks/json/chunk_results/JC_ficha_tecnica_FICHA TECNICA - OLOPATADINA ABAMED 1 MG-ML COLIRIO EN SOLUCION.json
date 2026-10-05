@@ -1,0 +1,397 @@
+{
+  "strategy": "JSONChunking",
+  "type": "HierarchicalJSONChunker",
+  "abbreviation": "JC",
+  "doc_id": "ficha_tecnica_FICHA TECNICA - OLOPATADINA ABAMED 1 MG-ML COLIRIO EN SOLUCION",
+  "document_type": "ficha_tecnica",
+  "input_file": "FICHA TECNICA - OLOPATADINA ABAMED 1 MG-ML COLIRIO EN SOLUCION.json",
+  "source_path": "ficha_tecnica\\FICHA TECNICA - OLOPATADINA ABAMED 1 MG-ML COLIRIO EN SOLUCION.json",
+  "tokenizer_model": "BAAI/bge-m3",
+  "params": {
+    "target_tokens": 512,
+    "max_tokens": 8192
+  },
+  "original_token_count": 4304,
+  "number_of_chunks": 17,
+  "chunks": [
+    {
+      "text": "Medicine name: Olopatadina Abamed 1 mg/ml colirio en solución\n\nPharmaceutical form: Colirio en solución. Solución incolora y transparente.\n\nComposition: Cada ml de solución contiene 1 mg de olopatadina (como hidrocloruro). Excipiente(s) con efecto conocido: 1 ml de colirio contiene 0,1 mg de cloruro de benzalconio. Para consultar la lista completa de excipientes, ver sección 6.1.\n\nIndications:\n  - Tratamiento de los signos y síntomas oculares de la conjuntivitis alérgica estacional.",
+      "block": "document",
+      "group_name": "identification",
+      "level": 1,
+      "json_paths": [
+        "document.medicine_name",
+        "document.pharmaceutical_form",
+        "document.composition",
+        "document.indications"
+      ],
+      "token_count": 130,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "medicine_name",
+          "pharmaceutical_form",
+          "composition",
+          "indications"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Posology: Posología: La dosis es de una gota de Olopatadina Abamed dos veces al día (con un intervalo de 8 horas entre las dos aplicaciones) en el saco conjuntival del ojo(s) afectado(s). El tratamiento puede mantenerse hasta un máximo de cuatro meses, si se considera necesario. Uso en pacientes de edad avanzada No es necesario un ajuste de la dosis en pacientes de edad avanzada. Pacientes pediátricos Olopatadina Abamed se puede utilizar en pacientes pediátricos a partir de 3 años o mayores a la misma dosis que en adultos. No se dipone de datos sobre la seguridad y eficacia de la olopatadina en niños menores de 3 años. Pacientes con insuficiencia hepática y/o renal No se ha estudiado la olopatadina en forma de colirio en pacientes con insuficiencia hepática o renal. No obstante, no se espera que sea necesario un ajuste de la dosis en pacientes con insuficiencia hepática o renal (ver sección 5.2). Forma de administración Uso exclusivo por vía oftálmica. Después de quitar el tapón, debe comprobarse que el cuentagotas está limpio. Para evitar una posible contaminación de la punta del cuentagotas y de la solución, debe tenerse la precaución de no tocar los párpados, áreas circundantes ni otras superficies con la punta del frasco. Se debe mantener el frasco bien cerrado cuando no se utilice. Si se emplea más de un medicamento por vía oftálmica, las aplicaciones de los medicamentos deben espaciarse al menos 5 minutos. Las pomadas oftálmicas deben administrarse en último lugar.",
+      "block": "document",
+      "group_name": "posology",
+      "level": 1,
+      "json_paths": [
+        "document.posology"
+      ],
+      "token_count": 354,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "posology"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Contraindications:\n  - Hipersensibilidad al principio activo o a alguno de los excipientes incluidos en la sección 6.1.",
+      "block": "document",
+      "group_name": "contraindications",
+      "level": 1,
+      "json_paths": [
+        "document.contraindications"
+      ],
+      "token_count": 29,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "contraindications"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Warnings and precautions: Olopatadina Abamed es un agente antialérgico/antihistamínico que aunque se administre vía oftálmica se absorbe a nivel sistémico. Debe interrumpirse el tratamiento si aparecen signos de reacciones graves o de hipersensibilidad. Olopatadina Abamed contiene cloruro de benzalconio que puede producir irritación ocular. También se ha notificado que el cloruro de benzalconio produce queratopatía punctata y/o queratopatía ulcerativa tóxica. Se aconseja un especial seguimiento de aquellos pacientes que presenten ojo seco o trastornos de la córnea y utilicen el producto con frecuencia o durante un periodo prolongado. Lentes de contacto El cloruro de benzalconio altera el color de las lentes de contacto blandas. Evitar el contacto con las lentes de contacto blandas. Debe indicarse a los pacientes que se retiren las lentes de contacto antes de la aplicación del colirio y esperen al menos 15 minutos después de la instilación antes de volverse a colocar las lentes de contacto.",
+      "block": "document",
+      "group_name": "warnings_and_precautions",
+      "level": 1,
+      "json_paths": [
+        "document.warnings_and_precautions"
+      ],
+      "token_count": 248,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "warnings_and_precautions"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Interactions: No se han realizado estudios de interacción con otros medicamentos. Los estudios in vitro han mostrado que la olopatadina no inhibe reacciones metabólicas que involucran al citocromo P-450 isoenzimas 1A2, 2C8, 2C9, 2C19, 2D6, 2E1 y 3A4. Éstos resultados indican que no es probable que se produzcan interacciones metabólicas al administrar olopatadina conjuntamente con otras sustancias activas.",
+      "block": "document",
+      "group_name": "interactions",
+      "level": 1,
+      "json_paths": [
+        "document.interactions"
+      ],
+      "token_count": 114,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "interactions"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Pregnancy and lactation: Embarazo No hay datos, o éstos son limitados, relativos al uso de olopatadina oftálmica en mujeres embarazadas. Los estudios realizados en animales han mostrado toxicidad para la reproducción tras administración sistémica (ver sección 5.3). No se recomienda utilizar olopatadina durante el embarazo, ni en mujeres en edad fértil que no estén utilizando métodos anticonceptivos. Lactancia Los datos disponibles en animales muestran que olopatadina se excreta en la leche tras administración oral (para mayor información ver sección 5.3). No se puede excluir el riesgo en recién nacidos/niños. No debe utilizarse Olopatadina Abamed durante la lactancia. Fertilidad No se han realizado estudios para evaluar el efecto de la administración oftálmica de olopatadina sobre la fertilidad en humanos.",
+      "block": "document",
+      "group_name": "pregnancy_and_lactation",
+      "level": 1,
+      "json_paths": [
+        "document.pregnancy_and_lactation"
+      ],
+      "token_count": 183,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "pregnancy_and_lactation"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Effects on driving: Después de la instilación, puede aparecer visión borrosa transitoria, que puede afectar a la capacidad para conducir o utilizar máquinas. Si aparecen éstos efectos transitorios en la visión, se debe aconsejar al paciente que espere hasta que la visión sea nítida antes de conducir o utilizar maquinaria.",
+      "block": "document",
+      "group_name": "effects_on_driving",
+      "level": 1,
+      "json_paths": [
+        "document.effects_on_driving"
+      ],
+      "token_count": 72,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "effects_on_driving"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Adverse reactions: En ensayos clínicos realizados en 1680 pacientes, se administró olopatadina de una a cuatro veces al día en ambos ojos hasta un máximo de cuatro meses como monoterapia o como terapia coadyuvante a 10 mg de loratadina. Aunque puede esperarse que aproximadamente un 4,5% de los pacientes experimenten reacciones adversas relacionadas con el uso de olopatadina, sólo un 1,6% de los pacientes abandonaron los ensayos clínicos debido a estas reacciones adversas. Durante los ensayos clínicos no se notificaron reacciones adversas oftálmicas ni sistémicas graves relacionadas con olopatadina. La reacción adversa relacionada con el tratamiento notificada con más frecuencia consistió en dolor ocular, con una incidencia promedio del 0,7%. La valoración de las reacciones adversas está basada en las siguientes frecuencias: Muy frecuentes (≥1/10). Frecuentes (≥1/100, <1/10). Poco frecuentes (≥1/1.000, <1/100). Raras (≥1/10.000, <1/1.000). Muy raras (<1/10.000). Frecuencia desconocida (no se puede estimar a partir de los datos disponibles). Sistema de Clasificación de Órganos Frecuencia Reacciones adversas Infecciones e infestaciones Poco frecuentes rinitis Trastornos del sistema inmunológico No conocida hipersensibilidad, hinchazón de cara Trastornos del sistema nervioso Frecuentes cefalea, disgeusia Poco frecuentes mareo, hipoestesia No conocida somnolencia Trastornos oculares Frecuentes dolor ocular, irritación ocular, ojo seco, sensación anormal en el ojo Poco frecuentes erosión corneal, defecto del epitelio corneal, trastorno del epitelio corneal, queratitis puntiforme, queratitis, manchas corneales, secreción ocular, fotofobia, visión borrosa, agudeza visual disminuida, blefaroespasmo, molestia ocular, prurito ocular, folículos conjuntivales, trastorno conjuntival, sensación de cuerpo extraño en los ojos, lagrimeo aumentado, eritema del párpado, edema palpebral, trastorno del párpado, hiperemia ocular No conocida edema corneal, edema ocular, hinchazón ocular, conjuntivitis, midriasis, deterioro visual, costra en margen de párpado Trastornos respiratorios, torácicos y mediastínicos Frecuentes sequedad nasal No conocida disnea, sinusitis Trastornos gastrointestinales No conocida náuseas, vómitos, Trastornos de la piel y tejido subcutáneo Poco frecuentes dermatitis de contacto, sensación de ardor en piel, piel seca No conocida dermatitis, eritema Trastornos generales y alteraciones en el lugar de administración Frecuentes fatiga No conocida astenia, malestar general En algunos pacientes con córneas dañadas significativamente, muy raramente se han notificado casos de calcificación corneal relacionados con el uso de colirios que contienen fosfatos. Notificación de sospechas de reacciones adversas Es importante notificar sospechas de reacciones adversas al medicamento tras su autorización. Ello permite una supervisión continuada de la relación beneficio/riesgo del medicamento. Se invita a los profesionales sanitarios a notificar las sospechas de reacciones adversas a través del Sistema Español de Farmacovigilancia de Medicamentos de Uso Humano: https://www.notificaram.es.",
+      "block": "document",
+      "group_name": "adverse_reactions",
+      "level": 1,
+      "json_paths": [
+        "document.adverse_reactions[0]"
+      ],
+      "token_count": 790,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "adverse_reactions"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Overdose: No existen datos disponibles en humanos en relación con la sobredosis por ingesta deliberada o accidental. La olopatadina tiene una toxicidad aguda baja en animales. La ingesta accidental del contenido completo de un frasco de olopatadina daría lugar a una exposición sistémica máxima de 5 mg de olopatadina. De esta exposición, resultaría una dosis final de 0,5 mg/kg en un niño de 10 kg, asumiendo una absorción del 100%. En perros, la prolongación del intervalo QTc se observó solamente tras exposiciones bastante superiores a la exposición máxima en humanos, de lo que se deduce poca importancia clínica. No se observó prolongación significativa del intervalo QTc comparado con placebo, tras la administración de una dosis oral de 5 mg dos veces al día, durante 2,5 días, a 102 voluntarios sanos, jóvenes y pacientes de edad avanzada de ambos sexos. El intervalo de concentraciones plasmáticas de olopatadina en estado estacionario (35 a 127 ng/ml) observadas representan, al menos, un margen de seguridad de 70 veces para la olopatadina oftálmica con respecto a los efectos sobre la repolarización cardíaca. En el caso de sobredosis debe monitorizarse y tratarse adecuadamente al paciente.",
+      "block": "document",
+      "group_name": "overdose",
+      "level": 1,
+      "json_paths": [
+        "document.overdose"
+      ],
+      "token_count": 287,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "overdose"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Pharmacodynamics: Grupo farmacoterapéutico: oftalmológicos; descongestivos y antialérgicos; otros antialérgicos. Código ATC: S01GX 09 La olopatadina es un agente antialérgico/antihistamínico potente y selectivo que ejerce su efecto a través de varios mecanismos de acción diferentes. Antagoniza la histamina (mediador primario de las respuestas alérgicas en humanos) y evita que la histamina induzca la formación de citocina inflamatoria por las células epiteliales de la conjuntiva. Los datos de estudios in vitro sugieren que puede actuar sobre los mastocitos de la conjuntiva humana, para inhibir la liberación de mediadores pro-inflamatorios. En pacientes con el conducto nasolagrimal no obstruido, se observó que la administración oftálmica de olopatadina reduce los signos y síntomas nasales, que con frecuencia acompañan a la conjuntivitis alérgica estacional. No produce un cambio clínicamente significativo en el diámetro de la pupila.",
+      "block": "document",
+      "group_name": "pharmacodynamics",
+      "level": 1,
+      "json_paths": [
+        "document.pharmacodynamics"
+      ],
+      "token_count": 242,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "pharmacodynamics"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Pharmacokinetics: Absorción Como otros fármacos administrados vía oftálmica, la olopatadina se absorbe a nivel sistémico. No obstante, la absorción sistémica de la olopatadina administrada vía oftálmica es mínima, alcanzando concentraciones plasmáticas que van desde por debajo del límite de cuantificación (< 0,5 ng/ml) hasta 1,3 ng/ml. Estas concentraciones son de 50 a 200 veces inferiores a las que se obtienen con dosis orales bien toleradas. Eliminación En los estudios farmacocinéticos realizados utilizando la vía oral, la semivida plasmática fue aproximadamente de 8 a 12 horas, y la eliminación fue predominantemente mediante excreción renal. Aproximadamente un 60-70% de la dosis se recuperó en la orina como fármaco sin metabolizar. En la orina se detectaron concentraciones bajas de dos metabolitos, el mono-desmetil y el N-óxido. Como la olopatadina se excreta principalmente en la orina como fármaco sin metabolizar, los pacientes con insuficiencia renal grave (aclaramiento medio de creatinina 13,0 ml/min) presentan alteración de los parámetros farmacocinéticos de la olopatadina, con concentraciones pico 2,3 veces superiores a las de los adultos sanos. Tras la administración de 10 mg por vía oral en pacientes sometidos a hemodiálisis (sin flujo urinario), las concentraciones plasmáticas de olopatadina fueron significativamente menores el día de la hemodiálisis que el día sin hemodiálisis, lo que sugiere que la olopatadina puede ser eliminada por hemodiálisis. En estudios comparativos de la farmacocinética de dosis orales de 10 mg de olopatadina en jóvenes (media de 21 años) y pacientes de edad avanzada (media de 74 años) no se observaron diferencias significativas en las concentraciones plasmáticas (AUC), unión a proteínas o excreción urinaria del fármaco inalterado y de sus metabolitos. Se ha realizado un estudio sobre insuficiencia renal tras la administración oral de olopatadina en pacientes con insuficiencia renal grave. Los resultados indican que en estos pacientes cabe esperar concentraciones plasmáticas algo más elevadas de olopatadina. Como las concentraciones plasmáticas alcanzadas tras la administración oftálmica de olopatadina son de 50 a 200 veces inferiores que las obtenidas con dosis orales bien toleradas no cabe esperar que se necesite un ajuste de dosis en pacientes ancianos ni en pacientes con insuficiencia renal. Debido a que el metabolismo hepático es una vía de eliminación secundaria, no cabe esperar que sea necesario un ajuste de dosis en pacientes con insuficiencia hepática.",
+      "block": "document",
+      "group_name": "pharmacokinetics",
+      "level": 1,
+      "json_paths": [
+        "document.pharmacokinetics"
+      ],
+      "token_count": 601,
+      "exceeds_target_limit": true,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "pharmacokinetics"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": true,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Excipients:\n  - Cloruro de benzalconio Cloruro de sodio Hidrogenofosfato de disodio dodecahidrato (E-339) Ácido clorhídrico (E-507) (ajuste de pH) Hidróxido de sodio (E-524) (ajuste de pH) Agua para inyección\n\nIncompatibilities: En ausencia de estudios de compatibilidad, este medicamento no debe mezclarse con otros.\n\nShelf life: Sin abrir: 24 meses. Una vez abierto el frasco: no utilizar después de 4 semanas.\n\nStorage conditions: No requiere condiciones especiales de conservación.\n\nContainer: Frascos de polietileno de alta densidad, cuentagotas de polietileno de baja densidad y tapón de rosca de polietileno de alta densidad. Frascos de 10 ml conteniendo 5 ml de colirio en solución.\n\nHandling instructions: Ninguna instrucción especial.",
+      "block": "document",
+      "group_name": "pharmaceutical",
+      "level": 1,
+      "json_paths": [
+        "document.excipients",
+        "document.incompatibilities",
+        "document.shelf_life",
+        "document.storage_conditions",
+        "document.container",
+        "document.handling_instructions"
+      ],
+      "token_count": 209,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "excipients",
+          "incompatibilities",
+          "shelf_life",
+          "storage_conditions",
+          "container",
+          "handling_instructions"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Marketing authorisation holder: Qualix Pharma, S.L. c/ Botánica, 137-139 08908 L’Hospitalet de Llobregat (Barcelona) España\n\nMarketing authorisation number: 83595",
+      "block": "document",
+      "group_name": "marketing",
+      "level": 1,
+      "json_paths": [
+        "document.marketing_authorisation_holder",
+        "document.marketing_authorisation_number"
+      ],
+      "token_count": 44,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "marketing_authorisation_holder",
+          "marketing_authorisation_number"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Active ingredient: OLOPATADINA\n\nStrength: 1,11 mg/ml\n\nRoute of administration: VÍA OFTÁLMICA",
+      "block": "document",
+      "group_name": "administration",
+      "level": 1,
+      "json_paths": [
+        "document.active_ingredient",
+        "document.strength",
+        "document.route_of_administration"
+      ],
+      "token_count": 31,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "active_ingredient",
+          "strength",
+          "route_of_administration"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "National codes:\n  - 724042",
+      "block": "document",
+      "group_name": "national_codes",
+      "level": 1,
+      "json_paths": [
+        "document.national_codes"
+      ],
+      "token_count": 10,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "national_codes"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Source:\n  Origin: CIMA/AEMPS docSegmentado\n  Registration number: 83595\n  Name: OLOPATADINA ABAMED 1 MG/ML COLIRIO EN SOLUCION\n  Atc:\n    - S01GX09\n  National codes:\n    - 724042\n  Generic: No\n  Smpc date: 1671756054000\n  Pdf url: https://cima.aemps.es/cima/pdfs/ft/83595/FT_83595.pdf\n  Active ingredient salt: OLOPATADINA HIDROCLORURO\n  Section hashes:\n    Medicine name: b7ee79264e26bfca\n    Composition: fc94b6cf38e93eb8\n    Pharmaceutical form: 49ec46f8201e63d6\n    Indications: 43231591d5355c36\n    Posology: 1f8f21aaa65a6661\n    Contraindications: 3fd485172291d9e5\n    Warnings and precautions: 4ee0d47fb16e9069\n    Interactions: db8964e5241e1e91\n    Pregnancy and lactation: 2c0744a83923ab93\n    Effects on driving: cdafc07e01b40145\n    Adverse reactions: a4be376c3a736e66\n    Overdose: 785804944e41c99a\n    Pharmacodynamics: 5c6beb9d6fbc794c\n    Pharmacokinetics: e2ea2d9b33b5051c\n    Excipients: afe3d70aa31b4ae3\n    Incompatibilities: 542d1e04ca39db4a\n    Shelf life: 9dcac2c0fed2c639\n    Storage conditions: a94bda823036b220\n    Container: a289cfe433878449\n    Handling instructions: 8cf9974b7b13ae10\n    Marketing authorisation holder: d3630f46254c616d",
+      "block": "document",
+      "group_name": "_source",
+      "level": 1,
+      "json_paths": [
+        "document._source"
+      ],
+      "token_count": 429,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "_source"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    },
+    {
+      "text": "Reimbursement:\n  Status: queried\n  Source: BIFIMED\n  Queried by: national_code\n  N presentations: 1\n  Presentations:\n    - National code: 724042\n      Name: OLOPATADINA ABAMED 1 MG/ML COLIRIO EN SOLUCION, 1 frasco de 5 ml\n      Laboratory: QUALIX PHARMA S.L.\n      Retrieved at: 2026-08-06T01:16:22.457275\n      Source: BIFIMED\n      Reimbursement situation: Si\n      Nomenclator status: ALTA\n      Patient copayment: NORMAL\n      Reimbursement start date: 01/04/2019\n  National codes queried:\n    - 724042",
+      "block": "document",
+      "group_name": "reimbursement",
+      "level": 1,
+      "json_paths": [
+        "document.reimbursement"
+      ],
+      "token_count": 142,
+      "exceeds_target_limit": false,
+      "exceeds_max_limit": false,
+      "metadata": {
+        "fields": [
+          "reimbursement"
+        ],
+        "target_tokens": 512,
+        "max_tokens": 8192,
+        "exceeds_target_limit": false,
+        "exceeds_max_limit": false
+      }
+    }
+  ]
+}
