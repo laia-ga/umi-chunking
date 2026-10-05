@@ -14,6 +14,9 @@
         "formats": [
             "json"
         ],
-        "num_workers": 1
+        "num_workers": 1,
+        "cpu_threads": 1,
+        "num_gpus": 0,
+        "gpu_ids": []
     }
 }
