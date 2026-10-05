@@ -2,7 +2,7 @@
     "qdrant": {
         "host": "localhost",
         "port": 6333,
-        "collection_name": "JSON_test_bge_m3"
+        "collection_name": "test_bge_m3"
     },
     "embeddings": {
         "model_name": "BAAI/bge-m3",
@@ -12,7 +12,7 @@
     "indexing": {
         "batch_size": 32,
         "formats": [
-            "json"
+            "json", "markdown"
         ],
         "num_workers": 1,
         "cpu_threads": 1,
