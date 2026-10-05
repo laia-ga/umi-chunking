@@ -26,12 +26,17 @@ Este script:
 import json
 import os
 import time
+import argparse
+import inspect
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any, Dict
-import inspect
 
+import nltk
 import pandas as pd
 import psutil
+import torch
 
 # Utilidades
 from chunking.utilities import (
@@ -202,10 +207,186 @@ CHUNKER_ABBREVIATIONS = {
 }
 
 # ============================================================
+# PARALELIZACIÓN DE DOCUMENTOS Y GPU EN EMBEDDINGS
+# ============================================================
+
+GPU_EMBEDDING_CHUNKERS = {
+    "SemanticEmbeddingChunker",
+    "SemanticSimilarityThresholdChunker",
+    "TopicBasedChunker",
+    "SemanticBoundaryChunker",
+    "SemanticVarianceAdaptiveChunker",
+}
+
+NLTK_CHUNKERS = {
+    "SentenceBasedChunker",
+    "SentenceGroupChunker",
+    "LengthAwareChunker",
+    "SemanticSimilarityThresholdChunker",
+    "TopicBasedChunker",
+    "SemanticVarianceAdaptiveChunker",
+    "ContentDensityAdaptiveChunker",
+    "LLMBoundaryDetectionChunker",
+    "LLMSegmentThenChunker",
+}
+
+LLM_CHUNKERS = {
+    "LLMBoundaryDetectionChunker",
+    "LLMSegmentThenChunker",
+}
+
+_WORKER_CONTEXT = threading.local()
+
+
+def _initialize_document_worker(
+    chunker_type: str,
+    params: Dict[str, Any],
+    tokenizer_model_name: str,
+    device: str,
+    measure_ram: bool,
+) -> None:
+    """Crea tokenizer y chunker privados para el hilo que procesa documentos."""
+
+    try:
+        tokenizer = create_tokenizer(tokenizer_model_name)
+        token_counter = create_token_counter(tokenizer)
+        chunker_params = params.copy()
+        constructor_params = inspect.signature(
+            CHUNKER_CLASSES[chunker_type].__init__
+        ).parameters
+
+        if "token_counter" in constructor_params:
+            chunker_params["token_counter"] = token_counter
+        if "tokenizer" in constructor_params:
+            chunker_params["tokenizer"] = tokenizer
+        if chunker_type in GPU_EMBEDDING_CHUNKERS:
+            chunker_params["device"] = device
+
+        _WORKER_CONTEXT.chunker = CHUNKER_CLASSES[chunker_type](
+            **chunker_params
+        )
+        _WORKER_CONTEXT.initialization_error = None
+        _WORKER_CONTEXT.measure_ram = measure_ram
+    except Exception as error:
+        _WORKER_CONTEXT.initialization_error = str(error)
+
+
+def _chunk_document(
+    document: Dict[str, Any],
+) -> Dict[str, Any]:
+    """Procesa un documento usando el chunker local del worker."""
+
+    initialization_error = getattr(
+        _WORKER_CONTEXT,
+        "initialization_error",
+        None,
+    )
+    if initialization_error is not None:
+        return {"initialization_error": initialization_error}
+
+    process = psutil.Process(os.getpid()) if _WORKER_CONTEXT.measure_ram else None
+    ram_before_mb = (
+        process.memory_info().rss / (1024 ** 2)
+        if process is not None
+        else None
+    )
+    start_time = time.perf_counter()
+
+    try:
+        chunks = list(
+            _WORKER_CONTEXT.chunker.chunk(
+                text=document["text"],
+                doc_id=document["doc_id"],
+            )
+        )
+    except Exception as error:
+        return {
+            "error": str(error),
+            "execution_time_seconds": time.perf_counter() - start_time,
+            "ram_before_mb": ram_before_mb,
+            "ram_after_mb": (
+                process.memory_info().rss / (1024 ** 2)
+                if process is not None
+                else None
+            ),
+        }
+
+    return {
+        "chunks": chunks,
+        "execution_time_seconds": time.perf_counter() - start_time,
+        "ram_before_mb": ram_before_mb,
+        "ram_after_mb": (
+            process.memory_info().rss / (1024 ** 2)
+            if process is not None
+            else None
+        ),
+    }
+
+
+def _ensure_nltk_data() -> None:
+    """Descarga una sola vez el recurso usado por los tokenizadores NLTK."""
+
+    try:
+        nltk.data.find("tokenizers/punkt_tab")
+    except LookupError:
+        if not nltk.download("punkt_tab", quiet=True):
+            raise RuntimeError(
+                "No se ha podido descargar el recurso NLTK 'punkt_tab'."
+            )
+        nltk.data.find("tokenizers/punkt_tab")
+
+
+def _positive_int(value: str) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError(
+            "El valor debe ser un entero positivo."
+        ) from error
+    if parsed < 1:
+        raise argparse.ArgumentTypeError(
+            "El valor debe ser un entero positivo."
+        )
+    return parsed
+
+
+def _nonnegative_int(value: str) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError(
+            "El valor debe ser un entero no negativo."
+        ) from error
+    if parsed < 0:
+        raise argparse.ArgumentTypeError(
+            "El valor debe ser un entero no negativo."
+        )
+    return parsed
+
+
+def _resolve_device(gpu_id: int | None, needs_gpu: bool) -> str:
+    if gpu_id is None or not needs_gpu:
+        return "cpu"
+    if not torch.cuda.is_available():
+        raise RuntimeError(
+            "Se ha solicitado una GPU, pero CUDA no está disponible."
+        )
+    device_count = torch.cuda.device_count()
+    if gpu_id >= device_count:
+        raise ValueError(
+            f"GPU ID {gpu_id} no válido: hay {device_count} GPU(s) CUDA visibles."
+        )
+    return f"cuda:{gpu_id}"
+
+
+# ============================================================
 # FUNCIÓN PRINCIPAL
 # ============================================================
 
-def main() -> None:
+def main(
+    workers_override: int | None = None,
+    gpu_id_override: int | None = None,
+) -> None:
     """
     Ejecuta todas las estrategias activadas sobre los documentos
     Markdown disponibles en la carpeta de entrada.
@@ -311,6 +492,13 @@ def main() -> None:
             "No hay documentos válidos para procesar."
         )
 
+    doc_ids = [document["doc_id"] for document in documents]
+    if len(doc_ids) != len(set(doc_ids)):
+        raise ValueError(
+            "Hay documentos con doc_id duplicado; sus archivos de salida "
+            "se sobrescribirían al procesarlos."
+        )
+
     print(
         f"Documentos válidos: {len(documents)}"
     )
@@ -322,10 +510,36 @@ def main() -> None:
     chunker_config = load_config(CHUNKING_CONFIG_FILE)
 
     tokenizer_config = load_config(TOKENIZER_CONFIG_FILE)
+    execution_config = chunker_config.get("execution", {})
+    requested_workers = (
+        workers_override
+        if workers_override is not None
+        else int(execution_config.get("workers", 1))
+    )
+    if requested_workers < 1:
+        raise ValueError("El número de workers debe ser al menos 1.")
+    available_cpus = getattr(os, "process_cpu_count", os.cpu_count)() or 1
+    workers = min(requested_workers, available_cpus, len(documents))
+
+    configured_gpu_id = execution_config.get("gpu_id")
+    gpu_id = (
+        gpu_id_override
+        if gpu_id_override is not None
+        else configured_gpu_id
+    )
+    if gpu_id is not None and (
+        not isinstance(gpu_id, int)
+        or isinstance(gpu_id, bool)
+        or gpu_id < 0
+    ):
+        raise ValueError("gpu_id debe ser un entero no negativo o null.")
 
     # Modelo cuyo tokenizador se utilizará de forma común para contar los tokens
     tokenizer_model_name = tokenizer_config["tokenizer"]["model_name"]
 
+    if workers > 1:
+        os.environ["TOKENIZERS_PARALLELISM"] = "false"
+        torch.set_num_threads(1)
     tokenizer = create_tokenizer(
         tokenizer_model_name
     )
@@ -352,16 +566,35 @@ def main() -> None:
             "en el archivo de configuración."
         )
 
+    needs_gpu = any(
+        strategy.get("spec", {}).get("type") in GPU_EMBEDDING_CHUNKERS
+        for strategy in enabled_strategies
+    )
+    device = _resolve_device(gpu_id, needs_gpu)
+
     print(
         f"Estrategias activadas: "
         f"{len(enabled_strategies)}"
     )
+    print(
+        f"Workers de documentos: {workers}; "
+        f"GPU para chunkers semánticos: {device}"
+    )
+    if device != "cpu" and workers > 1:
+        print(
+            "Cada worker de las estrategias semánticas carga su propia "
+            "instancia del modelo en la GPU seleccionada."
+        )
+
+    if workers > 1 and any(
+        strategy.get("spec", {}).get("type") in NLTK_CHUNKERS
+        and strategy.get("spec", {}).get("type") not in LLM_CHUNKERS
+        for strategy in enabled_strategies
+    ):
+        _ensure_nltk_data()
 
     # El CSV tendrá una fila por método y documento
     summary_results = []
-
-    # Proceso actual para medir RAM
-    process = psutil.Process(os.getpid())
 
     # --------------------------------------------------------
     # 4. Ejecutar las estrategias activadas
@@ -373,11 +606,17 @@ def main() -> None:
         spec = strategy.get("spec", {})
         chunker_type = spec.get("type")
         params = spec.get("params", {})
+        strategy_workers = (
+            1
+            if chunker_type in LLM_CHUNKERS
+            else workers
+        )
 
         print("\n" + "=" * 70)
         print(f"Estrategia: {strategy_name}")
         print(f"Clase: {chunker_type}")
         print(f"Parámetros: {params}")
+        print(f"Workers para esta estrategia: {strategy_workers}")
         print("=" * 70)
 
         # ----------------------------------------------------
@@ -419,103 +658,51 @@ def main() -> None:
             )
             continue
 
-        chunker_class = CHUNKER_CLASSES[
-            chunker_type
-        ]
-
         abbreviation = CHUNKER_ABBREVIATIONS[
             chunker_type
         ]
 
-        # ----------------------------------------------------
-        # Crear el chunker una sola vez por estrategia
-        # ----------------------------------------------------
-
-        try:
-            # Copiamos los parámetros definidos para el chunker
-            chunker_params = params.copy()
-
-            # Comprobamos qué parámetros acepta su constructor
-            constructor_params = inspect.signature(
-                chunker_class.__init__
-            ).parameters
-
-            # Los chunkers que necesitan contar tokens utilizan
-            # siempre el tokenizador definido en tokenizer_config.json
-            if "token_counter" in constructor_params:
-                chunker_params["token_counter"] = token_counter
-
-            if "tokenizer" in constructor_params:
-                chunker_params["tokenizer"] = tokenizer
-
-            # Creamos el chunker
-            chunker = chunker_class(
-                **chunker_params
-            )
-
-        except Exception as error:
-            print(
-                f"[ERROR] No se ha podido crear "
-                f"{strategy_name}: {error}"
-            )
-
-            error_result = {
-                "strategy": strategy_name,
-                "type": chunker_type,
-                "abbreviation": abbreviation,
-                "params": params,
-                "status": "initialization_error",
-                "error": str(error),
-            }
-
-            save_json(
-                data=error_result,
-                output_path=(
-                    METRICS_DIR
-                    / f"{abbreviation}_initialization_error.json"
-                ),
-            )
-
-            continue
-
         completed_documents = 0
         strategy_chunk_count = 0
+        initialization_error_recorded = False
 
-        # ----------------------------------------------------
-        # 5. Procesar cada documento por separado
-        # ----------------------------------------------------
+        def record_document_result(
+            document: Dict[str, Any],
+            result: Dict[str, Any],
+        ) -> None:
+            nonlocal completed_documents, strategy_chunk_count
+            nonlocal initialization_error_recorded
 
-        for document in documents:
-
-            print(
-                f"\nProcesando: {document['file_name']}"
-            )
-
-            # ------------------------------------------------
-            # Medición inicial por documento
-            # ------------------------------------------------
-
-            ram_before_mb = (
-                process.memory_info().rss
-                / (1024 ** 2)
-            )
-
-            start_time = time.perf_counter()
-
-            try:
-                document_chunks = list(
-                    chunker.chunk(
-                        text=document["text"],
-                        doc_id=document["doc_id"],
-                    )
+            print(f"\nProcesando: {document['file_name']}")
+            if "initialization_error" in result:
+                error_message = result["initialization_error"]
+                print(
+                    f"[ERROR] No se ha podido crear "
+                    f"{strategy_name}: {error_message}"
                 )
+                if not initialization_error_recorded:
+                    save_json(
+                        data={
+                            "strategy": strategy_name,
+                            "type": chunker_type,
+                            "abbreviation": abbreviation,
+                            "params": params,
+                            "status": "initialization_error",
+                            "error": error_message,
+                        },
+                        output_path=(
+                            METRICS_DIR
+                            / f"{abbreviation}_initialization_error.json"
+                        ),
+                    )
+                    initialization_error_recorded = True
+                return
 
-            except Exception as error:
+            if "error" in result:
                 print(
                     f"[ERROR] Ha fallado {strategy_name} "
-                    f"con {document['file_name']}: {error}"
+                    f"con {document['file_name']}: {result['error']}"
                 )
-
                 document_error = {
                     "strategy": strategy_name,
                     "type": chunker_type,
@@ -524,9 +711,8 @@ def main() -> None:
                     "status": "error",
                     "doc_id": document["doc_id"],
                     "input_file": document["file_name"],
-                    "error": str(error),
+                    "error": result["error"],
                 }
-
                 save_json(
                     data=document_error,
                     output_path=(
@@ -537,17 +723,12 @@ def main() -> None:
                         )
                     ),
                 )
+                return
 
-                continue
-
-            execution_time_seconds = (
-                time.perf_counter() - start_time
-            )
-
-            ram_after_mb = (
-                process.memory_info().rss
-                / (1024 ** 2)
-            )
+            document_chunks = result["chunks"]
+            execution_time_seconds = result["execution_time_seconds"]
+            ram_before_mb = result["ram_before_mb"]
+            ram_after_mb = result["ram_after_mb"]
 
             # ------------------------------------------------
             # Serializar los chunks
@@ -625,10 +806,14 @@ def main() -> None:
                 execution_time_seconds=(
                     execution_time_seconds
                 ),
-                ram_before_mb=ram_before_mb,
-                ram_after_mb=ram_after_mb,
+                ram_before_mb=ram_before_mb or 0.0,
+                ram_after_mb=ram_after_mb or 0.0,
                 token_counter=token_counter,
             )
+            if ram_before_mb is None or ram_after_mb is None:
+                document_stats["ram_before_mb"] = None
+                document_stats["ram_after_mb"] = None
+                document_stats["ram_increase_mb"] = None
 
             document_metrics_result = {
                 "strategy": strategy_name,
@@ -684,10 +869,49 @@ def main() -> None:
                 f"[OK] Tiempo: "
                 f"{execution_time_seconds:.6f} segundos"
             )
-            print(
-                f"[OK] Incremento de RAM: "
-                f"{ram_after_mb - ram_before_mb:.2f} MB"
+            if ram_before_mb is not None and ram_after_mb is not None:
+                print(
+                    f"[OK] Incremento de RAM: "
+                    f"{ram_after_mb - ram_before_mb:.2f} MB"
+                )
+            else:
+                print("[INFO] RAM por documento no medida en modo paralelo.")
+
+        if strategy_workers == 1:
+            _initialize_document_worker(
+                chunker_type,
+                params,
+                tokenizer_model_name,
+                device,
+                True,
             )
+            initialization_error = _WORKER_CONTEXT.initialization_error
+            if initialization_error is not None:
+                record_document_result(
+                    documents[0],
+                    {"initialization_error": initialization_error},
+                )
+                continue
+            for document in documents:
+                record_document_result(document, _chunk_document(document))
+        else:
+            with ThreadPoolExecutor(
+                max_workers=strategy_workers,
+                initializer=_initialize_document_worker,
+                initargs=(
+                    chunker_type,
+                    params,
+                    tokenizer_model_name,
+                    device,
+                    False,
+                ),
+                thread_name_prefix="markdown-chunker",
+            ) as executor:
+                for document, result in zip(
+                    documents,
+                    executor.map(_chunk_document, documents),
+                ):
+                    record_document_result(document, result)
 
         # ----------------------------------------------------
         # Resumen de la estrategia
@@ -766,4 +990,23 @@ def main() -> None:
 # ============================================================
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Ejecuta las estrategias de chunking Markdown."
+    )
+    parser.add_argument(
+        "--workers",
+        type=_positive_int,
+        default=None,
+        help="Máximo de documentos procesados en paralelo (configurable).",
+    )
+    parser.add_argument(
+        "--gpu-id",
+        type=_nonnegative_int,
+        default=None,
+        help="ID de la única GPU CUDA usada por las estrategias semánticas.",
+    )
+    arguments = parser.parse_args()
+    main(
+        workers_override=arguments.workers,
+        gpu_id_override=arguments.gpu_id,
+    )

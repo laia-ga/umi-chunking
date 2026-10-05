@@ -24,6 +24,7 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
             "sentence-transformers/all-MiniLM-L6-v2"
         ),
         max_chunk_tokens: int | None = 512,
+        device: str = "cpu",
     ):
         if not 0 <= threshold <= 1:
             raise ValueError(
@@ -39,12 +40,13 @@ class SemanticSimilarityThresholdChunker(BaseChunker):
         self.token_counter = token_counter
         self.embedding_model = embedding_model
         self.max_chunk_tokens = max_chunk_tokens
+        self.device = device
 
         # Modelo utilizado para calcular similitud semántica
         self.embeddings = HuggingFaceEmbeddings(
             model_name=embedding_model,
             model_kwargs={
-                "device": "cpu",
+                "device": device,
             },
             encode_kwargs={
                 "normalize_embeddings": True,

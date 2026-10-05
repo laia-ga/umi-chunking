@@ -21,6 +21,7 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
         ),
         window_size: int = 3, # número de frases anteriores para calcular la media
         max_chunk_tokens: int | None = 512,
+        device: str = "cpu",
     ):
         """
         Parameters
@@ -60,12 +61,13 @@ class SemanticVarianceAdaptiveChunker(BaseChunker):
         self.embedding_model = embedding_model
         self.window_size = window_size
         self.max_chunk_tokens = max_chunk_tokens
+        self.device = device
 
         # Modelo para calcular la similitud semántica entre frases consecutivas
         self.embeddings = HuggingFaceEmbeddings(
             model_name=embedding_model,
             model_kwargs={
-                "device": "cpu",
+                "device": device,
             },
             encode_kwargs={
                 "normalize_embeddings": True,

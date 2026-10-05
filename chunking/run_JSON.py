@@ -28,6 +28,9 @@ Este script:
 import json
 import os
 import time
+import argparse
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Dict
@@ -126,10 +129,93 @@ INDIVISIBLE_LIST_PATHS = {
 }
 
 # ============================================================
+# PARALELIZACIÓN DE DOCUMENTOS
+# ============================================================
+
+_WORKER_CONTEXT = threading.local()
+
+
+def _initialize_worker(
+    model_name: str,
+    add_special_tokens: bool,
+) -> None:
+    tokenizer = create_tokenizer(model_name)
+    _WORKER_CONTEXT.token_counter = create_token_counter(
+        tokenizer,
+        add_special_tokens=add_special_tokens,
+    )
+
+
+def _process_document(
+    doc: Dict[str, Any],
+    target_tokens: int,
+    max_tokens: int,
+    measure_ram: bool,
+) -> Dict[str, Any]:
+    token_counter = _WORKER_CONTEXT.token_counter
+    original_token_count = token_counter(doc["full_text"])
+    chunker = HierarchicalJSONChunker(
+        target_tokens=target_tokens,
+        max_tokens=max_tokens,
+        token_counter=token_counter,
+        document_plan=select_document_plan(doc["document_type"]),
+        root_field=None,
+        indivisible_list_paths=INDIVISIBLE_LIST_PATHS,
+    )
+
+    process = psutil.Process(os.getpid()) if measure_ram else None
+    ram_before = (
+        process.memory_info().rss / (1024 ** 2)
+        if process is not None
+        else None
+    )
+    start = time.perf_counter()
+    chunks = chunker.chunk_document(doc["data"])
+    execution_time = time.perf_counter() - start
+    ram_after = (
+        process.memory_info().rss / (1024 ** 2)
+        if process is not None
+        else None
+    )
+
+    stats = calculate_stats(
+        chunks=chunks,
+        original_token_count=original_token_count,
+        execution_time_seconds=execution_time,
+        ram_before_mb=ram_before if ram_before is not None else 0.0,
+        ram_after_mb=ram_after if ram_after is not None else 0.0,
+        token_counter=token_counter,
+    )
+    if ram_before is None or ram_after is None:
+        stats["ram_before_mb"] = None
+        stats["ram_after_mb"] = None
+        stats["ram_increase_mb"] = None
+
+    return {
+        "chunks": chunks,
+        "original_token_count": original_token_count,
+        "stats": stats,
+    }
+
+
+def _positive_int(value: str) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError(
+            "El número de workers debe ser un entero positivo."
+        ) from error
+    if parsed < 1:
+        raise argparse.ArgumentTypeError(
+            "El número de workers debe ser al menos 1."
+        )
+    return parsed
+
+# ============================================================
 # FUNCIÓN PRINCIPAL
 # ============================================================
 
-def main() -> None:
+def main(workers_override: int | None = None) -> None:
 
     print("=" * 70)
     print("INICIO DE LA EJECUCIÓN (JSON)")
@@ -171,100 +257,70 @@ def main() -> None:
     target_tokens = tokenizer_cfg["tokenizer"]["target_tokens"]
     max_tokens = tokenizer_cfg["tokenizer"]["max_tokens"]
 
-    tokenizer = create_tokenizer(model_name)
-    token_counter = create_token_counter(
-        tokenizer,
-        add_special_tokens=add_special_tokens,
-    )
-
-    for doc in documents:
-        doc["token_count"] = token_counter(doc["full_text"])
-
     # Estrategia única para JSON
     strategy_name = "JSONChunking"
     abbreviation = "JC"
 
     summary_results = []
-    process = psutil.Process(os.getpid())
+    requested_workers = (
+        workers_override
+        if workers_override is not None
+        else 1
+    )
+    if requested_workers < 1:
+        raise ValueError("El número de workers debe ser al menos 1.")
+    available_cpus = getattr(os, "process_cpu_count", os.cpu_count)() or 1
+    workers = min(requested_workers, available_cpus, max(1, len(documents)))
+    print(f"Workers para chunking JSON: {workers}")
 
     # 4. Ejecutar chunking JSON
-    for doc in documents:
-
-        print(f"\nProcesando: {doc['file_name']}")
-
-        plan = select_document_plan(doc["document_type"])
-
-        chunker = HierarchicalJSONChunker(
-            target_tokens=target_tokens,
-            max_tokens=max_tokens,
-            token_counter=token_counter,
-            document_plan=plan,
-            root_field=None,
-            indivisible_list_paths=INDIVISIBLE_LIST_PATHS,
+    if workers == 1:
+        _initialize_worker(model_name, add_special_tokens)
+        document_results = (
+            _process_document(doc, target_tokens, max_tokens, True)
+            for doc in documents
         )
-
-        ram_before = process.memory_info().rss / (1024**2)
-        start = time.perf_counter()
-
-        chunks = chunker.chunk_document(doc["data"])
-
-        exec_time = time.perf_counter() - start
-        ram_after = process.memory_info().rss / (1024**2)
-
-        # Serializar los dataclasses Chunk generados por el chunker JSON
-        serialized = [asdict(chunk) for chunk in chunks]
-
-        # Guardar chunks
-        result = {
-            "strategy": strategy_name,
-            "type": "HierarchicalJSONChunker",
-            "abbreviation": abbreviation,
-            "doc_id": doc["doc_id"],
-            "document_type": doc["document_type"],
-            "input_file": doc["file_name"],
-            "source_path": doc["source_path"],
-            "tokenizer_model": model_name,
-            "params": {
-                "target_tokens": target_tokens,
-                "max_tokens": max_tokens,
-            },
-            "original_token_count": doc["token_count"],
-            "number_of_chunks": len(chunks),
-            "chunks": serialized,
-        }
-
-        save_json(result, CHUNKS_DIR / f"{abbreviation}_{doc['doc_id']}.json")
-
-        # Métricas
-        stats = calculate_stats(
-            chunks=chunks,
-            original_token_count=doc["token_count"],
-            execution_time_seconds=exec_time,
-            ram_before_mb=ram_before,
-            ram_after_mb=ram_after,
-            token_counter=token_counter,
-        )
-
-        metrics = {
-            "strategy": strategy_name,
-            "type": "HierarchicalJSONChunker",
-            "abbreviation": abbreviation,
-            "status": "completed",
-            "doc_id": doc["doc_id"],
-            "document_type": doc["document_type"],
-            "input_file": doc["file_name"],
-            "source_path": doc["source_path"],
-            "tokenizer_model": model_name,
-            "params": {
-                "target_tokens": target_tokens,
-                "max_tokens": max_tokens,
-            },
-            **stats,
-        }
-
-        save_json(metrics, METRICS_DIR / f"{abbreviation}_{doc['doc_id']}_metrics.json")
-
-        summary_results.append(metrics)
+        results = zip(documents, document_results)
+        for doc, processed in results:
+            _save_document_result(
+                doc,
+                processed,
+                model_name,
+                target_tokens,
+                max_tokens,
+                strategy_name,
+                abbreviation,
+                summary_results,
+            )
+    else:
+        with ThreadPoolExecutor(
+            max_workers=workers,
+            initializer=_initialize_worker,
+            initargs=(model_name, add_special_tokens),
+            thread_name_prefix="json-chunker",
+        ) as executor:
+            for doc, processed in zip(
+                documents,
+                executor.map(
+                    lambda document: _process_document(
+                        document,
+                        target_tokens,
+                        max_tokens,
+                        False,
+                    ),
+                    documents,
+                ),
+            ):
+                _save_document_result(
+                    doc,
+                    processed,
+                    model_name,
+                    target_tokens,
+                    max_tokens,
+                    strategy_name,
+                    abbreviation,
+                    summary_results,
+                )
 
     # 5. Summary CSV
     if summary_results:
@@ -276,9 +332,76 @@ def main() -> None:
     print("FIN DE LA EJECUCIÓN (JSON)")
     print("=" * 70)
 
+
+def _save_document_result(
+    doc: Dict[str, Any],
+    processed: Dict[str, Any],
+    model_name: str,
+    target_tokens: int,
+    max_tokens: int,
+    strategy_name: str,
+    abbreviation: str,
+    summary_results: list[Dict[str, Any]],
+) -> None:
+    print(f"\nProcesando: {doc['file_name']}")
+    chunks = processed["chunks"]
+    serialized = [asdict(chunk) for chunk in chunks]
+    params = {
+        "target_tokens": target_tokens,
+        "max_tokens": max_tokens,
+    }
+
+    result = {
+        "strategy": strategy_name,
+        "type": "HierarchicalJSONChunker",
+        "abbreviation": abbreviation,
+        "doc_id": doc["doc_id"],
+        "document_type": doc["document_type"],
+        "input_file": doc["file_name"],
+        "source_path": doc["source_path"],
+        "tokenizer_model": model_name,
+        "params": params,
+        "original_token_count": processed["original_token_count"],
+        "number_of_chunks": len(chunks),
+        "chunks": serialized,
+    }
+
+    save_json(result, CHUNKS_DIR / f"{abbreviation}_{doc['doc_id']}.json")
+
+    metrics = {
+        "strategy": strategy_name,
+        "type": "HierarchicalJSONChunker",
+        "abbreviation": abbreviation,
+        "status": "completed",
+        "doc_id": doc["doc_id"],
+        "document_type": doc["document_type"],
+        "input_file": doc["file_name"],
+        "source_path": doc["source_path"],
+        "tokenizer_model": model_name,
+        "params": params,
+        **processed["stats"],
+    }
+
+    save_json(
+        metrics,
+        METRICS_DIR / f"{abbreviation}_{doc['doc_id']}_metrics.json",
+    )
+    summary_results.append(metrics)
+
+
 # ============================================================
 # PUNTO DE ENTRADA
 # ============================================================
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description="Ejecuta el chunking jerárquico de documentos JSON."
+    )
+    parser.add_argument(
+        "--workers",
+        type=_positive_int,
+        default=None,
+        help="Máximo de documentos procesados en paralelo (por defecto, 1).",
+    )
+    arguments = parser.parse_args()
+    main(workers_override=arguments.workers)

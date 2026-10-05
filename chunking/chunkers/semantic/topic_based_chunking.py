@@ -23,6 +23,7 @@ class TopicBasedChunker(BaseChunker):
             distance_threshold: float, 
             embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2",
             max_chunk_tokens: int | None = 512,
+            device: str = "cpu",
     ):
 
         if not callable(token_counter):
@@ -40,8 +41,12 @@ class TopicBasedChunker(BaseChunker):
         self.distance_threshold = distance_threshold
         self.embedding_model = embedding_model
         self.max_chunk_tokens = max_chunk_tokens
+        self.device = device
         # Modelo utilizado para los embeddings de las frases
-        self.embeddings = HuggingFaceEmbeddings(model_name=embedding_model)
+        self.embeddings = HuggingFaceEmbeddings(
+            model_name=embedding_model,
+            model_kwargs={"device": device},
+        )
         
 
     def chunk(self, text: str, doc_id: str) -> List[Chunk]:

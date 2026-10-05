@@ -1,4 +1,8 @@
 {
+    "execution": {
+        "workers": 1,
+        "gpu_id": null
+    },
     "strategies": [
         {
             "name": "fixed_character_chunking",
