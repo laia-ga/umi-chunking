@@ -1,6 +1,6 @@
 {
     "qdrant": {
-        "host": "localhost",
+        "host": "127.0.0.1",
         "port": 6333,
         "collection_name": "test_bge_m3"
     },
