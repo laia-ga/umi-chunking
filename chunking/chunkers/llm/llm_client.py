@@ -54,8 +54,7 @@ class LLMClient:
         llm_fn: Optional callable to bypass HF model loading.
         max_new_tokens: Generation length cap.
         temperature: Sampling temperature. Set 0 for deterministic (no sampling).
-        device: Optional; "cuda" or "cpu". Defaults to CUDA when available,
-            otherwise CPU.
+        device: Optional; "cuda" or "cpu". Defaults to CPU.
         pipeline_kwargs: Extra kwargs for `transformers.pipeline`.
         local_model_dir: Explicit local path to load. If None, derived from models_root.
         auto_download: If True, use `snapshot_download(token=None)` to fetch to local dir.
@@ -132,9 +131,7 @@ class LLMClient:
                     "'device_map' or 'device' in pipeline_kwargs."
                 )
 
-            target_device = device or (
-                "cuda:0" if torch.cuda.is_available() else "cpu"
-            )
+            target_device = device or "cpu"
             model_dtype = (
                 "auto"
                 if target_device.startswith("cuda")
@@ -161,7 +158,21 @@ class LLMClient:
                 model_local_path,
                 dtype=model_dtype,
             )
-            model.to(target_device)
+            model.tie_weights()
+
+            meta_parameters = [
+                name
+                for name, parameter in model.named_parameters()
+                if parameter.is_meta
+            ]
+            if meta_parameters:
+                raise RuntimeError(
+                    "The model has uninitialized meta parameters after loading: "
+                    + ", ".join(meta_parameters)
+                )
+
+            if target_device != "cpu":
+                model.to(target_device)
 
             self.generator = pipeline(
                 "text-generation",
