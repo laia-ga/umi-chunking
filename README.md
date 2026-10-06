@@ -55,3 +55,20 @@ fijar en `indexing.num_workers` e `indexing.cpu_threads`. Para usar las GPUs
 CUDA 0 y 1 según la configuración, establece `num_gpus: 2` y deje `gpu_ids`
 vacío. La selección explícita de GPUs falla con un error si CUDA o algún ID no
 están disponibles.
+
+## Retrieval concurrente
+
+`scripts/run_retrieval.py` genera los embeddings de las preguntas por lotes
+con una sola instancia del modelo (usa `cuda:0` si CUDA está disponible, y
+CPU en caso contrario) y ejecuta hasta cuatro trabajos de pregunta en
+paralelo contra Qdrant. Los valores predeterminados son `--batch-size 16` y
+`--workers 4`; ambos pueden ajustarse:
+
+```bash
+python scripts/run_retrieval.py retrieval_paper_config.json \
+  --batch-size 16 --workers 4
+```
+
+Cada embedding de pregunta se calcula una vez y se reutiliza para todas las
+estrategias configuradas. Los resultados se recogen en el orden original de
+las preguntas.
