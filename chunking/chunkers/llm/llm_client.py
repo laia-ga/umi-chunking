@@ -23,8 +23,11 @@ from typing import Optional, Any, Dict, Callable
 
 # Optional import guards
 try:
-    from transformers import pipeline, AutoTokenizer
-except Exception as e:
+    import torch
+    from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+except Exception:
+    torch = None
+    AutoModelForCausalLM = None
     pipeline = None
     AutoTokenizer = None
 
@@ -51,7 +54,8 @@ class LLMClient:
         llm_fn: Optional callable to bypass HF model loading.
         max_new_tokens: Generation length cap.
         temperature: Sampling temperature. Set 0 for deterministic (no sampling).
-        device: Optional; "cuda" or "cpu". Generally prefer device_map="auto".
+        device: Optional; "cuda" or "cpu". Defaults to CUDA when available,
+            otherwise CPU.
         pipeline_kwargs: Extra kwargs for `transformers.pipeline`.
         local_model_dir: Explicit local path to load. If None, derived from models_root.
         auto_download: If True, use `snapshot_download(token=None)` to fetch to local dir.
@@ -83,10 +87,16 @@ class LLMClient:
 
         # If using a real model, ensure transformers are available
         if llm_fn is None:
-            if pipeline is None or AutoTokenizer is None:
+            if (
+                pipeline is None
+                or AutoModelForCausalLM is None
+                or AutoTokenizer is None
+                or torch is None
+            ):
                 raise RuntimeError(
-                    "transformers is not installed or failed to import. "
-                    "Install with: pip install -U transformers tokenizers sentencepiece protobuf safetensors"
+                    "PyTorch or transformers is not installed or failed to import. "
+                    "Install with: pip install -U torch transformers tokenizers "
+                    "sentencepiece protobuf safetensors"
                 )
             if not model_name:
                 raise ValueError("model_name must be provided when llm_fn is None.")
@@ -116,15 +126,23 @@ class LLMClient:
                         local_dir_use_symlinks=False,
                     )
 
-            # Device / pipeline defaults
-            pipeline_kwargs.setdefault("device_map", "auto")
-            if device is not None:
-                # Some versions accept 'device'; optional.
-                pipeline_kwargs["device"] = device
+            if "device_map" in pipeline_kwargs or "device" in pipeline_kwargs:
+                raise ValueError(
+                    "Set the model device with the 'device' argument, not "
+                    "'device_map' or 'device' in pipeline_kwargs."
+                )
+
+            target_device = device or (
+                "cuda:0" if torch.cuda.is_available() else "cpu"
+            )
+            model_dtype = (
+                "auto"
+                if target_device.startswith("cuda")
+                else torch.float32
+            )
+
             # Do not echo the prompt in generated_text
             pipeline_kwargs.setdefault("return_full_text", False)
-            # dtype auto for convenience (optional, safe for most text models)
-            pipeline_kwargs.setdefault("torch_dtype", "auto")
 
             # Pre-create tokenizer to control use_fast and avoid sentencepiece issues
             try:
@@ -139,10 +157,15 @@ class LLMClient:
                     f"Install sentencepiece or set use_fast_tokenizer=False. Original error: {e}"
                 )
 
-            # Build the pipeline strictly from the local directory
+            model = AutoModelForCausalLM.from_pretrained(
+                model_local_path,
+                dtype=model_dtype,
+            )
+            model.to(target_device)
+
             self.generator = pipeline(
                 "text-generation",
-                model=model_local_path,
+                model=model,
                 tokenizer=tokenizer,
                 **pipeline_kwargs,
             )
@@ -239,7 +262,7 @@ if __name__ == "__main__":
 
     client = LLMClient(
         model_name=model_name,
-        pipeline_kwargs={"device_map": "auto", "return_full_text": False},
+        pipeline_kwargs={"return_full_text": False},
         auto_download=True,
         use_fast_tokenizer=False,  # safer for sentencepiece-based models
         max_new_tokens=256,
