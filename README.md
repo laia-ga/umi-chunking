@@ -72,3 +72,32 @@ python scripts/run_retrieval.py retrieval_paper_config.json \
 Cada embedding de pregunta se calcula una vez y se reutiliza para todas las
 estrategias configuradas. Los resultados se recogen en el orden original de
 las preguntas.
+
+## Judge local
+
+`eval/run_judge_qa_local.py` evalúa los chunks con `Qwen/Qwen3-8B`. Por
+defecto usa una sola copia del modelo en `cuda:0` y batch 1; si CUDA no está
+disponible, usa CPU. Las GPUs solicitadas se comprueban al inicio y el modelo
+se carga antes de evaluar para detectar problemas de memoria sin descartar
+resultados anteriores:
+
+```bash
+python eval/run_judge_qa_local.py retrieval_paper.json \
+  --gpu-ids 0 --batch-size 1
+```
+
+Se pueden seleccionar varias GPUs explícitamente, por ejemplo
+`--gpu-ids 0,1`. Cada una carga una copia completa e independiente del modelo
+y juzga batches de chunks distintos; la VRAM no se comparte entre GPUs. Batch
+1 es la opción conservadora; si se aumenta `--batch-size`, hay que vigilar la
+memoria disponible. Los IDs son los CUDA visibles dentro del proceso o
+contenedor. `--cpu` fuerza la ejecución en CPU. La rúbrica local es
+la misma que la del juez GPT; por defecto no solicita `reason` para limitar
+la generación, pero se puede activar con `--include-reason`.
+
+Si el CSV ya existe, el script conserva los juicios correctos y reintenta en
+la siguiente ejecución las filas con error o pendientes. `--restart` descarta
+el CSV previo. Si el CSV viene de una versión anterior del juez o cambia la
+opción `--include-reason`, el script pide `--restart` para evitar mezclar
+resultados de rúbricas distintas. Los errores de inferencia se registran; no
+se reintentan automáticamente dentro de la misma ejecución.
