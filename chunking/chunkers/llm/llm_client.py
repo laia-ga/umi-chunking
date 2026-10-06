@@ -160,6 +160,17 @@ class LLMClient:
             )
             model.tie_weights()
 
+            if model.config.tie_word_embeddings:
+                input_embeddings = model.get_input_embeddings()
+                output_embeddings = model.get_output_embeddings()
+                if (
+                    input_embeddings is not None
+                    and output_embeddings is not None
+                    and output_embeddings.weight.is_meta
+                    and not input_embeddings.weight.is_meta
+                ):
+                    output_embeddings.weight = input_embeddings.weight
+
             meta_parameters = [
                 name
                 for name, parameter in model.named_parameters()
