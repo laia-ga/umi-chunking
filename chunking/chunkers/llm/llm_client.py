@@ -160,7 +160,6 @@ class LLMClient:
             model = AutoModelForCausalLM.from_pretrained(
                 model_local_path,
                 dtype=model_dtype,
-                low_cpu_mem_usage=False,
             )
             model.to(target_device)
 
