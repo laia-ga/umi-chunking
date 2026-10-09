@@ -8,7 +8,7 @@ Ejecuta el chunking jerárquico para documentos JSON estructurados.
 Este script:
 1. Carga los documentos JSON desde data/raw/json.
 2. Detecta automáticamente la tipología documental (paper, guideline,
-   ficha técnica) según la carpeta de origen.
+   ficha técnica) según la estructura y los campos del JSON.
 3. Selecciona el document plan correspondiente.
 4. Aplica el HierarchicalJSONChunker, que:
    - respeta la estructura del JSON,
@@ -117,6 +117,50 @@ def select_document_plan(document_type: str):
             f"Tipos disponibles: {available_types}"
         ) from error
 
+
+FICHA_TECNICA_SIGNATURE = {
+    "medicine_name",
+    "composition",
+    "pharmaceutical_form",
+    "indications",
+    "posology",
+}
+
+
+def detect_document_type(
+    data: Dict[str, Any],
+    source_path: str,
+) -> str:
+    keys = set(data)
+    if FICHA_TECNICA_SIGNATURE.issubset(keys):
+        return "ficha_tecnica"
+
+    declared_type = data.get("document_type")
+    if isinstance(declared_type, str) and declared_type.strip():
+        normalized_type = declared_type.strip().casefold().replace("-", "_")
+        if normalized_type in {"guideline", "clinical_guideline"}:
+            if data.get("article_type"):
+                raise ValueError(
+                    f"El documento {source_path!r} contiene señales "
+                    "contradictorias: document_type y article_type."
+                )
+            return "guideline"
+        raise ValueError(
+            f"Tipo de documento no soportado en {source_path!r}: "
+            f"{declared_type!r}."
+        )
+
+    article_type = data.get("article_type")
+    if isinstance(article_type, str) and article_type.strip():
+        return "paper"
+
+    raise ValueError(
+        f"No se pudo detectar el tipo de documento para {source_path!r}. "
+        "Se esperaba la firma de ficha técnica, document_type de guideline "
+        "o article_type de paper."
+    )
+
+
 # INVIDISIBLE LIST PATHS
 
 INDIVISIBLE_LIST_PATHS = {
@@ -160,7 +204,7 @@ def _process_document(
         token_counter=token_counter,
         document_plan=select_document_plan(doc["document_type"]),
         root_field=None,
-        indivisible_list_paths=INDIVISIBLE_LIST_PATHS,
+        indivisible_list_paths=INDIVISIBLE_LIST_PATHS[doc["document_type"]],
     )
 
     process = psutil.Process(os.getpid()) if measure_ram else None
@@ -233,7 +277,12 @@ def main(workers_override: int | None = None) -> None:
             data = json.load(f)
 
         rel = path.relative_to(INPUT_DIR)
-        doc_type = rel.parts[0] if len(rel.parts) > 1 else "unknown"
+        source_path = str(rel)
+        if not isinstance(data, dict):
+            raise TypeError(
+                f"El documento JSON {source_path!r} debe ser un objeto."
+            )
+        doc_type = detect_document_type(data, source_path)
         doc_id = "_".join(rel.with_suffix("").parts)
 
         full_text = json.dumps(data, ensure_ascii=False)
@@ -242,7 +291,7 @@ def main(workers_override: int | None = None) -> None:
             "doc_id": doc_id,
             "document_type": doc_type,
             "file_name": path.name,
-            "source_path": str(rel),
+            "source_path": source_path,
             "data": data,
             "full_text": full_text,
         })
