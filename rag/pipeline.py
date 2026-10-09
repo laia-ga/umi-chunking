@@ -96,6 +96,7 @@ class RAGPipeline:
     def answer(
         self,
         question: str,
+        history: Optional[List[Dict[str, str]]] = None,
     ) -> Tuple[str, List[Dict[str, Any]]]:
 
         """
@@ -139,6 +140,7 @@ class RAGPipeline:
             question=question,
             chunks=chunks,
             generation_config=self.generation_config,
+            history=history,
         )
 
 

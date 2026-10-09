@@ -37,11 +37,14 @@ def clean_history(raw) -> list[dict] | None:
     return history
 
 
-def answer_from_rag(question: str):
+def answer_from_rag(question: str, history: list[dict]):
     """Genera una respuesta utilizando el pipeline RAG."""
 
     try:
-        answer, _ = pipeline.answer(question)
+        answer, _ = pipeline.answer(
+            question=question,
+            history=history,
+        )
         yield answer
 
     except Exception as exc:
@@ -68,8 +71,9 @@ def chat_api(request):
         )
 
     question = history[-1]["content"]
+    previous_messages = history[:-1]
 
     return StreamingHttpResponse(
-        answer_from_rag(question),
+        answer_from_rag(question, previous_messages),
         content_type="text/plain; charset=utf-8",
     )

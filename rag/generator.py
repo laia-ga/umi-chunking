@@ -62,6 +62,7 @@ def build_context(
 def build_messages(
     question: str,
     context: str,
+    history: Optional[List[Dict[str, str]]] = None,
 ) -> List[Dict[str, str]]:
 
     """
@@ -69,8 +70,9 @@ def build_messages(
 
     El modelo recibe:
     - instrucciones del sistema;
+    - historial de conversación anterior;
     - contexto recuperado;
-    - pregunta del usuario.
+    - pregunta actual del usuario.
     """
 
     system_prompt = (
@@ -81,6 +83,9 @@ def build_messages(
         "No inventes información ni utilices conocimiento externo. "
         "Si el contexto no contiene información suficiente para "
         "responder a la pregunta, indícalo claramente. "
+        "Utiliza el historial de conversación para interpretar "
+        "las preguntas de seguimiento, pero no lo consideres "
+        "una fuente de información documental. "
         "Responde de forma clara, precisa y concisa."
     )
 
@@ -96,11 +101,19 @@ def build_messages(
             "role": "system",
             "content": system_prompt,
         },
+    ]
+
+    # Añadir los mensajes anteriores de la conversación
+    if history:
+        messages.extend(history)
+
+    # Añadir el contexto recuperado y la pregunta actual
+    messages.append(
         {
             "role": "user",
             "content": user_prompt,
-        },
-    ]
+        }
+    )
 
     return messages
 
@@ -113,6 +126,7 @@ def generate_answer(
     question: str,
     chunks: List[Dict[str, Any]],
     generation_config: Dict[str, Any],
+    history: Optional[List[Dict[str, str]]] = None,
 ) -> str:
 
     """
@@ -165,6 +179,7 @@ def generate_answer(
     messages = build_messages(
         question=question,
         context=context,
+        history=history,
     )
 
 
@@ -181,18 +196,11 @@ def generate_answer(
     )
 
     payload = {
-        "model": generation_config[
-            "model"
-        ],
+        "model": generation_config["model"],
         "messages": messages,
-        "max_tokens": generation_config.get(
-            "max_tokens",
-            500,
-        ),
-        "temperature": generation_config.get(
-            "temperature",
-            0.0,
-        ),
+        "max_tokens": generation_config.get("max_tokens", 500),
+        "temperature": generation_config.get("temperature", 0.0),
+        "chat_template_kwargs": {"enable_thinking": False},
     }
 
     # --------------------------------------------------------
