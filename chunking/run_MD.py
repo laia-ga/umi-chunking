@@ -28,6 +28,7 @@ import os
 import time
 import argparse
 import inspect
+import re
 import threading
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -97,7 +98,7 @@ from chunking.chunkers.llm.llm_segment_then_chunking import LLMSegmentThenChunke
 # RUTAS
 # ============================================================
 
-# Carpeta donde se encuentra el archivo run_MD.py: 
+# Carpeta donde se encuentra el archivo run_MD.py:
 # main/chunking
 CHUNKING_DIR = Path(__file__).resolve().parent
 
@@ -336,6 +337,50 @@ def _ensure_nltk_data() -> None:
         nltk.data.find("tokenizers/punkt_tab")
 
 
+def infer_document_type(
+    text: str,
+    source_path: str,
+) -> str:
+    """Obtiene el tipo documental del frontmatter Markdown."""
+    frontmatter_match = re.match(
+        r"\A---[ \t]*\r?\n(.*?)\r?\n---[ \t]*(?:\r?\n|\Z)",
+        text,
+        re.DOTALL,
+    )
+    if frontmatter_match is None:
+        raise ValueError(
+            f"El documento Markdown {source_path!r} no tiene frontmatter YAML."
+        )
+
+    for line in frontmatter_match.group(1).splitlines():
+        type_match = re.fullmatch(
+            r"\s*doc_type\s*:\s*(?:\"([^\"]+)\"|'([^']+)'|([^\s#]+))\s*(?:#.*)?",
+            line,
+        )
+        if type_match is None:
+            continue
+
+        declared_type = next(
+            value for value in type_match.groups() if value is not None
+        ).strip().casefold()
+        if declared_type == "paper":
+            return "paper"
+        if declared_type in {
+            "guia_clinica",
+            "guideline",
+            "clinical_guideline",
+        }:
+            return "guideline"
+        raise ValueError(
+            f"Tipo documental no soportado en {source_path!r}: "
+            f"{declared_type!r}."
+        )
+
+    raise ValueError(
+        f"El frontmatter de {source_path!r} no contiene un campo 'doc_type'."
+    )
+
+
 def _positive_int(value: str) -> int:
     try:
         parsed = int(value)
@@ -409,7 +454,8 @@ def main(
             f"{INPUT_DIR}"
         )
 
-    # Busca archivos dentro de las carpetas paper/guideline/ficha_tecnica dentro de markdown
+    # Busca recursivamente todos los documentos Markdown, sin depender de
+    # subcarpetas por tipo.
     markdown_files = sorted(
         path
         for path in INPUT_DIR.rglob("*")
@@ -465,17 +511,14 @@ def main(
             INPUT_DIR
         )
 
-        # La primera carpeta indica la tipología del documento: paper, guideline o ficha_tecnica
-        document_type = (
-            relative_path.parts[0]
-            if len(relative_path.parts) > 1
-            else "unknown"
+        document_type = infer_document_type(
+            text,
+            str(relative_path),
         )
 
-        # Construir un identificador único a partir de la ruta
-        doc_id = "_".join(
-            relative_path.with_suffix("").parts
-        )
+        # Los documentos están directamente en INPUT_DIR; el nombre del
+        # archivo proporciona un identificador independiente de carpetas.
+        doc_id = relative_path.stem
 
         documents.append(
             {
