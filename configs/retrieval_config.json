@@ -1,6 +1,6 @@
 {
     "retrieval": {
-        "top_k": 5,
+        "top_k": 1,
         "strategies": null,
         "document_type": null,
         "format": null,
