@@ -65,7 +65,7 @@ LOGOUT_REDIRECT_URL = "login"
 
 # --- Modelo servido con vLLM ---
 VLLM_URL = os.environ.get("VLLM_URL", "http://compute01:8000")
-VLLM_MODEL = os.environ.get("VLLM_MODEL", "qwen3.6-27b-nvfp4")
+VLLM_MODEL = os.environ.get("VLLM_MODEL", "qwen3.8-27b-nvfp4a16")
 SYSTEM_PROMPT = os.environ.get(
     "CHAT_SYSTEM_PROMPT",
     "Actúa como asistente clínico para profesionales sanitarios. Da recomendaciones breves, "
