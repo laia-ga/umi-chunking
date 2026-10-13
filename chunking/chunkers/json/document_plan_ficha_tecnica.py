@@ -25,7 +25,16 @@ DOCUMENT_PLAN_FC = SplitNode(
                         ),
                         SplitNode(
                             name="composition",
-                            fields=["composition"]
+                            children=[
+                                SplitNode(
+                                    name="active_ingredient_amount",
+                                    fields=["active_ingredient_amount"]
+                                ),
+                                SplitNode(
+                                    name="excipients_with_know_effect",
+                                    fields=["excipients_with_know_effect"]
+                                )
+                            ]
                         )
                     ]
                 ),
@@ -181,22 +190,55 @@ DOCUMENT_PLAN_FC = SplitNode(
             ]
         ),
 
-        # national codes
-        SplitNode(
-            name="national_codes",
-            fields=["national_codes"]
-        ),
-
-        # source
-        SplitNode(
-            name="_source",
-            fields=["_source"]
-        ),
-
         # reimbursement
         SplitNode(
             name="reimbursement",
-            fields=["reimbursement"]
+            children=[
+                SplitNode(
+                    name="info_reimboursement",
+                          children=[
+                              SplitNode(
+                                  name="data_presentations",
+                                  children=[
+                                      SplitNode(
+                                          name="status_queried_by",
+                                          children=[
+                                              SplitNode(
+                                                  name="status",
+                                                  fields=["status"]
+                                              ),
+                                              SplitNode(
+                                                  name="queried_by",
+                                                  fields=["queried_by"]
+                                              )
+                                          ]
+                                      ),
+                                      SplitNode(
+                                          name="source_n",
+                                          children=[
+                                              SplitNode(
+                                                  name="source",
+                                                  fields=["source"]
+                                              ),
+                                              SplitNode(
+                                                  name="n_presentations",
+                                                  fields=["n_presentations"]
+                                              )
+                                          ]
+                                      )
+                                  ]
+                              ),
+                              SplitNode(
+                                  name="presentations",
+                                  fields=["presentations"]
+                              )
+                          ]
+                          ),
+                SplitNode(
+                    name="national_codes_queried",
+                    fields=["national_codes_queried"]
+                )
+            ]
         )
     ]
 )
