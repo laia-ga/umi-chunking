@@ -17,10 +17,12 @@ El script:
 # ============================================================
 
 import json
+import time
 from pathlib import Path
 from typing import Any, Dict, List
 import sys
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 
 import torch
 
@@ -119,7 +121,13 @@ def load_queries(
                     "no contiene el campo 'question_id'."
                 )
 
-            queries.append(item)
+            queries.append(
+                {
+                    "question_id": item["question_id"],
+                    "question": item["question"],
+                    "gold_answer": item["gold_answer"],
+                }
+            )
 
     return queries
 
@@ -223,6 +231,7 @@ def save_results(
 
 def create_embeddings(
     indexing_config: Dict[str, Any],
+    batch_size: int,
 ) -> HuggingFaceEmbeddings:
 
     """
@@ -233,7 +242,7 @@ def create_embeddings(
     embeddings_config = indexing_config["embeddings"]
 
     device = (
-        "cuda"
+        "cuda:0"
         if torch.cuda.is_available()
         else "cpu"
     )
@@ -254,7 +263,8 @@ def create_embeddings(
                 embeddings_config.get(
                     "normalize_embeddings",
                     True,
-                )
+                ),
+            "batch_size": batch_size,
         },
     )
 
@@ -287,41 +297,6 @@ def connect_to_qdrant(
 # BUSCAR CHUNKS
 # ============================================================
 
-# Las fichas técnicas solo se trocean con JSONChunking y forman parte
-# del corpus de todas las estrategias
-FICHA_DOCUMENT_TYPE = "ficha_tecnica"
-FICHA_STRATEGY = "JSONChunking"
-
-
-def match(key, value):
-    return models.FieldCondition(key=key, match=models.MatchValue(value=value))
-
-
-def build_corpus_filter(strategy):
-
-    """
-    Corpus de una estrategia = sus chunks + los chunks de fichas
-    técnicas generados con JSONChunking.
-
-    Para JSONChunking, su propio filtro ya incluye las fichas técnicas.
-    """
-
-    if strategy is None:
-        return None
-
-    if strategy == FICHA_STRATEGY:
-        return models.Filter(must=[match("strategy", strategy)])
-
-    return models.Filter(
-        should=[
-            models.Filter(must=[match("strategy", strategy)]),
-            models.Filter(must=[
-                match("strategy", FICHA_STRATEGY),
-                match("document_type", FICHA_DOCUMENT_TYPE),
-            ]),
-        ]
-    )
-
 def retrieve_chunks(
     client: QdrantClient,
     query_vector: List[float],
@@ -332,25 +307,55 @@ def retrieve_chunks(
     format: str = None,
 ):
     """
-    Recupera los chunks más similares a una pregunta dentro del
-    corpus de una estrategia de chunking.
+    Recupera los chunks más similares a una pregunta.
 
-    El corpus de cada estrategia está formado por sus propios chunks
-    más los chunks de fichas técnicas generados con JSONChunking
-    (ver build_corpus_filter). Se busca sobre todos los tipos de
-    documento a la vez.
-
-    Los parámetros document_type y format ya no se utilizan; se
-    mantienen solo por compatibilidad con las llamadas existentes.
+    Los filtros por estrategia, tipo de documento y formato
+    son opcionales.
     """
 
-    if strategy is None:
-        raise ValueError(
-            "Hay que indicar una estrategia: sin ella se buscaría en los "
-            "chunks de todas las estrategias mezclados."
+    # Lista de condiciones para Qdrant
+    conditions = []
+
+    # Filtro por estrategia
+    if strategy is not None:
+        conditions.append(
+            models.FieldCondition(
+                key="strategy",
+                match=models.MatchValue(
+                    value=strategy
+                ),
+            )
         )
 
-    query_filter = build_corpus_filter(strategy)
+    # Filtro por tipo de documento
+    if document_type is not None:
+        conditions.append(
+            models.FieldCondition(
+                key="document_type",
+                match=models.MatchValue(
+                    value=document_type
+                ),
+            )
+        )
+
+    # Filtro por formato
+    if format is not None:
+        conditions.append(
+            models.FieldCondition(
+                key="format",
+                match=models.MatchValue(
+                    value=format
+                ),
+            )
+        )
+
+    # Solo crear filtro si hay alguna condición
+    query_filter = None
+
+    if conditions:
+        query_filter = models.Filter(
+            must=conditions
+        )
 
     # Buscar en Qdrant
     search_result = client.query_points(
@@ -363,6 +368,56 @@ def retrieve_chunks(
     ).points
 
     return search_result
+
+
+def retrieve_question(
+    client: QdrantClient,
+    query_item: Dict[str, Any],
+    query_vector: List[float],
+    collection_name: str,
+    top_k: int,
+    strategies: List[str] | None,
+    document_type: str | None,
+    format: str | None,
+) -> Dict[str, Any]:
+    """Ejecuta todas las consultas de una pregunta y conserva su estructura."""
+
+    result = {
+        "question_id": query_item["question_id"],
+        "question": query_item["question"],
+        "gold_answer": query_item["gold_answer"],
+        "document_type": document_type,
+        "format": format,
+    }
+
+    if strategies is None:
+        hits = retrieve_chunks(
+            client=client,
+            query_vector=query_vector,
+            collection_name=collection_name,
+            top_k=top_k,
+            strategy=None,
+            document_type=document_type,
+            format=format,
+        )
+        result["retrieved_chunks"] = format_hits(hits)
+        return result
+
+    strategy_results = {}
+    for strategy in strategies:
+        hits = retrieve_chunks(
+            client=client,
+            query_vector=query_vector,
+            collection_name=collection_name,
+            top_k=top_k,
+            strategy=strategy,
+            document_type=document_type,
+            format=format,
+        )
+        strategy_results[strategy] = format_hits(hits)
+
+    result["strategies"] = strategy_results
+    return result
 
 
 # ============================================================
@@ -438,8 +493,35 @@ def parse_args():
         help="Nombre del JSON de configuración dentro de configs/ "
              "(p. ej. retrieval_config_bge_m3.json)",
     )
+    parser.add_argument(
+        "--workers",
+        type=_positive_int,
+        default=4,
+        help="Consultas de preguntas concurrentes a Qdrant (por defecto: 4).",
+    )
+    parser.add_argument(
+        "--batch-size",
+        type=_positive_int,
+        default=16,
+        help="Tamaño de lote para embeddings de preguntas (por defecto: 16).",
+    )
 
     return parser.parse_args()
+
+
+def _positive_int(value: str) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError(
+            "El valor debe ser un entero positivo."
+        ) from error
+    if parsed < 1:
+        raise argparse.ArgumentTypeError(
+            "El valor debe ser al menos 1."
+        )
+    return parsed
+
 
 def main() -> None:
 
@@ -487,13 +569,6 @@ def main() -> None:
     strategies = retrieval_params[
         "strategies"
     ]
-
-    if not strategies:
-        raise ValueError(
-            "La configuración debe incluir la lista de estrategias en "
-            "'strategies'. Con null se mezclarían todas las estrategias "
-            "en un único ranking."
-        )
 
     document_type = retrieval_params[
         "document_type"
@@ -550,8 +625,10 @@ def main() -> None:
     # 3. Cargar embeddings
     # --------------------------------------------------------
 
+    start_time = time.perf_counter()
     embeddings = create_embeddings(
-        indexing_config
+        indexing_config,
+        batch_size=args.batch_size,
     )
 
     # --------------------------------------------------------
@@ -566,63 +643,78 @@ def main() -> None:
     # 5. Ejecutar retrieval
     # --------------------------------------------------------
 
-    all_results = []
-
-    for query_item in queries:
-
-        # ID de la pregunta
-        question_id = query_item["question_id"]
-
-        # Texto de la pregunta
-        question = query_item["question"]
-
-        # Respuesta
-        gold_answer = query_item["gold_answer"]
-
+    query_vectors: List[List[float]] = []
+    for start in range(0, len(queries), args.batch_size):
+        batch_queries = queries[start:start + args.batch_size]
+        batch_vectors = embeddings.embed_documents(
+            [item["question"] for item in batch_queries]
+        )
+        if len(batch_vectors) != len(batch_queries):
+            raise RuntimeError(
+                "El número de embeddings generados en el lote "
+                "no coincide con el número de preguntas."
+            )
+        query_vectors.extend(batch_vectors)
         print(
-            f"\nPregunta: {question}"
+            f"Embeddings de preguntas: "
+            f"{min(start + args.batch_size, len(queries))}/{len(queries)}"
+        )
+    if len(query_vectors) != len(queries):
+        raise RuntimeError(
+            "El número de embeddings generados no coincide con "
+            "el número de preguntas."
         )
 
-        # Embedding de la pregunta, calculado una única vez y 
-        # reutilizado en todas las estrategias (si hay varias)
-        query_vector = embeddings.embed_query(
-            question
+    total_queries = len(queries) * (
+        len(strategies) if strategies is not None else 1
+    )
+    worker_count = min(args.workers, max(1, len(queries)))
+    print(
+        f"Consultas Qdrant: {total_queries}; workers: {worker_count}; "
+        f"batch de embeddings: {args.batch_size}"
+    )
+
+    work_items = (
+        (
+            client,
+            query_item,
+            query_vector,
+            collection_name,
+            top_k,
+            strategies,
+            document_type,
+            format,
         )
+        for query_item, query_vector in zip(queries, query_vectors)
+    )
+    all_results = []
+    try:
+        with ThreadPoolExecutor(
+            max_workers=worker_count,
+            thread_name_prefix="qdrant-retrieval",
+        ) as executor:
+            for completed, result in enumerate(
+                executor.map(lambda item: retrieve_question(*item), work_items),
+                start=1,
+            ):
+                all_results.append(result)
+                if completed % 100 == 0 or completed == len(queries):
+                    elapsed = time.perf_counter() - start_time
+                    completed_queries = completed * (
+                        len(strategies) if strategies is not None else 1
+                    )
+                    print(
+                        f"Preguntas recuperadas: {completed}/{len(queries)} "
+                        f"({completed_queries}/{total_queries} consultas); "
+                        f"tiempo transcurrido: {elapsed:.1f} s"
+                    )
+    finally:
+        client.close()
 
-        # ----------------------------------------------------
-        # Si se comparan varias estrategias
-        # ----------------------------------------------------
-
-        strategy_results = {}
-
-        for strategy in strategies:
-
-            print(
-                f"  Estrategia: {strategy}"
-            )
-
-            hits = retrieve_chunks(
-                client=client,
-                query_vector=query_vector,
-                collection_name=collection_name,
-                top_k=top_k,
-                strategy=strategy,
-                document_type=document_type,
-                format=format,
-            )
-
-            strategy_results[
-                strategy
-            ] = format_hits(
-                hits
-            )
-
-        all_results.append(
-            {
-                **query_item,
-                "strategies": strategy_results,
-            }
-        )
+    print(
+        f"Tiempo total embeddings + retrieval: "
+        f"{time.perf_counter() - start_time:.1f} s"
+    )
 
     # --------------------------------------------------------
     # 6. Guardar resultados

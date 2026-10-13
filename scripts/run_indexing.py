@@ -30,6 +30,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterator, List, Tuple
 
 import numpy as np
+import torch
 from langchain_huggingface import HuggingFaceEmbeddings
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
@@ -364,7 +365,11 @@ def load_normalized_chunks(
     return chunks
 
 
-def create_embeddings(config: Dict[str, Any]) -> HuggingFaceEmbeddings:
+def create_embeddings(
+    config: Dict[str, Any],
+    device_override: str | None = None,
+    batch_size: int | None = None,
+) -> HuggingFaceEmbeddings:
     """
     Crea el modelo de embeddings utilizado en esta configuración.
 
@@ -375,15 +380,21 @@ def create_embeddings(config: Dict[str, Any]) -> HuggingFaceEmbeddings:
     """
 
     embeddings_config = config["embeddings"]
+    encode_kwargs = {
+        "normalize_embeddings": embeddings_config.get(
+            "normalize_embeddings",
+            True,
+        )
+    }
+    if batch_size is not None:
+        encode_kwargs["batch_size"] = batch_size
+
     return HuggingFaceEmbeddings(
         model_name=embeddings_config["model_name"],
-        model_kwargs={"device": embeddings_config.get("device", "cpu")},
-        encode_kwargs={
-            "normalize_embeddings": embeddings_config.get(
-                "normalize_embeddings",
-                True,
-            )
+        model_kwargs={
+            "device": device_override or embeddings_config.get("device", "cpu")
         },
+        encode_kwargs=encode_kwargs,
     )
 
 
@@ -558,6 +569,8 @@ def embed_texts_parallel(
     texts: List[str],
     num_workers: int,
     batch_size: int,
+    gpu_ids: List[int] | None = None,
+    cpu_threads: int = 1,
 ) -> List[List[float]]:
     """
     Genera embeddings de manera paralela usando múltiples workers.
@@ -573,31 +586,44 @@ def embed_texts_parallel(
     num_workers:
         Numero de procesos worker. Cada uno carga su propia copia del
         modelo en memoria: no debe subirse más de lo que aguante la RAM
+    gpu_ids:
+        Índices CUDA visibles asignados a un worker cada uno. Si es None,
+        se utiliza el pool de workers CPU.
+    cpu_threads:
+        Límite de hilos OMP/MKL para cada worker.
     """
 
     model = _get_sentence_transformer(embeddings)
 
-    # Evita oversubscription: si cada uno de los N procesos usa todos los
-    # hilos de la CPU, se pisan entre ellos y va más lento que en secuencial
-    previous_omp = os.environ.get("OMP_NUM_THREADS")
-    os.environ["OMP_NUM_THREADS"] = "1"
+    # Los procesos heredan estos límites al arrancar; así no compiten por
+    # todos los hilos de CPU, especialmente cuando cada GPU tiene un worker.
+    thread_env = ("OMP_NUM_THREADS", "MKL_NUM_THREADS")
+    previous_thread_env = {name: os.environ.get(name) for name in thread_env}
+    for name in thread_env:
+        os.environ[name] = str(cpu_threads)
 
-    pool = model.start_multi_process_pool(
-        target_devices=["cpu"] * num_workers
-    )
     try:
-        vectors = model.encode_multi_process(
-            texts,
-            pool,
-            batch_size=batch_size,
-            show_progress_bar=True,
-        )
-    finally:
-        model.stop_multi_process_pool(pool)
-        if previous_omp is None:
-            os.environ.pop("OMP_NUM_THREADS", None)
+        if gpu_ids is None:
+            target_devices = ["cpu"] * num_workers
         else:
-            os.environ["OMP_NUM_THREADS"] = previous_omp
+            target_devices = [f"cuda:{gpu_id}" for gpu_id in gpu_ids]
+
+        pool = model.start_multi_process_pool(target_devices=target_devices)
+        try:
+            vectors = model.encode_multi_process(
+                texts,
+                pool,
+                batch_size=batch_size,
+                show_progress_bar=True,
+            )
+        finally:
+            model.stop_multi_process_pool(pool)
+    finally:
+        for name, value in previous_thread_env.items():
+            if value is None:
+                os.environ.pop(name, None)
+            else:
+                os.environ[name] = value
 
     vectors = np.asarray(vectors)
     if embeddings.encode_kwargs.get("normalize_embeddings", True):
@@ -614,6 +640,8 @@ def embed_with_cache(
         model_name: str,
         num_workers: int,
         batch_size: int,
+        gpu_ids: List[int] | None,
+        cpu_threads: int,
         use_cache: bool,
 ) -> Tuple[List[List[float]], Dict[str, Any]]:
     """
@@ -655,9 +683,14 @@ def embed_with_cache(
     embedding_seconds = 0.0
     if pending_texts:
         start = time.perf_counter()
-        if num_workers > 1:
+        if gpu_ids is not None or num_workers > 1:
             new_vectors = embed_texts_parallel(
-                embeddings, pending_texts, num_workers, batch_size
+                embeddings,
+                pending_texts,
+                num_workers,
+                batch_size,
+                gpu_ids=gpu_ids,
+                cpu_threads=cpu_threads,
             )
         else:
             new_vectors = embeddings.embed_documents(pending_texts)
@@ -745,6 +778,9 @@ def index_chunks(
     batch_size: int,
     model_name: str,
     num_workers: int,
+    embedding_batch_size: int,
+    gpu_ids: List[int] | None,
+    cpu_threads: int,
     use_cache: bool,
 ) -> Dict[str, Any]:
     """
@@ -774,7 +810,9 @@ def index_chunks(
         chunks=chunks,
         model_name=model_name,
         num_workers=num_workers,
-        batch_size=batch_size,
+        batch_size=embedding_batch_size,
+        gpu_ids=gpu_ids,
+        cpu_threads=cpu_threads,
         use_cache=use_cache,
     )
 
@@ -816,10 +854,105 @@ def index_chunks(
 # FUNCIÓN PRINCIPAL
 # ============================================================
 
+def parse_gpu_ids(value: str) -> List[int]:
+    """Parsea una lista de índices CUDA separados por comas."""
+
+    if not value.strip():
+        return []
+    try:
+        gpu_ids = [int(part.strip()) for part in value.split(",")]
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(
+            "Los GPU IDs deben ser enteros separados por comas, por ejemplo: 0,2"
+        ) from exc
+    if any(gpu_id < 0 for gpu_id in gpu_ids):
+        raise argparse.ArgumentTypeError("Los GPU IDs no pueden ser negativos.")
+    if len(gpu_ids) != len(set(gpu_ids)):
+        raise argparse.ArgumentTypeError("No se pueden repetir los GPU IDs.")
+    return gpu_ids
+
+
+def resolve_gpu_ids(
+    indexing_config: Dict[str, Any],
+    num_gpus_override: int | None,
+    gpu_ids_override: List[int] | None,
+) -> List[int]:
+    """Resuelve y valida la cantidad de GPUs y sus índices CUDA."""
+
+    configured_ids = indexing_config.get("gpu_ids", [])
+    if not isinstance(configured_ids, list) or any(
+        not isinstance(gpu_id, int) or isinstance(gpu_id, bool) or gpu_id < 0
+        for gpu_id in configured_ids
+    ):
+        raise ValueError("indexing.gpu_ids debe ser una lista de enteros no negativos.")
+
+    gpu_ids = gpu_ids_override if gpu_ids_override is not None else configured_ids
+    if any(
+        not isinstance(gpu_id, int) or isinstance(gpu_id, bool) or gpu_id < 0
+        for gpu_id in gpu_ids
+    ):
+        raise ValueError("Los GPU IDs deben ser enteros no negativos.")
+    if num_gpus_override is not None:
+        num_gpus = num_gpus_override
+    elif gpu_ids_override is not None:
+        num_gpus = len(gpu_ids)
+    else:
+        configured_count = int(indexing_config.get("num_gpus", 0))
+        num_gpus = configured_count if configured_count > 0 else len(gpu_ids)
+
+    if num_gpus < 0:
+        raise ValueError("El número de GPUs no puede ser negativo.")
+    if num_gpus == 0:
+        if num_gpus_override == 0 and gpu_ids_override is None:
+            gpu_ids = []
+        elif gpu_ids:
+            raise ValueError(
+                "Se han indicado GPU IDs, pero el número de GPUs solicitado es 0."
+            )
+        if gpu_ids:
+            raise ValueError(
+                "indexing.gpu_ids requiere un valor positivo en indexing.num_gpus."
+            )
+        return []
+    if gpu_ids and len(gpu_ids) != num_gpus:
+        raise ValueError(
+            f"Se han solicitado {num_gpus} GPUs pero se han indicado "
+            f"{len(gpu_ids)} IDs."
+        )
+    if len(gpu_ids) != len(set(gpu_ids)):
+        raise ValueError("No se pueden repetir los GPU IDs.")
+    if any(gpu_id < 0 for gpu_id in gpu_ids):
+        raise ValueError("Los GPU IDs no pueden ser negativos.")
+    return gpu_ids or list(range(num_gpus))
+
+
+def validate_gpu_availability(gpu_ids: List[int]) -> None:
+    """Falla explícitamente si los dispositivos solicitados no están disponibles."""
+
+    if not gpu_ids:
+        return
+    if not torch.cuda.is_available():
+        raise RuntimeError(
+            "Se han solicitado GPUs, pero CUDA no está disponible en este entorno."
+        )
+    available_count = torch.cuda.device_count()
+    invalid_ids = [gpu_id for gpu_id in gpu_ids if gpu_id >= available_count]
+    if invalid_ids:
+        raise ValueError(
+            f"GPU IDs fuera de rango: {invalid_ids}. "
+            f"Hay {available_count} GPU(s) CUDA visibles."
+        )
+
+
 def main(
     normalize_only: bool = False, 
     index_only: bool = False,
     workers_override: int | None = None,
+    num_gpus_override: int | None = None,
+    gpu_ids_override: List[int] | None = None,
+    batch_size_override: int | None = None,
+    embedding_batch_size_override: int | None = None,
+    cpu_threads_override: int | None = None,
     use_cache: bool = True,    
 ) -> None:
     """
@@ -859,21 +992,66 @@ def main(
 
     # 2. Cargar la configuración y los chunks JSON para la indexación densa
     config = load_indexing_config()
-    formats = config["indexing"]["formats"]
+    indexing_config = config["indexing"]
+    formats = indexing_config["formats"]
     chunks = load_normalized_chunks(formats)
     chunks_by_format = dict(Counter(chunk["format"] for chunk in chunks))
-    embeddings = create_embeddings(config)
     model_name = config["embeddings"]["model_name"]
 
-    num_workers = workers_override or int(config["indexing"].get("num_workers", 1))
-    num_workers = max(1, min(num_workers, os.cpu_count() or 1))
-    print(f"Workers para generación de embeddings: {num_workers}")
+    requested_workers = (
+        workers_override
+        if workers_override is not None
+        else int(indexing_config.get("num_workers", 1))
+    )
+    if requested_workers < 1:
+        raise ValueError("El número de workers debe ser al menos 1.")
+    available_cpus = getattr(os, "process_cpu_count", os.cpu_count)() or 1
+    num_workers = min(requested_workers, available_cpus)
+    cpu_threads = (
+        cpu_threads_override
+        if cpu_threads_override is not None
+        else int(indexing_config.get("cpu_threads", 1))
+    )
+    if cpu_threads < 1:
+        raise ValueError("El número de hilos CPU debe ser al menos 1.")
+
+    gpu_ids = resolve_gpu_ids(
+        indexing_config,
+        num_gpus_override=num_gpus_override,
+        gpu_ids_override=gpu_ids_override,
+    )
+    validate_gpu_availability(gpu_ids)
+
+    batch_size = (
+        batch_size_override
+        if batch_size_override is not None
+        else int(indexing_config["batch_size"])
+    )
+    embedding_batch_size = (
+        embedding_batch_size_override
+        if embedding_batch_size_override is not None
+        else int(indexing_config.get("embedding_batch_size", batch_size))
+    )
+    if batch_size < 1 or embedding_batch_size < 1:
+        raise ValueError("Los tamaños de lote deben ser al menos 1.")
+
+    torch.set_num_threads(cpu_threads)
+    print(f"Workers CPU: {num_workers}; hilos CPU por worker: {cpu_threads}")
+    print(f"GPU IDs CUDA seleccionados: {gpu_ids or 'ninguno'}")
+    print(
+        f"Lote de embeddings: {embedding_batch_size}; "
+        f"lote de upsert Qdrant: {batch_size}"
+    )
     print(f"Chunks por formato: {chunks_by_format}")
+    embeddings = create_embeddings(
+        config,
+        device_override="cpu" if gpu_ids else None,
+        batch_size=embedding_batch_size,
+    )
 
     # 3. Obtener la dimensión y preparar la colección Qdrant
     vector_size = len(embeddings.embed_query("dimension check"))
     collection_name = config["qdrant"]["collection_name"]
-    batch_size = int(config["indexing"]["batch_size"])
     client = connect_to_qdrant(config)
     recreate_collection(client, vector_size, collection_name)
 
@@ -886,6 +1064,9 @@ def main(
         batch_size,
         model_name=model_name,
         num_workers=num_workers,
+        embedding_batch_size=embedding_batch_size,
+        gpu_ids=gpu_ids if gpu_ids else None,
+        cpu_threads=cpu_threads,
         use_cache=use_cache,
     )
 
@@ -899,7 +1080,10 @@ def main(
         "mode": "index-only" if index_only else "full",
         "model_name": model_name,
         "num_workers": num_workers,
+        "cpu_threads": cpu_threads,
+        "gpu_ids": gpu_ids,
         "batch_size": batch_size,
+        "embedding_batch_size": embedding_batch_size,
         "use_cache": use_cache,
         "collection_name": collection_name,
         "total_chunks": len(chunks),
@@ -936,7 +1120,49 @@ if __name__ == "__main__":
         "--workers",
         type=int,
         default=None,
-        help="Número de workers para generar embeddings (por defecto, 1).",
+        help=(
+            "Número de procesos de embeddings CPU (por defecto, el valor de "
+            "configs/indexing_config.json; se limita a los CPUs disponibles)."
+        ),
+    )
+    parser.add_argument(
+        "--num-gpus",
+        type=int,
+        default=None,
+        help=(
+            "Número de GPUs a usar. Si no se indican IDs, usa los índices "
+            "CUDA visibles desde 0."
+        ),
+    )
+    parser.add_argument(
+        "--gpu-ids",
+        type=parse_gpu_ids,
+        default=None,
+        help=(
+            "Índices CUDA visibles separados por comas (p. ej. 0,2); "
+            "la cantidad de IDs determina el número de GPUs si se omite --num-gpus."
+        ),
+    )
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=None,
+        help="Tamaño de lote de upsert en Qdrant (por defecto, el de configuración).",
+    )
+    parser.add_argument(
+        "--embedding-batch-size",
+        type=int,
+        default=None,
+        help=(
+            "Tamaño de lote de embeddings (por defecto, indexing.embedding_batch_size "
+            "o indexing.batch_size)."
+        ),
+    )
+    parser.add_argument(
+        "--cpu-threads",
+        type=int,
+        default=None,
+        help="Hilos OMP/MKL por worker (por defecto, indexing.cpu_threads o 1).",
     )
     parser.add_argument(
         "--no-cache",
@@ -952,5 +1178,10 @@ if __name__ == "__main__":
         normalize_only=arguments.normalize_only,
         index_only=arguments.index_only,
         workers_override=arguments.workers,
+        num_gpus_override=arguments.num_gpus,
+        gpu_ids_override=arguments.gpu_ids,
+        batch_size_override=arguments.batch_size,
+        embedding_batch_size_override=arguments.embedding_batch_size,
+        cpu_threads_override=arguments.cpu_threads,
         use_cache=not arguments.no_cache,
     )
