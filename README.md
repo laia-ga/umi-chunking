@@ -153,7 +153,13 @@ paralelo.
 
 ### Resultados, caché incremental y resumen
 
-Cada flujo escribe sus resultados bajo `output/chunks/`:
+Cada flujo escribe sus resultados en una subcarpeta de ejecución cuyo nombre
+se toma de `chunk_fold` en `configs/chunker_config.json`:
+
+- JSON: `output/chunks/<chunk_fold>/json/`.
+- Markdown: `output/chunks/<chunk_fold>/markdown/`.
+
+Cada subcarpeta de formato contiene:
 
 - `chunk_results/`: un JSON por documento y estrategia (Markdown) o por
   documento (JSON), con los fragmentos y sus metadatos.

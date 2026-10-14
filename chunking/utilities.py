@@ -70,6 +70,32 @@ def load_config(config_path: Path) -> Dict[str, Any]:
 
     return config
 
+# ============================================================
+# FUNCIÓN PARA RESOLVER LA RUTA DE SALIDA DE LOS CHUNKS
+# ============================================================
+
+def resolve_chunk_fold_output_dir(
+    base_output_dir: Path,
+    chunk_fold: Any,
+) -> Path:
+    if not isinstance(chunk_fold, str) or not chunk_fold.strip():
+        raise ValueError(
+            "'chunk_fold' debe ser una cadena no vacía."
+        )
+
+    fold_path = Path(chunk_fold)
+    if (
+        fold_path.is_absolute()
+        or fold_path.drive
+        or len(fold_path.parts) != 1
+        or fold_path.name in {".", ".."}
+    ):
+        raise ValueError(
+            "'chunk_fold' debe ser el nombre de una única subcarpeta."
+        )
+
+    return base_output_dir / fold_path
+
 
 # ============================================================
 # FUNCIÓN PARA GUARDAR ARCHIVOS JSON

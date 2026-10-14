@@ -15,8 +15,9 @@ Este script:
    - evita cortes peligrosos,
    - genera chunks semánticos y trazables,
    - añade metadatos como nivel, grupo, rutas JSON y límites de tokens.
-5. Guarda los chunks en output/chunks/json/chunk_results.
-6. Guarda las métricas en output/chunks/json/metrics.
+5. Guarda los chunks en
+   output/chunks/<chunk_fold>/json/chunk_results.
+6. Guarda las métricas en output/chunks/<chunk_fold>/json/metrics.
 7. Genera un summary.csv con una fila por documento.
 """
 
@@ -44,6 +45,7 @@ from chunking.utilities import (
     create_tokenizer,
     create_token_counter,
     load_config,
+    resolve_chunk_fold_output_dir,
     save_json,
 )
 from chunking.chunk_cache import cache_fingerprint, load_cached_artifacts
@@ -75,6 +77,7 @@ BASE_DIR = CHUNKING_DIR.parent
 
 # Archivo JSON con la configuración del tokenizador utilizado para el conteo:
 # main/configs
+CHUNKING_CONFIG_FILE = BASE_DIR / "configs" / "chunker_config.json"
 TOKENIZER_CONFIG_FILE = BASE_DIR / "configs" / "tokenizer_config.json"
 
 # Carpeta que contiene los scripts de análisis:
@@ -85,17 +88,18 @@ SCRIPTS_DIR = BASE_DIR / "scripts"
 # main/data/raw/json
 INPUT_DIR = BASE_DIR / "data" / "raw" / "json"
 
-# Carpeta general de salida
-OUTPUT_DIR = BASE_DIR / "output" / "chunks" / "json"
+# Carpeta raíz de las salidas de chunking
+BASE_OUTPUT_DIR = BASE_DIR / "output" / "chunks"
+OUTPUT_DIR = BASE_OUTPUT_DIR
 
 # Carpeta donde se guardarán los chunks generados
-CHUNKS_DIR = OUTPUT_DIR / "chunk_results"
+CHUNKS_DIR = OUTPUT_DIR / "json" / "chunk_results"
 
 # Carpeta donde se guardarán las métricas de cada método
-METRICS_DIR = OUTPUT_DIR / "metrics"
+METRICS_DIR = OUTPUT_DIR / "json" / "metrics"
 
 # Archivo resumen con una fila por método
-SUMMARY_FILE = OUTPUT_DIR / "summary.csv"
+SUMMARY_FILE = OUTPUT_DIR / "json" / "summary.csv"
 
 # ============================================================
 # SELECCIÓN DEL DOCUMENT PLAN
@@ -264,6 +268,7 @@ def main(
     workers_override: int | None = None,
     use_cache: bool = True,
 ) -> None:
+    global OUTPUT_DIR, CHUNKS_DIR, METRICS_DIR, SUMMARY_FILE
 
     print("=" * 70)
     print("INICIO DE LA EJECUCIÓN (JSON)")
@@ -301,6 +306,15 @@ def main(
         })
 
     # 2. Config + token counter
+    chunker_config = load_config(CHUNKING_CONFIG_FILE)
+    OUTPUT_DIR = resolve_chunk_fold_output_dir(
+        BASE_OUTPUT_DIR,
+        chunker_config.get("chunk_fold"),
+    )
+    CHUNKS_DIR = OUTPUT_DIR / "json" / "chunk_results"
+    METRICS_DIR = OUTPUT_DIR / "json" / "metrics"
+    SUMMARY_FILE = OUTPUT_DIR / "json" / "summary.csv"
+
     tokenizer_cfg = load_config(TOKENIZER_CONFIG_FILE)
     model_name = tokenizer_cfg["tokenizer"]["model_name"]
     add_special_tokens = tokenizer_cfg["tokenizer"].get(

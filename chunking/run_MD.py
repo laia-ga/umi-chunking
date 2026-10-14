@@ -14,8 +14,9 @@ Este script:
    - los metadatos del chunker,
    - las estadísticas de tokens,
    - la configuración utilizada.
-4. Guarda los resultados en output/chunks/markdown/chunk_results.
-5. Guarda las métricas en output/chunks/markdown/metrics.
+4. Guarda los resultados en
+   output/chunks/<chunk_fold>/markdown/chunk_results.
+5. Guarda las métricas en output/chunks/<chunk_fold>/markdown/metrics.
 6. Genera un summary.csv con una fila por estrategia.
 """
 
@@ -45,6 +46,7 @@ from chunking.utilities import (
     create_tokenizer,
     create_token_counter,
     load_config,
+    resolve_chunk_fold_output_dir,
     save_json,
 )
 from chunking.chunk_cache import cache_fingerprint, load_cached_artifacts
@@ -122,17 +124,18 @@ SCRIPTS_DIR = BASE_DIR / "scripts"
 # main/data/raw/markdown
 INPUT_DIR = BASE_DIR / "data" / "raw" / "markdown"
 
-# Carpeta general de salida
-OUTPUT_DIR = BASE_DIR / "output" / "chunks" / "markdown"
+# Carpeta raíz de las salidas de chunking
+BASE_OUTPUT_DIR = BASE_DIR / "output" / "chunks"
+OUTPUT_DIR = BASE_OUTPUT_DIR
 
 # Carpeta donde se guardarán los chunks generados
-CHUNKS_DIR = OUTPUT_DIR / "chunk_results"
+CHUNKS_DIR = OUTPUT_DIR / "markdown" / "chunk_results"
 
 # Carpeta donde se guardarán las métricas de cada método
-METRICS_DIR = OUTPUT_DIR / "metrics"
+METRICS_DIR = OUTPUT_DIR / "markdown" / "metrics"
 
 # Archivo resumen con una fila por método
-SUMMARY_FILE = OUTPUT_DIR / "summary.csv"
+SUMMARY_FILE = OUTPUT_DIR / "markdown" / "summary.csv"
 
 # ============================================================
 # DICCIONARIO DE CLASES DE CHUNKING
@@ -444,6 +447,7 @@ def main(
     Los chunks y las métricas se guardan por separado para cada
     combinación de método y documento.
     """
+    global OUTPUT_DIR, CHUNKS_DIR, METRICS_DIR, SUMMARY_FILE
 
     print("=" * 70)
     print("INICIO DE LA EJECUCIÓN")
@@ -556,6 +560,13 @@ def main(
     # --------------------------------------------------------
 
     chunker_config = load_config(CHUNKING_CONFIG_FILE)
+    OUTPUT_DIR = resolve_chunk_fold_output_dir(
+        BASE_OUTPUT_DIR,
+        chunker_config.get("chunk_fold"),
+    )
+    CHUNKS_DIR = OUTPUT_DIR / "markdown" / "chunk_results"
+    METRICS_DIR = OUTPUT_DIR / "markdown" / "metrics"
+    SUMMARY_FILE = OUTPUT_DIR / "markdown" / "summary.csv"
 
     tokenizer_config = load_config(TOKENIZER_CONFIG_FILE)
     execution_config = chunker_config.get("execution", {})
