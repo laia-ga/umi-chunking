@@ -13,8 +13,8 @@ class LLMSegmentThenChunker(BaseChunker):
 
     Estrategia:
     1. Segmentación estructural por párrafos.
-    2. Refinamiento con LLM de los segmentos grandes.
-    3. División adicional si una unidad supera max_chars.
+    2. Refinamiento con LLM de los párrafos que superan el umbral.
+    3. División adicional si una unidad supera max_tokens.
     4. Aplicación opcional de overlap.
     """
 
@@ -25,6 +25,8 @@ class LLMSegmentThenChunker(BaseChunker):
         overlap_tokens: int = 75,
         enable_llm_refinement: bool = True,
         max_tokens: int = 512,
+        llm_refine_threshold_tokens: int | None = None,
+        llm_device: str | None = None,
     ):
         if max_tokens <= 0:
             raise ValueError(
@@ -41,17 +43,31 @@ class LLMSegmentThenChunker(BaseChunker):
                 "overlap debe ser menor que max_tokens."
             )
 
+        if (
+            llm_refine_threshold_tokens is not None
+            and llm_refine_threshold_tokens <= 0
+        ):
+            raise ValueError(
+                "llm_refine_threshold_tokens debe ser mayor que 0."
+            )
+
         if not callable(token_counter):
             raise ValueError(
                 "token_counter debe ser una función."
             )
 
         self.token_counter = token_counter
-        self.llm = llm or LLMClient()
+        self.llm = llm
+        self.llm_device = llm_device
 
         self.max_tokens = max_tokens
         self.overlap_tokens = overlap_tokens
         self.enable_llm_refinement = enable_llm_refinement
+        self.llm_refine_threshold_tokens = (
+            llm_refine_threshold_tokens
+            if llm_refine_threshold_tokens is not None
+            else max_tokens
+        )
 
         self.llm_max_tokens = max_tokens
 
@@ -277,8 +293,7 @@ class LLMSegmentThenChunker(BaseChunker):
         segments: List[Dict],
     ) -> List[Dict]:
         """
-        Envía al LLM únicamente los segmentos que superan
-        llm_refine_threshold.
+        Refina únicamente los segmentos que superan el umbral en tokens.
         """
 
         refined_segments = []
@@ -288,6 +303,8 @@ class LLMSegmentThenChunker(BaseChunker):
 
             should_refine = (
                 self.enable_llm_refinement
+                and self.token_counter(text)
+                > self.llm_refine_threshold_tokens
             )
 
             if not should_refine:
@@ -378,13 +395,9 @@ Formato exacto:
 }}
 """.strip()
 
-        try:
-            response = self.llm.complete_json(
-                prompt
-            )
-
-        except Exception:
-            return None
+        if self.llm is None:
+            self.llm = LLMClient(device=self.llm_device)
+        response = self.llm.complete_json(prompt)
 
         return self._build_segments_from_response(
             response=response,

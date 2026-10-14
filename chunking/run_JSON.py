@@ -46,6 +46,7 @@ from chunking.utilities import (
     load_config,
     save_json,
 )
+from chunking.chunk_cache import cache_fingerprint, load_cached_artifacts
 
 # ============================================================
 # JSON-CHUNKER
@@ -259,7 +260,10 @@ def _positive_int(value: str) -> int:
 # FUNCIÓN PRINCIPAL
 # ============================================================
 
-def main(workers_override: int | None = None) -> None:
+def main(
+    workers_override: int | None = None,
+    use_cache: bool = True,
+) -> None:
 
     print("=" * 70)
     print("INICIO DE LA EJECUCIÓN (JSON)")
@@ -311,6 +315,54 @@ def main(workers_override: int | None = None) -> None:
     abbreviation = "JC"
 
     summary_results = []
+    active_doc_ids = {doc["doc_id"] for doc in documents}
+    previous_summary = (
+        pd.read_csv(SUMMARY_FILE, dtype={"doc_id": str})
+        if SUMMARY_FILE.is_file()
+        else pd.DataFrame()
+    )
+    if "doc_id" in previous_summary.columns:
+        retained_summary = previous_summary[
+            ~previous_summary["doc_id"].astype(str).isin(active_doc_ids)
+        ]
+    else:
+        retained_summary = previous_summary
+
+    pending_documents = []
+    cache_fingerprints = {}
+    for doc in documents:
+        fingerprint = cache_fingerprint({
+            "version": 1,
+            "chunker": "HierarchicalJSONChunker",
+            "document_type": doc["document_type"],
+            "content": doc["full_text"],
+            "tokenizer_model": model_name,
+            "add_special_tokens": add_special_tokens,
+            "target_tokens": target_tokens,
+            "max_tokens": max_tokens,
+        })
+        cache_fingerprints[doc["doc_id"]] = fingerprint
+        chunks_path = CHUNKS_DIR / f"{abbreviation}_{doc['doc_id']}.json"
+        metrics_path = (
+            METRICS_DIR / f"{abbreviation}_{doc['doc_id']}_metrics.json"
+        )
+        cached = (
+            load_cached_artifacts(chunks_path, metrics_path, fingerprint)
+            if use_cache
+            else None
+        )
+        if cached is None:
+            pending_documents.append(doc)
+            continue
+
+        _, metrics = cached
+        summary_results.append({
+            key: value
+            for key, value in metrics.items()
+            if key != "_cache_fingerprint"
+        })
+        print(f"\nCaché reutilizada: {doc['file_name']}")
+
     requested_workers = (
         workers_override
         if workers_override is not None
@@ -319,17 +371,21 @@ def main(workers_override: int | None = None) -> None:
     if requested_workers < 1:
         raise ValueError("El número de workers debe ser al menos 1.")
     available_cpus = getattr(os, "process_cpu_count", os.cpu_count)() or 1
-    workers = min(requested_workers, available_cpus, max(1, len(documents)))
+    workers = min(
+        requested_workers,
+        available_cpus,
+        max(1, len(pending_documents)),
+    )
     print(f"Workers para chunking JSON: {workers}")
 
     # 4. Ejecutar chunking JSON
-    if workers == 1:
+    if pending_documents and workers == 1:
         _initialize_worker(model_name, add_special_tokens)
         document_results = (
             _process_document(doc, target_tokens, max_tokens, True)
-            for doc in documents
+            for doc in pending_documents
         )
-        results = zip(documents, document_results)
+        results = zip(pending_documents, document_results)
         for doc, processed in results:
             _save_document_result(
                 doc,
@@ -339,9 +395,10 @@ def main(workers_override: int | None = None) -> None:
                 max_tokens,
                 strategy_name,
                 abbreviation,
+                cache_fingerprints[doc["doc_id"]],
                 summary_results,
             )
-    else:
+    elif pending_documents:
         with ThreadPoolExecutor(
             max_workers=workers,
             initializer=_initialize_worker,
@@ -349,7 +406,7 @@ def main(workers_override: int | None = None) -> None:
             thread_name_prefix="json-chunker",
         ) as executor:
             for doc, processed in zip(
-                documents,
+                pending_documents,
                 executor.map(
                     lambda document: _process_document(
                         document,
@@ -357,7 +414,7 @@ def main(workers_override: int | None = None) -> None:
                         max_tokens,
                         False,
                     ),
-                    documents,
+                    pending_documents,
                 ),
             ):
                 _save_document_result(
@@ -368,14 +425,29 @@ def main(workers_override: int | None = None) -> None:
                     max_tokens,
                     strategy_name,
                     abbreviation,
+                    cache_fingerprints[doc["doc_id"]],
                     summary_results,
                 )
 
     # 5. Summary CSV
-    if summary_results:
-        df = pd.DataFrame(summary_results)
+    summary_frames = [
+        frame
+        for frame in (
+            retained_summary,
+            pd.DataFrame(summary_results),
+        )
+        if not frame.empty
+    ]
+    if summary_frames:
+        df = pd.concat(summary_frames, ignore_index=True)
         SUMMARY_FILE.parent.mkdir(parents=True, exist_ok=True)
         df.to_csv(SUMMARY_FILE, index=False, encoding="utf-8-sig")
+    elif SUMMARY_FILE.is_file():
+        retained_summary.to_csv(
+            SUMMARY_FILE,
+            index=False,
+            encoding="utf-8-sig",
+        )
 
     print("=" * 70)
     print("FIN DE LA EJECUCIÓN (JSON)")
@@ -390,6 +462,7 @@ def _save_document_result(
     max_tokens: int,
     strategy_name: str,
     abbreviation: str,
+    fingerprint: str,
     summary_results: list[Dict[str, Any]],
 ) -> None:
     print(f"\nProcesando: {doc['file_name']}")
@@ -413,6 +486,7 @@ def _save_document_result(
         "original_token_count": processed["original_token_count"],
         "number_of_chunks": len(chunks),
         "chunks": serialized,
+        "_cache_fingerprint": fingerprint,
     }
 
     save_json(result, CHUNKS_DIR / f"{abbreviation}_{doc['doc_id']}.json")
@@ -429,6 +503,7 @@ def _save_document_result(
         "tokenizer_model": model_name,
         "params": params,
         **processed["stats"],
+        "_cache_fingerprint": fingerprint,
     }
 
     save_json(
@@ -452,5 +527,13 @@ if __name__ == "__main__":
         default=None,
         help="Máximo de documentos procesados en paralelo (por defecto, 1).",
     )
+    parser.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="Fuerza el reprocesamiento de todos los documentos.",
+    )
     arguments = parser.parse_args()
-    main(workers_override=arguments.workers)
+    main(
+        workers_override=arguments.workers,
+        use_cache=not arguments.no_cache,
+    )

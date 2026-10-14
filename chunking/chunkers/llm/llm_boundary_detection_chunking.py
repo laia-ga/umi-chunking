@@ -1,5 +1,4 @@
 from typing import Callable, List, Optional
-import re
 import statistics
 
 import nltk
@@ -15,7 +14,7 @@ class LLMBoundaryDetectionChunker(BaseChunker):
 
     Flujo:
     1. Separa el texto respetando párrafos y frases.
-    2. Genera chunks de hasta max_tokens caracteres.
+    2. Genera chunks de hasta max_tokens tokens.
     3. Si los tamaños están muy desequilibrados, pide al LLM
     que proponga mejores límites.
     4. Ajusta las propuestas del LLM a límites reales de frase
@@ -30,6 +29,7 @@ class LLMBoundaryDetectionChunker(BaseChunker):
         max_tokens: int = 512,
         overlap_tokens: int = 75,
         enable_llm_refinement: bool = True,
+        llm_device: str | None = None,
     ):
         if max_tokens <= 0:
             raise ValueError(
@@ -52,7 +52,8 @@ class LLMBoundaryDetectionChunker(BaseChunker):
             )
 
         self.token_counter = token_counter
-        self.llm = llm or LLMClient()
+        self.llm = llm
+        self.llm_device = llm_device
 
         self.max_tokens = max_tokens
         self.overlap_tokens = overlap_tokens
@@ -367,7 +368,7 @@ Reglas:
 - Conserva el orden original.
 - No modifiques el texto.
 - Cada límite debe colocarse después de una frase completa.
-- Intenta que cada chunk tenga como máximo {self.max_tokens} caracteres.
+- Intenta que cada chunk tenga como máximo {self.max_tokens} tokens.
 - Evita chunks demasiado pequeños.
 - Separa cuando cambie claramente el tema.
 - Devuelve únicamente JSON válido.
@@ -385,13 +386,9 @@ Formato exacto:
 {{"boundary_sentence_indices": [int, ...]}}
 """.strip()
 
-        try:
-            response = self.llm.complete_json(
-                prompt
-            )
-
-        except Exception:
-            return None
+        if self.llm is None:
+            self.llm = LLMClient(device=self.llm_device)
+        response = self.llm.complete_json(prompt)
 
         if (
             not response
