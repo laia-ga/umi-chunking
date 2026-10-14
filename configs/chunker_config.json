@@ -1,4 +1,5 @@
 {
+    "chunk_fold": "512_8192",
     "execution": {
         "workers": 1,
         "gpu_id": null
