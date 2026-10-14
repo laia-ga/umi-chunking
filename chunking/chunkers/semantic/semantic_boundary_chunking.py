@@ -24,6 +24,7 @@ class SemanticBoundaryChunker(BaseChunker):
         breakpoint_threshold_amount: float = 95.0,
         buffer_size: int = 1, # cuántas frases vecinas se consideran para calcular el embedding
         max_chunk_tokens: int | None = 512,
+        device: str = "cpu",
     ):
         """
         Parámetros:
@@ -64,12 +65,13 @@ class SemanticBoundaryChunker(BaseChunker):
         )
         self.buffer_size = buffer_size
         self.max_chunk_tokens = max_chunk_tokens
+        self.device = device
 
         # Modelo para detectar los cambios semánticos
         self.embeddings = HuggingFaceEmbeddings(
             model_name=embedding_model,
             model_kwargs={
-                "device": "cpu",
+                "device": device,
             },
             encode_kwargs={
                 "normalize_embeddings": True,

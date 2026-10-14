@@ -1,6 +1,6 @@
 import re
 from abc import ABC, abstractmethod
-from typing import Any, Dict, List
+from typing import Any, Callable, Dict, List, Optional
 
 from pydantic import BaseModel
 

@@ -1,4 +1,9 @@
 {
+    "chunk_fold": "512_8192",
+    "execution": {
+        "workers": 1,
+        "gpu_id": null
+    },
     "strategies": [
         {
             "name": "fixed_character_chunking",
@@ -223,12 +228,13 @@
         },
         {
             "name": "llm_segment_then_chunk",
-            "enabled": false,
+            "enabled": true,
             "spec": {
                 "type": "LLMSegmentThenChunker",
                 "params": {
                     "max_tokens": 512,
-                    "overlap_tokens": 75
+                    "overlap_tokens": 75,
+                    "llm_refine_threshold_tokens": 512
                 }
             }
         }

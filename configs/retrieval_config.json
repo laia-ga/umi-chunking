@@ -1,9 +1,9 @@
 {
     "retrieval": {
-        "top_k": 1,
+        "top_k": 5,
         "strategies": null,
         "document_type": null,
         "format": null,
-        "ground_truth_file": "ground_truth_filtered.jsonl"
+        "ground_truth_file": "early_qa/rag_questions_1500_general.jsonl"
     }
 }
