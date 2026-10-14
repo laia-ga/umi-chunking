@@ -128,6 +128,18 @@ indivisibles. También registra el recuento de tokens y si un fragmento supera
 los límites objetivo o máximo. Los límites `target_tokens` y `max_tokens`
 se leen de `configs/tokenizer_config.json`.
 
+`target_tokens` orienta la división jerárquica: si una sección supera ese
+tamaño, el plan intenta subdividirla siguiendo su estructura. Algunas
+unidades —por ejemplo, campos escalares, diccionarios y listas marcadas como
+indivisibles— pueden superar el objetivo para conservar su significado y
+estructura. Después de esa división, cualquier chunk que exceda `max_tokens`
+pasa por un fallback para ajustarlo al límite máximo. El fallback intenta
+cortar por oraciones y equilibrar el tamaño usando el menor número de partes
+posible; añade un pequeño solapamiento entre partes para mantener contexto.
+Si una oración es demasiado larga, la divide por palabras y, como último
+recurso, por caracteres. No elimina contenido y marca en los metadatos los
+chunks que se generaron con este procedimiento.
+
 Ejemplo:
 
 ```bash
