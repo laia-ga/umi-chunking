@@ -26,6 +26,7 @@ definen la estructura que se debe seguir para cada tipo documental.
 from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Any, Callable
+import re
 
 # 1. ESTRUCTURAS DE DATOS
 @dataclass
@@ -553,7 +554,191 @@ class HierarchicalJSONChunker:
                 uncovered,
                 level=1,
             ))
-        return chunks
+
+        # NUEVO: fallback aplicado solo a los fragmentos que exceden max_tokens.
+        # Las agrupaciones del DOCUMENT_PLAN no cambian.
+        final_chunks: list[Chunk] = []
+        for chunk in chunks:
+            if chunk.token_count > self.max_tokens:
+                final_chunks.extend(self._split_oversized_chunk(chunk))
+            else:
+                final_chunks.append(chunk)
+        return final_chunks
+
+
+    # Solapamiento proporcional, fijado internamente en un 10 % del
+    # límite del modelo
+    FALLBACK_OVERLAP_RATIO = 0.1
+
+    def _split_oversized_chunk(self, original: Chunk) -> list[Chunk]:
+        """Fallback por oraciones con mínimo de partes, equilibrio y overlap.
+
+        Si una oración supera el límite, se divide primero por palabras y,
+        solo si una palabra también excede el límite, por caracteres.
+        No se trunca contenido ni se divide un chunk que ya cabe.
+        """
+        limit = self.max_tokens
+        # Un margen relativo pequeño evita ocupar innecesariamente el tope.
+        # Los tokens especiales ya deben estar incluidos en token_counter.
+        margin = max(1, min(16, int(limit * 0.01))) if limit > 32 else 0
+        usable = limit - margin
+        if usable <= 0:
+            raise ValueError("max_tokens es demasiado pequeño para el fallback")
+
+        units = self._fallback_units(original.text, usable)
+        if not units:
+            return []
+
+        # Cada unidad contiene su espacio/separador original, para que la
+        # concatenación de la cobertura principal reproduzca el texto fuente.
+        n = len(units)
+        lengths = [0] * (n + 1)
+        for i, u in enumerate(units):
+            lengths[i + 1] = lengths[i] + len(u)
+
+        def get_text(i: int, j: int) -> str:
+            return "".join(units[i:j])
+
+        from functools import lru_cache
+
+        @lru_cache(maxsize=None)
+        def fits(i: int, j: int) -> bool:
+            return self.token_counter(get_text(i, j)) <= usable
+
+        # Para cualquier comienzo, encontramos el extremo más lejano que
+        # cabe. Se cuenta el texto serializado completo, no la suma de tokens
+        # independientes (que puede diferir).
+        max_end: list[int] = [0] * n
+        for i in range(n):
+            low, high = i + 1, n
+            best = i
+            while low <= high:
+                mid = (low + high) // 2
+                if fits(i, mid):
+                    best = mid
+                    low = mid + 1
+                else:
+                    high = mid - 1
+            if best == i:
+                raise ValueError("Una unidad excede max_tokens después del fallback")
+            max_end[i] = best
+
+        # Programación dinámica: mínimo número de trozos sin solapamiento.
+        min_parts = [0] * (n + 1)
+        min_parts[n] = 0
+        for i in range(n - 1, -1, -1):
+            min_parts[i] = 1 + min(min_parts[j] for j in range(i + 1, max_end[i] + 1))
+
+        # Entre las particiones mínimas, buscamos tamaños equilibrados.
+        total = self.token_counter(original.text)
+        boundaries: list[tuple[int, int]] = []
+        i = 0
+        while i < n:
+            options = [j for j in range(i + 1, max_end[i] + 1)
+                       if min_parts[j] == min_parts[i] - 1]
+            desired = total / max(1, min_parts[0])
+            j = min(options, key=lambda end: abs(self.token_counter(get_text(i, end)) - desired))
+            boundaries.append((i, j))
+            i = j
+
+        overlap_budget = max(1, round(limit * self.FALLBACK_OVERLAP_RATIO))
+        output: list[Chunk] = []
+        for part_index, (begin, end) in enumerate(boundaries):
+            main_text = get_text(begin, end)
+            prefix_start = begin
+            # Repetir oraciones completas previas si caben dentro del presupuesto
+            # de overlap, SIN aumentar el número de fragmentos.
+            if part_index > 0:
+                for candidate in range(begin - 1, -1, -1):
+                    context = get_text(candidate, begin)
+                    candidate_text = context + main_text
+                    if (self.token_counter(context) > overlap_budget
+                            or self.token_counter(candidate_text) > usable):
+                        break
+                    prefix_start = candidate
+            text = get_text(prefix_start, end)
+            count = self.token_counter(text)
+            if count > limit:
+                raise AssertionError("Fallback generó un chunk superior a max_tokens")
+            metadata = dict(original.metadata)
+            metadata.update({
+                "fallback_applied": True,
+                "fallback_method": "sentence_balanced_overlap",
+                "fallback_part": part_index + 1,
+                "fallback_total_parts": len(boundaries),
+                "fallback_original_tokens": original.token_count,
+                "fallback_overlap_ratio": self.FALLBACK_OVERLAP_RATIO,
+                "fallback_overlap_units": begin - prefix_start,
+                "fallback_overlap_tokens": (self.token_counter(get_text(prefix_start, begin))
+                                            if prefix_start != begin else 0),
+            })
+            output.append(Chunk(
+                text=text,
+                block=original.block,
+                group_name=original.group_name,
+                level=original.level,
+                json_paths=list(original.json_paths),
+                token_count=count,
+                exceeds_target_limit=count > self.target_tokens,
+                exceeds_max_limit=False,
+                metadata={**metadata,
+                          "exceeds_target_limit": count > self.target_tokens,
+                          "exceeds_max_limit": False},
+            ))
+        return output
+
+    def _fallback_units(self, text: str, limit: int) -> list[str]:
+        """Unidades de oraciones que conservan exactamente todo el texto."""
+        # Las líneas estructuradas del JSON se mantienen independientes.
+        # Para texto narrativo se buscan límites de oración tras .!? y espacio.
+        lines = text.splitlines(keepends=True)
+        units: list[str] = []
+        for line in lines:
+            # Conserva los espacios originales y todos los separadores.
+            parts = re.split(r"(?<=[.!?])(?=\s+[^\s])", line)
+            for part in parts:
+                if not part:
+                    continue
+                if self.token_counter(part) <= limit:
+                    units.append(part)
+                else:
+                    units.extend(self._fallback_split_long_unit(part, limit))
+        return units
+
+    def _fallback_split_long_unit(self, text: str, limit: int) -> list[str]:
+        """Trocea una oración demasiado larga por palabras; después caracteres."""
+        pieces = re.findall(r"\s+|\S+", text)
+        out: list[str] = []
+        current = ""
+        for piece in pieces:
+            if self.token_counter(current + piece) <= limit:
+                current += piece
+                continue
+            if current:
+                out.append(current)
+                current = ""
+            if self.token_counter(piece) <= limit:
+                current = piece
+                continue
+            # Una sola palabra (o espacio) excesiva: cortar caracteres.
+            rest = piece
+            while rest:
+                lo, hi, best = 1, len(rest), 0
+                while lo <= hi:
+                    mid = (lo + hi) // 2
+                    if self.token_counter(rest[:mid]) <= limit:
+                        best = mid
+                        lo = mid + 1
+                    else:
+                        hi = mid - 1
+                if not best:
+                    raise ValueError("max_tokens insuficiente para un carácter")
+                out.append(rest[:best])
+                rest = rest[best:]
+        if current:
+            out.append(current)
+        assert "".join(out) == text
+        return out
 
     def _get_root(self, document: dict[str, Any]) -> tuple[str, dict[str, Any]]:
         # Determina qué parte del JSON debe tratarse como raíz
