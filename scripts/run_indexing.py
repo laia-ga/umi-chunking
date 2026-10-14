@@ -230,7 +230,9 @@ def normalize_markdown_chunk(
     }
 
 
-def iter_normalized_chunks() -> Iterator[Dict[str, Any]]:
+def iter_normalized_chunks(
+    chunk_fold: str,
+) -> Iterator[Dict[str, Any]]:
     """
     Recorre y normaliza todos los archivos de chunks disponibles.
 
@@ -239,14 +241,15 @@ def iter_normalized_chunks() -> Iterator[Dict[str, Any]]:
     Dict[str, Any]
         Un registro normalizado por cada chunk encontrado.
     """
+    chunks_dir = CHUNKS_ROOT / chunk_fold
 
-    if not CHUNKS_ROOT.exists():
+    if not chunks_dir.exists():
         raise FileNotFoundError(
-            f"No existe la carpeta de chunks: {CHUNKS_ROOT}. "
+            f"No existe la carpeta de chunks: {chunks_dir}. "
             "Ejecuta primero run_MD.py o run_JSON.py."
         )
 
-    chunk_files = sorted(CHUNKS_ROOT.glob("*/chunk_results/*.json"))
+    chunk_files = sorted(chunks_dir.glob("*/chunk_results/*.json"))
     if not chunk_files:
         raise FileNotFoundError(
             f"No se encontraron archivos de chunks en: {CHUNKS_ROOT}"
@@ -278,7 +281,9 @@ def iter_normalized_chunks() -> Iterator[Dict[str, Any]]:
             )
 
 
-def normalize_chunks() -> int:
+def normalize_chunks(
+    chunk_fold: str,
+) -> int:
     """
     Escribe un registro JSONL por chunk.
 
@@ -292,7 +297,7 @@ def normalize_chunks() -> int:
     count = 0
 
     with NORMALIZED_OUTPUT_FILE.open("w", encoding="utf-8") as file:
-        for normalized_chunk in iter_normalized_chunks():
+        for normalized_chunk in iter_normalized_chunks(chunk_fold):
             file.write(
                 json.dumps(
                     normalized_chunk,
@@ -963,6 +968,9 @@ def main(
     run_start = time.perf_counter()
     normalize_seconds = None
 
+    config = load_indexing_config()
+    chunk_fold = config["chunk_fold"]
+
     print("=" * 70)
     print("INICIO DE LA NORMALIZACIÓN PARA INDEXACIÓN")
     print("=" * 70)
@@ -970,7 +978,7 @@ def main(
     # 1. Normalizar los chunks y escribir el archivo JSONL
     if not index_only:
         normalize_start = time.perf_counter()
-        count = normalize_chunks()
+        count = normalize_chunks(chunk_fold)
         normalize_seconds = time.perf_counter() - normalize_start
         print(f"Chunks normalizados: {count}")
         print(f"Archivo generado: {NORMALIZED_OUTPUT_FILE}")
@@ -991,7 +999,6 @@ def main(
         return
 
     # 2. Cargar la configuración y los chunks JSON para la indexación densa
-    config = load_indexing_config()
     indexing_config = config["indexing"]
     formats = indexing_config["formats"]
     chunks = load_normalized_chunks(formats)
