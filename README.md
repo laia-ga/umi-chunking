@@ -1,35 +1,170 @@
 # umi-chunking
 
-## Ejecución del chunking
+## Chunking de documentos
 
-`chunking/run_MD.py` procesa las estrategias en orden y puede paralelizar los
-documentos de cada estrategia con un número moderado de hilos:
+El proyecto incluye dos flujos de chunking, según el formato de entrada:
+
+| Flujo | Script | Entradas | Enfoque |
+|---|---|---|---|
+| Markdown | `chunking/run_MD.py` | Archivos `.md` y `.markdown` | Ejecuta las estrategias habilitadas en la configuración para comparar distintos métodos sobre cada documento. |
+| JSON | `chunking/run_JSON.py` | Archivos `.json` estructurados | Detecta el tipo documental y aplica un plan jerárquico específico para ese tipo. |
+
+Los dos buscan los documentos recursivamente bajo `data/raw/markdown` y
+`data/raw/json`, respectivamente. Los límites y parámetros usados para contar
+tokens se configuran en `configs/tokenizer_config.json`. Las estrategias y
+sus parámetros se configuran en `configs/chunker_config.json`.
+
+### Chunking Markdown
+
+El script procesa por separado cada estrategia activada en
+`configs/chunker_config.json`. Para cada archivo, detecta `doc_type` en el
+frontmatter YAML: admite `paper`, `guideline` y `clinical_guideline` (también
+`guia_clinica`). El contenido completo se entrega a cada método; el tipo
+documental queda registrado como metadato.
+
+Las estrategias disponibles se organizan por enfoque:
+
+**Basadas en reglas y estructura textual**
+
+- `FixedCharacterChunker`: fragmentos de longitud fija en caracteres, con
+  solapamiento opcional.
+- `FixedTokenChunker`: fragmentos de un máximo fijo de tokens, con
+  solapamiento configurable.
+- `OverlappingTokenChunker`: ventanas de tokens con una cantidad configurable
+  de tokens compartidos entre fragmentos.
+- `SlidingWindowTokenChunker`: recorre el texto con una ventana de tokens y
+  un paso configurables.
+- `SentenceBasedChunker` y `SentenceGroupChunker`: separan por frases; el
+  segundo agrupa una cantidad configurable de frases y permite solapamiento.
+- `ParagraphBasedChunker` y `ParagraphGroupChunker`: separan por párrafos o
+  agrupan varios párrafos con solapamiento opcional.
+- `LengthAwareChunker`: agrupa frases completas intentando acercarse a una
+  longitud objetivo en tokens dentro de una tolerancia.
+
+**Recursivas y jerárquicas**
+
+- `RecursiveChunker`: divide recursivamente, priorizando separadores
+  estructurales para conservar párrafos y frases siempre que sea posible.
+- `RecursiveTokenChunker`: aplica un enfoque recursivo con límites medidos en
+  tokens.
+- `ParentChildChunker`: produce fragmentos padre con más contexto y
+  fragmentos hijo más pequeños asociados a ellos.
+
+**Semánticas basadas en embeddings**
+
+- `SemanticEmbeddingChunker`: detecta cambios de significado entre grupos de
+  frases consecutivas y corta en los límites semánticos detectados.
+- `SemanticSimilarityThresholdChunker`: agrupa frases consecutivas mientras
+  su similitud supere el umbral configurado.
+- `SemanticBoundaryChunker`: detecta rupturas semánticas entre frases
+  consecutivas mediante cambios en la similitud.
+- `TopicBasedChunker`: agrupa frases mediante clustering jerárquico por
+  similitud semántica; las frases de un mismo grupo pueden no ser contiguas
+  en el documento original.
+
+**Tamaño adaptativo**
+
+- `DynamicTokenSizeChunker`: ajusta los límites de cada fragmento dentro de
+  un rango de tokens y prioriza finales de frase o saltos de línea.
+- `ContentDensityAdaptiveChunker`: modifica el tamaño según la densidad
+  léxica; tiende a generar fragmentos menores para texto más denso.
+- `SemanticVarianceAdaptiveChunker`: adapta los límites según la variación
+  semántica local entre frases.
+
+**Basadas en un LLM**
+
+- `LLMBoundaryDetectionChunker`: detecta límites semánticos con ayuda de un
+  modelo de lenguaje y después forma los fragmentos.
+- `LLMSegmentThenChunker`: primero segmenta el documento en unidades
+  semánticas y luego las ajusta al tamaño configurado.
+
+Ambas estrategias LLM están activadas en la configuración actual y usan
+`Qwen/Qwen2.5-0.5B-Instruct` de forma local. `LLMSegmentThenChunker` conserva
+primero la segmentación por párrafos y solo pide al modelo que refine los
+párrafos que superan `llm_refine_threshold_tokens` (512 por defecto). Los
+párrafos menores pasan directamente a la etapa de chunking; además, el modelo
+se carga de forma diferida, solo si algún segmento necesita refinamiento.
+Estos ajustes reducen llamadas y evitan cargar el modelo cuando no se usa.
+Todos los parámetros —incluido el umbral— se pueden modificar en
+`configs/chunker_config.json`.
+
+Ejemplo de ejecución:
 
 ```bash
 python -m chunking.run_MD --workers 4 --gpu-id 0
 ```
 
-`--workers` limita la concurrencia y `--gpu-id` selecciona una GPU CUDA
-visible para las cinco estrategias que calculan embeddings. Si no se indica
-GPU, esas estrategias usan CPU. Ambos valores también se pueden fijar en la
-sección `execution` de `configs/chunker_config.json`; por defecto se usa un
-worker y CPU. Cada hilo construye su propio tokenizer y chunker, así que al
-usar GPU se carga una instancia del modelo por worker. En modo paralelo no se
-registran métricas de RAM por documento, porque el RSS del proceso no permite
-atribuir memoria a cada hilo; los tiempos por documento se mantienen. Las
-estrategias basadas en LLM se mantienen secuenciales.
+`--workers` limita cuántos documentos de una estrategia se procesan en
+paralelo; también se puede fijar `execution.workers` en la configuración.
+Las estrategias que calculan embeddings usan CPU si no se indica GPU. Con
+`--gpu-id` se selecciona una GPU CUDA visible para los chunkers semánticos y
+los LLM; también se puede establecer `execution.gpu_id`. Si no se indica, los
+LLM usan `cuda:0` cuando CUDA está disponible y CPU en caso contrario. Las
+estrategias basadas en LLM se ejecutan secuencialmente para no cargar varias
+copias del modelo a la vez. Las estrategias paralelizadas con varios workers
+construyen su propio tokenizer y chunker, por lo que usar GPU con ellas carga
+una instancia del modelo por hilo. En modo paralelo no se informan métricas de
+RAM por documento, ya que el uso de memoria del proceso no se puede atribuir
+de forma fiable a cada hilo.
 
-`chunking/run_JSON.py` también permite paralelizar documentos JSON de forma
-limitada, manteniendo un worker por defecto:
+### Chunking JSON
+
+`chunking/run_JSON.py` usa `HierarchicalJSONChunker`, no la colección de
+estrategias Markdown. Cada entrada debe ser un objeto JSON y su tipo se
+determina de la siguiente manera:
+
+- **Ficha técnica**: reconoce la presencia de `medicine_name`, `composition`,
+  `pharmaceutical_form`, `indications` y `posology`.
+- **Guía clínica**: reconoce `document_type` con valor `guideline` o
+  `clinical_guideline`.
+- **Artículo (paper)**: reconoce el campo `article_type`.
+
+Una vez detectado el tipo, el script selecciona el plan jerárquico
+correspondiente (`DOCUMENT_PLAN_FC`, `DOCUMENT_PLAN_GL` o
+`DOCUMENT_PLAN_PAPER`). El plan define qué campos se agrupan y la jerarquía
+de secciones. El chunker conserva las rutas de origen del JSON, los niveles
+y grupos semánticos, y evita dividir estructuras configuradas como
+indivisibles. También registra el recuento de tokens y si un fragmento supera
+los límites objetivo o máximo. Los límites `target_tokens` y `max_tokens`
+se leen de `configs/tokenizer_config.json`.
+
+Ejemplo:
 
 ```bash
 python -m chunking.run_JSON --workers 4
 ```
 
-Cada hilo carga su tokenizer privado y crea un `HierarchicalJSONChunker`
-independiente para cada documento. En modo paralelo, las métricas de RAM por
-documento no se informan porque el RSS del proceso no se puede atribuir con
-fiabilidad a cada hilo; se mantienen los tiempos de chunking.
+El valor predeterminado es un worker. Cada hilo carga su propio tokenizer y
+procesa los documentos con una instancia independiente del chunker. Igual que
+en Markdown, las métricas de RAM por documento no se informan en modo
+paralelo.
+
+### Resultados, caché incremental y resumen
+
+Cada flujo escribe sus resultados bajo `output/chunks/`:
+
+- `chunk_results/`: un JSON por documento y estrategia (Markdown) o por
+  documento (JSON), con los fragmentos y sus metadatos.
+- `metrics/`: métricas individuales en JSON.
+- `summary.csv`: resumen de los resultados, con una fila por combinación de
+  documento y estrategia en Markdown, y una fila por documento en JSON.
+
+Por defecto, ambos scripts validan una caché incremental a partir del
+contenido y de la configuración relevante del chunker. Si hay resultados
+completos y coincidentes, reutilizan los chunks y las métricas sin ejecutar
+otra vez el chunker. Los documentos nuevos, modificados, con resultados
+incompletos o afectados por cambios de configuración se procesan de nuevo.
+Al reprocesar un documento presente, se actualizan sus filas del resumen. Si
+un documento deja de estar en la carpeta de entrada, sus archivos de salida
+y su fila en `summary.csv` se conservan; no se eliminan automáticamente.
+
+Para ignorar la caché y volver a procesar todos los documentos disponibles,
+se puede usar `--no-cache`:
+
+```bash
+python -m chunking.run_MD --no-cache
+python -m chunking.run_JSON --no-cache
+```
 
 ## Indexación con recursos configurables
 

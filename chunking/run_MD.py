@@ -32,7 +32,7 @@ import re
 import threading
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, Callable, Dict
 
 import nltk
 import pandas as pd
@@ -47,6 +47,7 @@ from chunking.utilities import (
     load_config,
     save_json,
 )
+from chunking.chunk_cache import cache_fingerprint, load_cached_artifacts
 
 # ============================================================
 # MÉTODOS RULE-BASED
@@ -244,6 +245,7 @@ def _initialize_document_worker(
     params: Dict[str, Any],
     tokenizer_model_name: str,
     device: str,
+    llm_device: str | None,
     measure_ram: bool,
 ) -> None:
     """Crea tokenizer y chunker privados para el hilo que procesa documentos."""
@@ -262,6 +264,8 @@ def _initialize_document_worker(
             chunker_params["tokenizer"] = tokenizer
         if chunker_type in GPU_EMBEDDING_CHUNKERS:
             chunker_params["device"] = device
+        if "llm_device" in constructor_params:
+            chunker_params["llm_device"] = llm_device
 
         _WORKER_CONTEXT.chunker = CHUNKER_CLASSES[chunker_type](
             **chunker_params
@@ -431,6 +435,7 @@ def _resolve_device(gpu_id: int | None, needs_gpu: bool) -> str:
 def main(
     workers_override: int | None = None,
     gpu_id_override: int | None = None,
+    use_cache: bool = True,
 ) -> None:
     """
     Ejecuta todas las estrategias activadas sobre los documentos
@@ -583,17 +588,7 @@ def main(
     if workers > 1:
         os.environ["TOKENIZERS_PARALLELISM"] = "false"
         torch.set_num_threads(1)
-    tokenizer = create_tokenizer(
-        tokenizer_model_name
-    )
-
-    token_counter = create_token_counter(tokenizer)
-
-    # Contar los tokens de cada documento original
-    for document in documents:
-        document["token_count"] = token_counter(
-            document["text"]
-        )
+    token_counter: Callable[[str], int] | None = None
 
     strategies = chunker_config["strategies"]
 
@@ -609,11 +604,19 @@ def main(
             "en el archivo de configuración."
         )
 
+    has_llm_chunker = any(
+        strategy.get("spec", {}).get("type") in LLM_CHUNKERS
+        for strategy in enabled_strategies
+    )
     needs_gpu = any(
         strategy.get("spec", {}).get("type") in GPU_EMBEDDING_CHUNKERS
         for strategy in enabled_strategies
-    )
+    ) or (gpu_id is not None and has_llm_chunker)
     device = _resolve_device(gpu_id, needs_gpu)
+    llm_device = device if gpu_id is not None else None
+    effective_llm_device = llm_device or (
+        "cuda:0" if torch.cuda.is_available() else "cpu"
+    )
 
     print(
         f"Estrategias activadas: "
@@ -621,7 +624,8 @@ def main(
     )
     print(
         f"Workers de documentos: {workers}; "
-        f"GPU para chunkers semánticos: {device}"
+        f"GPU para embeddings: {device}; "
+        f"GPU para LLM: {effective_llm_device}"
     )
     if device != "cpu" and workers > 1:
         print(
@@ -638,6 +642,18 @@ def main(
 
     # El CSV tendrá una fila por método y documento
     summary_results = []
+    active_doc_ids = {document["doc_id"] for document in documents}
+    previous_summary = (
+        pd.read_csv(SUMMARY_FILE, dtype={"doc_id": str})
+        if SUMMARY_FILE.is_file()
+        else pd.DataFrame()
+    )
+    if "doc_id" in previous_summary.columns:
+        retained_summary = previous_summary[
+            ~previous_summary["doc_id"].astype(str).isin(active_doc_ids)
+        ]
+    else:
+        retained_summary = previous_summary
 
     # --------------------------------------------------------
     # 4. Ejecutar las estrategias activadas
@@ -708,6 +724,88 @@ def main(
         completed_documents = 0
         strategy_chunk_count = 0
         initialization_error_recorded = False
+        pending_documents = []
+        cache_fingerprints = {}
+        for document in documents:
+            fingerprint = cache_fingerprint({
+                "version": 1,
+                "strategy": strategy_name,
+                "chunker_type": chunker_type,
+                "params": params,
+                "tokenizer_model": tokenizer_model_name,
+                "device": device,
+                "llm_device": effective_llm_device,
+                "document_type": document["document_type"],
+                "content": document["text"],
+            })
+            cache_fingerprints[document["doc_id"]] = fingerprint
+            chunks_path = (
+                CHUNKS_DIR
+                / f"{abbreviation}_{document['doc_id']}.json"
+            )
+            metrics_path = (
+                METRICS_DIR
+                / (
+                    f"{abbreviation}_{document['doc_id']}"
+                    "_metrics.json"
+                )
+            )
+            cached = (
+                load_cached_artifacts(
+                    chunks_path,
+                    metrics_path,
+                    fingerprint,
+                )
+                if use_cache
+                else None
+            )
+            if cached is None:
+                pending_documents.append(document)
+                continue
+
+            chunks_result, metrics_result = cached
+            current_metadata = {
+                "strategy": strategy_name,
+                "type": chunker_type,
+                "abbreviation": abbreviation,
+                "params": params,
+                "doc_id": document["doc_id"],
+                "document_type": document["document_type"],
+                "input_file": document["file_name"],
+                "source_path": document["source_path"],
+                "tokenizer_model": tokenizer_model_name,
+            }
+            chunks_result.update(current_metadata)
+            chunks_result["_cache_fingerprint"] = fingerprint
+            metrics_result.update(current_metadata)
+            metrics_result["_cache_fingerprint"] = fingerprint
+            save_json(chunks_result, chunks_path)
+            save_json(metrics_result, metrics_path)
+            summary_results.append({
+                key: value
+                for key, value in metrics_result.items()
+                if key != "_cache_fingerprint"
+            })
+            completed_documents += 1
+            strategy_chunk_count += chunks_result["number_of_chunks"]
+            print(
+                f"\nCaché reutilizada: {document['file_name']} "
+                f"({strategy_name})"
+            )
+
+        if pending_documents:
+            strategy_workers = min(
+                strategy_workers,
+                len(pending_documents),
+            )
+            if token_counter is None:
+                tokenizer = create_tokenizer(tokenizer_model_name)
+                token_counter = create_token_counter(tokenizer)
+            for document in pending_documents:
+                if "token_count" not in document:
+                    document["token_count"] = token_counter(
+                        document["text"]
+                    )
 
         def record_document_result(
             document: Dict[str, Any],
@@ -772,6 +870,10 @@ def main(
             execution_time_seconds = result["execution_time_seconds"]
             ram_before_mb = result["ram_before_mb"]
             ram_after_mb = result["ram_after_mb"]
+            if token_counter is None:
+                raise RuntimeError(
+                    "Se necesita un contador de tokens para guardar métricas."
+                )
 
             # ------------------------------------------------
             # Serializar los chunks
@@ -816,6 +918,9 @@ def main(
                 "input_file": document["file_name"],
                 "source_path": document["source_path"],
                 "tokenizer_model": tokenizer_model_name,
+                "_cache_fingerprint": cache_fingerprints[
+                    document["doc_id"]
+                ],
                 "original_token_count": document["token_count"],
                 "number_of_chunks": len(
                     document_chunks
@@ -870,6 +975,9 @@ def main(
                 "source_path": document["source_path"],
                 "tokenizer_model": tokenizer_model_name,
                 **document_stats,
+                "_cache_fingerprint": cache_fingerprints[
+                    document["doc_id"]
+                ],
             }
 
             metrics_file_name = (
@@ -888,7 +996,11 @@ def main(
 
             # Una fila del CSV por método y documento
             summary_results.append(
-                document_metrics_result
+                {
+                    key: value
+                    for key, value in document_metrics_result.items()
+                    if key != "_cache_fingerprint"
+                }
             )
 
             completed_documents += 1
@@ -920,24 +1032,25 @@ def main(
             else:
                 print("[INFO] RAM por documento no medida en modo paralelo.")
 
-        if strategy_workers == 1:
+        if pending_documents and strategy_workers == 1:
             _initialize_document_worker(
                 chunker_type,
                 params,
                 tokenizer_model_name,
                 device,
+                llm_device,
                 True,
             )
             initialization_error = _WORKER_CONTEXT.initialization_error
             if initialization_error is not None:
                 record_document_result(
-                    documents[0],
+                    pending_documents[0],
                     {"initialization_error": initialization_error},
                 )
                 continue
-            for document in documents:
+            for document in pending_documents:
                 record_document_result(document, _chunk_document(document))
-        else:
+        elif pending_documents:
             with ThreadPoolExecutor(
                 max_workers=strategy_workers,
                 initializer=_initialize_document_worker,
@@ -946,13 +1059,14 @@ def main(
                     params,
                     tokenizer_model_name,
                     device,
+                    llm_device,
                     False,
                 ),
                 thread_name_prefix="markdown-chunker",
             ) as executor:
                 for document, result in zip(
-                    documents,
-                    executor.map(_chunk_document, documents),
+                    pending_documents,
+                    executor.map(_chunk_document, pending_documents),
                 ):
                     record_document_result(document, result)
 
@@ -977,18 +1091,25 @@ def main(
     # 8. Crear el CSV resumen
     # --------------------------------------------------------
 
-    if summary_results:
-        summary_df = pd.DataFrame(
-            summary_results
+    summary_frames = [
+        frame
+        for frame in (
+            retained_summary,
+            pd.DataFrame(summary_results),
         )
+        if not frame.empty
+    ]
+    if summary_frames:
+        summary_df = pd.concat(summary_frames, ignore_index=True)
 
         # Guardar los parámetros como texto JSON
         if "params" in summary_df.columns:
             summary_df["params"] = (
                 summary_df["params"].apply(
-                    lambda value: json.dumps(
-                        value,
-                        ensure_ascii=False,
+                    lambda value: (
+                        json.dumps(value, ensure_ascii=False)
+                        if isinstance(value, (dict, list))
+                        else value
                     )
                 )
             )
@@ -1015,6 +1136,13 @@ def main(
         print(
             f"Filas del resumen: "
             f"{len(summary_df)}"
+        )
+
+    elif SUMMARY_FILE.is_file():
+        retained_summary.to_csv(
+            SUMMARY_FILE,
+            index=False,
+            encoding="utf-8-sig",
         )
 
     else:
@@ -1046,10 +1174,16 @@ if __name__ == "__main__":
         "--gpu-id",
         type=_nonnegative_int,
         default=None,
-        help="ID de la única GPU CUDA usada por las estrategias semánticas.",
+        help="ID CUDA para las estrategias semánticas y los chunkers LLM.",
+    )
+    parser.add_argument(
+        "--no-cache",
+        action="store_true",
+        help="Fuerza el reprocesamiento de todos los documentos.",
     )
     arguments = parser.parse_args()
     main(
         workers_override=arguments.workers,
         gpu_id_override=arguments.gpu_id,
+        use_cache=not arguments.no_cache,
     )
