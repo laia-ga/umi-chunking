@@ -1,5 +1,5 @@
 {
-    "chunk_fold": "512_8192",
+    "chunk_fold": "extended_1024_32768",
     "qdrant": {
         "host": "127.0.0.1",
         "port": 6333,
