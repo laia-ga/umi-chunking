@@ -1,5 +1,5 @@
 {
-    "chunk_fold": "extended_1024_32768",
+    "chunk_fold": "compact_256_512",
     "execution": {
         "workers": 1,
         "gpu_id": null
@@ -11,8 +11,8 @@
             "spec": {
                 "type": "FixedCharacterChunker",
                 "params": {
-                    "chunk_size": 4000,
-                    "overlap": 400
+                    "chunk_size": 256,
+                    "overlap": 100
                 }
             }
         },
@@ -22,8 +22,8 @@
             "spec": {
                 "type": "FixedTokenChunker",
                 "params": {
-                    "chunk_size": 1024,
-                    "overlap": 150
+                    "chunk_size": 256,
+                    "overlap": 40
                 }
             }
         },
@@ -33,8 +33,8 @@
             "spec": {
                 "type": "SlidingWindowTokenChunker",
                 "params": {
-                    "window_size": 1024,
-                    "step_size": 150
+                    "window_size": 256,
+                    "step_size": 40
                 }
             }
         },
@@ -44,8 +44,8 @@
             "spec": {
                 "type": "OverlappingTokenChunker",
                 "params": {
-                    "chunk_size": 1024,
-                    "overlap_size": 150
+                    "chunk_size": 256,
+                    "overlap_size": 40
                 }
             }
         },
@@ -63,8 +63,8 @@
             "spec": {
                 "type": "SentenceGroupChunker",
                 "params": {
-                    "sentences_per_chunk": 20,
-                    "overlap": 4
+                    "sentences_per_chunk": 5,
+                    "overlap": 1
                 }
             }
         },
@@ -82,8 +82,8 @@
             "spec": {
                 "type": "ParagraphGroupChunker",
                 "params": {
-                    "paragraphs_per_chunk": 4,
-                    "overlap": 2
+                    "paragraphs_per_chunk": 1,
+                    "overlap": 0
                 }
             }
         },
@@ -93,8 +93,8 @@
             "spec": {
                 "type": "RecursiveChunker",
                 "params": {
-                    "chunk_size": 4000,
-                    "chunk_overlap": 400
+                    "chunk_size": 1000,
+                    "chunk_overlap": 100
                 }
             }
         },
@@ -104,8 +104,8 @@
             "spec": {
                 "type": "RecursiveTokenChunker",
                 "params": {
-                    "chunk_size": 1024,
-                    "chunk_overlap": 150
+                    "chunk_size": 256,
+                    "chunk_overlap": 40
                 }
             }
         },
@@ -115,9 +115,9 @@
             "spec": {
                 "type": "ParentChildChunker",
                 "params": {
-                    "parent_chunk_size": 1024,
-                    "child_chunk_size": 350,
-                    "chunk_overlap": 150
+                    "parent_chunk_size": 256,
+                    "child_chunk_size": 90,
+                    "chunk_overlap": 40
                 }
             }
         },
@@ -129,7 +129,7 @@
                 "params": {
                     "breakpoint_threshold_amount": 70.0,
                     "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
-                    "max_chunk_tokens": 1024
+                    "max_chunk_tokens": 256
                 }
             }
         },
@@ -141,7 +141,7 @@
                 "params": {
                     "threshold": 0.5,
                     "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
-                    "max_chunk_tokens": 1024
+                    "max_chunk_tokens": 256
                 }
             }
         },
@@ -153,7 +153,7 @@
                 "params": {
                     "distance_threshold": 0.4,
                     "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
-                    "max_chunk_tokens": 1024
+                    "max_chunk_tokens": 256
                 }
             }
         },
@@ -166,7 +166,7 @@
                     "breakpoint_threshold_amount": 80.0,
                     "buffer_size": 1,
                     "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
-                    "max_chunk_tokens": 1024
+                    "max_chunk_tokens": 256
                 }
             }
         },
@@ -176,8 +176,8 @@
             "spec": {
                 "type": "DynamicTokenSizeChunker",
                 "params": {
-                    "min_chunk_size": 300,
-                    "max_chunk_size": 1024
+                    "min_chunk_size": 150,
+                    "max_chunk_size": 256
                 }
             }
         },
@@ -187,7 +187,7 @@
             "spec": {
                 "type": "ContentDensityAdaptiveChunker",
                 "params": {
-                    "base_chunk_size": 600
+                    "base_chunk_size": 300
                 }
             }
         },
@@ -200,7 +200,7 @@
                     "sensitivity": 0.2,
                     "window_size": 5,
                     "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
-                    "max_chunk_tokens": 1024
+                    "max_chunk_tokens": 256
                 }
             }
         },
@@ -210,8 +210,8 @@
             "spec": {
                 "type": "LengthAwareChunker",
                 "params": {
-                    "target_length": 1024,
-                    "tolerance": 100
+                    "target_length": 256,
+                    "tolerance": 40
                 }
             }
         },
@@ -221,8 +221,8 @@
             "spec": {
                 "type": "LLMBoundaryDetectionChunker",
                 "params": {
-                    "max_tokens": 1024,
-                    "overlap_tokens": 150
+                    "max_tokens": 256,
+                    "overlap_tokens": 40
                 }
             }
         },
@@ -232,9 +232,9 @@
             "spec": {
                 "type": "LLMSegmentThenChunker",
                 "params": {
-                    "max_tokens": 1024,
-                    "overlap_tokens": 150,
-                    "llm_refine_threshold_tokens": 1024
+                    "max_tokens": 256,
+                    "overlap_tokens": 40,
+                    "llm_refine_threshold_tokens": 256
                 }
             }
         }
