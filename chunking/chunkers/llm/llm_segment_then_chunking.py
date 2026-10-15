@@ -660,7 +660,7 @@ Formato exacto:
         Añade al inicio de cada chunk el final del anterior.
         """
 
-        if self.overlap <= 0 or not parts:
+        if self.overlap_tokens <= 0 or not parts:
             return parts
 
         output = []
