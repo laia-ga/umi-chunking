@@ -1,5 +1,5 @@
 {
-    "chunk_fold": "bge_m3_512_8192",
+    "chunk_fold": "jina_512_8192",
     "execution": {
         "workers": 1,
         "gpu_id": null
