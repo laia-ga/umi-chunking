@@ -126,6 +126,8 @@ def load_queries(
                     "question_id": item["question_id"],
                     "question": item["question"],
                     "gold_answer": item["gold_answer"],
+                    "specialty": item.get("specialty"),
+                    "sub-specialty": item.get("sub-specialty"),
                 }
             )
 
@@ -386,6 +388,8 @@ def retrieve_question(
         "question_id": query_item["question_id"],
         "question": query_item["question"],
         "gold_answer": query_item["gold_answer"],
+        "specialty": query_item.get("specialty"),
+        "sub-specialty": query_item.get("sub-specialty"),
         "document_type": document_type,
         "format": format,
     }
