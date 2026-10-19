@@ -490,8 +490,10 @@ def parse_args():
 
     parser.add_argument(
         "retrieval_config",
+        nargs="?",
+        default="retrieval_config.json",
         help="Nombre del JSON de configuración dentro de configs/ "
-             "(p. ej. retrieval_config_bge_m3.json)",
+             "(por defecto: retrieval_config.json)",
     )
     parser.add_argument(
         "--workers",
