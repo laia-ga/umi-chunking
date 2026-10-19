@@ -218,7 +218,7 @@ paralelo contra Qdrant. Los valores predeterminados son `--batch-size 16` y
 `--workers 4`; ambos pueden ajustarse:
 
 ```bash
-python scripts/run_retrieval.py retrieval_paper_config.json \
+python scripts/run_retrieval.py retrieval_config.json \
   --batch-size 16 --workers 4
 ```
 
