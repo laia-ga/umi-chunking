@@ -145,7 +145,7 @@ def load_queries(
 # .json
 
 def create_output_file(
-    indexing_config: Dict[str, Any],
+    retrieval_config: Dict[str, Any],
     retrieval_params: Dict[str, Any],
 ) -> Path:
 
@@ -155,7 +155,7 @@ def create_output_file(
     """
 
     # Modelo de embeddings
-    model_name = indexing_config["embeddings"]["model_name"]
+    model_name = retrieval_config["embeddings"]["model_name"]
 
     # Quedarnos solo con el nombre final del modelo
     # Ejemplo: "BAAI/bge-m3" -> "bge_m3"
@@ -230,7 +230,7 @@ def save_results(
 # ============================================================
 
 def create_embeddings(
-    indexing_config: Dict[str, Any],
+    retrieval_config: Dict[str, Any],
     batch_size: int,
 ) -> HuggingFaceEmbeddings:
 
@@ -239,7 +239,7 @@ def create_embeddings(
     durante la indexación.
     """
 
-    embeddings_config = indexing_config["embeddings"]
+    embeddings_config = retrieval_config["embeddings"]
 
     device = (
         "cuda:0"
@@ -560,7 +560,7 @@ def main() -> None:
     )
 
     output_file = create_output_file(
-        indexing_config=indexing_config,
+        retrieval_config=retrieval_config,
         retrieval_params=retrieval_params,
     )
 
@@ -627,7 +627,7 @@ def main() -> None:
 
     start_time = time.perf_counter()
     embeddings = create_embeddings(
-        indexing_config,
+        retrieval_config,
         batch_size=args.batch_size,
     )
 
@@ -643,12 +643,21 @@ def main() -> None:
     # 5. Ejecutar retrieval
     # --------------------------------------------------------
 
+    model_name = retrieval_config["embeddings"]["model_name"]
+    is_e5 = model_name.startswith("intfloat/multilingual-e5")
+
     query_vectors: List[List[float]] = []
+
     for start in range(0, len(queries), args.batch_size):
+
         batch_queries = queries[start:start + args.batch_size]
-        batch_vectors = embeddings.embed_documents(
-            [item["question"] for item in batch_queries]
-        )
+
+        texts = [item["question"] for item in batch_queries]
+
+        if is_e5:
+            texts = ["query: " + text for text in texts]
+
+        batch_vectors = embeddings.embed_documents(texts)
         if len(batch_vectors) != len(batch_queries):
             raise RuntimeError(
                 "El número de embeddings generados en el lote "
