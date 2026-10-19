@@ -1,4 +1,8 @@
 {
+    "embeddings": {
+        "model_name": "BAAI/bge-m3",
+        "normalize_embeddings": true
+    },
     "retrieval": {
         "top_k": 5,
         "strategies": null,
