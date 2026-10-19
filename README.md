@@ -1,5 +1,143 @@
 # umi-chunking
 
+## Puesta en marcha
+
+### Requisitos e instalación
+
+Se necesita Python 3.10 o superior. Crea un entorno virtual e instala las
+dependencias desde la raíz del repositorio:
+
+```bash
+python -m venv .venv
+```
+
+Activa el entorno e instala los paquetes:
+
+```bash
+# Linux/macOS
+source .venv/bin/activate
+
+# Windows PowerShell (usa esta línea en lugar de la anterior)
+.\.venv\Scripts\Activate.ps1
+
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+El proyecto descarga los tokenizadores y modelos de Hugging Face la primera
+vez que se necesitan; hace falta acceso a internet durante esa descarga. El
+judge GPT requiere además una clave de API de OpenAI. Para usar GPU con
+PyTorch, instala una versión de PyTorch compatible con los controladores CUDA
+del servidor siguiendo las instrucciones de PyTorch; la instalación genérica
+de `requirements.txt` no fija una variante CUDA concreta. Chunking, indexación
+y el judge local también pueden ejecutarse en CPU, aunque los modelos grandes
+pueden ser lentos o necesitar mucha memoria.
+
+### Iniciar Qdrant con Podman
+
+El proyecto se conecta a Qdrant mediante su API HTTP. Podman sirve igual que
+Docker para ejecutar el contenedor; por ejemplo, en el servidor:
+
+```bash
+podman volume create umi-qdrant-storage
+podman run -d --name umi-qdrant \
+  -p 127.0.0.1:6333:6333 \
+  -v umi-qdrant-storage:/qdrant/storage \
+  docker.io/qdrant/qdrant
+```
+
+El volumen conserva la base de datos aunque se recree el contenedor. El puerto
+se publica solo en `localhost`, que es apropiado cuando los scripts corren en
+el mismo servidor. Comprueba que el contenedor está activo con
+`podman ps`. Si ya existe, se puede iniciar con `podman start umi-qdrant`.
+Para detenerlo, usa `podman stop umi-qdrant`.
+
+Con Docker, los comandos equivalentes son `docker volume create` y
+`docker run`; la imagen y la configuración de puertos/volumen son las mismas.
+Qdrant no debe exponerse directamente a una red pública sin configurar
+protecciones de acceso. Si los scripts se ejecutan en otra máquina o dentro
+de otro contenedor, configura `qdrant.host` en
+`configs/indexing_config.json` para que apunte a una dirección alcanzable y
+limita el acceso al servicio a una red de confianza.
+
+### Datos de entrada
+
+Los documentos fuente van en `data/raw/markdown/` o `data/raw/json/`; ambos
+flujos buscan recursivamente y solo consideran archivos de su formato.
+Mantén los nombres de archivo estables para facilitar la identificación de
+documentos y la reutilización de la caché.
+
+Los Markdown pueden incluir metadatos YAML al principio. Para registrar el
+tipo documental, usa `doc_type` con uno de los valores reconocidos:
+
+```markdown
+---
+title: Ejemplo de guía
+doc_type: guideline
+---
+
+# Ejemplo de guía
+Contenido del documento...
+```
+
+En los JSON, la raíz debe ser un objeto. El chunker detecta fichas técnicas
+por sus campos `medicine_name`, `composition`, `pharmaceutical_form`,
+`indications` y `posology`; guías por `document_type` (`guideline` o
+`clinical_guideline`), y artículos por el campo `article_type`. Después
+aplica el plan estructural correspondiente, por lo que los campos del
+documento deben seguir el esquema de ese tipo.
+
+Las preguntas de Retrieval se guardan como JSONL en
+`data/ground_truth/`: un objeto JSON por línea, con los tres campos
+obligatorios `question_id`, `question` y `gold_answer`. Ejemplo:
+
+```json
+{"question_id":"q-001","question":"¿Cuál es el tratamiento recomendado?","gold_answer":"El tratamiento indicado en la guía."}
+```
+
+### Configuración y recorrido de extremo a extremo
+
+| Archivo | Controla |
+|---|---|
+| `configs/chunker_config.json` | Estrategias Markdown habilitadas, parámetros y `chunk_fold` de salida. |
+| `configs/tokenizer_config.json` | Tokenizador y límites de tokens usados por chunking. |
+| `configs/indexing_config.json` | `chunk_fold` que se indexa, formatos, modelo de embeddings, conexión y colección Qdrant, lotes y recursos. |
+| `configs/retrieval_config.json` | Modelo de embeddings para las preguntas, archivo de ground truth, `top_k` y filtros de Retrieval. |
+
+`chunk_fold` debe señalar la misma ejecución de chunking en las configuraciones
+de chunking e indexación. El modelo de embeddings y su normalización deben
+coincidir entre indexación y Retrieval; el nombre de la colección y la
+conexión de Qdrant se toman de `indexing_config.json`.
+
+La configuración predeterminada usa el conjunto definitivo
+`data/ground_truth/4n_questions.jsonl`. Para probar otro conjunto, cambia
+`retrieval.ground_truth_file` por una ruta relativa a `data/ground_truth/`.
+
+Para usar el judge GPT, crea un archivo `.env` en la raíz del repositorio con
+la clave de API:
+
+```dotenv
+OPENAI_API_KEY=tu_clave
+```
+
+No compartas ni subas este archivo; `.env` está excluido de Git.
+
+Una ejecución completa sigue este orden:
+
+1. Coloca los documentos fuente y las preguntas en las carpetas indicadas.
+2. Ejecuta `python -m chunking.run_MD` y/o
+   `python -m chunking.run_JSON` para producir chunks.
+3. Inicia Qdrant y ejecuta `python scripts/run_indexing.py`.
+4. Comprueba que `retrieval.ground_truth_file` en
+   `configs/retrieval_config.json` apunta a un JSONL existente y ejecuta
+   `python -m scripts.run_retrieval`.
+5. Ejecuta uno de los judges sobre el JSON generado, después `run_metrics.py`
+   sobre el CSV y finalmente `run_graphics.py` sobre el Excel.
+
+Los artefactos generados se guardan bajo `output/`, que está excluido de Git;
+los modelos descargados y las cachés tampoco forman parte de los resultados
+versionados.
+
 ## Chunking de documentos
 
 El proyecto incluye dos flujos de chunking, según el formato de entrada:
@@ -315,8 +453,8 @@ Por defecto, el proceso sigue estos pasos:
    y metadatos principales del chunk y su texto. Las respuestas se guardan en
    el orden original de las preguntas.
 
-La configuración predeterminada consulta `BAAI/bge-m3`, recupera los cinco
-primeros resultados (`top_k: 5`) y no aplica filtros por estrategia, tipo de
+La configuración predeterminada consulta `BAAI/bge-m3`, recupera los diez
+primeros resultados (`top_k: 10`) y no aplica filtros por estrategia, tipo de
 documento ni formato. Por tanto, cada pregunta busca en todos los puntos de
 la colección seleccionada. Para cambiar estos valores, edita
 `configs/retrieval_config.json`; el host, puerto y nombre de la colección
@@ -344,31 +482,152 @@ Los resultados se guardan en
 `retrieval_bge_m3.json`). El archivo se reescribe al ejecutar de nuevo una
 configuración que genera el mismo nombre.
 
-## Judge local
+## Judge: evaluación de relevancia
 
-`eval/run_judge_qa_local.py` evalúa los chunks con `Qwen/Qwen3-8B`. Por
-defecto usa una sola copia del modelo en `cuda:0` y batch 1; si CUDA no está
-disponible, usa CPU. Las GPUs solicitadas se comprueban al inicio y el modelo
-se carga antes de evaluar para detectar problemas de memoria sin descartar
-resultados anteriores:
+Los scripts `eval/run_judge_qa_local.py` y `eval/run_judge_qa_gpt.py` evalúan
+cada chunk recuperado comparándolo con la pregunta y su respuesta de
+referencia (`gold_answer`). Ambos usan la misma rúbrica:
+
+- **2**: el chunk contiene la respuesta o información suficiente para
+  responder correctamente.
+- **1**: contiene información útil o parte de la respuesta, pero es
+  incompleta.
+- **0**: no contiene información útil para responder.
+
+El judge no genera una nueva respuesta: asigna una puntuación de relevancia
+por chunk. Lee el JSON producido por Retrieval desde `output/retrieval/` y
+guarda un CSV en `output/judge/`. Si el resultado de Retrieval contiene una
+lista global `retrieved_chunks`, evalúa esa lista; si contiene resultados
+separados por `strategies`, evalúa los chunks de cada estrategia por
+separado. Las preguntas sin identificador, texto o respuesta de referencia
+se omiten. `--top-k` permite evaluar solo los primeros chunks de cada lista;
+si se omite, se evalúan todos los que estén en el JSON de Retrieval.
+
+### Judge local
+
+`eval/run_judge_qa_local.py` ejecuta el modelo local
+`AtlaAI/Selene-1-Mini-Llama-3.1-8B`. Por defecto selecciona `cuda:0` si CUDA
+está disponible y, si no, CPU. Comprueba los dispositivos y carga el modelo
+antes de empezar a evaluar, de modo que los errores de carga se detecten
+antes de modificar el CSV de resultados:
 
 ```bash
-python eval/run_judge_qa_local.py retrieval_paper.json \
+python eval/run_judge_qa_local.py retrieval_bge_m3.json \
   --gpu-ids 0 --batch-size 1
 ```
 
-Se pueden seleccionar varias GPUs explícitamente, por ejemplo
-`--gpu-ids 0,1`. Cada una carga una copia completa e independiente del modelo
-y juzga batches de chunks distintos; la VRAM no se comparte entre GPUs. Batch
-1 es la opción conservadora; si se aumenta `--batch-size`, hay que vigilar la
-memoria disponible. Los IDs son los CUDA visibles dentro del proceso o
-contenedor. `--cpu` fuerza la ejecución en CPU. La rúbrica local es
-la misma que la del juez GPT; por defecto no solicita `reason` para limitar
-la generación, pero se puede activar con `--include-reason`.
+`--gpu-ids` acepta uno o varios índices CUDA visibles, por ejemplo
+`--gpu-ids 0,1`; cada GPU carga una copia completa del modelo y procesa
+batches de chunks distintos. Cada copia usa la memoria de su propia GPU.
+`--cpu` fuerza CPU y no se puede combinar con `--gpu-ids`. `--batch-size`
+controla los chunks procesados por llamada de generación en cada worker; el
+valor conservador es 1 y batches mayores requieren más memoria. Se puede
+limitar el trabajo a los primeros resultados con `--top-k`.
 
-Si el CSV ya existe, el script conserva los juicios correctos y reintenta en
-la siguiente ejecución las filas con error o pendientes. `--restart` descarta
-el CSV previo. Si el CSV viene de una versión anterior del juez o cambia la
-opción `--include-reason`, el script pide `--restart` para evitar mezclar
-resultados de rúbricas distintas. Los errores de inferencia se registran; no
-se reintentan automáticamente dentro de la misma ejecución.
+Por defecto el juez guarda solo la puntuación, lo que reduce la generación.
+`--include-reason` solicita y guarda además una justificación breve. Los
+resultados se escriben en
+`output/judge/local_judge_<sufijo_del_retrieval>.csv`.
+
+Si el CSV ya existe, la ejecución conserva las filas correctas y vuelve a
+intentar las filas fallidas o pendientes. `--restart` descarta el CSV y
+empieza desde cero. El script comprueba que la versión de la rúbrica y la
+opción `--include-reason` coincidan con las del CSV; si no coinciden, exige
+`--restart` para evitar mezclar resultados incompatibles. Los errores de
+inferencia quedan registrados y se pueden reintentar en una ejecución
+posterior.
+
+### Judge GPT
+
+`eval/run_judge_qa_gpt.py` aplica la misma rúbrica mediante la API de OpenAI,
+usando Structured Outputs para restringir la respuesta a un `score` de 0, 1 o
+2. No produce una justificación. Antes de ejecutarlo, configura
+`OPENAI_API_KEY` (o `OPENAI_KEY`) en el entorno o en un archivo `.env` en la
+raíz del proyecto.
+
+```bash
+python eval/run_judge_qa_gpt.py retrieval_bge_m3.json \
+  --workers 4 --top-k 5
+```
+
+El script usa el modelo `gpt-5.6-luna`. `--workers` controla las llamadas a la
+API en paralelo (por defecto, 1); se puede aumentar si los límites de
+concurrencia y solicitudes lo permiten. Ante errores transitorios, como
+límites de solicitudes o problemas de red, reintenta hasta cinco veces con
+espera creciente. Los errores de autenticación o cuota detienen la ejecución
+porque no se resuelven reintentando. `--top-k` limita cuántos chunks evalúa
+por pregunta y estrategia.
+
+Los resultados se guardan en
+`output/judge/gpt_judge_<sufijo_del_retrieval>.csv`. Se guardan a medida que
+terminan las evaluaciones: al reanudar, se conservan las filas que tienen
+puntuación y se repiten las que fallaron o quedaron pendientes. `--restart`
+descarta el CSV anterior y vuelve a evaluar todo.
+
+## Métricas de evaluación
+
+`eval/run_metrics.py` resume las puntuaciones del judge y calcula métricas
+para cada combinación de estrategia de chunking y tipo de documento. Recibe
+como entrada uno de los CSV producidos por el judge (local o GPT) y guarda un
+Excel en `output/metrics/`:
+
+```bash
+python eval/run_metrics.py gpt_judge_bge_m3.csv
+```
+
+El script calcula:
+
+- **Mean nDCG@5**: calidad del ranking considerando puntuaciones graduadas
+  (`0`, `1`, `2`) y una lista ideal fija de cinco chunks con score `2`.
+- **HitRate@5**: proporción de preguntas con al menos un chunk de score `2`
+  entre los cinco primeros.
+- **MRR@5**: promedio del inverso del rango del primer chunk con score `2`.
+- **%score2**, **%score1** y **%score0**: distribución de relevancia entre
+  los chunks evaluados.
+
+Las métricas de ranking se calculan por pregunta dentro de cada estrategia y
+tipo documental, y luego se promedian. Si una pregunta del tipo documental
+aparece en el CSV pero no tiene chunks para una combinación de estrategia y
+tipo, cuenta como cero para nDCG, HitRate y MRR. Las evaluaciones fallidas del
+judge también se tratan como score `0` para no desplazar los rangos. Los
+porcentajes de scores se calculan sobre los chunks recuperados, limitados a
+los cinco primeros. El Excel contiene una hoja `summary` con una fila por
+combinación presente, incluyendo también los recuentos de preguntas y chunks.
+
+El archivo se llama
+`output/metrics/metrics_<nombre_del_csv_del_judge>.xlsx`; por ejemplo,
+`gpt_judge_bge_m3.csv` produce `metrics_gpt_judge_bge_m3.xlsx`. Si el judge
+incluye varios tipos documentales, el resumen mantiene una fila separada por
+tipo.
+
+## Gráficas de resultados
+
+`eval/run_graphics.py` genera visualizaciones a partir de la hoja `summary`
+de un Excel de métricas. Produce un heatmap con las métricas y la distribución
+de scores, y un dotplot que compara Mean nDCG@5, HitRate@5 y MRR@5 entre
+estrategias. Las estrategias se ordenan por Mean nDCG@5:
+
+```bash
+python eval/run_graphics.py metrics_gpt_judge_bge_m3.xlsx
+```
+
+Las imágenes PNG se guardan en `output/graphics/` con resolución de 300 dpi:
+`heatmap_gpt_judge_bge_m3.png` y `dotplot_gpt_judge_bge_m3.png`. Las gráficas
+están pensadas para un único tipo documental por archivo de métricas. Si el
+Excel contiene varios tipos, filtra la hoja `summary` a un tipo antes de
+graficar; el script no ofrece un filtro de tipo documental y cada estrategia
+aparece una vez por tipo.
+
+### Flujo completo de evaluación
+
+El flujo habitual, partiendo de un archivo de resultados de Retrieval, es:
+
+1. Evalúa los chunks con uno de los jueces, local o GPT, para crear un CSV.
+2. Ejecuta `run_metrics.py` sobre ese CSV para calcular las métricas y crear
+   el Excel.
+3. Ejecuta `run_graphics.py` sobre el Excel para generar las imágenes.
+
+Los scripts de `eval/` quedan así cubiertos: los dos jueces, el cálculo de
+métricas y la generación de gráficas. La colección de Qdrant y los resultados
+de Retrieval son entradas de las etapas anteriores; estos pasos de evaluación
+trabajan sobre el JSON de Retrieval y los CSV/Excel generados en cada fase.
