@@ -1,5 +1,5 @@
 {
-    "chunk_fold": "jina_512_8192",
+    "chunk_fold": "qwen_1024_32768",
     "execution": {
         "workers": 1,
         "gpu_id": null
