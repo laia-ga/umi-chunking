@@ -643,12 +643,21 @@ def main() -> None:
     # 5. Ejecutar retrieval
     # --------------------------------------------------------
 
+    model_name = retrieval_config["embeddings"]["model_name"]
+    is_e5 = model_name.startswith("intfloat/multilingual-e5")
+
     query_vectors: List[List[float]] = []
+
     for start in range(0, len(queries), args.batch_size):
+
         batch_queries = queries[start:start + args.batch_size]
-        batch_vectors = embeddings.embed_documents(
-            [item["question"] for item in batch_queries]
-        )
+
+        texts = [item["question"] for item in batch_queries]
+
+        if is_e5:
+            texts = ["query: " + text for text in texts]
+
+        batch_vectors = embeddings.embed_documents(texts)
         if len(batch_vectors) != len(batch_queries):
             raise RuntimeError(
                 "El número de embeddings generados en el lote "
