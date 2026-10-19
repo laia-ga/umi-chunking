@@ -1,9 +1,9 @@
 {
-    "chunk_fold": "512_8192",
+    "chunk_fold": "bge_m3_512_8192",
     "qdrant": {
         "host": "127.0.0.1",
         "port": 6333,
-        "collection_name": "test_bge_m3"
+        "collection_name": "ground_tru_bge_m3"
     },
     "embeddings": {
         "model_name": "BAAI/bge-m3",
@@ -13,7 +13,7 @@
     "indexing": {
         "batch_size": 32,
         "formats": [
-            "json", "markdown"
+            "json"
         ],
         "num_workers": 1,
         "cpu_threads": 1,

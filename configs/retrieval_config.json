@@ -4,10 +4,10 @@
         "normalize_embeddings": true
     },
     "retrieval": {
-        "top_k": 5,
+        "top_k": 1,
         "strategies": null,
         "document_type": null,
         "format": null,
-        "ground_truth_file": "early_qa/rag_questions_1500_general.jsonl"
+        "ground_truth_file": "data_ground_truth/ground_truth_filtered.jsonl"
     }
 }
