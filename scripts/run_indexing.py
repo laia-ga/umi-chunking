@@ -669,15 +669,24 @@ def embed_with_cache(
     pending_hashes: List[str] = []
 
     hits = 0
+    is_e5 = model_name.startswith("intfloat/multilingual-e5")
+
     for index, chunk in enumerate(chunks):
-        text_hash = _text_hash(chunk["text"])
+
+        text = chunk["text"]
+
+        if is_e5:
+            text = "passage: " + text
+
+        text_hash = _text_hash(text)
         cached = cache.get(chunk["chunk_id"])
+
         if cached is not None and cached["text_hash"] == text_hash:
             vectors[index] = cached["vector"]
             hits += 1
         else:
             pending_indices.append(index)
-            pending_texts.append(chunk["text"])
+            pending_texts.append(text)
             pending_hashes.append(text_hash)
     
     print(
@@ -1057,7 +1066,12 @@ def main(
     )
 
     # 3. Obtener la dimensión y preparar la colección Qdrant
-    vector_size = len(embeddings.embed_query("dimension check"))
+    dimension_text = "dimension check"
+
+    if model_name.startswith("intfloat/multilingual-e5"):
+        dimension_text = "passage: " + dimension_text
+
+    vector_size = len(embeddings.embed_query(dimension_text))
     collection_name = config["qdrant"]["collection_name"]
     client = connect_to_qdrant(config)
     recreate_collection(client, vector_size, collection_name)
