@@ -184,7 +184,81 @@ python -m chunking.run_MD --no-cache
 python -m chunking.run_JSON --no-cache
 ```
 
-## Indexación con recursos configurables
+## Indexación en Qdrant
+
+La indexación toma los chunks ya generados por los flujos Markdown y JSON,
+los normaliza en un formato común, calcula sus embeddings y los guarda en una
+colección de Qdrant. No ejecuta el chunking: antes, hay que generar los
+resultados con `chunking/run_MD.py` y/o `chunking/run_JSON.py`.
+
+El proceso se controla desde `scripts/run_indexing.py` y, por defecto, ejecuta
+todas las fases:
+
+1. **Lee los resultados del chunking.** Busca archivos JSON en
+   `output/chunks/<chunk_fold>/`, donde `chunk_fold` se define en
+   `configs/indexing_config.json`. Cada archivo aporta los chunks de un
+   documento y sus metadatos.
+2. **Normaliza los chunks.** Convierte los resultados de Markdown y JSON a un
+   esquema común y escribe un registro JSON por línea en
+   `output/indexing/normalized_chunks.jsonl`. Se conservan, entre otros datos,
+   el texto, el formato, el documento, la estrategia de chunking y los
+   metadatos estructurales. Los identificadores normalizados distinguen
+   formato, documento, estrategia y posición del chunk.
+3. **Selecciona los formatos configurados.** Solo los formatos incluidos en
+   `indexing.formats` de `configs/indexing_config.json` pasan a la generación
+   de embeddings. Por ejemplo, se puede indexar únicamente `json` o combinar
+   `json` y `markdown`.
+4. **Calcula los embeddings.** Usa el modelo de `embeddings.model_name` y la
+   normalización indicada en `embeddings.normalize_embeddings`. Por defecto,
+   la configuración actual usa `BAAI/bge-m3` y normaliza los vectores.
+   Reutiliza por defecto la caché de
+   `output/indexing/embeddings_cache/`: cada entrada está asociada al modelo,
+   al identificador del chunk y al hash de su texto; si cambia el texto, se
+   vuelve a calcular el vector.
+5. **Recrea la colección y carga los vectores.** Conecta con Qdrant usando el
+   host y puerto de `qdrant` (también se pueden sobrescribir con
+   `QDRANT_HOST` y `QDRANT_PORT`), elimina la colección configurada si ya
+   existe y la crea de nuevo con distancia coseno. Después inserta los
+   vectores por lotes. Cada punto incluye el texto y los metadatos del chunk,
+   para que Retrieval pueda aplicar filtros y devolver el contexto.
+
+> **Importante:** cada ejecución que llega a la fase de indexación elimina y
+> vuelve a crear la colección configurada. No es una actualización incremental
+> de Qdrant; se vuelve a cargar el conjunto de chunks seleccionado. La caché
+> evita recalcular embeddings cuando no han cambiado, pero no evita la
+> reconstrucción de la colección.
+
+### Ejecución
+
+Para normalizar y después indexar en una sola ejecución:
+
+```bash
+python scripts/run_indexing.py
+```
+
+Las fases también se pueden ejecutar por separado:
+
+```bash
+# Genera normalized_chunks.jsonl sin conectarse a Qdrant.
+python scripts/run_indexing.py --normalize-only
+
+# Indexa el JSONL existente sin volver a leer los resultados del chunking.
+python scripts/run_indexing.py --index-only
+```
+
+`--index-only` usa el archivo normalizado que ya existe; si los resultados del
+chunking han cambiado, ejecuta primero la normalización para evitar indexar
+datos desactualizados. Para recalcular los embeddings en lugar de reutilizar
+la caché:
+
+```bash
+python scripts/run_indexing.py --no-cache
+```
+
+Los tiempos, el número de chunks y las estadísticas de caché se añaden a
+`output/indexing/logs/run_log.jsonl`.
+
+### Indexación con recursos configurables
 
 `scripts/run_indexing.py` usa CPU por defecto (`num_gpus: 0`, un worker y un
 hilo por worker). Para repartir embeddings entre GPUs, configura `num_gpus` y,
