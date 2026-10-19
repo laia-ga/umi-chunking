@@ -4,7 +4,7 @@
         "normalize_embeddings": true
     },
     "retrieval": {
-        "top_k": 5,
+        "top_k": 10,
         "strategies": null,
         "document_type": null,
         "format": null,
