@@ -283,22 +283,66 @@ CUDA 0 y 1 según la configuración, establece `num_gpus: 2` y deje `gpu_ids`
 vacío. La selección explícita de GPUs falla con un error si CUDA o algún ID no
 están disponibles.
 
-## Retrieval concurrente
+## Retrieval en Qdrant
 
-`scripts/run_retrieval.py` genera los embeddings de las preguntas por lotes
-con una sola instancia del modelo (usa `cuda:0` si CUDA está disponible, y
-CPU en caso contrario) y ejecuta hasta cuatro trabajos de pregunta en
-paralelo contra Qdrant. Los valores predeterminados son `--batch-size 16` y
-`--workers 4`; ambos pueden ajustarse:
+`scripts/run_retrieval.py` busca chunks relevantes para un conjunto de
+preguntas y guarda los resultados para su evaluación. Requiere que Qdrant esté
+en ejecución, que la colección configurada en
+`configs/indexing_config.json` ya se haya creado mediante la indexación y que
+el modelo de embeddings de Retrieval sea el mismo que se usó para indexar.
+
+Por defecto, el proceso sigue estos pasos:
+
+1. **Carga la configuración y las preguntas.** Usa
+   `configs/retrieval_config.json` y lee el JSONL indicado en
+   `retrieval.ground_truth_file`, relativo a `data/ground_truth/`. Cada línea
+   debe ser un objeto JSON con `question_id`, `question` y `gold_answer`.
+2. **Genera los embeddings de las preguntas.** Usa el modelo y la opción de
+   normalización de `embeddings` en la configuración de Retrieval. Los textos
+   se procesan por lotes y cada pregunta se vectoriza una sola vez, incluso si
+   se van a buscar varias estrategias. El modelo se carga en `cuda:0` si CUDA
+   está disponible y, en caso contrario, en CPU. Si se usa un modelo
+   `intfloat/multilingual-e5`, antepone `query: ` a cada pregunta.
+3. **Busca en la colección de Qdrant.** Para cada pregunta recupera hasta
+   `retrieval.top_k` chunks más similares. Los filtros opcionales
+   `retrieval.document_type` y `retrieval.format` restringen cada búsqueda.
+   Si `retrieval.strategies` contiene una lista, se hace una búsqueda
+   independiente por estrategia y se guardan los resultados separados; si es
+   `null`, busca sin filtrar por estrategia.
+4. **Guarda los resultados.** Escribe un JSON en `output/retrieval/` con las
+   preguntas, las respuestas de referencia y los chunks recuperados. Cada
+   resultado incluye el rango, la puntuación de similitud, los identificadores
+   y metadatos principales del chunk y su texto. Las respuestas se guardan en
+   el orden original de las preguntas.
+
+La configuración predeterminada consulta `BAAI/bge-m3`, recupera los cinco
+primeros resultados (`top_k: 5`) y no aplica filtros por estrategia, tipo de
+documento ni formato. Por tanto, cada pregunta busca en todos los puntos de
+la colección seleccionada. Para cambiar estos valores, edita
+`configs/retrieval_config.json`; el host, puerto y nombre de la colección
+proceden de `configs/indexing_config.json`.
+
+### Ejecución y concurrencia
 
 ```bash
-python scripts/run_retrieval.py retrieval_config.json \
-  --batch-size 16 --workers 4
+python -m scripts.run_retrieval --batch-size 16 --workers 4
 ```
 
-Cada embedding de pregunta se calcula una vez y se reutiliza para todas las
-estrategias configuradas. Los resultados se recogen en el orden original de
-las preguntas.
+El primer argumento posicional opcional permite indicar otro archivo JSON de
+configuración, ubicado dentro de `configs/`; por defecto se usa
+`retrieval_config.json`.
+
+`--batch-size` controla cuántas preguntas se envían juntas al modelo para
+generar embeddings; `--workers` limita las preguntas consultadas en paralelo a
+Qdrant. Ambos valores deben ser enteros positivos. La concurrencia afecta a
+las consultas, no a la carga del modelo: se usa una única instancia y el
+embedding de cada pregunta se reutiliza para todas las estrategias
+configuradas.
+
+Los resultados se guardan en
+`output/retrieval/retrieval_<modelo>[_<tipo_de_documento>].json` (por ejemplo,
+`retrieval_bge_m3.json`). El archivo se reescribe al ejecutar de nuevo una
+configuración que genera el mismo nombre.
 
 ## Judge local
 
