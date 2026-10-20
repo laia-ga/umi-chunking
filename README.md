@@ -352,7 +352,10 @@ todas las fases:
    Reutiliza por defecto la caché de
    `output/indexing/embeddings_cache/`: cada entrada está asociada al modelo,
    al identificador del chunk y al hash de su texto; si cambia el texto, se
-   vuelve a calcular el vector.
+   vuelve a calcular el vector. Los nuevos embeddings se guardan en lotes
+   durante el cálculo, por defecto cada 1.024 chunks; si el proceso se
+   interrumpe, la siguiente ejecución reutiliza los lotes ya guardados y
+   calcula solo los pendientes.
 5. **Recrea la colección y carga los vectores.** Conecta con Qdrant usando el
    host y puerto de `qdrant` (también se pueden sobrescribir con
    `QDRANT_HOST` y `QDRANT_PORT`), elimina la colección configurada si ya
@@ -404,7 +407,10 @@ opcionalmente, los índices CUDA visibles en `gpu_ids` dentro de
 `configs/indexing_config.json`. Cada GPU seleccionada ejecuta un worker; el
 tamaño de lote de embeddings (`embedding_batch_size` en configuración o
 `--embedding-batch-size`) se puede configurar independientemente del upsert a
-Qdrant (`batch_size` o `--batch-size`).
+Qdrant (`batch_size` o `--batch-size`) y del lote de persistencia de la caché
+(`indexing.cache_batch_size` o `--cache-batch-size`, por defecto 1.024). Reducir
+el lote de caché limita cuánto trabajo de embeddings se pierde si se
+interrumpe el proceso; no cambia el batch que se ejecuta en cada GPU.
 
 Por ejemplo, para usar las GPUs visibles 0 y 2 con lotes moderados:
 

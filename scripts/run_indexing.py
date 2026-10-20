@@ -63,6 +63,7 @@ NORMALIZED_OUTPUT_FILE = INDEXING_OUTPUT_DIR / "normalized_chunks.jsonl"
 # Carpeta donde se guarda la caché de embeddings:
 # main/output/indexing/embeddings_cache
 EMBEDDINGS_CACHE_DIR = INDEXING_OUTPUT_DIR / "embeddings_cache"
+DEFAULT_CACHE_BATCH_SIZE = 1024
 
 # Log de tiempos de cada ejecución, un JSON por línea:
 # main/output/indexing/logs/run_log.jsonl
@@ -456,21 +457,38 @@ def load_embeddings_cache(model_name: str) -> Dict[str, Dict[str, Any]]:
     if not cache_file.exists():
         return cache
 
-    with cache_file.open("r", encoding="utf-8") as file:
+    valid_bytes = 0
+    with cache_file.open("rb") as file:
         for line in file:
             if not line.strip():
+                valid_bytes += len(line)
                 continue
-            record = json.loads(line)
+            try:
+                record = json.loads(line)
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                if not line.endswith(b"\n"):
+                    print(
+                        "AVISO: se descarta la última línea incompleta de la "
+                        f"caché: {cache_file}"
+                    )
+                    break
+                raise
             cache[record["chunk_id"]] = {
                 "vector": record["vector"],
                 "text_hash": record["text_hash"],
             }
+            valid_bytes += len(line)
+
+    if valid_bytes < cache_file.stat().st_size:
+        with cache_file.open("r+b") as file:
+            file.truncate(valid_bytes)
+
     return cache
 
 
 def append_to_embedding_cache(
-        model_name: str,
-        entries: List[Tuple[str, str, List[float]]]
+    model_name: str,
+    entries: List[Tuple[str, str, List[float]]],
 ) -> None:
     """
     Añade nuevas entradas a la caché de embeddings de un modelo.
@@ -485,19 +503,31 @@ def append_to_embedding_cache(
         return
     
     cache_file = embeddings_cache_path(model_name)
-    with cache_file.open("a", encoding="utf-8") as file:
-        for chunk_id, text_hash, vector in entries:
-            file.write(
-                json.dumps(
-                    {
-                        "chunk_id": chunk_id,
-                        "text_hash": text_hash,
-                        "vector": vector,
-                    },
-                    ensure_ascii=False,
-                    )
-                    +"\n"
+    serialized_entries = b"".join(
+        (
+            json.dumps(
+                {
+                    "chunk_id": chunk_id,
+                    "text_hash": text_hash,
+                    "vector": vector,
+                },
+                ensure_ascii=False,
             )
+            + "\n"
+        ).encode("utf-8")
+        for chunk_id, text_hash, vector in entries
+    )
+    with cache_file.open("a+b") as file:
+        file.seek(0, os.SEEK_END)
+        if file.tell() > 0:
+            file.seek(-1, os.SEEK_END)
+            if file.read(1) != b"\n":
+                file.seek(0, os.SEEK_END)
+                file.write(b"\n")
+        file.seek(0, os.SEEK_END)
+        file.write(serialized_entries)
+        file.flush()
+        os.fsync(file.fileno())
 
 
 # ============================================================
@@ -569,16 +599,17 @@ def _get_sentence_transformer(embeddings: HuggingFaceEmbeddings):
         )
     return model
 
-def embed_texts_parallel(
+def iter_embed_text_batches(
     embeddings: HuggingFaceEmbeddings,
     texts: List[str],
     num_workers: int,
     batch_size: int,
+    cache_batch_size: int,
     gpu_ids: List[int] | None = None,
     cpu_threads: int = 1,
-) -> List[List[float]]:
+) -> Iterator[Tuple[int, List[List[float]]]]:
     """
-    Genera embeddings de manera paralela usando múltiples workers.
+    Genera embeddings en lotes, manteniendo abierto el pool de workers.
 
     Usa el pool multiproceso de sentence-transformers a través del modelo 
     interno que envuelve HuggingFaceEmbeddings (``embeddings.client``).
@@ -596,58 +627,83 @@ def embed_texts_parallel(
         se utiliza el pool de workers CPU.
     cpu_threads:
         Límite de hilos OMP/MKL para cada worker.
+    cache_batch_size:
+        Número máximo de textos por lote devuelto para poder persistirlo
+        antes de continuar con el siguiente.
     """
 
-    model = _get_sentence_transformer(embeddings)
+    if cache_batch_size < 1:
+        raise ValueError("El tamaño de lote de caché debe ser al menos 1.")
 
-    # Los procesos heredan estos límites al arrancar; así no compiten por
-    # todos los hilos de CPU, especialmente cuando cada GPU tiene un worker.
+    parallel = gpu_ids is not None or num_workers > 1
+    model = _get_sentence_transformer(embeddings) if parallel else None
+    pool = None
     thread_env = ("OMP_NUM_THREADS", "MKL_NUM_THREADS")
     previous_thread_env = {name: os.environ.get(name) for name in thread_env}
-    for name in thread_env:
-        os.environ[name] = str(cpu_threads)
 
     try:
-        if gpu_ids is None:
-            target_devices = ["cpu"] * num_workers
-        else:
-            target_devices = [f"cuda:{gpu_id}" for gpu_id in gpu_ids]
+        if parallel:
+            # Los procesos heredan estos límites al arrancar; así no compiten
+            # por todos los hilos de CPU, especialmente con varios workers.
+            for name in thread_env:
+                os.environ[name] = str(cpu_threads)
 
-        pool = model.start_multi_process_pool(target_devices=target_devices)
-        try:
-            vectors = model.encode_multi_process(
-                texts,
-                pool,
-                batch_size=batch_size,
-                show_progress_bar=True,
+            target_devices = (
+                ["cpu"] * num_workers
+                if gpu_ids is None
+                else [f"cuda:{gpu_id}" for gpu_id in gpu_ids]
             )
-        finally:
-            model.stop_multi_process_pool(pool)
-    finally:
-        for name, value in previous_thread_env.items():
-            if value is None:
-                os.environ.pop(name, None)
+            pool = model.start_multi_process_pool(
+                target_devices=target_devices
+            )
+
+        for start in range(0, len(texts), cache_batch_size):
+            text_batch = texts[start:start + cache_batch_size]
+            if parallel:
+                if model is None or pool is None:
+                    raise RuntimeError("No se ha podido iniciar el pool de embeddings.")
+                vectors = model.encode_multi_process(
+                    text_batch,
+                    pool,
+                    batch_size=batch_size,
+                    show_progress_bar=False,
+                )
             else:
-                os.environ[name] = value
+                vectors = embeddings.embed_documents(text_batch)
 
-    vectors = np.asarray(vectors)
-    if embeddings.encode_kwargs.get("normalize_embeddings", True):
-        norms = np.linalg.norm(vectors, axis=1, keepdims=True)
-        norms[norms == 0] = 1.0
-        vectors = vectors / norms
+            vectors = np.asarray(vectors)
+            if parallel and embeddings.encode_kwargs.get(
+                "normalize_embeddings",
+                True,
+            ):
+                norms = np.linalg.norm(vectors, axis=1, keepdims=True)
+                norms[norms == 0] = 1.0
+                vectors = vectors / norms
 
-    return vectors.tolist()
+            yield start, vectors.tolist()
+    finally:
+        try:
+            if pool is not None and model is not None:
+                model.stop_multi_process_pool(pool)
+        finally:
+            if parallel:
+                for name, value in previous_thread_env.items():
+                    if value is None:
+                        os.environ.pop(name, None)
+                    else:
+                        os.environ[name] = value
 
 
 def embed_with_cache(
-        embeddings: HuggingFaceEmbeddings,
-        chunks: List[Dict[str, Any]],
-        model_name: str,
-        num_workers: int,
-        batch_size: int,
-        gpu_ids: List[int] | None,
-        cpu_threads: int,
-        use_cache: bool,
+    embeddings: HuggingFaceEmbeddings,
+    chunks: List[Dict[str, Any]],
+    model_name: str,
+    num_workers: int,
+    batch_size: int,
+    cache_batch_size: int,
+    gpu_ids: List[int] | None,
+    cpu_threads: int,
+    use_cache: bool,
 ) -> Tuple[List[List[float]], Dict[str, Any]]:
     """
     Genera los embeddings de una lista de chunks, reutilizando la caché
@@ -697,32 +753,57 @@ def embed_with_cache(
     embedding_seconds = 0.0
     if pending_texts:
         start = time.perf_counter()
-        if gpu_ids is not None or num_workers > 1:
-            new_vectors = embed_texts_parallel(
-                embeddings,
-                pending_texts,
-                num_workers,
-                batch_size,
+        total_batches = (
+            len(pending_texts) + cache_batch_size - 1
+        ) // cache_batch_size
+        for batch_number, (start_position, new_vectors) in enumerate(
+            iter_embed_text_batches(
+                embeddings=embeddings,
+                texts=pending_texts,
+                num_workers=num_workers,
+                batch_size=batch_size,
+                cache_batch_size=cache_batch_size,
                 gpu_ids=gpu_ids,
                 cpu_threads=cpu_threads,
-            )
-        else:
-            new_vectors = embeddings.embed_documents(pending_texts)
-        embedding_seconds = time.perf_counter() - start
-
-        new_cache_entries = []
-        for position, index in enumerate(pending_indices):
-            vectors[index] = new_vectors[position]
-            new_cache_entries.append(
-                (
-                    chunks[index]["chunk_id"],
-                    pending_hashes[position],
-                    new_vectors[position],
+            ),
+            start=1,
+        ):
+            if len(new_vectors) != min(
+                cache_batch_size,
+                len(pending_texts) - start_position,
+            ):
+                raise RuntimeError(
+                    "El número de embeddings generados en el lote no coincide "
+                    "con el número de textos."
                 )
+
+            new_cache_entries = []
+            for offset, vector in enumerate(new_vectors):
+                position = start_position + offset
+                index = pending_indices[position]
+                vectors[index] = vector
+                new_cache_entries.append(
+                    (
+                        chunks[index]["chunk_id"],
+                        pending_hashes[position],
+                        vector,
+                    )
+                )
+
+            if use_cache:
+                append_to_embedding_cache(model_name, new_cache_entries)
+
+            completed = min(
+                start_position + len(new_vectors),
+                len(pending_texts),
+            )
+            print(
+                f"Embeddings generados: {completed}/{len(pending_texts)}; "
+                f"lotes: {batch_number}/{total_batches}"
+                + (" (caché guardada)" if use_cache else "")
             )
 
-        if use_cache:
-            append_to_embedding_cache(model_name, new_cache_entries)
+        embedding_seconds = time.perf_counter() - start
 
     stats = {
         "cache_hits": hits,
@@ -793,6 +874,7 @@ def index_chunks(
     model_name: str,
     num_workers: int,
     embedding_batch_size: int,
+    cache_batch_size: int,
     gpu_ids: List[int] | None,
     cpu_threads: int,
     use_cache: bool,
@@ -825,6 +907,7 @@ def index_chunks(
         model_name=model_name,
         num_workers=num_workers,
         batch_size=embedding_batch_size,
+        cache_batch_size=cache_batch_size,
         gpu_ids=gpu_ids,
         cpu_threads=cpu_threads,
         use_cache=use_cache,
@@ -966,6 +1049,7 @@ def main(
     gpu_ids_override: List[int] | None = None,
     batch_size_override: int | None = None,
     embedding_batch_size_override: int | None = None,
+    cache_batch_size_override: int | None = None,
     cpu_threads_override: int | None = None,
     use_cache: bool = True,    
 ) -> None:
@@ -1048,7 +1132,17 @@ def main(
         if embedding_batch_size_override is not None
         else int(indexing_config.get("embedding_batch_size", batch_size))
     )
-    if batch_size < 1 or embedding_batch_size < 1:
+    cache_batch_size = (
+        cache_batch_size_override
+        if cache_batch_size_override is not None
+        else int(
+            indexing_config.get(
+                "cache_batch_size",
+                DEFAULT_CACHE_BATCH_SIZE,
+            )
+        )
+    )
+    if batch_size < 1 or embedding_batch_size < 1 or cache_batch_size < 1:
         raise ValueError("Los tamaños de lote deben ser al menos 1.")
 
     torch.set_num_threads(cpu_threads)
@@ -1056,6 +1150,7 @@ def main(
     print(f"GPU IDs CUDA seleccionados: {gpu_ids or 'ninguno'}")
     print(
         f"Lote de embeddings: {embedding_batch_size}; "
+        f"lote de caché: {cache_batch_size}; "
         f"lote de upsert Qdrant: {batch_size}"
     )
     print(f"Chunks por formato: {chunks_by_format}")
@@ -1086,6 +1181,7 @@ def main(
         model_name=model_name,
         num_workers=num_workers,
         embedding_batch_size=embedding_batch_size,
+        cache_batch_size=cache_batch_size,
         gpu_ids=gpu_ids if gpu_ids else None,
         cpu_threads=cpu_threads,
         use_cache=use_cache,
@@ -1105,6 +1201,7 @@ def main(
         "gpu_ids": gpu_ids,
         "batch_size": batch_size,
         "embedding_batch_size": embedding_batch_size,
+        "cache_batch_size": cache_batch_size,
         "use_cache": use_cache,
         "collection_name": collection_name,
         "total_chunks": len(chunks),
@@ -1180,6 +1277,16 @@ if __name__ == "__main__":
         ),
     )
     parser.add_argument(
+        "--cache-batch-size",
+        type=int,
+        default=None,
+        help=(
+            "Número de embeddings calculados antes de guardar un lote en la "
+            "caché (por defecto: indexing.cache_batch_size o "
+            f"{DEFAULT_CACHE_BATCH_SIZE})."
+        ),
+    )
+    parser.add_argument(
         "--cpu-threads",
         type=int,
         default=None,
@@ -1203,6 +1310,7 @@ if __name__ == "__main__":
         gpu_ids_override=arguments.gpu_ids,
         batch_size_override=arguments.batch_size,
         embedding_batch_size_override=arguments.embedding_batch_size,
+        cache_batch_size_override=arguments.cache_batch_size,
         cpu_threads_override=arguments.cpu_threads,
         use_cache=not arguments.no_cache,
     )
