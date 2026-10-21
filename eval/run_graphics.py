@@ -1,3 +1,4 @@
+import json
 import argparse
 from pathlib import Path
 
@@ -11,6 +12,9 @@ import pandas as pd
 
 GRAPHICS_DIR = Path(__file__).resolve().parent
 BASE_DIR = GRAPHICS_DIR.parent
+
+# Configuración de indexación para identificar la colección
+INDEXING_CONFIG_FILE = BASE_DIR / "configs" / "indexing_config.json"
 
 METRICS_DIR = BASE_DIR / "output" / "metrics"
 OUTPUT_DIR = BASE_DIR / "output" / "graphics"
@@ -518,11 +522,18 @@ def main():
 
     args = parse_args()
 
+    # Obtener el nombre de la colección
+    with INDEXING_CONFIG_FILE.open("r", encoding="utf-8") as file:
+        indexing_config = json.load(file)
+
+    collection_name = indexing_config["qdrant"]["collection_name"]
+
+    # Leer las métricas de la colección correspondiente
     metrics_file = (
         METRICS_DIR
+        / collection_name
         / args.metrics_file
     )
-
 
     # --------------------------------------------------------
     # Comprobar archivo
@@ -577,7 +588,10 @@ def main():
     # Crear carpeta de salida
     # --------------------------------------------------------
 
-    OUTPUT_DIR.mkdir(
+    # Carpeta de gráficas específica de la colección
+    collection_output_dir = OUTPUT_DIR / collection_name
+
+    collection_output_dir.mkdir(
         parents=True,
         exist_ok=True,
     )
@@ -620,7 +634,7 @@ def main():
     # --------------------------------------------------------
 
     heatmap_file = (
-        OUTPUT_DIR
+        collection_output_dir
         / f"heatmap_{suffix}.png"
     )
 
@@ -636,7 +650,7 @@ def main():
     # --------------------------------------------------------
 
     dotplot_file = (
-        OUTPUT_DIR
+        collection_output_dir
         / f"dotplot_{suffix}.png"
     )
 
