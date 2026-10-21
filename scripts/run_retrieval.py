@@ -147,6 +147,7 @@ def load_queries(
 def create_output_file(
     retrieval_config: Dict[str, Any],
     retrieval_params: Dict[str, Any],
+    collection_name: str,
 ) -> Path:
 
     """
@@ -196,7 +197,7 @@ def create_output_file(
 
     filename = "_".join(parts) + ".json"
 
-    return OUTPUT_DIR / filename
+    return OUTPUT_DIR / collection_name / filename
 
 def save_results(
     results: List[Dict[str, Any]],
@@ -564,6 +565,7 @@ def main() -> None:
     output_file = create_output_file(
         retrieval_config=retrieval_config,
         retrieval_params=retrieval_params,
+        collection_name=collection_name,
     )
 
     top_k = retrieval_params["top_k"]
