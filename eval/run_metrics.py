@@ -1,3 +1,4 @@
+import json
 import argparse
 from pathlib import Path
 
@@ -42,6 +43,9 @@ import pandas as pd
 
 EVAL_DIR = Path(__file__).resolve().parent
 BASE_DIR = EVAL_DIR.parent
+
+# Configuración de indexación para identificar la colección
+INDEXING_CONFIG_FILE = BASE_DIR / "configs" / "indexing_config.json"
 
 JUDGE_DIR = BASE_DIR / "output" / "judge"
 OUTPUT_DIR = BASE_DIR / "output" / "metrics"
@@ -229,7 +233,14 @@ def main():
 
     args = parse_args()
 
-    judge_file = JUDGE_DIR / args.judge_file
+    # Obtener el nombre de la colección
+    with INDEXING_CONFIG_FILE.open("r", encoding="utf-8") as file:
+        indexing_config = json.load(file)
+
+    collection_name = indexing_config["qdrant"]["collection_name"]
+
+    # Leer el CSV del juez correspondiente a esta colección
+    judge_file = JUDGE_DIR / collection_name / args.judge_file
 
     # --------------------------------------------------------
     # Comprobar que existe el archivo
@@ -465,14 +476,16 @@ def main():
     # ARCHIVO DE SALIDA
     # ========================================================
 
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    # Carpeta de métricas correspondiente a la colección
+    collection_output_dir = OUTPUT_DIR / collection_name
+    collection_output_dir.mkdir(parents=True, exist_ok=True)
 
     suffix = judge_file.stem
 
     if suffix.startswith("judge_"):
         suffix = suffix[len("judge_"):]
 
-    output_file = OUTPUT_DIR / f"metrics_{suffix}.xlsx"
+    output_file = collection_output_dir / f"metrics_{suffix}.xlsx"
 
     # ========================================================
     # GUARDAR EXCEL
