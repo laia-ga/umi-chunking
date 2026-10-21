@@ -1,3 +1,4 @@
+
 import json
 import argparse
 from pathlib import Path
@@ -5,36 +6,26 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+
 # ============================================================
 # MÉTRICAS A EVALUAR
 # ============================================================
 
 # Mean nDCG@5: mide la calidad de los 5 chunks recuperados
 # frente a una situación ideal fija (5 chunks con score = 2),
-# teniendo en cuenta tanto el grado de relevancia como la
-# posición. Solo un ranking [2, 2, 2, 2, 2] obtiene 1.0
-
-# HitRate@5: porcentaje de preguntas en el que se consigue
-# recuperar al menos un chunk con información suficiente
-# (score = 2) entre los 5 chunks recuperados
-
-# MRR@5: media del inverso de la posición del PRIMER chunk
-# relevante (score = 2) entre los 5 chunks recuperados.
-# Si no hay ninguno, la pregunta aporta 0. Evalúa como de 
-# rápido encuentra una respuesta correcta
-
-# %score2: porcentaje de chunks relevantes recuperados (score = 2)
-
-# %score1: porcentaje de chunks útiles pero insuficientes recuperados (score = 1)
-
-# %score0: porcentaje de chunks irrelevantes recuperados (score = 0)
-
-# Notas:
-# - Las preguntas sin ningún chunk recuperado cuentan con
-#   nDCG = Hit = MRR = 0, para no inflar las métricas
-# - Las evaluaciones fallidas del judge (score NaN) se tratan
-#   como score = 0, para no desplazar las posiciones del ranking
-# - Los %score se calculan solo sobre los chunks recuperados
+# teniendo en cuenta tanto la relevancia como la posición.
+#
+# HitRate@5: proporción de preguntas para las que se recupera
+# al menos un chunk con score = 2 entre los primeros cinco.
+#
+# MRR@5: media del inverso de la posición del primer chunk
+# con score = 2 entre los cinco primeros.
+#
+# %score2, %score1, %score0: distribución de puntuaciones
+# entre los chunks recuperados, considerando los primeros cinco.
+#
+# Las preguntas sin chunks recuperados cuentan como 0.
+# Las evaluaciones fallidas del juez se tratan como score = 0.
 
 
 # ============================================================
@@ -44,7 +35,6 @@ import pandas as pd
 EVAL_DIR = Path(__file__).resolve().parent
 BASE_DIR = EVAL_DIR.parent
 
-# Configuración de indexación para identificar la colección
 INDEXING_CONFIG_FILE = BASE_DIR / "configs" / "indexing_config.json"
 
 JUDGE_DIR = BASE_DIR / "output" / "judge"
@@ -59,9 +49,8 @@ def parse_args():
 
     parser = argparse.ArgumentParser(
         description=(
-            "Calcula métricas de retrieval por combinación "
-            "de strategy y document_type a partir del CSV "
-            "generado por run_judge.py."
+            "Calcula métricas de retrieval por estrategia "
+            "a partir del CSV generado por run_judge.py."
         )
     )
 
@@ -83,12 +72,11 @@ def dcg(scores):
     Discounted Cumulative Gain.
 
     Relevancia graduada:
-
         0 = irrelevante
         1 = útil pero insuficiente
         2 = suficiente para responder
 
-    Ganancia = 2^relevancia - 1  ->  0, 1, 3
+    Ganancia = 2^relevancia - 1
     Descuento = log2(posición + 1)
     """
 
@@ -117,18 +105,8 @@ def ndcg_at_5(scores):
     """
     nDCG@5 con ideal fijo.
 
-    El DCG de los 5 chunks recuperados se compara con el
-    DCG de la situación ideal: 5 chunks con puntuación 2.
-
-    Ejemplos:
-
-        [2, 2, 2, 2, 2] -> 1.0
-        [2, 0, 0, 0, 0] -> ~0.34
-        [1, 0, 0, 0, 0] -> ~0.11
-        [0, 0, 0, 0, 0] -> 0.0
-
-    Si se recuperan menos de 5 chunks, las posiciones
-    ausentes cuentan como 0.
+    Solo el ranking [2, 2, 2, 2, 2] obtiene 1.0.
+    Las posiciones ausentes equivalen a relevancia 0.
     """
 
     scores = list(scores)[:5]
@@ -143,21 +121,13 @@ def ndcg_at_5(scores):
 def hit_at_5(scores):
 
     """
-    HitRate@5.
-
-    Devuelve 1 si entre los 5 chunks recuperados existe
-    al menos un chunk con información suficiente para
-    responder la pregunta (score = 2).
-
-    En caso contrario devuelve 0.
+    Devuelve 1 si existe al menos un chunk con score 2
+    entre los cinco primeros; en caso contrario, 0.
     """
 
     scores = list(scores)[:5]
 
-    if any(score == 2 for score in scores):
-        return 1
-
-    return 0
+    return int(any(score == 2 for score in scores))
 
 
 # ============================================================
@@ -167,21 +137,8 @@ def hit_at_5(scores):
 def reciprocal_rank(scores):
 
     """
-    Reciprocal Rank.
-
-    Busca la posición del PRIMER chunk con información
-    suficiente para responder la pregunta (score = 2).
-
-    Ejemplos:
-
-        [2, 0, 0, 0, 0] -> 1
-        [0, 2, 0, 0, 0] -> 1/2
-        [0, 0, 2, 0, 0] -> 1/3
-        [0, 0, 0, 0, 2] -> 1/5
-        [0, 0, 0, 0, 0] -> 0
-
-    MRR será posteriormente la media del Reciprocal Rank
-    de todas las preguntas.
+    Inverso de la posición del primer chunk con score 2.
+    Devuelve 0 si no aparece entre los cinco primeros.
     """
 
     scores = list(scores)[:5]
@@ -201,9 +158,9 @@ def reciprocal_rank(scores):
 def calculate_question_metrics(question_df):
 
     """
-    Calcula nDCG@5, Hit@5 y RR para una pregunta.
+    Calcula nDCG@5, Hit@5 y RR@5 para una pregunta.
 
-    Los chunks se ordenan primero por su rank original.
+    Los chunks se ordenan según su rank original.
     """
 
     question_df = question_df.sort_values("rank")
@@ -214,7 +171,6 @@ def calculate_question_metrics(question_df):
         .tolist()
     )
 
-    # Solo utilizar los primeros 5 chunks
     scores = scores[:5]
 
     return {
@@ -233,41 +189,40 @@ def main():
 
     args = parse_args()
 
-    # Obtener el nombre de la colección
-    with INDEXING_CONFIG_FILE.open("r", encoding="utf-8") as file:
+    # --------------------------------------------------------
+    # 1. Identificar colección Qdrant
+    # --------------------------------------------------------
+
+    with INDEXING_CONFIG_FILE.open(
+        "r", encoding="utf-8"
+    ) as file:
+
         indexing_config = json.load(file)
 
     collection_name = indexing_config["qdrant"]["collection_name"]
 
-    # Leer el CSV del juez correspondiente a esta colección
-    judge_file = JUDGE_DIR / collection_name / args.judge_file
+    # --------------------------------------------------------
+    # 2. Localizar CSV del juez
+    # --------------------------------------------------------
 
-    # --------------------------------------------------------
-    # Comprobar que existe el archivo
-    # --------------------------------------------------------
+    judge_file = JUDGE_DIR / collection_name / args.judge_file
 
     if not judge_file.exists():
 
         raise FileNotFoundError(
-            f"No existe el archivo:\n"
-            f"{judge_file}"
+            f"No existe el archivo:\n{judge_file}"
         )
 
     # --------------------------------------------------------
-    # Cargar CSV del judge
+    # 3. Cargar resultados del juez
     # --------------------------------------------------------
 
     df = pd.read_csv(judge_file)
-
-    # --------------------------------------------------------
-    # Comprobar columnas necesarias
-    # --------------------------------------------------------
 
     required_columns = {
         "question_id",
         "question",
         "strategy",
-        "document_type",
         "rank",
         "relevance_score",
     }
@@ -281,30 +236,33 @@ def main():
             + ", ".join(sorted(missing))
         )
 
-    # --------------------------------------------------------
-    # Preguntas esperadas por document_type
-    # --------------------------------------------------------
-    # Se calcula sobre el CSV completo (antes de tratar los
-    # fallos), para que ninguna pregunta desaparezca del
-    # denominador.
-
-    expected_questions = (
-        df.groupby("document_type")["question_id"]
-        .unique()
-        .to_dict()
-    )
+    if df.empty:
+        raise ValueError(
+            "El CSV del juez no contiene evaluaciones."
+        )
 
     # --------------------------------------------------------
-    # Evaluaciones fallidas del judge -> score 0
+    # 4. Preguntas esperadas
     # --------------------------------------------------------
-    # No se eliminan para no desplazar las posiciones del
-    # ranking. Se marcan para poder contarlas.
+
+    # Todas las preguntas presentes en el CSV, sin distinguir
+    # por tipo de documento ni por estrategia.
+
+    expected_questions = df["question_id"].dropna().unique()
+
+    # --------------------------------------------------------
+    # 5. Evaluaciones fallidas -> score 0
+    # --------------------------------------------------------
 
     df_valid = df.copy()
 
-    df_valid["judge_failed"] = df_valid["relevance_score"].isna()
+    df_valid["judge_failed"] = (
+        df_valid["relevance_score"].isna()
+    )
 
-    n_failed_total = int(df_valid["judge_failed"].sum())
+    n_failed_total = int(
+        df_valid["judge_failed"].sum()
+    )
 
     df_valid["relevance_score"] = (
         df_valid["relevance_score"]
@@ -313,7 +271,7 @@ def main():
     )
 
     # --------------------------------------------------------
-    # Comprobar scores
+    # 6. Comprobar puntuaciones
     # --------------------------------------------------------
 
     valid_scores = {0, 1, 2}
@@ -331,21 +289,21 @@ def main():
         )
 
     # ========================================================
-    # MÉTRICAS POR STRATEGY × DOCUMENT_TYPE
+    # 7. MÉTRICAS POR STRATEGY
     # ========================================================
 
     summary_results = []
 
     grouped = df_valid.groupby(
-        ["strategy", "document_type"],
+        "strategy",
         dropna=False,
         sort=False,
     )
 
-    for (strategy, document_type), group_df in grouped:
+    for strategy, group_df in grouped:
 
         # ----------------------------------------------------
-        # Métricas individuales de cada pregunta
+        # Métricas individuales por pregunta
         # ----------------------------------------------------
 
         question_results = []
@@ -361,30 +319,38 @@ def main():
 
         per_question_df = pd.DataFrame(
             question_results,
-            columns=["question_id", "nDCG@5", "Hit@5", "MRR@5"],
+            columns=[
+                "question_id",
+                "nDCG@5",
+                "Hit@5",
+                "MRR@5",
+            ],
         )
 
         # ----------------------------------------------------
-        # Preguntas sin ningún chunk recuperado -> métricas 0
+        # Preguntas sin chunks recuperados -> métricas 0
         # ----------------------------------------------------
 
-        retrieved = set(per_question_df["question_id"])
+        retrieved = set(
+            per_question_df["question_id"]
+        )
 
         missing_q = [
-            q for q in expected_questions.get(document_type, [])
-            if q not in retrieved
+            question_id
+            for question_id in expected_questions
+            if question_id not in retrieved
         ]
 
         if missing_q:
 
             empty = pd.DataFrame([
                 {
-                    "question_id": q,
+                    "question_id": question_id,
                     "nDCG@5": 0.0,
                     "Hit@5": 0,
                     "MRR@5": 0.0,
                 }
-                for q in missing_q
+                for question_id in missing_q
             ])
 
             per_question_df = pd.concat(
@@ -393,7 +359,7 @@ def main():
             )
 
         # ----------------------------------------------------
-        # Chunks considerados para los porcentajes
+        # Primeros cinco chunks por pregunta
         # ----------------------------------------------------
 
         top5_chunks = (
@@ -405,10 +371,12 @@ def main():
 
         n_chunks = len(top5_chunks)
 
-        n_failed = int(top5_chunks["judge_failed"].sum())
+        n_failed = int(
+            top5_chunks["judge_failed"].sum()
+        )
 
         # ----------------------------------------------------
-        # Porcentaje de cada score
+        # Distribución de puntuaciones
         # ----------------------------------------------------
 
         if n_chunks > 0:
@@ -426,12 +394,11 @@ def main():
             pct_score0 = 0.0
 
         # ----------------------------------------------------
-        # Resumen de la combinación
+        # Resumen de la estrategia
         # ----------------------------------------------------
 
         summary_results.append({
             "strategy": strategy,
-            "document_type": document_type,
             "n_questions": len(per_question_df),
             "n_missing": len(missing_q),
             "n_chunks": n_chunks,
@@ -444,54 +411,52 @@ def main():
         })
 
     # ========================================================
-    # CREAR DATAFRAME FINAL
+    # 8. CREAR DATAFRAME FINAL
     # ========================================================
 
     summary_df = pd.DataFrame(summary_results)
 
     summary_df = summary_df.sort_values(
-        ["strategy", "document_type"]
-    )
-
-    # --------------------------------------------------------
-    # Combinaciones strategy × document_type ausentes
-    # --------------------------------------------------------
-
-    all_combinations = {
-        (s, d)
-        for s in df["strategy"].unique()
-        for d in df["document_type"].unique()
-    }
-
-    present_combinations = set(
-        zip(summary_df["strategy"], summary_df["document_type"])
-    )
-
-    absent_combinations = sorted(
-        all_combinations - present_combinations,
-        key=str,
+        "Mean_nDCG@5",
+        ascending=False,
     )
 
     # ========================================================
-    # ARCHIVO DE SALIDA
+    # 9. COMBINACIONES AUSENTES
     # ========================================================
 
-    # Carpeta de métricas correspondiente a la colección
+    # Ya no hay combinaciones strategy x document_type.
+    # Cada estrategia aparece una única vez en summary.
+
+    # ========================================================
+    # 10. ARCHIVO DE SALIDA
+    # ========================================================
+
     collection_output_dir = OUTPUT_DIR / collection_name
-    collection_output_dir.mkdir(parents=True, exist_ok=True)
+
+    collection_output_dir.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     suffix = judge_file.stem
 
     if suffix.startswith("judge_"):
         suffix = suffix[len("judge_"):]
 
-    output_file = collection_output_dir / f"metrics_{suffix}.xlsx"
+    output_file = (
+        collection_output_dir
+        / f"metrics_{suffix}.xlsx"
+    )
 
     # ========================================================
-    # GUARDAR EXCEL
+    # 11. GUARDAR EXCEL
     # ========================================================
 
-    with pd.ExcelWriter(output_file, engine="openpyxl") as writer:
+    with pd.ExcelWriter(
+        output_file,
+        engine="openpyxl",
+    ) as writer:
 
         summary_df.to_excel(
             writer,
@@ -500,7 +465,7 @@ def main():
         )
 
     # ========================================================
-    # RESULTADO
+    # 12. RESULTADO
     # ========================================================
 
     print("=" * 70)
@@ -508,32 +473,23 @@ def main():
     print("=" * 70)
 
     print(
-        f"\nCombinaciones strategy × document_type: "
-        f"{len(summary_df)}"
+        f"\nEstrategias evaluadas: {len(summary_df)}"
     )
 
     print(
-        f"Evaluaciones fallidas del judge (tratadas como 0): "
-        f"{n_failed_total}"
+        f"Preguntas esperadas: {len(expected_questions)}"
     )
 
-    if absent_combinations:
-
-        print(
-            "\nAVISO: combinaciones sin ninguna fila en el CSV "
-            "(no aparecen en el resumen):"
-        )
-
-        for strategy, document_type in absent_combinations:
-            print(f"  - {strategy} × {document_type}")
+    print(
+        "Evaluaciones fallidas del judge "
+        f"(tratadas como 0): {n_failed_total}"
+    )
 
     print()
-
     print(summary_df.to_string(index=False))
 
     print(
-        f"\nResultados guardados en:\n"
-        f"{output_file}"
+        f"\nResultados guardados en:\n{output_file}"
     )
 
 
