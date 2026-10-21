@@ -55,23 +55,26 @@ CHUNKS_ROOT = PROJECT_ROOT / "output" / "chunks"
 # Carpeta base de resultados de indexación
 INDEXING_OUTPUT_ROOT = PROJECT_ROOT / "output" / "indexing"
 
-# Configuración de indexación
+# Archivo de configuración de la indexación
 INDEXING_CONFIG_FILE = PROJECT_ROOT / "configs" / "indexing_config.json"
 
-# Leer el nombre de la colección
+# Obtener el nombre de la colección configurada en Qdrant
 with INDEXING_CONFIG_FILE.open("r", encoding="utf-8") as file:
     collection_name = json.load(file)["qdrant"]["collection_name"]
 
 # Carpeta específica de la colección
 INDEXING_OUTPUT_DIR = INDEXING_OUTPUT_ROOT / collection_name
 
-# Archivos de salida
+# Archivo normalizado, con un registro JSON por línea
 NORMALIZED_OUTPUT_FILE = INDEXING_OUTPUT_DIR / "normalized_chunks.jsonl"
 
+# Carpeta donde se guarda la caché de embeddings
 EMBEDDINGS_CACHE_DIR = INDEXING_OUTPUT_DIR / "embeddings_cache"
 DEFAULT_CACHE_BATCH_SIZE = 1024
 
+# Log de tiempos de cada ejecución
 RUN_LOG_FILE = INDEXING_OUTPUT_DIR / "logs" / "run_log.jsonl"
+
 
 # ============================================================
 # FUNCIONES AUXILIARES
