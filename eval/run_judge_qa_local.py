@@ -54,6 +54,9 @@ BASE_DIR = SCRIPTS_DIR.parent
 # Añadir la raíz del proyecto al path
 sys.path.append(str(BASE_DIR))
 
+# Configuración de indexación para identificar la colección
+INDEXING_CONFIG_FILE = BASE_DIR / "configs" / "indexing_config.json"
+
 # Carpeta de salida
 OUTPUT_DIR = (
     BASE_DIR
@@ -734,10 +737,19 @@ def create_executor(
 def main():
     args = parse_args()
 
+    # Obtener el nombre de la colección
+    with INDEXING_CONFIG_FILE.open("r", encoding="utf-8") as file:
+        indexing_config = json.load(file)
+
+    collection_name = indexing_config["qdrant"]["collection_name"]
+
+    # Leer los resultados de retrieval de esta colección
+
     retrieval_results_file = (
         BASE_DIR
         / "output"
         / "retrieval"
+        / collection_name
         / args.retrieval_file
     )
 
@@ -748,6 +760,7 @@ def main():
 
     output_file = (
         OUTPUT_DIR
+        / collection_name
         / f"local_judge_{retrieval_suffix}.csv"
     )
 
@@ -768,7 +781,7 @@ def main():
         results = json.load(file)
 
     print(f"Preguntas encontradas: {len(results)}")
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    output_file.parent.mkdir(parents=True, exist_ok=True)
     done_keys = prepare_resume(
         output_file,
         args.restart,

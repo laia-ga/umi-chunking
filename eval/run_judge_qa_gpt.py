@@ -76,6 +76,9 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 # Raíz del proyecto
 BASE_DIR = SCRIPTS_DIR.parent
 
+# Configuración de indexación para identificar la colección
+INDEXING_CONFIG_FILE = BASE_DIR / "configs" / "indexing_config.json"
+
 # Añadir la raíz del proyecto al path
 sys.path.append(str(BASE_DIR))
 
@@ -540,10 +543,18 @@ def judge_and_save_task(
 def main():
     args = parse_args()
 
+    # Obtener el nombre de la colección
+    with INDEXING_CONFIG_FILE.open("r", encoding="utf-8") as file:
+        indexing_config = json.load(file)
+
+    collection_name = indexing_config["qdrant"]["collection_name"]
+
+    # Leer los resultados de retrieval de esta colección
     retrieval_results_file = (
         BASE_DIR
         / "output"
         / "retrieval"
+        / collection_name
         / args.retrieval_file
     )
 
@@ -554,6 +565,7 @@ def main():
 
     output_file = (
         OUTPUT_DIR
+        / collection_name
         / f"gpt_judge_{retrieval_suffix}.csv"
     )
 
@@ -618,10 +630,10 @@ def main():
     # 9.4 PREPARAR SALIDA
     # ==========================================================================
 
-    OUTPUT_DIR.mkdir(
+    output_file.parent.mkdir(
         parents=True,
         exist_ok=True,
-    )
+    )   
 
     if args.restart and output_file.exists():
 
