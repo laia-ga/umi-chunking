@@ -103,6 +103,7 @@ obligatorios `question_id`, `question` y `gold_answer`. Ejemplo:
 | `configs/tokenizer_config.json` | Tokenizador y límites de tokens usados por chunking. |
 | `configs/indexing_config.json` | `chunk_fold` que se indexa, formatos, modelo de embeddings, conexión y colección Qdrant, lotes y recursos. |
 | `configs/retrieval_config.json` | Modelo de embeddings para las preguntas, archivo de ground truth, `top_k` y filtros de Retrieval. |
+| `configs/eval_config.json` | Fold de Retrieval, modelos/versiones y carpeta de salida de cada judge; judge elegido para métricas. |
 
 `chunk_fold` debe señalar la misma ejecución de chunking en las configuraciones
 de chunking e indexación. El modelo de embeddings y su normalización deben
@@ -112,6 +113,17 @@ conexión de Qdrant se toman de `indexing_config.json`.
 La configuración predeterminada usa el conjunto definitivo
 `data/ground_truth/4n_questions.jsonl`. Para probar otro conjunto, cambia
 `retrieval.ground_truth_file` por una ruta relativa a `data/ground_truth/`.
+
+La evaluación usa `fold` en `configs/eval_config.json` para localizar los
+resultados de Retrieval. Cada bloque de judge también define su
+`output_folder`, que se usa para sus resultados y para las métricas y gráficas
+cuando ese judge está seleccionado. Así se pueden mantener las salidas de
+distintos modelos separadas. `metrics_judge` debe ser `local` o `gpt` y
+selecciona tanto el CSV que procesan las métricas como la carpeta que usan las
+gráficas. El modelo y la versión activos se leen del JSON; si falta una clave
+o no se puede leer la configuración, la ejecución falla en lugar de usar un
+valor alternativo del código. Esta configuración no depende de la colección
+indicada en `indexing_config.json`.
 
 Para usar el judge GPT, crea un archivo `.env` en la raíz del repositorio con
 la clave de API:
@@ -484,9 +496,11 @@ embedding de cada pregunta se reutiliza para todas las estrategias
 configuradas.
 
 Los resultados se guardan en
-`output/retrieval/retrieval_<modelo>[_<tipo_de_documento>].json` (por ejemplo,
-`retrieval_bge_m3.json`). El archivo se reescribe al ejecutar de nuevo una
-configuración que genera el mismo nombre.
+`output/retrieval/<colección>/<archivo>`, por ejemplo
+`output/retrieval/all_bge_m3/retrieval_bge_m3.json`. El archivo se reescribe
+al ejecutar de nuevo una configuración que genera el mismo nombre. Para que
+los jueces encuentren este resultado, `fold` en `eval_config.json` debe
+coincidir con el nombre de esa carpeta.
 
 ## Judge: evaluación de relevancia
 
@@ -501,25 +515,26 @@ referencia (`gold_answer`). Ambos usan la misma rúbrica:
 - **0**: no contiene información útil para responder.
 
 El judge no genera una nueva respuesta: asigna una puntuación de relevancia
-por chunk. Lee el JSON producido por Retrieval desde `output/retrieval/` y
-guarda un CSV en `output/judge/`. Si el resultado de Retrieval contiene una
-lista global `retrieved_chunks`, evalúa esa lista; si contiene resultados
-separados por `strategies`, evalúa los chunks de cada estrategia por
-separado. Las preguntas sin identificador, texto o respuesta de referencia
-se omiten. `--top-k` permite evaluar solo los primeros chunks de cada lista;
-si se omite, se evalúan todos los que estén en el JSON de Retrieval.
+por chunk. Lee el JSON producido por Retrieval desde
+`output/retrieval/<fold>/` y guarda el CSV bajo
+`output/judge/<output_folder>/`. Si el resultado de Retrieval contiene una
+lista global `retrieved_chunks`, evalúa
+esa lista; si contiene resultados separados por `strategies`, evalúa los
+chunks de cada estrategia por separado. Las preguntas sin identificador,
+texto o respuesta de referencia se omiten. `--top-k` permite evaluar solo
+los primeros chunks de cada lista; si se omite, se evalúan todos los que
+estén en el JSON de Retrieval.
 
 ### Judge local
 
-`eval/run_judge_qa_local.py` ejecuta el modelo local
-`AtlaAI/Selene-1-Mini-Llama-3.1-8B`. Por defecto selecciona `cuda:0` si CUDA
-está disponible y, si no, CPU. Comprueba los dispositivos y carga el modelo
-antes de empezar a evaluar, de modo que los errores de carga se detecten
-antes de modificar el CSV de resultados:
+`eval/run_judge_qa_local.py` ejecuta el modelo definido en
+`local_judge.model_name` en `configs/eval_config.json`. Por defecto
+selecciona `cuda:0` si CUDA está disponible y, si no, CPU. Comprueba los
+dispositivos y carga el modelo antes de empezar a evaluar, de modo que los
+errores de carga se detecten antes de modificar el CSV de resultados:
 
 ```bash
-python eval/run_judge_qa_local.py retrieval_bge_m3.json \
-  --gpu-ids 0 --batch-size 1
+python eval/run_judge_qa_local.py --gpu-ids 0 --batch-size 1
 ```
 
 `--gpu-ids` acepta uno o varios índices CUDA visibles, por ejemplo
@@ -533,7 +548,8 @@ limitar el trabajo a los primeros resultados con `--top-k`.
 Por defecto el juez guarda solo la puntuación, lo que reduce la generación.
 `--include-reason` solicita y guarda además una justificación breve. Los
 resultados se escriben en
-`output/judge/local_judge_<sufijo_del_retrieval>.csv`.
+`output/judge/<output_folder>/local_judge_<sufijo_del_retrieval>.csv`.
+`output_folder` se toma del bloque `local_judge` en `eval_config.json`.
 
 Si el CSV ya existe, la ejecución conserva las filas correctas y vuelve a
 intentar las filas fallidas o pendientes. `--restart` descarta el CSV y
@@ -552,34 +568,41 @@ usando Structured Outputs para restringir la respuesta a un `score` de 0, 1 o
 raíz del proyecto.
 
 ```bash
-python eval/run_judge_qa_gpt.py retrieval_bge_m3.json \
+python eval/run_judge_qa_gpt.py \
   --workers 4 --top-k 5
 ```
 
-El script usa el modelo `gpt-5.6-luna`. `--workers` controla las llamadas a la
-API en paralelo (por defecto, 1); se puede aumentar si los límites de
-concurrencia y solicitudes lo permiten. Ante errores transitorios, como
-límites de solicitudes o problemas de red, reintenta hasta cinco veces con
-espera creciente. Los errores de autenticación o cuota detienen la ejecución
-porque no se resuelven reintentando. `--top-k` limita cuántos chunks evalúa
-por pregunta y estrategia.
+El script usa el modelo definido en `gpt_judge.model_name` en
+`configs/eval_config.json`. `--workers` controla las llamadas a la API en
+paralelo (por defecto, 1); se puede aumentar si los límites de concurrencia
+y solicitudes lo permiten. Ante errores transitorios, como límites de
+solicitudes o problemas de red, reintenta hasta cinco veces con espera
+creciente. Los errores de autenticación o cuota detienen la ejecución porque
+no se resuelven reintentando. `--top-k` limita cuántos chunks evalúa por
+pregunta y estrategia.
 
 Los resultados se guardan en
-`output/judge/gpt_judge_<sufijo_del_retrieval>.csv`. Se guardan a medida que
-terminan las evaluaciones: al reanudar, se conservan las filas que tienen
-puntuación y se repiten las que fallaron o quedaron pendientes. `--restart`
-descarta el CSV anterior y vuelve a evaluar todo.
+`output/judge/<output_folder>/gpt_judge_<sufijo_del_retrieval>.csv`, donde
+`output_folder` se toma del bloque `gpt_judge` en `eval_config.json`. Se
+guardan a medida que terminan las evaluaciones: al reanudar, se conservan
+las filas que tienen puntuación y se repiten las que fallaron o quedaron
+pendientes. Si cambia `gpt_judge.version`, usa `--restart` para recalcular
+el CSV. `--restart` también descarta el CSV anterior y vuelve a evaluar todo.
 
 ## Métricas de evaluación
 
-`eval/run_metrics.py` resume las puntuaciones del judge y calcula métricas
-para cada combinación de estrategia de chunking y tipo de documento. Recibe
-como entrada uno de los CSV producidos por el judge (local o GPT) y guarda un
-Excel en `output/metrics/`:
+`eval/run_metrics.py` resume las puntuaciones del judge seleccionado por
+`metrics_judge` en `eval_config.json` y guarda el Excel en
+`output/metrics/<output_folder>/`:
 
 ```bash
-python eval/run_metrics.py gpt_judge_bge_m3.csv
+python eval/run_metrics.py
 ```
+
+Para calcular métricas del otro juez, cambia `metrics_judge` en
+`eval_config.json` a `local` o `gpt` y ejecuta de nuevo el comando. Si se
+indica un `judge_file` posicional, se usa ese CSV dentro del
+`output_folder` del juez seleccionado.
 
 El script calcula:
 
@@ -600,11 +623,10 @@ porcentajes de scores se calculan sobre los chunks recuperados, limitados a
 los cinco primeros. El Excel contiene una hoja `summary` con una fila por
 combinación presente, incluyendo también los recuentos de preguntas y chunks.
 
-El archivo se llama
-`output/metrics/metrics_<nombre_del_csv_del_judge>.xlsx`; por ejemplo,
-`gpt_judge_bge_m3.csv` produce `metrics_gpt_judge_bge_m3.xlsx`. Si el judge
-incluye varios tipos documentales, el resumen mantiene una fila separada por
-tipo.
+El archivo se guarda en `output/metrics/<output_folder>/` y su nombre se
+deriva del CSV de entrada; por ejemplo, `gpt_judge_bge_m3.csv` produce
+`metrics_gpt_judge_bge_m3.xlsx`. Si el judge incluye varios tipos
+documentales, el resumen mantiene una fila separada por tipo.
 
 ## Gráficas de resultados
 
@@ -614,15 +636,18 @@ de scores, y un dotplot que compara Mean nDCG@5, HitRate@5 y MRR@5 entre
 estrategias. Las estrategias se ordenan por Mean nDCG@5:
 
 ```bash
-python eval/run_graphics.py metrics_gpt_judge_bge_m3.xlsx
+python eval/run_graphics.py
 ```
 
-Las imágenes PNG se guardan en `output/graphics/` con resolución de 300 dpi:
-`heatmap_gpt_judge_bge_m3.png` y `dotplot_gpt_judge_bge_m3.png`. Las gráficas
-están pensadas para un único tipo documental por archivo de métricas. Si el
-Excel contiene varios tipos, filtra la hoja `summary` a un tipo antes de
-graficar; el script no ofrece un filtro de tipo documental y cada estrategia
-aparece una vez por tipo.
+El script usa el Excel correspondiente al `metrics_judge` seleccionado en
+`eval_config.json`. Si se indica un `metrics_file` posicional, se usa ese
+Excel dentro del `output_folder` de ese juez. Las imágenes PNG se guardan en
+`output/graphics/<output_folder>/` con resolución de 300 dpi. Sus nombres se
+derivan del archivo de métricas seleccionado. Las gráficas están pensadas
+para un único tipo documental por archivo de métricas. Si el Excel contiene
+varios tipos, filtra la hoja `summary` a un tipo antes de graficar; el script
+no ofrece un filtro de tipo documental y cada estrategia aparece una vez por
+tipo.
 
 ### Flujo completo de evaluación
 

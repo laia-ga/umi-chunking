@@ -54,8 +54,8 @@ BASE_DIR = SCRIPTS_DIR.parent
 # Añadir la raíz del proyecto al path
 sys.path.append(str(BASE_DIR))
 
-# Configuración de indexación para identificar la colección
-INDEXING_CONFIG_FILE = BASE_DIR / "configs" / "indexing_config.json"
+# Archivo de configuración de evaluación
+EVAL_CONFIG_FILE = BASE_DIR / "configs" / "eval_config.json"
 
 # Carpeta de salida
 OUTPUT_DIR = (
@@ -82,10 +82,6 @@ CSV_FIELDNAMES = [
     "judge_version",
 ]
 
-# Versión del juez, para poder re-evaluar si se cambia
-# la rúbrica
-JUDGE_VERSION = "local-qa-v2"       # AtlaAI/Selene-1-Mini-Llama-3.1-8B
-
 # Estado privado de cada proceso: cada worker carga su propio tokenizer y
 # modelo en el dispositivo que le corresponde.
 _worker_tokenizer = None
@@ -102,6 +98,8 @@ def parse_args():
 
     parser.add_argument(
         "retrieval_file",
+        nargs="?",
+        default=None,
         help="Nombre del archivo JSON generado por run_retrieval.py",
     )
 
@@ -199,8 +197,9 @@ def _parse_gpu_ids(value: str) -> List[int]:
 # ==============================================================================
 
 # Modelo instruct que asigna a cada chunk un score de relevancia entre 0 y 2.
-MODEL_NAME = "AtlaAI/Selene-1-Mini-Llama-3.1-8B"    # v2
-# MODEL_NAME = "Qwen/Qwen3-8B"                      # v1
+# Los valores comentados son referencias históricas; el activo viene del config.
+# MODEL_NAME = "AtlaAI/Selene-1-Mini-Llama-3.1-8B"      # v2
+# MODEL_NAME = "Qwen/Qwen3-8B"                          # v1
 # MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 
 # Sin --include-reason solo se necesita una respuesta JSON corta con el score.
@@ -213,14 +212,18 @@ MAX_NEW_TOKENS = 20
 def _initialize_judge_worker(
     device: str,
     include_reason: bool,
+    model_name: str,
+    judge_version: str,
 ) -> None:
     """Carga una copia privada del tokenizer/modelo en el proceso worker."""
 
     global _worker_tokenizer, _worker_model, _worker_device
-    global _worker_include_reason
+    global _worker_include_reason, MODEL_NAME, JUDGE_VERSION
 
     _worker_device = device
     _worker_include_reason = include_reason
+    MODEL_NAME = model_name
+    JUDGE_VERSION = judge_version
 
     if device == "cpu":
         torch.set_num_threads(1)
@@ -718,13 +721,15 @@ def create_executor(
     stack: ExitStack,
     device: str,
     include_reason: bool,
+    model_name: str,
+    judge_version: str,
 ) -> ProcessPoolExecutor:
     return stack.enter_context(
         ProcessPoolExecutor(
             max_workers=1,
             mp_context=multiprocessing.get_context("spawn"),
             initializer=_initialize_judge_worker,
-            initargs=(device, include_reason),
+            initargs=(device, include_reason, model_name, judge_version),
         )
     )
 
@@ -736,30 +741,29 @@ def create_executor(
 def main():
     args = parse_args()
 
-    # Obtener el nombre de la colección
-    with INDEXING_CONFIG_FILE.open("r", encoding="utf-8") as file:
-        indexing_config = json.load(file)
+    with EVAL_CONFIG_FILE.open("r", encoding="utf-8") as file:
+        eval_config = json.load(file)
 
-    collection_name = indexing_config["qdrant"]["collection_name"]
+    fold = eval_config["fold"]
+    retrieval_suffix = fold.removeprefix("all_")
+    judge_config = eval_config["local_judge"]
+    output_folder = judge_config["output_folder"]
 
-    # Leer los resultados de retrieval de esta colección
+    global MODEL_NAME, JUDGE_VERSION
+    MODEL_NAME = judge_config["model_name"]
+    JUDGE_VERSION = judge_config["version"]
 
-    retrieval_results_file = (
-        BASE_DIR
-        / "output"
-        / "retrieval"
-        / collection_name
-        / args.retrieval_file
-    )
-
-    retrieval_suffix = retrieval_results_file.stem
-
+    retrieval_file = args.retrieval_file or f"retrieval_{retrieval_suffix}.json"
+    retrieval_suffix = Path(retrieval_file).stem
     if retrieval_suffix.startswith("retrieval_"):
         retrieval_suffix = retrieval_suffix[len("retrieval_"):]
+    retrieval_results_file = (
+        BASE_DIR / "output" / "retrieval" / fold / retrieval_file
+    )
 
     output_file = (
         OUTPUT_DIR
-        / collection_name
+        / output_folder
         / f"local_judge_{retrieval_suffix}.csv"
     )
 
@@ -831,7 +835,13 @@ def main():
 
     with ExitStack() as stack:
         executors = [
-            create_executor(stack, device, args.include_reason)
+            create_executor(
+                stack,
+                device,
+                args.include_reason,
+                MODEL_NAME,
+                JUDGE_VERSION,
+            )
             for device in devices
         ]
 

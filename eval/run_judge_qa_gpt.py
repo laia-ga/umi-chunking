@@ -76,8 +76,8 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 # Raíz del proyecto
 BASE_DIR = SCRIPTS_DIR.parent
 
-# Configuración de indexación para identificar la colección
-INDEXING_CONFIG_FILE = BASE_DIR / "configs" / "indexing_config.json"
+# Archivo de configuración de evaluación
+EVAL_CONFIG_FILE = BASE_DIR / "configs" / "eval_config.json"
 
 # Añadir la raíz del proyecto al path
 sys.path.append(str(BASE_DIR))
@@ -98,6 +98,8 @@ def parse_args():
 
     parser.add_argument(
         "retrieval_file",
+        nargs="?",
+        default=None,
         help="Nombre del archivo JSON generado por run_retrieval.py",
     )
 
@@ -141,10 +143,9 @@ def parse_args():
 # 3. CONFIGURACIÓN DEL MODELO
 # ==============================================================================
 
-# Modelo utilizado como juez
-# gpt-5.6-luna: el más económico de la gama actual (sept. 2026),
-# más que suficiente para una clasificación 0/1/2 con criterio claro.
-MODEL_NAME = "gpt-5.6-luna"
+# El modelo y la versión se cargan desde eval_config.json.
+MODEL_NAME: str
+JUDGE_VERSION: str
 
 # ==============================================================================
 # 4. CLIENTE OPENAI
@@ -525,6 +526,7 @@ def judge_and_save_task(
             "relevance_score": score,
             "llm_reason": reason,
             "judge_error": judge_error,
+            "judge_version": JUDGE_VERSION,
         },
     )
 
@@ -543,29 +545,29 @@ def judge_and_save_task(
 def main():
     args = parse_args()
 
-    # Obtener el nombre de la colección
-    with INDEXING_CONFIG_FILE.open("r", encoding="utf-8") as file:
-        indexing_config = json.load(file)
+    with EVAL_CONFIG_FILE.open("r", encoding="utf-8") as file:
+        eval_config = json.load(file)
 
-    collection_name = indexing_config["qdrant"]["collection_name"]
+    fold = eval_config["fold"]
+    retrieval_suffix = fold.removeprefix("all_")
+    judge_config = eval_config["gpt_judge"]
+    output_folder = judge_config["output_folder"]
 
-    # Leer los resultados de retrieval de esta colección
-    retrieval_results_file = (
-        BASE_DIR
-        / "output"
-        / "retrieval"
-        / collection_name
-        / args.retrieval_file
-    )
+    global MODEL_NAME, JUDGE_VERSION
+    MODEL_NAME = judge_config["model_name"]
+    JUDGE_VERSION = judge_config["version"]
 
-    retrieval_suffix = retrieval_results_file.stem
-
+    retrieval_file = args.retrieval_file or f"retrieval_{retrieval_suffix}.json"
+    retrieval_suffix = Path(retrieval_file).stem
     if retrieval_suffix.startswith("retrieval_"):
         retrieval_suffix = retrieval_suffix[len("retrieval_"):]
+    retrieval_results_file = (
+        BASE_DIR / "output" / "retrieval" / fold / retrieval_file
+    )
 
     output_file = (
         OUTPUT_DIR
-        / collection_name
+        / output_folder
         / f"gpt_judge_{retrieval_suffix}.csv"
     )
 
@@ -652,6 +654,16 @@ def main():
 
         with output_file.open("r", newline="", encoding="utf-8") as file:
             existing_rows = list(csv.DictReader(file))
+
+        incompatible_rows = [
+            row for row in existing_rows
+            if row.get("judge_version") != JUDGE_VERSION
+        ]
+        if incompatible_rows:
+            raise RuntimeError(
+                "El CSV contiene resultados de otra versión del juez o una "
+                "rúbrica anterior. Usa --restart para recalcularlos."
+            )
 
         # Solo se conservan los chunks evaluados sin error
         ok_rows = [

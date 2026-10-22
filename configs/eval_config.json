@@ -1,0 +1,14 @@
+{
+    "fold": "all_bge_m3",
+    "metrics_judge": "local",
+    "local_judge": {
+        "model_name": "Qwen/Qwen3-8B",
+        "version": "local-qa-v1",
+        "output_folder": "all_bge_m3_qwen3_8b"
+    },
+    "gpt_judge": {
+        "model_name": "gpt-5.6-luna",
+        "version": "gpt-qa-v1",
+        "output_folder": "all_bge_m3_gpt5_6_luna"
+    }
+}

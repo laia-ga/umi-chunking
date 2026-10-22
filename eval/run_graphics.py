@@ -13,8 +13,7 @@ import pandas as pd
 GRAPHICS_DIR = Path(__file__).resolve().parent
 BASE_DIR = GRAPHICS_DIR.parent
 
-# Configuración de indexación para identificar la colección
-INDEXING_CONFIG_FILE = BASE_DIR / "configs" / "indexing_config.json"
+EVAL_CONFIG_FILE = BASE_DIR / "configs" / "eval_config.json"
 
 METRICS_DIR = BASE_DIR / "output" / "metrics"
 OUTPUT_DIR = BASE_DIR / "output" / "graphics"
@@ -37,6 +36,8 @@ def parse_args():
 
     parser.add_argument(
         "metrics_file",
+        nargs="?",
+        default=None,
         help=(
             "Nombre del archivo .xlsx situado en "
             "output/metrics"
@@ -522,17 +523,24 @@ def main():
 
     args = parse_args()
 
-    # Obtener el nombre de la colección
-    with INDEXING_CONFIG_FILE.open("r", encoding="utf-8") as file:
-        indexing_config = json.load(file)
+    # Leer configuración de evaluación
+    with EVAL_CONFIG_FILE.open("r", encoding="utf-8") as file:
+        eval_config = json.load(file)
 
-    collection_name = indexing_config["qdrant"]["collection_name"]
+    fold = eval_config["fold"]
+    suffix = fold.removeprefix("all_")
+    judge_name = eval_config.get("metrics_judge", "local")
+    output_folder = eval_config[f"{judge_name}_judge"]["output_folder"]
 
     # Leer las métricas de la colección correspondiente
+    metrics_filename = (
+        args.metrics_file
+        or f"metrics_{judge_name}_judge_{suffix}.xlsx"
+    )
     metrics_file = (
         METRICS_DIR
-        / collection_name
-        / args.metrics_file
+        / output_folder
+        / metrics_filename
     )
 
     # --------------------------------------------------------
@@ -589,7 +597,7 @@ def main():
     # --------------------------------------------------------
 
     # Carpeta de gráficas específica de la colección
-    collection_output_dir = OUTPUT_DIR / collection_name
+    collection_output_dir = OUTPUT_DIR / output_folder
 
     collection_output_dir.mkdir(
         parents=True,

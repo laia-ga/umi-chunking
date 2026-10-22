@@ -35,7 +35,7 @@ import pandas as pd
 EVAL_DIR = Path(__file__).resolve().parent
 BASE_DIR = EVAL_DIR.parent
 
-INDEXING_CONFIG_FILE = BASE_DIR / "configs" / "indexing_config.json"
+EVAL_CONFIG_FILE = BASE_DIR / "configs" / "eval_config.json"
 
 JUDGE_DIR = BASE_DIR / "output" / "judge"
 OUTPUT_DIR = BASE_DIR / "output" / "metrics"
@@ -56,6 +56,8 @@ def parse_args():
 
     parser.add_argument(
         "judge_file",
+        nargs="?",
+        default=None,
         help="Archivo CSV generado por run_judge.py",
     )
 
@@ -190,22 +192,22 @@ def main():
     args = parse_args()
 
     # --------------------------------------------------------
-    # 1. Identificar colección Qdrant
+    # 1. Cargar configuración de evaluación
     # --------------------------------------------------------
+    with EVAL_CONFIG_FILE.open("r", encoding="utf-8") as file:
+        eval_config = json.load(file)
 
-    with INDEXING_CONFIG_FILE.open(
-        "r", encoding="utf-8"
-    ) as file:
-
-        indexing_config = json.load(file)
-
-    collection_name = indexing_config["qdrant"]["collection_name"]
+    fold = eval_config["fold"]
+    suffix = fold.removeprefix("all_")
+    judge_name = eval_config.get("metrics_judge", "local")
+    output_folder = eval_config[f"{judge_name}_judge"]["output_folder"]
 
     # --------------------------------------------------------
     # 2. Localizar CSV del juez
     # --------------------------------------------------------
 
-    judge_file = JUDGE_DIR / collection_name / args.judge_file
+    judge_filename = args.judge_file or f"{judge_name}_judge_{suffix}.csv"
+    judge_file = JUDGE_DIR / output_folder / judge_filename
 
     if not judge_file.exists():
 
@@ -432,7 +434,7 @@ def main():
     # 10. ARCHIVO DE SALIDA
     # ========================================================
 
-    collection_output_dir = OUTPUT_DIR / collection_name
+    collection_output_dir = OUTPUT_DIR / output_folder
 
     collection_output_dir.mkdir(
         parents=True,
