@@ -1,12 +1,12 @@
 {
-    "chunk_fold": "bge_m3_512_8192",
+    "chunk_fold": "jina_512_8192",
     "qdrant": {
         "host": "127.0.0.1",
         "port": 6333,
-        "collection_name": "all_bge_m3"
+        "collection_name": "all_jina_v2"
     },
     "embeddings": {
-        "model_name": "BAAI/bge-m3",
+        "model_name": "jinaai/jina-embeddings-v2-base-es",
         "device": "cpu",
         "normalize_embeddings": true
     },
