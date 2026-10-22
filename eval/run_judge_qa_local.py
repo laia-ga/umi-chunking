@@ -81,7 +81,8 @@ CSV_FIELDNAMES = [
 
 # Versión del juez, para poder re-evaluar si se cambia
 # la rúbrica
-JUDGE_VERSION = "local-qa-v2"       # AtlaAI/Selene-1-Mini-Llama-3.1-8B
+# JUDGE_VERSION = "local-qa-v2"     # AtlaAI/Selene-1-Mini-Llama-3.1-8B
+JUDGE_VERSION = "local-qa-v1"       # Qwen/Qwen3-8B
 
 # Estado privado de cada proceso: cada worker carga su propio tokenizer y
 # modelo en el dispositivo que le corresponde.
@@ -196,8 +197,8 @@ def _parse_gpu_ids(value: str) -> List[int]:
 # ==============================================================================
 
 # Modelo instruct que asigna a cada chunk un score de relevancia entre 0 y 2.
-MODEL_NAME = "AtlaAI/Selene-1-Mini-Llama-3.1-8B"    # v2
-# MODEL_NAME = "Qwen/Qwen3-8B"                      # v1
+# MODEL_NAME = "AtlaAI/Selene-1-Mini-Llama-3.1-8B"    # v2
+MODEL_NAME = "Qwen/Qwen3-8B"                      # v1
 # MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 
 # Sin --include-reason solo se necesita una respuesta JSON corta con el score.
