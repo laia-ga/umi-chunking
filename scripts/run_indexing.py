@@ -373,35 +373,45 @@ def load_normalized_chunks(
     return chunks
 
 
+
 def create_embeddings(
     config: Dict[str, Any],
     device_override: str | None = None,
     batch_size: int | None = None,
 ) -> HuggingFaceEmbeddings:
     """
-    Crea el modelo de embeddings utilizado en esta configuración.
+    Crea el modelo de embeddings configurado.
 
-    Returns
-    -------
-    HuggingFaceEmbeddings
-        Modelo BGE-M3 configurado para generar embeddings de documentos.
+    Activa trust_remote_code para los modelos Jina que
+    necesitan cargar su arquitectura personalizada.
     """
 
     embeddings_config = config["embeddings"]
+    model_name = embeddings_config["model_name"]
+
     encode_kwargs = {
         "normalize_embeddings": embeddings_config.get(
             "normalize_embeddings",
             True,
         )
     }
+
     if batch_size is not None:
         encode_kwargs["batch_size"] = batch_size
 
+    model_kwargs = {
+        "device": device_override or embeddings_config.get(
+            "device", "cpu"
+        )
+    }
+
+    # Jina v2 requiere código personalizado de Hugging Face.
+    if model_name.lower().startswith("jinaai/"):
+        model_kwargs["trust_remote_code"] = True
+
     return HuggingFaceEmbeddings(
-        model_name=embeddings_config["model_name"],
-        model_kwargs={
-            "device": device_override or embeddings_config.get("device", "cpu")
-        },
+        model_name=model_name,
+        model_kwargs=model_kwargs,
         encode_kwargs=encode_kwargs,
     )
 
@@ -668,7 +678,6 @@ def iter_embed_text_batches(
                     text_batch,
                     pool,
                     batch_size=batch_size,
-                    show_progress_bar=False,
                 )
             else:
                 vectors = embeddings.embed_documents(text_batch)
