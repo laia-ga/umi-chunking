@@ -11,21 +11,10 @@ import pandas as pd
 # MÉTRICAS A EVALUAR
 # ============================================================
 
-# Mean nDCG@5: mide la calidad de los 5 chunks recuperados
-# frente a una situación ideal fija (5 chunks con score = 2),
-# teniendo en cuenta tanto la relevancia como la posición.
-#
-# HitRate@5: proporción de preguntas para las que se recupera
-# al menos un chunk con score = 2 entre los primeros cinco.
-#
-# MRR@5: media del inverso de la posición del primer chunk
-# con score = 2 entre los cinco primeros.
-#
-# %score2, %score1, %score0: distribución de puntuaciones
-# entre los chunks recuperados, considerando los primeros cinco.
-#
-# Las preguntas sin chunks recuperados cuentan como 0.
-# Las evaluaciones fallidas del juez se tratan como score = 0.
+# nDCG, HitRate y MRR se calculan en los cortes 5 y 10.
+# El ideal de nDCG ordena las relevancias juzgadas disponibles
+# para cada pregunta; HitRate y MRR consideran suficiente solo score 2.
+# La distribución de scores se calcula sobre los diez primeros chunks.
 
 
 # ============================================================
@@ -95,57 +84,54 @@ def dcg(scores):
 
 
 # ============================================================
-# nDCG@5 (IDEAL FIJO)
+# nDCG
 # ============================================================
 
-IDEAL_SCORES = [2, 2, 2, 2, 2]
-IDEAL_DCG = dcg(IDEAL_SCORES)
-
-
-def ndcg_at_5(scores):
+def ndcg_at_k(scores, k):
 
     """
-    nDCG@5 con ideal fijo.
+    Calcula nDCG@k usando como ideal las relevancias juzgadas
+    disponibles para esta pregunta.
 
-    Solo el ranking [2, 2, 2, 2, 2] obtiene 1.0.
-    Las posiciones ausentes equivalen a relevancia 0.
+    Si no hay ningún chunk relevante, nDCG es 0.
     """
 
-    scores = list(scores)[:5]
+    scores = list(scores)
+    ranked_scores = scores[:k]
+    ideal_scores = sorted(scores, reverse=True)[:k]
+    ideal_dcg = dcg(ideal_scores)
 
-    return dcg(scores) / IDEAL_DCG
+    if ideal_dcg == 0:
+        return 0.0
+    return dcg(ranked_scores) / ideal_dcg
 
 
 # ============================================================
-# HIT RATE@5
+# HIT RATE
 # ============================================================
 
-def hit_at_5(scores):
+def hit_at_k(scores, k):
 
     """
     Devuelve 1 si existe al menos un chunk con score 2
-    entre los cinco primeros; en caso contrario, 0.
+    entre los primeros k; en caso contrario, 0.
     """
 
-    scores = list(scores)[:5]
-
-    return int(any(score == 2 for score in scores))
+    return int(any(score == 2 for score in list(scores)[:k]))
 
 
 # ============================================================
 # RECIPROCAL RANK
 # ============================================================
 
-def reciprocal_rank(scores):
+def reciprocal_rank_at_k(scores, k):
 
     """
     Inverso de la posición del primer chunk con score 2.
-    Devuelve 0 si no aparece entre los cinco primeros.
+    Devuelve 0 si no aparece entre los primeros k.
     """
 
-    scores = list(scores)[:5]
-
-    for rank, score in enumerate(scores, start=1):
+    for rank, score in enumerate(list(scores)[:k], start=1):
 
         if score == 2:
             return 1 / rank
@@ -160,7 +146,7 @@ def reciprocal_rank(scores):
 def calculate_question_metrics(question_df):
 
     """
-    Calcula nDCG@5, Hit@5 y RR@5 para una pregunta.
+    Calcula nDCG, HitRate y MRR en @5 y @10 para una pregunta.
 
     Los chunks se ordenan según su rank original.
     """
@@ -173,14 +159,14 @@ def calculate_question_metrics(question_df):
         .tolist()
     )
 
-    scores = scores[:5]
-
-    return {
+    metrics = {
         "question_id": question_df.iloc[0]["question_id"],
-        "nDCG@5": ndcg_at_5(scores),
-        "Hit@5": hit_at_5(scores),
-        "MRR@5": reciprocal_rank(scores),
     }
+    for cutoff in (5, 10):
+        metrics[f"nDCG@{cutoff}"] = ndcg_at_k(scores, cutoff)
+        metrics[f"Hit@{cutoff}"] = hit_at_k(scores, cutoff)
+        metrics[f"MRR@{cutoff}"] = reciprocal_rank_at_k(scores, cutoff)
+    return metrics
 
 
 # ============================================================
@@ -253,24 +239,55 @@ def main():
     expected_questions = df["question_id"].dropna().unique()
 
     # --------------------------------------------------------
-    # 5. Evaluaciones fallidas -> score 0
+    # 5. Validar evaluaciones del judge
     # --------------------------------------------------------
 
     df_valid = df.copy()
+    if "judge_error" in df_valid.columns:
+        judge_errors = (
+            df_valid["judge_error"]
+            .fillna("")
+            .astype(str)
+            .str.strip()
+            .ne("")
+        )
+        if judge_errors.any():
+            examples = df_valid.loc[
+                judge_errors,
+                ["question_id", "rank", "judge_error"],
+            ].head(5)
+            raise RuntimeError(
+                f"El CSV contiene {int(judge_errors.sum())} errores del judge. "
+                "Repite esas evaluaciones antes de calcular métricas.\n"
+                f"Ejemplos:\n{examples.to_string(index=False)}"
+            )
 
-    df_valid["judge_failed"] = (
-        df_valid["relevance_score"].isna()
+    numeric_scores = pd.to_numeric(
+        df_valid["relevance_score"],
+        errors="coerce",
     )
+    if numeric_scores.isna().any():
+        bad_rows = df_valid.loc[
+            numeric_scores.isna(),
+            ["question_id", "rank", "relevance_score"],
+        ].head(5)
+        raise RuntimeError(
+            "El CSV contiene puntuaciones vacías o no numéricas. "
+            "Repite esas evaluaciones antes de calcular métricas.\n"
+            f"Ejemplos:\n{bad_rows.to_string(index=False)}"
+        )
+    if not np.equal(numeric_scores, np.floor(numeric_scores)).all():
+        raise ValueError("Las puntuaciones de relevancia deben ser enteros.")
+    df_valid["relevance_score"] = numeric_scores.astype(int)
 
-    n_failed_total = int(
-        df_valid["judge_failed"].sum()
-    )
-
-    df_valid["relevance_score"] = (
-        df_valid["relevance_score"]
-        .fillna(0)
-        .astype(int)
-    )
+    numeric_ranks = pd.to_numeric(df_valid["rank"], errors="coerce")
+    if (
+        numeric_ranks.isna().any()
+        or (numeric_ranks < 1).any()
+        or not np.equal(numeric_ranks, np.floor(numeric_ranks)).all()
+    ):
+        raise ValueError("Los rangos deben ser enteros positivos.")
+    df_valid["rank"] = numeric_ranks.astype(int)
 
     # --------------------------------------------------------
     # 6. Comprobar puntuaciones
@@ -326,6 +343,9 @@ def main():
                 "nDCG@5",
                 "Hit@5",
                 "MRR@5",
+                "nDCG@10",
+                "Hit@10",
+                "MRR@10",
             ],
         )
 
@@ -351,6 +371,9 @@ def main():
                     "nDCG@5": 0.0,
                     "Hit@5": 0,
                     "MRR@5": 0.0,
+                    "nDCG@10": 0.0,
+                    "Hit@10": 0,
+                    "MRR@10": 0.0,
                 }
                 for question_id in missing_q
             ])
@@ -361,29 +384,25 @@ def main():
             )
 
         # ----------------------------------------------------
-        # Primeros cinco chunks por pregunta
+        # Primeros diez chunks por pregunta
         # ----------------------------------------------------
 
-        top5_chunks = (
+        top10_chunks = (
             group_df
             .sort_values(["question_id", "rank"])
             .groupby("question_id", sort=False)
-            .head(5)
+            .head(10)
         )
 
-        n_chunks = len(top5_chunks)
-
-        n_failed = int(
-            top5_chunks["judge_failed"].sum()
-        )
+        n_chunks = len(top10_chunks)
 
         # ----------------------------------------------------
-        # Distribución de puntuaciones
+        # Distribución de puntuaciones en @10
         # ----------------------------------------------------
 
         if n_chunks > 0:
 
-            scores = top5_chunks["relevance_score"]
+            scores = top10_chunks["relevance_score"]
 
             pct_score2 = (scores == 2).mean() * 100
             pct_score1 = (scores == 1).mean() * 100
@@ -407,9 +426,12 @@ def main():
             "Mean_nDCG@5": per_question_df["nDCG@5"].mean(),
             "HitRate@5": per_question_df["Hit@5"].mean(),
             "MRR@5": per_question_df["MRR@5"].mean(),
-            "%score2": pct_score2,
-            "%score1": pct_score1,
-            "%score0": pct_score0,
+            "Mean_nDCG@10": per_question_df["nDCG@10"].mean(),
+            "HitRate@10": per_question_df["Hit@10"].mean(),
+            "MRR@10": per_question_df["MRR@10"].mean(),
+            "%score2@10": pct_score2,
+            "%score1@10": pct_score1,
+            "%score0@10": pct_score0,
         })
 
     # ========================================================
@@ -419,7 +441,7 @@ def main():
     summary_df = pd.DataFrame(summary_results)
 
     summary_df = summary_df.sort_values(
-        "Mean_nDCG@5",
+        "Mean_nDCG@10",
         ascending=False,
     )
 
@@ -483,8 +505,8 @@ def main():
     )
 
     print(
-        "Evaluaciones fallidas del judge "
-        f"(tratadas como 0): {n_failed_total}"
+        "Evaluaciones fallidas del judge: 0 "
+        "(las métricas se detienen si quedan errores pendientes)"
     )
 
     print()

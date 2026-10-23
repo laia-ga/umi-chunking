@@ -604,36 +604,34 @@ Para calcular métricas del otro juez, cambia `metrics_judge` en
 indica un `judge_file` posicional, se usa ese CSV dentro del
 `output_folder` del juez seleccionado.
 
-El script calcula:
+El script calcula **Mean nDCG**, **HitRate** y **MRR** tanto en los cortes
+`@5` como `@10`. HitRate y MRR consideran suficiente solo un chunk con score
+`2`; nDCG usa las ganancias graduadas `2^score - 1` y normaliza cada ranking
+contra el ideal obtenido al ordenar de mayor a menor las relevancias juzgadas
+disponibles para esa pregunta. Si ninguna relevancia disponible es mayor que
+cero, nDCG es `0`. Los porcentajes **%score2@10**, **%score1@10** y
+**%score0@10** describen la distribución entre los diez primeros chunks.
 
-- **Mean nDCG@5**: calidad del ranking considerando puntuaciones graduadas
-  (`0`, `1`, `2`) y una lista ideal fija de cinco chunks con score `2`.
-- **HitRate@5**: proporción de preguntas con al menos un chunk de score `2`
-  entre los cinco primeros.
-- **MRR@5**: promedio del inverso del rango del primer chunk con score `2`.
-- **%score2**, **%score1** y **%score0**: distribución de relevancia entre
-  los chunks evaluados.
-
-Las métricas de ranking se calculan por pregunta dentro de cada estrategia y
-tipo documental, y luego se promedian. Si una pregunta del tipo documental
-aparece en el CSV pero no tiene chunks para una combinación de estrategia y
-tipo, cuenta como cero para nDCG, HitRate y MRR. Las evaluaciones fallidas del
-judge también se tratan como score `0` para no desplazar los rangos. Los
-porcentajes de scores se calculan sobre los chunks recuperados, limitados a
-los cinco primeros. El Excel contiene una hoja `summary` con una fila por
-combinación presente, incluyendo también los recuentos de preguntas y chunks.
+Las métricas se calculan por pregunta dentro de cada estrategia y luego se
+promedian. Si una pregunta presente en el CSV no tiene chunks para una
+estrategia, cuenta como cero para las métricas de ranking. Si el CSV aún
+contiene errores del judge o puntuaciones vacías/no numéricas, el cálculo se
+detiene para que se repitan esas evaluaciones; esos errores no se convierten
+en ceros. El Excel contiene una hoja `summary` con una fila por estrategia,
+incluyendo también los recuentos de preguntas y chunks.
 
 El archivo se guarda en `output/metrics/<output_folder>/` y su nombre se
 deriva del CSV de entrada; por ejemplo, `gpt_judge_bge_m3.csv` produce
 `metrics_gpt_judge_bge_m3.xlsx`. Si el judge incluye varios tipos
-documentales, el resumen mantiene una fila separada por tipo.
+documentales, el resumen no separa las filas por tipo documental.
 
 ## Gráficas de resultados
 
 `eval/run_graphics.py` genera visualizaciones a partir de la hoja `summary`
-de un Excel de métricas. Produce un heatmap con las métricas y la distribución
-de scores, y un dotplot que compara Mean nDCG@5, HitRate@5 y MRR@5 entre
-estrategias. Las estrategias se ordenan por Mean nDCG@5:
+de un Excel de métricas. Produce un heatmap con las métricas @5 y @10 y la
+distribución de scores @10, además de un dotplot con paneles separados para
+comparar las métricas de cada corte. Las estrategias se ordenan por
+Mean nDCG@10:
 
 ```bash
 python eval/run_graphics.py
@@ -643,11 +641,7 @@ El script usa el Excel correspondiente al `metrics_judge` seleccionado en
 `eval_config.json`. Si se indica un `metrics_file` posicional, se usa ese
 Excel dentro del `output_folder` de ese juez. Las imágenes PNG se guardan en
 `output/graphics/<output_folder>/` con resolución de 300 dpi. Sus nombres se
-derivan del archivo de métricas seleccionado. Las gráficas están pensadas
-para un único tipo documental por archivo de métricas. Si el Excel contiene
-varios tipos, filtra la hoja `summary` a un tipo antes de graficar; el script
-no ofrece un filtro de tipo documental y cada estrategia aparece una vez por
-tipo.
+derivan del archivo de métricas seleccionado.
 
 ### Flujo completo de evaluación
 

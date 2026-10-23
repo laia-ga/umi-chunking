@@ -56,8 +56,7 @@ def prepare_data(
 ):
 
     """
-    Ordena las estrategias de mejor a peor según
-    Mean_nDCG@5.
+    Ordena las estrategias de mejor a peor según Mean_nDCG@10.
     """
 
     data = df.copy()
@@ -69,11 +68,11 @@ def prepare_data(
         )
 
     # --------------------------------------------------------
-    # nDCG@5 para ordenar
+    # nDCG@10 para ordenar
     # --------------------------------------------------------
 
     data = data.sort_values(
-        "Mean_nDCG@5",
+        "Mean_nDCG@10",
         ascending=False,
     )
 
@@ -114,25 +113,31 @@ METRICS = [
     "Mean_nDCG@5",
     "HitRate@5",
     "MRR@5",
+    "Mean_nDCG@10",
+    "HitRate@10",
+    "MRR@10",
 ]
 
 METRIC_LABELS = [
     "Mean nDCG@5",
     "Hit Rate@5",
     "MRR@5",
+    "Mean nDCG@10",
+    "Hit Rate@10",
+    "MRR@10",
 ]
 
 # Porcentajes del heatmap derecho (escala 0-100)
 SCORE_COLUMNS = [
-    "%score2",
-    "%score1",
-    "%score0",
+    "%score2@10",
+    "%score1@10",
+    "%score0@10",
 ]
 
 SCORE_LABELS = [
-    "% score 2",
-    "% score 1",
-    "% score 0",
+    "% score 2 @10",
+    "% score 1 @10",
+    "% score 0 @10",
 ]
 
 
@@ -240,13 +245,12 @@ def create_heatmap(
     Genera una imagen con dos heatmaps alineados
     horizontalmente:
 
-        - Izquierda: Mean nDCG@5, HitRate@5 y MRR@5
-          (escala 0-1).
-        - Derecha: porcentaje de chunks con score 2, 1 y 0
+        - Izquierda: métricas de ranking @5 y @10 (escala 0-1).
+        - Derecha: distribución de scores de los chunks @10
           (escala 0-100).
 
     Las estrategias aparecen en el mismo orden en ambos
-    (de mejor a peor según Mean_nDCG@5), y sus nombres
+    (de mejor a peor según Mean_nDCG@10), y sus nombres
     solo se muestran en el heatmap izquierdo.
     """
 
@@ -280,7 +284,7 @@ def create_heatmap(
     fig, (ax_metrics, ax_scores) = plt.subplots(
         1,
         2,
-        figsize=(15, height),
+        figsize=(21, height),
         sharey=True,
         gridspec_kw={
             "wspace": 0.35,
@@ -376,24 +380,11 @@ def create_dotplot(
 ):
 
     """
-    Genera un dotplot con las tres métricas para cada
-    estrategia.
+    Genera dotplots separados para las métricas @5 y @10.
 
     Las estrategias están ordenadas de mejor a peor
-    según Mean_nDCG@5.
+    según Mean_nDCG@10.
     """
-
-    metrics = [
-        "Mean_nDCG@5",
-        "HitRate@5",
-        "MRR@5",
-    ]
-
-    metric_labels = [
-        "Mean nDCG@5",
-        "Hit Rate@5",
-        "MRR@5",
-    ]
 
     # Invertir el dataframe para que la estrategia
     # con mejor resultado aparezca arriba
@@ -404,10 +395,11 @@ def create_dotplot(
         len(plot_data) * 0.42,
     )
 
-    # Algo más de anchura para dejar espacio
-    # a la leyenda fuera de la gráfica
-    fig, ax = plt.subplots(
-        figsize=(11, height)
+    fig, axes = plt.subplots(
+        1,
+        2,
+        figsize=(14, height),
+        sharey=True,
     )
 
     y_positions = list(
@@ -415,96 +407,49 @@ def create_dotplot(
     )
 
 
-    # --------------------------------------------------------
-    # Dibujar cada métrica
-    # --------------------------------------------------------
-
     markers = [
         "o",
         "s",
         "^",
     ]
 
-    for metric, label, marker in zip(
-        metrics,
-        metric_labels,
-        markers,
-    ):
+    for ax, cutoff in zip(axes, (5, 10)):
+        metrics = [
+            f"Mean_nDCG@{cutoff}",
+            f"HitRate@{cutoff}",
+            f"MRR@{cutoff}",
+        ]
+        metric_labels = [
+            f"Mean nDCG@{cutoff}",
+            f"Hit Rate@{cutoff}",
+            f"MRR@{cutoff}",
+        ]
 
-        ax.scatter(
-            plot_data[metric],
-            y_positions,
-            label=label,
-            marker=marker,
-            s=65,
-        )
+        for metric, label, marker in zip(
+            metrics,
+            metric_labels,
+            markers,
+        ):
+            ax.scatter(
+                plot_data[metric],
+                y_positions,
+                label=label,
+                marker=marker,
+                s=65,
+            )
 
+        ax.set_yticks(y_positions)
+        ax.set_yticklabels(plot_data["strategy"])
+        ax.set_xlim(0, 1)
+        ax.set_xlabel("Score")
+        ax.set_title(f"Retrieval metrics @{cutoff}")
+        ax.grid(axis="x", alpha=0.25)
+        ax.legend(loc="lower right", frameon=False)
 
-    # --------------------------------------------------------
-    # Ejes
-    # --------------------------------------------------------
-
-    ax.set_yticks(
-        y_positions
-    )
-
-    ax.set_yticklabels(
-        plot_data["strategy"]
-    )
-
-    ax.set_xlim(
-        0,
-        1,
-    )
-
-    ax.set_xlabel(
-        "Score"
-    )
-
-    ax.set_ylabel(
-        "Strategy"
-    )
-
-    ax.set_title(
-        f"Retrieval performance – "
-        f"{title_label}"
-    )
-
-
-    # --------------------------------------------------------
-    # Grid
-    # --------------------------------------------------------
-
-    # Solo líneas verticales para facilitar la comparación
-    # de los valores sin sobrecargar la gráfica
-    ax.grid(
-        axis="x",
-        alpha=0.25,
-    )
-
-
-    # --------------------------------------------------------
-    # Leyenda
-    # --------------------------------------------------------
-
-    # Se coloca fuera de la zona de representación para
-    # garantizar que no tape ningún punto.
-    ax.legend(
-        loc="upper left",
-        bbox_to_anchor=(1.02, 1),
-        borderaxespad=0,
-        frameon=False,
-    )
-
-
-    # --------------------------------------------------------
-    # Guardar
-    # --------------------------------------------------------
-
-    # Reservar espacio a la derecha para la leyenda
-    fig.tight_layout(
-        rect=[0, 0, 0.82, 1]
-    )
+    axes[0].set_ylabel("Strategy")
+    axes[1].tick_params(axis="y", labelleft=False, left=False)
+    fig.suptitle(f"Retrieval performance – {title_label}")
+    fig.tight_layout()
 
     fig.savefig(
         output_file,
@@ -574,9 +519,12 @@ def main():
         "Mean_nDCG@5",
         "HitRate@5",
         "MRR@5",
-        "%score2",
-        "%score1",
-        "%score0",
+        "Mean_nDCG@10",
+        "HitRate@10",
+        "MRR@10",
+        "%score2@10",
+        "%score1@10",
+        "%score0@10",
     }
 
     missing = (
