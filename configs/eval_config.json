@@ -2,7 +2,7 @@
     "fold": "all_bge_m3",
     "metrics_judge": "local",
     "local_judge": {
-        "model_name": "Qwen/Qwen3-8B",
+        "model_name": "AtlaAI/Selene-1-Mini-Llama-3.1-8B",
         "version": "local-qa-v3",
         "output_folder": "all_bge_m3_qwen3_8b"
     },
