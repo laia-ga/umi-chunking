@@ -1,6 +1,6 @@
 {
     "embeddings": {
-        "model_name": "BAAI/bge-m3",
+        "model_name": "jinaai/jina-embeddings-v2-base-es",
         "normalize_embeddings": true
     },
     "retrieval": {
