@@ -1,12 +1,12 @@
 {
-    "chunk_fold": "jina_512_8192",
+    "chunk_fold": "qwen_1024_32768",
     "qdrant": {
         "host": "127.0.0.1",
         "port": 6333,
-        "collection_name": "all_jina_v2"
+        "collection_name": "all_qwen3_4b"
     },
     "embeddings": {
-        "model_name": "jinaai/jina-embeddings-v2-base-es",
+        "model_name": "Qwen/Qwen3-Embedding-4B",
         "device": "cpu",
         "normalize_embeddings": true
     },
