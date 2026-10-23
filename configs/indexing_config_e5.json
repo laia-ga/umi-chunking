@@ -1,0 +1,23 @@
+{
+    "chunk_fold": "e5_256_512",
+    "qdrant": {
+        "host": "127.0.0.1",
+        "port": 6333,
+        "collection_name": "all_multilingual_e5"
+    },
+    "embeddings": {
+        "model_name": "intfloat/multilingual-e5-large",
+        "device": "cpu",
+        "normalize_embeddings": true
+    },
+    "indexing": {
+        "batch_size": 32,
+        "formats": [
+            "json", "markdown"
+        ],
+        "num_workers": 1,
+        "cpu_threads": 1,
+        "num_gpus": 0,
+        "gpu_ids": []
+    }
+}

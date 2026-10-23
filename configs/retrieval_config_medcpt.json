@@ -1,0 +1,13 @@
+{
+    "embeddings": {
+        "model_name": "ncbi/MedCPT-Query-Encoder",
+        "normalize_embeddings": true
+    },
+    "retrieval": {
+        "top_k": 10,
+        "strategies": null,
+        "document_type": null,
+        "format": null,
+        "ground_truth_file": "4n_questions.jsonl"
+    }
+}
