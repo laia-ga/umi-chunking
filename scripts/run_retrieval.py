@@ -40,13 +40,6 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 # Carpeta raíz del proyecto
 BASE_DIR = SCRIPTS_DIR.parent
 
-# Archivo de configuración de la indexación
-INDEXING_CONFIG_FILE = (
-    BASE_DIR
-    / "configs"
-    / "indexing_config.json"
-)
-
 # Carpeta con los archivos de configuración
 CONFIGS_DIR = (
     BASE_DIR
@@ -490,11 +483,23 @@ def parse_args():
     )
 
     parser.add_argument(
-        "retrieval_config",
-        nargs="?",
+        "--config",
+        type=str,
         default="retrieval_config.json",
-        help="Nombre del JSON de configuración dentro de configs/ "
-             "(por defecto: retrieval_config.json)",
+        help=(
+            "Nombre del archivo de configuración de retrieval dentro de configs/ "
+            "(por defecto: retrieval_config.json)."
+        ),
+    )
+
+    parser.add_argument(
+        "--indexing-config",
+        type=str,
+        default="indexing_config.json",
+        help=(
+            "Nombre del archivo de configuración de indexación dentro de configs/ "
+            "(por defecto: indexing_config.json)."
+        ),
     )
     parser.add_argument(
         "--workers",
@@ -536,13 +541,22 @@ def main() -> None:
     # 1. Cargar configuración
     # --------------------------------------------------------
 
-    indexing_config = load_config(
-        INDEXING_CONFIG_FILE
-    )
-
     args = parse_args()
 
-    retrieval_config_file = CONFIGS_DIR / args.retrieval_config
+    # Archivo de configuración de indexación
+    indexing_config_file = CONFIGS_DIR / args.indexing_config
+
+    if not indexing_config_file.exists():
+        raise FileNotFoundError(
+            f"No existe el archivo de configuración:\n{indexing_config_file}"
+        )
+
+    print(f"Configuración de indexación: {indexing_config_file}")
+
+    indexing_config = load_config(indexing_config_file)
+
+    # Archivo de configuración de retrieval
+    retrieval_config_file = CONFIGS_DIR / args.config
 
     if not retrieval_config_file.exists():
         raise FileNotFoundError(

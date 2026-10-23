@@ -55,25 +55,16 @@ CHUNKS_ROOT = PROJECT_ROOT / "output" / "chunks"
 # Carpeta base de resultados de indexación
 INDEXING_OUTPUT_ROOT = PROJECT_ROOT / "output" / "indexing"
 
-# Archivo de configuración de la indexación
+# Archivo de configuración predeterminado
 INDEXING_CONFIG_FILE = PROJECT_ROOT / "configs" / "indexing_config.json"
 
-# Obtener el nombre de la colección configurada en Qdrant
-with INDEXING_CONFIG_FILE.open("r", encoding="utf-8") as file:
-    collection_name = json.load(file)["qdrant"]["collection_name"]
+# Rutas específicas de la colección (se inicializan en main)
+INDEXING_OUTPUT_DIR = None
+NORMALIZED_OUTPUT_FILE = None
+EMBEDDINGS_CACHE_DIR = None
+RUN_LOG_FILE = None
 
-# Carpeta específica de la colección
-INDEXING_OUTPUT_DIR = INDEXING_OUTPUT_ROOT / collection_name
-
-# Archivo normalizado, con un registro JSON por línea
-NORMALIZED_OUTPUT_FILE = INDEXING_OUTPUT_DIR / "normalized_chunks.jsonl"
-
-# Carpeta donde se guarda la caché de embeddings
-EMBEDDINGS_CACHE_DIR = INDEXING_OUTPUT_DIR / "embeddings_cache"
 DEFAULT_CACHE_BATCH_SIZE = 1024
-
-# Log de tiempos de cada ejecución
-RUN_LOG_FILE = INDEXING_OUTPUT_DIR / "logs" / "run_log.jsonl"
 
 
 # ============================================================
@@ -313,26 +304,23 @@ def normalize_chunks(
     return count
 
 
-def load_indexing_config() -> Dict[str, Any]:
+def load_indexing_config(config_file: Path) -> Dict[str, Any]:
     """
-    Carga y valida la configuración de Qdrant, embeddings e indexación.
-
-    Returns
-    -------
-    Dict[str, Any]
-        Configuración completa de la indexación.
+    Carga y valida la configuración de indexación.
     """
 
-    if not INDEXING_CONFIG_FILE.exists():
+    if not config_file.exists():
         raise FileNotFoundError(
-            f"No se ha encontrado la configuración: {INDEXING_CONFIG_FILE}"
+            f"No se ha encontrado la configuración: {config_file}"
         )
 
-    with INDEXING_CONFIG_FILE.open("r", encoding="utf-8") as file:
+    with config_file.open("r", encoding="utf-8") as file:
         config = json.load(file)
 
     if not isinstance(config, dict):
-        raise ValueError("La configuración de indexación debe ser un objeto JSON.")
+        raise ValueError(
+            "La configuración de indexación debe ser un objeto JSON."
+        )
 
     return config
 
@@ -1053,6 +1041,7 @@ def validate_gpu_availability(gpu_ids: List[int]) -> None:
 
 
 def main(
+    config_file: Path = INDEXING_CONFIG_FILE,
     normalize_only: bool = False, 
     index_only: bool = False,
     workers_override: int | None = None,
@@ -1069,11 +1058,25 @@ def main(
     contrario, genera embeddings y los indexa en Qdrant
     """
 
+    global INDEXING_OUTPUT_DIR
+    global NORMALIZED_OUTPUT_FILE
+    global EMBEDDINGS_CACHE_DIR
+    global RUN_LOG_FILE
+
     run_start = time.perf_counter()
     normalize_seconds = None
 
-    config = load_indexing_config()
+    # Cargar la configuración seleccionada
+    config = load_indexing_config(config_file)
     chunk_fold = config["chunk_fold"]
+
+    # Definir las rutas correspondientes a la colección
+    collection_name = config["qdrant"]["collection_name"]
+
+    INDEXING_OUTPUT_DIR = INDEXING_OUTPUT_ROOT / collection_name
+    NORMALIZED_OUTPUT_FILE = INDEXING_OUTPUT_DIR / "normalized_chunks.jsonl"
+    EMBEDDINGS_CACHE_DIR = INDEXING_OUTPUT_DIR / "embeddings_cache"
+    RUN_LOG_FILE = INDEXING_OUTPUT_DIR / "logs" / "run_log.jsonl"
 
     print("=" * 70)
     print("INICIO DE LA NORMALIZACIÓN PARA INDEXACIÓN")
@@ -1311,9 +1314,19 @@ if __name__ == "__main__":
             "guarda los resultados nuevos."
         ),
     )
+    parser.add_argument(
+        "--config",
+        type=Path,
+        default=INDEXING_CONFIG_FILE,
+        help=(
+            "Ruta del archivo de configuración de indexación "
+            "(por defecto: configs/indexing_config.json)."
+        ),
+    )
 
     arguments = parser.parse_args()
     main(
+        config_file=arguments.config,
         normalize_only=arguments.normalize_only,
         index_only=arguments.index_only,
         workers_override=arguments.workers,

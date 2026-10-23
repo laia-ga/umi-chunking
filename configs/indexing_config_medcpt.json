@@ -1,0 +1,23 @@
+{
+    "chunk_fold": "med_cpt_256_512",
+    "qdrant": {
+        "host": "127.0.0.1",
+        "port": 6333,
+        "collection_name": "all_medcpt"
+    },
+    "embeddings": {
+        "model_name": "ncbi/MedCPT-Article-Encoder",
+        "device": "cpu",
+        "normalize_embeddings": true
+    },
+    "indexing": {
+        "batch_size": 32,
+        "formats": [
+            "json", "markdown"
+        ],
+        "num_workers": 1,
+        "cpu_threads": 1,
+        "num_gpus": 0,
+        "gpu_ids": []
+    }
+}

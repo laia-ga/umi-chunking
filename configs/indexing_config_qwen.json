@@ -1,0 +1,23 @@
+{
+    "chunk_fold": "qwen_1024_32768",
+    "qdrant": {
+        "host": "127.0.0.1",
+        "port": 6333,
+        "collection_name": "all_qwen3_4b"
+    },
+    "embeddings": {
+        "model_name": "Qwen/Qwen3-Embedding-4B",
+        "device": "cpu",
+        "normalize_embeddings": true
+    },
+    "indexing": {
+        "batch_size": 32,
+        "formats": [
+            "json", "markdown"
+        ],
+        "num_workers": 1,
+        "cpu_threads": 1,
+        "num_gpus": 0,
+        "gpu_ids": []
+    }
+}
