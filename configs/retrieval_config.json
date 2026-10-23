@@ -1,6 +1,6 @@
 {
     "embeddings": {
-        "model_name": "jinaai/jina-embeddings-v2-base-es",
+        "model_name": "Qwen/Qwen3-Embedding-4B",
         "normalize_embeddings": true
     },
     "retrieval": {
