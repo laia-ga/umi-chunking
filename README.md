@@ -614,11 +614,15 @@ cero, nDCG es `0`. Los porcentajes **%score2@10**, **%score1@10** y
 
 Las métricas se calculan por pregunta dentro de cada estrategia y luego se
 promedian. Si una pregunta presente en el CSV no tiene chunks para una
-estrategia, cuenta como cero para las métricas de ranking. Si el CSV aún
-contiene errores del judge o puntuaciones vacías/no numéricas, el cálculo se
-detiene para que se repitan esas evaluaciones; esos errores no se convierten
-en ceros. El Excel contiene una hoja `summary` con una fila por estrategia,
-incluyendo también los recuentos de preguntas y chunks.
+estrategia, cuenta como cero para las métricas de ranking. Si una pregunta
+tiene algún error de evaluación entre los primeros `k` resultados, se excluye
+del promedio de ese corte (`@k`), pero no necesariamente del otro: por ejemplo,
+un error en el rango 8 excluye la pregunta de `@10`, no de `@5`. Los errores y
+las preguntas excluidas se cuentan por separado en `n_judge_errors@5/@10` y
+`n_questions_excluded@5/@10`; `n_questions_evaluated@5/@10` indica cuántas
+preguntas entraron en cada promedio. Las distribuciones de scores @10 usan
+solo evaluaciones válidas. El Excel contiene una hoja `summary` con una fila
+por estrategia y los recuentos correspondientes.
 
 El archivo se guarda en `output/metrics/<output_folder>/` y su nombre se
 deriva del CSV de entrada; por ejemplo, `gpt_judge_bge_m3.csv` produce

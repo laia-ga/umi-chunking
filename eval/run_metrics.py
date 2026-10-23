@@ -14,7 +14,9 @@ import pandas as pd
 # nDCG, HitRate y MRR se calculan en los cortes 5 y 10.
 # El ideal de nDCG ordena las relevancias juzgadas disponibles
 # para cada pregunta; HitRate y MRR consideran suficiente solo score 2.
-# La distribución de scores se calcula sobre los diez primeros chunks.
+# Las preguntas con juicios fallidos en un corte se excluyen de las métricas
+# de ese corte; los fallos se cuentan por separado, no como score 0.
+# La distribución usa solo scores válidos de los diez primeros chunks.
 
 
 # ============================================================
@@ -243,42 +245,23 @@ def main():
     # --------------------------------------------------------
 
     df_valid = df.copy()
-    if "judge_error" in df_valid.columns:
-        judge_errors = (
-            df_valid["judge_error"]
-            .fillna("")
-            .astype(str)
-            .str.strip()
-            .ne("")
-        )
-        if judge_errors.any():
-            examples = df_valid.loc[
-                judge_errors,
-                ["question_id", "rank", "judge_error"],
-            ].head(5)
-            raise RuntimeError(
-                f"El CSV contiene {int(judge_errors.sum())} errores del judge. "
-                "Repite esas evaluaciones antes de calcular métricas.\n"
-                f"Ejemplos:\n{examples.to_string(index=False)}"
-            )
-
+    df_valid["judge_error"] = (
+        df_valid["judge_error"]
+        .fillna("")
+        .astype(str)
+        .str.strip()
+        if "judge_error" in df_valid.columns
+        else ""
+    )
     numeric_scores = pd.to_numeric(
         df_valid["relevance_score"],
         errors="coerce",
     )
-    if numeric_scores.isna().any():
-        bad_rows = df_valid.loc[
-            numeric_scores.isna(),
-            ["question_id", "rank", "relevance_score"],
-        ].head(5)
-        raise RuntimeError(
-            "El CSV contiene puntuaciones vacías o no numéricas. "
-            "Repite esas evaluaciones antes de calcular métricas.\n"
-            f"Ejemplos:\n{bad_rows.to_string(index=False)}"
-        )
-    if not np.equal(numeric_scores, np.floor(numeric_scores)).all():
-        raise ValueError("Las puntuaciones de relevancia deben ser enteros.")
-    df_valid["relevance_score"] = numeric_scores.astype(int)
+    df_valid["judge_failed"] = (
+        df_valid["judge_error"].ne("")
+        | numeric_scores.isna()
+    )
+    df_valid["relevance_score"] = numeric_scores
 
     numeric_ranks = pd.to_numeric(df_valid["rank"], errors="coerce")
     if (
@@ -290,13 +273,13 @@ def main():
     df_valid["rank"] = numeric_ranks.astype(int)
 
     # --------------------------------------------------------
-    # 6. Comprobar puntuaciones
+    # 6. Validar puntuaciones que no han fallado
     # --------------------------------------------------------
 
     valid_scores = {0, 1, 2}
 
     unexpected_scores = (
-        set(df_valid["relevance_score"].unique())
+        set(df_valid.loc[~df_valid["judge_failed"], "relevance_score"].unique())
         - valid_scores
     )
 
@@ -306,6 +289,13 @@ def main():
             "Se han encontrado relevance_score no válidos: "
             f"{sorted(unexpected_scores)}"
         )
+
+    successful_scores = df_valid.loc[~df_valid["judge_failed"], "relevance_score"]
+    if not np.equal(successful_scores, np.floor(successful_scores)).all():
+        raise ValueError("Las puntuaciones de relevancia deben ser enteros.")
+    df_valid.loc[~df_valid["judge_failed"], "relevance_score"] = (
+        successful_scores.astype(int)
+    )
 
     # ========================================================
     # 7. MÉTRICAS POR STRATEGY
@@ -325,63 +315,66 @@ def main():
         # Métricas individuales por pregunta
         # ----------------------------------------------------
 
-        question_results = []
-
-        for question_id, question_df in group_df.groupby(
-            "question_id",
-            sort=False,
-        ):
-
-            question_results.append(
-                calculate_question_metrics(question_df)
-            )
-
-        per_question_df = pd.DataFrame(
-            question_results,
-            columns=[
+        question_rows = {
+            question_id: question_df
+            for question_id, question_df in group_df.groupby(
                 "question_id",
-                "nDCG@5",
-                "Hit@5",
-                "MRR@5",
-                "nDCG@10",
-                "Hit@10",
-                "MRR@10",
-            ],
-        )
-
-        # ----------------------------------------------------
-        # Preguntas sin chunks recuperados -> métricas 0
-        # ----------------------------------------------------
-
-        retrieved = set(
-            per_question_df["question_id"]
-        )
-
+                sort=False,
+            )
+        }
         missing_q = [
             question_id
             for question_id in expected_questions
-            if question_id not in retrieved
+            if question_id not in question_rows
         ]
+        per_cutoff = {}
+        failed_rows_by_cutoff = {}
+        failed_questions_by_cutoff = {}
+        for cutoff in (5, 10):
+            question_metrics = []
+            failed_rows = 0
+            failed_questions = 0
+            for question_id in expected_questions:
+                question_df = question_rows.get(question_id)
+                if question_df is None:
+                    question_metrics.append({
+                        "question_id": question_id,
+                        f"nDCG@{cutoff}": 0.0,
+                        f"Hit@{cutoff}": 0,
+                        f"MRR@{cutoff}": 0.0,
+                    })
+                    continue
 
-        if missing_q:
+                top_k_df = question_df.loc[question_df["rank"] <= cutoff]
+                failed_rows += int(top_k_df["judge_failed"].sum())
+                if top_k_df["judge_failed"].any():
+                    failed_questions += 1
+                    continue
 
-            empty = pd.DataFrame([
-                {
+                scores = (
+                    top_k_df
+                    .sort_values("rank")["relevance_score"]
+                    .astype(int)
+                    .tolist()
+                )
+                question_metrics.append({
                     "question_id": question_id,
-                    "nDCG@5": 0.0,
-                    "Hit@5": 0,
-                    "MRR@5": 0.0,
-                    "nDCG@10": 0.0,
-                    "Hit@10": 0,
-                    "MRR@10": 0.0,
-                }
-                for question_id in missing_q
-            ])
+                    f"nDCG@{cutoff}": ndcg_at_k(scores, cutoff),
+                    f"Hit@{cutoff}": hit_at_k(scores, cutoff),
+                    f"MRR@{cutoff}": reciprocal_rank_at_k(scores, cutoff),
+                })
 
-            per_question_df = pd.concat(
-                [per_question_df, empty],
-                ignore_index=True,
+            per_cutoff[cutoff] = pd.DataFrame(
+                question_metrics,
+                columns=[
+                    "question_id",
+                    f"nDCG@{cutoff}",
+                    f"Hit@{cutoff}",
+                    f"MRR@{cutoff}",
+                ],
             )
+            failed_rows_by_cutoff[cutoff] = failed_rows
+            failed_questions_by_cutoff[cutoff] = failed_questions
 
         # ----------------------------------------------------
         # Primeros diez chunks por pregunta
@@ -394,7 +387,10 @@ def main():
             .head(10)
         )
 
-        n_chunks = len(top10_chunks)
+        judged_top10_chunks = top10_chunks.loc[
+            ~top10_chunks["judge_failed"]
+        ]
+        n_chunks = len(judged_top10_chunks)
 
         # ----------------------------------------------------
         # Distribución de puntuaciones en @10
@@ -402,7 +398,7 @@ def main():
 
         if n_chunks > 0:
 
-            scores = top10_chunks["relevance_score"]
+            scores = judged_top10_chunks["relevance_score"]
 
             pct_score2 = (scores == 2).mean() * 100
             pct_score1 = (scores == 1).mean() * 100
@@ -418,21 +414,28 @@ def main():
         # Resumen de la estrategia
         # ----------------------------------------------------
 
-        summary_results.append({
+        summary = {
             "strategy": strategy,
-            "n_questions": len(per_question_df),
+            "n_questions": len(expected_questions),
             "n_missing": len(missing_q),
             "n_chunks": n_chunks,
-            "Mean_nDCG@5": per_question_df["nDCG@5"].mean(),
-            "HitRate@5": per_question_df["Hit@5"].mean(),
-            "MRR@5": per_question_df["MRR@5"].mean(),
-            "Mean_nDCG@10": per_question_df["nDCG@10"].mean(),
-            "HitRate@10": per_question_df["Hit@10"].mean(),
-            "MRR@10": per_question_df["MRR@10"].mean(),
+            "n_judge_errors@5": failed_rows_by_cutoff[5],
+            "n_judge_errors@10": failed_rows_by_cutoff[10],
+            "n_questions_excluded@5": failed_questions_by_cutoff[5],
+            "n_questions_excluded@10": failed_questions_by_cutoff[10],
+            "n_questions_evaluated@5": len(per_cutoff[5]),
+            "n_questions_evaluated@10": len(per_cutoff[10]),
+            "Mean_nDCG@5": per_cutoff[5]["nDCG@5"].mean(),
+            "HitRate@5": per_cutoff[5]["Hit@5"].mean(),
+            "MRR@5": per_cutoff[5]["MRR@5"].mean(),
+            "Mean_nDCG@10": per_cutoff[10]["nDCG@10"].mean(),
+            "HitRate@10": per_cutoff[10]["Hit@10"].mean(),
+            "MRR@10": per_cutoff[10]["MRR@10"].mean(),
             "%score2@10": pct_score2,
             "%score1@10": pct_score1,
             "%score0@10": pct_score0,
-        })
+        }
+        summary_results.append(summary)
 
     # ========================================================
     # 8. CREAR DATAFRAME FINAL
@@ -505,8 +508,9 @@ def main():
     )
 
     print(
-        "Evaluaciones fallidas del judge: 0 "
-        "(las métricas se detienen si quedan errores pendientes)"
+        "Errores del judge: "
+        f"{int(df_valid['judge_failed'].sum())} "
+        "(excluidos de métricas; ver recuentos por corte en el Excel)"
     )
 
     print()
