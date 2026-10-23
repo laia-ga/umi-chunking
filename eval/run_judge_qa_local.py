@@ -379,9 +379,17 @@ def parse_llm_json(
 # ==============================================================================
 
 def build_judge_prompt(task: Dict[str, Any], include_reason: bool) -> str:
+
     prompt = f"""
-    Your task is to evaluate the relevance of the RETRIEVED CHUNK
-    for answering the QUESTION, using the GOLD ANSWER as reference.
+    You are evaluating the usefulness of a retrieved document chunk
+    for answering a question in a biomedical RAG system.
+
+    Your task is to determine whether the RETRIEVED CHUNK provides
+    sufficient evidence to answer the QUESTION correctly.
+
+    The GOLD ANSWER is a short reference answer. It identifies the
+    expected factual information, but it may omit important context,
+    explanations, qualifications, or alternative valid formulations.
 
     QUESTION:
     {task["question"]}
@@ -392,45 +400,72 @@ def build_judge_prompt(task: Dict[str, Any], include_reason: bool) -> str:
     RETRIEVED CHUNK:
     {task["chunk"].get("text", "")}
 
-    Compare the retrieved chunk directly with the gold answer.
+    EVALUATION PRINCIPLES:
 
-    Assign:
+    1. Evaluate the chunk primarily in relation to the QUESTION.
+    Use the GOLD ANSWER to identify the expected factual answer,
+    not as a string to match or an exhaustive description.
 
-    2 = The chunk contains the answer, or enough information to
-    answer the question correctly.
+    2. Determine whether a reader could answer the question correctly
+    using the chunk alone, without relying on external knowledge.
 
-    1 = The chunk contains some information from the gold
-    answer or useful information toward answering the question,
-    but the answer is incomplete.
+    3. Accept equivalent terminology, synonyms, paraphrases, and
+    more detailed explanations that support the same answer.
 
-    0 = The chunk contains no information useful for answering
-    the question.
+    4. Do not penalize a chunk for containing additional relevant
+    information beyond the short gold answer.
+
+    5. Merely mentioning a term from the gold answer is not enough.
+    The chunk must establish the factual relationship needed
+    to answer the question.
+
+    6. Do not infer missing facts from general biomedical knowledge.
+    Only information explicitly stated or directly supported
+    by the chunk can justify a score of 2.
+
+    7. Check important qualifiers such as patient population,
+    clinical context, conditions, negation, units, and numerical
+    values when they are relevant to the question.
+
+    8. If the chunk contradicts the expected answer, do not
+    assign 2, even if it contains matching terminology.
+
+    SCORING:
+
+    2 = SUFFICIENT EVIDENCE
+    The chunk directly answers the question or provides enough
+    factual evidence to derive a correct answer consistent with
+    the gold answer. No essential information is missing.
+
+    1 = PARTIAL EVIDENCE
+    The chunk provides information genuinely useful for answering
+    the question, but lacks at least one essential fact or
+    relationship needed for a complete, reliable answer.
+
+    0 = INSUFFICIENT OR IRRELEVANT EVIDENCE
+    The chunk does not provide useful evidence for answering
+    the question. This includes superficial keyword overlap,
+    unrelated mentions, or information that cannot support
+    the expected answer.
 
     IMPORTANT:
-    If the chunk contains the same factual information as the
-    gold answer, even using different words, assign 2.
-
-    If the chunk contains only part of the gold answer,
-    assign 1.
-
-    Do NOT require exact wording.
+    Judge answerability and factual support, not textual similarity.
+    A short gold answer does not imply that the supporting evidence
+    must also be short.
     """
 
     if include_reason:
         return prompt + """
+    Return only a JSON object with an integer score (0, 1, or 2)
+    and a brief reason explaining the evidence or missing information.
 
-    Return only a JSON object with the score as an integer (0, 1 or 2)
-    and a brief reason:
-
-    {"score": 0, "reason": "Brief reason"}
+    {"score": score, "reason": "Brief reason"}
     """
 
     return prompt + """
+    Return only a JSON object with an integer score (0, 1, or 2).
 
-    Return only a JSON object with the score as an integer (0, 1 or 2),
-    with no explanation:
-
-    {"score": 0}
+    {"score": score}
     """
 
 
