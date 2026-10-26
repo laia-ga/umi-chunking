@@ -608,17 +608,18 @@ el CSV. `--restart` también descarta el CSV anterior y vuelve a evaluar todo.
 ## Métricas de evaluación
 
 `eval/run_metrics.py` resume las puntuaciones del judge seleccionado por
-`metrics_judge` en `eval_config.json` y guarda el Excel en
-`output/metrics/<output_folder>/`:
+`metrics_judge` en el archivo de configuración seleccionado y guarda el Excel
+en `output/metrics/<output_folder>/`:
 
 ```bash
-python eval/run_metrics.py
+python eval/run_metrics.py --config eval_config_bge_m3.json
+python eval/run_metrics.py --config eval_config_jina.json
 ```
 
-Para calcular métricas del otro juez, cambia `metrics_judge` en
-`eval_config.json` a `local` o `gpt` y ejecuta de nuevo el comando. Si se
-indica un `judge_file` posicional, se usa ese CSV dentro del
-`output_folder` del juez seleccionado.
+Por defecto, si se omite `--config`, usa `configs/eval_config.json`. Para
+calcular métricas del otro juez, cambia `metrics_judge` en la configuración
+seleccionada a `local` o `gpt`. Si se indica un `judge_file` posicional, se usa
+ese CSV dentro del `output_folder` del juez seleccionado.
 
 El script calcula **Mean nDCG**, **HitRate** y **MRR** tanto en los cortes
 `@5` como `@10`. HitRate y MRR consideran suficiente solo un chunk con score
@@ -654,12 +655,15 @@ comparar las métricas de cada corte. Las estrategias se ordenan por
 Mean nDCG@10:
 
 ```bash
-python eval/run_graphics.py
+python eval/run_graphics.py --config eval_config_bge_m3.json
+python eval/run_graphics.py --config eval_config_jina.json
 ```
 
 El script usa el Excel correspondiente al `metrics_judge` seleccionado en
-`eval_config.json`. Si se indica un `metrics_file` posicional, se usa ese
-Excel dentro del `output_folder` de ese juez. Las imágenes PNG se guardan en
+el archivo de configuración seleccionado. Por defecto, si se omite
+`--config`, usa `configs/eval_config.json`. Si se indica un `metrics_file`
+posicional, se usa ese Excel dentro del `output_folder` de ese juez. Las
+imágenes PNG se guardan en
 `output/graphics/<output_folder>/` con resolución de 300 dpi. Sus nombres se
 derivan del archivo de métricas seleccionado.
 

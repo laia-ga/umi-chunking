@@ -52,6 +52,16 @@ def parse_args():
         help="Archivo CSV generado por run_judge.py",
     )
 
+    parser.add_argument(
+        "--config",
+        type=str,
+        default=EVAL_CONFIG_FILE.name,
+        help=(
+            "Nombre del archivo de configuración dentro de configs/ "
+            f"(por defecto: {EVAL_CONFIG_FILE.name})."
+        ),
+    )
+
     return parser.parse_args()
 
 
@@ -179,16 +189,27 @@ def main():
 
     args = parse_args()
 
+    eval_config_file = BASE_DIR / "configs" / args.config
+    if not eval_config_file.exists():
+        raise FileNotFoundError(
+            f"No se ha encontrado el archivo de configuración:\n"
+            f"{eval_config_file}"
+        )
+
     # --------------------------------------------------------
     # 1. Cargar configuración de evaluación
     # --------------------------------------------------------
-    with EVAL_CONFIG_FILE.open("r", encoding="utf-8") as file:
+    with eval_config_file.open("r", encoding="utf-8") as file:
         eval_config = json.load(file)
 
     fold = eval_config["fold"]
     suffix = fold.removeprefix("all_")
+    retrieval_file = eval_config.get("retrieval_file")
+    if retrieval_file:
+        suffix = Path(retrieval_file).stem.removeprefix("retrieval_")
     judge_name = eval_config.get("metrics_judge", "local")
     output_folder = eval_config[f"{judge_name}_judge"]["output_folder"]
+    print(f"Configuración: {eval_config_file}")
 
     # --------------------------------------------------------
     # 2. Localizar CSV del juez
