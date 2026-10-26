@@ -528,14 +528,30 @@ estén en el JSON de Retrieval.
 ### Judge local
 
 `eval/run_judge_qa_local.py` ejecuta el modelo definido en
-`local_judge.model_name` en `configs/eval_config.json`. Por defecto
-selecciona `cuda:0` si CUDA está disponible y, si no, CPU. Comprueba los
-dispositivos y carga el modelo antes de empezar a evaluar, de modo que los
+`local_judge.model_name` en el archivo de configuración seleccionado. Por
+defecto selecciona `cuda:0` si CUDA está disponible y, si no, CPU. Comprueba
+los dispositivos y carga el modelo antes de empezar a evaluar, de modo que los
 errores de carga se detecten antes de modificar el CSV de resultados:
 
 ```bash
 python eval/run_judge_qa_local.py --gpu-ids 0 --batch-size 1
 ```
+
+Por defecto lee `configs/eval_config.json`. Se puede seleccionar otro archivo
+de `configs/` con `--config`; así cada job de Slurm conserva su fold, retrieval
+y carpeta de salida aunque se envíe antes de que termine otro job:
+
+```bash
+python eval/run_judge_qa_local.py --config eval_config_bge_m3.json \
+  --gpu-ids 0 --batch-size 1
+python eval/run_judge_qa_local.py --config eval_config_jina.json \
+  --gpu-ids 0 --batch-size 1
+```
+
+`fold` indica la subcarpeta de Retrieval y `local_judge.output_folder` separa
+los resultados de cada evaluación. `retrieval_file` es opcional; si se omite,
+el script deriva el nombre a partir de `fold`. Se puede indicar un nombre
+distinto en la configuración o como argumento posicional.
 
 `--gpu-ids` acepta uno o varios índices CUDA visibles, por ejemplo
 `--gpu-ids 0,1`; cada GPU carga una copia completa del modelo y procesa

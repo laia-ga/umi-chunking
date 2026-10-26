@@ -104,6 +104,16 @@ def parse_args():
     )
 
     parser.add_argument(
+        "--config",
+        type=str,
+        default=EVAL_CONFIG_FILE.name,
+        help=(
+            "Nombre del archivo de configuración dentro de configs/ "
+            f"(por defecto: {EVAL_CONFIG_FILE.name})."
+        ),
+    )
+
+    parser.add_argument(
         "--top-k",
         type=_positive_int,
         default=None,
@@ -775,8 +785,14 @@ def create_executor(
 
 def main():
     args = parse_args()
+    eval_config_file = BASE_DIR / "configs" / args.config
+    if not eval_config_file.exists():
+        raise FileNotFoundError(
+            f"No se ha encontrado el archivo de configuración:\n"
+            f"{eval_config_file}"
+        )
 
-    with EVAL_CONFIG_FILE.open("r", encoding="utf-8") as file:
+    with eval_config_file.open("r", encoding="utf-8") as file:
         eval_config = json.load(file)
 
     fold = eval_config["fold"]
@@ -788,7 +804,11 @@ def main():
     MODEL_NAME = judge_config["model_name"]
     JUDGE_VERSION = judge_config["version"]
 
-    retrieval_file = args.retrieval_file or f"retrieval_{retrieval_suffix}.json"
+    retrieval_file = (
+        args.retrieval_file
+        or eval_config.get("retrieval_file")
+        or f"retrieval_{retrieval_suffix}.json"
+    )
     retrieval_suffix = Path(retrieval_file).stem
     if retrieval_suffix.startswith("retrieval_"):
         retrieval_suffix = retrieval_suffix[len("retrieval_"):]
@@ -805,6 +825,7 @@ def main():
     print("=" * 70)
     print("EVALUACIÓN DE RETRIEVAL MEDIANTE LLM")
     print("=" * 70)
+    print(f"Configuración: {eval_config_file}")
     print(f"Modelo juez: {MODEL_NAME}")
     print(f"Top K: {'todos los del archivo' if args.top_k is None else args.top_k}")
 
