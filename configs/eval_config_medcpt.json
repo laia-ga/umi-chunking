@@ -1,0 +1,15 @@
+{
+    "fold": "all_medcpt",
+    "retrieval_file": "retrieval_medcpt_query_encoder.json",
+    "metrics_judge": "local",
+    "local_judge": {
+        "model_name": "AtlaAI/Selene-1-Mini-Llama-3.1-8B",
+        "version": "local-qa-v3",
+        "output_folder": "all_medcpt_atlaai"
+    },
+    "gpt_judge": {
+        "model_name": "gpt-5.6-luna",
+        "version": "gpt-qa-v1",
+        "output_folder": "all_medcpt_gpt5_6_luna"
+    }
+}

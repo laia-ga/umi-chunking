@@ -106,9 +106,29 @@ obligatorios `question_id`, `question` y `gold_answer`. Ejemplo:
 | `configs/eval_config.json` | Fold de Retrieval, modelos/versiones y carpeta de salida de cada judge; judge elegido para métricas. |
 
 `chunk_fold` debe señalar la misma ejecución de chunking en las configuraciones
-de chunking e indexación. El modelo de embeddings y su normalización deben
-coincidir entre indexación y Retrieval; el nombre de la colección y la
-conexión de Qdrant se toman de `indexing_config.json`.
+de chunking e indexación. El modelo y su normalización deben ser compatibles
+entre indexación y Retrieval: normalmente se usa el mismo modelo; MedCPT usa
+`MedCPT-Article-Encoder` al indexar y `MedCPT-Query-Encoder` en Retrieval. El
+nombre de la colección y la conexión de Qdrant se toman de la configuración
+de indexación.
+
+Los scripts permiten seleccionar otros archivos JSON con `--config`. En
+indexación, la opción recibe la ruta del archivo (por defecto,
+`configs/indexing_config.json`); en Retrieval, recibe el nombre del archivo
+dentro de `configs/` (por defecto, `retrieval_config.json`). Retrieval acepta
+además `--indexing-config` para seleccionar la configuración de colección y
+conexión de Qdrant (por defecto, `indexing_config.json`). Por ejemplo, para
+usar MedCPT:
+
+```bash
+python scripts/run_indexing.py --config configs/indexing_config_medcpt.json
+python -m scripts.run_retrieval --config retrieval_config_medcpt.json \
+  --indexing-config indexing_config_medcpt.json
+```
+
+Los modelos de embeddings de ambas configuraciones deben ser compatibles.
+Los scripts de evaluación también aceptan `--config`; sus ejemplos de uso
+están en las secciones de Judge, métricas y gráficas.
 
 La configuración predeterminada usa el conjunto definitivo
 `data/ground_truth/4n_questions.jsonl`. Para probar otro conjunto, cambia
@@ -445,7 +465,8 @@ están disponibles.
 preguntas y guarda los resultados para su evaluación. Requiere que Qdrant esté
 en ejecución, que la colección configurada en
 `configs/indexing_config.json` ya se haya creado mediante la indexación y que
-el modelo de embeddings de Retrieval sea el mismo que se usó para indexar.
+los modelos de embeddings de Retrieval e indexación sean compatibles. MedCPT
+usa sus encoders de pregunta y artículo complementarios.
 
 Por defecto, el proceso sigue estos pasos:
 
