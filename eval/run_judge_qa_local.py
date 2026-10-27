@@ -226,7 +226,7 @@ def _parse_gpu_ids(value: str) -> List[int]:
 # Modelo instruct que asigna a cada chunk un score de relevancia entre 0 y 2.
 # Los valores comentados son referencias históricas; el activo viene del config.
 # MODEL_NAME = "AtlaAI/Selene-1-Mini-Llama-3.1-8B"      # v2, v3, v4
-# MODEL_NAME = "Qwen/Qwen3-8B"                          # v1
+# MODEL_NAME = "Qwen/Qwen3-8B"                          # v1, v4
 # MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 
 # Sin --include-reason solo se necesita una respuesta JSON corta con el score.
