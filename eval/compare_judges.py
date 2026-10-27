@@ -25,6 +25,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+# Raíz del proyecto (este script vive en main/scripts) y carpeta de salida
+BASE_DIR = Path(__file__).resolve().parent.parent
+JUDGE_OUTPUT_DIR = BASE_DIR / "output" / "judge"
+
 
 def normalize_tokens(text) -> set:
     """Palabras en minúscula, sin tildes; se descartan las cortas (salvo cifras)."""
@@ -75,12 +79,22 @@ def main():
     parser.add_argument("judge_a")
     parser.add_argument("judge_b")
     parser.add_argument("--names", nargs=2, default=["A", "B"])
-    parser.add_argument("--out", default="judge_disagreements.csv")
+    parser.add_argument(
+        "--out",
+        default=None,
+        help="Ruta del CSV de desacuerdos (por defecto: output/judge/).",
+    )
     parser.add_argument("--n-disagreements", type=int, default=30)
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
     name_a, name_b = args.names
+    out_path = (
+        Path(args.out)
+        if args.out
+        else JUDGE_OUTPUT_DIR / f"judge_disagreements_{name_a}_vs_{name_b}.csv"
+    )
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     key = ["question_id", "strategy", "rank"]
 
     a = load_valid(Path(args.judge_a))
@@ -146,10 +160,10 @@ def main():
     picked = picked.assign(chunk_text=picked["chunk_text"].astype(str).str.slice(0, 1500))
     picked[
         ["question", "gold_answer", "chunk_text", col_a, col_b, "gold_coverage", "strategy", "rank"]
-    ].to_csv(args.out, index=False, encoding="utf-8-sig")
+    ].to_csv(out_path, index=False, encoding="utf-8-sig")
     print(f"\nDesacuerdos totales: {len(disagreements)} "
           f"(de ellos 0 vs 2: {len(big)})")
-    print(f"Muestra de {len(picked)} desacuerdos guardada en: {args.out}")
+    print(f"Muestra de {len(picked)} desacuerdos guardada en:\n{out_path}")
 
 
 if __name__ == "__main__":
