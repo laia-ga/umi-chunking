@@ -1,5 +1,5 @@
 {
-    "chunk_fold": "bge_512_8192",
+    "chunk_fold": "bge_m3_512_8192",
     "qdrant": {
         "host": "127.0.0.1",
         "port": 6333,

@@ -35,6 +35,8 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 
+from chunking.utilities import resolve_chunk_fold_output_dir
+
 # ============================================================
 # RUTAS
 # ============================================================
@@ -235,18 +237,13 @@ def iter_normalized_chunks(
     Dict[str, Any]
         Un registro normalizado por cada chunk encontrado.
     """
-    chunks_dir = CHUNKS_ROOT / chunk_fold
-
-    if not chunks_dir.exists():
-        raise FileNotFoundError(
-            f"No existe la carpeta de chunks: {chunks_dir}. "
-            "Ejecuta primero run_MD.py o run_JSON.py."
-        )
+    chunks_dir = resolve_chunks_dir(chunk_fold)
 
     chunk_files = sorted(chunks_dir.glob("*/chunk_results/*.json"))
     if not chunk_files:
         raise FileNotFoundError(
-            f"No se encontraron archivos de chunks en: {CHUNKS_ROOT}"
+            f"No se encontraron archivos de chunks en: {chunks_dir}. "
+            "Ejecuta primero run_MD.py o run_JSON.py."
         )
 
     for chunk_file in chunk_files:
@@ -275,6 +272,25 @@ def iter_normalized_chunks(
             )
 
 
+def resolve_chunks_dir(chunk_fold: str) -> Path:
+    """Valida la carpeta configurada y explica qué folds están disponibles."""
+
+    chunks_dir = resolve_chunk_fold_output_dir(CHUNKS_ROOT, chunk_fold)
+    if not chunks_dir.is_dir():
+        available_folds = (
+            sorted(path.name for path in CHUNKS_ROOT.iterdir() if path.is_dir())
+            if CHUNKS_ROOT.is_dir()
+            else []
+        )
+        available = ", ".join(available_folds) or "ninguna"
+        raise FileNotFoundError(
+            f"No existe la carpeta de chunks configurada: {chunks_dir}. "
+            f"Carpetas disponibles en {CHUNKS_ROOT}: {available}. "
+            "Comprueba 'chunk_fold' y ejecuta primero run_MD.py o run_JSON.py."
+        )
+    return chunks_dir
+
+
 def normalize_chunks(
     chunk_fold: str,
 ) -> int:
@@ -287,6 +303,7 @@ def normalize_chunks(
         Número total de chunks normalizados y escritos.
     """
 
+    resolve_chunks_dir(chunk_fold)
     INDEXING_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     count = 0
 

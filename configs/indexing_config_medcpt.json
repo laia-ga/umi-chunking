@@ -1,5 +1,5 @@
 {
-    "chunk_fold": "med_cpt_256_512",
+    "chunk_fold": "medcpt_256_512",
     "qdrant": {
         "host": "127.0.0.1",
         "port": 6333,
