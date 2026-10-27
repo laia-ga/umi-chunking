@@ -23,6 +23,7 @@
 import csv
 import json
 import multiprocessing
+import random
 import sys
 import time
 from concurrent.futures import FIRST_COMPLETED, ProcessPoolExecutor, wait
@@ -80,6 +81,9 @@ CSV_FIELDNAMES = [
     "llm_reason",
     "judge_error",
     "judge_version",
+    "p0",
+    "p1",
+    "p2",
 ]
 
 # Estado privado de cada proceso: cada worker carga su propio tokenizer y
@@ -88,6 +92,7 @@ _worker_tokenizer = None
 _worker_model = None
 _worker_device = None
 _worker_include_reason = False
+_worker_digit_ids = None
 
 # Configuración de argumentos de línea de comandos
 def parse_args():
@@ -164,6 +169,18 @@ def parse_args():
         action="store_true",
         help="Pide y guarda una breve justificación además del score.",
     )
+    parser.add_argument(
+        "--sample-questions",
+        type=_positive_int,
+        default=None,
+        help="Evalúa solo N preguntas al azar (prueba rápida; el CSV se guarda aparte).",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="Semilla del muestreo (por defecto: 42).",
+    )
 
     return parser.parse_args()
 
@@ -208,7 +225,7 @@ def _parse_gpu_ids(value: str) -> List[int]:
 
 # Modelo instruct que asigna a cada chunk un score de relevancia entre 0 y 2.
 # Los valores comentados son referencias históricas; el activo viene del config.
-# MODEL_NAME = "AtlaAI/Selene-1-Mini-Llama-3.1-8B"      # v2
+# MODEL_NAME = "AtlaAI/Selene-1-Mini-Llama-3.1-8B"      # v2, v3, v4
 # MODEL_NAME = "Qwen/Qwen3-8B"                          # v1
 # MODEL_NAME = "Qwen/Qwen2.5-3B-Instruct"
 
@@ -227,7 +244,7 @@ def _initialize_judge_worker(
 ) -> None:
     """Carga una copia privada del tokenizer/modelo en el proceso worker."""
 
-    global _worker_tokenizer, _worker_model, _worker_device
+    global _worker_tokenizer, _worker_model, _worker_device, _worker_digit_ids
     global _worker_include_reason, MODEL_NAME, JUDGE_VERSION
 
     _worker_device = device
@@ -253,6 +270,13 @@ def _initialize_judge_worker(
         device_map={"": device},
     )
     _worker_model.eval()
+
+    _worker_digit_ids = []
+    for digit in ("0", "1", "2"):
+        ids = _worker_tokenizer.encode(digit, add_special_tokens=False)
+        if len(ids) != 1:
+            raise RuntimeError(f"El dígito {digit} no es un único token: {ids}")
+        _worker_digit_ids.append(ids[0])
 
 
 def _warmup_judge_worker() -> str:
@@ -484,6 +508,7 @@ def _row_for_task(
     score: int | None,
     reason: str,
     judge_error: str,
+    probs: list | None = None,
 ) -> Dict[str, Any]:
     chunk = task["chunk"]
     return {
@@ -500,6 +525,9 @@ def _row_for_task(
         "relevance_score": score,
         "llm_reason": reason,
         "judge_error": judge_error,
+        "p0": probs[0] if probs else None,
+        "p1": probs[1] if probs else None,
+        "p2": probs[2] if probs else None,
         "judge_version": (
             f"{JUDGE_VERSION}-reason"
             if _worker_include_reason
@@ -542,40 +570,50 @@ def _generate_judge_batch(tasks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         _format_chat_prompt(build_judge_prompt(task, _worker_include_reason))
         for task in tasks
     ]
+    if not _worker_include_reason:
+        # Se deja la respuesta ya empezada: el modelo solo puede elegir el dígito.
+        prompts = [prompt + '{"score": ' for prompt in prompts]
+
     inputs = _worker_tokenizer(
         prompts,
         return_tensors="pt",
         padding=True,
+        add_special_tokens=False,  # el chat template ya incluye el BOS
     )
     inputs = {
         key: value.to(_worker_device)
         for key, value in inputs.items()
     }
 
-    with torch.inference_mode():
-        outputs = _worker_model.generate(
-            **inputs,
-            max_new_tokens=64 if _worker_include_reason else MAX_NEW_TOKENS,
-            do_sample=False,
-            pad_token_id=_worker_tokenizer.pad_token_id,
-        )
-
-    prompt_length = inputs["input_ids"].shape[1]
-    rows = []
-    for task, output in zip(tasks, outputs):
-        raw_response = _worker_tokenizer.decode(
-            output[prompt_length:],
-            skip_special_tokens=True,
-        )
-        score, reason, error = _parse_judge_response(raw_response)
-        rows.append(
-            _row_for_task(
-                task,
-                score,
-                reason if _worker_include_reason else "",
-                error,
+    # --- Modo con justificación: se mantiene generate() ---
+    if _worker_include_reason:
+        with torch.inference_mode():
+            outputs = _worker_model.generate(
+                **inputs,
+                max_new_tokens=160,
+                do_sample=False,
+                pad_token_id=_worker_tokenizer.pad_token_id,
             )
-        )
+        prompt_length = inputs["input_ids"].shape[1]
+        rows = []
+        for task, output in zip(tasks, outputs):
+            raw_response = _worker_tokenizer.decode(
+                output[prompt_length:],
+                skip_special_tokens=True,
+            )
+            score, reason, error = _parse_judge_response(raw_response)
+            rows.append(_row_for_task(task, score, reason, error))
+        return rows
+
+    # --- Modo solo score: se lee la probabilidad de 0, 1 y 2 ---
+    with torch.inference_mode():
+        logits = _worker_model(**inputs, logits_to_keep=1).logits[:, -1, :]
+    probs = torch.softmax(logits[:, _worker_digit_ids].float(), dim=-1).cpu()
+
+    rows = []
+    for task, prob in zip(tasks, probs):
+        score = int(prob.argmax())
+        rows.append(_row_for_task(task, score, "", "", prob.tolist()))
     return rows
 
 
@@ -816,10 +854,15 @@ def main():
         BASE_DIR / "output" / "retrieval" / fold / retrieval_file
     )
 
+    sample_tag = (
+        f"_sample{args.sample_questions}_seed{args.seed}"
+        if args.sample_questions
+        else ""
+    )
     output_file = (
         OUTPUT_DIR
         / output_folder
-        / f"local_judge_{retrieval_suffix}.csv"
+        / f"local_judge_{retrieval_suffix}{sample_tag}.csv"
     )
 
     print("=" * 70)
@@ -838,6 +881,14 @@ def main():
 
     with retrieval_results_file.open("r", encoding="utf-8") as file:
         results = json.load(file)
+
+    if args.sample_questions is not None and args.sample_questions < len(results):
+        rng = random.Random(args.seed)
+        results = rng.sample(results, args.sample_questions)
+        print(
+            f"Modo prueba: {args.sample_questions} preguntas al azar "
+            f"(seed={args.seed})."
+        )
 
     print(f"Preguntas encontradas: {len(results)}")
     output_file.parent.mkdir(parents=True, exist_ok=True)
