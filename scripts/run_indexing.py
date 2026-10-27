@@ -21,6 +21,7 @@ import hashlib
 import json
 import os
 import re
+import sys
 import time
 import uuid
 import argparse
@@ -35,6 +36,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 
+sys.path.append(str(Path(__file__).resolve().parent.parent))
 from chunking.utilities import resolve_chunk_fold_output_dir
 
 # ============================================================
