@@ -35,7 +35,7 @@ METRICS = [
 HEATMAP_CMAP = "Spectral"
 
 # Paleta para identificar las estrategias
-LINE_CMAP = "Spectral"
+LINE_CMAP = "Spectral_r"
 
 # Mantener la misma escala para todas las métricas
 # (nDCG, HitRate y MRR están entre 0 y 1)
