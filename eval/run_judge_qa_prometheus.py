@@ -1028,12 +1028,14 @@ def main():
                             )
                     next_batch_to_write += 1
                     file.flush()
-                    if completed_chunks % 100 < args.batch_size or completed_chunks == total:
-                        elapsed = time.perf_counter() - start_time
-                        print(
-                            f"Chunks evaluados: {completed_chunks}/{total}; "
-                            f"errores: {failed_chunks}; tiempo: {elapsed:.1f} s"
-                        )
+                    elapsed = time.perf_counter() - start_time
+                    print(
+                        f"Chunks evaluados: {completed_chunks}/{total} "
+                        f"({completed_chunks / total * 100:.1f}%); "
+                        f"errores: {failed_chunks}; "
+                        f"tiempo: {elapsed:.1f} s",
+                        flush=True,
+                    )
 
                 while (
                     idle_workers
