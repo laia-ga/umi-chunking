@@ -416,7 +416,7 @@ def build_judge_prompt(task: Dict[str, Any], include_reason: bool) -> str:
     chunk_text = task["chunk"].get("text", "")
 
     return f"""
-###Task Description:
+### Task Description:
 
 You are evaluating the relevance and factual sufficiency of a retrieved
 document chunk for answering a biomedical question.
@@ -424,13 +424,13 @@ document chunk for answering a biomedical question.
 The retrieved chunk is NOT expected to be a concise final answer.
 It may be a long section of a scientific, medical, or technical document.
 
-Evaluate whether the chunk contains enough factual evidence to answer
-the question correctly.
+Evaluate whether the chunk contains sufficient factual evidence to answer
+the question correctly using the retrieved chunk alone.
 
 The reference answer is often very short. Use it to identify the expected
 factual answer, NOT as an exact string that must appear in the chunk.
 
-Evaluation rules:
+### Evaluation Rules:
 
 1. Judge whether the question can be answered correctly using the
    retrieved chunk alone.
@@ -464,52 +464,33 @@ Evaluation rules:
     It is sufficient that the answer can be derived directly and
     reliably from the evidence in the chunk.
 
-IMPORTANT SCORING RULES:
+### Scoring Rules:
 
 Use a strict integer relevance scale from 1 to 5.
 
-Score 1 is the MINIMUM possible score.
-Score 5 is the MAXIMUM possible score.
-
-Score 0 is NOT a valid score under any circumstances.
+Score 1 is the minimum possible score.
+Score 5 is the maximum possible score.
+Score 0 is NEVER valid.
 
 If the chunk is completely irrelevant, unrelated, contradictory,
 or contains no useful evidence for answering the question,
 assign Score 1.
 
-Never assign Score 0, even if the chunk provides absolutely
-no useful information.
+Evaluate the retrieved chunk using the scoring rubric below.
 
-Every evaluated chunk must receive exactly one integer
-relevance score between 1 and 5.
-
-First, provide a concise evidence-based feedback (maximum 30 words).
-
-Then assign an integer relevance score from 1 to 5.
-Always assign a score, including when the chunk is irrelevant.
-
-Required output format:
-Feedback: <brief justification>
-[RESULT] <integer from 1 to 5>
-
-Always end your response with a line containing exactly:
-[RESULT] <integer from 1 to 5>
-
-Do not generate any additional text after this line.
-
-###The instruction to evaluate:
+### The instruction to evaluate:
 
 {question}
 
-###Response to evaluate:
+### Response to evaluate:
 
 {chunk_text}
 
-###Reference Answer (Score 5):
+### Reference Answer (Score 5):
 
 {gold_answer}
 
-###Score Rubrics:
+### Score Rubrics:
 
 [Evidence sufficiency for biomedical question answering]
 
@@ -539,7 +520,19 @@ on external knowledge. The evidence may use different terminology,
 paraphrases, or a longer explanation. Exact textual matching is
 not required.
 
-###Feedback:
+### Output Instructions:
+
+Return ONLY the final relevance score.
+
+Do NOT provide feedback, explanations, reasoning, or any additional text.
+Do NOT repeat the question, reference answer, or scoring rubric.
+Do NOT output a score of 0.
+
+Your entire response MUST consist of exactly one line in this format:
+
+[RESULT] <integer from 1 to 5>
+
+### Score:
 """
 
 
