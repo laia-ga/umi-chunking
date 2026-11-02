@@ -370,22 +370,23 @@ todas las fases:
    documento y sus metadatos.
 2. **Normaliza los chunks.** Convierte los resultados de Markdown y JSON a un
    esquema común y escribe un registro JSON por línea en
-   `output/indexing/normalized_chunks.jsonl`. Se conservan, entre otros datos,
-   el texto, el formato, el documento, la estrategia de chunking y los
-   metadatos estructurales. Los identificadores normalizados distinguen
+   `output/indexing/<colección>/normalized_chunks.jsonl`. Se conservan, entre
+   otros datos, el texto, el formato, el documento, la estrategia de chunking
+   y los metadatos estructurales. Los identificadores normalizados distinguen
    formato, documento, estrategia y posición del chunk.
 3. **Selecciona los formatos configurados.** Solo los formatos incluidos en
    `indexing.formats` de `configs/indexing_config.json` pasan a la generación
    de embeddings. Por ejemplo, se puede indexar únicamente `json` o combinar
    `json` y `markdown`.
 4. **Calcula los embeddings.** Usa el modelo de `embeddings.model_name` y la
-   normalización indicada en `embeddings.normalize_embeddings`. Por defecto,
-   la configuración actual usa `BAAI/bge-m3` y normaliza los vectores.
+   normalización indicada en `embeddings.normalize_embeddings` de la
+   configuración de indexación seleccionada. El modelo y la normalización
+   deben ser compatibles con la configuración de Retrieval.
    Reutiliza por defecto la caché de
-   `output/indexing/embeddings_cache/`: cada entrada está asociada al modelo,
-   al identificador del chunk y al hash de su texto; si cambia el texto, se
-   vuelve a calcular el vector. Los nuevos embeddings se guardan en lotes
-   durante el cálculo, por defecto cada 1.024 chunks; si el proceso se
+   `output/indexing/<colección>/embeddings_cache/`: cada entrada está asociada
+   al modelo, al identificador del chunk y al hash de su texto; si cambia el
+   texto, se vuelve a calcular el vector. Los nuevos embeddings se guardan en
+   lotes durante el cálculo, por defecto cada 1.024 chunks; si el proceso se
    interrumpe, la siguiente ejecución reutiliza los lotes ya guardados y
    calcula solo los pendientes.
 5. **Recrea la colección y carga los vectores.** Conecta con Qdrant usando el
@@ -429,7 +430,7 @@ python scripts/run_indexing.py --no-cache
 ```
 
 Los tiempos, el número de chunks y las estadísticas de caché se añaden a
-`output/indexing/logs/run_log.jsonl`.
+`output/indexing/<colección>/logs/run_log.jsonl`.
 
 ### Indexación con recursos configurables
 
@@ -492,12 +493,11 @@ Por defecto, el proceso sigue estos pasos:
    y metadatos principales del chunk y su texto. Las respuestas se guardan en
    el orden original de las preguntas.
 
-La configuración predeterminada consulta `BAAI/bge-m3`, recupera los diez
-primeros resultados (`top_k: 10`) y no aplica filtros por estrategia, tipo de
-documento ni formato. Por tanto, cada pregunta busca en todos los puntos de
-la colección seleccionada. Para cambiar estos valores, edita
-`configs/retrieval_config.json`; el host, puerto y nombre de la colección
-proceden de `configs/indexing_config.json`.
+El modelo, `top_k` y los filtros se leen del archivo de configuración de
+Retrieval seleccionado. Si no se indican filtros por estrategia, tipo de
+documento o formato, cada pregunta busca en todos los puntos de la colección.
+El host, puerto y nombre de la colección proceden de la configuración de
+indexación seleccionada.
 
 ### Ejecución y concurrencia
 
@@ -563,7 +563,7 @@ de `configs/` con `--config`; así cada job de Slurm conserva su fold, retrieval
 y carpeta de salida aunque se envíe antes de que termine otro job:
 
 ```bash
-python eval/run_judge_qa_local.py --config eval_config_bge_m3.json \
+python eval/run_judge_qa_local.py --config eval_config_bge.json \
   --gpu-ids 0 --batch-size 1
 python eval/run_judge_qa_local.py --config eval_config_jina.json \
   --gpu-ids 0 --batch-size 1
@@ -633,7 +633,7 @@ el CSV. `--restart` también descarta el CSV anterior y vuelve a evaluar todo.
 en `output/metrics/<output_folder>/`:
 
 ```bash
-python eval/run_metrics.py --config eval_config_bge_m3.json
+python eval/run_metrics.py --config eval_config_bge.json
 python eval/run_metrics.py --config eval_config_jina.json
 ```
 
@@ -676,7 +676,7 @@ comparar las métricas de cada corte. Las estrategias se ordenan por
 Mean nDCG@10:
 
 ```bash
-python eval/run_graphics.py --config eval_config_bge_m3.json
+python eval/run_graphics.py --config eval_config_bge.json
 python eval/run_graphics.py --config eval_config_jina.json
 ```
 
@@ -697,7 +697,7 @@ El flujo habitual, partiendo de un archivo de resultados de Retrieval, es:
    el Excel.
 3. Ejecuta `run_graphics.py` sobre el Excel para generar las imágenes.
 
-Los scripts de `eval/` quedan así cubiertos: los dos jueces, el cálculo de
-métricas y la generación de gráficas. La colección de Qdrant y los resultados
-de Retrieval son entradas de las etapas anteriores; estos pasos de evaluación
-trabajan sobre el JSON de Retrieval y los CSV/Excel generados en cada fase.
+La evaluación empieza con el JSON generado por Retrieval: los jueces lo usan
+para crear un CSV, `run_metrics.py` convierte ese CSV en un Excel y
+`run_graphics.py` genera las gráficas a partir del Excel. La indexación en
+Qdrant y la búsqueda de Retrieval se ejecutan antes de este flujo.
