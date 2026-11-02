@@ -1,16 +1,22 @@
 ################################################################################
 # RUN_JUDGE.PY
 #
-# Evalúa mediante un LLM la relevancia de los chunks recuperados.
+# Evalúa mediante Prometheus 2 la relevancia de los chunks recuperados.
 #
 # Para cada pregunta:
-#   - lee la pregunta
-#   - lee la respuesta de referencia
-#   - evalúa cada chunk recuperado
-#   - asigna:
-#         0 = no relevante
-#         1 = parcialmente relevante
-#         2 = totalmente relevante
+#   - Lee la pregunta y la respuesta de referencia.
+#   - Evalúa cada chunk recuperado.
+#   - Asigna una puntuación de relevancia entre 1 y 5:
+#
+#       1 = Irrelevante o sin evidencia útil.
+#       2 = Relación temática, evidencia insuficiente.
+#       3 = Evidencia parcialmente útil.
+#       4 = Evidencia sólida, pero incompleta.
+#       5 = Evidencia suficiente para responder correctamente.
+#
+# Si el juez devuelve 0, se normaliza a 1.
+# Si no devuelve puntuación o falla la evaluación, se asigna 1
+# y se registra el problema en judge_error.
 #
 # El modelo se carga directamente desde Hugging Face.
 ################################################################################
@@ -458,10 +464,24 @@ Evaluation rules:
     It is sufficient that the answer can be derived directly and
     reliably from the evidence in the chunk.
 
-Assign an integer relevance score from 1 to 5 using the rubric below.
+IMPORTANT SCORING RULES:
 
-Score 1 means the chunk is irrelevant or does not contain useful evidence.
-Always assign a score, including when the chunk is irrelevant.
+Use a strict integer relevance scale from 1 to 5.
+
+Score 1 is the MINIMUM possible score.
+Score 5 is the MAXIMUM possible score.
+
+Score 0 is NOT a valid score under any circumstances.
+
+If the chunk is completely irrelevant, unrelated, contradictory,
+or contains no useful evidence for answering the question,
+assign Score 1.
+
+Never assign Score 0, even if the chunk provides absolutely
+no useful information.
+
+Every evaluated chunk must receive exactly one integer
+relevance score between 1 and 5.
 
 First, provide a concise evidence-based feedback (maximum 30 words).
 
@@ -472,7 +492,9 @@ Required output format:
 Feedback: <brief justification>
 [RESULT] <integer from 1 to 5>
 
-Always finish with [RESULT].
+Always end your response with a line containing exactly:
+[RESULT] <integer from 1 to 5>
+
 Do not generate any additional text after this line.
 
 ###The instruction to evaluate:
@@ -549,37 +571,41 @@ def _row_for_task(
 
 def _parse_judge_response(
     raw_response: str,
-) -> tuple[int | None, str, str]:
+) -> tuple[int, str, str]:
 
+    # Si el modelo no devuelve ninguna respuesta.
     if not raw_response or not raw_response.strip():
-        return None, "", "Respuesta vacía del juez."
+        return 1, "", "Respuesta vacía del juez. Score 1 asignado."
 
-    # Formato esperado y variantes habituales.
+    # Formato principal: [RESULT] 0, 1, 2, 3, 4 o 5.
     match = re.search(
-        r"\[RESULT\]\s*(?:Score\s*:\s*)?([1-5])\b",
+        r"\[RESULT\]\s*(?:Score\s*:\s*)?([0-5])\b",
         raw_response,
         flags=re.IGNORECASE,
     )
 
-    # Alternativa: Score: 3 o Score = 3
-    if not match:
-        match = re.search(
-            r"\bScore\s*[:=]\s*([1-5])\b",
-            raw_response,
-            flags=re.IGNORECASE,
-        )
-
-    # Alternativa: respuesta que contiene solo el número.
+    # Formato alternativo: únicamente un número.
     if not match:
         match = re.fullmatch(
-            r"\s*([1-5])\s*",
+            r"\s*([0-5])\s*",
             raw_response,
         )
 
     if match:
-        return int(match.group(1)), "", ""
+        score = int(match.group(1))
 
-    return None, "", "El juez no devolvió una puntuación válida."
+        # Normalizar el 0 a la puntuación mínima.
+        if score == 0:
+            return 1, "", ""
+
+        return score, "", ""
+
+    # Si no se encuentra una puntuación interpretable.
+    return (
+        1,
+        "",
+        "El juez no devolvió una puntuación válida. Score 1 asignado.",
+    )
 
 
 def _generate_judge_batch(
@@ -622,16 +648,14 @@ def _generate_judge_batch(
             skip_special_tokens=True,
         )
 
-        score, _, error = _parse_judge_response(
-            raw_response
-        )
+        score, _, error = _parse_judge_response(raw_response)
 
-        if score is None:
+        if error:
             print(
-                f"\nRESPUESTA SIN SCORE "
+                f"AVISO: Score 1 asignado automáticamente. "
                 f"question_id={task['question_id']} "
-                f"rank={task['rank']}:\n"
-                f"{raw_response[-1500:]}\n",
+                f"rank={task['rank']}. "
+                f"Motivo: {error}",
                 flush=True,
             )
 
@@ -650,18 +674,22 @@ def _generate_judge_batch(
 def _judge_batch(tasks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
     try:
-        rows = _generate_judge_batch(tasks)
+        return _generate_judge_batch(tasks)
 
     except torch.cuda.OutOfMemoryError as error:
+
+        # Si el batch es demasiado grande, dividirlo.
         if len(tasks) > 1:
+
             print(
                 f"AVISO: falta de VRAM en {_worker_device} "
-                f"con un batch de {len(tasks)}; "
-                "se dividirá en batches menores.",
+                f"con un batch de {len(tasks)}. "
+                "Dividiendo en batches menores.",
                 flush=True,
             )
 
             torch.cuda.empty_cache()
+
             midpoint = len(tasks) // 2
 
             return (
@@ -669,55 +697,29 @@ def _judge_batch(tasks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                 + _judge_batch(tasks[midpoint:])
             )
 
-        failure = f"judge_error: CUDA out of memory: {error}"
-
-        return [
-            _row_for_task(task, None, "", failure)
-            for task in tasks
-        ]
+        # Si falla incluso con un único chunk.
+        failure = f"CUDA out of memory: {error}"
 
     except Exception as error:
-        failure = f"judge_error: {error}"
 
-        return [
-            _row_for_task(task, None, "", failure)
-            for task in tasks
-        ]
+        failure = f"Error durante la evaluación: {error}"
 
-    # Reintentar individualmente los chunks sin puntuación.
-    for i, row in enumerate(rows):
+    # Asignar score 1 a todos los chunks afectados.
+    print(
+        f"AVISO: {len(tasks)} chunk(s) con error. "
+        f"Se asigna Score 1. Motivo: {failure}",
+        flush=True,
+    )
 
-        if row["relevance_score"] is not None:
-            continue
-
-        for attempt in range(1, 4):
-
-            print(
-                f"Reintentando chunk sin score "
-                f"(intento {attempt}/3): "
-                f"question_id={tasks[i]['question_id']}, "
-                f"rank={tasks[i]['rank']}",
-                flush=True,
-            )
-
-            try:
-                retry_row = _generate_judge_batch([tasks[i]])[0]
-
-                if retry_row["relevance_score"] is not None:
-                    rows[i] = retry_row
-                    break
-
-                rows[i] = retry_row
-
-            except Exception as error:
-                rows[i] = _row_for_task(
-                    tasks[i],
-                    None,
-                    "",
-                    f"Error durante reintento: {error}",
-                )
-
-    return rows
+    return [
+        _row_for_task(
+            task,
+            1,
+            "",
+            failure,
+        )
+        for task in tasks
+    ]
 
 
 def _judge_worker_batch(tasks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
@@ -845,9 +847,9 @@ def prepare_resume(
     successful_rows = [
         row for row in existing_rows
         if row.get("relevance_score") in {"1", "2", "3", "4", "5"}
-        and not row.get("judge_error")
         and row.get("judge_version") == expected_version
     ]
+
     done_keys = {
         (
             row.get("question_id", ""),
@@ -868,9 +870,10 @@ def prepare_resume(
         writer.writerows(successful_rows)
 
     print(
-        f"Reanudando: se conservan {len(successful_rows)} chunks correctos; "
-        f"{len(existing_rows) - len(successful_rows)} filas pendientes, fallidas "
-        "o de otra versión se volverán a evaluar."
+        f"Reanudando: se conservan {len(successful_rows)} chunks "
+        f"con puntuación 1-5; "
+        f"{len(existing_rows) - len(successful_rows)} filas "
+        "sin puntuación válida se volverán a evaluar."
     )
     return done_keys
 
@@ -1084,21 +1087,36 @@ def main():
                     for row in rows:
                         writer.writerow(row)
                         completed_chunks += 1
+
                         if row["judge_error"]:
                             failed_chunks += 1
+
                             print(
-                                f"ERROR question_id={row['question_id']} "
+                                f"AVISO question_id={row['question_id']} "
                                 f"strategy={row['strategy']} rank={row['rank']}: "
                                 f"{row['judge_error']}"
                             )
                     next_batch_to_write += 1
                     file.flush()
                     elapsed = time.perf_counter() - start_time
+
+                    progress = completed_chunks / total * 100
+
+                    speed = completed_chunks / elapsed if elapsed > 0 else 0
+
+                    remaining = (
+                        (total - completed_chunks) / speed
+                        if speed > 0
+                        else 0
+                    )
+
                     print(
                         f"Chunks evaluados: {completed_chunks}/{total} "
-                        f"({completed_chunks / total * 100:.1f}%); "
-                        f"errores: {failed_chunks}; "
-                        f"tiempo: {elapsed:.1f} s",
+                        f"({progress:.2f}%) | "
+                        f"Scores 1 por error: {failed_chunks} | "
+                        f"Velocidad: {speed:.2f} chunks/s | "
+                        f"Tiempo: {elapsed:.1f} s | "
+                        f"Restante estimado: {remaining / 3600:.1f} h",
                         flush=True,
                     )
 
@@ -1124,7 +1142,8 @@ def main():
     print("EVALUACIÓN FINALIZADA")
     print("=" * 70)
     print(
-        f"Chunks evaluados: {completed_chunks}; errores guardados: {failed_chunks}; "
+        f"Chunks procesados: {completed_chunks}/{total}; "
+        f"scores 1 asignados por error: {failed_chunks}; "
         f"tiempo total: {elapsed:.1f} s"
     )
     print(f"Resultados guardados en:\n{output_file}")
