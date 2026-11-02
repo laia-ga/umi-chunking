@@ -458,14 +458,22 @@ Evaluation rules:
     It is sufficient that the answer can be derived directly and
     reliably from the evidence in the chunk.
 
-Write a brief evidence-based feedback, then assign an integer score
-between 1 and 5 using the rubric below.
+Assign an integer relevance score from 1 to 5 using the rubric below.
 
-Output format:
-Feedback: (brief explanation)
-[RESULT] (integer between 1 and 5)
+Score 1 means the chunk is irrelevant or does not contain useful evidence.
+Always assign a score, including when the chunk is irrelevant.
 
-Do not generate any additional text.
+First, provide a concise evidence-based feedback (maximum 30 words).
+
+Then assign an integer relevance score from 1 to 5.
+Always assign a score, including when the chunk is irrelevant.
+
+Required output format:
+Feedback: <brief justification>
+[RESULT] <integer from 1 to 5>
+
+Always finish with [RESULT].
+Do not generate any additional text after the score.
 
 ###The instruction to evaluate:
 
@@ -546,26 +554,24 @@ def _parse_judge_response(
     if not raw_response or not raw_response.strip():
         return None, "", "Respuesta vacía del juez."
 
+    # Formato esperado: [RESULT] 1, [RESULT] 2, etc.
     match = re.search(
         r"\[RESULT\]\s*([1-5])\b",
         raw_response,
+        flags=re.IGNORECASE,
     )
 
+    # Formato alternativo: respuesta que contiene solo el número.
     if not match:
-        return (
-            None,
-            "",
-            f"No se encontró una puntuación válida: {raw_response}",
+        match = re.fullmatch(
+            r"\s*([1-5])\s*",
+            raw_response,
         )
 
-    score = int(match.group(1))
+    if match:
+        return int(match.group(1)), "", ""
 
-    reason = raw_response[:match.start()].strip()
-
-    if reason.lower().startswith("feedback:"):
-        reason = reason[len("feedback:"):].strip()
-
-    return score, reason, ""
+    return None, "", "El juez no devolvió una puntuación válida."
 
 
 def _generate_judge_batch(
@@ -592,7 +598,7 @@ def _generate_judge_batch(
     with torch.inference_mode():
         outputs = _worker_model.generate(
             **inputs,
-            max_new_tokens=256,
+            max_new_tokens=384,
             do_sample=False,
             pad_token_id=_worker_tokenizer.pad_token_id,
         )
@@ -608,7 +614,7 @@ def _generate_judge_batch(
             skip_special_tokens=True,
         )
 
-        score, reason, error = _parse_judge_response(
+        score, _, error = _parse_judge_response(
             raw_response
         )
 
@@ -616,7 +622,7 @@ def _generate_judge_batch(
             _row_for_task(
                 task,
                 score,
-                reason,
+                "",
                 error,
             )
         )
