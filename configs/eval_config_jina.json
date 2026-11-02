@@ -3,9 +3,9 @@
     "retrieval_file": "retrieval_jina_embeddings_v2_base_es.json",
     "metrics_judge": "local",
     "local_judge": {
-        "model_name": "AtlaAI/Selene-1-Mini-Llama-3.1-8B",
-        "version": "local-qa-v4",
-        "output_folder": "all_jina_v2_atlaai"
+        "model_name": "prometheus-eval/prometheus-7b-v2.0",
+        "version": "prometheus2-7b-evidence-v1",
+        "output_folder": "prometheus"
     },
     "gpt_judge": {
         "model_name": "gpt-5.6-luna",
