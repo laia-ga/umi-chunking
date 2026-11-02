@@ -473,7 +473,7 @@ Feedback: <brief justification>
 [RESULT] <integer from 1 to 5>
 
 Always finish with [RESULT].
-Do not generate any additional text after the score.
+Do not generate any additional text after this line.
 
 ###The instruction to evaluate:
 
@@ -554,14 +554,22 @@ def _parse_judge_response(
     if not raw_response or not raw_response.strip():
         return None, "", "Respuesta vacía del juez."
 
-    # Formato esperado: [RESULT] 1, [RESULT] 2, etc.
+    # Formato esperado y variantes habituales.
     match = re.search(
-        r"\[RESULT\]\s*([1-5])\b",
+        r"\[RESULT\]\s*(?:Score\s*:\s*)?([1-5])\b",
         raw_response,
         flags=re.IGNORECASE,
     )
 
-    # Formato alternativo: respuesta que contiene solo el número.
+    # Alternativa: Score: 3 o Score = 3
+    if not match:
+        match = re.search(
+            r"\bScore\s*[:=]\s*([1-5])\b",
+            raw_response,
+            flags=re.IGNORECASE,
+        )
+
+    # Alternativa: respuesta que contiene solo el número.
     if not match:
         match = re.fullmatch(
             r"\s*([1-5])\s*",
@@ -598,7 +606,7 @@ def _generate_judge_batch(
     with torch.inference_mode():
         outputs = _worker_model.generate(
             **inputs,
-            max_new_tokens=384,
+            max_new_tokens=512,
             do_sample=False,
             pad_token_id=_worker_tokenizer.pad_token_id,
         )
@@ -618,6 +626,15 @@ def _generate_judge_batch(
             raw_response
         )
 
+        if score is None:
+            print(
+                f"\nRESPUESTA SIN SCORE "
+                f"question_id={task['question_id']} "
+                f"rank={task['rank']}:\n"
+                f"{raw_response[-1500:]}\n",
+                flush=True,
+            )
+
         rows.append(
             _row_for_task(
                 task,
@@ -631,28 +648,76 @@ def _generate_judge_batch(
 
 
 def _judge_batch(tasks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+
     try:
-        return _generate_judge_batch(tasks)
+        rows = _generate_judge_batch(tasks)
+
     except torch.cuda.OutOfMemoryError as error:
         if len(tasks) > 1:
             print(
-                f"AVISO: falta de VRAM en {_worker_device} con un batch "
-                f"de {len(tasks)}; se dividirá en batches menores. {error}"
+                f"AVISO: falta de VRAM en {_worker_device} "
+                f"con un batch de {len(tasks)}; "
+                "se dividirá en batches menores.",
+                flush=True,
             )
+
             torch.cuda.empty_cache()
             midpoint = len(tasks) // 2
+
             return (
                 _judge_batch(tasks[:midpoint])
                 + _judge_batch(tasks[midpoint:])
             )
+
         failure = f"judge_error: CUDA out of memory: {error}"
+
+        return [
+            _row_for_task(task, None, "", failure)
+            for task in tasks
+        ]
+
     except Exception as error:
         failure = f"judge_error: {error}"
 
-    return [
-        _row_for_task(task, None, "", failure)
-        for task in tasks
-    ]
+        return [
+            _row_for_task(task, None, "", failure)
+            for task in tasks
+        ]
+
+    # Reintentar individualmente los chunks sin puntuación.
+    for i, row in enumerate(rows):
+
+        if row["relevance_score"] is not None:
+            continue
+
+        for attempt in range(1, 4):
+
+            print(
+                f"Reintentando chunk sin score "
+                f"(intento {attempt}/3): "
+                f"question_id={tasks[i]['question_id']}, "
+                f"rank={tasks[i]['rank']}",
+                flush=True,
+            )
+
+            try:
+                retry_row = _generate_judge_batch([tasks[i]])[0]
+
+                if retry_row["relevance_score"] is not None:
+                    rows[i] = retry_row
+                    break
+
+                rows[i] = retry_row
+
+            except Exception as error:
+                rows[i] = _row_for_task(
+                    tasks[i],
+                    None,
+                    "",
+                    f"Error durante reintento: {error}",
+                )
+
+    return rows
 
 
 def _judge_worker_batch(tasks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
