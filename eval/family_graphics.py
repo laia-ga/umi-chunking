@@ -393,10 +393,10 @@ for metric in METRICS:
     fig, (ax_lines, ax_heatmap) = plt.subplots(
         1,
         2,
-        figsize=(22, fig_height),
+        figsize=(16, fig_height),
         gridspec_kw={
             "width_ratios": [1.15, 1],
-            "wspace": 0.48
+            "wspace": 0.25
         }
     )
 
@@ -563,7 +563,7 @@ for metric in METRICS:
         right=0.96,
         bottom=0.09,
         top=0.90,
-        wspace=0.35
+        wspace=0.25
     )
 
 
