@@ -652,15 +652,14 @@ class HierarchicalJSONChunker:
     # límite del modelo
     FALLBACK_OVERLAP_RATIO = 0.1
 
+
     def _split_oversized_chunk(
         self,
         original: Chunk,
         context_text: str = "",
         content_text: str | None = None,
     ) -> list[Chunk]:
-        """Fallback con contexto, particiones equilibradas y overlap del 10 %."""
-
-        from functools import lru_cache
+        """Fallback eficiente con contexto y overlap proporcional del 10 %."""
 
         limit = self.max_tokens
         margin = (
@@ -680,133 +679,110 @@ class HierarchicalJSONChunker:
                 if content else context_text
             )
 
-        if self.token_counter(combine("")) > usable:
+        def count(content: str) -> int:
+            return self.token_counter(combine(content))
+
+        if count("") > usable:
             raise ValueError(
                 "El contexto obligatorio supera el presupuesto de tokens."
             )
 
         if not content_text:
-            raise ValueError(
-                "No hay contenido que dividir y el contexto no cabe."
-            )
+            raise ValueError("No hay contenido que dividir.")
 
-        # Presupuesto conservador para generar las unidades iniciales.
-        # La comprobación definitiva se realiza con el texto completo.
+        # Generar unidades iniciales por líneas y oraciones.
         unit_limit = max(
             1,
             usable - self.token_counter(context_text) - 4
         )
-
         units = self._fallback_units(content_text, unit_limit)
 
-        # Si una unidad todavía no cabe con el contexto, subdividirla.
+        # Garantizar que cada unidad cabe junto al contexto.
         index = 0
         while index < len(units):
-            if self.token_counter(combine(units[index])) <= usable:
+            if count(units[index]) <= usable:
                 index += 1
                 continue
 
             unit = units[index]
-
             if len(unit) <= 1:
                 raise ValueError(
                     "El contexto y un carácter no caben en max_tokens."
                 )
 
-            # División conservadora, sin perder caracteres.
             midpoint = len(unit) // 2
             units[index:index + 1] = [
                 unit[:midpoint],
                 unit[midpoint:],
             ]
 
+        # Construir chunks progresivamente.
+        # Se conserva el texto exacto de todas las unidades.
+        boundaries: list[tuple[int, int]] = []
         n = len(units)
+        start = 0
 
-        def get_text(i: int, j: int) -> str:
-            return "".join(units[i:j])
+        while start < n:
+            current = ""
+            end = start
 
-        @lru_cache(maxsize=4096)
-        def count(i: int, j: int) -> int:
-            return self.token_counter(combine(get_text(i, j)))
+            while end < n:
+                candidate = current + units[end]
 
-        def fits(i: int, j: int) -> bool:
-            return count(i, j) <= usable
+                if count(candidate) > usable:
+                    break
 
-        # Determina los finales válidos de cada intervalo.
-        # Se comprueban todos para no asumir que el tokenizador
-        # es estrictamente monótono.
-        valid_ends: list[list[int]] = [[] for _ in range(n)]
+                current = candidate
+                end += 1
 
-        for i in range(n):
-            for j in range(i + 1, n + 1):
-                if fits(i, j):
-                    valid_ends[i].append(j)
-
-            if not valid_ends[i]:
+            if end == start:
                 raise ValueError(
-                    "Una unidad excede el límite del fallback."
+                    "No se pudo construir un chunk dentro de max_tokens."
                 )
 
-        # Programación dinámica: mínimo número de fragmentos.
-        min_parts = [float("inf")] * (n + 1)
-        min_parts[n] = 0
+            boundaries.append((start, end))
+            start = end
 
-        for i in range(n - 1, -1, -1):
-            min_parts[i] = 1 + min(
-                min_parts[j] for j in valid_ends[i]
-            )
-
-        # Entre las particiones mínimas, prioriza tamaños equilibrados.
-        total = self.token_counter(content_text)
-        desired = total / min_parts[0]
-
-        boundaries: list[tuple[int, int]] = []
-        i = 0
-
-        while i < n:
-            options = [
-                j for j in valid_ends[i]
-                if min_parts[j] == min_parts[i] - 1
-            ]
-
-            j = min(
-                options,
-                key=lambda end: abs(
-                    self.token_counter(get_text(i, end)) - desired
-                ),
-            )
-
-            boundaries.append((i, j))
-            i = j
-
-        # Overlap de hasta el 10 % del límite del modelo.
+        # Overlap de hasta el 10 % de max_tokens.
         overlap_budget = round(
             limit * self.FALLBACK_OVERLAP_RATIO
         )
 
         output: list[Chunk] = []
 
+        context_paths = [
+            self._format_path(
+                original.block,
+                tuple(path.split("."))
+            )
+            for path in self.context_fields
+        ] if context_text else []
+
         for part_index, (begin, end) in enumerate(boundaries):
+            main_text = "".join(units[begin:end])
             prefix_start = begin
-            main_text = get_text(begin, end)
+            overlap_text = ""
 
             if part_index > 0:
-                for candidate in range(begin - 1, -1, -1):
-                    overlap_text = get_text(candidate, begin)
-                    candidate_text = overlap_text + main_text
+                # Añadir unidades anteriores mientras quepan.
+                for candidate_start in range(begin - 1, -1, -1):
+                    candidate_overlap = "".join(
+                        units[candidate_start:begin]
+                    )
 
                     if (
-                        self.token_counter(overlap_text) > overlap_budget
-                        or self.token_counter(
-                            combine(candidate_text)
-                        ) > usable
+                        self.token_counter(candidate_overlap)
+                        > overlap_budget
                     ):
                         break
 
-                    prefix_start = candidate
+                    if count(candidate_overlap + main_text) > usable:
+                        break
 
-            overlap_text = get_text(prefix_start, begin)
-            text = combine(get_text(prefix_start, end))
+                    prefix_start = candidate_start
+                    overlap_text = candidate_overlap
+
+            text = combine(overlap_text + main_text)
             token_count = self.token_counter(text)
 
             if token_count > limit:
@@ -819,7 +795,7 @@ class HierarchicalJSONChunker:
             metadata = dict(original.metadata)
             metadata.update({
                 "fallback_applied": True,
-                "fallback_method": "sentence_balanced_overlap",
+                "fallback_method": "greedy_sentence_overlap",
                 "fallback_part": part_index + 1,
                 "fallback_total_parts": len(boundaries),
                 "fallback_original_tokens": original.token_count,
@@ -833,10 +809,11 @@ class HierarchicalJSONChunker:
                 "exceeds_max_limit": False,
             })
 
-            context_paths = [
-                self._format_path(original.block, tuple(path.split(".")))
-                for path in self.context_fields
-            ] if context_text else []
+            if context_text:
+                metadata["fields"] = list(dict.fromkeys([
+                    *(path.split(".")[-1] for path in self.context_fields),
+                    *metadata.get("fields", []),
+                ]))
 
             output.append(
                 Chunk(
@@ -856,6 +833,7 @@ class HierarchicalJSONChunker:
             )
 
         return output
+
 
     def _fallback_units(self, text: str, limit: int) -> list[str]:
         """Unidades de oraciones que conservan exactamente todo el texto."""
