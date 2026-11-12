@@ -22,6 +22,7 @@
 import csv
 import json
 import os
+import random
 import sys
 import threading
 import time
@@ -137,7 +138,48 @@ def parse_args():
         ),
     )
 
+    parser.add_argument(
+        "--config",
+        type=str,
+        default=EVAL_CONFIG_FILE.name,
+        help="Archivo de configuración dentro de configs/.",
+    )
+
+    parser.add_argument(
+        "--include-reason",
+        action="store_true",
+        help="Guarda una breve justificación además del score.",
+    )
+
+    parser.add_argument(
+        "--sample-questions",
+        type=_positive_int,
+        default=None,
+        help="Evalúa N preguntas aleatorias.",
+    )
+
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=42,
+        help="Semilla del muestreo.",
+    )
+
     return parser.parse_args()
+
+def _positive_int(value: str) -> int:
+    """Valida opciones numéricas que deben ser mayores que cero."""
+    try:
+        parsed = int(value)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError(
+            "El valor debe ser un entero positivo."
+        ) from error
+    if parsed < 1:
+        raise argparse.ArgumentTypeError(
+            "El valor debe ser al menos 1."
+        )
+    return parsed
 
 # ==============================================================================
 # 3. CONFIGURACIÓN DEL MODELO
@@ -187,73 +229,72 @@ class RelevanceJudgment(BaseModel):
 
     score: Literal[0, 1, 2]
 
-def generate_llm_response(
-    prompt: str,
-):
-    """
-    Envía un prompt al modelo mediante la API de OpenAI y devuelve
-    el objeto RelevanceJudgment ya parseado (Structured Outputs).
-    """
+class RelevanceJudgmentWithReason(BaseModel):
+    score: Literal[0, 1, 2]
+    reason: str
+
+
+def generate_llm_response(prompt: str, include_reason: bool = False):
 
     last_error = None
 
+    response_format = (
+        RelevanceJudgmentWithReason
+        if include_reason
+        else RelevanceJudgment
+    )
+
     for attempt in range(MAX_RETRIES):
-
         try:
-
             response = client.responses.parse(
                 model=MODEL_NAME,
-                instructions=(
-                    "You are a strict information "
-                    "retrieval evaluator."
-                ),
+                instructions="You are a strict information retrieval evaluator.",
                 input=prompt,
-                text_format=RelevanceJudgment,
+                text_format=response_format,
             )
+
+            if response.output_parsed is None:
+                raise ValueError("El modelo no devolvió una evaluación válida.")
 
             return response.output_parsed
 
         except Exception as error:
-        
             if is_fatal_api_error(error):
-                raise FatalAPIError(
-                    str(error)
-                ) from error
-            
+                raise FatalAPIError(str(error)) from error
+
             last_error = error
             wait_seconds = 2 ** attempt
 
             print(
-                    f"    Aviso: fallo en la llamada a la API "
-                    f"(intento {attempt + 1}/{MAX_RETRIES}): {error}. "
-                    f"Reintentando en {wait_seconds}s..."
-                )
+                f"Aviso: fallo en la API "
+                f"({attempt + 1}/{MAX_RETRIES}): {error}. "
+                f"Reintentando en {wait_seconds}s..."
+            )
 
-            time.sleep(wait_seconds)
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(wait_seconds)
 
     raise last_error
+
 
 
 # ==============================================================================
 # 6. FUNCIÓN LLM JUDGE
 # ==============================================================================
 
-def llm_judge_relevance(
-    question: str,
-    gold_answer: str,
-    chunk_text: str,
-):
-    """
-    Evalúa un chunk y devuelve (score, reason, judge_error).
 
-    Con Structured Outputs, la API garantiza que la respuesta cumple el
-    esquema de RelevanceJudgment (score en {0, 1, 2}, reason como string),
-    así que no hace falta parsear ni validar nada a mano.
-    """
+def build_judge_prompt(question, gold_answer, chunk_text, include_reason=False):
 
     prompt = f"""
-    Your task is to evaluate the relevance of the RETRIEVED CHUNK
-    for answering the QUESTION, using the GOLD ANSWER as reference.
+    You are evaluating the usefulness of a retrieved document chunk
+    for answering a question in a biomedical RAG system.
+
+    Your task is to determine whether the RETRIEVED CHUNK provides
+    sufficient evidence to answer the QUESTION correctly.
+
+    The GOLD ANSWER is a short reference answer. It identifies the
+    expected factual information, but it may omit important context,
+    explanations, qualifications, or alternative valid formulations.
 
     QUESTION:
     {question}
@@ -264,53 +305,106 @@ def llm_judge_relevance(
     RETRIEVED CHUNK:
     {chunk_text}
 
-    Compare the retrieved chunk directly with the gold answer.
+    EVALUATION PRINCIPLES:
 
-    Assign:
+    1. Evaluate the chunk primarily in relation to the QUESTION.
+    Use the GOLD ANSWER to identify the expected factual answer,
+    not as a string to match or an exhaustive description.
 
-    2 = The chunk contains the answer, or enough information to
-    answer the question correctly.
+    2. Determine whether a reader could answer the question correctly
+    using the chunk alone, without relying on external knowledge.
 
-    1 = The chunk contains some information from the gold
-    answer or useful information toward answering the question,
-    but the answer is incomplete.
+    3. Accept equivalent terminology, synonyms, paraphrases, and
+    more detailed explanations that support the same answer.
 
-    0 = The chunk contains no information useful for answering
-    the question.
+    4. Do not penalize a chunk for containing additional relevant
+    information beyond the short gold answer.
+
+    5. Merely mentioning a term from the gold answer is not enough.
+    The chunk must establish the factual relationship needed
+    to answer the question.
+
+    6. Do not infer missing facts from general biomedical knowledge.
+    Only information explicitly stated or directly supported
+    by the chunk can justify a score of 2.
+
+    7. Check important qualifiers such as patient population,
+    clinical context, conditions, negation, units, and numerical
+    values when they are relevant to the question.
+
+    8. If the chunk contradicts the expected answer, do not
+    assign 2, even if it contains matching terminology.
+
+    SCORING:
+
+    2 = SUFFICIENT EVIDENCE
+    The chunk directly answers the question or provides enough
+    factual evidence to derive a correct answer consistent with
+    the gold answer. No essential information is missing.
+
+    1 = PARTIAL EVIDENCE
+    The chunk provides information genuinely useful for answering
+    the question, but lacks at least one essential fact or
+    relationship needed for a complete, reliable answer.
+
+    0 = INSUFFICIENT OR IRRELEVANT EVIDENCE
+    The chunk does not provide useful evidence for answering
+    the question. This includes superficial keyword overlap,
+    unrelated mentions, or information that cannot support
+    the expected answer.
 
     IMPORTANT:
-    If the chunk contains the same factual information as the
-    gold answer, even using different words, assign 2.
-
-    If the chunk contains only part of the gold answer,
-    assign 1.
-
-    Do NOT require exact wording.
+    Judge answerability and factual support, not textual similarity.
+    A short gold answer does not imply that the supporting evidence
+    must also be short.
     """
 
-    try:
+    if include_reason:
+        return prompt + """
+    Return only a JSON object with an integer score (0, 1, or 2)
+    and a brief reason explaining the evidence or missing information.
 
+    {"score": score, "reason": "Brief reason"}
+    """
+
+    return prompt + """
+    Return only a JSON object with an integer score (0, 1, or 2).
+
+    {"score": score}
+    """
+
+
+def llm_judge_relevance(
+    question: str,
+    gold_answer: str,
+    chunk_text: str,
+    include_reason: bool = False,
+):
+    prompt = build_judge_prompt(
+        question,
+        gold_answer,
+        chunk_text,
+        include_reason,
+    )
+
+    try:
         judgment = generate_llm_response(
-            prompt
+            prompt,
+            include_reason=include_reason,
         )
 
         return (
             judgment.score,
-            "",
+            judgment.reason if include_reason else "",
             "",
         )
 
     except FatalAPIError:
-        # Detener toda la ejecución si la API devuelve un error fatal
         raise
-    
-    except Exception as error:
 
-        return (
-            None,
-            "",
-            f"judge_error: {error}",
-        )
+    except Exception as error:
+        return None, "", f"judge_error: {error}"
+
 
 
 # ==============================================================================
@@ -471,6 +565,7 @@ def build_judge_tasks(
 def judge_and_save_task(
     task,
     output_file,
+    include_reason
 ):
     """
     Evalúa un único chunk (una tarea) y guarda la fila en el CSV.
@@ -489,12 +584,11 @@ def judge_and_save_task(
     # Evaluar el chunk
     # ------------------------------------------------------
     
-    score, reason, judge_error = (
-        llm_judge_relevance(
-            question=task["question"],
-            gold_answer=task["gold_answer"],
-            chunk_text=chunk_text,
-        )
+    score, reason, judge_error = llm_judge_relevance(
+        question=task["question"],
+        gold_answer=task["gold_answer"],
+        chunk_text=chunk_text,
+        include_reason=include_reason,
     )
 
     # ------------------------------------------------------
@@ -526,7 +620,14 @@ def judge_and_save_task(
             "relevance_score": score,
             "llm_reason": reason,
             "judge_error": judge_error,
-            "judge_version": JUDGE_VERSION,
+            "judge_version": (
+                f"{JUDGE_VERSION}-reason"
+                if include_reason
+                else f"{JUDGE_VERSION}-score-only"
+            ),
+            "p0": None,
+            "p1": None,
+            "p2": None,
         },
     )
 
@@ -545,7 +646,14 @@ def judge_and_save_task(
 def main():
     args = parse_args()
 
-    with EVAL_CONFIG_FILE.open("r", encoding="utf-8") as file:
+    eval_config_file = BASE_DIR / "configs" / args.config
+
+    if not eval_config_file.exists():
+        raise FileNotFoundError(
+            f"No se ha encontrado: {eval_config_file}"
+        )
+
+    with eval_config_file.open("r", encoding="utf-8") as file:
         eval_config = json.load(file)
 
     fold = eval_config["fold"]
@@ -557,7 +665,12 @@ def main():
     MODEL_NAME = judge_config["model_name"]
     JUDGE_VERSION = judge_config["version"]
 
-    retrieval_file = args.retrieval_file or f"retrieval_{retrieval_suffix}.json"
+    retrieval_file = (
+        args.retrieval_file
+        or eval_config.get("retrieval_file")
+        or f"retrieval_{retrieval_suffix}.json"
+    )
+
     retrieval_suffix = Path(retrieval_file).stem
     if retrieval_suffix.startswith("retrieval_"):
         retrieval_suffix = retrieval_suffix[len("retrieval_"):]
@@ -628,6 +741,17 @@ def main():
     )
 
 
+    if args.sample_questions is not None and args.sample_questions < len(results):
+        rng = random.Random(args.seed)
+        results = rng.sample(results, args.sample_questions)
+
+        print(
+            f"Modo prueba: {args.sample_questions} preguntas al azar "
+            f"(seed={args.seed})."
+        )
+
+
+
     # ==========================================================================
     # 9.4 PREPARAR SALIDA
     # ==========================================================================
@@ -647,6 +771,11 @@ def main():
 
     # Reanudación por chunk: se conservan los chunks evaluados sin error y se
     # repiten los que fallaron o faltan
+    expected_version = (
+        f"{JUDGE_VERSION}-reason"
+        if args.include_reason
+        else f"{JUDGE_VERSION}-score-only"
+    )
     
     done_keys = set()
 
@@ -657,18 +786,20 @@ def main():
 
         incompatible_rows = [
             row for row in existing_rows
-            if row.get("judge_version") != JUDGE_VERSION
+            if row.get("judge_version") != expected_version
         ]
+
         if incompatible_rows:
             raise RuntimeError(
-                "El CSV contiene resultados de otra versión del juez o una "
-                "rúbrica anterior. Usa --restart para recalcularlos."
+                "El CSV contiene resultados de otra versión del juez "
+                "o de otro modo de evaluación. Usa --restart."
             )
 
-        # Solo se conservan los chunks evaluados sin error
         ok_rows = [
             row for row in existing_rows
-            if row.get("relevance_score") not in (None, "")
+            if row.get("relevance_score") in {"0", "1", "2"}
+            and not row.get("judge_error")
+            and row.get("judge_version") == expected_version
         ]
 
         done_keys = {
@@ -723,6 +854,7 @@ def main():
                 judge_and_save_task,
                 task,
                 output_file,
+                args.include_reason
             )
             for task in tasks
         ]

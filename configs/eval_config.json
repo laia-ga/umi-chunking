@@ -1,5 +1,5 @@
 {
-    "fold": "all_bge_m3",
+    "fold": "all_bge_m3_200",
     "metrics_judge": "local",
     "local_judge": {
         "model_name": "prometheus-eval/prometheus-7b-v2.0",
@@ -9,6 +9,6 @@
     "gpt_judge": {
         "model_name": "gpt-5.6-luna",
         "version": "gpt-qa-v1",
-        "output_folder": "all_bge_m3_gpt5_6_luna"
+        "output_folder": "all_bge_m3_200_gpt5_6"
     }
 }
