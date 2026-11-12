@@ -177,6 +177,16 @@ INDIVISIBLE_LIST_PATHS = {
     "ficha_tecnica": ["excipients","national_codes","national_codes_queried"],
 }
 
+# CONTEXT FIELDS
+CONTEXT_FIELDS = {
+
+    "paper": [],
+
+    "guideline": [],
+
+    "ficha_tecnica": ["medicine_name"],
+}
+
 # ============================================================
 # PARALELIZACIÓN DE DOCUMENTOS
 # ============================================================
@@ -210,6 +220,7 @@ def _process_document(
         document_plan=select_document_plan(doc["document_type"]),
         root_field=None,
         indivisible_list_paths=INDIVISIBLE_LIST_PATHS[doc["document_type"]],
+        context_fields=CONTEXT_FIELDS[doc["document_type"]],
     )
 
     process = psutil.Process(os.getpid()) if measure_ram else None
@@ -346,7 +357,7 @@ def main(
     cache_fingerprints = {}
     for doc in documents:
         fingerprint = cache_fingerprint({
-            "version": 1,
+            "version": 2,
             "chunker": "HierarchicalJSONChunker",
             "document_type": doc["document_type"],
             "content": doc["full_text"],

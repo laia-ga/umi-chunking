@@ -1,8 +1,8 @@
 {
     "tokenizer": {
-        "model_name": "jinaai/jina-embeddings-v2-base-es",
+        "model_name": "BAAI/bge-m3",
         "add_special_tokens": true,
-        "max_tokens": 512,
-        "target_tokens": 256
+        "max_tokens": 1024,
+        "target_tokens": 512
     }
 }
