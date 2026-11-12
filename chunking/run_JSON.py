@@ -16,8 +16,8 @@ Este script:
    - genera chunks semánticos y trazables,
    - añade metadatos como nivel, grupo, rutas JSON y límites de tokens.
 5. Guarda los chunks en
-   output/chunks/<chunk_fold>/json/chunk_results.
-6. Guarda las métricas en output/chunks/<chunk_fold>/json/metrics.
+   output/chunking/<chunk_fold>/json/chunk_results.
+6. Guarda las métricas en output/chunking/<chunk_fold>/json/metrics.
 7. Genera un summary.csv con una fila por documento.
 """
 
@@ -89,7 +89,7 @@ SCRIPTS_DIR = BASE_DIR / "scripts"
 INPUT_DIR = BASE_DIR / "data" / "raw" / "json"
 
 # Carpeta raíz de las salidas de chunking
-BASE_OUTPUT_DIR = BASE_DIR / "output" / "chunks"
+BASE_OUTPUT_DIR = BASE_DIR / "output" / "chunking"
 OUTPUT_DIR = BASE_OUTPUT_DIR
 
 # Carpeta donde se guardarán los chunks generados
