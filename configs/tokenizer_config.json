@@ -1,8 +1,8 @@
 {
     "tokenizer": {
-        "model_name": "BAAI/bge-m3",
+        "model_name": "BAAI/Qwen/Qwen3-Embedding-4B-m3",
         "add_special_tokens": true,
-        "max_tokens": 8192,
-        "target_tokens": 512
+        "max_tokens": 32768,
+        "target_tokens": 1024
     }
 }
