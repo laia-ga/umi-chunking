@@ -1,0 +1,56 @@
+{
+  "ginecologia_obstetricia": [
+    "ginecolog",
+    "obstetric",
+    "maternal",
+    "perinatal",
+    "reproductive",
+    "vulvovaginal",
+    "endometriosis",
+    "fertility",
+    "ovarian",
+    "pregnancy",
+    "gynecology",
+    "gynaecology",
+    "vaginal",
+    "sexual and reproductive health",
+    "sexual health"
+  ],
+  "urologia": [
+    "urolog",
+    "prostate",
+    "andrology",
+    "urogyne",
+    "urinary tract",
+    "male sexual health",
+    "sexual medicine"
+  ],
+  "oftalmologia": [
+    "ophthalmolog",
+    "eye",
+    "cornea",
+    "retina",
+    "glaucoma",
+    "cataract",
+    "uveitis",
+    "strabismus",
+    "vision",
+    "ocular"
+  ],
+  "neuro_trauma": [
+    "neuro",
+    "epilep",
+    "spine",
+    "trauma",
+    "stroke",
+    "cerebral",
+    "aneurysm",
+    "neuroradiology",
+    "neurolog",
+    "head injury",
+    "critical care",
+    "neurosurgery",
+    "pain medicine",
+    "radiation oncology"
+  ]
+}

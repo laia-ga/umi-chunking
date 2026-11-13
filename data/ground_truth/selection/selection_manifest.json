@@ -1,0 +1,156 @@
+{
+  "selection_strategy": "equal_per_specialty_random_sample",
+  "seed": 42,
+  "docs_per_specialty_requested": 5,
+  "selected_documents_count": 20,
+  "question_total_target": 200,
+  "questions_per_document_target": 10,
+  "specialties_selected": {
+    "ginecologia_obstetricia": 5,
+    "neuro_trauma": 5,
+    "oftalmologia": 5,
+    "urologia": 5
+  },
+  "documents": [
+    {
+      "group": "ginecologia_obstetricia",
+      "specialty": "Inherited metabolic disorders, obstetrics and gynecology",
+      "title": "Spanish consensus on managing pregnancy in women with Gaucher disease",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Calderón et al. 2025 Spanish consensus on managing pregnancy in women with Gaucher disease.json"
+    },
+    {
+      "group": "ginecologia_obstetricia",
+      "specialty": "Obstetrics and gynaecology",
+      "title": "Diagnosis and Management of Ectopic Pregnancy",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/2016 Diagnosis and Management of Ectopic Pregnancy Green‐top Guideline No. 21.json"
+    },
+    {
+      "group": "ginecologia_obstetricia",
+      "specialty": "Obstetrics and gynecology",
+      "title": "SOGC Statement on Rh and Alloimmunization",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Rh and Alloimmunization EN SOGC.json"
+    },
+    {
+      "group": "ginecologia_obstetricia",
+      "specialty": "Pediatric endocrinology and gynecology",
+      "title": "International evidence-based recommendations for polycystic ovary syndrome in adolescents",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Peña et al. 2025 International evidence based recommendations for polycystic ovary syndrome in adolescents.json"
+    },
+    {
+      "group": "ginecologia_obstetricia",
+      "specialty": "Sexual and reproductive health",
+      "title": "EAU Guidelines on Sexual and Reproductive Health",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/EAU Guidelines on Sexual and Reproductive Health 2025.cap02.json"
+    },
+    {
+      "group": "neuro_trauma",
+      "specialty": "Emergency medicine and trauma care",
+      "title": "Head injury: assessment and early management",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Head injury assessment and early management.json"
+    },
+    {
+      "group": "neuro_trauma",
+      "specialty": "Interventional neuroradiology",
+      "title": "Evaluation of flow diverters for cerebral aneurysm therapy: recommendations for imaging analyses in clinical studies, endorsed by ESMINT, ESNR, OCIN, SILAN, SNIS, and WFITN",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Fiehler et al. 2025 Evaluation of flow diverters for cerebral aneurysm therapy recommendations for imaging analyses in.json"
+    },
+    {
+      "group": "neuro_trauma",
+      "specialty": "Neurocritical care",
+      "title": "Guidelines for the Neurocritical Care Management of Aneurysmal Subarachnoid Hemorrhage",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Treggiari et al. 2023 Guidelines for the Neurocritical Care Management of Aneurysmal Subarachnoid Hemorrhage.json"
+    },
+    {
+      "group": "neuro_trauma",
+      "specialty": "Spine surgery",
+      "title": "AO Spine Clinical Practice Recommendations for Diagnosis and Management of Degenerative Cervical Myelopathy: Evidence Based Decision Making A Review of Cutting Edge Recent Literature Related to Degenerative Cervical Myelopathy",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Fehlings et al. 2025 AO Spine Clinical Practice Recommendations for Diagnosis and Management of Degenerative Cervical Mye.json"
+    },
+    {
+      "group": "neuro_trauma",
+      "specialty": "Trauma and spinal injury care",
+      "title": "Cervical spine clearance in the trauma patient",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Stiell 2001 The Canadian C Spine Rule for Radiography in Alert and Stable Trauma Patients.json"
+    },
+    {
+      "group": "oftalmologia",
+      "specialty": "Ophthalmology",
+      "title": "May 2025 surveillance of cataracts in adults: management (NICE guideline NG77)",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/2025 May 2025 surveillance of cataracts in adults management (NICE guideline NG77).json"
+    },
+    {
+      "group": "oftalmologia",
+      "specialty": "Ophthalmology",
+      "title": "Glaucoma: diagnosis and management",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Glaucoma diagnosis and management.json"
+    },
+    {
+      "group": "oftalmologia",
+      "specialty": "Ophthalmology; cornea and external disease",
+      "title": "Corneal Edema and Opacification Preferred Practice Pattern®",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Mian et al. 2024 Corneal Edema and Opacification Preferred Practice Pattern®.json"
+    },
+    {
+      "group": "oftalmologia",
+      "specialty": "Ophthalmology; glaucoma surgery",
+      "title": "A GUIDE ON SURGICAL INNOVATION FOR GLAUCOMA",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Abegao Pinto y Cvenkel 2023 A guide on surgical innovation for glaucoma.json"
+    },
+    {
+      "group": "oftalmologia",
+      "specialty": "Ophthalmology; uveitis and retinal imaging",
+      "title": "Evidence and Consensus Based Imaging Guidelines in Multiple Evanescent White Dot Syndrome Multimodal imaging in Uveitis (MUV) Taskforce Report 6",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Munk et al. 2025 Evidence and Consensus Based Imaging Guidelines in Multiple Evanescent White Dot Syndrome Multimodal.json"
+    },
+    {
+      "group": "urologia",
+      "specialty": "Paediatric neurology and ophthalmology",
+      "title": "Consensus recommendations for the assessment and management of Idiopathic Intracranial Hypertension in children and young people",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Amin et al. 2024 Consensus recommendations for the assessment and management of idiopathic intracranial hypertension.json"
+    },
+    {
+      "group": "urologia",
+      "specialty": "Urology",
+      "title": "EAU Guidelines on Management of Non-Neurogenic Female Lower Urinary Tract Symptoms",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/EAU Guidelines on Non neurogenic Female LUTS 2024.cap01.json"
+    },
+    {
+      "group": "urologia",
+      "specialty": "Urology",
+      "title": "EAU Guidelines on Sexual and Reproductive Health",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/EAU Guidelines on Sexual and Reproductive Health 2025.cap07.json"
+    },
+    {
+      "group": "urologia",
+      "specialty": "Urology",
+      "title": "EAU Guidelines on Upper Urinary Tract Urothelial Carcinoma",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/EAU Guidelines on Upper Urinary Tract Urothelial Carcinoma 2024.json"
+    },
+    {
+      "group": "urologia",
+      "specialty": "Urology",
+      "title": "Evaluation and Management of Testosterone Deficiency: AUA Guideline",
+      "document_type": "guideline",
+      "relative_path": "data/raw/json/Mulhall et al. 2018 Evaluation and Management of Testosterone Deficiency AUA Guideline.json"
+    }
+  ]
+}
