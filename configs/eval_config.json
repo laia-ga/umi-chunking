@@ -1,6 +1,6 @@
 {
     "fold": "all_bge_m3_200",
-    "metrics_judge": "local",
+    "metrics_judge": "gpt",
     "local_judge": {
         "model_name": "prometheus-eval/prometheus-7b-v2.0",
         "version": "prometheus2-7b-evidence-v1",
