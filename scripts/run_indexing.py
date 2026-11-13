@@ -52,7 +52,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 
 # Carpeta que contiene los chunks generados por los runners:
-# main/output/chunks
+# main/output/chunking
 CHUNKS_ROOT = PROJECT_ROOT / "output" / "chunking"
 # CHUNKS_ROOT = PROJECT_ROOT / "output" / "test"
 
