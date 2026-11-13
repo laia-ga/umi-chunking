@@ -1,9 +1,0 @@
-{
-    "retrieval": {
-        "top_k": 5,
-        "strategies": ["JSONChunking"],
-        "document_type": "ficha_tecnica",
-        "format": "json", 
-        "ground_truth_file": "early_qa/rag_questions_ficha_tecnica.jsonl"
-    }
-}

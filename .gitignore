@@ -137,6 +137,7 @@ env.bak/
 venv.bak/
 .venv-wsl
 venv-wsl/
+.venv-wsl/
 
 # Spyder project settings
 .spyderproject
@@ -211,3 +212,6 @@ output/
 data/ground_truth/medmcqa/train.jsonl
 output/judge/gpt_judge_bge_m3_guideline.csv
 data/ground_truth/train.jsonl
+
+# Base de datos del chatbot
+*.sqlite3

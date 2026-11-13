@@ -13,8 +13,8 @@
     "retrieval": {
         "top_k": 5,
         "strategies": {
-            "paper": "sliding_window_token_chunking",
-            "guideline": "sliding_window_token_chunking",
+            "paper": "JSONChunking",
+            "guideline": "JSONChunking",
             "ficha_tecnica": "JSONChunking"
         }
     },
