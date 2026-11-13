@@ -53,7 +53,7 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 
 # Carpeta que contiene los chunks generados por los runners:
 # main/output/chunks
-CHUNKS_ROOT = PROJECT_ROOT / "output" / "chunks"
+CHUNKS_ROOT = PROJECT_ROOT / "output" / "chunking"
 # CHUNKS_ROOT = PROJECT_ROOT / "output" / "test"
 
 # Carpeta base de resultados de indexación
