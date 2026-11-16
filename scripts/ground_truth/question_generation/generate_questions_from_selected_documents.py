@@ -36,6 +36,8 @@ import re
 from pathlib import Path
 from typing import Any
 from urllib import request
+from tempfile import mkdtemp
+from tqdm import tqdm
 
 try:
     from dotenv import load_dotenv
@@ -43,16 +45,17 @@ except ImportError:  # pragma: no cover - optional dependency in some environmen
     def load_dotenv(*_args, **_kwargs):
         return False
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parents[2]
+FORMATS = {"json": {".json"}, "markdown": {".md", ".markdown"}}
+DEFAULT_RAW_DIR = REPO_ROOT / "data" / "raw"
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
-DEFAULT_SELECTED_DOCS = REPO_ROOT / "data" / "ground_truth" / "generated" / "selection" / "selected_documents.csv"
 DEFAULT_OUTPUT = REPO_ROOT / "data" / "ground_truth" / "generated" / "question_generation" / "generated_questions.jsonl"
-DEFAULT_SHAREABLE_OUTPUT = REPO_ROOT / "data" / "ground_truth" / "generated" / "question_generation" / "shareable_question_dataset.jsonl"
 
 load_dotenv(REPO_ROOT / ".env")
 
 DEFAULT_API_BASE = os.environ.get("OPENAI_BASE_URL") or "https://api.openai.com/v1"
-DEFAULT_MODEL = os.environ.get("OPENAI_MODEL") or os.environ.get("QUESTIONS_MODEL") or "gpt-4o-mini"
+DEFAULT_MODEL = os.environ.get("OPENAI_MODEL") or os.environ.get("QUESTIONS_MODEL") or "gpt-5.6-luna"
 DEFAULT_API_KEY = os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENAI_KEY") or ""
 
 
@@ -113,6 +116,34 @@ def resolve_document_path(relative_path: str) -> Path:
         return repo_candidate
     return repo_root / relative_path
 
+def discover_documents(raw_dir, doc_format, specialty):
+    formats = [doc_format] if doc_format else FORMATS
+    for name in formats:
+        format_dir = raw_dir / name
+        for folder in sorted(format_dir.glob("*")):
+            if not folder.is_dir() or (specialty and folder.name.casefold() != specialty):
+                continue
+            for path in sorted(folder.rglob("*")):
+                if path.is_file() and path.suffix.lower() in FORMATS[name]:
+                    try:
+                        relative_path = Path(os.path.relpath(path, REPO_ROOT))
+                    except ValueError:  # Windows: el corpus está en otra unidad.
+                        relative_path = path
+                    yield {
+                        "relative_path": relative_path.as_posix(),
+                        "specialty": folder.name,
+                        "format": name,
+                    }
+
+def read_document(path):
+    if path.suffix.lower() == ".json":
+        return read_json_document(path)
+    if path.suffix.lower() not in FORMATS["markdown"]:
+        raise ValueError(f"Formato de documento no soportado: {path}")
+    text = path.read_text(encoding="utf-8-sig")
+    heading = re.search(r"^ {0,3}#[ \t]+(.+)$", text, flags=re.MULTILINE)
+    title = heading.group(1).strip().rstrip("#").strip() if heading else path.stem
+    return {"title": title, "content": text, "format": "markdown"}
 
 def read_json_document(path: Path) -> dict[str, Any]:
     """Carga un documento JSON y valida que sea un diccionario."""
@@ -144,23 +175,18 @@ def build_prompt(document: dict[str, Any], specialty: str, doc_type: str, max_qu
 
 Tu objetivo es generar preguntas que puedan responderse usando exclusivamente la evidencia presente en el documento médico suministrado.
 
-Genera exactamente {max_questions} preguntas de evaluación a partir del siguiente documento médico.
+Genera hasta {max_questions} preguntas clínicas basadas exclusivamente en la información del documento.
 
 INSTRUCCIONES PARA UN TEST DE RAG:
 - Las preguntas deben ser útiles para comprobar si un chatbot puede responder correctamente usando los chunks recuperados.
 - La respuesta debe poder derivarse de la información explícita del documento; no uses conocimiento externo ni preguntas demasiado generales.
-- Prioriza preguntas con respuesta concreta y verificable: recomendación, indicación, contraindicación, diagnóstico, manejo, seguimiento, riesgo, criterio de exclusión o evidencia clave.
+- Prioriza preguntas con respuesta concreta y verificable.
 - Evita preguntas demasiado abiertas, demasiado amplias o con múltiples interpretaciones.
-- Las preguntas deben ser útiles para un benchmark de recuperación + respuesta.
+- Las preguntas deben ser útiles para un benchmark de recuperación semántica + respuesta.
 - Devuelve un JSON válido con una lista de objetos. Cada objeto debe tener exactamente estos campos:
   {{
     "question": "pregunta clara y específica",
-    "answer": "respuesta breve y precisa basada en el documento",
-    "difficulty": "easy|medium|hard",
-    "question_type": "diagnosis|management|guideline|evidence|interpretation",
-    "source_title": "titulo del documento fuente",
-    "category": "especialidad o tema médico",
-    "reference": "titulo + ruta del documento fuente"
+    "gold_answer": "respuesta de referencia basada en el documento"
   }}
 - No incluyas markdown ni bloques de código. Solo JSON puro.
 - Si el documento no permite tantas preguntas, genera menos, pero nunca más de {max_questions}.
@@ -173,17 +199,14 @@ Texto del documento:
 {clean_text}
 """
 
-
 def extract_json_payload(content: str) -> list[dict[str, Any]]:
     """Extrae una lista de preguntas desde contenido JSON o markdown con bloques JSON."""
     stripped = content.strip()
     if not stripped:
         return []
-
-    match = re.search(r"```(?:json)?\s*(\[.*\]|\{.*\})\s*```", stripped, flags=re.DOTALL)
+    match = re.fullmatch(r"```(?:json)?\s*(.*?)\s*```", stripped, flags=re.DOTALL)
     if match:
         stripped = match.group(1)
-
     payload = json.loads(stripped)
     if isinstance(payload, dict):
         if isinstance(payload.get("questions"), list):
@@ -197,7 +220,6 @@ def extract_json_payload(content: str) -> list[dict[str, Any]]:
         return payload
     raise ValueError(f"La respuesta del modelo no tenía el formato JSON esperado: {type(payload).__name__}")
 
-
 def call_model(prompt: str, model: str, api_base: str, api_key: str) -> list[dict[str, Any]]:
     """Llama al endpoint compatible con OpenAI para obtener las preguntas."""
     url = api_base.rstrip("/") + "/chat/completions"
@@ -210,7 +232,6 @@ def call_model(prompt: str, model: str, api_base: str, api_key: str) -> list[dic
         "temperature": 0.2,
         "max_tokens": 2500,
     }
-
     payload = json.dumps(data).encode("utf-8")
     req = request.Request(
         url,
@@ -221,14 +242,11 @@ def call_model(prompt: str, model: str, api_base: str, api_key: str) -> list[dic
         },
         method="POST",
     )
-
     with request.urlopen(req, timeout=180) as resp:
         body = json.loads(resp.read().decode("utf-8"))
-
     message = body["choices"][0]["message"]["content"]
     items = extract_json_payload(message)
     return items
-
 
 def build_mock_questions(document: dict[str, Any], specialty: str, doc_type: str, max_questions: int) -> list[dict[str, Any]]:
     """Genera un ejemplo local reproducible para validar sin llamar al modelo."""
@@ -238,12 +256,7 @@ def build_mock_questions(document: dict[str, Any], specialty: str, doc_type: str
         sample_questions.append(
             {
                 "question": f"{i}. ¿Qué aspecto principal del documento de {specialty} es relevante para la práctica clínica en {title}?",
-                "answer": "Se recomienda revisar el documento original y resumir la recomendación principal según el contexto clínico.",
-                "difficulty": "medium",
-                "question_type": "interpretation",
-                "source_title": title,
-                "category": specialty,
-                "reference": f"{title} ({doc_type})",
+                "gold_answer": "Se recomienda revisar el documento original y resumir la recomendación principal según el contexto clínico."
             }
         )
     return sample_questions
@@ -252,111 +265,164 @@ def build_mock_questions(document: dict[str, Any], specialty: str, doc_type: str
 def write_jsonl(path: Path, records: list[dict[str, Any]]) -> None:
     """Escribe la salida final en JSONL, una línea por pregunta."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as handle:
+    with path.open("x", encoding="utf-8") as handle:
         for record in records:
             handle.write(json.dumps(record, ensure_ascii=False) + "\n")
 
+def build_question_record(row, file_path, question, question_counter):
 
-def build_shareable_record(record: dict[str, Any]) -> dict[str, Any]:
-    """Crea una versión limpia y compartible del dataset para el equipo."""
-    return {
-        "id": record.get("question_id", ""),
-        "specialty": record.get("specialty", ""),
-        "category": record.get("category", record.get("specialty", "")),
-        "document_title": record.get("source_title", ""),
-        "document_type": record.get("document_type", ""),
-        "source_path": record.get("relative_path", ""),
-        "reference": record.get("reference", ""),
-        "question": record.get("question", ""),
-        "answer": record.get("answer", ""),
-        "difficulty": record.get("difficulty", "medium"),
-        "question_type": record.get("question_type", "interpretation"),
-    }
-
-
-def build_question_record(row: dict[str, str], file_path: Path, question: dict[str, Any], question_counter: int) -> dict[str, Any]:
-    """Normaliza la estructura final para que todas las preguntas sigan el mismo esquema."""
-    source_title = normalize_text(question.get("source_title") or row.get("title") or file_path.stem)
-    specialty = row.get("specialty") or "unknown"
-    doc_type = row.get("document_type") or "unknown"
-    final_category = normalize_text(question.get("category") or specialty)
-    reference = normalize_text(question.get("reference") or f"{source_title} [{row.get('relative_path', '')}]")
+    source_title = normalize_text(
+        row.get("title") or file_path.stem
+    )
 
     return {
         "question_id": f"q-{question_counter:05d}",
-        "document_path": str(file_path),
-        "relative_path": row.get("relative_path", ""),
-        "specialty": specialty,
-        "category": final_category,
-        "document_type": doc_type,
-        "type": doc_type,
-        "question": normalize_text(question.get("question") or question.get("prompt") or ""),
-        "answer": normalize_text(question.get("answer") or question.get("solution") or ""),
-        "difficulty": str(question.get("difficulty") or "medium").lower(),
-        "question_type": str(question.get("question_type") or "interpretation").lower(),
+        "question": normalize_text(
+            question.get("question", "")
+        ),
+        "gold_answer": normalize_text(
+            question.get("gold_answer", "")
+        ),
+        "specialty": row.get("specialty", "unknown"),
         "source_title": source_title,
-        "reference": reference,
     }
-
 
 def main() -> None:
     """Punto de entrada principal del generador de preguntas."""
     parser = argparse.ArgumentParser(description="Genera preguntas desde documentos médicos seleccionados.")
-    parser.add_argument("--selected-docs", type=Path, default=DEFAULT_SELECTED_DOCS, help="CSV con la lista de documentos seleccionados.")
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="Archivo JSONL de salida con las preguntas generadas.")
-    parser.add_argument("--shareable-output", type=Path, default=DEFAULT_SHAREABLE_OUTPUT, help="Versión limpia y lista para compartir con el equipo.")
-    parser.add_argument("--max-questions-per-doc", type=int, default=10, help="Máximo de preguntas por documento.")
+    parser.add_argument("filters", nargs="*", metavar="FILTRO", help="Formato y/o especialidad, en cualquier orden.")
+    parser.add_argument("--raw-dir", type=Path, default=DEFAULT_RAW_DIR, help="Raíz del corpus con las carpetas json y markdown.")
+    parser.add_argument("--selected-docs", type=Path, help="CSV con la lista de documentos seleccionados.")
+    parser.add_argument("--output", type=Path, help="Archivo JSONL de salida con las preguntas generadas.")
+    parser.add_argument("--max-questions-per-doc", type=int, default=3, help="Máximo de preguntas por documento.")
     parser.add_argument("--model", type=str, default=DEFAULT_MODEL, help="Modelo del endpoint compatible con OpenAI/Ollama.")
     parser.add_argument("--api-base", type=str, default=DEFAULT_API_BASE, help="Base URL del endpoint LLM. Por defecto usa OPENAI_BASE_URL o la API de OpenAI.")
     parser.add_argument("--api-key", type=str, default=DEFAULT_API_KEY, help="API key para el endpoint. Si no se indica, se usa OPENAI_API_KEY.")
     parser.add_argument("--dry-run", action="store_true", help="Genera preguntas de ejemplo sin llamar al modelo.")
-    args = parser.parse_args()
-
+    args = parser.parse_intermixed_args()
     if args.max_questions_per_doc <= 0:
         raise ValueError("--max-questions-per-doc debe ser un entero positivo.")
-
     if not args.dry_run and not args.api_key:
         raise ValueError(
             "No se encontró una API key. Define OPENAI_API_KEY o OPENAI_KEY en el entorno o pasa --api-key."
         )
-
-    selected_docs = load_selected_documents(args.selected_docs)
-    if not selected_docs:
-        raise FileNotFoundError(f"No se encontraron documentos en {args.selected_docs}")
-
-    all_records: list[dict[str, Any]] = []
-    for row in selected_docs:
-        relative_path = row["relative_path"]
-        file_path = resolve_document_path(relative_path)
-        if not file_path.exists():
-            print(f"AVISO: no existe {file_path}, se omite.")
-            continue
-
-        doc = read_json_document(file_path)
-        specialty = row.get("specialty") or "unknown"
-        doc_type = row.get("document_type") or "unknown"
-
-        if args.dry_run:
-            generated_questions = build_mock_questions(doc, specialty, doc_type, min(args.max_questions_per_doc, 2))
+    doc_format = specialty = None
+    for value in args.filters:
+        value = value.casefold()
+        if value in FORMATS and doc_format is None:
+            doc_format = value
+        elif value not in FORMATS and specialty is None:
+            specialty = value
         else:
-            prompt = build_prompt(doc, specialty, doc_type, args.max_questions_per_doc)
-            generated_questions = call_model(prompt, args.model, args.api_base, args.api_key)
+            parser.error("Indica como máximo un formato y una especialidad.")
+    if args.selected_docs and args.filters:
+        parser.error("--selected-docs se usa sin filtros posicionales.")
+    if args.selected_docs:
+        selected_docs = load_selected_documents(args.selected_docs)
+    else:
+        selected_docs = list(discover_documents(args.raw_dir.resolve(), doc_format, specialty))
+    if not selected_docs:
+        parser.error(
+            f"No se encontraron documentos en "
+            f"{args.selected_docs or args.raw_dir} con esos filtros."
+        )
 
-        question_counter = len(all_records) + 1
-        for q in generated_questions:
-            record = build_question_record(row, file_path, q, question_counter)
-            if not record["question"]:
+    if args.output and (args.output.exists() or args.output.is_symlink()):
+        parser.error(f"La salida ya existe: {args.output}")
+
+    specialty_filter = specialty
+    all_records: list[dict[str, Any]] = []
+    processed = 0
+
+    print(f"\nDocumentos encontrados: {len(selected_docs)}")
+    print(f"Modelo: {args.model}")
+    print(f"Preguntas por documento: {args.max_questions_per_doc}\n")
+
+    with tqdm(
+        selected_docs,
+        desc="Generando preguntas",
+        unit="doc",
+        dynamic_ncols=True
+    ) as progress:
+
+        for row in progress:
+            relative_path = row["relative_path"]
+
+            progress.set_postfix_str(
+                Path(relative_path).name[:35]
+            )
+
+            file_path = resolve_document_path(relative_path) if args.selected_docs else REPO_ROOT / relative_path
+            if not file_path.is_file():
+                print(f"AVISO: no existe {file_path}, se omite.")
                 continue
-            all_records.append(record)
-            question_counter += 1
+        
+            doc = read_document(file_path)
+        
+            if not build_document_text(doc).strip():
+                print(f"AVISO: documento vacío {file_path}, se omite.")
+                continue
+        
+            raw_metadata = doc.get("metadata")
+            metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
+            doc["metadata"] = metadata
+        
+            doc["title"] = normalize_text(doc.get("title") or metadata.get("title") or row.get("title") or file_path.stem)
+            row["title"] = doc["title"]
+            row.setdefault("format", "json" if file_path.suffix.lower() == ".json" else "markdown")
+            row["document_type"] = normalize_text(
+                row.get("document_type") or doc.get("document_type") or metadata.get("document_type")
+                or doc.get("type") or metadata.get("type") or "unknown"
+            )
+
+            specialty = row.get("specialty") or "unknown"
+            doc_type = row["document_type"]
+            processed += 1
+            if args.dry_run:
+                generated_questions = build_mock_questions(doc, specialty, doc_type, min(args.max_questions_per_doc))
+            else:
+                prompt = build_prompt(doc, specialty, doc_type, args.max_questions_per_doc)
+                generated_questions = call_model(prompt, args.model, args.api_base, args.api_key)
+            question_counter = len(all_records) + 1
+        
+            for q in generated_questions[:args.max_questions_per_doc]:
+                if not isinstance(q, dict):
+                    continue
+                record = build_question_record(row, file_path, q, question_counter)
+                if not record["question"] or not record["gold_answer"]:
+                    continue
+                all_records.append(record)
+                question_counter += 1
+
+            progress.set_postfix(
+                preguntas=len(all_records),
+                refresh=True
+            )
+            
+    if not processed:
+        parser.error("No se pudo procesar ningún documento.")
+    if args.output is None:
+        output_dir = DEFAULT_OUTPUT.parent
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        label = "-".join(
+            filter(None, (doc_format, specialty_filter))
+        ) or ("csv" if args.selected_docs else "all")
+
+        label = re.sub(r"[^a-z0-9_-]", "-", label)[:60]
+
+        mode = "-dry-run" if args.dry_run else ""
+
+        run_dir = Path(
+            mkdtemp(prefix=f"{label}{mode}-", dir=output_dir)
+        )
+
+        args.output = run_dir / DEFAULT_OUTPUT.name
 
     write_jsonl(args.output, all_records)
-    shareable_records = [build_shareable_record(record) for record in all_records]
-    write_jsonl(args.shareable_output, shareable_records)
-    print(f"Documentos procesados: {len(selected_docs)}")
+    print(f"Documentos procesados: {processed}")
     print(f"Preguntas generadas: {len(all_records)}")
     print(f"Salida técnica: {args.output}")
-    print(f"Salida compartible: {args.shareable_output}")
 
 
 if __name__ == "__main__":
