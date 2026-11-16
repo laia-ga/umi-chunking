@@ -18,13 +18,12 @@ como un benchmark final validado.
 3. **Selección por retrieval**: se usó chunking JSON, embeddings BGE y retrieval
    para puntuar preguntas. `4n_questions.jsonl` contiene 4.000 preguntas,
    1.000 por cada una de las cuatro categorías, seleccionadas por similitud.
-4. **Filtrado y curación**: `397_questions.jsonl` contiene 1.588 preguntas
-   (397 por categoría). Por otro lado,
-   `ground_truth_filtered.jsonl` contiene 10.548 preguntas y es el ground truth
-   de la configuración general. El script de filtrado lo genera desde el JSONL
-   combinado usando las especialidades/subespecialidades del CSV de categorías;
-   no es una etapa que reduzca `397_questions.jsonl`.
-5. **Preguntas generadas desde documentos**: se selecciona una muestra
+4. **`397_questions.jsonl`**: contiene 1.588 preguntas (397 por categoría).
+5. **`ground_truth_filtered.jsonl`**: contiene 10.548 preguntas y es el ground
+   truth de la configuración general. Se generó con
+   `scripts/ground_truth/filter_ground_truth.py`, que filtra preguntas según
+   las especialidades/subespecialidades del CSV de categorías.
+6. **Preguntas generadas desde documentos**: se selecciona una muestra
    reproducible de documentos JSON y se generan preguntas con un modelo
    compatible con la API de OpenAI. Esta prueba dio mejores resultados que
    los conjuntos anteriores y apunta a que la calidad/cobertura del ground
@@ -41,7 +40,7 @@ data/ground_truth/
   experiments/
     early_qa/               # primeras preguntas generadas por IA
     retrieval_selection/    # 4n_questions.jsonl
-    curated/                # 397_questions.jsonl y ground_truth_filtered.jsonl
+    curated/                # snapshots de ground truth curados
   generated/
     selection/              # documentos elegidos y manifiesto de selección
     question_generation/    # preguntas generadas y exportación compartible
