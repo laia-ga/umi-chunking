@@ -14,7 +14,7 @@
 #      que no se cuele en el retrieval ni en el juez.
 #
 # Uso (desde la raíz del proyecto):
-#   python scripts/ground_truth/clean_questions.py \
+#   python scripts/ground_truth/filtering/clean_questions.py \
 #     --input data/ground_truth/experiments/curated/397_questions.jsonl \
 #     --output data/ground_truth/experiments/cleaned/clean_questions.jsonl
 

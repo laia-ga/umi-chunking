@@ -15,21 +15,23 @@ como un benchmark final validado.
 2. **Datasets de preguntas**: se descargaron MedMCQA, MedQA y S-MedQA y se
    prepararon conjuntos con especialidad. Los archivos fuente y el conjunto
    combinado están en `data/ground_truth/datasets/`.
-3. **Filtrado por especialidad**: `scripts/ground_truth/filter_ground_truth.py`
-   selecciona preguntas según las combinaciones de especialidad y
-   subespecialidad del CSV de categorías. `ground_truth_filtered.jsonl`
-   contiene 10.548 preguntas y es el ground truth de referencia para retrieval.
+3. **Filtrado por especialidad**:
+   `scripts/ground_truth/filtering/filter_ground_truth.py` selecciona preguntas
+   según las combinaciones de especialidad y subespecialidad del CSV de
+   categorías. `ground_truth_filtered.jsonl` contiene 10.548 preguntas y es el
+   ground truth de referencia para retrieval.
 4. **Selección por retrieval**: se usaron chunking JSON, embeddings BGE y
    retrieval para puntuar las preguntas filtradas. `4n_questions.jsonl`
    conserva 1.000 preguntas con mayor score para cada una de las cuatro
    categorías (4.000 en total).
 5. **Curación por categoría**: `397_questions.jsonl` contiene una selección
    posterior de 397 preguntas por categoría (1.588 en total).
-6. **Limpieza de preguntas**: `scripts/ground_truth/clean_questions.py` se
-   aplicó a `397_questions.jsonl` para retirar preguntas de tipo
-   except/false/all-of-the-above, casi duplicados y grupos con respuestas
-   contradictorias. El resultado `clean_questions.jsonl` contiene 1.269
-   preguntas; `clean_questions_200.jsonl` es una muestra equilibrada de 200
+6. **Limpieza de preguntas**:
+   `scripts/ground_truth/filtering/clean_questions.py` se aplicó a
+   `397_questions.jsonl` para retirar preguntas de tipo except/false/
+   all-of-the-above, casi duplicados y grupos con respuestas contradictorias.
+   El resultado `clean_questions.jsonl` contiene 1.269 preguntas;
+   `clean_questions_200.jsonl` es una muestra equilibrada de 200
    (50 por categoría).
 7. **Preguntas generadas desde documentos**: se selecciona una muestra
    reproducible de documentos JSON y se generan preguntas con un modelo
@@ -56,7 +58,10 @@ data/ground_truth/
   metadata/                 # categorías y grupos de especialidades
 
 scripts/
-  ground_truth/              # preparación, filtrado, selección y generación
+  ground_truth/
+    datasets/                 # combinar, descargar e inspeccionar datasets
+    filtering/                # filtrar y limpiar preguntas
+    question_generation/      # seleccionar documentos y generar preguntas
   run_indexing.py            # normalización, embeddings e indexación en Qdrant
   run_retrieval.py           # recuperación de chunks para las preguntas
 
@@ -76,42 +81,42 @@ Todos se ejecutan desde la raíz del repositorio:
 - MedQA está descargado, pero no se incorporó al ground truth: se consideró
   redundante porque S-MedQA ya se basa en MedQA y añade clasificación por
   especialidad.
-- `scripts/ground_truth/merge_ground_truth.py`: combina los splits disponibles
-  con respuestas de MedMCQA y S-MedQA en JSONL (MedMCQA dev y S-MedQA
+- `scripts/ground_truth/datasets/merge_ground_truth.py`: combina los splits
+  disponibles con respuestas de MedMCQA y S-MedQA en JSONL (MedMCQA dev y S-MedQA
   test/validation).
-- `scripts/ground_truth/ground_truth_table.py`: cuenta preguntas por
+- `scripts/ground_truth/datasets/ground_truth_table.py`: cuenta preguntas por
   especialidad y subespecialidad y guarda un CSV junto al JSONL. Por ejemplo:
-  `python scripts/ground_truth/ground_truth_table.py experiments/curated/397_questions.jsonl`.
-- `scripts/ground_truth/select_top_retrieval_by_category.py`: selecciona el
-  mismo número de preguntas para cada una de las cuatro categorías, priorizando
-  mayor score de retrieval. Requiere `--retrieval`, `--categories` y `--output`;
-  el umbral predeterminado es `0.60`.
-- `scripts/ground_truth/filter_ground_truth.py`: filtra preguntas por las
-  combinaciones de especialidad/subespecialidad en el CSV de categorías.
-- `scripts/ground_truth/clean_questions.py`: limpia preguntas del conjunto
-  curado, eliminando preguntas no respondibles sin opciones, casi duplicados
-  y preguntas con respuestas contradictorias.
-- `scripts/ground_truth/select_documents_for_question_generation.py`: selecciona
-  documentos de forma reproducible. Por defecto utiliza cinco documentos por
-  grupo, semilla `42` y el mapa de cuatro grupos de `metadata/`.
-- `scripts/ground_truth/generate_questions_from_selected_documents.py`: genera
-  preguntas a partir de la selección. Usa como máximo diez preguntas por
+  `python scripts/ground_truth/datasets/ground_truth_table.py experiments/curated/397_questions.jsonl`.
+- `scripts/ground_truth/filtering/select_top_retrieval_by_category.py`:
+  selecciona el mismo número de preguntas para cada una de las cuatro
+  categorías, priorizando mayor score de retrieval. Requiere `--retrieval`,
+  `--categories` y `--output`; el umbral predeterminado es `0.60`.
+- `scripts/ground_truth/filtering/filter_ground_truth.py`: filtra preguntas
+  por las combinaciones de especialidad/subespecialidad en el CSV de categorías.
+- `scripts/ground_truth/filtering/clean_questions.py`: limpia preguntas del
+  conjunto curado, eliminando preguntas no respondibles sin opciones, casi
+  duplicados y preguntas con respuestas contradictorias.
+- `scripts/ground_truth/question_generation/select_documents_for_question_generation.py`:
+  selecciona documentos de forma reproducible. Por defecto utiliza cinco
+  documentos por grupo, semilla `42` y el mapa de cuatro grupos de `metadata/`.
+- `scripts/ground_truth/question_generation/generate_questions_from_selected_documents.py`:
+  genera preguntas a partir de la selección. Usa como máximo diez preguntas por
   documento de forma predeterminada.
-- `scripts/ground_truth/info_medmcqa.py`,
-  `scripts/ground_truth/specialty.py` y
-  `scripts/ground_truth/download_medqa.py`: utilidades para inspeccionar o
-  descargar los datasets fuente.
+- `scripts/ground_truth/datasets/info_medmcqa.py`,
+  `scripts/ground_truth/datasets/specialty.py` y
+  `scripts/ground_truth/datasets/download_medqa.py`: utilidades para inspeccionar
+  o descargar los datasets fuente.
 
 Ejemplos:
 
 ```bash
-python scripts/ground_truth/merge_ground_truth.py
-python scripts/ground_truth/filter_ground_truth.py
-python scripts/ground_truth/select_top_retrieval_by_category.py \
+python scripts/ground_truth/datasets/merge_ground_truth.py
+python scripts/ground_truth/filtering/filter_ground_truth.py
+python scripts/ground_truth/filtering/select_top_retrieval_by_category.py \
   --retrieval output/retrieval/COLECCION/retrieval_bge_m3.json \
   --categories data/ground_truth/metadata/ground_truth_categories.csv \
   --output data/ground_truth/experiments/retrieval_selection/4n_questions.jsonl
-python scripts/ground_truth/clean_questions.py \
+python scripts/ground_truth/filtering/clean_questions.py \
   --input data/ground_truth/experiments/curated/397_questions.jsonl \
   --output data/ground_truth/experiments/cleaned/clean_questions.jsonl
 ```
@@ -122,7 +127,7 @@ La selección guarda el CSV y el manifiesto en
 `data/ground_truth/generated/selection/`:
 
 ```bash
-python scripts/ground_truth/select_documents_for_question_generation.py \
+python scripts/ground_truth/question_generation/select_documents_for_question_generation.py \
   --docs-per-specialty 5 \
   --question-total 200 \
   --seed 42
@@ -131,7 +136,7 @@ python scripts/ground_truth/select_documents_for_question_generation.py \
 Probar el flujo sin invocar un modelo:
 
 ```bash
-python scripts/ground_truth/generate_questions_from_selected_documents.py \
+python scripts/ground_truth/question_generation/generate_questions_from_selected_documents.py \
   --dry-run \
   --output output/ground_truth_dry_run/generated.jsonl \
   --shareable-output output/ground_truth_dry_run/shareable.jsonl
@@ -141,7 +146,7 @@ Para generar preguntas reales, configura `OPENAI_API_KEY` (y, opcionalmente,
 `OPENAI_BASE_URL` y `OPENAI_MODEL`) en el entorno y ejecuta:
 
 ```bash
-python scripts/ground_truth/generate_questions_from_selected_documents.py
+python scripts/ground_truth/question_generation/generate_questions_from_selected_documents.py
 ```
 
 Las salidas predeterminadas están en

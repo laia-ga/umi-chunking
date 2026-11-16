@@ -14,13 +14,13 @@ la carpeta data/ground_truth para poder compartirlas con otra persona sin depend
 de archivos ignorados por git.
 
 Uso típico con OpenAI:
-    python data/ground_truth/generate_questions_from_selected_documents.py
+    python scripts/ground_truth/question_generation/generate_questions_from_selected_documents.py
 
 Modo de prueba sin llamar al modelo:
-    python data/ground_truth/generate_questions_from_selected_documents.py --dry-run
+    python scripts/ground_truth/question_generation/generate_questions_from_selected_documents.py --dry-run
 
 También se puede forzar un proveedor concreto si hace falta:
-    python data/ground_truth/generate_questions_from_selected_documents.py \
+    python scripts/ground_truth/question_generation/generate_questions_from_selected_documents.py \
         --model gpt-4o-mini \
         --api-base https://api.openai.com/v1 \
         --api-key "$OPENAI_API_KEY"
@@ -44,7 +44,7 @@ except ImportError:  # pragma: no cover - optional dependency in some environmen
         return False
 
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_SELECTED_DOCS = REPO_ROOT / "data" / "ground_truth" / "generated" / "selection" / "selected_documents.csv"
 DEFAULT_OUTPUT = REPO_ROOT / "data" / "ground_truth" / "generated" / "question_generation" / "generated_questions.jsonl"
 DEFAULT_SHAREABLE_OUTPUT = REPO_ROOT / "data" / "ground_truth" / "generated" / "question_generation" / "shareable_question_dataset.jsonl"

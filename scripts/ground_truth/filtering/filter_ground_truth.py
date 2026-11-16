@@ -21,9 +21,9 @@
 #   final, para tolerar pequeñas diferencias al copiar los nombres.
 #
 # Uso (desde la raíz del proyecto):
-#   python scripts/ground_truth/filter_ground_truth.py
-#   python scripts/ground_truth/filter_ground_truth.py --output experiments/curated/urologia.jsonl
-#   python scripts/ground_truth/filter_ground_truth.py --categories metadata/otra_lista.csv
+#   python scripts/ground_truth/filtering/filter_ground_truth.py
+#   python scripts/ground_truth/filtering/filter_ground_truth.py --output experiments/curated/urologia.jsonl
+#   python scripts/ground_truth/filtering/filter_ground_truth.py --categories metadata/otra_lista.csv
 ################################################################################
 
 import argparse
@@ -39,7 +39,7 @@ import pandas as pd
 # ==============================================================================
 
 # Raíz del proyecto
-BASE_DIR = Path(__file__).resolve().parents[2]
+BASE_DIR = Path(__file__).resolve().parents[3]
 
 # Carpeta con los datos de ground truth
 DATA_DIR = BASE_DIR / "data" / "ground_truth"

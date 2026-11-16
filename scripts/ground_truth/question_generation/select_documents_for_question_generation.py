@@ -13,7 +13,7 @@ data/ground_truth/generated/selection/ porque ese espacio es versionable y
 comparte mejor con el equipo que la carpeta output/, que suele estar en .gitignore.
 
 Ejemplo de uso:
-    python scripts/ground_truth/select_documents_for_question_generation.py --docs-per-specialty 5 --question-total 200 --seed 42
+    python scripts/ground_truth/question_generation/select_documents_for_question_generation.py --docs-per-specialty 5 --question-total 200 --seed 42
 """
 
 from __future__ import annotations
@@ -27,7 +27,7 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[3]
 
 
 def safe_console_text(value: Any) -> str:

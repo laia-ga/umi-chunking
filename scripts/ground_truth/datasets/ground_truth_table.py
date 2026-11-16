@@ -9,8 +9,8 @@
 # archivo de entrada para poder revisarla y filtrarla en Excel.
 #
 # Uso (desde la raíz del proyecto):
-#   python scripts/ground_truth/ground_truth_table.py
-#   python scripts/ground_truth/ground_truth_table.py experiments/curated/397_questions.jsonl
+#   python scripts/ground_truth/datasets/ground_truth_table.py
+#   python scripts/ground_truth/datasets/ground_truth_table.py experiments/curated/397_questions.jsonl
 ################################################################################
 
 import argparse
@@ -25,7 +25,7 @@ import pandas as pd
 # ==============================================================================
 
 # Raíz del proyecto
-BASE_DIR = Path(__file__).resolve().parents[2]
+BASE_DIR = Path(__file__).resolve().parents[3]
 
 # Carpeta con los datos de ground truth
 DATA_DIR = BASE_DIR / "data" / "ground_truth"

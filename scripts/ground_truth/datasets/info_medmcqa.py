@@ -9,8 +9,8 @@
 # un CSV para poder revisarla y filtrarla en Excel.
 #
 # Uso:
-#   python scripts/ground_truth/info_medmcqa.py
-#   python scripts/ground_truth/info_medmcqa.py test.jsonl
+#   python scripts/ground_truth/datasets/info_medmcqa.py
+#   python scripts/ground_truth/datasets/info_medmcqa.py test.jsonl
 ################################################################################
 
 import argparse
@@ -19,7 +19,7 @@ from pathlib import Path
 import pandas as pd
 
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[3]
 DATA_DIR = REPO_ROOT / "data" / "ground_truth" / "datasets" / "source" / "medmcqa"
 
 # Etiqueta para las preguntas sin tema asignado

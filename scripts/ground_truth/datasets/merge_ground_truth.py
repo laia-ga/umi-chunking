@@ -29,8 +29,8 @@
 # de un archivo al siguiente), así que ningún identificador se repite.
 #
 # Uso:
-#   python scripts/ground_truth/merge_ground_truth.py
-#   python scripts/ground_truth/merge_ground_truth.py --output datasets/combined/mi_archivo.jsonl
+#   python scripts/ground_truth/datasets/merge_ground_truth.py
+#   python scripts/ground_truth/datasets/merge_ground_truth.py --output datasets/combined/mi_archivo.jsonl
 ################################################################################
 
 import argparse
@@ -44,7 +44,7 @@ from pathlib import Path
 # ==============================================================================
 
 # Raíz del proyecto
-BASE_DIR = Path(__file__).resolve().parents[2]
+BASE_DIR = Path(__file__).resolve().parents[3]
 
 # Carpeta con los datos de ground truth
 DATA_DIR = BASE_DIR / "data" / "ground_truth"

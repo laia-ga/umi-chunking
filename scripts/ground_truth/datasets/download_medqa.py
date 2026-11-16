@@ -24,7 +24,7 @@ import pandas as pd
 from datasets import load_dataset
 
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[3]
 DATA_DIR = REPO_ROOT / "data" / "ground_truth" / "datasets" / "source" / "medqa"
 
 HF_DATASET = "GBaker/MedQA-USMLE-4-options"

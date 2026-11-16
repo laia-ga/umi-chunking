@@ -5,8 +5,8 @@
 # especialidades ("Specialty") con el número de preguntas de cada una.
 #
 # Uso:
-#   python scripts/ground_truth/specialty.py S-MedQA_train.json
-#   python scripts/ground_truth/specialty.py S-MedQA_train.json S-MedQA_validation.json S-MedQA_test.json
+#   python scripts/ground_truth/datasets/specialty.py S-MedQA_train.json
+#   python scripts/ground_truth/datasets/specialty.py S-MedQA_train.json S-MedQA_validation.json S-MedQA_test.json
 ################################################################################
 
 import argparse
@@ -15,7 +15,7 @@ from collections import Counter
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
+REPO_ROOT = Path(__file__).resolve().parents[3]
 DATA_DIR = REPO_ROOT / "data" / "ground_truth" / "datasets" / "source" / "s-medqa"
 
 
