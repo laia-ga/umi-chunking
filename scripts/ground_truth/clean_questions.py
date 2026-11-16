@@ -13,9 +13,10 @@
 #   3. Elimina el campo "retrieved_chunks" (el top-1 usado para filtrar), para
 #      que no se cuele en el retrieval ni en el juez.
 #
-# Uso:
-#   python data\ground_truth\clean_questions.py --input data\ground_truth
-#   \4n_questions.jsonl --output data\ground_truth\questions_clean.jsonl
+# Uso (desde la raíz del proyecto):
+#   python scripts/ground_truth/clean_questions.py \
+#     --input data/ground_truth/experiments/curated/397_questions.jsonl \
+#     --output data/ground_truth/experiments/cleaned/clean_questions.jsonl
 
 ################################################################################
 

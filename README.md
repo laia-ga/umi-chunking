@@ -15,15 +15,23 @@ como un benchmark final validado.
 2. **Datasets de preguntas**: se descargaron MedMCQA, MedQA y S-MedQA y se
    prepararon conjuntos con especialidad. Los archivos fuente y el conjunto
    combinado están en `data/ground_truth/datasets/`.
-3. **Selección por retrieval**: se usó chunking JSON, embeddings BGE y retrieval
-   para puntuar preguntas. `4n_questions.jsonl` contiene 4.000 preguntas,
-   1.000 por cada una de las cuatro categorías, seleccionadas por similitud.
-4. **`397_questions.jsonl`**: contiene 1.588 preguntas (397 por categoría).
-5. **`ground_truth_filtered.jsonl`**: contiene 10.548 preguntas y es el ground
-   truth de la configuración general. Se generó con
-   `scripts/ground_truth/filter_ground_truth.py`, que filtra preguntas según
-   las especialidades/subespecialidades del CSV de categorías.
-6. **Preguntas generadas desde documentos**: se selecciona una muestra
+3. **Filtrado por especialidad**: `scripts/ground_truth/filter_ground_truth.py`
+   selecciona preguntas según las combinaciones de especialidad y
+   subespecialidad del CSV de categorías. `ground_truth_filtered.jsonl`
+   contiene 10.548 preguntas y es el ground truth de referencia para retrieval.
+4. **Selección por retrieval**: se usaron chunking JSON, embeddings BGE y
+   retrieval para puntuar las preguntas filtradas. `4n_questions.jsonl`
+   conserva 1.000 preguntas con mayor score para cada una de las cuatro
+   categorías (4.000 en total).
+5. **Curación por categoría**: `397_questions.jsonl` contiene una selección
+   posterior de 397 preguntas por categoría (1.588 en total).
+6. **Limpieza de preguntas**: `scripts/ground_truth/clean_questions.py` se
+   aplicó a `397_questions.jsonl` para retirar preguntas de tipo
+   except/false/all-of-the-above, casi duplicados y grupos con respuestas
+   contradictorias. El resultado `clean_questions.jsonl` contiene 1.269
+   preguntas; `clean_questions_200.jsonl` es una muestra equilibrada de 200
+   (50 por categoría).
+7. **Preguntas generadas desde documentos**: se selecciona una muestra
    reproducible de documentos JSON y se generan preguntas con un modelo
    compatible con la API de OpenAI. Esta prueba dio mejores resultados que
    los conjuntos anteriores y apunta a que la calidad/cobertura del ground
@@ -40,7 +48,8 @@ data/ground_truth/
   experiments/
     early_qa/               # primeras preguntas generadas por IA
     retrieval_selection/    # 4n_questions.jsonl
-    curated/                # snapshots de ground truth curados
+    curated/                # ground_truth_filtered.jsonl y 397_questions.jsonl
+    cleaned/                # clean_questions.jsonl y su muestra de 200 preguntas
   generated/
     selection/              # documentos elegidos y manifiesto de selección
     question_generation/    # preguntas generadas y exportación compartible
@@ -79,6 +88,9 @@ Todos se ejecutan desde la raíz del repositorio:
   el umbral predeterminado es `0.60`.
 - `scripts/ground_truth/filter_ground_truth.py`: filtra preguntas por las
   combinaciones de especialidad/subespecialidad en el CSV de categorías.
+- `scripts/ground_truth/clean_questions.py`: limpia preguntas del conjunto
+  curado, eliminando preguntas no respondibles sin opciones, casi duplicados
+  y preguntas con respuestas contradictorias.
 - `scripts/ground_truth/select_documents_for_question_generation.py`: selecciona
   documentos de forma reproducible. Por defecto utiliza cinco documentos por
   grupo, semilla `42` y el mapa de cuatro grupos de `metadata/`.
@@ -99,6 +111,9 @@ python scripts/ground_truth/select_top_retrieval_by_category.py \
   --retrieval output/retrieval/COLECCION/retrieval_bge_m3.json \
   --categories data/ground_truth/metadata/ground_truth_categories.csv \
   --output data/ground_truth/experiments/retrieval_selection/4n_questions.jsonl
+python scripts/ground_truth/clean_questions.py \
+  --input data/ground_truth/experiments/curated/397_questions.jsonl \
+  --output data/ground_truth/experiments/cleaned/clean_questions.jsonl
 ```
 
 ### Regenerar preguntas desde documentos
