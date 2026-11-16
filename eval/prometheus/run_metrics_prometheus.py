@@ -24,7 +24,7 @@ import pandas as pd
 # ============================================================
 
 EVAL_DIR = Path(__file__).resolve().parent
-BASE_DIR = EVAL_DIR.parent
+BASE_DIR = EVAL_DIR.parent.parent
 
 EVAL_CONFIG_FILE = BASE_DIR / "configs" / "eval_config.json"
 

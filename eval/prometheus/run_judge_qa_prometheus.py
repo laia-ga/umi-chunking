@@ -57,7 +57,7 @@ from transformers import (
 SCRIPTS_DIR = Path(__file__).resolve().parent
 
 # Raíz del proyecto
-BASE_DIR = SCRIPTS_DIR.parent
+BASE_DIR = SCRIPTS_DIR.parent.parent
 
 # Añadir la raíz del proyecto al path
 sys.path.append(str(BASE_DIR))

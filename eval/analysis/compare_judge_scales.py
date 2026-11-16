@@ -21,7 +21,7 @@
 #      notas) para que alguien lo etiquete y otro con la clave.
 #
 # Uso (desde la raíz del proyecto, con el .venv activado):
-#   python eval/compare_judge_scales.py \
+#   python eval/analysis/compare_judge_scales.py \
 #       --selene output/judge/all_bge_m3_atlaai/local_judge_bge_m3_selene.csv \
 #       --prometheus output/judge/all_bge_m3_prometheus/local_judge_bge_m3_prometheus.csv
 ################################################################################
@@ -34,7 +34,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 OUT_DIR = BASE_DIR / "output" / "judge" / "comparison_judges"
 KEY = ["question_id", "strategy", "rank"]
 

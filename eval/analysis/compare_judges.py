@@ -14,7 +14,7 @@
 #   - un CSV con los casos de desacuerdo para revisarlos rápidamente
 #
 # Uso:
-#   python compare_judges.py juez_A.csv juez_B.csv --names selene qwen3
+#   python eval/analysis/compare_judges.py juez_A.csv juez_B.csv --names selene qwen3
 ################################################################################
 
 import argparse
@@ -25,8 +25,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-# Raíz del proyecto (este script vive en main/scripts) y carpeta de salida
-BASE_DIR = Path(__file__).resolve().parent.parent
+# Raíz del proyecto y carpeta de salida
+BASE_DIR = Path(__file__).resolve().parents[2]
 JUDGE_OUTPUT_DIR = BASE_DIR / "output" / "judge"
 
 

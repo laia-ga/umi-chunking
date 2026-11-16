@@ -701,3 +701,76 @@ La evaluación empieza con el JSON generado por Retrieval: los jueces lo usan
 para crear un CSV, `run_metrics.py` convierte ese CSV en un Excel y
 `run_graphics.py` genera las gráficas a partir del Excel. La indexación en
 Qdrant y la búsqueda de Retrieval se ejecutan antes de este flujo.
+
+## Herramientas adicionales de evaluación
+
+El flujo descrito arriba usa los scripts principales que permanecen directamente
+en `eval/`. Los siguientes scripts son utilidades complementarias para análisis
+exploratorios, comparaciones y diagnóstico; no son pasos necesarios para
+ejecutar el benchmark estándar. Ejecútalos desde la raíz del repositorio, ya
+que sus rutas de entrada y salida son relativas a ella.
+
+### Análisis y gráficas adicionales
+
+Estos scripts están en `eval/analysis/`:
+
+- `aggregation_graphics.py`: combina métricas de varios modelos de embeddings
+  en gráficas agregadas.
+- `family_graphics.py`: agrupa las estrategias por familias definidas en el
+  propio script y compara sus métricas.
+- `compare_judges.py`: compara scores de dos jueces en la misma muestra,
+  calcula acuerdo y kappa, y exporta los casos discrepantes para revisión.
+- `compare_judge_metrics.py`: compara métricas pareadas entre CSV de dos jueces
+  y genera un informe tabular y gráfico.
+- `compare_judge_scales.py`: compara los scores de Selene (0–2) y Prometheus
+  (1–5), prueba distintos mapeos entre escalas y exporta pares discrepantes
+  para revisión manual.
+
+Por ejemplo:
+
+```bash
+python eval/analysis/compare_judge_scales.py \
+  --selene output/judge/all_bge_m3_atlaai/local_judge_bge_m3_selene.csv \
+  --prometheus output/judge/all_bge_m3_prometheus/local_judge_bge_m3_prometheus.csv
+```
+
+### Evaluación con Prometheus
+
+`eval/prometheus/` contiene una variante independiente del flujo de evaluación
+que conserva la escala original de Prometheus, de 1 a 5:
+
+- `run_judge_qa_prometheus.py`: puntúa los chunks recuperados.
+- `run_metrics_prometheus.py`: calcula métricas usando relevancia de 1 a 5.
+- `run_graphics_prometheus.py`: genera gráficas a partir de esas métricas.
+
+Estos scripts no forman parte del flujo principal de `eval/`: sus resultados
+usan una escala distinta y no deben mezclarse con los CSV y métricas de score
+0–2. Para ejecutar la variante completa, usa la misma configuración en los
+tres pasos:
+
+```bash
+python eval/prometheus/run_judge_qa_prometheus.py --config eval_config_bge.json
+python eval/prometheus/run_metrics_prometheus.py --config eval_config_bge.json
+python eval/prometheus/run_graphics_prometheus.py --config eval_config_bge.json
+```
+
+### Comparaciones de chunking
+
+`eval/profiling/` contiene análisis de resultados ya generados, no ejecuta de
+nuevo los chunkers:
+
+- `time_chunking.py`: compara tiempos y métricas de chunking Markdown entre
+  varias ejecuciones configuradas en el script.
+- `time_chunking_JSON.py`: compara tiempos y métricas de los resúmenes de
+  chunking JSON indicados en el script.
+
+### Diagnóstico del índice
+
+`eval/diagnostics/check_index.py` comprueba IDs de chunk duplicados,
+abreviaturas de estrategia compartidas y diferencias entre los chunks
+normalizados y los puntos de Qdrant. Por defecto consulta Qdrant; se puede
+omitir esa consulta para revisar solo los datos normalizados:
+
+```bash
+python eval/diagnostics/check_index.py --skip-qdrant
+```

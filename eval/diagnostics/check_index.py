@@ -8,9 +8,9 @@
 #   3. Nº de chunks normalizados vs. nº de puntos en Qdrant, por estrategia.
 #
 # Uso (desde la raíz del proyecto, con el .venv activado):
-#   python eval/check_index.py
-#   python eval/check_index.py --normalized output/indexing/all_bge_m3/normalized_chunks.jsonl \
-#                              --collection all_bge_m3
+#   python eval/diagnostics/check_index.py
+#   python eval/diagnostics/check_index.py --normalized output/indexing/all_bge_m3/normalized_chunks.jsonl \
+#                                         --collection all_bge_m3
 ################################################################################
 
 import argparse
@@ -20,7 +20,7 @@ from pathlib import Path
 
 import pandas as pd
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 
 
 def main():
