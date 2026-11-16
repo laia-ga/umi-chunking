@@ -635,15 +635,6 @@ class HierarchicalJSONChunker:
                     *chunk.json_paths,
                 ]))
 
-                chunk.metadata["fields"] = list(dict.fromkeys([
-                    *(f.name for f in context),
-                    *chunk.metadata.get("fields", []),
-                ]))
-                chunk.metadata["exceeds_target_limit"] = (
-                    chunk.exceeds_target_limit
-                )
-                chunk.metadata["exceeds_max_limit"] = False
-
                 final_chunks.append(chunk)
 
         return final_chunks
@@ -805,15 +796,7 @@ class HierarchicalJSONChunker:
                     self.token_counter(overlap_text)
                     if overlap_text else 0
                 ),
-                "exceeds_target_limit": exceeds_target,
-                "exceeds_max_limit": False,
             })
-
-            if context_text:
-                metadata["fields"] = list(dict.fromkeys([
-                    *(path.split(".")[-1] for path in self.context_fields),
-                    *metadata.get("fields", []),
-                ]))
 
             output.append(
                 Chunk(
@@ -1108,13 +1091,7 @@ class HierarchicalJSONChunker:
             token_count=token_count,
             exceeds_target_limit=exceeds_target,
             exceeds_max_limit=exceeds_max,
-            metadata={
-                "fields": [field.name for field in fields],
-                "target_tokens": self.target_tokens,
-                "max_tokens": self.max_tokens,
-                "exceeds_target_limit": exceeds_target,
-                "exceeds_max_limit": exceeds_max,
-            },
+            metadata={},
         )
 
     @staticmethod

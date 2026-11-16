@@ -48,6 +48,10 @@ from chunking.utilities import (
     resolve_chunk_fold_output_dir,
     save_json,
 )
+from chunking.document_metadata import (
+    assign_document_ids,
+    document_key,
+)
 from chunking.chunk_cache import cache_fingerprint, load_cached_artifacts
 
 # ============================================================
@@ -297,24 +301,55 @@ def main(
             data = json.load(f)
 
         rel = path.relative_to(INPUT_DIR)
-        source_path = str(rel)
+        if len(rel.parts) < 2:
+            raise ValueError(
+                f"El documento no está dentro de una carpeta de especialidad: {rel}"
+            )
+
+        specialty = rel.parts[0]
+        source_path = path.relative_to(BASE_DIR).as_posix()
+
         if not isinstance(data, dict):
             raise TypeError(
                 f"El documento JSON {source_path!r} debe ser un objeto."
             )
         doc_type = detect_document_type(data, source_path)
-        doc_id = "_".join(rel.with_suffix("").parts)
 
         full_text = json.dumps(data, ensure_ascii=False)
 
         documents.append({
-            "doc_id": doc_id,
+            "document_key": document_key(specialty, path.name),
             "document_type": doc_type,
-            "file_name": path.name,
+            "specialty": specialty,
             "source_path": source_path,
             "data": data,
             "full_text": full_text,
         })
+
+    registry_path = BASE_DIR / "data" / "document_ids.json"
+
+    assigned_ids = assign_document_ids(
+        [
+            (doc["specialty"], Path(doc["source_path"]).name)
+            for doc in documents
+        ],
+        registry_path,
+    )
+
+    for doc in documents:
+        doc["doc_id"] = assigned_ids[doc.pop("document_key")]
+
+    for doc in documents:
+        doc["doc_id"] = assigned_ids[doc.pop("document_key")]
+
+    # Comprobar que no hay identificadores duplicados
+    doc_ids = [doc["doc_id"] for doc in documents]
+
+    if len(doc_ids) != len(set(doc_ids)):
+        raise ValueError(
+            "Hay documentos con doc_id duplicado; "
+            "sus archivos de salida se sobrescribirían."
+        )
 
     # 2. Config + token counter
     chunker_config = load_config(CHUNKING_CONFIG_FILE)
@@ -357,9 +392,12 @@ def main(
     cache_fingerprints = {}
     for doc in documents:
         fingerprint = cache_fingerprint({
-            "version": 2,
+            "version": 4,
             "chunker": "HierarchicalJSONChunker",
+            "doc_id": doc["doc_id"],
             "document_type": doc["document_type"],
+            "specialty": doc["specialty"],
+            "source_path": doc["source_path"],
             "content": doc["full_text"],
             "tokenizer_model": model_name,
             "add_special_tokens": add_special_tokens,
@@ -386,7 +424,7 @@ def main(
             for key, value in metrics.items()
             if key != "_cache_fingerprint"
         })
-        print(f"\nCaché reutilizada: {doc['file_name']}")
+        print(f"\nCaché reutilizada: {doc['source_path']}")
 
     requested_workers = (
         workers_override
@@ -490,22 +528,29 @@ def _save_document_result(
     fingerprint: str,
     summary_results: list[Dict[str, Any]],
 ) -> None:
-    print(f"\nProcesando: {doc['file_name']}")
+    print(f"\nProcesando: {doc['source_path']}")
     chunks = processed["chunks"]
-    serialized = [asdict(chunk) for chunk in chunks]
+    serialized = []
+
+    for chunk in chunks:
+        chunk_data = asdict(chunk)
+
+        if not chunk_data.get("metadata"):
+            chunk_data.pop("metadata", None)
+
+        serialized.append(chunk_data)
     params = {
         "target_tokens": target_tokens,
         "max_tokens": max_tokens,
     }
 
     result = {
-        "strategy": strategy_name,
-        "type": "HierarchicalJSONChunker",
-        "abbreviation": abbreviation,
         "doc_id": doc["doc_id"],
         "document_type": doc["document_type"],
-        "input_file": doc["file_name"],
+        "specialty": doc["specialty"],
         "source_path": doc["source_path"],
+        "format": "json",
+        "strategy": strategy_name,
         "tokenizer_model": model_name,
         "params": params,
         "original_token_count": processed["original_token_count"],
@@ -517,16 +562,15 @@ def _save_document_result(
     save_json(result, CHUNKS_DIR / f"{abbreviation}_{doc['doc_id']}.json")
 
     metrics = {
-        "strategy": strategy_name,
-        "type": "HierarchicalJSONChunker",
-        "abbreviation": abbreviation,
-        "status": "completed",
         "doc_id": doc["doc_id"],
         "document_type": doc["document_type"],
-        "input_file": doc["file_name"],
+        "specialty": doc["specialty"],
         "source_path": doc["source_path"],
+        "format": "json",
+        "strategy": strategy_name,
         "tokenizer_model": model_name,
         "params": params,
+        "status": "completed",
         **processed["stats"],
         "_cache_fingerprint": fingerprint,
     }

@@ -49,6 +49,10 @@ from chunking.utilities import (
     resolve_chunk_fold_output_dir,
     save_json,
 )
+from chunking.document_metadata import (
+    assign_document_ids,
+    document_key,
+)
 from chunking.chunk_cache import cache_fingerprint, load_cached_artifacts
 
 # ============================================================
@@ -430,6 +434,23 @@ def _resolve_device(gpu_id: int | None, needs_gpu: bool) -> str:
         )
     return f"cuda:{gpu_id}"
 
+def build_document_metadata(
+    document: Dict[str, Any],
+    strategy_name: str,
+    tokenizer_model_name: str,
+    params: Dict[str, Any],
+) -> Dict[str, Any]:
+    return {
+        "doc_id": document["doc_id"],
+        "document_type": document["document_type"],
+        "specialty": document["specialty"],
+        "source_path": document["source_path"],
+        "format": "markdown",
+        "strategy": strategy_name,
+        "tokenizer_model": tokenizer_model_name,
+        "params": params,
+    }
+
 
 # ============================================================
 # FUNCIÓN PRINCIPAL
@@ -514,30 +535,44 @@ def main(
             )
             continue
 
+        relative_path = markdown_path.relative_to(INPUT_DIR)
 
+        if len(relative_path.parts) < 2:
+            raise ValueError(
+                "El documento no está dentro de una carpeta de especialidad: "
+                f"{relative_path}"
+            )
 
-        relative_path = markdown_path.relative_to(
-            INPUT_DIR
-        )
+        specialty = relative_path.parts[0]
 
         document_type = infer_document_type(
             text,
             str(relative_path),
         )
 
-        # Los documentos están directamente en INPUT_DIR; el nombre del
-        # archivo proporciona un identificador independiente de carpetas.
-        doc_id = relative_path.stem
+        documents.append({
+            "document_key": document_key(specialty, markdown_path.name),
+            "document_type": document_type,
+            "specialty": specialty,
+            "source_path": markdown_path.relative_to(BASE_DIR).as_posix(),
+            "text": text,
+        })
+        
+    if not documents:
+        raise ValueError("No hay documentos válidos para procesar.")
+    
+    registry_path = BASE_DIR / "data" / "document_ids.json"
 
-        documents.append(
-            {
-                "doc_id": doc_id,
-                "document_type": document_type,
-                "file_name": markdown_path.name,
-                "source_path": str(relative_path),
-                "text": text,
-            }
-        )
+    assigned_ids = assign_document_ids(
+        [
+            (doc["specialty"], Path(doc["source_path"]).name)
+            for doc in documents
+        ],
+        registry_path,
+    )
+
+    for doc in documents:
+        doc["doc_id"] = assigned_ids[doc.pop("document_key")]
 
     if not documents:
         raise ValueError(
@@ -739,14 +774,17 @@ def main(
         cache_fingerprints = {}
         for document in documents:
             fingerprint = cache_fingerprint({
-                "version": 1,
+                "version": 3,
                 "strategy": strategy_name,
+                "doc_id": document["doc_id"],
                 "chunker_type": chunker_type,
                 "params": params,
                 "tokenizer_model": tokenizer_model_name,
                 "device": device,
                 "llm_device": effective_llm_device,
                 "document_type": document["document_type"],
+                "specialty": document["specialty"],
+                "source_path": document["source_path"],
                 "content": document["text"],
             })
             cache_fingerprints[document["doc_id"]] = fingerprint
@@ -775,17 +813,12 @@ def main(
                 continue
 
             chunks_result, metrics_result = cached
-            current_metadata = {
-                "strategy": strategy_name,
-                "type": chunker_type,
-                "abbreviation": abbreviation,
-                "params": params,
-                "doc_id": document["doc_id"],
-                "document_type": document["document_type"],
-                "input_file": document["file_name"],
-                "source_path": document["source_path"],
-                "tokenizer_model": tokenizer_model_name,
-            }
+            current_metadata = build_document_metadata(
+                document,
+                strategy_name,
+                tokenizer_model_name,
+                params,
+            )
             chunks_result.update(current_metadata)
             chunks_result["_cache_fingerprint"] = fingerprint
             metrics_result.update(current_metadata)
@@ -800,7 +833,7 @@ def main(
             completed_documents += 1
             strategy_chunk_count += chunks_result["number_of_chunks"]
             print(
-                f"\nCaché reutilizada: {document['file_name']} "
+                f"\nCaché reutilizada: {document['source_path']} "
                 f"({strategy_name})"
             )
 
@@ -825,7 +858,7 @@ def main(
             nonlocal completed_documents, strategy_chunk_count
             nonlocal initialization_error_recorded
 
-            print(f"\nProcesando: {document['file_name']}")
+            print(f"\nProcesando: {document['source_path']}")
             if "initialization_error" in result:
                 error_message = result["initialization_error"]
                 print(
@@ -853,16 +886,16 @@ def main(
             if "error" in result:
                 print(
                     f"[ERROR] Ha fallado {strategy_name} "
-                    f"con {document['file_name']}: {result['error']}"
+                    f"con {document['source_path']}: {result['error']}"
                 )
                 document_error = {
-                    "strategy": strategy_name,
-                    "type": chunker_type,
-                    "abbreviation": abbreviation,
-                    "params": params,
+                    **build_document_metadata(
+                        document,
+                        strategy_name,
+                        tokenizer_model_name,
+                        params,
+                    ),
                     "status": "error",
-                    "doc_id": document["doc_id"],
-                    "input_file": document["file_name"],
                     "error": result["error"],
                 }
                 save_json(
@@ -911,32 +944,28 @@ def main(
                         "doc_id": chunk.doc_id,
                     }
 
-                serialized_chunks.append(
-                    chunk_data
-                )
+                if not chunk_data.get("metadata"):
+                    chunk_data.pop("metadata", None)
+
+                serialized_chunks.append(chunk_data)
 
             # ------------------------------------------------
             # 6. Guardar chunks por documento
             # ------------------------------------------------
 
             document_result = {
-                "strategy": strategy_name,
-                "type": chunker_type,
-                "abbreviation": abbreviation,
-                "params": params,
-                "doc_id": document["doc_id"],
-                "document_type": document["document_type"],
-                "input_file": document["file_name"],
-                "source_path": document["source_path"],
-                "tokenizer_model": tokenizer_model_name,
+                **build_document_metadata(
+                    document,
+                    strategy_name,
+                    tokenizer_model_name,
+                    params,
+                ),
+                "original_token_count": document["token_count"],
+                "number_of_chunks": len(document_chunks),
+                "chunks": serialized_chunks,
                 "_cache_fingerprint": cache_fingerprints[
                     document["doc_id"]
                 ],
-                "original_token_count": document["token_count"],
-                "number_of_chunks": len(
-                    document_chunks
-                ),
-                "chunks": serialized_chunks,
             }
 
             chunks_file_name = (
@@ -975,16 +1004,13 @@ def main(
                 document_stats["ram_increase_mb"] = None
 
             document_metrics_result = {
-                "strategy": strategy_name,
-                "type": chunker_type,
-                "abbreviation": abbreviation,
-                "params": params,
+                **build_document_metadata(
+                    document,
+                    strategy_name,
+                    tokenizer_model_name,
+                    params,
+                ),
                 "status": "completed",
-                "doc_id": document["doc_id"],
-                "document_type": document["document_type"],
-                "input_file": document["file_name"],
-                "source_path": document["source_path"],
-                "tokenizer_model": tokenizer_model_name,
                 **document_stats,
                 "_cache_fingerprint": cache_fingerprints[
                     document["doc_id"]
