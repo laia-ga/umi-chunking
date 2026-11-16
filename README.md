@@ -298,17 +298,25 @@ indivisibles. También registra el recuento de tokens y si un fragmento supera
 los límites objetivo o máximo. Los límites `target_tokens` y `max_tokens`
 se leen de `configs/tokenizer_config.json`.
 
+Las tablas explícitas representadas con listas `columns`/`rows` (o
+`columnas`/`filas`) se convierten a texto por filas, repitiendo el nombre de
+cada columna junto a su valor. Además, los campos de contexto configurados se
+añaden a cada chunk; actualmente, las fichas técnicas incluyen
+`medicine_name`. Este contexto cuenta para el límite de tokens y se conserva
+en las rutas y metadatos.
+
 `target_tokens` orienta la división jerárquica: si una sección supera ese
 tamaño, el plan intenta subdividirla siguiendo su estructura. Algunas
 unidades —por ejemplo, campos escalares, diccionarios y listas marcadas como
 indivisibles— pueden superar el objetivo para conservar su significado y
 estructura. Después de esa división, cualquier chunk que exceda `max_tokens`
-pasa por un fallback para ajustarlo al límite máximo. El fallback intenta
-cortar por oraciones y equilibrar el tamaño usando el menor número de partes
-posible; añade un pequeño solapamiento entre partes para mantener contexto.
-Si una oración es demasiado larga, la divide por palabras y, como último
-recurso, por caracteres. No elimina contenido y marca en los metadatos los
-chunks que se generaron con este procedimiento.
+pasa por un fallback para ajustarlo al límite máximo. El fallback conserva las
+líneas y corta el texto narrativo por oraciones, agrupando unidades
+consecutivas hasta acercarse al límite. Añade a cada chunk posterior un
+solapamiento de hasta el 10 % de `max_tokens` para conservar contexto. Si una
+oración es demasiado larga, la divide por palabras y, como último recurso,
+por caracteres. Conserva el contenido y marca en los metadatos los chunks
+generados con este procedimiento.
 
 Ejemplo:
 
@@ -326,8 +334,8 @@ paralelo.
 Cada flujo escribe sus resultados en una subcarpeta de ejecución cuyo nombre
 se toma de `chunk_fold` en `configs/chunker_config.json`:
 
-- JSON: `output/chunks/<chunk_fold>/json/`.
-- Markdown: `output/chunks/<chunk_fold>/markdown/`.
+- JSON: `output/chunking/<chunk_fold>/json/`.
+- Markdown: `output/chunking/<chunk_fold>/markdown/`.
 
 Cada subcarpeta de formato contiene:
 
@@ -365,7 +373,7 @@ El proceso se controla desde `scripts/run_indexing.py` y, por defecto, ejecuta
 todas las fases:
 
 1. **Lee los resultados del chunking.** Busca archivos JSON en
-   `output/chunks/<chunk_fold>/`, donde `chunk_fold` se define en
+   `output/chunking/<chunk_fold>/`, donde `chunk_fold` se define en
    `configs/indexing_config.json`. Cada archivo aporta los chunks de un
    documento y sus metadatos.
 2. **Normaliza los chunks.** Convierte los resultados de Markdown y JSON a un
