@@ -110,7 +110,10 @@ def ndcg_at_k(scores, k):
 
     scores = list(scores)
     ranked_scores = scores[:k]
-    ideal_scores = sorted(scores, reverse=True)[:k]
+    # Estado ideal de todo 2:
+    # ideal_scores = [2] * k
+    # Estado ideal del mejor chunk recuperado:
+    ideal_scores = [sorted(scores, reverse=True)[:k]]
     ideal_dcg = dcg(ideal_scores)
 
     if ideal_dcg == 0:
