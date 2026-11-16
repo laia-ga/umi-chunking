@@ -38,6 +38,7 @@ from typing import Any
 from urllib import request
 from tempfile import mkdtemp
 from tqdm import tqdm
+from urllib.error import HTTPError
 
 try:
     from dotenv import load_dotenv
@@ -229,8 +230,8 @@ def call_model(prompt: str, model: str, api_base: str, api_key: str) -> list[dic
             {"role": "system", "content": "Eres un asistente clínico que responde con JSON válido."},
             {"role": "user", "content": prompt},
         ],
-        "temperature": 0.2,
-        "max_tokens": 2500,
+        #"temperature": 0.2,
+        "max_completion_tokens": 2500,
     }
     payload = json.dumps(data).encode("utf-8")
     req = request.Request(
@@ -242,8 +243,15 @@ def call_model(prompt: str, model: str, api_base: str, api_key: str) -> list[dic
         },
         method="POST",
     )
-    with request.urlopen(req, timeout=180) as resp:
-        body = json.loads(resp.read().decode("utf-8"))
+    try:
+        with request.urlopen(req, timeout=180) as resp:
+            body = json.loads(resp.read().decode("utf-8"))
+
+    except HTTPError as e:
+        error_body = e.read().decode("utf-8", errors="replace")
+        print(f"\nError HTTP {e.code} al llamar al modelo {model}")
+        print(f"Detalle de la API: {error_body}")
+        raise
     message = body["choices"][0]["message"]["content"]
     items = extract_json_payload(message)
     return items
@@ -398,7 +406,7 @@ def main() -> None:
                 preguntas=len(all_records),
                 refresh=True
             )
-            
+
     if not processed:
         parser.error("No se pudo procesar ningún documento.")
     if args.output is None:
