@@ -74,6 +74,7 @@ CSV_FIELDNAMES = [
     "strategy",
     "document_id",
     "document_type",
+    "specialty",
     "chunk_id",
     "chunk_index",
     "chunk_text",
@@ -519,6 +520,7 @@ def _row_for_task(
         "strategy": task["strategy"] or chunk.get("strategy"),
         "document_id": chunk.get("document_id"),
         "document_type": chunk.get("document_type"),
+        "specialty": chunk.get("specialty"),
         "chunk_id": chunk.get("chunk_id"),
         "chunk_index": chunk.get("chunk_index"),
         "chunk_text": chunk.get("text", ""),
@@ -655,7 +657,7 @@ def _judge_worker_batch(tasks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 def iter_judge_tasks(
     results: List[Dict[str, Any]],
     top_k: int | None,
-    done_keys: set[tuple[str, str, int]],
+    done_keys: set[tuple[str, str, str]],
     log_warnings: bool = False,
 ) -> Iterator[Dict[str, Any]]:
     for result in results:
@@ -685,7 +687,14 @@ def iter_judge_tasks(
             chunks = retrieved_chunks if top_k is None else retrieved_chunks[:top_k]
             for rank, chunk in enumerate(chunks, start=1):
                 chunk_strategy = strategy or chunk.get("strategy") or ""
-                if (str(question_id), chunk_strategy, rank) in done_keys:
+                chunk_id = chunk.get("chunk_id")
+
+                if not chunk_id:
+                    raise ValueError(
+                        f"El chunk de la pregunta {question_id} no tiene chunk_id."
+                    )
+
+                if (str(question_id), chunk_strategy, str(chunk_id)) in done_keys:
                     continue
                 yield {
                     "question_id": str(question_id),
@@ -740,7 +749,7 @@ def prepare_resume(
     output_file: Path,
     restart: bool,
     include_reason: bool,
-) -> set[tuple[str, str, int]]:
+) -> set[tuple[str, str, str]]:
     if restart and output_file.exists():
         output_file.unlink()
         print("CSV anterior eliminado (--restart).")
@@ -777,10 +786,10 @@ def prepare_resume(
         (
             row.get("question_id", ""),
             row.get("strategy") or "",
-            int(row["rank"]),
+            row["chunk_id"],
         )
         for row in successful_rows
-        if row.get("rank", "").isdigit()
+        if row.get("chunk_id")
     }
 
     with output_file.open("w", newline="", encoding="utf-8") as file:

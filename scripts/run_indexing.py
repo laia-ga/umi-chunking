@@ -141,12 +141,9 @@ def normalize_json_chunk(
             f"El chunk {chunk_index} no contiene texto válido: {source_file}"
         )
 
-    document_id = str(document.get("doc_id", source_file.stem))
-    abbreviation = str(document.get("abbreviation", "unknown"))
+    document_id = str(document["doc_id"])
     strategy = str(document.get("strategy", "unknown"))
-    chunk_id = (
-        f"json__{document_id}__{abbreviation}__{chunk_index:06d}"
-    )
+    chunk_id = f"json_{document_id}_{chunk_index:06d}"
 
     metadata = dict(chunk.get("metadata") or {})
     for field in (
@@ -165,11 +162,10 @@ def normalize_json_chunk(
         "text": text,
         "format": "json",
         "document_type": infer_document_type(document),
+        "specialty": document["specialty"],
         "document_id": document_id,
-        "source_file": document.get("input_file", source_file.name),
-        "source_path": document.get("source_path"),
+        "source_path": document["source_path"],
         "strategy": strategy,
-        "strategy_abbreviation": abbreviation,
         "tokenizer_model": document.get("tokenizer_model"),
         "strategy_params": document.get("params", {}),
         "chunk_index": chunk_index,
@@ -198,13 +194,10 @@ def normalize_markdown_chunk(
             f"El chunk {chunk_index} no contiene texto válido: {source_file}"
         )
 
-    document_id = str(document.get("doc_id", source_file.stem))
-    abbreviation = str(document.get("abbreviation", "unknown"))
+    document_id = str(document["doc_id"])
     strategy = str(document.get("strategy", "unknown"))
     original_chunk_id = chunk.get("chunk_id")
-    chunk_id = (
-        f"markdown__{document_id}__{abbreviation}__{chunk_index:06d}"
-    )
+    chunk_id = f"md_{document_id}_{chunk_index:06d}"
 
     metadata = dict(chunk.get("metadata") or {})
     if original_chunk_id is not None:
@@ -215,11 +208,10 @@ def normalize_markdown_chunk(
         "text": text,
         "format": "markdown",
         "document_type": infer_document_type(document),
+        "specialty": document["specialty"],
         "document_id": document_id,
-        "source_file": document.get("input_file", source_file.name),
-        "source_path": document.get("source_path"),
+        "source_path": document["source_path"],
         "strategy": strategy,
-        "strategy_abbreviation": abbreviation,
         "tokenizer_model": document.get("tokenizer_model"),
         "strategy_params": document.get("params", {}),
         "chunk_index": chunk_index,

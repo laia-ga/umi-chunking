@@ -188,6 +188,11 @@ def create_output_file(
     if document_type is not None:
         parts.append(document_type)
 
+    specialty = retrieval_params.get("specialty")
+
+    if specialty is not None:
+        parts.append(specialty)
+
     filename = "_".join(parts) + ".json"
 
     return OUTPUT_DIR / collection_name / filename
@@ -299,6 +304,7 @@ def retrieve_chunks(
     strategy: str = None,
     document_type: str = None,
     format: str = None,
+    specialty: str = None,
 ):
     """
     Recupera los chunks más similares a una pregunta.
@@ -343,6 +349,15 @@ def retrieve_chunks(
             )
         )
 
+    # Filtro por especialidad
+    if specialty is not None:
+        conditions.append(
+            models.FieldCondition(
+                key="specialty",
+                match=models.MatchValue(value=specialty),
+            )
+        )
+
     # Solo crear filtro si hay alguna condición
     query_filter = None
 
@@ -373,6 +388,7 @@ def retrieve_question(
     strategies: List[str] | None,
     document_type: str | None,
     format: str | None,
+    specialty: str | None,
 ) -> Dict[str, Any]:
     """Ejecuta todas las consultas de una pregunta y conserva su estructura."""
 
@@ -382,6 +398,7 @@ def retrieve_question(
         "gold_answer": query_item["gold_answer"],
         "document_type": document_type,
         "format": format,
+        "specialty": specialty,
     }
 
     if strategies is None:
@@ -393,6 +410,7 @@ def retrieve_question(
             strategy=None,
             document_type=document_type,
             format=format,
+            specialty=specialty,
         )
         result["retrieved_chunks"] = format_hits(hits)
         return result
@@ -407,6 +425,7 @@ def retrieve_question(
             strategy=strategy,
             document_type=document_type,
             format=format,
+            specialty=specialty,
         )
         strategy_results[strategy] = format_hits(hits)
 
@@ -453,6 +472,9 @@ def format_hits(
                 ),
                 "document_type": payload.get(
                     "document_type"
+                ),
+                "specialty": payload.get(
+                    "specialty"
                 ),
                 "strategy": payload.get(
                     "strategy"
@@ -596,6 +618,8 @@ def main() -> None:
         "format"
     ]
 
+    specialty = retrieval_params.get("specialty")
+
     ground_truth_file = retrieval_params[
         "ground_truth_file"
     ]
@@ -620,6 +644,10 @@ def main() -> None:
 
     print(
         f"Formato: {format}"
+    )
+
+    print(
+        f"Especialidad: {specialty}"
     )
 
     print(
@@ -711,6 +739,7 @@ def main() -> None:
             strategies,
             document_type,
             format,
+            specialty,
         )
         for query_item, query_vector in zip(queries, query_vectors)
     )
