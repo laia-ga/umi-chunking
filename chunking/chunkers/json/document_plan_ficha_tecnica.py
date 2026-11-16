@@ -31,8 +31,8 @@ DOCUMENT_PLAN_FC = SplitNode(
                                     fields=["active_ingredient_amount"]
                                 ),
                                 SplitNode(
-                                    name="excipients_with_know_effect",
-                                    fields=["excipients_with_know_effect"]
+                                    name="excipients",
+                                    fields=["excipients"]
                                 )
                             ]
                         )

@@ -5,8 +5,8 @@
 """
 Normaliza e indexa los chunks generados por los runners.
 
-El script convierte los outputs JSON de Markdown y JSON a un formato común
-JSONL y, después, genera embeddings e inserta los chunks configurados en Qdrant.
+El script convierte los outputs de chunking JSON a un formato JSONL común y,
+después, genera embeddings e inserta los chunks configurados en Qdrant.
 Cada fase puede ejecutarse por separado mediante los argumentos de la línea
 de comandos.
 """
@@ -48,8 +48,8 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 
 # Carpeta que contiene los chunks generados por los runners:
-# main/output/chunks
-CHUNKS_ROOT = PROJECT_ROOT / "output" / "chunks"
+# main/output/chunking
+CHUNKS_ROOT = PROJECT_ROOT / "output" / "chunking"
 # CHUNKS_ROOT = PROJECT_ROOT / "output" / "test"
 
 # Carpeta base de resultados de indexación
@@ -183,56 +183,6 @@ def normalize_json_chunk(
     }
 
 
-def normalize_markdown_chunk(
-    chunk: Dict[str, Any],
-    document: Dict[str, Any],
-    chunk_index: int,
-    source_file: Path,
-) -> Dict[str, Any]:
-    """
-    Convierte un chunk Markdown al esquema común de indexación.
-
-    Conserva el identificador original del chunk dentro de ``metadata``
-    y genera un identificador común independiente de la implementación
-    interna del runner Markdown.
-    """
-
-    text = chunk.get("text")
-    if not isinstance(text, str) or not text.strip():
-        raise ValueError(
-            f"El chunk {chunk_index} no contiene texto válido: {source_file}"
-        )
-
-    document_id = str(document.get("doc_id", source_file.stem))
-    abbreviation = str(document.get("abbreviation", "unknown"))
-    strategy = str(document.get("strategy", "unknown"))
-    original_chunk_id = chunk.get("chunk_id")
-    chunk_id = (
-        f"markdown__{document_id}__{abbreviation}__{chunk_index:06d}"
-    )
-
-    metadata = dict(chunk.get("metadata") or {})
-    if original_chunk_id is not None:
-        metadata["original_chunk_id"] = original_chunk_id
-
-    return {
-        "chunk_id": chunk_id,
-        "text": text,
-        "format": "markdown",
-        "document_type": infer_document_type(document),
-        "document_id": document_id,
-        "source_file": document.get("input_file", source_file.name),
-        "source_path": document.get("source_path"),
-        "strategy": strategy,
-        "strategy_abbreviation": abbreviation,
-        "tokenizer_model": document.get("tokenizer_model"),
-        "strategy_params": document.get("params", {}),
-        "chunk_index": chunk_index,
-        "token_count": chunk.get("token_count"),
-        "metadata": metadata,
-    }
-
-
 def iter_normalized_chunks(
     chunk_fold: str,
 ) -> Iterator[Dict[str, Any]]:
@@ -249,7 +199,7 @@ def iter_normalized_chunks(
     if not chunks_dir.exists():
         raise FileNotFoundError(
             f"No existe la carpeta de chunks: {chunks_dir}. "
-            "Ejecuta primero run_MD.py o run_JSON.py."
+            "Ejecuta primero run_JSON.py."
         )
 
     chunk_files = sorted(chunks_dir.glob("*/chunk_results/*.json"))
@@ -262,15 +212,12 @@ def iter_normalized_chunks(
         document = load_chunk_file(chunk_file)
         format_name = chunk_file.parent.parent.name
 
-        if format_name == "json":
-            normalizer = normalize_json_chunk
-        elif format_name == "markdown":
-            normalizer = normalize_markdown_chunk
-        else:
+        if format_name != "json":
             raise ValueError(
                 f"Formato de chunks no soportado en la ruta: {chunk_file}"
             )
 
+        normalizer = normalize_json_chunk
         for chunk_index, chunk in enumerate(document["chunks"]):
             if not isinstance(chunk, dict):
                 raise ValueError(
@@ -541,9 +488,8 @@ def append_run_log(record: Dict [str, Any]) -> None:
     """
     Añade un registro de ejecución al log de tiempos.
 
-    Guardar un log acumulativo permite comparar entre sí distintas
-    ejecuciones: JSON vs Markdown, distinto número de workers,
-    con/sin caché, distintos modelos de embedding, etc.
+    Guardar un log acumulativo permite comparar distintas ejecuciones:
+    número de workers, uso de caché y modelos de embedding.
     """
 
     RUN_LOG_FILE.parent.mkdir(parents=True, exist_ok=True)

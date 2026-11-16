@@ -16,8 +16,8 @@ Este script:
    - genera chunks semánticos y trazables,
    - añade metadatos como nivel, grupo, rutas JSON y límites de tokens.
 5. Guarda los chunks en
-   output/chunks/<chunk_fold>/json/chunk_results.
-6. Guarda las métricas en output/chunks/<chunk_fold>/json/metrics.
+   output/chunking/<chunk_fold>/json/chunk_results.
+6. Guarda las métricas en output/chunking/<chunk_fold>/json/metrics.
 7. Genera un summary.csv con una fila por documento.
 """
 
@@ -89,7 +89,7 @@ SCRIPTS_DIR = BASE_DIR / "scripts"
 INPUT_DIR = BASE_DIR / "data" / "raw" / "json"
 
 # Carpeta raíz de las salidas de chunking
-BASE_OUTPUT_DIR = BASE_DIR / "output" / "chunks"
+BASE_OUTPUT_DIR = BASE_DIR / "output" / "chunking"
 OUTPUT_DIR = BASE_OUTPUT_DIR
 
 # Carpeta donde se guardarán los chunks generados
@@ -177,6 +177,16 @@ INDIVISIBLE_LIST_PATHS = {
     "ficha_tecnica": ["excipients","national_codes","national_codes_queried"],
 }
 
+# CONTEXT FIELDS
+CONTEXT_FIELDS = {
+
+    "paper": [],
+
+    "guideline": [],
+
+    "ficha_tecnica": ["medicine_name"],
+}
+
 # ============================================================
 # PARALELIZACIÓN DE DOCUMENTOS
 # ============================================================
@@ -210,6 +220,7 @@ def _process_document(
         document_plan=select_document_plan(doc["document_type"]),
         root_field=None,
         indivisible_list_paths=INDIVISIBLE_LIST_PATHS[doc["document_type"]],
+        context_fields=CONTEXT_FIELDS[doc["document_type"]],
     )
 
     process = psutil.Process(os.getpid()) if measure_ram else None
@@ -346,7 +357,7 @@ def main(
     cache_fingerprints = {}
     for doc in documents:
         fingerprint = cache_fingerprint({
-            "version": 1,
+            "version": 2,
             "chunker": "HierarchicalJSONChunker",
             "document_type": doc["document_type"],
             "content": doc["full_text"],
