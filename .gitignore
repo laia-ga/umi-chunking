@@ -58,6 +58,7 @@ cover/
 # Django stuff:
 *.log
 local_settings.py
+db.sqlite3
 db.sqlite3-journal
 
 # Flask stuff:
@@ -137,7 +138,6 @@ env.bak/
 venv.bak/
 .venv-wsl
 venv-wsl/
-.venv-wsl/
 
 # Spyder project settings
 .spyderproject
@@ -203,7 +203,7 @@ __pycache__/
 models/
 hf_cache/
 
-# Output 
+# Output
 # (demasiado pesados para subir)
 output/
 
@@ -212,6 +212,3 @@ output/
 data/ground_truth/medmcqa/train.jsonl
 output/judge/gpt_judge_bge_m3_guideline.csv
 data/ground_truth/train.jsonl
-
-# Base de datos del chatbot
-*.sqlite3
