@@ -1,13 +1,21 @@
+"""Plan jerárquico para dividir guías y recomendaciones clínicas.
+
+Organiza metadatos, alcance, contenido clínico y material complementario.
+La jerarquía agrupa campos relacionados y separa secciones conceptualmente
+distintas.
+"""
+
 from chunking.chunkers.json.JSON_chunker import SplitNode
 
 DOCUMENT_PLAN_GL = SplitNode(
     name="complete_document",
     children=[
-        # NIVEL 1
+        # Identificación, procedencia, versión y público destinatario de la guía.
         SplitNode(
             name="metadata",
             children=[
                 SplitNode(
+                    # Identificación formal y versionado del documento.
                     name="info_metadata",
                     children=[
                         SplitNode(
@@ -26,6 +34,8 @@ DOCUMENT_PLAN_GL = SplitNode(
                                         )
                                     ]
                                 ),
+                                # El título, la organización y los autores se agrupan para
+                                # identificar conjuntamente quién publica la guía.
                                 SplitNode(
                                     name="title_org_authors",
                                     children=[
@@ -56,6 +66,7 @@ DOCUMENT_PLAN_GL = SplitNode(
                                 SplitNode(
                                     name="info_publication",
                                     children=[
+                                        # Datos de publicación, versión y extracción de la fuente.
                                         SplitNode(
                                             name="year_version_language",
                                             children=[
@@ -92,15 +103,19 @@ DOCUMENT_PLAN_GL = SplitNode(
                                             ]
                                         )
                                     ]
-                                ),
-                                SplitNode(
-                                    name="quality_flags",
-                                    fields=["metadata.quality_flags"]
                                 )
                             ]
                         )
                     ]
                 ),
+                # Se mantiene separado de la síntesis: son indicadores de calidad, no
+                # contenido narrativo de la guía.
+                SplitNode(
+                    name="quality_flags",
+                    fields=["metadata.quality_flags"]
+                ),
+                # Audiencia y especialidad describen a quién se dirige; la
+                # jurisdicción identifica el ámbito geográfico de aplicación.
                 SplitNode(
                     name="audience_specialty_jurisdiction",
                     children=[
@@ -123,13 +138,14 @@ DOCUMENT_PLAN_GL = SplitNode(
                         )
                     ]
                 ),
+                # Síntesis general del contenido y las recomendaciones de la guía.
                 SplitNode(
                     name="summary",
                     fields=["metadata.summary"]
                 )
             ]
         ),
-        # NIVEL 1
+        # Relaciona las condiciones abordadas con sus áreas terapéuticas.
         SplitNode(
             name="scope",
             children=[
@@ -146,6 +162,7 @@ DOCUMENT_PLAN_GL = SplitNode(
                         )
                     ]
                 ),
+                # Agrupa la población destinataria con los entornos donde se atiende.
                 SplitNode(
                     name="settings_population",
                     children=[
@@ -161,27 +178,29 @@ DOCUMENT_PLAN_GL = SplitNode(
                 )
             ]
         ),
+        # Índice jerárquico del documento.
         SplitNode(
             name="toc",
-            fields=["toc"] # lista de diccionarios indivisibles
+            fields=["toc"] # Se conserva cada elemento del índice completo.
         ),
-        # NIVEL 1
+        # # Contenido clínico y recursos organizados por tema.
         SplitNode(
             name="conditions",
-            fields=["conditions"] # lista de diccionarios indivisibles
+            fields=["conditions"] # Se conserva cada condición como una unidad completa.
         ),
         SplitNode(
             name="treatment_pathways",
-            fields=["treatment_pathways"] # lista de diccionarios indivisibles
+            fields=["treatment_pathways"] # Cada itinerario se mantiene completo.
         ),
         SplitNode(
             name="therapies_index",
-            fields=["therapies_index"] # lista de diccionarios indivisibles
+            fields=["therapies_index"] # Cada entrada del índice se mantiene completa.
         ),
+        # Medidas de seguridad y manejo de toxicidades e infecciones.
         SplitNode(
             name="safety",
             children=[
-                # NIVEL 2
+                # Agrupa los distintos tipos de medidas de seguridad de la guía.
                 SplitNode(
                     name="toxicities",
                     fields=["safety.toxicities"]
@@ -196,36 +215,37 @@ DOCUMENT_PLAN_GL = SplitNode(
                 )
             ]
         ),
-        # NIVEL 1
+        # Recomendaciones clínicas y materiales de apoyo relacionados.
         SplitNode(
             name="recommendations",
-            fields=["recommendations"] # lista de diccionarios indivisibles
+            fields=["recommendations"] # Cada recomendación se conserva como una unidad.
         ),
         SplitNode(
             name="artifacts",
-            fields=["artifacts"] # lista de diccionarios indivisibles
+            fields=["artifacts"] # Se mantienen completos los recursos asociados.
         ),
         SplitNode(
             name="special_populations",
-            fields=["special_populations"] # lista de diccionarios indivisibles
+            fields=["special_populations"] # Cada población especial se conserva completa.
         ),
         SplitNode(
             name="glossary",
-            fields=["glossary"] # lista de diccionarios indivisibles
+            fields=["glossary"] # Cada término mantiene juntos su definición y contexto.
         ),
         SplitNode(
             name="abbreviations",
-            fields=["abbreviations"] # lista de diccionarios indivisibles
+            fields=["abbreviations"] # Cada abreviatura se conserva con su significado.
         ),
         SplitNode(
             name="references",
-            fields=["references"] # lista de diccionarios indivisibles
+            fields=["references"] # Cada referencia bibliográfica se mantiene completa.
         ), 
         SplitNode(
             name="keywords",
-            fields=["keywords"] # lista de diccionarios indivisiblesildren=[
+            fields=["keywords"] # Términos que describen los temas de la guía.
         ),
         SplitNode(
+            # Metadatos de uso auxiliares, fuera del contenido clínico.
             name="usage",
             fields=["_usage"]
         )

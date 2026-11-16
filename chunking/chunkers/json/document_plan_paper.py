@@ -1,10 +1,16 @@
+"""Plan jerárquico para dividir artículos científicos (papers).
+
+Organiza el contenido bibliográfico, metodológico y clínico en grupos
+semánticos; las hojas del árbol indican las rutas JSON que se agrupan.
+"""
+
 from chunking.chunkers.json.JSON_chunker import SplitNode
 
 DOCUMENT_PLAN_PAPER = SplitNode(
     name="complete_document",
     children=[
 
-        # Metadata
+        # Identificación bibliográfica, clasificación y datos administrativos.
         SplitNode(
             name="metadata",
             children=[
@@ -113,7 +119,7 @@ DOCUMENT_PLAN_PAPER = SplitNode(
             ]
         ),
 
-        # Background
+        # Contexto clínico del estudio y preguntas que pretende responder.
         SplitNode(
             name="background_and_objective",
             children=[
@@ -146,10 +152,11 @@ DOCUMENT_PLAN_PAPER = SplitNode(
             ]
         ),
 
-        # Methods
+        # Diseño, población, criterios, intervenciones, resultados y métodos.
         SplitNode(
             name="methods",
             children=[
+                # Diseño del estudio y características de la población incluida.
                 SplitNode(
                     name="design",
                     children=[
@@ -168,7 +175,7 @@ DOCUMENT_PLAN_PAPER = SplitNode(
                                                 ),
                                                 SplitNode(
                                                     name="description",
-                                                    fields=["description"]
+                                                    fields=["population.description"]
                                                 )
                                             ]
                                         ),
@@ -180,37 +187,39 @@ DOCUMENT_PLAN_PAPER = SplitNode(
                                                     children=[
                                                         SplitNode(
                                                             name="n_patients",
-                                                            fields=["n_patients"]
+                                                            fields=["population.n_patients"]
                                                         ),
                                                         SplitNode(
                                                             name="mean_age",
-                                                            fields=["mean_age"]
+                                                            fields=["population.mean_age"]
                                                         )
                                                     ]
                                                 ),
                                                 SplitNode(
                                                     name="care_settings",
-                                                    fields=["care_settings"]
+                                                    fields=["population.care_settings"]
                                                 )
                                             ]
                                         )
                                     ]
                                 ),
+                                # Criterios que determinan qué participantes pueden incluirse.
                                 SplitNode(
                                     name="inclusion_exclusion",
                                     children=[
                                         SplitNode(
                                             name="inclusion_criteria",
-                                            fields=["inclusion_criteria"]
+                                            fields=["population.inclusion_criteria"]
                                         ),
                                         SplitNode(
                                             name="exclusion_criteria",
-                                            fields=["exclusion_criteria"]
+                                            fields=["population.exclusion_criteria"]
                                         )
                                     ]
                                 )
                             ]
                         ),
+                        # Tratamientos comparados y resultados evaluados.
                         SplitNode(
                             name="interventions_comparators_outcomes",
                             children=[
@@ -229,13 +238,22 @@ DOCUMENT_PLAN_PAPER = SplitNode(
                                 ),
                                 SplitNode(
                                     name="outcomes",
-                                    fields=["outcomes"]
+                                    children=[
+                                        SplitNode(
+                                            name="primary",
+                                            fields=["outcomes.primary"]
+                                        ),
+                                        SplitNode(
+                                            name="secondary",
+                                            fields=["outcomes.secondary"]
+                                        )
+                                    ]
                                 )
                             ]
                         )
                     ]
                 ),
-
+                # Análisis estadístico, seguimiento y fuentes de evidencia.
                 SplitNode(
                     name="statistics",
                     children=[
@@ -288,7 +306,7 @@ DOCUMENT_PLAN_PAPER = SplitNode(
             ]
         ),
 
-        # Results
+        # Hallazgos principales, de seguridad, secundarios y por subgrupos.
         SplitNode(
             name="results",
             children=[
@@ -311,7 +329,7 @@ DOCUMENT_PLAN_PAPER = SplitNode(
             ]
         ),
 
-        # Discussion and implications   
+        # Interpretación de resultados, limitaciones e implicaciones futuras.
         SplitNode(
             name="discussion_and_implications",
             children=[
@@ -380,7 +398,7 @@ DOCUMENT_PLAN_PAPER = SplitNode(
             ]
         ),
 
-        # Clinical entities
+        # Entidades clínicas y datos numéricos extraídos del artículo.
         SplitNode(
             name="clinical_entities",
             children=[
@@ -407,7 +425,7 @@ DOCUMENT_PLAN_PAPER = SplitNode(
             ]
         ),
 
-        # Tables and conclusions
+        # Tablas, conclusión principal y resumen narrativo.
         SplitNode(
             name="tables",
             fields=["tables"]
