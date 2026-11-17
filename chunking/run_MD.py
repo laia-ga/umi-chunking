@@ -129,7 +129,7 @@ SCRIPTS_DIR = BASE_DIR / "scripts"
 INPUT_DIR = BASE_DIR / "data" / "raw" / "markdown"
 
 # Carpeta raíz de las salidas de chunking
-BASE_OUTPUT_DIR = BASE_DIR / "output" / "chunks"
+BASE_OUTPUT_DIR = BASE_DIR / "output" / "chunking"
 OUTPUT_DIR = BASE_OUTPUT_DIR
 
 # Carpeta donde se guardarán los chunks generados
