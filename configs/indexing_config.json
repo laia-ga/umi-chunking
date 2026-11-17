@@ -12,9 +12,8 @@
     },
     "indexing": {
         "batch_size": 32,
-        "formats": [
-            "json", "markdown"
-        ],
+        "formats": ["json", "markdown"],
+        "specialties": ["urology"],
         "num_workers": 1,
         "cpu_threads": 1,
         "num_gpus": 0,
