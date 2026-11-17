@@ -4,7 +4,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
-DEBUG = os.environ.get("DJANGO_DEBUG") == "1"
+# DEBUG = os.environ.get("DJANGO_DEBUG") == "1"
+DEBUG = True
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 INSTALLED_APPS = [
