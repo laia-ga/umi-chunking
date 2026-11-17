@@ -341,9 +341,6 @@ def main(
     for doc in documents:
         doc["doc_id"] = assigned_ids[doc.pop("document_key")]
 
-    for doc in documents:
-        doc["doc_id"] = assigned_ids[doc.pop("document_key")]
-
     # Comprobar que no hay identificadores duplicados
     doc_ids = [doc["doc_id"] for doc in documents]
 
