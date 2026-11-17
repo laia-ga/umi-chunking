@@ -1,8 +1,8 @@
 {
-    "chunk_fold": "jina_neurosurgery",
+    "chunk_fold": "jina_4esp",
     "execution": {
         "workers": 1,
-        "gpu_id": null
+        "gpu_id": 0
     },
     "strategies": [
         {

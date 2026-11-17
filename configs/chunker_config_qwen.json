@@ -1,8 +1,8 @@
 {
-    "chunk_fold": "qwen_neurosurgery",
+    "chunk_fold": "qwen_4esp",
     "execution": {
         "workers": 1,
-        "gpu_id": null
+        "gpu_id": 0
     },
     "strategies": [
         {

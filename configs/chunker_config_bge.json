@@ -1,8 +1,8 @@
 {
-    "chunk_fold": "bge_neurosurgery",
+    "chunk_fold": "bge_4esp",
     "execution": {
         "workers": 1,
-        "gpu_id": null
+        "gpu_id": 0
     },
     "strategies": [
         {
