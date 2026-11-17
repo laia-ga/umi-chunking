@@ -155,42 +155,138 @@ def read_json_document(path: Path) -> dict[str, Any]:
     return payload
 
 
-def build_document_text(doc: dict[str, Any]) -> str:
-    """Construye el texto principal del documento para el prompt del modelo."""
-    text_parts = []
-    for key in ("title", "content", "body", "text", "summary", "abstract", "description"):
-        if key in doc:
-            text_parts.extend(recursive_text_extract(doc[key]))
-    if not text_parts:
-        text_parts.extend(recursive_text_extract(doc))
-    return "\n\n".join(part for part in text_parts if part)
+def build_document_text(document: dict[str, Any]) -> str:
+    """Extrae el contenido textual de documentos JSON y Markdown."""
+
+    def extract_text(value: Any) -> str:
+        if value is None:
+            return ""
+
+        if isinstance(value, str):
+            return value.strip()
+
+        if isinstance(value, list):
+            return "\n".join(
+                text
+                for item in value
+                if (text := extract_text(item))
+            )
+
+        if isinstance(value, dict):
+            return "\n".join(
+                f"{key}: {text}"
+                for key, item in value.items()
+                if (text := extract_text(item))
+            )
+
+        return ""
+
+    if isinstance(document, str):
+        return document.strip()
+
+    if not isinstance(document, dict):
+        return ""
+
+    # Campos clínicos principales, en orden de prioridad
+    priority_fields = [
+        "title",
+        "clinical_background",
+        "objectives",
+        "clinical_question",
+        "population",
+        "interventions",
+        "comparators",
+        "outcomes",
+        "main_findings",
+        "secondary_results",
+        "safety_results",
+        "clinical_implications",
+        "practice_implications",
+        "main_conclusion",
+        "narrative_summary",
+        "document_sections",
+        "content",
+    ]
+
+    parts = []
+
+    for field in priority_fields:
+        if field in document:
+            text = extract_text(document[field])
+            if text:
+                parts.append(f"{field}:\n{text}")
+
+    if parts:
+        return "\n\n".join(parts)
+
+    # Si no se encuentran los campos habituales,
+    # extraer recursivamente el contenido del JSON.
+    return "\n".join(recursive_text_extract(document))
 
 
 def build_prompt(document: dict[str, Any], specialty: str, doc_type: str, max_questions: int) -> str:
-    """Configura el prompt para que el modelo genere JSON con preguntas y respuestas."""
-    title = normalize_text(document.get("title") or document.get("metadata", {}).get("title") or "Documento médico")
+    """Configura el prompt para generar preguntas clínicas y respuestas de referencia."""
+    title = normalize_text(
+        document.get("title")
+        or document.get("metadata", {}).get("title")
+        or "Documento médico"
+    )
     text = build_document_text(document)
-    clean_text = text[:12000]
+    clean_text = text[:30000]
+
+    print("\n--- CONTENIDO EXTRAÍDO ---")
+    print("Título:", title)
+    print("Caracteres extraídos:", len(text))
+    print("Primeros 500 caracteres:")
+    print(repr(text[:500]))
+    print("--------------------------\n")
 
     return f"""Eres un experto en medicina y en evaluación de sistemas RAG (retrieval-augmented generation).
 
-Tu objetivo es generar preguntas que puedan responderse usando exclusivamente la evidencia presente en el documento médico suministrado.
+Tu objetivo es generar preguntas clínicas realistas, similares a las que formularía un profesional sanitario al consultar un chatbot especializado en medicina.
 
-Genera hasta {max_questions} preguntas clínicas basadas exclusivamente en la información del documento.
+Utiliza el documento suministrado exclusivamente como fuente de información para identificar preguntas relevantes y elaborar sus respuestas de referencia.
+
+Genera exactamente {max_questions} preguntas clínicas.
 
 INSTRUCCIONES PARA UN TEST DE RAG:
-- Las preguntas deben ser útiles para comprobar si un chatbot puede responder correctamente usando los chunks recuperados.
-- La respuesta debe poder derivarse de la información explícita del documento; no uses conocimiento externo ni preguntas demasiado generales.
-- Prioriza preguntas con respuesta concreta y verificable.
-- Evita preguntas demasiado abiertas, demasiado amplias o con múltiples interpretaciones.
-- Las preguntas deben ser útiles para un benchmark de recuperación semántica + respuesta.
-- Devuelve un JSON válido con una lista de objetos. Cada objeto debe tener exactamente estos campos:
+
+1. FORMULACIÓN DE LAS PREGUNTAS
+- Formula preguntas autónomas, naturales y clínicamente relevantes, como las que podría realizar un médico durante su práctica asistencial o al consultar información científica.
+- Las preguntas deben poder entenderse sin conocer el documento del que proceden.
+- Las preguntas deben abordar directamente cuestiones clínicas o científicas, no el contenido de un documento como tal.
+- No utilices expresiones como "según el documento", "qué se menciona", "qué describe el texto", "qué indica el artículo" o "qué recomienda esta guía".
+- Incluye el contexto clínico necesario para que cada pregunta sea suficientemente específica y no resulte ambigua.
+
+2. SELECCIÓN DEL CONTENIDO
+- Todas las preguntas deben poder responderse utilizando exclusivamente información explícita del documento suministrado.
+- Prioriza información clínica concreta y verificable: recomendaciones, indicaciones, contraindicaciones, criterios diagnósticos, manejo, seguimiento, riesgos, criterios de exclusión o evidencia relevante, resultados, procedimientos, riesgos, características de enfermedades y evidencia científica.
+- Evita preguntas demasiado generales, triviales, redundantes o con múltiples interpretaciones.
+- No generes varias preguntas que puedan responderse esencialmente con la misma información.
+- Si el documento contiene información muy específica, formula preguntas igualmente específicas, sin ampliar su alcance mediante conocimiento externo.
+- Procura que las preguntas evalúen aspectos diferentes del contenido.
+
+3. RESPUESTAS DE REFERENCIA
+- Cada respuesta debe responder directamente a su pregunta.
+- Utiliza únicamente la evidencia presente en el documento.
+- Incluye la información necesaria para que la respuesta sea precisa y verificable, sin añadir conocimiento externo.
+
+4. VALIDACIÓN FINAL
+Antes de devolver las preguntas, comprueba que:
+- Cada pregunta podría formularse a un chatbot clínico sin mencionar ni conocer el documento original.
+- Ninguna pregunta hace referencia al documento, artículo, estudio, texto o guía como objeto de consulta.
+- La respuesta está respaldada por información explícita del documento.
+- La pregunta es suficientemente específica para tener una respuesta de referencia clara.
+
+FORMATO DE SALIDA:
+- Devuelve exclusivamente un JSON válido con una lista de objetos.
+- Cada objeto debe tener exactamente estos campos:
   {{
-    "question": "pregunta clara y específica",
-    "gold_answer": "respuesta de referencia basada en el documento"
+    "question": "pregunta clínica autónoma, clara y específica",
+    "gold_answer": "respuesta de referencia basada exclusivamente en la evidencia suministrada"
   }}
-- No incluyas markdown ni bloques de código. Solo JSON puro.
-- Si el documento no permite tantas preguntas, genera menos, pero nunca más de {max_questions}.
+- No incluyas markdown ni bloques de código.
+- Genera exactamente {max_questions} preguntas por documento siempre que exista información suficiente.
 
 Especialidad: {specialty}
 Tipo de documento: {doc_type}
@@ -231,7 +327,7 @@ def call_model(prompt: str, model: str, api_base: str, api_key: str) -> list[dic
             {"role": "user", "content": prompt},
         ],
         #"temperature": 0.2,
-        "max_completion_tokens": 2500,
+        "max_completion_tokens": 6000,
     }
     payload = json.dumps(data).encode("utf-8")
     req = request.Request(
@@ -246,6 +342,18 @@ def call_model(prompt: str, model: str, api_base: str, api_key: str) -> list[dic
     try:
         with request.urlopen(req, timeout=180) as resp:
             body = json.loads(resp.read().decode("utf-8"))
+        choice = body["choices"][0]
+        usage = body.get("usage", {})
+
+        print("\n--- INFORMACIÓN DE GENERACIÓN ---")
+        print("Motivo de finalización:", choice.get("finish_reason"))
+        print("Tokens de entrada:", usage.get("prompt_tokens"))
+        print("Tokens de salida:", usage.get("completion_tokens"))
+        print(
+            "Tokens de razonamiento:",
+            usage.get("completion_tokens_details", {}).get("reasoning_tokens")
+        )
+        print("--------------------------------\n")
 
     except HTTPError as e:
         error_body = e.read().decode("utf-8", errors="replace")
@@ -353,7 +461,7 @@ def main() -> None:
         dynamic_ncols=True
     ) as progress:
 
-        for row in progress:
+        for row in progress:   
             relative_path = row["relative_path"]
 
             progress.set_postfix_str(
@@ -365,10 +473,16 @@ def main() -> None:
                 print(f"AVISO: no existe {file_path}, se omite.")
                 continue
         
-            doc = read_document(file_path)
-        
-            if not build_document_text(doc).strip():
-                print(f"AVISO: documento vacío {file_path}, se omite.")
+            try:
+                doc = read_document(file_path)
+            except (OSError, UnicodeError, json.JSONDecodeError, ValueError) as e:
+                tqdm.write(f"ERROR AL LEER: {relative_path} -> {e}")
+                continue
+
+            document_text = build_document_text(doc)
+
+            if not document_text.strip():
+                tqdm.write(f"DOCUMENTO OMITIDO (sin texto): {relative_path}")
                 continue
         
             raw_metadata = doc.get("metadata")
@@ -387,10 +501,14 @@ def main() -> None:
             doc_type = row["document_type"]
             processed += 1
             if args.dry_run:
-                generated_questions = build_mock_questions(doc, specialty, doc_type, min(args.max_questions_per_doc))
+                generated_questions = build_mock_questions(doc, specialty, doc_type, args.max_questions_per_doc)
             else:
                 prompt = build_prompt(doc, specialty, doc_type, args.max_questions_per_doc)
                 generated_questions = call_model(prompt, args.model, args.api_base, args.api_key)
+                tqdm.write(
+                    f"{Path(relative_path).name}: "
+                    f"{len(generated_questions)} preguntas generadas"
+)
             question_counter = len(all_records) + 1
         
             for q in generated_questions[:args.max_questions_per_doc]:
