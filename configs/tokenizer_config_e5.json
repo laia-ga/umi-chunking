@@ -1,0 +1,8 @@
+{
+    "tokenizer": {
+        "model_name": "intfloat/multilingual-e5-large",
+        "add_special_tokens": true,
+        "max_tokens": 512,
+        "target_tokens": 256
+    }
+}

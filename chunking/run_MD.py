@@ -460,6 +460,8 @@ def main(
     workers_override: int | None = None,
     gpu_id_override: int | None = None,
     use_cache: bool = True,
+    chunker_config_file: Path = CHUNKING_CONFIG_FILE,
+    tokenizer_config_file: Path = TOKENIZER_CONFIG_FILE,
 ) -> None:
     """
     Ejecuta todas las estrategias activadas sobre los documentos
@@ -594,7 +596,7 @@ def main(
     # 3. Cargar la configuración
     # --------------------------------------------------------
 
-    chunker_config = load_config(CHUNKING_CONFIG_FILE)
+    chunker_config = load_config(chunker_config_file)
     OUTPUT_DIR = resolve_chunk_fold_output_dir(
         BASE_OUTPUT_DIR,
         chunker_config.get("chunk_fold"),
@@ -603,7 +605,7 @@ def main(
     METRICS_DIR = OUTPUT_DIR / "markdown" / "metrics"
     SUMMARY_FILE = OUTPUT_DIR / "markdown" / "summary.csv"
 
-    tokenizer_config = load_config(TOKENIZER_CONFIG_FILE)
+    tokenizer_config = load_config(tokenizer_config_file)
     execution_config = chunker_config.get("execution", {})
     requested_workers = (
         workers_override
@@ -1202,6 +1204,19 @@ if __name__ == "__main__":
         description="Ejecuta las estrategias de chunking Markdown."
     )
     parser.add_argument(
+        "--chunker-config",
+        type=Path,
+        default=CHUNKING_CONFIG_FILE,
+        help="Ruta al archivo de configuración de los chunkers.",
+    )
+
+    parser.add_argument(
+        "--tokenizer-config",
+        type=Path,
+        default=TOKENIZER_CONFIG_FILE,
+        help="Ruta al archivo de configuración del tokenizador.",
+    )
+    parser.add_argument(
         "--workers",
         type=_positive_int,
         default=None,
@@ -1219,8 +1234,11 @@ if __name__ == "__main__":
         help="Fuerza el reprocesamiento de todos los documentos.",
     )
     arguments = parser.parse_args()
+
     main(
         workers_override=arguments.workers,
         gpu_id_override=arguments.gpu_id,
         use_cache=not arguments.no_cache,
+        chunker_config_file=arguments.chunker_config,
+        tokenizer_config_file=arguments.tokenizer_config,
     )
