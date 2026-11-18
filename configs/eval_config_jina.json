@@ -1,11 +1,11 @@
 {
-    "fold": "all_jina_v2",
+    "fold": "jina_uro",
     "retrieval_file": "retrieval_jina_embeddings_v2_base_es.json",
     "metrics_judge": "local",
     "local_judge": {
-        "model_name": "prometheus-eval/prometheus-7b-v2.0",
-        "version": "prometheus2-7b-evidence-v1",
-        "output_folder": "prometheus"
+        "model_name": "AtlaAI/Selene-1-Mini-Llama-3.1-8B",
+        "version": "v1",
+        "output_folder": "jina_uro_atlaai"
     },
     "gpt_judge": {
         "model_name": "gpt-5.6-luna",
