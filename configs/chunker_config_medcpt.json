@@ -1,5 +1,5 @@
 {
-    "chunk_fold": "medcpt_4esp",
+    "chunk_fold": "medcpt_uro",
     "execution": {
         "workers": 1,
         "gpu_id": 0

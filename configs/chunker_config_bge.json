@@ -1,5 +1,5 @@
 {
-    "chunk_fold": "bge_4esp",
+    "chunk_fold": "bge_uro",
     "execution": {
         "workers": 1,
         "gpu_id": 0

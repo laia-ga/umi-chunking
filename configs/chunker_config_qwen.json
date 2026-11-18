@@ -1,5 +1,5 @@
 {
-    "chunk_fold": "qwen_4esp",
+    "chunk_fold": "qwen_uro",
     "execution": {
         "workers": 1,
         "gpu_id": 0
