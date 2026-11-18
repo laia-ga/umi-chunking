@@ -159,7 +159,10 @@ class LLMClient:
 
             model = AutoModelForCausalLM.from_pretrained(
                 model_local_path,
+                # para todos los modelos:
                 dtype=model_dtype,
+                # para jina:
+                torch_dtype=model_dtype,
             )
             model.tie_weights()
 
