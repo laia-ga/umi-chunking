@@ -1,9 +1,9 @@
 {
-    "chunk_fold": "medcpt_256_512",
+    "chunk_fold": "medcpt_uro",
     "qdrant": {
         "host": "127.0.0.1",
         "port": 6333,
-        "collection_name": "all_medcpt"
+        "collection_name": "medcpt_uro"
     },
     "embeddings": {
         "model_name": "ncbi/MedCPT-Article-Encoder",
@@ -12,9 +12,8 @@
     },
     "indexing": {
         "batch_size": 32,
-        "formats": [
-            "json", "markdown"
-        ],
+        "formats": ["json", "markdown"],
+        "specialties": ["urology"],
         "num_workers": 1,
         "cpu_threads": 1,
         "num_gpus": 0,

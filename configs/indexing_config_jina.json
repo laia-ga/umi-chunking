@@ -1,9 +1,9 @@
 {
-    "chunk_fold": "jina_512_8192",
+    "chunk_fold": "jina_uro",
     "qdrant": {
         "host": "127.0.0.1",
         "port": 6333,
-        "collection_name": "all_jina_v2"
+        "collection_name": "jina_uro"
     },
     "embeddings": {
         "model_name": "jinaai/jina-embeddings-v2-base-es",
@@ -12,9 +12,8 @@
     },
     "indexing": {
         "batch_size": 32,
-        "formats": [
-            "json", "markdown"
-        ],
+        "formats": ["json", "markdown"],
+        "specialties": ["urology"],
         "num_workers": 1,
         "cpu_threads": 1,
         "num_gpus": 0,

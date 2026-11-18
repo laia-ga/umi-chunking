@@ -1,9 +1,9 @@
 {
-    "chunk_fold": "e5_256_512",
+    "chunk_fold": "e5_uro",
     "qdrant": {
         "host": "127.0.0.1",
         "port": 6333,
-        "collection_name": "all_multilingual_e5"
+        "collection_name": "e5_uro"
     },
     "embeddings": {
         "model_name": "intfloat/multilingual-e5-large",
@@ -12,9 +12,8 @@
     },
     "indexing": {
         "batch_size": 32,
-        "formats": [
-            "json", "markdown"
-        ],
+        "formats": ["json", "markdown"],
+        "specialties": ["urology"],
         "num_workers": 1,
         "cpu_threads": 1,
         "num_gpus": 0,
