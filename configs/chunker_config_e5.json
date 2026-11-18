@@ -128,7 +128,7 @@
                 "type": "SemanticEmbeddingChunker",
                 "params": {
                     "breakpoint_threshold_amount": 70.0,
-                    "embedding_model": "intfloat/multilingual-e5-large",
+                    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
                     "max_chunk_tokens": 256
                 }
             }
@@ -140,7 +140,7 @@
                 "type": "SemanticSimilarityThresholdChunker",
                 "params": {
                     "threshold": 0.5,
-                    "embedding_model": "intfloat/multilingual-e5-large",
+                    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
                     "max_chunk_tokens": 256
                 }
             }
@@ -152,7 +152,7 @@
                 "type": "TopicBasedChunker",
                 "params": {
                     "distance_threshold": 0.4,
-                    "embedding_model": "intfloat/multilingual-e5-large",
+                    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
                     "max_chunk_tokens": 256
                 }
             }
@@ -165,7 +165,7 @@
                 "params": {
                     "breakpoint_threshold_amount": 80.0,
                     "buffer_size": 1,
-                    "embedding_model": "intfloat/multilingual-e5-large",
+                    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
                     "max_chunk_tokens": 256
                 }
             }
@@ -199,7 +199,7 @@
                 "params": {
                     "sensitivity": 0.2,
                     "window_size": 5,
-                    "embedding_model": "intfloat/multilingual-e5-large",
+                    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
                     "max_chunk_tokens": 256
                 }
             }
