@@ -189,7 +189,33 @@ def build_document_text(document: dict[str, Any]) -> str:
 
     # Campos clínicos principales, en orden de prioridad
     priority_fields = [
-        "title",
+        # Identificación del medicamento
+        "medicine_name",
+        "active_ingredient",
+        "strength",
+        "pharmaceutical_form",
+        "route_of_administration",
+        "composition",
+
+        # Información clínica de fichas técnicas
+        "clinical_indications",
+        "clinical_posology",
+        "clinical_contraindications",
+        "clinical_warnings",
+        "clinical_interactions",
+        "clinical_pregnancy",
+        "clinical_adverse",
+        "clinical_overdose",
+
+        # Farmacología
+        "pharmacology",
+        "pharmaceutical",
+
+        # Información regulatoria
+        "marketing_authorisation_holder",
+        "marketing_authorisation_number",
+
+        # Artículos y guías clínicas
         "clinical_background",
         "objectives",
         "clinical_question",
@@ -403,6 +429,103 @@ def build_question_record(row, file_path, question, question_counter):
         "source_title": source_title,
     }
 
+def distribute_questions(
+    has_markdown: bool,
+    has_json: bool,
+    max_questions: int,
+) -> dict[str, int]:
+
+    if has_markdown and has_json:
+        md_questions = max_questions // 2
+
+        return {
+            "markdown": md_questions,
+            "json": max_questions - md_questions,
+        }
+
+    if has_json:
+        return {
+            "markdown": 0,
+            "json": max_questions,
+        }
+
+    if has_markdown:
+        return {
+            "markdown": max_questions,
+            "json": 0,
+        }
+
+    raise ValueError("El documento no tiene ningún formato disponible.")
+
+def group_document_pairs(
+    selected_docs: list[dict],
+    raw_dir: Path,
+) -> list[dict]:
+    """Agrupa las versiones Markdown y JSON de cada documento."""
+
+    pairs = {}
+    raw_dir = raw_dir.resolve()
+
+    for row in selected_docs:
+
+        file_path = resolve_document_path(
+            row["relative_path"]
+        ).resolve()
+
+        if not file_path.is_file():
+            print(f"AVISO: no existe {file_path}, se omite.")
+            continue
+
+        relative = file_path.relative_to(raw_dir)
+
+        fmt = relative.parts[0]
+        specialty = relative.parts[1]
+
+        if fmt not in ("markdown", "json"):
+            continue
+
+        relative_name = Path(*relative.parts[2:]).with_suffix("")
+        document_id = row.get("document_id") or relative_name.as_posix()
+
+        key = (specialty, document_id)
+
+        if key not in pairs:
+            pairs[key] = {
+                "document_id": document_id,
+                "specialty": specialty,
+                "document_type": row.get("document_type", ""),
+                "title": row.get("title", ""),
+                "relative_name": relative_name,
+                "paths": {},
+            }
+
+        pairs[key]["paths"][fmt] = file_path
+
+    # Buscar automáticamente la representación que falte
+    for pair in pairs.values():
+
+        for fmt, extensions in {
+            "markdown": [".md", ".markdown"],
+            "json": [".json"],
+        }.items():
+
+            if fmt in pair["paths"]:
+                continue
+
+            for extension in extensions:
+                candidate = (
+                    raw_dir
+                    / fmt
+                    / pair["specialty"]
+                    / f"{pair['relative_name']}{extension}"
+                )
+
+                if candidate.is_file():
+                    pair["paths"][fmt] = candidate
+                    break
+
+    return list(pairs.values())
+
 def main() -> None:
     """Punto de entrada principal del generador de preguntas."""
     parser = argparse.ArgumentParser(description="Genera preguntas desde documentos médicos seleccionados.")
@@ -436,89 +559,188 @@ def main() -> None:
     if args.selected_docs:
         selected_docs = load_selected_documents(args.selected_docs)
     else:
-        selected_docs = list(discover_documents(args.raw_dir.resolve(), doc_format, specialty))
-    if not selected_docs:
-        parser.error(
-            f"No se encontraron documentos en "
-            f"{args.selected_docs or args.raw_dir} con esos filtros."
+        selected_docs = list(
+            discover_documents(
+                args.raw_dir.resolve(),
+                doc_format,
+                specialty
+            )
         )
 
-    if args.output and (args.output.exists() or args.output.is_symlink()):
-        parser.error(f"La salida ya existe: {args.output}")
+    if not selected_docs:
+        parser.error("No se encontraron documentos.")
+
+    # Emparejar Markdown y JSON
+    document_pairs = group_document_pairs(
+        selected_docs,
+        args.raw_dir,
+    )
+
+    if not document_pairs:
+        parser.error("No se encontraron documentos válidos.")
+
+        if args.output and (args.output.exists() or args.output.is_symlink()):
+            parser.error(f"La salida ya existe: {args.output}")
 
     specialty_filter = specialty
     all_records: list[dict[str, Any]] = []
     processed = 0
 
-    print(f"\nDocumentos encontrados: {len(selected_docs)}")
+    print(f"\nDocumentos originales encontrados: {len(document_pairs)}")
     print(f"Modelo: {args.model}")
     print(f"Preguntas por documento: {args.max_questions_per_doc}\n")
 
     with tqdm(
-        selected_docs,
+        document_pairs,
         desc="Generando preguntas",
         unit="doc",
         dynamic_ncols=True
     ) as progress:
 
-        for row in progress:   
-            relative_path = row["relative_path"]
+        for pair in progress:
 
-            progress.set_postfix_str(
-                Path(relative_path).name[:35]
+            document_id = pair["document_id"]
+            specialty = pair["specialty"]
+            doc_type = pair["document_type"] or "unknown"
+
+            paths = pair["paths"]
+
+            progress.set_postfix_str(document_id[:35])
+
+            # Determinar cuántas preguntas generar por formato
+            distribution = distribute_questions(
+                has_markdown="markdown" in paths,
+                has_json="json" in paths,
+                max_questions=args.max_questions_per_doc,
             )
 
-            file_path = resolve_document_path(relative_path) if args.selected_docs else REPO_ROOT / relative_path
-            if not file_path.is_file():
-                print(f"AVISO: no existe {file_path}, se omite.")
-                continue
-        
-            try:
-                doc = read_document(file_path)
-            except (OSError, UnicodeError, json.JSONDecodeError, ValueError) as e:
-                tqdm.write(f"ERROR AL LEER: {relative_path} -> {e}")
-                continue
+            document_processed = False
 
-            document_text = build_document_text(doc)
+            for fmt, n_questions in distribution.items():
 
-            if not document_text.strip():
-                tqdm.write(f"DOCUMENTO OMITIDO (sin texto): {relative_path}")
-                continue
-        
-            raw_metadata = doc.get("metadata")
-            metadata = raw_metadata if isinstance(raw_metadata, dict) else {}
-            doc["metadata"] = metadata
-        
-            doc["title"] = normalize_text(doc.get("title") or metadata.get("title") or row.get("title") or file_path.stem)
-            row["title"] = doc["title"]
-            row.setdefault("format", "json" if file_path.suffix.lower() == ".json" else "markdown")
-            row["document_type"] = normalize_text(
-                row.get("document_type") or doc.get("document_type") or metadata.get("document_type")
-                or doc.get("type") or metadata.get("type") or "unknown"
-            )
-
-            specialty = row.get("specialty") or "unknown"
-            doc_type = row["document_type"]
-            processed += 1
-            if args.dry_run:
-                generated_questions = build_mock_questions(doc, specialty, doc_type, args.max_questions_per_doc)
-            else:
-                prompt = build_prompt(doc, specialty, doc_type, args.max_questions_per_doc)
-                generated_questions = call_model(prompt, args.model, args.api_base, args.api_key)
-                tqdm.write(
-                    f"{Path(relative_path).name}: "
-                    f"{len(generated_questions)} preguntas generadas"
-)
-            question_counter = len(all_records) + 1
-        
-            for q in generated_questions[:args.max_questions_per_doc]:
-                if not isinstance(q, dict):
+                if n_questions == 0:
                     continue
-                record = build_question_record(row, file_path, q, question_counter)
-                if not record["question"] or not record["gold_answer"]:
+
+                file_path = paths[fmt]
+
+                # Leer documento
+                try:
+                    doc = read_document(file_path)
+
+                except (
+                    OSError,
+                    UnicodeError,
+                    json.JSONDecodeError,
+                    ValueError
+                ) as e:
+                    tqdm.write(
+                        f"ERROR AL LEER: {file_path} -> {e}"
+                    )
                     continue
-                all_records.append(record)
-                question_counter += 1
+
+                document_text = build_document_text(doc)
+
+                if not document_text.strip():
+                    tqdm.write(
+                        f"DOCUMENTO OMITIDO (sin texto): {file_path}"
+                    )
+                    continue
+
+                # Preparar metadatos
+                raw_metadata = doc.get("metadata")
+                metadata = (
+                    raw_metadata
+                    if isinstance(raw_metadata, dict)
+                    else {}
+                )
+
+                doc["metadata"] = metadata
+
+                doc["title"] = normalize_text(
+                    doc.get("title")
+                    or doc.get("medicine_name")
+                    or metadata.get("title")
+                    or pair["title"]
+                    or file_path.stem
+                )
+
+                current_doc_type = normalize_text(
+                    pair["document_type"]
+                    or doc.get("document_type")
+                    or metadata.get("document_type")
+                    or doc.get("type")
+                    or metadata.get("type")
+                    or "unknown"
+                )
+
+                row = {
+                    "title": doc["title"],
+                    "specialty": specialty,
+                    "document_type": current_doc_type,
+                    "format": fmt,
+                }
+
+                document_processed = True
+
+                # Generar preguntas
+                if args.dry_run:
+
+                    generated_questions = build_mock_questions(
+                        doc,
+                        specialty,
+                        current_doc_type,
+                        n_questions
+                    )
+
+                else:
+
+                    prompt = build_prompt(
+                        doc,
+                        specialty,
+                        current_doc_type,
+                        n_questions
+                    )
+
+                    generated_questions = call_model(
+                        prompt,
+                        args.model,
+                        args.api_base,
+                        args.api_key
+                    )
+
+                    tqdm.write(
+                        f"{file_path.name} ({fmt}): "
+                        f"{len(generated_questions)} preguntas generadas"
+                    )
+
+                # Guardar las preguntas
+                question_counter = len(all_records) + 1
+
+                for q in generated_questions[:n_questions]:
+
+                    if not isinstance(q, dict):
+                        continue
+
+                    record = build_question_record(
+                        row,
+                        file_path,
+                        q,
+                        question_counter
+                    )
+
+                    if not record["question"] or not record["gold_answer"]:
+                        continue
+
+                    # Nuevos metadatos
+                    record["document_id"] = document_id
+                    record["origin_format"] = fmt
+                    record["available_formats"] = list(paths.keys())
+
+                    all_records.append(record)
+                    question_counter += 1
+
+            if document_processed:
+                processed += 1
 
             progress.set_postfix(
                 preguntas=len(all_records),
