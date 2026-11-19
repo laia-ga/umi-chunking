@@ -143,7 +143,7 @@ def normalize_json_chunk(
 
     document_id = str(document["doc_id"])
     strategy = str(document.get("strategy", "unknown"))
-    chunk_id = f"json_{document_id}_{chunk_index:06d}"
+    chunk_id = f"json_{strategy}_{document_id}_{chunk_index:06d}"
 
     metadata = dict(chunk.get("metadata") or {})
     for field in (
@@ -197,7 +197,7 @@ def normalize_markdown_chunk(
     document_id = str(document["doc_id"])
     strategy = str(document.get("strategy", "unknown"))
     original_chunk_id = chunk.get("chunk_id")
-    chunk_id = f"md_{document_id}_{chunk_index:06d}"
+    chunk_id = f"md_{strategy}_{document_id}_{chunk_index:06d}"
 
     metadata = dict(chunk.get("metadata") or {})
     if original_chunk_id is not None:
