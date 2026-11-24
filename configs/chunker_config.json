@@ -1,5 +1,5 @@
 {
-    "chunk_fold": "qwen_JSON",
+    "chunk_fold": "qwen_JSON_30",
     "execution": {
         "workers": 1,
         "gpu_id": null
