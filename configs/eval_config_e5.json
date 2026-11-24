@@ -1,11 +1,11 @@
 {
     "fold": "e5_uro",
-    "retrieval_file": "retrieval_multilingual_e5_large.json",
+    "retrieval_file": "retrieval_multilingual_e5_large_urology.json",
     "metrics_judge": "local",
     "local_judge": {
         "model_name": "AtlaAI/Selene-1-Mini-Llama-3.1-8B",
         "version": "v1",
-        "output_folder": "bge_uro_atlaai"
+        "output_folder": "e5_uro_atlaai"
     },
     "gpt_judge": {
         "model_name": "gpt-5.6-luna",

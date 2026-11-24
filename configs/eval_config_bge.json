@@ -1,6 +1,6 @@
 {
     "fold": "bge_uro",
-    "retrieval_file": "retrieval_bge_m3.json",
+    "retrieval_file": "retrieval_bge_m3_urology.json",
     "metrics_judge": "local",
     "local_judge": {
         "model_name": "AtlaAI/Selene-1-Mini-Llama-3.1-8B",

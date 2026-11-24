@@ -1,6 +1,6 @@
 {
     "fold": "jina_uro",
-    "retrieval_file": "retrieval_jina_embeddings_v2_base_es.json",
+    "retrieval_file": "retrieval_jina_embeddings_v2_base_es_urology.json",
     "metrics_judge": "local",
     "local_judge": {
         "model_name": "AtlaAI/Selene-1-Mini-Llama-3.1-8B",

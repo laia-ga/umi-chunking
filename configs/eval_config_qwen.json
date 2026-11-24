@@ -1,6 +1,6 @@
 {
     "fold": "qwen_uro",
-    "retrieval_file": "retrieval_qwen3_embedding_4b.json",
+    "retrieval_file": "retrieval_qwen3_embedding_4b_urology.json",
     "metrics_judge": "local",
     "local_judge": {
         "model_name": "AtlaAI/Selene-1-Mini-Llama-3.1-8B",
