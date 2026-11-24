@@ -7,13 +7,17 @@ import numpy as np
 import pandas as pd
 
 
+# Cortes de evaluación: un único lugar para modificarlos.
+CUTOFFS = (3, 5, 7, 10)
+
+
 # ============================================================
 # MÉTRICAS A EVALUAR
 # ============================================================
 
-# nDCG, HitRate y MRR se calculan en los cortes 5 y 10.
-# El ideal de nDCG ordena las relevancias juzgadas disponibles
-# para cada pregunta; HitRate y MRR consideran suficiente solo score 2.
+# nDCG, HitRate y MRR se calculan en los cortes 3, 5, 7 y 10.
+# El ideal de nDCG es fijo (todos los chunks con score 2);
+# HitRate y MRR consideran suficiente solo score 2.
 # Las preguntas con juicios fallidos en un corte se excluyen de las métricas
 # de ese corte; los fallos se cuentan por separado, no como score 0.
 # La distribución usa solo scores válidos de los diez primeros chunks.
@@ -102,8 +106,7 @@ def dcg(scores):
 def ndcg_at_k(scores, k):
 
     """
-    Calcula nDCG@k usando como ideal las relevancias juzgadas
-    disponibles para esta pregunta.
+    Calcula nDCG@k usando un ideal fijo de k chunks con score 2.
 
     Si no hay ningún chunk relevante, nDCG es 0.
     """
@@ -111,9 +114,9 @@ def ndcg_at_k(scores, k):
     scores = list(scores)
     ranked_scores = scores[:k]
     # Estado ideal de todo 2:
-    # ideal_scores = [2] * k
+    ideal_scores = [2] * k
     # Estado ideal del mejor chunk recuperado:
-    ideal_scores = sorted(scores, reverse=True)[:k]
+    # ideal_scores = sorted(scores, reverse=True)[:k]
     ideal_dcg = dcg(ideal_scores)
 
     if ideal_dcg == 0:
@@ -161,7 +164,7 @@ def reciprocal_rank_at_k(scores, k):
 def calculate_question_metrics(question_df):
 
     """
-    Calcula nDCG, HitRate y MRR en @5 y @10 para una pregunta.
+    Calcula nDCG, HitRate y MRR en @3, @5, @7 y @10 para una pregunta.
 
     Los chunks se ordenan según su rank original.
     """
@@ -177,7 +180,7 @@ def calculate_question_metrics(question_df):
     metrics = {
         "question_id": question_df.iloc[0]["question_id"],
     }
-    for cutoff in (5, 10):
+    for cutoff in CUTOFFS:
         metrics[f"nDCG@{cutoff}"] = ndcg_at_k(scores, cutoff)
         metrics[f"Hit@{cutoff}"] = hit_at_k(scores, cutoff)
         metrics[f"MRR@{cutoff}"] = reciprocal_rank_at_k(scores, cutoff)
@@ -355,7 +358,7 @@ def main():
         per_cutoff = {}
         failed_rows_by_cutoff = {}
         failed_questions_by_cutoff = {}
-        for cutoff in (5, 10):
+        for cutoff in CUTOFFS:
             question_metrics = []
             failed_rows = 0
             failed_questions = 0
@@ -444,22 +447,28 @@ def main():
             "n_questions": len(expected_questions),
             "n_missing": len(missing_q),
             "n_chunks": n_chunks,
-            "n_judge_errors@5": failed_rows_by_cutoff[5],
-            "n_judge_errors@10": failed_rows_by_cutoff[10],
-            "n_questions_excluded@5": failed_questions_by_cutoff[5],
-            "n_questions_excluded@10": failed_questions_by_cutoff[10],
-            "n_questions_evaluated@5": len(per_cutoff[5]),
-            "n_questions_evaluated@10": len(per_cutoff[10]),
-            "Mean_nDCG@5": per_cutoff[5]["nDCG@5"].mean(),
-            "HitRate@5": per_cutoff[5]["Hit@5"].mean(),
-            "MRR@5": per_cutoff[5]["MRR@5"].mean(),
-            "Mean_nDCG@10": per_cutoff[10]["nDCG@10"].mean(),
-            "HitRate@10": per_cutoff[10]["Hit@10"].mean(),
-            "MRR@10": per_cutoff[10]["MRR@10"].mean(),
+        }
+
+        # Control de errores del juez, por cada corte.
+        for cutoff in CUTOFFS:
+            summary[f"n_judge_errors@{cutoff}"] = failed_rows_by_cutoff[cutoff]
+        for cutoff in CUTOFFS:
+            summary[f"n_questions_excluded@{cutoff}"] = failed_questions_by_cutoff[cutoff]
+        for cutoff in CUTOFFS:
+            summary[f"n_questions_evaluated@{cutoff}"] = len(per_cutoff[cutoff])
+
+        # Métricas de relevancia, por cada corte.
+        for cutoff in CUTOFFS:
+            summary[f"Mean_nDCG@{cutoff}"] = per_cutoff[cutoff][f"nDCG@{cutoff}"].mean()
+            summary[f"HitRate@{cutoff}"] = per_cutoff[cutoff][f"Hit@{cutoff}"].mean()
+            summary[f"MRR@{cutoff}"] = per_cutoff[cutoff][f"MRR@{cutoff}"].mean()
+
+        # Mantener la distribución de puntuaciones en @10, como en el original.
+        summary.update({
             "%score2@10": pct_score2,
             "%score1@10": pct_score1,
             "%score0@10": pct_score0,
-        }
+        })
         summary_results.append(summary)
 
     # ========================================================
