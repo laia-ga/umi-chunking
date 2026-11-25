@@ -1,14 +1,15 @@
 {
-    "fold": "all_bge_m3_200",
-    "metrics_judge": "gpt",
+    "fold": "qwen_uro_JSON_30",
+    "retrieval_file": "retrieval_qwen3_embedding_4b_bm25_top30_urology.json",
+    "metrics_judge": "local",
     "local_judge": {
-        "model_name": "prometheus-eval/prometheus-7b-v2.0",
-        "version": "prometheus2-7b-evidence-v1",
-        "output_folder": "prometheus"
+        "model_name": "AtlaAI/Selene-1-Mini-Llama-3.1-8B",
+        "version": "v1",
+        "output_folder": "qwen_uro_JSON_dense"
     },
     "gpt_judge": {
         "model_name": "gpt-5.6-luna",
         "version": "gpt-qa-v1",
-        "output_folder": "all_bge_m3_200_gpt5_6"
+        "output_folder": "all_qwen3_4b_gpt5_6_luna"
     }
 }
