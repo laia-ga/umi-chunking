@@ -1,8 +1,0 @@
-{
-    "tokenizer": {
-        "model_name": "ncbi/MedCPT-Article-Encoder",
-        "add_special_tokens": true,
-        "max_tokens": 512,
-        "target_tokens": 256
-    }
-}

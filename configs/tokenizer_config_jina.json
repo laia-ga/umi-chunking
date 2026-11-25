@@ -1,8 +1,0 @@
-{
-    "tokenizer": {
-        "model_name": "jinaai/jina-embeddings-v2-base-es",
-        "add_special_tokens": true,
-        "max_tokens": 8192,
-        "target_tokens": 512
-    }
-}
