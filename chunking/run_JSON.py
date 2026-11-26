@@ -1,623 +1,610 @@
-# ============================================================
-# CHUNKING JSON
-# ============================================================
+"""Ejecuta JSON Chunking con IDs persistentes y metadatos clínicos.
 
+Compatible con dos esquemas de configuración:
+
+- umi-chunking: configs/chunker_config.json (chunk_fold) +
+  configs/tokenizer_config.json (tokenizer).
+- umi-rag: configs/chunker_config.json con paths, tokenizer y execution.
+
+Entrada recomendada:
+    data/raw/json/<especialidad>/<subespecialidad>/<documento>.json
+También admite <especialidad>/<documento>.json y documentos planos que
+incluyan la especialidad en el JSON.
+
+Metadatos: specialty (str), subspecialty (str | None),
+subspecialties (list[str]). Pueden definirse en el documento o inferirse
+mediante las carpetas. Una discrepancia se considera un error, no se ignora.
+
+Uso:
+    python -m chunking.run_JSON
+    python -m chunking.run_JSON --no-cache
+    python -m chunking.run_JSON --config configs/chunker_config.json
+    python -m chunking.run_JSON --workers 4
 """
-Ejecuta el chunking jerárquico para documentos JSON estructurados.
 
-Este script:
-1. Carga los documentos JSON desde data/raw/json.
-2. Detecta automáticamente la tipología documental (paper, guideline,
-   ficha técnica) según la estructura y los campos del JSON.
-3. Selecciona el document plan correspondiente.
-4. Aplica el HierarchicalJSONChunker, que:
-   - respeta la estructura del JSON,
-   - evita cortes peligrosos,
-   - genera chunks semánticos y trazables,
-   - añade metadatos como nivel, grupo, rutas JSON y límites de tokens.
-5. Guarda los chunks en
-   output/chunking/<chunk_fold>/json/chunk_results.
-6. Guarda las métricas en output/chunking/<chunk_fold>/json/metrics.
-7. Genera un summary.csv con una fila por documento.
-"""
+from __future__ import annotations
 
-
-# ============================================================
-# IMPORTS GENERALES
-# ============================================================
-
+import argparse
 import json
 import os
 import time
-import argparse
 import threading
 from concurrent.futures import ThreadPoolExecutor
-from dataclasses import asdict
+from dataclasses import asdict, is_dataclass
 from pathlib import Path
-from typing import Any, Dict
+from typing import Any, NamedTuple
 
 import pandas as pd
 import psutil
 
-# Utilidades
+from chunking.chunk_cache import cache_fingerprint, load_cached_artifacts
+from chunking.document_metadata import (
+    assign_document_ids,
+    document_key,
+    normalize_name,
+)
 from chunking.utilities import (
     calculate_stats,
     create_tokenizer,
     create_token_counter,
-    load_config,
-    resolve_chunk_fold_output_dir,
     save_json,
 )
-from chunking.document_metadata import (
-    assign_document_ids,
-    document_key,
-)
-from chunking.chunk_cache import cache_fingerprint, load_cached_artifacts
 
-# ============================================================
-# JSON-CHUNKER
-# ============================================================
-
-from chunking.chunkers.json.JSON_chunker import (
-    HierarchicalJSONChunker,
-)
-
-# Document plans
-from chunking.chunkers.json.document_plan_ficha_tecnica import DOCUMENT_PLAN_FC
-from chunking.chunkers.json.document_plan_guideline import DOCUMENT_PLAN_GL
-from chunking.chunkers.json.document_plan_paper import DOCUMENT_PLAN_PAPER
-
-# ============================================================
-# RUTAS
-# ============================================================
-
-# Carpeta donde se encuentra el archivo run_JSON.py:
-# main/chunking
-CHUNKING_DIR = Path(__file__).resolve().parent
-
-# Carpeta raíz del proyecto:
-# main
-BASE_DIR = CHUNKING_DIR.parent
-
-# Archivo JSON con la configuración del tokenizador utilizado para el conteo:
-# main/configs
-CHUNKING_CONFIG_FILE = BASE_DIR / "configs" / "chunker_config.json"
-TOKENIZER_CONFIG_FILE = BASE_DIR / "configs" / "tokenizer_config.json"
-
-# Carpeta que contiene los scripts de análisis:
-# main/scripts
-SCRIPTS_DIR = BASE_DIR / "scripts"
-
-# Carpeta que contiene los documentos JSON de entrada
-# main/data/raw/json
-INPUT_DIR = BASE_DIR / "data" / "raw" / "json"
-
-# Carpeta raíz de las salidas de chunking
-BASE_OUTPUT_DIR = BASE_DIR / "output" / "chunking"
-OUTPUT_DIR = BASE_OUTPUT_DIR
-
-# Carpeta donde se guardarán los chunks generados
-CHUNKS_DIR = OUTPUT_DIR / "json" / "chunk_results"
-
-# Carpeta donde se guardarán las métricas de cada método
-METRICS_DIR = OUTPUT_DIR / "json" / "metrics"
-
-# Archivo resumen con una fila por método
-SUMMARY_FILE = OUTPUT_DIR / "json" / "summary.csv"
-
-# ============================================================
-# SELECCIÓN DEL DOCUMENT PLAN
-# ============================================================
-
-DOCUMENT_PLANS = {
-    "paper": DOCUMENT_PLAN_PAPER,
-    "guideline": DOCUMENT_PLAN_GL,
-    "ficha_tecnica": DOCUMENT_PLAN_FC,
-}
+# Compatibilidad con el layout del paquete de los dos repositorios.
+try:
+    from chunking.chunkers.json.JSON_chunker import HierarchicalJSONChunker
+except ModuleNotFoundError as error:
+    if error.name != "chunking.chunkers.json.JSON_chunker":
+        raise
+    from chunking.chunkers.json import HierarchicalJSONChunker
 
 
-def select_document_plan(document_type: str):
-    try:
-        return DOCUMENT_PLANS[document_type]
-    except KeyError as error:
-        available_types = ", ".join(DOCUMENT_PLANS)
-        raise ValueError(
-            f"Tipo de documento no soportado: {document_type!r}. "
-            f"Tipos disponibles: {available_types}"
-        ) from error
-
-
-FICHA_TECNICA_SIGNATURE = {
-    "medicine_name",
-    "composition",
-    "pharmaceutical_form",
-    "indications",
-    "posology",
-}
-
-
-def detect_document_type(
-    data: Dict[str, Any],
-    source_path: str,
-) -> str:
-    keys = set(data)
-    if FICHA_TECNICA_SIGNATURE.issubset(keys):
-        return "ficha_tecnica"
-
-    declared_type = data.get("document_type")
-    if isinstance(declared_type, str) and declared_type.strip():
-        normalized_type = declared_type.strip().casefold().replace("-", "_")
-        if normalized_type in {"guideline", "clinical_guideline"}:
-            if data.get("article_type"):
-                raise ValueError(
-                    f"El documento {source_path!r} contiene señales "
-                    "contradictorias: document_type y article_type."
-                )
-            return "guideline"
-        raise ValueError(
-            f"Tipo de documento no soportado en {source_path!r}: "
-            f"{declared_type!r}."
-        )
-
-    article_type = data.get("article_type")
-    if isinstance(article_type, str) and article_type.strip():
-        return "paper"
-
-    raise ValueError(
-        f"No se pudo detectar el tipo de documento para {source_path!r}. "
-        "Se esperaba la firma de ficha técnica, document_type de guideline "
-        "o article_type de paper."
-    )
-
-
-# INVIDISIBLE LIST PATHS
-
-INDIVISIBLE_LIST_PATHS = {
-
-    "paper": ["authors", "keywords"],
-
-    "guideline": ["toc", "references", "abbreviations", "metadata.authors"],
-
-    "ficha_tecnica": ["excipients","national_codes","national_codes_queried"],
-}
-
-# CONTEXT FIELDS
-CONTEXT_FIELDS = {
-
+# Solo se usa cuando no existe get_document_config() en el paquete.
+FALLBACK_CONTEXT_FIELDS = {
     "paper": [],
-
     "guideline": [],
-
     "ficha_tecnica": ["medicine_name"],
 }
-
-# ============================================================
-# PARALELIZACIÓN DE DOCUMENTOS
-# ============================================================
-
+FALLBACK_INDIVISIBLE_LIST_PATHS = {
+    "paper": ["authors", "keywords"],
+    "guideline": ["toc", "references", "abbreviations", "metadata.authors"],
+    "ficha_tecnica": ["excipients", "national_codes", "national_codes_queried"],
+}
+FICHA_TECNICA_SIGNATURE = {
+    "medicine_name", "composition", "pharmaceutical_form",
+    "indications", "posology",
+}
+CHUNKER_SCHEMA_VERSION = 5  # Aumentar si cambia la lógica de chunking o payload.
 _WORKER_CONTEXT = threading.local()
 
 
-def _initialize_worker(
-    model_name: str,
-    add_special_tokens: bool,
-) -> None:
+class DocumentConfig(NamedTuple):
+    plan: Any
+    indivisible_list_paths: tuple[str, ...]
+    context_fields: tuple[str, ...]
+
+
+def get_active_document_config(document_type: str) -> DocumentConfig:
+    """Permite utilizar get_document_config() o los módulos document_plan_*.
+
+    IMPORTANTE: para reproducir exactamente el mismo chunking en dos repos,
+    los document plans y las listas de contexto deben ser idénticos.
+    """
+    try:
+        from chunking.chunkers.json import get_document_config
+    except ImportError:
+        get_document_config = None
+
+    if get_document_config is not None:
+        config = get_document_config(document_type)
+        return DocumentConfig(
+            config.plan,
+            tuple(config.indivisible_list_paths),
+            tuple(config.context_fields),
+        )
+
+    from chunking.chunkers.json.document_plan_ficha_tecnica import DOCUMENT_PLAN_FC
+    from chunking.chunkers.json.document_plan_guideline import DOCUMENT_PLAN_GL
+    from chunking.chunkers.json.document_plan_paper import DOCUMENT_PLAN_PAPER
+    plans = {
+        "paper": DOCUMENT_PLAN_PAPER,
+        "guideline": DOCUMENT_PLAN_GL,
+        "ficha_tecnica": DOCUMENT_PLAN_FC,
+    }
+    if document_type not in plans:
+        raise ValueError(f"Tipo de documento no soportado: {document_type!r}")
+    return DocumentConfig(
+        plans[document_type],
+        tuple(FALLBACK_INDIVISIBLE_LIST_PATHS[document_type]),
+        tuple(FALLBACK_CONTEXT_FIELDS[document_type]),
+    )
+
+
+def detect_document_type(data: dict[str, Any], source_path: str) -> str:
+    if FICHA_TECNICA_SIGNATURE.issubset(data):
+        return "ficha_tecnica"
+    declared = data.get("document_type")
+    if isinstance(declared, str) and declared.strip():
+        declared = declared.strip().casefold().replace("-", "_")
+        if declared in ("guideline", "clinical_guideline"):
+            if data.get("article_type"):
+                raise ValueError(
+                    f"Tipo documental contradictorio en {source_path}: "
+                    "guideline y article_type."
+                )
+            return "guideline"
+        raise ValueError(f"Tipo documental no soportado en {source_path}: {declared}")
+    if isinstance(data.get("article_type"), str) and data["article_type"].strip():
+        return "paper"
+    raise ValueError(f"No se pudo detectar el tipo documental de {source_path}")
+
+
+def _find_project_root(config_path: Path | None = None) -> Path:
+    if config_path is not None:
+        return config_path.resolve().parent.parent
+    for parent in Path(__file__).resolve().parents:
+        if (parent / "configs" / "chunker_config.json").is_file():
+            return parent
+    raise FileNotFoundError(
+        "No se encontró configs/chunker_config.json ascendiendo desde run_JSON.py. "
+        "Indica --config explícitamente."
+    )
+
+
+def _read_config(path: Path) -> dict[str, Any]:
+    if not path.is_file():
+        raise FileNotFoundError(path)
+    with path.open(encoding="utf-8") as file:
+        result = json.load(file)
+    if not isinstance(result, dict):
+        raise ValueError(f"La configuración debe ser un objeto JSON: {path}")
+    return result
+
+
+def _rooted_path(root: Path, raw: str | Path, field: str) -> Path:
+    if not isinstance(raw, (str, Path)) or not str(raw).strip():
+        raise ValueError(f"Ruta ausente o vacía: {field}")
+    path = Path(raw).expanduser()
+    return (path if path.is_absolute() else root / path).resolve()
+
+
+class Settings(NamedTuple):
+    root: Path
+    input_dir: Path
+    output_dir: Path
+    registry_path: Path
+    model_name: str
+    add_special_tokens: bool
+    target_tokens: int
+    max_tokens: int
+    workers: int
+    default_specialty: str | None
+
+
+def load_settings(
+    config_path: Path | None = None,
+    tokenizer_config_path: Path | None = None,
+    input_override: Path | None = None,
+    output_override: Path | None = None,
+    registry_override: Path | None = None,
+    workers_override: int | None = None,
+) -> Settings:
+    root = _find_project_root(config_path)
+    config_path = (config_path or root / "configs" / "chunker_config.json").resolve()
+    config = _read_config(config_path)
+    paths = config.get("paths")
+
+    if paths is not None and not isinstance(paths, dict):
+        raise ValueError("'paths' debe ser un objeto JSON")
+    if isinstance(paths, dict):
+        if "input_dir" not in paths or "output_dir" not in paths:
+            raise ValueError("'paths' necesita input_dir y output_dir")
+        # umi-rag: configuración unificada en chunker_config.json
+        input_dir = _rooted_path(root, paths["input_dir"], "paths.input_dir")
+        output_dir = _rooted_path(root, paths["output_dir"], "paths.output_dir")
+    else:
+        # umi-chunking: chunk_fold + tokenizer_config.json aparte
+        folder = config.get("chunk_fold")
+        if not isinstance(folder, str) or not folder.strip() or Path(folder).name != folder or folder in (".", ".."):
+            raise ValueError("'chunk_fold' debe ser un nombre simple de carpeta")
+        input_dir = root / "data" / "raw" / "json"
+        output_dir = root / "output" / "chunking" / folder
+
+    if input_override is not None:
+        input_dir = _rooted_path(root, input_override, "--input-dir")
+    if output_override is not None:
+        output_dir = _rooted_path(root, output_override, "--output-dir")
+
+    token_cfg = config.get("tokenizer")
+    if tokenizer_config_path is not None:
+        token_cfg = _read_config(tokenizer_config_path.resolve()).get("tokenizer")
+    elif not isinstance(token_cfg, dict):
+        token_cfg = _read_config(root / "configs" / "tokenizer_config.json").get("tokenizer")
+    if not isinstance(token_cfg, dict):
+        raise ValueError("Falta el objeto 'tokenizer' en la configuración")
+
+    model_name = token_cfg.get("model_name")
+    if not isinstance(model_name, str) or not model_name.strip():
+        raise ValueError("tokenizer.model_name debe ser un nombre válido")
+    add_special_tokens = token_cfg.get("add_special_tokens", True)
+    if not isinstance(add_special_tokens, bool):
+        raise ValueError("tokenizer.add_special_tokens debe ser booleano")
+    target_tokens = token_cfg.get("target_tokens")
+    max_tokens = token_cfg.get("max_tokens")
+    if any(not isinstance(x, int) or isinstance(x, bool) or x <= 0 for x in (target_tokens, max_tokens)):
+        raise ValueError("target_tokens y max_tokens deben ser enteros positivos")
+    if target_tokens > max_tokens:
+        raise ValueError("target_tokens no puede superar max_tokens")
+
+    execution = config.get("execution", {})
+    if not isinstance(execution, dict):
+        raise ValueError("'execution' debe ser un objeto")
+    workers = workers_override if workers_override is not None else execution.get("workers", 1)
+    if not isinstance(workers, int) or isinstance(workers, bool) or workers < 1:
+        raise ValueError("workers debe ser un entero positivo")
+
+    registry_raw = registry_override or config.get("document_ids_path") or "data/document_ids.json"
+    registry_path = _rooted_path(root, registry_raw, "document_ids_path")
+    taxonomy_cfg = config.get("taxonomy", {})
+    if not isinstance(taxonomy_cfg, dict):
+        raise ValueError("'taxonomy' debe ser un objeto JSON")
+    default_specialty = _normalized_string(
+        taxonomy_cfg.get("default_specialty"),
+        "taxonomy.default_specialty", str(config_path),
+    )
+    return Settings(root, input_dir, output_dir, registry_path,
+                    model_name.strip(), add_special_tokens,
+                    target_tokens, max_tokens, workers, default_specialty)
+
+
+def _normalized_string(value: Any, field: str, source: str) -> str | None:
+    if value is None or value == "":
+        return None
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{source}: '{field}' debe ser una cadena no vacía")
+    result = normalize_name(value)
+    if not result:
+        raise ValueError(f"{source}: '{field}' vacío tras normalizar")
+    return result
+
+
+def _subspecialties(value: Any, source: str) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, str):
+        value = [value]
+    if not isinstance(value, list):
+        raise ValueError(f"{source}: 'subspecialties' debe ser una cadena o lista")
+    output: list[str] = []
+    for item in value:
+        slug = _normalized_string(item, "subspecialties", source)
+        if slug and slug not in output:
+            output.append(slug)
+    return output
+
+
+def _extract_taxonomy(
+    data: dict[str, Any], relative_path: Path,
+    default_specialty: str | None = None,
+) -> tuple[str, list[str]]:
+    """La carpeta manda cuando hay jerarquía; el JSON puede añadir otras etiquetas.
+
+    Si las fuentes discrepan sobre la especialidad, se falla explícitamente.
+    """
+    path_parts = relative_path.parts
+    dir_specialty = normalize_name(path_parts[0]) if len(path_parts) >= 2 else None
+    dir_subspecialty = normalize_name(path_parts[1]) if len(path_parts) >= 3 else None
+    declared_specialty = _normalized_string(data.get("specialty"), "specialty", str(relative_path))
+    if dir_specialty and declared_specialty and dir_specialty != declared_specialty:
+        raise ValueError(
+            f"{relative_path}: especialidad de carpeta ({dir_specialty}) "
+            f"distinta de la del JSON ({declared_specialty})"
+        )
+    specialty = declared_specialty or dir_specialty or default_specialty
+    if not specialty:
+        raise ValueError(
+            f"{relative_path}: no se conoce la especialidad. Usa una carpeta "
+            "<specialty>/ o añade 'specialty' al JSON."
+        )
+
+    raw_plural = data.get("subspecialties")
+    raw_singular = data.get("subspecialty")
+    tags = _subspecialties(raw_plural, str(relative_path))
+    singular = _normalized_string(raw_singular, "subspecialty", str(relative_path))
+    if singular and singular not in tags:
+        tags.append(singular)
+    if dir_subspecialty:
+        if tags and dir_subspecialty not in tags:
+            raise ValueError(
+                f"{relative_path}: subespecialidad de carpeta "
+                f"({dir_subspecialty}) no coincide con las etiquetas del JSON ({tags})"
+            )
+        if dir_subspecialty not in tags:
+            tags.insert(0, dir_subspecialty)
+    return specialty, tags
+
+
+def _source_path(path: Path, root: Path, input_dir: Path) -> str:
+    try:
+        return path.relative_to(root).as_posix()
+    except ValueError:
+        return path.relative_to(input_dir).as_posix()
+
+
+def load_documents(settings: Settings) -> list[dict[str, Any]]:
+    if not settings.input_dir.is_dir():
+        raise FileNotFoundError(f"Directorio de documentos inexistente: {settings.input_dir}")
+    files = sorted(p for p in settings.input_dir.rglob("*")
+                   if p.is_file() and p.suffix.lower() == ".json")
+    if not files:
+        raise FileNotFoundError(f"No hay documentos JSON en: {settings.input_dir}")
+
+    documents = []
+    for path in files:
+        with path.open(encoding="utf-8") as stream:
+            data = json.load(stream)
+        if not isinstance(data, dict):
+            raise TypeError(f"Un documento JSON debe ser un objeto: {path}")
+        relative_path = path.relative_to(settings.input_dir)
+        source_path = _source_path(path, settings.root, settings.input_dir)
+        doc_type = detect_document_type(data, source_path)
+        specialty, subspecialties = _extract_taxonomy(
+            data, relative_path, settings.default_specialty
+        )
+
+        # Estas etiquetas son metadatos, no contenido clínico; si están en la
+        # raíz del JSON, no deben generar un chunk 'unmapped_content'.
+        chunk_data = {key: value for key, value in data.items()
+                      if key not in {"specialty", "subspecialty", "subspecialties"}}
+        registry_filename = (Path(*relative_path.parts[1:]).as_posix()
+                             if len(relative_path.parts) >= 2 else relative_path.name)
+        documents.append({
+            "document_key": document_key(specialty, registry_filename),
+            "registry_filename": registry_filename,
+            "document_type": doc_type,
+            "specialty": specialty,
+            "subspecialties": subspecialties,
+            "subspecialty": subspecialties[0] if len(subspecialties) == 1 else None,
+            "input_file": path.name,
+            "source_path": source_path,
+            "data": chunk_data,
+            "full_text": json.dumps(data, ensure_ascii=False),
+        })
+
+    registry_input = [(doc["specialty"], doc["registry_filename"]) for doc in documents]
+    keys = [doc["document_key"] for doc in documents]
+    if len(keys) != len(set(keys)):
+        raise ValueError("Hay documentos con la misma clave de registro (JSON). "
+                         "Revisa nombres y rutas de los documentos.")
+    assigned = assign_document_ids(registry_input, settings.registry_path)
+    for doc in documents:
+        doc["doc_id"] = assigned[doc.pop("document_key")]
+
+    ids = [doc["doc_id"] for doc in documents]
+    if len(ids) != len(set(ids)):
+        raise ValueError("El registro contiene doc_id repetidos entre documentos")
+    return documents
+
+
+def _initialize_worker(model_name: str, add_special_tokens: bool) -> None:
     tokenizer = create_tokenizer(model_name)
     _WORKER_CONTEXT.token_counter = create_token_counter(
-        tokenizer,
-        add_special_tokens=add_special_tokens,
+        tokenizer, add_special_tokens=add_special_tokens
     )
 
 
 def _process_document(
-    doc: Dict[str, Any],
-    target_tokens: int,
-    max_tokens: int,
+    doc: dict[str, Any], target_tokens: int, max_tokens: int,
     measure_ram: bool,
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     token_counter = _WORKER_CONTEXT.token_counter
+    document_config = get_active_document_config(doc["document_type"])
     original_token_count = token_counter(doc["full_text"])
     chunker = HierarchicalJSONChunker(
         target_tokens=target_tokens,
         max_tokens=max_tokens,
         token_counter=token_counter,
-        document_plan=select_document_plan(doc["document_type"]),
+        document_plan=document_config.plan,
         root_field=None,
-        indivisible_list_paths=INDIVISIBLE_LIST_PATHS[doc["document_type"]],
-        context_fields=CONTEXT_FIELDS[doc["document_type"]],
+        indivisible_list_paths=set(document_config.indivisible_list_paths),
+        context_fields=list(document_config.context_fields),
     )
-
     process = psutil.Process(os.getpid()) if measure_ram else None
-    ram_before = (
-        process.memory_info().rss / (1024 ** 2)
-        if process is not None
-        else None
-    )
+    before = process.memory_info().rss / (1024 ** 2) if process else None
     start = time.perf_counter()
     chunks = chunker.chunk_document(doc["data"])
-    execution_time = time.perf_counter() - start
-    ram_after = (
-        process.memory_info().rss / (1024 ** 2)
-        if process is not None
-        else None
-    )
+    elapsed = time.perf_counter() - start
+    after = process.memory_info().rss / (1024 ** 2) if process else None
 
     stats = calculate_stats(
         chunks=chunks,
         original_token_count=original_token_count,
-        execution_time_seconds=execution_time,
-        ram_before_mb=ram_before if ram_before is not None else 0.0,
-        ram_after_mb=ram_after if ram_after is not None else 0.0,
+        execution_time_seconds=elapsed,
+        ram_before_mb=before if before is not None else 0.0,
+        ram_after_mb=after if after is not None else 0.0,
         token_counter=token_counter,
     )
-    if ram_before is None or ram_after is None:
-        stats["ram_before_mb"] = None
-        stats["ram_after_mb"] = None
-        stats["ram_increase_mb"] = None
-
-    return {
-        "chunks": chunks,
-        "original_token_count": original_token_count,
-        "stats": stats,
-    }
+    if before is None or after is None:
+        stats.update(ram_before_mb=None, ram_after_mb=None, ram_increase_mb=None)
+    return {"chunks": chunks, "original_token_count": original_token_count, "stats": stats}
 
 
-def _positive_int(value: str) -> int:
-    try:
-        parsed = int(value)
-    except ValueError as error:
-        raise argparse.ArgumentTypeError(
-            "El número de workers debe ser un entero positivo."
-        ) from error
-    if parsed < 1:
-        raise argparse.ArgumentTypeError(
-            "El número de workers debe ser al menos 1."
-        )
-    return parsed
-
-# ============================================================
-# FUNCIÓN PRINCIPAL
-# ============================================================
-
-def main(
-    workers_override: int | None = None,
-    use_cache: bool = True,
-    chunker_config_file: Path = CHUNKING_CONFIG_FILE,
-    tokenizer_config_file: Path = TOKENIZER_CONFIG_FILE,
-) -> None:
-    global OUTPUT_DIR, CHUNKS_DIR, METRICS_DIR, SUMMARY_FILE
-
-    print("=" * 70)
-    print("INICIO DE LA EJECUCIÓN (JSON)")
-    print("=" * 70)
-
-    # 1. Cargar JSON
-    json_files = sorted(
-        p for p in INPUT_DIR.rglob("*")
-        if p.is_file() and p.suffix.lower() == ".json"
-    )
-
-    documents = []
-    for path in json_files:
-        with path.open("r", encoding="utf-8") as f:
-            data = json.load(f)
-
-        rel = path.relative_to(INPUT_DIR)
-        if len(rel.parts) < 2:
-            raise ValueError(
-                f"El documento no está dentro de una carpeta de especialidad: {rel}"
-            )
-
-        specialty = rel.parts[0]
-        source_path = path.relative_to(BASE_DIR).as_posix()
-
-        if not isinstance(data, dict):
-            raise TypeError(
-                f"El documento JSON {source_path!r} debe ser un objeto."
-            )
-        doc_type = detect_document_type(data, source_path)
-
-        full_text = json.dumps(data, ensure_ascii=False)
-
-        documents.append({
-            "document_key": document_key(specialty, path.name),
-            "document_type": doc_type,
-            "specialty": specialty,
-            "source_path": source_path,
-            "data": data,
-            "full_text": full_text,
-        })
-
-    registry_path = BASE_DIR / "data" / "document_ids.json"
-
-    assigned_ids = assign_document_ids(
-        [
-            (doc["specialty"], Path(doc["source_path"]).name)
-            for doc in documents
-        ],
-        registry_path,
-    )
-
-    for doc in documents:
-        doc["doc_id"] = assigned_ids[doc.pop("document_key")]
-
-    # Comprobar que no hay identificadores duplicados
-    doc_ids = [doc["doc_id"] for doc in documents]
-
-    if len(doc_ids) != len(set(doc_ids)):
-        raise ValueError(
-            "Hay documentos con doc_id duplicado; "
-            "sus archivos de salida se sobrescribirían."
-        )
-
-    # 2. Config + token counter
-    chunker_config = load_config(chunker_config_file)
-    OUTPUT_DIR = resolve_chunk_fold_output_dir(
-        BASE_OUTPUT_DIR,
-        chunker_config.get("chunk_fold"),
-    )
-    CHUNKS_DIR = OUTPUT_DIR / "json" / "chunk_results"
-    METRICS_DIR = OUTPUT_DIR / "json" / "metrics"
-    SUMMARY_FILE = OUTPUT_DIR / "json" / "summary.csv"
-
-    tokenizer_cfg = load_config(tokenizer_config_file)
-    model_name = tokenizer_cfg["tokenizer"]["model_name"]
-    add_special_tokens = tokenizer_cfg["tokenizer"].get(
-        "add_special_tokens",
-        True,
-    )
-    target_tokens = tokenizer_cfg["tokenizer"]["target_tokens"]
-    max_tokens = tokenizer_cfg["tokenizer"]["max_tokens"]
-
-    # Estrategia única para JSON
-    strategy_name = "JSONChunking"
-    abbreviation = "JC"
-
-    summary_results = []
-    active_doc_ids = {doc["doc_id"] for doc in documents}
-    previous_summary = (
-        pd.read_csv(SUMMARY_FILE, dtype={"doc_id": str})
-        if SUMMARY_FILE.is_file()
-        else pd.DataFrame()
-    )
-    if "doc_id" in previous_summary.columns:
-        retained_summary = previous_summary[
-            ~previous_summary["doc_id"].astype(str).isin(active_doc_ids)
-        ]
-    else:
-        retained_summary = previous_summary
-
-    pending_documents = []
-    cache_fingerprints = {}
-    for doc in documents:
-        fingerprint = cache_fingerprint({
-            "version": 4,
-            "chunker": "HierarchicalJSONChunker",
-            "doc_id": doc["doc_id"],
-            "document_type": doc["document_type"],
+def _serialize_chunks(chunks: list[Any], doc: dict[str, Any]) -> list[dict[str, Any]]:
+    output = []
+    for chunk in chunks:
+        item = asdict(chunk)
+        metadata = dict(item.get("metadata") or {})
+        metadata.update({
             "specialty": doc["specialty"],
-            "source_path": doc["source_path"],
-            "content": doc["full_text"],
-            "tokenizer_model": model_name,
-            "add_special_tokens": add_special_tokens,
-            "target_tokens": target_tokens,
-            "max_tokens": max_tokens,
+            "subspecialty": doc["subspecialty"],
+            "subspecialties": list(doc["subspecialties"]),
         })
-        cache_fingerprints[doc["doc_id"]] = fingerprint
-        chunks_path = CHUNKS_DIR / f"{abbreviation}_{doc['doc_id']}.json"
-        metrics_path = (
-            METRICS_DIR / f"{abbreviation}_{doc['doc_id']}_metrics.json"
-        )
-        cached = (
-            load_cached_artifacts(chunks_path, metrics_path, fingerprint)
-            if use_cache
-            else None
-        )
-        if cached is None:
-            pending_documents.append(doc)
-            continue
-
-        _, metrics = cached
-        summary_results.append({
-            key: value
-            for key, value in metrics.items()
-            if key != "_cache_fingerprint"
-        })
-        print(f"\nCaché reutilizada: {doc['source_path']}")
-
-    requested_workers = (
-        workers_override
-        if workers_override is not None
-        else 1
-    )
-    if requested_workers < 1:
-        raise ValueError("El número de workers debe ser al menos 1.")
-    available_cpus = getattr(os, "process_cpu_count", os.cpu_count)() or 1
-    workers = min(
-        requested_workers,
-        available_cpus,
-        max(1, len(pending_documents)),
-    )
-    print(f"Workers para chunking JSON: {workers}")
-
-    # 4. Ejecutar chunking JSON
-    if pending_documents and workers == 1:
-        _initialize_worker(model_name, add_special_tokens)
-        document_results = (
-            _process_document(doc, target_tokens, max_tokens, True)
-            for doc in pending_documents
-        )
-        results = zip(pending_documents, document_results)
-        for doc, processed in results:
-            _save_document_result(
-                doc,
-                processed,
-                model_name,
-                target_tokens,
-                max_tokens,
-                strategy_name,
-                abbreviation,
-                cache_fingerprints[doc["doc_id"]],
-                summary_results,
-            )
-    elif pending_documents:
-        with ThreadPoolExecutor(
-            max_workers=workers,
-            initializer=_initialize_worker,
-            initargs=(model_name, add_special_tokens),
-            thread_name_prefix="json-chunker",
-        ) as executor:
-            for doc, processed in zip(
-                pending_documents,
-                executor.map(
-                    lambda document: _process_document(
-                        document,
-                        target_tokens,
-                        max_tokens,
-                        False,
-                    ),
-                    pending_documents,
-                ),
-            ):
-                _save_document_result(
-                    doc,
-                    processed,
-                    model_name,
-                    target_tokens,
-                    max_tokens,
-                    strategy_name,
-                    abbreviation,
-                    cache_fingerprints[doc["doc_id"]],
-                    summary_results,
-                )
-
-    # 5. Summary CSV
-    summary_frames = [
-        frame
-        for frame in (
-            retained_summary,
-            pd.DataFrame(summary_results),
-        )
-        if not frame.empty
-    ]
-    if summary_frames:
-        df = pd.concat(summary_frames, ignore_index=True)
-        SUMMARY_FILE.parent.mkdir(parents=True, exist_ok=True)
-        df.to_csv(SUMMARY_FILE, index=False, encoding="utf-8-sig")
-    elif SUMMARY_FILE.is_file():
-        retained_summary.to_csv(
-            SUMMARY_FILE,
-            index=False,
-            encoding="utf-8-sig",
-        )
-
-    print("=" * 70)
-    print("FIN DE LA EJECUCIÓN (JSON)")
-    print("=" * 70)
+        item["metadata"] = metadata
+        output.append(item)
+    return output
 
 
 def _save_document_result(
-    doc: Dict[str, Any],
-    processed: Dict[str, Any],
-    model_name: str,
-    target_tokens: int,
-    max_tokens: int,
-    strategy_name: str,
-    abbreviation: str,
-    fingerprint: str,
-    summary_results: list[Dict[str, Any]],
+    doc: dict[str, Any], processed: dict[str, Any], settings: Settings,
+    fingerprint: str, summary_results: list[dict[str, Any]],
 ) -> None:
-    print(f"\nProcesando: {doc['source_path']}")
+    print(f"Procesado: {doc['source_path']}")
     chunks = processed["chunks"]
-    serialized = []
-
-    for chunk in chunks:
-        chunk_data = asdict(chunk)
-
-        if not chunk_data.get("metadata"):
-            chunk_data.pop("metadata", None)
-
-        serialized.append(chunk_data)
-    params = {
-        "target_tokens": target_tokens,
-        "max_tokens": max_tokens,
-    }
-
+    params = {"target_tokens": settings.target_tokens, "max_tokens": settings.max_tokens}
     result = {
+        "strategy": "JSONChunking",
+        "type": "HierarchicalJSONChunker",
+        "abbreviation": "JC",
+        "format": "json",
         "doc_id": doc["doc_id"],
         "document_type": doc["document_type"],
         "specialty": doc["specialty"],
+        "subspecialty": doc["subspecialty"],
+        "subspecialties": doc["subspecialties"],
+        "input_file": doc["input_file"],
         "source_path": doc["source_path"],
-        "format": "json",
-        "strategy": strategy_name,
-        "tokenizer_model": model_name,
+        "tokenizer_model": settings.model_name,
         "params": params,
         "original_token_count": processed["original_token_count"],
         "number_of_chunks": len(chunks),
-        "chunks": serialized,
+        "chunks": _serialize_chunks(chunks, doc),
         "_cache_fingerprint": fingerprint,
     }
-
-    save_json(result, CHUNKS_DIR / f"{abbreviation}_{doc['doc_id']}.json")
+    chunks_dir = settings.output_dir / "json" / "chunk_results"
+    metrics_dir = settings.output_dir / "json" / "metrics"
+    save_json(result, chunks_dir / f"JC_{doc['doc_id']}.json")
 
     metrics = {
-        "doc_id": doc["doc_id"],
-        "document_type": doc["document_type"],
+        "strategy": "JSONChunking", "type": "HierarchicalJSONChunker",
+        "abbreviation": "JC", "format": "json", "status": "completed",
+        "doc_id": doc["doc_id"], "document_type": doc["document_type"],
         "specialty": doc["specialty"],
-        "source_path": doc["source_path"],
-        "format": "json",
-        "strategy": strategy_name,
-        "tokenizer_model": model_name,
-        "params": params,
-        "status": "completed",
-        **processed["stats"],
+        "subspecialty": doc["subspecialty"],
+        "subspecialties": doc["subspecialties"],
+        "input_file": doc["input_file"], "source_path": doc["source_path"],
+        "tokenizer_model": settings.model_name,
+        "params": params, **processed["stats"],
         "_cache_fingerprint": fingerprint,
     }
-
-    save_json(
-        metrics,
-        METRICS_DIR / f"{abbreviation}_{doc['doc_id']}_metrics.json",
-    )
+    save_json(metrics, metrics_dir / f"JC_{doc['doc_id']}_metrics.json")
     summary_results.append(metrics)
 
 
-# ============================================================
-# PUNTO DE ENTRADA
-# ============================================================
+def _fingerprint(doc: dict[str, Any], settings: Settings) -> str:
+    config = get_active_document_config(doc["document_type"])
+    if is_dataclass(config.plan):
+        plan_data = asdict(config.plan)
+    else:
+        # Una configuración no serializable explícitamente no se debe cachear
+        # bajo un fingerprint que ignore el plan semántico.
+        raise TypeError("El document plan debe ser un dataclass serializable")
+    return cache_fingerprint({
+        "version": CHUNKER_SCHEMA_VERSION,
+        "chunker": "HierarchicalJSONChunker",
+        "doc_id": doc["doc_id"],
+        "document_type": doc["document_type"],
+        "specialty": doc["specialty"],
+        "subspecialties": doc["subspecialties"],
+        "source_path": doc["source_path"],
+        "content": doc["full_text"],
+        "document_plan": plan_data,
+        "context_fields": config.context_fields,
+        "indivisible_list_paths": config.indivisible_list_paths,
+        "tokenizer_model": settings.model_name,
+        "add_special_tokens": settings.add_special_tokens,
+        "target_tokens": settings.target_tokens,
+        "max_tokens": settings.max_tokens,
+    })
+
+
+def main(
+    config_path: Path | None = None,
+    tokenizer_config_path: Path | None = None,
+    input_dir: Path | None = None,
+    output_dir: Path | None = None,
+    registry_path: Path | None = None,
+    workers_override: int | None = None,
+    use_cache: bool = True,
+) -> None:
+    settings = load_settings(config_path, tokenizer_config_path,
+                             input_dir, output_dir, registry_path, workers_override)
+    documents = load_documents(settings)
+    print(f"JSON Chunking | {len(documents)} documentos | entrada: {settings.input_dir}")
+    print(f"Salida: {settings.output_dir} | registro IDs: {settings.registry_path}")
+
+    summary_file = settings.output_dir / "json" / "summary.csv"
+    existing = (pd.read_csv(summary_file, dtype={"doc_id": str})
+                if summary_file.is_file() else pd.DataFrame())
+    active_ids = {doc["doc_id"] for doc in documents}
+    if "doc_id" in existing:
+        existing = existing[~existing["doc_id"].astype(str).isin(active_ids)]
+
+    pending = []
+    summary_rows: list[dict[str, Any]] = []
+    fingerprints = {}
+    for doc in documents:
+        fingerprint = _fingerprint(doc, settings)
+        fingerprints[doc["doc_id"]] = fingerprint
+        chunks_path = settings.output_dir / "json" / "chunk_results" / f"JC_{doc['doc_id']}.json"
+        metrics_path = settings.output_dir / "json" / "metrics" / f"JC_{doc['doc_id']}_metrics.json"
+        cached = (load_cached_artifacts(chunks_path, metrics_path, fingerprint)
+                  if use_cache else None)
+        if cached is not None:
+            chunks_result, metrics_result = cached
+            if (
+                chunks_result.get("specialty") == doc["specialty"]
+                and chunks_result.get("subspecialties") == doc["subspecialties"]
+                and metrics_result.get("specialty") == doc["specialty"]
+            ):
+                summary_rows.append(metrics_result)
+                print(f"Caché reutilizada: {doc['source_path']}")
+                continue
+        pending.append(doc)
+
+    if pending:
+        available = getattr(os, "process_cpu_count", os.cpu_count)() or 1
+        workers = min(settings.workers, available, len(pending))
+        print(f"Workers: {workers}; documentos pendientes: {len(pending)}")
+        if workers == 1:
+            _initialize_worker(settings.model_name, settings.add_special_tokens)
+            for doc in pending:
+                processed = _process_document(doc, settings.target_tokens, settings.max_tokens, True)
+                _save_document_result(doc, processed, settings, fingerprints[doc["doc_id"]], summary_rows)
+        else:
+            with ThreadPoolExecutor(
+                max_workers=workers,
+                initializer=_initialize_worker,
+                initargs=(settings.model_name, settings.add_special_tokens),
+                thread_name_prefix="json-chunker",
+            ) as pool:
+                for doc, processed in zip(pending, pool.map(
+                    lambda d: _process_document(d, settings.target_tokens, settings.max_tokens, False), pending
+                )):
+                    _save_document_result(doc, processed, settings, fingerprints[doc["doc_id"]], summary_rows)
+
+    frames = [frame for frame in (existing, pd.DataFrame(summary_rows)) if not frame.empty]
+    if frames:
+        summary_file.parent.mkdir(parents=True, exist_ok=True)
+        pd.concat(frames, ignore_index=True).to_csv(summary_file, index=False, encoding="utf-8-sig")
+    elif summary_file.is_file():
+        existing.to_csv(summary_file, index=False, encoding="utf-8-sig")
+    print(f"Terminado. Resumen: {summary_file}")
+
+
+def _cli() -> None:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--config", "--chunker-config", type=Path, dest="config_path", default=None)
+    parser.add_argument("--tokenizer-config", type=Path, default=None)
+    parser.add_argument("--input-dir", type=Path, default=None)
+    parser.add_argument("--output-dir", type=Path, default=None)
+    parser.add_argument("--registry", type=Path, default=None)
+    parser.add_argument("--workers", type=int, default=None)
+    parser.add_argument("--no-cache", action="store_true")
+    args = parser.parse_args()
+    main(config_path=args.config_path, tokenizer_config_path=args.tokenizer_config,
+         input_dir=args.input_dir, output_dir=args.output_dir, registry_path=args.registry,
+         workers_override=args.workers, use_cache=not args.no_cache)
+
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Ejecuta el chunking jerárquico de documentos JSON."
-    )
-    parser.add_argument(
-        "--chunker-config",
-        type=Path,
-        default=CHUNKING_CONFIG_FILE,
-        help="Ruta al archivo de configuración del chunker.",
-    )
-
-    parser.add_argument(
-        "--tokenizer-config",
-        type=Path,
-        default=TOKENIZER_CONFIG_FILE,
-        help="Ruta al archivo de configuración del tokenizador.",
-    )
-    parser.add_argument(
-        "--workers",
-        type=_positive_int,
-        default=None,
-        help="Máximo de documentos procesados en paralelo (por defecto, 1).",
-    )
-    parser.add_argument(
-        "--no-cache",
-        action="store_true",
-        help="Fuerza el reprocesamiento de todos los documentos.",
-    )
-    arguments = parser.parse_args()
-
-    main(
-        workers_override=arguments.workers,
-        use_cache=not arguments.no_cache,
-        chunker_config_file=arguments.chunker_config,
-        tokenizer_config_file=arguments.tokenizer_config,
-    )
+    _cli()

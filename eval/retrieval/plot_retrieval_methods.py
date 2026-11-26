@@ -51,6 +51,10 @@ FILES = {
         "qwen_uro_JSON_wrrf_1_3/"
         "metrics_local_judge_qwen3_embedding_4b_weighted_rrf_n30_rrfk2_d1p0_b3p0_top30_urology.xlsx"
     ),
+    "Weighted RRF 4:1": (
+        "qwen_uro_JSON_wrrf_4_1/"
+        "metrics_local_judge_qwen3_embedding_4b_weighted_rrf_n30_rrfk2_d4p0_b1p0_top30_urology.xlsx"
+    ),
 }
 
 K_VALUES = (3, 5, 7, 10)
@@ -65,6 +69,7 @@ METHOD_COLORS = {
     "RRF": "#228833",
     "Weighted RRF 3:1": "#AA7744",
     "Weighted RRF 1:3": "#8855AA",
+    "Weighted RRF 4:1": "#C9D576",
 }
 SCORE_COLORS = {0: "#AAB4C2", 1: "#E6B85C", 2: "#399B85"}
 
@@ -190,7 +195,7 @@ def compact_ylim(values):
 
 def plot_curves(metrics, output, dpi):
     fig, axs = plt.subplots(1, 3, figsize=(18, 6.2), sharex=True)
-    markers = ("o", "s", "^", "D", "v")
+    markers = ("o", "s", "^", "D", "v", "P")
     for ax, (metric, display) in zip(axs, METRICS.items()):
         part = metrics[metrics["metric"] == metric]
         for i, method in enumerate(FILES):
@@ -208,7 +213,7 @@ def plot_curves(metrics, output, dpi):
         ax.spines[["top", "right"]].set_visible(False)
     fig.suptitle("Retrieval Qwen3 + JSON Chunking | rendimiento según k", fontsize=18, fontweight="bold", y=0.97)
     handles, labels = axs[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="lower center", ncol=5, frameon=False,
+    fig.legend(handles, labels, loc="lower center", ncol=3, frameon=False,
                bbox_to_anchor=(0.5, 0.035), fontsize=10.5)
     fig.subplots_adjust(left=0.065, right=0.985, top=0.82, bottom=0.24, wspace=0.26)
     fig.savefig(output, dpi=dpi, bbox_inches="tight", facecolor="white")
@@ -218,7 +223,7 @@ def plot_curves(metrics, output, dpi):
 
 def plot_heatmaps(summary, output, dpi):
     methods = list(FILES)
-    fig, axs = plt.subplots(1, 3, figsize=(18, 5.6))
+    fig, axs = plt.subplots(1, 3, figsize=(19, 7))
     cmap = plt.get_cmap("YlGnBu")
     image = None
     for ax, (metric, display) in zip(axs, METRICS.items()):
@@ -239,8 +244,8 @@ def plot_heatmaps(summary, output, dpi):
         ax.tick_params(which="minor", bottom=False, left=False)
         ax.spines[:].set_visible(False)
     fig.suptitle("Comparación de retrieval por métrica y k", fontsize=17, fontweight="bold", y=1.02)
-    fig.subplots_adjust(left=0.12, right=0.91, bottom=0.11, top=0.85, wspace=0.43)
-    color_ax = fig.add_axes([0.93, 0.18, 0.014, 0.57])
+    fig.subplots_adjust(left=0.12, right=0.91, bottom=0.10, top=0.88, wspace=0.43)
+    color_ax = fig.add_axes([0.93, 0.18, 0.014, 0.62])
     fig.colorbar(image, cax=color_ax, label="Puntuación (0–1)")
     fig.savefig(output, dpi=dpi, bbox_inches="tight", facecolor="white")
     plt.close(fig)
