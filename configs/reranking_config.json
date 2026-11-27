@@ -1,0 +1,13 @@
+
+{
+  "reranking": {
+    "input": "output/retrieval/qwen_uro_JSON_30/retrieval_qwen3_embedding_4b_dense_top30_urology.json",
+    "output": "output/retrieval/reranking/ALIA_biomedical.json",
+    "model": "Qwen/Qwen3-Reranker-0.6B",
+    "device": "auto",
+    "batch_size": 8,
+    "max_length": 1024,
+    "candidate_k": 20,
+    "output_k": [3, 5, 7, 10]
+  }
+}
