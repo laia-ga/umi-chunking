@@ -3,7 +3,9 @@ numpy
 pandas
 psutil
 matplotlib
+seaborn
 openpyxl
+xlsxwriter
 scikit-learn
 
 # Chunking, embeddings y modelos Hugging Face
