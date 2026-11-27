@@ -1,11 +1,11 @@
 {
-    "fold": "qwen_uro_JSON_30",
-    "retrieval_file": "retrieval_qwen3_embedding_4b_dense_top30_urology.json",
+    "fold": "reranking",
+    "retrieval_file": "qwen_reranker_dense_c20_top10.json",
     "metrics_judge": "local",
     "local_judge": {
         "model_name": "AtlaAI/Selene-1-Mini-Llama-3.1-8B",
         "version": "v1",
-        "output_folder": "qwen_uro_JSON_dense"
+        "output_folder": "qwen_uro_JSON_reranking"
     },
     "gpt_judge": {
         "model_name": "gpt-5.6-luna",
